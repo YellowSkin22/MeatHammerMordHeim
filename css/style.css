@@ -923,6 +923,54 @@ select.form-control {
   }
 }
 
+/* ===== TOOLTIPS ===== */
+.tag[data-tooltip] {
+  position: relative;
+  cursor: help;
+}
+
+.tag[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg-darkest);
+  color: var(--text);
+  border: 1px solid var(--border-hover);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.7rem;
+  font-size: 0.75rem;
+  line-height: 1.4;
+  white-space: normal;
+  width: max-content;
+  max-width: 260px;
+  z-index: 50;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+  box-shadow: 0 4px 16px var(--shadow);
+}
+
+.tag[data-tooltip]::before {
+  content: '';
+  position: absolute;
+  bottom: calc(100% + 2px);
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: var(--border-hover);
+  z-index: 51;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s ease;
+}
+
+.tag[data-tooltip]:hover::after,
+.tag[data-tooltip]:hover::before {
+  opacity: 1;
+}
+
 /* ===== UTILITY ===== */
 .mt-1 { margin-top: 0.5rem; }
 .mt-2 { margin-top: 1rem; }
