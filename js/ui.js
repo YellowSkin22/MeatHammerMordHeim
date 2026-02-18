@@ -154,7 +154,7 @@ const UI = {
     heroAddContainer.innerHTML = warband.heroes.map(ht => {
       const currentCount = r.heroes.filter(h => h.type === ht.type).length;
       const disabled = currentCount >= ht.max ? 'disabled' : '';
-      return `<button class="btn btn-sm btn-primary" ${disabled} onclick="UI.addWarrior('${ht.type}', true)">${ht.name} (${ht.cost} gc)</button>`;
+      return `<button class="btn btn-sm btn-primary" ${disabled} onclick="event.stopPropagation(); UI.addWarrior('${ht.type}', true)">${ht.name} (${ht.cost} gc)</button>`;
     }).join(' ');
 
     // Henchmen section
@@ -168,7 +168,7 @@ const UI = {
     // Henchmen add buttons
     const henchAddContainer = document.getElementById('henchmen-add-buttons');
     henchAddContainer.innerHTML = warband.henchmen.map(ht => {
-      return `<button class="btn btn-sm btn-primary" onclick="UI.addWarrior('${ht.type}', false)">${ht.name} (${ht.cost} gc)</button>`;
+      return `<button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarrior('${ht.type}', false)">${ht.name} (${ht.cost} gc)</button>`;
     }).join(' ');
   },
 
@@ -243,9 +243,11 @@ const UI = {
           <div class="tag-section mt-1">
             <div class="tag-section-label">Equipment</div>
             <div class="tag-list">
-              ${warrior.equipment.map((eq, eqIdx) => `
-                <span class="tag equipment">${eq.name} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>
-              `).join('')}
+              ${warrior.equipment.map((eq, eqIdx) => {
+                const itemData = DataService.getEquipmentItem(eq.id);
+                const tooltip = itemData ? this.esc(itemData.rules) : '';
+                return `<span class="tag equipment" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${eq.name} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>`;
+              }).join('')}
               <button class="btn btn-sm" onclick="UI.openEquipmentModal('${listType}', ${index})">+ Add</button>
             </div>
           </div>
@@ -253,9 +255,11 @@ const UI = {
           <div class="tag-section mt-1">
             <div class="tag-section-label">Skills</div>
             <div class="tag-list">
-              ${warrior.skills.map((sk, skIdx) => `
-                <span class="tag skill">${sk.name} <span class="tag-remove" onclick="UI.removeSkill('${listType}', ${index}, ${skIdx})">x</span></span>
-              `).join('')}
+              ${warrior.skills.map((sk, skIdx) => {
+                const skillData = DataService.getSkill(sk.id);
+                const tooltip = skillData ? this.esc(skillData.description) : '';
+                return `<span class="tag skill" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${sk.name} <span class="tag-remove" onclick="UI.removeSkill('${listType}', ${index}, ${skIdx})">x</span></span>`;
+              }).join('')}
               ${isHero ? `<button class="btn btn-sm" onclick="UI.openSkillModal('${listType}', ${index})">+ Add</button>` : ''}
             </div>
           </div>
