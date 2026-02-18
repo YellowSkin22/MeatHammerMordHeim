@@ -1,0 +1,48 @@
+{
+  "heroAdvancement": {
+    "expThresholds": [2, 4, 6, 8, 11, 14, 17, 20, 24, 28, 32, 36, 41, 46, 51, 57, 63, 69, 76, 83, 90],
+    "advanceRoll": {
+      "2-4": { "name": "New Skill", "description": "Choose a new skill from the warrior's available skill categories." },
+      "5": { "name": "+1 Strength", "description": "Increase Strength by 1." },
+      "6": { "name": "+1 Attack", "description": "Increase Attacks by 1." },
+      "7": { "name": "Roll Again (Two Stats)", "description": "Roll twice on this table. Each roll must choose a different result." },
+      "8": { "name": "+1 BS", "description": "Increase Ballistic Skill by 1." },
+      "9": { "name": "+1 WS", "description": "Increase Weapon Skill by 1." },
+      "10": { "name": "+1 Initiative", "description": "Increase Initiative by 1." },
+      "11": { "name": "+1 Leadership", "description": "Increase Leadership by 1." },
+      "12": { "name": "+1 Wound", "description": "Increase Wounds by 1." }
+    }
+  },
+  "henchmenAdvancement": {
+    "note": "Henchmen gain experience as a group. When they accumulate enough, the group levels up.",
+    "advanceRoll": {
+      "2-4": { "name": "+1 Initiative", "description": "Increase Initiative by 1." },
+      "5": { "name": "+1 Strength", "description": "Increase Strength by 1." },
+      "6": { "name": "+1 Attack", "description": "Increase Attacks by 1." },
+      "7": { "name": "Roll Again (Two Stats)", "description": "Roll twice on this table." },
+      "8": { "name": "+1 BS", "description": "Increase Ballistic Skill by 1." },
+      "9": { "name": "+1 WS", "description": "Increase Weapon Skill by 1." },
+      "10": { "name": "+1 Initiative", "description": "Increase Initiative by 1." },
+      "11": { "name": "+1 Leadership", "description": "Increase Leadership by 1." },
+      "12": { "name": "The lad's got talent!", "description": "This henchman becomes a Hero! Gains 'Lad's Got Talent' special rule." }
+    }
+  },
+  "experienceRewards": {
+    "surviving": { "value": 1, "description": "+1 XP for surviving a battle." },
+    "perWound": { "value": 1, "description": "+1 XP per enemy taken out of action." },
+    "winning": { "value": 1, "description": "+1 XP for being on the winning warband (heroes only)." },
+    "perWyrdstone": { "value": 1, "description": "+1 XP per wyrdstone shard found (heroes only)." }
+  },
+  "maxStats": {
+    "note": "Maximum characteristic values for stat increases",
+    "M": 10,
+    "WS": 10,
+    "BS": 10,
+    "S": 7,
+    "T": 7,
+    "W": 5,
+    "I": 10,
+    "A": 5,
+    "Ld": 10
+  }
+}

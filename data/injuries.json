@@ -1,0 +1,30 @@
+{
+  "heroInjuries": [
+    { "roll": "11-15", "name": "Dead", "description": "The warrior is dead. Remove from roster. All equipment is lost." },
+    { "roll": "16-21", "name": "Multiple Injuries", "description": "Roll D6 times on the serious injuries table." },
+    { "roll": "22", "name": "Leg Wound", "description": "-1 Movement permanently." },
+    { "roll": "23", "name": "Arm Wound", "description": "-1 Weapon Skill permanently." },
+    { "roll": "24", "name": "Madness", "description": "Roll D6: 1-3 = Stupidity; 4-6 = Frenzy." },
+    { "roll": "25", "name": "Smashed Leg", "description": "Cannot run but may still charge. -1 Movement permanently." },
+    { "roll": "26", "name": "Chest Wound", "description": "-1 Toughness permanently." },
+    { "roll": "31", "name": "Blinded in One Eye", "description": "-1 Ballistic Skill permanently." },
+    { "roll": "32", "name": "Old Battle Wound", "description": "Before each battle roll D6: on 1, misses the battle." },
+    { "roll": "33", "name": "Nervous Condition", "description": "-1 Initiative permanently." },
+    { "roll": "34", "name": "Hand Injury", "description": "-1 Weapon Skill permanently." },
+    { "roll": "35", "name": "Deep Wound", "description": "Misses the next battle while recovering." },
+    { "roll": "36", "name": "Robbed", "description": "All equipment lost." },
+    { "roll": "41-55", "name": "Full Recovery", "description": "The warrior makes a full recovery." },
+    { "roll": "56", "name": "Bitter Enmity", "description": "Hates the warband that caused the injury." },
+    { "roll": "61", "name": "Captured", "description": "The warrior is captured by the enemy. Roll after game to see fate." },
+    { "roll": "62", "name": "Hardened", "description": "Immune to Fear." },
+    { "roll": "63", "name": "Horrible Scars", "description": "Causes Fear." },
+    { "roll": "64", "name": "Sold to the Pits", "description": "Gains D6 experience." },
+    { "roll": "65", "name": "Survives Against the Odds", "description": "Gains +1 Experience." },
+    { "roll": "66", "name": "Survives Against the Odds", "description": "Gains +1 Experience." }
+  ],
+  "henchmenInjuries": [
+    { "roll": "1-2", "name": "Dead", "description": "The henchman is removed from the roster." },
+    { "roll": "3-4", "name": "Multiple Injuries", "description": "The henchman must miss the next game." },
+    { "roll": "5-6", "name": "Full Recovery", "description": "The henchman makes a full recovery." }
+  ]
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mordheim Roster Manager</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9760;</text></svg>">
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="app-header">
+    <div style="display:flex; align-items:center; gap:0.8rem;">
+      <button id="btn-back" class="btn btn-sm hidden" onclick="UI.goBack()">&#8592; Back</button>
+      <div class="app-title">
+        <span class="skull-icon">&#9760;</span>
+        MORDHEIM ROSTER
+      </div>
+    </div>
+    <div class="header-actions">
+      <button class="btn btn-sm" onclick="UI.importRoster()">Import</button>
+      <button class="btn btn-sm btn-primary" onclick="UI.openCreateModal()">+ New Warband</button>
+    </div>
+  </header>
+
+  <div class="app-container">
+
+    <!-- ===== ROSTER LIST VIEW ===== -->
+    <div id="roster-list" class="view active">
+      <div class="roster-list-header">
+        <h2>Your Warbands</h2>
+      </div>
+      <div id="roster-grid" class="roster-grid"></div>
+    </div>
+
+    <!-- ===== ROSTER EDITOR VIEW ===== -->
+    <div id="roster-editor" class="view">
+      <!-- Roster Header -->
+      <div class="roster-header">
+        <div class="roster-info">
+          <input type="text" id="editor-roster-name" class="inline-edit" style="font-size:1.3rem; color:var(--accent); font-weight:700;">
+          <div id="editor-warband-type" class="warband-type"></div>
+        </div>
+        <div class="roster-summary">
+          <div class="summary-stat">
+            <div class="label">Members</div>
+            <div class="value" id="summary-members">0</div>
+          </div>
+          <div class="summary-stat">
+            <div class="label">Rating</div>
+            <div class="value" id="summary-rating">0</div>
+          </div>
+          <div class="summary-stat">
+            <div class="label">Treasury</div>
+            <div class="value gold" id="summary-gold">0</div>
+          </div>
+          <div class="summary-stat">
+            <div class="label">Spent</div>
+            <div class="value" id="summary-spent">0</div>
+          </div>
+          <div class="summary-stat">
+            <div class="label">Battles</div>
+            <div class="value" id="summary-battles">0</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs -->
+      <div class="tab-bar">
+        <button class="tab-btn active" data-tab="warriors" onclick="UI.switchTab('warriors')">Warriors</button>
+        <button class="tab-btn" data-tab="progress" onclick="UI.switchTab('progress')">Progress & Campaign</button>
+      </div>
+
+      <!-- Warriors Tab -->
+      <div id="tab-warriors" class="tab-content active">
+        <!-- Heroes Section -->
+        <div class="section-panel" id="heroes-section">
+          <div class="section-header" onclick="UI.toggleSection('heroes-section')">
+            <h3><span class="toggle-icon">&#9660;</span> Heroes</h3>
+            <div id="hero-add-buttons" style="display:flex; gap:0.3rem; flex-wrap:wrap;"></div>
+          </div>
+          <div class="section-content" id="heroes-content"></div>
+        </div>
+
+        <!-- Henchmen Section -->
+        <div class="section-panel" id="henchmen-section">
+          <div class="section-header" onclick="UI.toggleSection('henchmen-section')">
+            <h3><span class="toggle-icon">&#9660;</span> Henchmen</h3>
+            <div id="henchmen-add-buttons" style="display:flex; gap:0.3rem; flex-wrap:wrap;"></div>
+          </div>
+          <div class="section-content" id="henchmen-content"></div>
+        </div>
+      </div>
+
+      <!-- Progress Tab -->
+      <div id="tab-progress" class="tab-content">
+
+        <!-- Warband Rating -->
+        <div class="rating-display">
+          <div class="rating-label">Warband Rating</div>
+          <div class="rating-value" id="progress-rating">0</div>
+        </div>
+
+        <!-- Treasury -->
+        <div class="section-panel">
+          <div class="section-header">
+            <h3>Treasury & Resources</h3>
+          </div>
+          <div class="section-content">
+            <div class="treasury-section">
+              <div class="treasury-item">
+                <div class="treasury-label">Gold Crowns</div>
+                <div class="treasury-inline mt-1">
+                  <input type="number" id="gold-input" class="form-control" style="width:100px;" value="0" onchange="UI.updateGold()">
+                  <span class="text-accent">gc</span>
+                </div>
+              </div>
+              <div class="treasury-item">
+                <div class="treasury-label">Wyrdstone Shards</div>
+                <div class="treasury-inline mt-1">
+                  <input type="number" id="wyrdstone-input" class="form-control" style="width:100px;" value="0" onchange="UI.updateWyrdstone()">
+                  <span class="text-accent">shards</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Battle Log -->
+        <div class="section-panel mt-2">
+          <div class="section-header">
+            <h3>Battle Log</h3>
+          </div>
+          <div class="section-content">
+            <div style="display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;">
+              <select id="battle-result-input" class="form-control" style="flex:1; min-width:150px;">
+                <option value="">-- Result --</option>
+                <option value="Victory">Victory</option>
+                <option value="Defeat">Defeat</option>
+                <option value="Draw">Draw</option>
+                <option value="Voluntary Rout">Voluntary Rout</option>
+              </select>
+              <input type="text" id="battle-notes-input" class="form-control" placeholder="Notes (opponent, scenario...)" style="flex:2; min-width:200px;">
+              <button class="btn btn-primary" onclick="UI.addBattle()">Log Battle</button>
+            </div>
+            <div id="battle-log-entries"></div>
+          </div>
+        </div>
+
+        <!-- Notes -->
+        <div class="section-panel mt-2">
+          <div class="section-header">
+            <h3>Campaign Notes</h3>
+          </div>
+          <div class="section-content">
+            <textarea id="roster-notes" class="notes-area" placeholder="Write campaign notes, strategy, or lore here..." onchange="UI.updateNotes()"></textarea>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== CREATE ROSTER MODAL ===== -->
+  <div id="create-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Create Warband</h3>
+        <button class="btn btn-icon" onclick="UI.closeCreateModal()">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Warband Name</label>
+          <input type="text" id="create-roster-name" class="form-control" placeholder="e.g. The Crimson Blades">
+        </div>
+        <div class="form-group">
+          <label>Warband Type</label>
+          <select id="create-warband-select" class="form-control" onchange="UI.onWarbandSelectChange()">
+            <option value="">-- Select Warband --</option>
+          </select>
+        </div>
+        <p id="warband-description" class="text-dim" style="font-size:0.85rem; min-height:2rem;"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="UI.closeCreateModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="UI.submitCreateRoster()">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== EQUIPMENT MODAL ===== -->
+  <div id="equipment-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Equipment</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('equipment-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body" id="equipment-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== SKILL MODAL ===== -->
+  <div id="skill-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Skill</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('skill-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body" id="skill-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== INJURY MODAL ===== -->
+  <div id="injury-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Record Injury</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('injury-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body" id="injury-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== STAT ADJUST MODAL ===== -->
+  <div id="stat-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Adjust Stats</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('stat-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body" id="stat-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== CONFIRM DIALOG ===== -->
+  <div id="confirm-overlay" class="confirm-overlay">
+    <div class="confirm-box">
+      <h4>Confirm</h4>
+      <p id="confirm-message"></p>
+      <div class="confirm-actions">
+        <button class="btn" id="confirm-no">Cancel</button>
+        <button class="btn btn-danger" id="confirm-yes">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== TOAST CONTAINER ===== -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/roster.js"></script>
+  <script src="js/ui.js"></script>
+  <script>
+    // Boot the app
+    (async function() {
+      try {
+        await DataService.loadAll();
+        UI.init();
+      } catch (err) {
+        console.error('Failed to initialize:', err);
+        document.body.innerHTML = '<div style="padding:2rem; color:#c9a84c; text-align:center;">' +
+          '<h2>Failed to Load</h2><p>' + err.message + '</p>' +
+          '<p style="color:#9998a5; margin-top:1rem;">Make sure you are running this from a web server (not file://). Use: <code>python3 -m http.server</code></p></div>';
+      }
+    })();
+  </script>
+
+</body>
+</html>
