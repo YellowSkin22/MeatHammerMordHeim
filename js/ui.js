@@ -154,7 +154,7 @@ const UI = {
     heroAddContainer.innerHTML = warband.heroes.map(ht => {
       const currentCount = r.heroes.filter(h => h.type === ht.type).length;
       const disabled = currentCount >= ht.max ? 'disabled' : '';
-      return `<button class="btn btn-sm btn-primary" ${disabled} onclick="UI.addWarrior('${ht.type}', true)">${ht.name} (${ht.cost} gc)</button>`;
+      return `<button class="btn btn-sm btn-primary" ${disabled} onclick="event.stopPropagation(); UI.addWarrior('${ht.type}', true)">${ht.name} (${ht.cost} gc)</button>`;
     }).join(' ');
 
     // Henchmen section
@@ -168,7 +168,7 @@ const UI = {
     // Henchmen add buttons
     const henchAddContainer = document.getElementById('henchmen-add-buttons');
     henchAddContainer.innerHTML = warband.henchmen.map(ht => {
-      return `<button class="btn btn-sm btn-primary" onclick="UI.addWarrior('${ht.type}', false)">${ht.name} (${ht.cost} gc)</button>`;
+      return `<button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarrior('${ht.type}', false)">${ht.name} (${ht.cost} gc)</button>`;
     }).join(' ');
   },
 
