@@ -1,0 +1,583 @@
+{
+  "warbands": [
+    {
+      "id": "reikland",
+      "name": "Reikland Mercenaries",
+      "source": "Core",
+      "description": "Hardened soldiers from the Reikland province, well-equipped and disciplined.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Human Mercenaries",
+      "heroes": [
+        {
+          "type": "mercenary_captain",
+          "name": "Mercenary Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "youngblood",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warrior",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "marksman",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 7
+        },
+        {
+          "type": "swordsman",
+          "name": "Swordsman",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Expert Swordsmen"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "middenheim",
+      "name": "Middenheim Mercenaries",
+      "source": "Core",
+      "description": "Fierce warriors from the city of the White Wolf, known for their ferocity in combat.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Human Mercenaries",
+      "heroes": [
+        {
+          "type": "mercenary_captain",
+          "name": "Mercenary Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "youngblood",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warrior",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "marksman",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 7
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "marienburg",
+      "name": "Marienburg Mercenaries",
+      "source": "Core",
+      "description": "Wealthy merchants and their hired soldiers from the richest city in the Old World.",
+      "startingGold": 600,
+      "maxWarband": 15,
+      "alignment": "Human Mercenaries",
+      "heroes": [
+        {
+          "type": "mercenary_captain",
+          "name": "Mercenary Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "youngblood",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warrior",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "marksman",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 7
+        },
+        {
+          "type": "swordsman",
+          "name": "Swordsman",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Expert Swordsmen"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "witch_hunters",
+      "name": "Witch Hunters",
+      "source": "Core",
+      "description": "Fanatical servants of Sigmar, dedicated to purging evil and corruption.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Witch Hunters",
+      "heroes": [
+        {
+          "type": "witch_hunter_captain",
+          "name": "Witch Hunter Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Burn the Witch!"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "warrior_priest",
+          "name": "Warrior Priest",
+          "max": 1,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 8 },
+          "specialRules": ["Prayers of Sigmar"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "academic", "strength"]
+        },
+        {
+          "type": "witch_hunter",
+          "name": "Witch Hunter",
+          "max": 3,
+          "required": false,
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Burn the Witch!"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "academic", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "zealot",
+          "name": "Zealot",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "flagellant",
+          "name": "Flagellant",
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Fanatical"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "warhound",
+          "name": "Warhound",
+          "cost": 15,
+          "stats": { "M": 6, "WS": 4, "BS": 0, "S": 4, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "specialRules": ["Animal"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "sisters_of_sigmar",
+      "name": "Sisters of Sigmar",
+      "source": "Core",
+      "description": "Holy warrior women of Sigmar, fighting to cleanse the cursed city.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Sisters of Sigmar",
+      "heroes": [
+        {
+          "type": "sigmarite_matriarch",
+          "name": "Sigmarite Matriarch",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Prayers of Sigmar"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "academic", "strength", "speed"]
+        },
+        {
+          "type": "sister_superior",
+          "name": "Sister Superior",
+          "max": 3,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "academic", "strength", "speed"]
+        },
+        {
+          "type": "augur",
+          "name": "Augur",
+          "max": 1,
+          "required": false,
+          "cost": 25,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Blessed Sight"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "academic", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "sigmarite_sister",
+          "name": "Sigmarite Sister",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 10
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "undead",
+      "name": "The Undead",
+      "source": "Core",
+      "description": "Risen dead and vampiric lords seeking the cursed wyrdstone.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Undead",
+      "heroes": [
+        {
+          "type": "vampire",
+          "name": "Vampire",
+          "max": 1,
+          "required": true,
+          "cost": 110,
+          "stats": { "M": 6, "WS": 4, "BS": 4, "S": 4, "T": 4, "W": 2, "I": 5, "A": 2, "Ld": 8 },
+          "specialRules": ["Leader", "Fear", "Immune to Psychology", "Immune to Poison", "No Pain"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "academic", "strength", "speed"]
+        },
+        {
+          "type": "necromancer",
+          "name": "Necromancer",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Wizard", "Spells of the Undead"],
+          "startingExp": 8,
+          "skillAccess": ["academic", "speed"]
+        },
+        {
+          "type": "dreg",
+          "name": "Dreg",
+          "max": 3,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "zombie",
+          "name": "Zombie",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 0, "S": 3, "T": 3, "W": 1, "I": 1, "A": 1, "Ld": 5 },
+          "specialRules": ["Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "Slow"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "ghoul",
+          "name": "Ghoul",
+          "cost": 40,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 4, "W": 1, "I": 3, "A": 2, "Ld": 5 },
+          "specialRules": ["Fear"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "dire_wolf",
+          "name": "Dire Wolf",
+          "cost": 50,
+          "stats": { "M": 9, "WS": 3, "BS": 0, "S": 4, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 4 },
+          "specialRules": ["Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "Charge"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand"]
+      }
+    },
+    {
+      "id": "cult_of_the_possessed",
+      "name": "Cult of the Possessed",
+      "source": "Core",
+      "description": "Chaos worshippers drawn to Mordheim by the power of the wyrdstone.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Chaos",
+      "heroes": [
+        {
+          "type": "magister",
+          "name": "Magister",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Wizard"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "academic", "speed"]
+        },
+        {
+          "type": "possessed",
+          "name": "Possessed",
+          "max": 2,
+          "required": false,
+          "cost": 90,
+          "stats": { "M": 5, "WS": 4, "BS": 0, "S": 4, "T": 4, "W": 2, "I": 4, "A": 2, "Ld": 7 },
+          "specialRules": ["Fear", "Mutations"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "mutant",
+          "name": "Mutant",
+          "max": 2,
+          "required": false,
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Mutations"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "brethren",
+          "name": "Brethren",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "darksouls",
+          "name": "Darksouls",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Crazed"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "beastman",
+          "name": "Beastman",
+          "cost": 45,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "skaven",
+      "name": "Skaven",
+      "source": "Core",
+      "description": "Ratmen from beneath the earth, seeking wyrdstone for their vile experiments.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Skaven",
+      "heroes": [
+        {
+          "type": "assassin_adept",
+          "name": "Assassin Adept",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 7 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "speed"]
+        },
+        {
+          "type": "eshin_sorcerer",
+          "name": "Eshin Sorcerer",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6 },
+          "specialRules": ["Wizard"],
+          "startingExp": 8,
+          "skillAccess": ["academic", "speed"]
+        },
+        {
+          "type": "black_skaven",
+          "name": "Black Skaven",
+          "max": 2,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "speed"]
+        },
+        {
+          "type": "night_runner",
+          "name": "Night Runner",
+          "max": 2,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "verminkin",
+          "name": "Verminkin",
+          "cost": 20,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "giant_rat",
+          "name": "Giant Rat",
+          "cost": 15,
+          "stats": { "M": 6, "WS": 2, "BS": 0, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 4 },
+          "specialRules": ["Animal"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "rat_ogre",
+          "name": "Rat Ogre",
+          "cost": 210,
+          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 5, "T": 5, "W": 3, "I": 4, "A": 3, "Ld": 4 },
+          "specialRules": ["Fear", "Large Target", "Stupidity"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles"]
+      }
+    }
+  ]
+}

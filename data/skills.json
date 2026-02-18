@@ -1,0 +1,59 @@
+{
+  "skillCategories": {
+    "combat": {
+      "name": "Combat Skills",
+      "skills": [
+        { "id": "strike_to_injure", "name": "Strike to Injure", "description": "+1 to all injury rolls in close combat." },
+        { "id": "combat_master", "name": "Combat Master", "description": "Can fight against any number of opponents without penalty." },
+        { "id": "weapons_training", "name": "Weapons Training", "description": "Can use any hand-to-hand combat weapon." },
+        { "id": "web_of_steel", "name": "Web of Steel", "description": "If armed with two weapons, enemies suffer -1 to hit in close combat." },
+        { "id": "expert_swordsman", "name": "Expert Swordsman", "description": "Re-roll all missed attacks when using a sword." },
+        { "id": "step_aside", "name": "Step Aside", "description": "4+ ward save (dodge) against one hit per combat phase." }
+      ]
+    },
+    "shooting": {
+      "name": "Shooting Skills",
+      "skills": [
+        { "id": "quick_shot", "name": "Quick Shot", "description": "Can fire twice per turn with ranged weapons (but at -1 to hit)." },
+        { "id": "pistolier", "name": "Pistolier", "description": "Can fire while running. No penalties for moving and shooting with pistols." },
+        { "id": "eagle_eyes", "name": "Eagle Eyes", "description": "+6\" range with ranged weapons." },
+        { "id": "weapons_expert", "name": "Weapons Expert", "description": "Can use any missile weapon." },
+        { "id": "nimble", "name": "Nimble", "description": "No movement penalty for shooting." },
+        { "id": "trick_shooter", "name": "Trick Shooter", "description": "Ignore penalties for cover and obstacles when shooting." }
+      ]
+    },
+    "academic": {
+      "name": "Academic Skills",
+      "skills": [
+        { "id": "battle_tongue", "name": "Battle Tongue", "description": "One warrior within 6\" can re-roll one failed Leadership test per turn." },
+        { "id": "sorcery", "name": "Sorcery", "description": "+1 to casting attempts (Wizards only)." },
+        { "id": "streetwise", "name": "Streetwise", "description": "-1 to Rare item availability rolls." },
+        { "id": "haggle", "name": "Haggle", "description": "Reduce the cost of rare items by 2D6 gold crowns (minimum 1gc)." },
+        { "id": "arcane_lore", "name": "Arcane Lore", "description": "May learn spells from a random magic list (must have Wizard rule)." },
+        { "id": "wyrdstone_hunter", "name": "Wyrdstone Hunter", "description": "+1 to wyrdstone discovery rolls." }
+      ]
+    },
+    "strength": {
+      "name": "Strength Skills",
+      "skills": [
+        { "id": "mighty_blow", "name": "Mighty Blow", "description": "+1 Strength in close combat." },
+        { "id": "pit_fighter", "name": "Pit Fighter", "description": "+1 Attack, +1 Weapon Skill when fighting against two or more opponents." },
+        { "id": "resilient", "name": "Resilient", "description": "+1 Toughness." },
+        { "id": "fearsome", "name": "Fearsome", "description": "Causes Fear." },
+        { "id": "strongman", "name": "Strongman", "description": "Can use two-handed weapons without the 'strikes last' penalty." },
+        { "id": "unstoppable_charge", "name": "Unstoppable Charge", "description": "+1 Attack on the turn this model charges." }
+      ]
+    },
+    "speed": {
+      "name": "Speed Skills",
+      "skills": [
+        { "id": "leap", "name": "Leap", "description": "Can jump up to 6\" across gaps. No Initiative test required." },
+        { "id": "sprint", "name": "Sprint", "description": "+1 Movement." },
+        { "id": "acrobat", "name": "Acrobat", "description": "Falls do not cause damage." },
+        { "id": "lightning_reflexes", "name": "Lightning Reflexes", "description": "Always strikes first in close combat." },
+        { "id": "jump_up", "name": "Jump Up", "description": "Can stand up for free instead of using half movement." },
+        { "id": "dodge", "name": "Dodge", "description": "5+ ward save against ranged attacks." }
+      ]
+    }
+  }
+}

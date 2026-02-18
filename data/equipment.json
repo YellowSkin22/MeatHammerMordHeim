@@ -1,0 +1,72 @@
+{
+  "categories": {
+    "hand_to_hand": {
+      "name": "Hand-to-Hand Combat Weapons",
+      "items": [
+        { "id": "dagger", "name": "Dagger", "cost": 2, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack when used in pairs. Enemy armour saves at -1 penalty.", "category": "hand_to_hand" },
+        { "id": "hammer", "name": "Hammer", "cost": 3, "range": "Close Combat", "strength": "As user", "rules": "Concussion: enemy takes -1 to armour save.", "category": "hand_to_hand" },
+        { "id": "mace", "name": "Mace", "cost": 3, "range": "Close Combat", "strength": "As user", "rules": "Concussion: enemy takes -1 to armour save.", "category": "hand_to_hand" },
+        { "id": "axe", "name": "Axe", "cost": 5, "range": "Close Combat", "strength": "As user", "rules": "Cutting edge: +1 to injury rolls.", "category": "hand_to_hand" },
+        { "id": "sword", "name": "Sword", "cost": 10, "range": "Close Combat", "strength": "As user", "rules": "Parry: may force opponent to re-roll one successful hit per turn.", "category": "hand_to_hand" },
+        { "id": "club", "name": "Club", "cost": 3, "range": "Close Combat", "strength": "As user", "rules": "Concussion: enemy takes -1 to armour save.", "category": "hand_to_hand" },
+        { "id": "spear", "name": "Spear", "cost": 10, "range": "Close Combat", "strength": "As user", "rules": "Strike first on the charge. +1 Strength on the charge.", "category": "hand_to_hand" },
+        { "id": "halberd", "name": "Halberd", "cost": 10, "range": "Close Combat", "strength": "As user +1", "rules": "+1 Strength. Two-handed: cannot use with shield.", "category": "hand_to_hand" },
+        { "id": "double_handed_weapon", "name": "Double-Handed Weapon", "cost": 15, "range": "Close Combat", "strength": "As user +2", "rules": "+2 Strength. Two-handed. Strikes last.", "category": "hand_to_hand" },
+        { "id": "flail", "name": "Flail", "cost": 15, "range": "Close Combat", "strength": "As user +2", "rules": "+2 Strength in first turn of combat. Two-handed.", "category": "hand_to_hand" },
+        { "id": "morning_star", "name": "Morning Star", "cost": 15, "range": "Close Combat", "strength": "As user +1", "rules": "+1 Strength in first turn of combat.", "category": "hand_to_hand" },
+        { "id": "steel_whip", "name": "Steel Whip", "cost": 10, "range": "Close Combat", "strength": "As user", "rules": "Cannot be parried. Counts as two-handed.", "category": "hand_to_hand" },
+        { "id": "fighting_claws", "name": "Fighting Claws (Pair)", "cost": 35, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack. +1 to climb tests. Parry.", "category": "hand_to_hand" },
+        { "id": "weeping_blades", "name": "Weeping Blades (Pair)", "cost": 50, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack. Wounds always count as critical on 5+.", "category": "hand_to_hand" }
+      ]
+    },
+    "missiles": {
+      "name": "Missile Weapons",
+      "items": [
+        { "id": "short_bow", "name": "Short Bow", "cost": 5, "range": "16\"", "strength": "3", "rules": "None.", "category": "missiles" },
+        { "id": "bow", "name": "Bow", "cost": 10, "range": "24\"", "strength": "3", "rules": "None.", "category": "missiles" },
+        { "id": "long_bow", "name": "Long Bow", "cost": 15, "range": "30\"", "strength": "3", "rules": "None.", "category": "missiles" },
+        { "id": "elf_bow", "name": "Elf Bow", "cost": 35, "range": "36\"", "strength": "3", "rules": "Ignores movement penalty.", "category": "missiles" },
+        { "id": "crossbow", "name": "Crossbow", "cost": 25, "range": "30\"", "strength": "4", "rules": "Move or fire.", "category": "missiles" },
+        { "id": "pistol", "name": "Pistol", "cost": 15, "range": "6\"", "strength": "4", "rules": "Armour save -2. Can be used in close combat.", "category": "missiles" },
+        { "id": "duelling_pistol", "name": "Duelling Pistol", "cost": 30, "range": "10\"", "strength": "4", "rules": "Armour save -2. +1 to hit. Can be used in close combat.", "category": "missiles" },
+        { "id": "handgun", "name": "Handgun", "cost": 35, "range": "24\"", "strength": "4", "rules": "Armour save -1. Move or fire.", "category": "missiles" },
+        { "id": "blunderbuss", "name": "Blunderbuss", "cost": 30, "range": "Special", "strength": "3", "rules": "Flame template. Move or fire.", "category": "missiles" },
+        { "id": "sling", "name": "Sling", "cost": 2, "range": "18\"", "strength": "As user", "rules": "May fire twice at half range.", "category": "missiles" },
+        { "id": "throwing_knife", "name": "Throwing Knife", "cost": 10, "range": "6\"", "strength": "As user", "rules": "Thrown weapon.", "category": "missiles" },
+        { "id": "throwing_star", "name": "Throwing Star", "cost": 15, "range": "6\"", "strength": "As user", "rules": "Thrown weapon. Can throw 2 per turn.", "category": "missiles" }
+      ]
+    },
+    "armour": {
+      "name": "Armour",
+      "items": [
+        { "id": "light_armour", "name": "Light Armour", "cost": 20, "armourSave": "6+", "rules": "None.", "category": "armour" },
+        { "id": "heavy_armour", "name": "Heavy Armour", "cost": 50, "armourSave": "5+", "rules": "-1 Movement. -1 Initiative.", "category": "armour" },
+        { "id": "shield", "name": "Shield", "cost": 5, "armourSave": "6+", "rules": "Combined with other armour. Cannot use with two-handed weapons.", "category": "armour" },
+        { "id": "buckler", "name": "Buckler", "cost": 5, "armourSave": "Special", "rules": "Parry in close combat.", "category": "armour" },
+        { "id": "helmet", "name": "Helmet", "cost": 10, "armourSave": "Special", "rules": "Avoid being stunned on a 4+.", "category": "armour" },
+        { "id": "gromril_armour", "name": "Gromril Armour", "cost": 150, "armourSave": "4+", "rules": "No movement penalty. Rare 11.", "category": "armour" },
+        { "id": "ithilmar_armour", "name": "Ithilmar Armour", "cost": 90, "armourSave": "5+", "rules": "No movement penalty. Rare 11.", "category": "armour" }
+      ]
+    },
+    "miscellaneous": {
+      "name": "Miscellaneous Equipment",
+      "items": [
+        { "id": "rope_hook", "name": "Rope & Hook", "cost": 5, "rules": "+1 to climbing tests." },
+        { "id": "torch", "name": "Torch", "cost": 2, "rules": "Provides light. Causes fear in animals." },
+        { "id": "lantern", "name": "Lantern", "cost": 10, "rules": "Extended light radius." },
+        { "id": "holy_water", "name": "Holy Water", "cost": 10, "rules": "Thrown weapon. S2. Causes D3 wounds vs Undead/Possessed. One use." },
+        { "id": "lucky_charm", "name": "Lucky Charm", "cost": 10, "rules": "Ignore first hit in a battle. One use." },
+        { "id": "holy_relic", "name": "Holy Relic", "cost": 15, "rules": "+1 to Rout tests. Rare 8." },
+        { "id": "rabbits_foot", "name": "Rabbit's Foot", "cost": 10, "rules": "+1 to first exploration roll." },
+        { "id": "garlic", "name": "Garlic", "cost": 1, "rules": "Vampires must pass Ld test to charge." },
+        { "id": "healing_herbs", "name": "Healing Herbs", "cost": 20, "rules": "Re-roll one recovery roll per battle. One use. Rare 8." },
+        { "id": "cathayan_silk", "name": "Cathayan Silk Clothes", "cost": 50, "rules": "-1 to enemy hit rolls in first round of combat. Rare 9." },
+        { "id": "superior_blackpowder", "name": "Superior Blackpowder", "cost": 30, "rules": "+1 Strength for blackpowder weapons. Rare 11." },
+        { "id": "bugmans_ale", "name": "Bugman's Ale", "cost": 50, "rules": "Immune to Fear for one battle. One use. Rare 9." },
+        { "id": "tome_of_magic", "name": "Tome of Magic", "cost": 200, "rules": "+1 to casting rolls. Rare 12." },
+        { "id": "horse", "name": "Horse", "cost": 80, "rules": "M8. +2\" charge range. Rare 8." },
+        { "id": "wardog", "name": "War Dog", "cost": 25, "rules": "WS3 S3 T3 W1 I4 A1. Ld5." }
+      ]
+    }
+  }
+}
