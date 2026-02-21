@@ -1,27 +1,27 @@
-/* ===== MORDHEIM ROSTER APP - DARK FANTASY THEME ===== */
+/* ===== MORDHEIM ROSTER APP - LIGHT PARCHMENT THEME ===== */
 
 :root {
-  --bg-darkest: #0a0a0f;
-  --bg-dark: #12121c;
-  --bg-card: #1a1a2e;
-  --bg-card-hover: #1f1f35;
-  --bg-input: #15152a;
-  --border: #2a2a4a;
-  --border-hover: #3d3d6b;
-  --accent: #c9a84c;
-  --accent-hover: #dbb94f;
-  --accent-dim: #8a6d2b;
-  --accent-glow: rgba(201, 168, 76, 0.15);
+  --bg-darkest: #f5f0e8;
+  --bg-dark: #ece5d8;
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf7f2;
+  --bg-input: #f8f5ef;
+  --border: #d4cabb;
+  --border-hover: #b8a98e;
+  --accent: #8b6914;
+  --accent-hover: #a47d1a;
+  --accent-dim: #b8941e;
+  --accent-glow: rgba(139, 105, 20, 0.12);
   --danger: #b33a3a;
   --danger-hover: #d04444;
-  --success: #3a8a3a;
-  --success-hover: #44a544;
-  --text: #e8e6e3;
-  --text-dim: #9998a5;
-  --text-muted: #5d5c6d;
-  --text-bright: #f5f3f0;
-  --skull: #c9a84c;
-  --shadow: rgba(0, 0, 0, 0.5);
+  --success: #2d7a2d;
+  --success-hover: #359435;
+  --text: #3d3529;
+  --text-dim: #6b6052;
+  --text-muted: #9b8e7e;
+  --text-bright: #2a231a;
+  --skull: #8b6914;
+  --shadow: rgba(100, 80, 40, 0.12);
   --radius: 6px;
   --radius-lg: 10px;
   --transition: 0.2s ease;
@@ -109,14 +109,15 @@ body {
 }
 
 .btn-primary {
-  background: var(--accent-dim);
+  background: var(--accent);
   border-color: var(--accent);
-  color: var(--text-bright);
+  color: #fff;
 }
 
 .btn-primary:hover {
-  background: var(--accent);
-  color: var(--bg-darkest);
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #fff;
 }
 
 .btn-danger {
@@ -126,7 +127,7 @@ body {
 
 .btn-danger:hover {
   background: var(--danger);
-  color: var(--text-bright);
+  color: #fff;
 }
 
 .btn-success {
@@ -136,7 +137,7 @@ body {
 
 .btn-success:hover {
   background: var(--success);
-  color: var(--text-bright);
+  color: #fff;
 }
 
 .btn-sm {
@@ -280,7 +281,7 @@ body {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.75);
+  background: rgba(60, 50, 30, 0.5);
   z-index: 200;
   align-items: center;
   justify-content: center;
@@ -371,7 +372,7 @@ body {
 select.form-control {
   cursor: pointer;
   appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%239998a5' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b6052' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 0.8rem center;
   padding-right: 2rem;
@@ -503,7 +504,7 @@ select.form-control {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(139, 105, 20, 0.04);
 }
 
 .warrior-card-header .warrior-name {
@@ -553,7 +554,7 @@ select.form-control {
   text-transform: uppercase;
   letter-spacing: 0.5px;
   padding: 0.2rem;
-  background: rgba(201, 168, 76, 0.08);
+  background: rgba(139, 105, 20, 0.08);
   border-radius: 3px 3px 0 0;
 }
 
@@ -596,13 +597,13 @@ select.form-control {
 }
 
 .tag.skill {
-  border-color: #4a6fa5;
-  color: #6a9fd8;
+  border-color: #3a6a9e;
+  color: #2a5580;
 }
 
 .tag.injury {
   border-color: var(--danger);
-  color: #d88;
+  color: #a03030;
 }
 
 .tag .tag-remove {
@@ -1011,7 +1012,7 @@ select.form-control {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(60, 50, 30, 0.55);
   z-index: 250;
   align-items: center;
   justify-content: center;
