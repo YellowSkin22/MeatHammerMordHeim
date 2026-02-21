@@ -578,6 +578,88 @@
         "heroes": ["hand_to_hand", "missiles", "armour"],
         "henchmen": ["hand_to_hand", "missiles"]
       }
+    },
+    {
+      "id": "restless_dead",
+      "name": "The Restless Dead",
+      "source": "Border Town Burning",
+      "description": "A Liche and its undead legions, ancient skeletal warriors and shambling corpses animated by dark necromancy.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Undead",
+      "heroes": [
+        {
+          "type": "liche",
+          "name": "Liche",
+          "max": 1,
+          "required": true,
+          "cost": 100,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 3, "I": 3, "A": 1, "Ld": 9 },
+          "specialRules": ["Leader", "Warrior Wizard", "Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "Eternal"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "academic", "strength"]
+        },
+        {
+          "type": "necromancer",
+          "name": "Necromancer",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Wizard", "Apprentice"],
+          "startingExp": 8,
+          "skillAccess": ["academic", "speed"]
+        },
+        {
+          "type": "grave_guard",
+          "name": "Grave Guard",
+          "max": 3,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run", "Wight Blades"],
+          "startingExp": 6,
+          "skillAccess": ["combat", "strength"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "zombie",
+          "name": "Zombie",
+          "cost": 10,
+          "stats": { "M": 4, "WS": 2, "BS": 0, "S": 3, "T": 3, "W": 1, "I": 1, "A": 1, "Ld": 5 },
+          "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run", "No Brain"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "skeleton",
+          "name": "Skeleton",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 2, "A": 1, "Ld": 5 },
+          "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run", "No Brain"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "wight",
+          "name": "Wight",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run"],
+          "maxGroupSize": 3
+        },
+        {
+          "type": "scarecrow",
+          "name": "Scarecrow",
+          "cost": 65,
+          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 4, "T": 4, "W": 2, "I": 2, "A": 2, "Ld": 5 },
+          "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "Animated Construct", "Flammable", "No Brain"],
+          "maxGroupSize": 2
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
     }
   ]
 }
