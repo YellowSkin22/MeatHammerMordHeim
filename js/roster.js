@@ -35,6 +35,7 @@ const RosterModel = {
       baseStats: { ...template.stats },
       equipment: [],
       skills: [],
+      spells: [],
       injuries: [],
       experience: isHero ? (template.startingExp || 0) : 0,
       advancementCount: 0,
@@ -71,6 +72,18 @@ const RosterModel = {
 
   removeSkill(warrior, index) {
     warrior.skills.splice(index, 1);
+  },
+
+  addSpell(warrior, spellId) {
+    const spell = DataService.getSpell(spellId);
+    if (!spell) return false;
+    if (warrior.spells.find(s => s.id === spellId)) return false;
+    warrior.spells.push({ id: spellId, name: spell.name });
+    return true;
+  },
+
+  removeSpell(warrior, index) {
+    warrior.spells.splice(index, 1);
   },
 
   addInjury(warrior, injuryName) {

@@ -264,6 +264,8 @@ const UI = {
             </div>
           </div>
 
+          ${this.renderSpellSection(warrior, listType, index)}
+
           <div class="tag-section mt-1">
             <div class="tag-section-label">Injuries</div>
             <div class="tag-list">
@@ -287,6 +289,28 @@ const UI = {
         </div>
       </div>
     `;
+  },
+
+  hasSpellAccess(warrior) {
+    const wizardRules = ['Wizard', 'Warrior Wizard', 'Prayers of Sigmar'];
+    return warrior.specialRules.some(r => wizardRules.includes(r));
+  },
+
+  renderSpellSection(warrior, listType, index) {
+    if (!this.hasSpellAccess(warrior)) return '';
+    const spells = warrior.spells || [];
+    const spellTags = spells.map((sp, spIdx) => {
+      const spellData = DataService.getSpell(sp.id);
+      const diff = spellData ? (spellData.difficulty === 'Auto' ? 'Auto' : 'Diff: ' + spellData.difficulty) : '';
+      const desc = spellData ? this.esc(spellData.description) : '';
+      const tooltip = diff && desc ? diff + '. ' + desc : desc;
+      return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + tooltip + '"' : '') + '>' + sp.name + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
+    }).join('');
+    return '<div class="tag-section mt-1">' +
+      '<div class="tag-section-label">Spells</div>' +
+      '<div class="tag-list">' + spellTags +
+      '<button class="btn btn-sm" onclick="UI.openSpellModal(\'' + listType + '\', ' + index + ')">+ Add</button>' +
+      '</div></div>';
   },
 
   toggleWarriorCard(id) {
@@ -442,6 +466,60 @@ const UI = {
     const warrior = this.currentRoster[listType][index];
     if (!warrior) return;
     RosterModel.removeSkill(warrior, skIndex);
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+  },
+
+  // === SPELL MODAL ===
+  openSpellModal(listType, index) {
+    const warrior = this.currentRoster[listType][index];
+    const warband = DataService.getWarband(this.currentRoster.warbandId);
+    const template = warband.heroes.find(h => h.type === warrior.type);
+    const spellLists = template && template.spellAccess ? template.spellAccess : [];
+
+    const modal = document.getElementById('spell-modal');
+    const body = document.getElementById('spell-modal-body');
+
+    let html = '';
+    for (const listId of spellLists) {
+      const spells = DataService.getSpellsByList(listId);
+      if (spells.length === 0) continue;
+      const listName = DataService.spells[listId]?.name || listId;
+      html += '<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">' + this.esc(listName) + '</h4>';
+      html += '<div style="display:flex; flex-direction:column; gap:0.3rem;">';
+      for (const spell of spells) {
+        const alreadyHas = (warrior.spells || []).find(s => s.id === spell.id);
+        const disabled = alreadyHas ? 'disabled' : '';
+        const diff = spell.difficulty === 'Auto' ? 'Auto' : 'Difficulty: ' + spell.difficulty;
+        html += '<button class="btn btn-sm" ' + disabled + ' onclick="UI.selectSpell(\'' + listType + '\', ' + index + ', \'' + spell.id + '\')" title="' + this.esc(spell.description) + '">' + spell.name + ' (' + diff + ')</button>';
+      }
+      html += '</div>';
+    }
+
+    if (!html) {
+      html = '<p class="text-dim">No spell lists available for this warrior.</p>';
+    }
+
+    body.innerHTML = html;
+    modal.classList.add('active');
+  },
+
+  selectSpell(listType, index, spellId) {
+    const warrior = this.currentRoster[listType][index];
+    if (!warrior) return;
+    if (!warrior.spells) warrior.spells = [];
+    RosterModel.addSpell(warrior, spellId);
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+    document.getElementById('spell-modal').classList.remove('active');
+    const spell = DataService.getSpell(spellId);
+    this.toast(spell.name + ' learned by ' + warrior.name + '.', 'success');
+  },
+
+  removeSpell(listType, index, spIndex) {
+    const warrior = this.currentRoster[listType][index];
+    if (!warrior) return;
+    RosterModel.removeSpell(warrior, spIndex);
     this.saveCurrentRoster();
     this.renderRosterEditor();
   },

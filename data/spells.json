@@ -1,0 +1,59 @@
+{
+  "spellLists": {
+    "prayers_of_sigmar": {
+      "name": "Prayers of Sigmar",
+      "spells": [
+        { "id": "the_hammer_of_sigmar", "name": "The Hammer of Sigmar", "difficulty": 7, "description": "This prayer imbues the caster's weapon with holy power. The caster gains +2 Strength in close combat until the start of the next Mordheim turn." },
+        { "id": "hearts_of_steel", "name": "Hearts of Steel", "difficulty": 8, "description": "Friendly models within 8\" of the caster become immune to Fear and All Alone tests until the start of the next Mordheim turn." },
+        { "id": "soulfire", "name": "Soulfire", "difficulty": 9, "description": "All enemy models within 4\" of the caster suffer a Strength 3 hit. Undead and Possessed suffer a Strength 5 hit instead." },
+        { "id": "shield_of_faith", "name": "Shield of Faith", "difficulty": 6, "description": "The caster gains a 2+ ward save against all spells and magical effects until the start of the next Mordheim turn." },
+        { "id": "healing_hand", "name": "Healing Hand", "difficulty": 5, "description": "Any one model within 2\" of the caster (including the caster) is restored to full Wounds. Cannot heal warriors who are out of action." },
+        { "id": "armour_of_righteousness", "name": "Armour of Righteousness", "difficulty": 9, "description": "The caster gains a 2+ armour save and causes Fear until the start of the next Mordheim turn." }
+      ]
+    },
+    "necromancy": {
+      "name": "Necromancy",
+      "spells": [
+        { "id": "lifestealer", "name": "Lifestealer", "difficulty": 10, "description": "The Necromancer drains the life from a target. A single enemy model within 6\" suffers a wound with no armour save. The Necromancer gains +1 Wound (up to starting max)." },
+        { "id": "re_animation", "name": "Re-Animation", "difficulty": 5, "description": "One zombie model that was taken out of action earlier in the game is placed back on the table within 6\" of the caster with 1 Wound." },
+        { "id": "death_vision", "name": "Death Vision", "difficulty": 6, "description": "A single enemy model within 12\" must pass a Leadership test or be reduced to WS 1 and BS 0 until the start of the next Mordheim turn." },
+        { "id": "spell_of_doom", "name": "Spell of Doom", "difficulty": 9, "description": "A single enemy model within 12\" suffers a Strength 5 hit. If the target is wounded, it must pass a Leadership test or be taken out of action." },
+        { "id": "call_of_vanhel", "name": "Call of Vanhel", "difficulty": 6, "description": "All undead models within 6\" of the caster may immediately move 4\" towards the nearest enemy (may charge). They fight an extra round of close combat if engaged." },
+        { "id": "spell_of_awakening", "name": "Spell of Awakening", "difficulty": "Auto", "description": "At the start of each battle, the Necromancer may summon D3 Zombies for free. They are deployed within 6\" of the Necromancer." }
+      ]
+    },
+    "necromancy_restless_dead": {
+      "name": "Necromancy (Restless Dead)",
+      "spells": [
+        { "id": "rd_lifestealer", "name": "Lifestealer", "difficulty": 10, "description": "The caster drains the life from a target. A single enemy model within 6\" suffers a wound with no armour save. The Liche gains +1 Wound (up to starting max). A Necromancer may only choose this if the Liche has Horror." },
+        { "id": "rd_re_animation", "name": "Re-Animation", "difficulty": 5, "description": "One zombie or skeleton model that was taken out of action earlier in the game is placed back on the table within 6\" of the caster with 1 Wound." },
+        { "id": "rd_death_vision", "name": "Death Vision", "difficulty": 6, "description": "A single enemy model within 12\" must pass a Leadership test or be reduced to WS 1 and BS 0 until the start of the next Mordheim turn." },
+        { "id": "rd_spell_of_doom", "name": "Spell of Doom", "difficulty": 9, "description": "A single enemy model within 12\" suffers a Strength 5 hit. If the target is wounded, it must pass a Leadership test or be taken out of action." },
+        { "id": "rd_horror", "name": "Horror", "difficulty": 8, "description": "A single enemy model within 12\" must pass a Leadership test on 3D6 or flee directly away from the caster." },
+        { "id": "rd_call_of_vanhel", "name": "Call of Vanhel", "difficulty": 6, "description": "All undead models within 6\" of the caster may immediately move 4\" towards the nearest enemy (may charge). They fight an extra round of close combat if engaged." }
+      ]
+    },
+    "chaos_rituals": {
+      "name": "Chaos Rituals",
+      "spells": [
+        { "id": "dark_blood", "name": "Dark Blood", "difficulty": 8, "description": "The caster's blood turns to black ichor. Until the start of the next Mordheim turn, any model that wounds the caster in close combat suffers a S3 hit." },
+        { "id": "lure_of_chaos", "name": "Lure of Chaos", "difficulty": 9, "description": "A single enemy model within 12\" must pass a Leadership test or move D6\" towards the caster. If this brings the model into base contact with the caster or an ally, it counts as charging." },
+        { "id": "wings_of_darkness", "name": "Wings of Darkness", "difficulty": 7, "description": "The caster may fly up to 12\" and land anywhere, ignoring terrain. The caster may charge after landing." },
+        { "id": "word_of_pain", "name": "Word of Pain", "difficulty": 7, "description": "A single enemy model within 12\" suffers -1 to all to hit rolls (both close combat and shooting) until the start of the next Mordheim turn." },
+        { "id": "eye_of_god", "name": "Eye of God", "difficulty": 7, "description": "The caster gains a random mutation for the rest of the battle (roll on the Mutations table). If a 1 is rolled, the caster suffers a wound instead." },
+        { "id": "favour_of_the_gods", "name": "Favour of the Gods", "difficulty": 8, "description": "The caster may re-roll all failed to hit and to wound rolls in close combat until the start of the next Mordheim turn." }
+      ]
+    },
+    "eshin_sorcery": {
+      "name": "Eshin Sorcery",
+      "spells": [
+        { "id": "black_fury", "name": "Black Fury", "difficulty": 8, "description": "The caster gains +2 Attacks and +1 Strength in close combat until the start of the next Mordheim turn." },
+        { "id": "gnawdoom", "name": "Gnawdoom", "difficulty": 7, "description": "A target within 8\" is attacked by a swarm of ghostly rats. The target suffers 2D6 S1 hits." },
+        { "id": "warpfire", "name": "Warpfire", "difficulty": 8, "description": "A green bolt of warpfire strikes a target within 8\". The target suffers a S5 hit with no armour save." },
+        { "id": "children_of_the_horned_rat", "name": "Children of the Horned Rat", "difficulty": "Auto", "description": "The caster summons D3 Giant Rats at the start of each battle. They are placed within 6\" of the caster." },
+        { "id": "sorcerers_curse", "name": "Sorcerer's Curse", "difficulty": 6, "description": "A single enemy model within 12\" must re-roll all successful armour saves until the start of the next Mordheim turn." },
+        { "id": "eye_of_the_warp", "name": "Eye of the Warp", "difficulty": 8, "description": "All enemy models within 6\" of the caster must pass a Leadership test or suffer -1 to all to hit rolls until the start of the next turn." }
+      ]
+    }
+  }
+}

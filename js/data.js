@@ -5,14 +5,16 @@ const DataService = {
   skills: null,
   injuries: null,
   advancement: null,
+  spells: null,
 
   async loadAll() {
-    const [warbands, equipment, skills, injuries, advancement] = await Promise.all([
+    const [warbands, equipment, skills, injuries, advancement, spells] = await Promise.all([
       this.fetchJSON('data/warbands.json'),
       this.fetchJSON('data/equipment.json'),
       this.fetchJSON('data/skills.json'),
       this.fetchJSON('data/injuries.json'),
       this.fetchJSON('data/advancement.json'),
+      this.fetchJSON('data/spells.json'),
     ]);
 
     this.warbands = warbands.warbands;
@@ -20,6 +22,7 @@ const DataService = {
     this.skills = skills.skillCategories;
     this.injuries = injuries;
     this.advancement = advancement;
+    this.spells = spells.spellLists;
   },
 
   async fetchJSON(path) {
@@ -71,5 +74,17 @@ const DataService = {
 
   getMaxStat(stat) {
     return this.advancement.maxStats[stat] || 10;
+  },
+
+  getSpell(spellId) {
+    for (const list of Object.values(this.spells)) {
+      const spell = list.spells.find(s => s.id === spellId);
+      if (spell) return spell;
+    }
+    return null;
+  },
+
+  getSpellsByList(listId) {
+    return this.spells[listId]?.spells || [];
   }
 };
