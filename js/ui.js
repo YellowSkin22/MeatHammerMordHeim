@@ -474,7 +474,8 @@ const UI = {
   openSpellModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
     const warband = DataService.getWarband(this.currentRoster.warbandId);
-    const template = warband.heroes.find(h => h.type === warrior.type);
+    const template = warband.heroes.find(h => h.type === warrior.type)
+      || warband.henchmen.find(h => h.type === warrior.type);
     const spellLists = template && template.spellAccess ? template.spellAccess : [];
 
     const modal = document.getElementById('spell-modal');

@@ -77,12 +77,14 @@ const RosterModel = {
   addSpell(warrior, spellId) {
     const spell = DataService.getSpell(spellId);
     if (!spell) return false;
+    if (!warrior.spells) warrior.spells = [];
     if (warrior.spells.find(s => s.id === spellId)) return false;
     warrior.spells.push({ id: spellId, name: spell.name });
     return true;
   },
 
   removeSpell(warrior, index) {
+    if (!warrior.spells) return;
     warrior.spells.splice(index, 1);
   },
 
@@ -125,7 +127,6 @@ const RosterModel = {
   },
 
   calculateWarbandRating(roster) {
-    const warband = DataService.getWarband(roster.warbandId);
     let rating = 0;
     // heroes: 5 per experience point + 5 base
     for (const h of roster.heroes) {
