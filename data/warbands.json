@@ -598,7 +598,7 @@
           "name": "Liche",
           "max": 1,
           "required": true,
-          "cost": 100,
+          "cost": 125,
           "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 3, "I": 3, "A": 1, "Ld": 9 },
           "specialRules": ["Leader", "Warrior Wizard", "Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "Eternal"],
           "startingExp": 20,
