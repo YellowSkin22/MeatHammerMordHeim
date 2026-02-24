@@ -615,7 +615,10 @@ const UI = {
     if (!henchman) return;
     const newSize = (henchman.groupSize || 1) + delta;
     if (newSize < 1) return this.toast('Group must have at least 1 member.', 'error');
-    if (newSize > 5) return this.toast('Maximum group size is 5.', 'error');
+    const warband = DataService.getWarband(this.currentRoster.warbandId);
+    const template = warband.henchmen.find(h => h.type === henchman.type);
+    const maxSize = template?.maxGroupSize || 5;
+    if (newSize > maxSize) return this.toast(`Maximum group size is ${maxSize}.`, 'error');
     henchman.groupSize = newSize;
     this.saveCurrentRoster();
     this.renderRosterEditor();
