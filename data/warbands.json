@@ -604,6 +604,7 @@
           "startingExp": 20,
           "skillAccess": ["combat", "academic", "strength"],
           "spellAccess": ["necromancy_restless_dead"]
+          "skillAccess": ["academic", "special"]
         },
         {
           "type": "necromancer",
