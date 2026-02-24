@@ -264,6 +264,8 @@ const UI = {
             </div>
           </div>
 
+          ${this.renderSpellSection(warrior, listType, index)}
+
           <div class="tag-section mt-1">
             <div class="tag-section-label">Injuries</div>
             <div class="tag-list">
@@ -287,6 +289,28 @@ const UI = {
         </div>
       </div>
     `;
+  },
+
+  hasSpellAccess(warrior) {
+    const wizardRules = ['Wizard', 'Warrior Wizard', 'Prayers of Sigmar'];
+    return warrior.specialRules.some(r => wizardRules.includes(r));
+  },
+
+  renderSpellSection(warrior, listType, index) {
+    if (!this.hasSpellAccess(warrior)) return '';
+    const spells = warrior.spells || [];
+    const spellTags = spells.map((sp, spIdx) => {
+      const spellData = DataService.getSpell(sp.id);
+      const diff = spellData ? (spellData.difficulty === 'Auto' ? 'Auto' : 'Diff: ' + spellData.difficulty) : '';
+      const desc = spellData ? this.esc(spellData.description) : '';
+      const tooltip = diff && desc ? diff + '. ' + desc : desc;
+      return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + tooltip + '"' : '') + '>' + sp.name + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
+    }).join('');
+    return '<div class="tag-section mt-1">' +
+      '<div class="tag-section-label">Spells</div>' +
+      '<div class="tag-list">' + spellTags +
+      '<button class="btn btn-sm" onclick="UI.openSpellModal(\'' + listType + '\', ' + index + ')">+ Add</button>' +
+      '</div></div>';
   },
 
   toggleWarriorCard(id) {
@@ -442,6 +466,61 @@ const UI = {
     const warrior = this.currentRoster[listType][index];
     if (!warrior) return;
     RosterModel.removeSkill(warrior, skIndex);
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+  },
+
+  // === SPELL MODAL ===
+  openSpellModal(listType, index) {
+    const warrior = this.currentRoster[listType][index];
+    const warband = DataService.getWarband(this.currentRoster.warbandId);
+    const template = warband.heroes.find(h => h.type === warrior.type)
+      || warband.henchmen.find(h => h.type === warrior.type);
+    const spellLists = template && template.spellAccess ? template.spellAccess : [];
+
+    const modal = document.getElementById('spell-modal');
+    const body = document.getElementById('spell-modal-body');
+
+    let html = '';
+    for (const listId of spellLists) {
+      const spells = DataService.getSpellsByList(listId);
+      if (spells.length === 0) continue;
+      const listName = DataService.spells[listId]?.name || listId;
+      html += '<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">' + this.esc(listName) + '</h4>';
+      html += '<div style="display:flex; flex-direction:column; gap:0.3rem;">';
+      for (const spell of spells) {
+        const alreadyHas = (warrior.spells || []).find(s => s.id === spell.id);
+        const disabled = alreadyHas ? 'disabled' : '';
+        const diff = spell.difficulty === 'Auto' ? 'Auto' : 'Difficulty: ' + spell.difficulty;
+        html += '<button class="btn btn-sm" ' + disabled + ' onclick="UI.selectSpell(\'' + listType + '\', ' + index + ', \'' + spell.id + '\')" title="' + this.esc(spell.description) + '">' + spell.name + ' (' + diff + ')</button>';
+      }
+      html += '</div>';
+    }
+
+    if (!html) {
+      html = '<p class="text-dim">No spell lists available for this warrior.</p>';
+    }
+
+    body.innerHTML = html;
+    modal.classList.add('active');
+  },
+
+  selectSpell(listType, index, spellId) {
+    const warrior = this.currentRoster[listType][index];
+    if (!warrior) return;
+    if (!warrior.spells) warrior.spells = [];
+    RosterModel.addSpell(warrior, spellId);
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+    document.getElementById('spell-modal').classList.remove('active');
+    const spell = DataService.getSpell(spellId);
+    this.toast(spell.name + ' learned by ' + warrior.name + '.', 'success');
+  },
+
+  removeSpell(listType, index, spIndex) {
+    const warrior = this.currentRoster[listType][index];
+    if (!warrior) return;
+    RosterModel.removeSpell(warrior, spIndex);
     this.saveCurrentRoster();
     this.renderRosterEditor();
   },
@@ -610,6 +689,179 @@ const UI = {
   updateNotes() {
     this.currentRoster.notes = document.getElementById('roster-notes').value;
     this.saveCurrentRoster();
+  },
+
+  // === EXPORT PDF ===
+  exportPDF() {
+    const r = this.currentRoster;
+    if (!r) return this.toast('No roster open.', 'error');
+    const warband = DataService.getWarband(r.warbandId);
+    const memberCount = RosterModel.getMemberCount(r);
+    const rating = RosterModel.calculateWarbandRating(r);
+    const totalSpent = RosterModel.calculateTotalCost(r);
+
+    const esc = (s) => {
+      const d = document.createElement('div');
+      d.textContent = s;
+      return d.innerHTML;
+    };
+
+    const renderStatLine = (warrior) => {
+      return ['M','WS','BS','S','T','W','I','A','Ld'].map(stat => {
+        const mod = warrior.stats[stat] !== warrior.baseStats[stat];
+        return `<td class="${mod ? 'stat-mod' : ''}">${warrior.stats[stat]}</td>`;
+      }).join('');
+    };
+
+    const renderWarrior = (warrior, isHero) => {
+      const eqCost = warrior.equipment.reduce((sum, eq) => {
+        const item = DataService.getEquipmentItem(eq.id);
+        return sum + (item ? item.cost : 0);
+      }, 0);
+
+      let expInfo = '';
+      if (isHero) {
+        const level = RosterModel.getHeroLevel(warrior.experience);
+        expInfo = `Exp: ${warrior.experience} (Level ${level})`;
+      } else {
+        expInfo = `Exp: ${warrior.experience} | Group: ${warrior.groupSize || 1}`;
+      }
+
+      const equipment = warrior.equipment.map(eq => esc(eq.name)).join(', ') || '—';
+      const skills = warrior.skills.map(sk => esc(sk.name)).join(', ') || '—';
+      const spells = (warrior.spells || []).map(sp => esc(sp.name)).join(', ');
+      const injuries = warrior.injuries.map(inj => esc(inj.name)).join(', ');
+      const specials = warrior.specialRules.length > 0 ? warrior.specialRules.map(sr => esc(sr)).join(', ') : '';
+
+      return `
+        <div class="warrior-block">
+          <div class="warrior-header">
+            <span class="warrior-name">${esc(warrior.name)}</span>
+            <span class="warrior-type">${esc(warrior.typeName)}</span>
+            <span class="warrior-cost">${warrior.cost + eqCost} gc</span>
+          </div>
+          <table class="stat-table">
+            <tr><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr>
+            <tr>${renderStatLine(warrior)}</tr>
+          </table>
+          <div class="warrior-detail"><span class="detail-label">Experience:</span> ${expInfo}</div>
+          ${specials ? `<div class="warrior-detail"><span class="detail-label">Special Rules:</span> ${specials}</div>` : ''}
+          <div class="warrior-detail"><span class="detail-label">Equipment:</span> ${equipment}</div>
+          <div class="warrior-detail"><span class="detail-label">Skills:</span> ${skills}</div>
+          ${spells ? `<div class="warrior-detail"><span class="detail-label">Spells:</span> ${spells}</div>` : ''}
+          ${injuries ? `<div class="warrior-detail"><span class="detail-label">Injuries:</span> ${injuries}</div>` : ''}
+        </div>
+      `;
+    };
+
+    const heroesHtml = r.heroes.length > 0
+      ? r.heroes.map(h => renderWarrior(h, true)).join('')
+      : '<p class="empty">No heroes recruited.</p>';
+
+    const henchmenHtml = r.henchmen.length > 0
+      ? r.henchmen.map(h => renderWarrior(h, false)).join('')
+      : '<p class="empty">No henchmen recruited.</p>';
+
+    const battleLogHtml = r.battleLog.length > 0
+      ? `<table class="battle-table">
+          <tr><th>#</th><th>Result</th><th>Notes</th><th>Date</th></tr>
+          ${r.battleLog.map(b => `
+            <tr>
+              <td>${b.number}</td>
+              <td>${esc(b.result)}</td>
+              <td>${esc(b.notes || '')}</td>
+              <td>${new Date(b.date).toLocaleDateString()}</td>
+            </tr>
+          `).join('')}
+        </table>`
+      : '<p class="empty">No battles recorded.</p>';
+
+    const html = `<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>${esc(r.name)} - Mordheim Roster</title>
+<style>
+  @page { margin: 12mm; size: A4; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; color: #2a231a; font-size: 10pt; line-height: 1.4; }
+
+  .header { text-align: center; border-bottom: 2px solid #8b6914; padding-bottom: 8px; margin-bottom: 10px; }
+  .header h1 { font-size: 18pt; color: #8b6914; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 2px; }
+  .header .warband-type { font-size: 10pt; color: #6b6052; }
+
+  .summary { display: flex; justify-content: center; gap: 24px; margin-bottom: 12px; padding: 6px 0; border-bottom: 1px solid #d4cabb; }
+  .summary-item { text-align: center; }
+  .summary-item .label { font-size: 7pt; color: #9b8e7e; text-transform: uppercase; letter-spacing: 0.5px; }
+  .summary-item .value { font-size: 12pt; font-weight: 700; color: #2a231a; }
+  .summary-item .value.gold { color: #8b6914; }
+
+  .section-title { font-size: 11pt; color: #8b6914; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid #d4cabb; padding-bottom: 3px; margin: 12px 0 6px 0; }
+
+  .warrior-block { border: 1px solid #d4cabb; border-radius: 4px; padding: 6px 8px; margin-bottom: 6px; page-break-inside: avoid; }
+  .warrior-header { display: flex; align-items: baseline; gap: 8px; margin-bottom: 4px; }
+  .warrior-name { font-weight: 700; font-size: 10pt; }
+  .warrior-type { font-size: 8pt; color: #6b6052; }
+  .warrior-cost { margin-left: auto; font-weight: 600; color: #8b6914; font-size: 9pt; }
+
+  .stat-table { border-collapse: collapse; margin-bottom: 4px; }
+  .stat-table th, .stat-table td { border: 1px solid #d4cabb; text-align: center; padding: 2px 6px; font-size: 8pt; min-width: 24px; }
+  .stat-table th { background: #f0ebe0; color: #6b6052; font-weight: 600; text-transform: uppercase; font-size: 7pt; }
+  .stat-table td { font-weight: 700; }
+  .stat-table td.stat-mod { color: #8b6914; }
+
+  .warrior-detail { font-size: 8.5pt; color: #3d3529; margin-bottom: 1px; }
+  .detail-label { font-weight: 600; color: #6b6052; }
+
+  .battle-table { width: 100%; border-collapse: collapse; font-size: 8.5pt; }
+  .battle-table th, .battle-table td { border: 1px solid #d4cabb; padding: 3px 6px; text-align: left; }
+  .battle-table th { background: #f0ebe0; color: #6b6052; font-weight: 600; font-size: 7.5pt; text-transform: uppercase; }
+
+  .notes-section { margin-top: 12px; }
+  .notes-box { border: 1px solid #d4cabb; border-radius: 4px; min-height: 80px; padding: 6px 8px; font-size: 8.5pt; color: #3d3529; white-space: pre-wrap; }
+  .notes-lines { min-height: 60px; border: 1px solid #d4cabb; border-radius: 4px; background: repeating-linear-gradient(transparent, transparent 18px, #e8e0d0 18px, #e8e0d0 19px); }
+
+  .empty { color: #9b8e7e; font-style: italic; font-size: 9pt; }
+  .footer { text-align: center; margin-top: 16px; font-size: 7pt; color: #9b8e7e; border-top: 1px solid #d4cabb; padding-top: 6px; }
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>${esc(r.name)}</h1>
+    <div class="warband-type">${warband ? esc(warband.name) : esc(r.warbandId)}</div>
+  </div>
+
+  <div class="summary">
+    <div class="summary-item"><div class="label">Members</div><div class="value">${memberCount}${warband ? ' / ' + warband.maxWarband : ''}</div></div>
+    <div class="summary-item"><div class="label">Rating</div><div class="value">${rating}</div></div>
+    <div class="summary-item"><div class="label">Treasury</div><div class="value gold">${r.gold} gc</div></div>
+    <div class="summary-item"><div class="label">Wyrdstone</div><div class="value">${r.wyrdstone}</div></div>
+    <div class="summary-item"><div class="label">Spent</div><div class="value">${totalSpent} gc</div></div>
+    <div class="summary-item"><div class="label">Battles</div><div class="value">${r.battleLog.length}</div></div>
+  </div>
+
+  <div class="section-title">Heroes</div>
+  ${heroesHtml}
+
+  <div class="section-title">Henchmen</div>
+  ${henchmenHtml}
+
+  <div class="section-title">Battle Log</div>
+  ${battleLogHtml}
+
+  <div class="section-title">Campaign Notes</div>
+  ${r.notes ? `<div class="notes-box">${esc(r.notes)}</div>` : ''}
+  <div class="notes-lines" style="margin-top: 6px;">&nbsp;</div>
+
+  <div class="footer">Mordheim Roster Manager &mdash; Printed ${new Date().toLocaleDateString()}</div>
+</body>
+</html>`;
+
+    const printWin = window.open('', '_blank');
+    if (!printWin) return this.toast('Pop-up blocked — please allow pop-ups for this site.', 'error');
+    printWin.document.write(html);
+    printWin.document.close();
+    printWin.onload = () => printWin.print();
   },
 
   // === EXPORT / IMPORT ===

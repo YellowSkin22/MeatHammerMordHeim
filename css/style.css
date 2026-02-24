@@ -601,6 +601,11 @@ select.form-control {
   color: #2a5580;
 }
 
+.tag.spell-tag {
+  border-color: #7a3e98;
+  color: #6a2d88;
+}
+
 .tag.injury {
   border-color: var(--danger);
   color: #a03030;

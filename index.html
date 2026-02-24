@@ -66,6 +66,11 @@
         </div>
       </div>
 
+      <!-- Actions -->
+      <div style="display:flex; gap:0.5rem; margin-bottom:1rem;">
+        <button class="btn btn-sm" onclick="UI.exportPDF()">Print / PDF</button>
+      </div>
+
       <!-- Tabs -->
       <div class="tab-bar">
         <button class="tab-btn active" data-tab="warriors" onclick="UI.switchTab('warriors')">Warriors</button>
@@ -209,6 +214,17 @@
         <button class="btn btn-icon" onclick="UI.closeModal('skill-modal')">&#10005;</button>
       </div>
       <div class="modal-body" id="skill-modal-body"></div>
+    </div>
+  </div>
+
+  <!-- ===== SPELL MODAL ===== -->
+  <div id="spell-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Spell</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('spell-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body" id="spell-modal-body"></div>
     </div>
   </div>
 
