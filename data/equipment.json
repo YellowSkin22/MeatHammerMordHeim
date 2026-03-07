@@ -15,8 +15,20 @@
         { "id": "flail", "name": "Flail", "cost": 15, "range": "Close Combat", "strength": "As user +2", "rules": "+2 Strength in first turn of combat. Two-handed.", "category": "hand_to_hand" },
         { "id": "morning_star", "name": "Morning Star", "cost": 15, "range": "Close Combat", "strength": "As user +1", "rules": "+1 Strength in first turn of combat.", "category": "hand_to_hand" },
         { "id": "steel_whip", "name": "Steel Whip", "cost": 10, "range": "Close Combat", "strength": "As user", "rules": "Cannot be parried. Counts as two-handed.", "category": "hand_to_hand" },
-        { "id": "fighting_claws", "name": "Fighting Claws (Pair)", "cost": 35, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack. +1 to climb tests. Parry.", "category": "hand_to_hand" },
-        { "id": "weeping_blades", "name": "Weeping Blades (Pair)", "cost": 50, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack. Wounds always count as critical on 5+.", "category": "hand_to_hand" }
+        { "id": "fighting_claws", "name": "Fighting Claws (Pair)", "cost": 35, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack. +1 Initiative for climbing tests. Parry with re-roll (like sword + buckler). Cannot use any other weapons in the battle.", "category": "hand_to_hand" },
+        { "id": "weeping_blades", "name": "Weeping Blades (Pair)", "cost": 50, "range": "Close Combat", "strength": "As user", "rules": "+1 Attack. Permanently coated in black lotus (on a 6 to wound, automatic wound with no armour save). No additional poison may be applied. Parry.", "category": "hand_to_hand" },
+        { "id": "dark_elf_blade", "name": "Dark Elf Blade", "cost": 15, "range": "Close Combat", "strength": "As user", "rules": "Upgrades a sword or dagger. Parry as sword, +1 to hit in first round of combat. Heroes only.", "category": "hand_to_hand" },
+        { "id": "beastlash", "name": "Beastlash", "cost": 10, "range": "Close Combat", "strength": "As user", "rules": "Whip weapon. Cannot be parried. Beastmaster only.", "category": "hand_to_hand" },
+        { "id": "dwarf_axe", "name": "Dwarf Axe", "cost": 15, "range": "Close Combat", "strength": "As user", "rules": "Extra -1 save modifier. May parry like a sword. Rare 8.", "category": "hand_to_hand" },
+        { "id": "gromril_weapon", "name": "Gromril Weapon", "cost": 0, "range": "Close Combat", "strength": "As user", "rules": "3x the cost of the base weapon. +1 to hit. Unbreakable.", "category": "hand_to_hand" },
+        { "id": "ball_and_chain", "name": "Ball and Chain", "cost": 15, "range": "Close Combat", "strength": "As user +2", "rules": "No armour saves. D3 wounds. Moves 2D6\" randomly. Goblin only, requires Mad Cap Mushrooms.", "category": "hand_to_hand" },
+        { "id": "squig_prodder", "name": "Squig Prodder", "cost": 15, "range": "Close Combat", "strength": "As user", "rules": "Counts as spear. Extends Squig control range to 12\". Goblin only.", "category": "hand_to_hand" },
+        { "id": "plague_censer", "name": "Plague Censer", "cost": 40, "range": "Close Combat", "strength": "As user +2", "rules": "+2 Strength. All models within 3\" (friend and foe) suffer S1 hit at start of each combat phase. Two-handed. Bearer takes D6 S1 hits per turn unless has Censer Bearer skill.", "category": "hand_to_hand" },
+        { "id": "disease_dagger", "name": "Disease Dagger", "cost": 10, "range": "Close Combat", "strength": "As user", "rules": "On a wound roll of 6, the enemy must pass a Toughness test or suffer an additional wound (no armour save).", "category": "hand_to_hand" },
+        { "id": "trident", "name": "Trident", "cost": 15, "range": "Close Combat", "strength": "As user", "rules": "Strike first on the charge. +1 to disarm attempts.", "category": "hand_to_hand" },
+        { "id": "pike", "name": "Pike", "cost": 15, "range": "Close Combat", "strength": "As user +1", "rules": "+1 Strength. Strike first when charged. Two-handed.", "category": "hand_to_hand" },
+        { "id": "rapier", "name": "Rapier", "cost": 15, "range": "Close Combat", "strength": "As user", "rules": "Parry. +1 to hit when fighting with a rapier and a dagger or buckler.", "category": "hand_to_hand" },
+        { "id": "serpent_staff", "name": "Serpent Staff", "cost": 20, "range": "Close Combat", "strength": "As user", "rules": "On a wound roll of 6, the enemy must pass a Toughness test or take an additional D3 wounds (no armour save). Liche Priest only.", "category": "hand_to_hand" }
       ]
     },
     "missiles": {
@@ -33,7 +45,14 @@
         { "id": "blunderbuss", "name": "Blunderbuss", "cost": 30, "range": "Special", "strength": "3", "rules": "Flame template. Move or fire.", "category": "missiles" },
         { "id": "sling", "name": "Sling", "cost": 2, "range": "18\"", "strength": "As user", "rules": "May fire twice at half range.", "category": "missiles" },
         { "id": "throwing_knife", "name": "Throwing Knife", "cost": 10, "range": "6\"", "strength": "As user", "rules": "Thrown weapon.", "category": "missiles" },
-        { "id": "throwing_star", "name": "Throwing Star", "cost": 15, "range": "6\"", "strength": "As user", "rules": "Thrown weapon. Can throw 2 per turn.", "category": "missiles" }
+        { "id": "throwing_star", "name": "Throwing Star", "cost": 15, "range": "6\"", "strength": "As user", "rules": "Thrown weapon. Can throw 2 per turn.", "category": "missiles" },
+        { "id": "repeater_crossbow", "name": "Repeater Crossbow", "cost": 35, "range": "24\"", "strength": "3", "rules": "May fire twice per turn. Move or fire.", "category": "missiles" },
+        { "id": "crossbow_pistol", "name": "Crossbow Pistol", "cost": 35, "range": "10\"", "strength": "4", "rules": "May be used in close combat. No move/fire penalty.", "category": "missiles" },
+        { "id": "javelins", "name": "Javelins", "cost": 5, "range": "8\"", "strength": "As user", "rules": "Thrown weapon. +1 Strength on the charge when used as close combat weapon.", "category": "missiles" },
+        { "id": "asp_arrows", "name": "Asp Arrows", "cost": 30, "range": "Special", "strength": "Special", "rules": "Used with bows. On a wound roll of 6, target takes D3 additional wounds (no armour save). One use per battle. Rare 9.", "category": "missiles" },
+        { "id": "nehekharan_javelins", "name": "Nehekharan Javelins", "cost": 10, "range": "8\"", "strength": "As user", "rules": "Thrown weapon. +1 to hit. May be used as close combat weapon on charge.", "category": "missiles" },
+        { "id": "blowpipe", "name": "Blowpipe", "cost": 25, "range": "8\"", "strength": "1", "rules": "Poison: on a 6 to hit, target is automatically wounded. Cannot cause critical hits. Positive armour save modifier. Stealthy: can fire while hidden without revealing position.", "category": "missiles" },
+        { "id": "warplock_pistol", "name": "Warplock Pistol", "cost": 35, "range": "8\"", "strength": "5", "rules": "-3 armour save modifier. Takes a whole turn to reload (fire every other turn). 70gc for a brace. Can be used in close combat (+1 Attack at S5 with -3 save modifier).", "category": "missiles" }
       ]
     },
     "armour": {
@@ -45,7 +64,10 @@
         { "id": "buckler", "name": "Buckler", "cost": 5, "armourSave": "Special", "rules": "Parry in close combat.", "category": "armour" },
         { "id": "helmet", "name": "Helmet", "cost": 10, "armourSave": "Special", "rules": "Avoid being stunned on a 4+.", "category": "armour" },
         { "id": "gromril_armour", "name": "Gromril Armour", "cost": 150, "armourSave": "4+", "rules": "No movement penalty. Rare 11.", "category": "armour" },
-        { "id": "ithilmar_armour", "name": "Ithilmar Armour", "cost": 90, "armourSave": "5+", "rules": "No movement penalty. Rare 11.", "category": "armour" }
+        { "id": "ithilmar_armour", "name": "Ithilmar Armour", "cost": 90, "armourSave": "5+", "rules": "No movement penalty. Rare 11.", "category": "armour" },
+        { "id": "sea_dragon_cloak", "name": "Sea Dragon Cloak", "cost": 50, "armourSave": "6+", "rules": "Combined with other armour. Scaly skin gives 5+ armour save vs shooting.", "category": "armour" },
+        { "id": "elven_cloak", "name": "Elven Cloak", "cost": 75, "armourSave": "Special", "rules": "Enemy suffers -1 to hit when shooting at the wearer. Rare 12.", "category": "armour" },
+        { "id": "gromril_armour", "name": "Gromril Armour", "cost": 75, "armourSave": "4+", "rules": "Heavy armour made of gromril. No movement penalty. Dwarfs only.", "category": "armour" }
       ]
     },
     "miscellaneous": {
@@ -65,7 +87,18 @@
         { "id": "bugmans_ale", "name": "Bugman's Ale", "cost": 50, "rules": "Immune to Fear for one battle. One use. Rare 9." },
         { "id": "tome_of_magic", "name": "Tome of Magic", "cost": 200, "rules": "+1 to casting rolls. Rare 12." },
         { "id": "horse", "name": "Horse", "cost": 80, "rules": "M8. +2\" charge range. Rare 8." },
-        { "id": "wardog", "name": "War Dog", "cost": 25, "rules": "WS3 S3 T3 W1 I4 A1. Ld5." }
+        { "id": "wardog", "name": "War Dog", "cost": 25, "rules": "WS3 S3 T3 W1 I4 A1. Ld5." },
+        { "id": "dark_venom", "name": "Dark Venom", "cost": 15, "rules": "One weapon coated with poison. First wound caused in melee forces enemy to roll on injury chart. One use. Heroes only." },
+        { "id": "elven_runestones", "name": "Elven Runestones", "cost": 50, "rules": "Mage can attempt to dispel spells (roll against spell Difficulty). Rare 11." },
+        { "id": "elven_wine", "name": "Elven Wine", "cost": 50, "rules": "Warband is immune to Fear for entire battle. One use. Rare 10." },
+        { "id": "standard_of_nagarythe", "name": "Standard of Nagarythe", "cost": 75, "rules": "Second rallying point: re-roll failed Ld tests within 12\". If captured, all gain Hatred and may not Rout. Requires one free hand. Rare 9." },
+        { "id": "war_horn_of_nagarythe", "name": "War Horn of Nagarythe", "cost": 25, "rules": "Same as War Horn. Rare 6." },
+        { "id": "familiar", "name": "Familiar", "cost": 20, "rules": "Allows wizard to re-roll one failed casting roll per turn. Spell-users only. Rare 8." },
+        { "id": "hunting_arrows", "name": "Hunting Arrows", "cost": 35, "rules": "+1 to all Injury rolls when using a bow. Rare 8." },
+        { "id": "hunting_rifle", "name": "Hunting Rifle", "cost": 200, "rules": "Range 48\", S4. Move or Fire. Prepare Shot (fire every other turn). Pick Target. -2 save modifier. Rare 11." },
+        { "id": "bear_claw_necklace", "name": "Bear-Claw Necklace", "cost": 75, "rules": "Wearer becomes subject to Frenzy. Rare 9." },
+        { "id": "vodka", "name": "Vodka", "cost": 35, "rules": "+1 Leadership (max 10) for entire warband for one battle. Each model must test T or suffer -1 Initiative. One use. Rare 8." },
+        { "id": "mad_cap_mushrooms", "name": "Mad Cap Mushrooms", "cost": 25, "rules": "Subject to Frenzy for the battle. After battle, roll D6: on 1, model becomes permanently Stupid. Rare 9." }
       ]
     }
   }
