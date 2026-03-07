@@ -13,6 +13,8 @@ const RosterModel = {
       wyrdstone: 0,
       heroes: [],
       henchmen: [],
+      hiredSwords: [],
+      customWarriors: [],
       battleLog: [],
       notes: '',
       createdAt: new Date().toISOString(),
@@ -49,6 +51,53 @@ const RosterModel = {
     }
 
     return warrior;
+  },
+
+  createHiredSword(templateType) {
+    const template = DataService.getHiredSwordTemplate(templateType);
+    if (!template) return null;
+
+    return {
+      id: Storage.generateId(),
+      type: template.type,
+      typeName: template.name,
+      name: template.name,
+      isHero: true,
+      isHiredSword: true,
+      stats: { ...template.stats },
+      baseStats: { ...template.stats },
+      equipment: [],
+      skills: [],
+      spells: [],
+      injuries: [],
+      experience: template.startingExp || 0,
+      advancementCount: 0,
+      missNextGame: false,
+      cost: template.cost,
+      specialRules: [...(template.specialRules || [])],
+    };
+  },
+
+  createCustomWarrior(name, cost, stats, specialRules) {
+    return {
+      id: Storage.generateId(),
+      type: 'custom',
+      typeName: name,
+      name: name,
+      isHero: true,
+      isCustom: true,
+      stats: { ...stats },
+      baseStats: { ...stats },
+      equipment: [],
+      skills: [],
+      spells: [],
+      injuries: [],
+      experience: 0,
+      advancementCount: 0,
+      missNextGame: false,
+      cost: cost,
+      specialRules: [...specialRules],
+    };
   },
 
   addEquipment(warrior, itemId) {
@@ -133,6 +182,16 @@ const RosterModel = {
       rating += 5 + (h.experience * 1);
       rating += h.equipment.length * 5;
     }
+    // hired swords: same as heroes
+    for (const hs of (roster.hiredSwords || [])) {
+      rating += 5 + (hs.experience * 1);
+      rating += hs.equipment.length * 5;
+    }
+    // custom warriors: same as heroes
+    for (const cw of (roster.customWarriors || [])) {
+      rating += 5 + (cw.experience * 1);
+      rating += cw.equipment.length * 5;
+    }
     // henchmen: 5 per member
     for (const hg of roster.henchmen) {
       const groupCount = hg.groupSize || 1;
@@ -151,6 +210,20 @@ const RosterModel = {
         if (item) total += item.cost;
       }
     }
+    for (const hs of (roster.hiredSwords || [])) {
+      total += hs.cost;
+      for (const eq of hs.equipment) {
+        const item = DataService.getEquipmentItem(eq.id);
+        if (item) total += item.cost;
+      }
+    }
+    for (const cw of (roster.customWarriors || [])) {
+      total += cw.cost;
+      for (const eq of cw.equipment) {
+        const item = DataService.getEquipmentItem(eq.id);
+        if (item) total += item.cost;
+      }
+    }
     for (const hg of roster.henchmen) {
       const groupCount = hg.groupSize || 1;
       total += hg.cost * groupCount;
@@ -164,6 +237,8 @@ const RosterModel = {
 
   getMemberCount(roster) {
     let count = roster.heroes.length;
+    count += (roster.hiredSwords || []).length;
+    count += (roster.customWarriors || []).length;
     for (const hg of roster.henchmen) {
       count += hg.groupSize || 1;
     }

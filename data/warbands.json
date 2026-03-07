@@ -500,11 +500,11 @@
     },
     {
       "id": "skaven",
-      "name": "Skaven",
+      "name": "Skaven of Clan Eshin",
       "source": "Core",
       "description": "Ratmen from beneath the earth, seeking wyrdstone for their vile experiments.",
       "startingGold": 500,
-      "maxWarband": 15,
+      "maxWarband": 20,
       "alignment": "Skaven",
       "heroes": [
         {
@@ -513,10 +513,10 @@
           "max": 1,
           "required": true,
           "cost": 60,
-          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 7 },
-          "specialRules": ["Leader"],
+          "stats": { "M": 6, "WS": 4, "BS": 4, "S": 4, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 7 },
+          "specialRules": ["Leader", "Perfect Killer"],
           "startingExp": 20,
-          "skillAccess": ["combat", "shooting", "academic", "speed"]
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed", "skaven_special"]
         },
         {
           "type": "eshin_sorcerer",
@@ -527,8 +527,8 @@
           "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6 },
           "specialRules": ["Wizard"],
           "startingExp": 8,
-          "skillAccess": ["academic", "speed"],
-          "spellAccess": ["eshin_sorcery"]
+          "skillAccess": ["academic", "speed", "skaven_special"],
+          "spellAccess": ["magic_of_the_horned_rat"]
         },
         {
           "type": "black_skaven",
@@ -536,10 +536,10 @@
           "max": 2,
           "required": false,
           "cost": 40,
-          "stats": { "M": 6, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6 },
+          "stats": { "M": 6, "WS": 4, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 6 },
           "specialRules": [],
           "startingExp": 8,
-          "skillAccess": ["combat", "shooting", "speed"]
+          "skillAccess": ["combat", "shooting", "strength", "speed", "skaven_special"]
         },
         {
           "type": "night_runner",
@@ -547,10 +547,10 @@
           "max": 2,
           "required": false,
           "cost": 20,
-          "stats": { "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "stats": { "M": 6, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 4 },
           "specialRules": [],
           "startingExp": 0,
-          "skillAccess": ["combat", "shooting", "speed"]
+          "skillAccess": ["combat", "shooting", "skaven_special"]
         }
       ],
       "henchmen": [
@@ -574,14 +574,14 @@
           "type": "rat_ogre",
           "name": "Rat Ogre",
           "cost": 210,
-          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 5, "T": 5, "W": 3, "I": 4, "A": 3, "Ld": 4 },
+          "stats": { "M": 6, "WS": 3, "BS": 3, "S": 5, "T": 5, "W": 3, "I": 4, "A": 3, "Ld": 4 },
           "specialRules": ["Fear", "Large Target", "Stupidity"],
           "maxGroupSize": 1
         }
       ],
       "equipmentAccess": {
         "heroes": ["hand_to_hand", "missiles", "armour"],
-        "henchmen": ["hand_to_hand", "missiles"]
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
       }
     },
     {
@@ -610,7 +610,7 @@
           "name": "Necromancer",
           "max": 1,
           "required": false,
-          "cost": 35,
+          "cost": 40,
           "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
           "specialRules": ["Wizard", "Apprentice"],
           "startingExp": 8,
@@ -633,7 +633,7 @@
         {
           "type": "zombie",
           "name": "Zombie",
-          "cost": 10,
+          "cost": 15,
           "stats": { "M": 4, "WS": 2, "BS": 0, "S": 3, "T": 3, "W": 1, "I": 1, "A": 1, "Ld": 5 },
           "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run", "No Brain"],
           "maxGroupSize": 5
@@ -641,7 +641,7 @@
         {
           "type": "skeleton",
           "name": "Skeleton",
-          "cost": 15,
+          "cost": 20,
           "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 2, "A": 1, "Ld": 5 },
           "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run", "No Brain"],
           "maxGroupSize": 5
@@ -649,7 +649,7 @@
         {
           "type": "wight",
           "name": "Wight",
-          "cost": 25,
+          "cost": 30,
           "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
           "specialRules": ["Cause Fear", "Immune to Psychology", "Immune to Poison", "No Pain", "May Not Run"],
           "maxGroupSize": 3
@@ -666,6 +666,2293 @@
       "equipmentAccess": {
         "heroes": ["hand_to_hand", "armour"],
         "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "dark_elves",
+      "name": "Dark Elves",
+      "source": "Town Cryer",
+      "description": "Cruel raiders from Naggaroth, stealthy and merciless. They venture forth in search of slaves and arcane artefacts.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Dark Elf",
+      "heroes": [
+        {
+          "type": "high_born",
+          "name": "High Born",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 5, "WS": 5, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 9 },
+          "specialRules": ["Leader", "Kindred Hatred", "Excellent Sight"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "speed", "dark_elf_special"]
+        },
+        {
+          "type": "beastmaster",
+          "name": "Beastmaster",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Cold One Beasthound Handler", "Kindred Hatred", "Excellent Sight"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "speed", "dark_elf_special"]
+        },
+        {
+          "type": "fellblade",
+          "name": "Fellblade",
+          "max": 2,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 5, "WS": 5, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Melee Specialists", "Kindred Hatred", "Excellent Sight"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "speed", "dark_elf_special"]
+        },
+        {
+          "type": "sorceress",
+          "name": "Dark Elf Sorceress",
+          "max": 1,
+          "required": false,
+          "cost": 55,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Wizard", "Kindred Hatred", "Excellent Sight"],
+          "startingExp": 12,
+          "skillAccess": ["academic", "speed", "dark_elf_special"],
+          "spellAccess": ["dark_elf_magic"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "corsair",
+          "name": "Corsair",
+          "cost": 35,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Kindred Hatred", "Excellent Sight"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "shade",
+          "name": "Shade",
+          "cost": 30,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 8 },
+          "specialRules": ["Natural Stealth", "Kindred Hatred", "Excellent Sight"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "cold_one_beasthound",
+          "name": "Cold One Beasthound",
+          "cost": 30,
+          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 4, "T": 4, "W": 1, "I": 1, "A": 1, "Ld": 4 },
+          "specialRules": ["Animals", "Stupidity", "Scaly Skin", "Fear", "Requires Beastmaster"],
+          "maxGroupSize": 2
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "shadow_warriors",
+      "name": "Shadow Warriors",
+      "source": "Town Cryer",
+      "description": "High Elf Shadow Warriors from Nagarythe, sworn enemies of the Dark Elves. Masters of stealth and archery.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "High Elf",
+      "heroes": [
+        {
+          "type": "shadow_master",
+          "name": "Shadow Master",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 5, "WS": 5, "BS": 5, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 9 },
+          "specialRules": ["Leader", "Hate Dark Elves", "Excellent Sight"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "speed", "shadow_warrior_special"]
+        },
+        {
+          "type": "shadow_walker",
+          "name": "Shadow Walker",
+          "max": 3,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 5, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Hate Dark Elves", "Excellent Sight"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "shooting", "speed", "shadow_warrior_special"]
+        },
+        {
+          "type": "shadow_weaver",
+          "name": "Shadow Weaver",
+          "max": 1,
+          "required": false,
+          "cost": 55,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Wizard", "Hate Dark Elves", "Excellent Sight"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "academic", "speed", "shadow_warrior_special"],
+          "spellAccess": ["shadow_warrior_magic"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "shadow_warrior",
+          "name": "Shadow Warrior",
+          "cost": 35,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
+          "specialRules": ["Hate Dark Elves", "Excellent Sight"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "shadow_warrior_novice",
+          "name": "Shadow Warrior Novice",
+          "cost": 25,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 7 },
+          "specialRules": ["Hate Dark Elves", "Excellent Sight"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "averlander",
+      "name": "Averlander Mercenaries",
+      "source": "Empire in Flames",
+      "description": "Hardy mountain folk from Averland, skilled hunters and trappers who venture into Mordheim seeking fortune.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "captain",
+          "name": "Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "sergeant",
+          "name": "Sergeant",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "bergjaeger",
+          "name": "Bergjaeger",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 2, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Set Traps"],
+          "startingExp": 4,
+          "skillAccess": ["shooting", "speed"]
+        },
+        {
+          "type": "youngblood",
+          "name": "Youngblood",
+          "max": 1,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "speed", "shooting"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "mountainguard",
+          "name": "Mountainguard",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "marksman",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "halfling_scout",
+          "name": "Halfling Scout",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 4, "S": 2, "T": 2, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Promotion"],
+          "maxGroupSize": 3
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "beastmen_raiders",
+      "name": "Beastmen Raiders",
+      "source": "Empire in Flames",
+      "description": "Savage beastmen from the deep forests, drawn to Mordheim by the power of wyrdstone and the will of the Dark Gods.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Chaos",
+      "heroes": [
+        {
+          "type": "beastmen_chieftain",
+          "name": "Beastmen Chieftain",
+          "max": 1,
+          "required": true,
+          "cost": 65,
+          "stats": { "M": 5, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "strength", "speed", "beastmen_special"]
+        },
+        {
+          "type": "beastmen_shaman",
+          "name": "Beastmen Shaman",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Wizard"],
+          "startingExp": 11,
+          "skillAccess": ["academic", "speed", "beastmen_special"],
+          "spellAccess": ["chaos_rituals"]
+        },
+        {
+          "type": "bestigor",
+          "name": "Bestigor",
+          "max": 2,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "centigor",
+          "name": "Centigor",
+          "max": 1,
+          "required": false,
+          "cost": 80,
+          "stats": { "M": 8, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 7 },
+          "specialRules": ["Drunken", "Woodland Dwelling", "Trample"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "ungor",
+          "name": "Ungor",
+          "cost": 25,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Lowest of the Low"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "gor",
+          "name": "Gor",
+          "cost": 35,
+          "stats": { "M": 5, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "warhound_of_chaos",
+          "name": "Warhound of Chaos",
+          "cost": 15,
+          "stats": { "M": 7, "WS": 4, "BS": 0, "S": 4, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 5 },
+          "specialRules": ["Animals"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "minotaur",
+          "name": "Minotaur",
+          "cost": 200,
+          "stats": { "M": 6, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 3, "I": 4, "A": 3, "Ld": 8 },
+          "specialRules": ["Fear", "Bloodgreed", "Animal", "Large Target"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "carnival_of_chaos",
+      "name": "Carnival of Chaos",
+      "source": "Empire in Flames",
+      "description": "A twisted travelling carnival devoted to Nurgle, spreading plague and corruption wherever they perform.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Chaos",
+      "heroes": [
+        {
+          "type": "carnival_master",
+          "name": "Carnival Master",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Wizard"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"],
+          "spellAccess": ["nurgle_rituals"]
+        },
+        {
+          "type": "brute",
+          "name": "Brute",
+          "max": 2,
+          "required": false,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 0, "S": 4, "T": 4, "W": 1, "I": 2, "A": 2, "Ld": 7 },
+          "specialRules": ["Unnatural Strength"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "tainted_one",
+          "name": "Tainted One",
+          "max": 2,
+          "required": false,
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Nurgle's Blessings"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "brethren",
+          "name": "Brethren",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "plague_bearer",
+          "name": "Plague Bearer",
+          "cost": 50,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 1, "I": 4, "A": 2, "Ld": 10 },
+          "specialRules": ["Daemonic", "Cloud of Flies", "Stream of Corruption", "Immune to Psychology", "Immune to Poison", "Cause Fear"],
+          "maxGroupSize": 2
+        },
+        {
+          "type": "nurgling",
+          "name": "Nurgling",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 3, "BS": 0, "S": 3, "T": 2, "W": 1, "I": 3, "A": 1, "Ld": 10 },
+          "specialRules": ["Daemonic", "Cloud of Flies", "Swarm", "Immune to Psychology", "Immune to Poison"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "plague_cart",
+          "name": "Plague Cart",
+          "cost": 120,
+          "stats": { "M": 8, "WS": 3, "BS": 0, "S": 3, "T": 8, "W": 4, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Plague Cart", "Guardian", "Immune to Psychology"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "dwarf_treasure_hunters",
+      "name": "Dwarf Treasure Hunters",
+      "source": "Town Cryer",
+      "description": "Stalwart Dwarfs who delve into the ruins of Mordheim seeking lost treasures and ancient artefacts of their people.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "noble",
+          "name": "Noble",
+          "max": 1,
+          "required": true,
+          "cost": 85,
+          "stats": { "M": 3, "WS": 5, "BS": 4, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Leader", "Hard to Kill", "Hard Head", "Armour", "Hate Orcs and Goblins", "Incomparable Miners"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "dwarf_special"]
+        },
+        {
+          "type": "engineer",
+          "name": "Engineer",
+          "max": 1,
+          "required": false,
+          "cost": 50,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Expert Weaponsmith", "Hard to Kill", "Hard Head", "Armour", "Hate Orcs and Goblins", "Incomparable Miners"],
+          "startingExp": 10,
+          "skillAccess": ["combat", "shooting", "academic", "dwarf_special"]
+        },
+        {
+          "type": "troll_slayer",
+          "name": "Troll Slayer",
+          "max": 2,
+          "required": false,
+          "cost": 50,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Deathwish", "Hard to Kill", "Hard Head", "Hate Orcs and Goblins", "Incomparable Miners"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed", "dwarf_special", "troll_slayer_special"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "clansman",
+          "name": "Clansman",
+          "cost": 40,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Hard to Kill", "Hard Head", "Armour", "Hate Orcs and Goblins", "Incomparable Miners"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "thunderer",
+          "name": "Thunderer",
+          "cost": 40,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Hard to Kill", "Hard Head", "Armour", "Hate Orcs and Goblins", "Incomparable Miners"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "beardling",
+          "name": "Beardling",
+          "cost": 25,
+          "stats": { "M": 3, "WS": 3, "BS": 2, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 8 },
+          "specialRules": ["Hard to Kill", "Hard Head", "Armour", "Hate Orcs and Goblins", "Incomparable Miners"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "kislevites",
+      "name": "Kislevites",
+      "source": "Town Cryer",
+      "description": "Fierce warriors from the frozen north of Kislev, hardened by bitter cold and constant war against the forces of Chaos.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "druzhina_captain",
+          "name": "Druzhina Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Inheritance"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "esaul",
+          "name": "Esaul",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "bear_tamer",
+          "name": "Bear Tamer",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Bear Handler"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "youth",
+          "name": "Youth",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "speed", "shooting"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warrior",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "cossack",
+          "name": "Cossack",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Hate Chaos"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "streltsi",
+          "name": "Streltsi",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Gun-Rest"],
+          "maxGroupSize": 3
+        },
+        {
+          "type": "trained_bear",
+          "name": "Trained Bear",
+          "cost": 125,
+          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 5, "T": 5, "W": 2, "I": 2, "A": 2, "Ld": 6 },
+          "specialRules": ["Trained", "Fearsome", "Bear Hug", "Fiercely Loyal", "Animal", "Large Target"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "orc_mob",
+      "name": "Orc Mob",
+      "source": "Empire in Flames",
+      "description": "Brutal greenskins drawn to Mordheim by the promise of loot, fighting and wyrdstone to sell to the highest bidder.",
+      "startingGold": 500,
+      "maxWarband": 20,
+      "alignment": "Destruction",
+      "heroes": [
+        {
+          "type": "orc_boss",
+          "name": "Orc Boss",
+          "max": 1,
+          "required": true,
+          "cost": 80,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 4, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "strength", "speed", "orc_special"]
+        },
+        {
+          "type": "orc_shaman",
+          "name": "Orc Shaman",
+          "max": 1,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Wizard"],
+          "startingExp": 10,
+          "skillAccess": ["academic", "orc_special"],
+          "spellAccess": ["waaagh_magic"]
+        },
+        {
+          "type": "big_un",
+          "name": "Big 'Un",
+          "max": 2,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 15,
+          "skillAccess": ["combat", "strength", "speed", "orc_special"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "orc_boy",
+          "name": "Orc Boy",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 7 },
+          "specialRules": ["Animosity"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "goblin_warrior",
+          "name": "Goblin Warrior",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 5 },
+          "specialRules": ["Animosity", "Not Orcs", "Runts"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "cave_squig",
+          "name": "Cave Squig",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 4, "BS": 0, "S": 4, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "specialRules": ["Movement 2D6", "Minderz", "Not Orcs", "Animal"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "troll",
+          "name": "Troll",
+          "cost": 200,
+          "stats": { "M": 6, "WS": 3, "BS": 1, "S": 5, "T": 4, "W": 3, "I": 1, "A": 3, "Ld": 4 },
+          "specialRules": ["Fear", "Stupidity", "Regeneration", "Dumb Monster", "Always Hungry", "Vomit Attack", "Large Target"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "ostlander",
+      "name": "Ostlander Mercenaries",
+      "source": "Empire in Flames",
+      "description": "Tough, no-nonsense folk from the eastern Empire province of Ostland, renowned for their stubbornness and resilience.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "elder",
+          "name": "Elder",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "priest",
+          "name": "Priest",
+          "max": 1,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Prayers of Sigmar"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "academic", "speed"],
+          "spellAccess": ["prayers_of_sigmar"]
+        },
+        {
+          "type": "jaeger",
+          "name": "Jaeger",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "speed"]
+        },
+        {
+          "type": "ogre_bodyguard",
+          "name": "Ogre Bodyguard",
+          "max": 1,
+          "required": false,
+          "cost": 180,
+          "stats": { "M": 6, "WS": 3, "BS": 2, "S": 4, "T": 4, "W": 3, "I": 2, "A": 2, "Ld": 7 },
+          "specialRules": ["Fear", "Large Target", "Slow Witted"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "strength"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "militia",
+          "name": "Militia",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "fanatic",
+          "name": "Fanatic",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Crazed"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "pit_fighters",
+      "name": "Pit Fighters",
+      "source": "Town Cryer",
+      "description": "Escaped gladiatorial fighters from the brutal fighting pits, specialists in close-quarters combat.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "pit_king",
+          "name": "Pit King",
+          "max": 1,
+          "required": true,
+          "cost": 80,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 1, "I": 4, "A": 2, "Ld": 8 },
+          "specialRules": ["Leader", "Pit Fighter"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "strength", "speed", "pit_fighter_special"]
+        },
+        {
+          "type": "pit_troll_slayer",
+          "name": "Dwarf Troll Slayer",
+          "max": 1,
+          "required": false,
+          "cost": 50,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Pit Fighter", "Hard to Kill", "Hard Head", "Hate Orcs and Goblins", "Death Wish"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed", "troll_slayer_special"]
+        },
+        {
+          "type": "pit_veteran",
+          "name": "Pit Veteran",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": ["Pit Fighter"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed", "pit_fighter_special"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "pit_fighter",
+          "name": "Pit Fighter",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Pit Fighter"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "pursuer",
+          "name": "Pursuer",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Pit Fighter", "Evade"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "ogre_pit_fighter",
+          "name": "Ogre Pit Fighter",
+          "cost": 165,
+          "stats": { "M": 6, "WS": 3, "BS": 2, "S": 4, "T": 4, "W": 3, "I": 3, "A": 2, "Ld": 7 },
+          "specialRules": ["Pit Fighter", "Fear", "Large Target", "Slow Witted"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "skaven_pestilens",
+      "name": "Skaven of Clan Pestilens",
+      "source": "Town Cryer",
+      "description": "Disease-ridden Skaven devoted to plague and pestilence, spreading contagion through the streets of Mordheim.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Chaos",
+      "heroes": [
+        {
+          "type": "plague_priest",
+          "name": "Plague Priest",
+          "max": 1,
+          "required": true,
+          "cost": 85,
+          "stats": { "M": 5, "WS": 4, "BS": 4, "S": 4, "T": 4, "W": 1, "I": 5, "A": 1, "Ld": 7 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed", "clan_pestilens_special"]
+        },
+        {
+          "type": "pestilens_sorcerer",
+          "name": "Pestilens Sorcerer",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6 },
+          "specialRules": ["Wizard"],
+          "startingExp": 8,
+          "skillAccess": ["academic", "speed", "clan_pestilens_special"],
+          "spellAccess": ["magic_of_the_horned_rat"]
+        },
+        {
+          "type": "plague_monk",
+          "name": "Plague Monk",
+          "max": 2,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 5, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 5, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed", "clan_pestilens_special"]
+        },
+        {
+          "type": "monk_initiate",
+          "name": "Monk Initiate",
+          "max": 2,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 5, "WS": 2, "BS": 3, "S": 2, "T": 2, "W": 1, "I": 4, "A": 1, "Ld": 4 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "speed", "strength", "clan_pestilens_special"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "plague_novice",
+          "name": "Plague Novice",
+          "cost": 20,
+          "stats": { "M": 5, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "giant_rat_pestilens",
+          "name": "Giant Rat",
+          "cost": 15,
+          "stats": { "M": 6, "WS": 2, "BS": 0, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 4 },
+          "specialRules": ["Animals"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "rat_ogre_pestilens",
+          "name": "Rat Ogre",
+          "cost": 210,
+          "stats": { "M": 6, "WS": 3, "BS": 3, "S": 5, "T": 5, "W": 3, "I": 4, "A": 3, "Ld": 4 },
+          "specialRules": ["Fear", "Stupidity", "Large Target", "Animals"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "tileans",
+      "name": "Tileans",
+      "source": "Town Cryer",
+      "description": "Mercenary warbands from the wealthy city-states of Tilea. Variants: Miraglean (+1 BS crossbow, hate Skaven), Remasen (re-roll rout vs Dark Elves, +1 Ld heroes), Trantio (+100gc starting gold).",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "tilean_captain",
+          "name": "Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 2, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "tilean_champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "speed"]
+        },
+        {
+          "type": "tilean_youngblood",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "tilean_warrior",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "tilean_marksman",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "duelist",
+          "name": "Duelist",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": ["Cloak and Dagger"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "tomb_guardians",
+      "name": "Tomb Guardians",
+      "source": "Town Cryer",
+      "description": "Ancient Nehekharan undead warriors guarding the tombs and pyramids of the Land of the Dead.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Undead",
+      "heroes": [
+        {
+          "type": "tomb_lord",
+          "name": "Tomb Lord",
+          "max": 1,
+          "required": true,
+          "cost": 150,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 5, "W": 3, "I": 3, "A": 2, "Ld": 8 },
+          "specialRules": ["Leader", "Undead", "Cause Fear", "Immune to Psychology", "No Pain", "Immune to Poison", "Flammable"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "liche_priest",
+          "name": "Liche Priest",
+          "max": 1,
+          "required": false,
+          "cost": 55,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Wizard", "Undead", "Cause Fear", "Immune to Psychology", "Immune to Poison"],
+          "startingExp": 8,
+          "skillAccess": ["academic"],
+          "spellAccess": ["mortuary_cult_scrolls"]
+        },
+        {
+          "type": "acolyte",
+          "name": "Acolyte",
+          "max": 2,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Undead", "Cause Fear", "Immune to Psychology", "Immune to Poison"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "academic"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "skeleton_warrior",
+          "name": "Skeleton Warrior",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 2, "A": 1, "Ld": 5 },
+          "specialRules": ["Undead", "No Brain", "Cause Fear", "Immune to Psychology", "Immune to Poison"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "tomb_guard",
+          "name": "Tomb Guard",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 4, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 5 },
+          "specialRules": ["Undead", "Cause Fear", "Immune to Psychology", "Immune to Poison"],
+          "maxGroupSize": 2
+        },
+        {
+          "type": "tomb_scorpion",
+          "name": "Tomb Scorpion",
+          "cost": 15,
+          "stats": { "M": 5, "WS": 2, "BS": 0, "S": 2, "T": 2, "W": 1, "I": 4, "A": 1, "Ld": 4 },
+          "specialRules": ["Animals", "Scorpion Sting (Black Lotus)"],
+          "maxGroupSize": 3
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "amazons_lustria",
+      "name": "Amazons (Lustria)",
+      "source": "Town Cryer",
+      "description": "Fierce warrior women from the jungles of Lustria, devoted to the Old Ones and skilled in ritual combat.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "serpent_priestess",
+          "name": "Serpent Priestess",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Wizard"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "academic", "speed"],
+          "spellAccess": ["amazon_rituals"]
+        },
+        {
+          "type": "eagle_warrior",
+          "name": "Eagle Warrior",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "piranha_warrior",
+          "name": "Piranha Warrior",
+          "max": 2,
+          "required": false,
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "amazon_warrior",
+          "name": "Amazon Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "jaguar_warrior",
+          "name": "Jaguar Warrior",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["One with the Jungle"],
+          "maxGroupSize": 3
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "amazons_mordheim",
+      "name": "Amazons (Mordheim)",
+      "source": "Town Cryer",
+      "description": "Amazon warriors who have ventured far from Lustria to seek wyrdstone in the ruins of Mordheim.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "priestess",
+          "name": "Priestess",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Wizard"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"],
+          "spellAccess": ["amazon_rituals"]
+        },
+        {
+          "type": "champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "totem_warrior",
+          "name": "Totem Warrior",
+          "max": 2,
+          "required": false,
+          "cost": 30,
+          "stats": { "M": 4, "WS": 4, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Frenzy"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "amazon_warrior",
+          "name": "Amazon Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "scout",
+          "name": "Scout",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Stealthy"],
+          "maxGroupSize": 3
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "arabian_tomb_raiders",
+      "name": "Arabian Tomb Raiders",
+      "source": "Town Cryer",
+      "description": "Desert nomads and treasure seekers from the lands of Araby, drawn to Mordheim by tales of wyrdstone riches.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "sheikh",
+          "name": "Sheikh",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "mystic",
+          "name": "Mystic",
+          "max": 1,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Wizard"],
+          "startingExp": 8,
+          "skillAccess": ["academic", "speed"],
+          "spellAccess": ["elemental_magic"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "bedouin",
+          "name": "Bedouin",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Desert Trader"],
+          "maxGroupSize": 2
+        },
+        {
+          "type": "nomad_warrior",
+          "name": "Nomad Warrior",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "slave",
+          "name": "Slave",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Life of Slavery"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "black_orcs",
+      "name": "Black Orcs",
+      "source": "Nemesis Crown",
+      "description": "Elite greenskin warriors, larger and more disciplined than common orcs, seeking the Nemesis Crown.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Greenskin",
+      "heroes": [
+        {
+          "type": "black_orc_boss",
+          "name": "Black Orc Boss",
+          "max": 1,
+          "required": true,
+          "cost": 90,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 4, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Black Orc", "Oi Behave!"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "strength", "speed", "orc_special"]
+        },
+        {
+          "type": "black_orc",
+          "name": "Black Orc",
+          "max": 2,
+          "required": false,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Black Orc"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed", "orc_special"]
+        },
+        {
+          "type": "young_un",
+          "name": "Young'un",
+          "max": 2,
+          "required": false,
+          "cost": 25,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "orc_boy",
+          "name": "Orc Boy",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 6 },
+          "specialRules": ["Animosity"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "orc_shoota",
+          "name": "Orc Shoota",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 6 },
+          "specialRules": ["Animosity"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "orc_nuttaz",
+          "name": "Orc Nuttaz",
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 5 },
+          "specialRules": ["Unstable", "Crazy", "Savage"],
+          "maxGroupSize": 4
+        },
+        {
+          "type": "troll",
+          "name": "Troll",
+          "cost": 200,
+          "stats": { "M": 6, "WS": 3, "BS": 1, "S": 5, "T": 4, "W": 3, "I": 1, "A": 3, "Ld": 4 },
+          "specialRules": ["Fear", "Stupidity", "Regeneration", "Large Target", "Vomit Attack"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "bretonnians",
+      "name": "Bretonnians",
+      "source": "Town Cryer",
+      "description": "Noble knights and their retinues from Bretonnia, bound by chivalric oaths and the quest for the Lady's favour.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "questing_knight",
+          "name": "Questing Knight",
+          "max": 1,
+          "required": true,
+          "cost": 80,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Knights Virtue"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "strength", "speed", "bretonnian_special"]
+        },
+        {
+          "type": "knight_errant",
+          "name": "Knight Errant",
+          "max": 2,
+          "required": false,
+          "cost": 50,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Knights Virtue"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "squire",
+          "name": "Squire",
+          "max": 3,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "men_at_arms",
+          "name": "Men-at-Arms",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "bowman",
+          "name": "Bowman",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "dwarf_rangers",
+      "name": "Dwarf Rangers",
+      "source": "Nemesis Crown",
+      "description": "Doughty dwarf rangers patrolling the wild lands, protecting their holds and hunting greenskins.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "runesmith",
+          "name": "Runesmith",
+          "max": 1,
+          "required": true,
+          "cost": 85,
+          "stats": { "M": 3, "WS": 5, "BS": 4, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 10 },
+          "specialRules": ["Leader", "Inscribe Runes", "Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "dwarf_special"]
+        },
+        {
+          "type": "apprentice_runesmith",
+          "name": "Apprentice Runesmith",
+          "max": 1,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 3, "WS": 3, "BS": 2, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 8 },
+          "specialRules": ["Extra Set of Hands", "Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "strength", "dwarf_special"]
+        },
+        {
+          "type": "troll_slayer",
+          "name": "Troll Slayer",
+          "max": 2,
+          "required": false,
+          "cost": 50,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Deathwish", "Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "strength", "troll_slayer_special"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "longbeard",
+          "name": "Longbeard",
+          "cost": 50,
+          "stats": { "M": 3, "WS": 5, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 9 },
+          "specialRules": ["Stubborn", "Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "clansman",
+          "name": "Clansman",
+          "cost": 40,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "crossbowman",
+          "name": "Crossbowman",
+          "cost": 40,
+          "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+          "specialRules": ["Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "beardling",
+          "name": "Beardling",
+          "cost": 25,
+          "stats": { "M": 3, "WS": 3, "BS": 2, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 8 },
+          "specialRules": ["Hard to Kill", "Hard Head", "Hate Orcs and Goblins"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "forest_goblins",
+      "name": "Forest Goblins",
+      "source": "Nemesis Crown",
+      "description": "Cunning forest goblins who ride giant spiders and use primitive but deadly tactics in the deep woods.",
+      "startingGold": 500,
+      "maxWarband": 20,
+      "alignment": "Greenskin",
+      "heroes": [
+        {
+          "type": "chieftain",
+          "name": "Chieftain",
+          "max": 1,
+          "required": true,
+          "cost": 50,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": ["Leader", "Ride Spiders"],
+          "startingExp": 17,
+          "skillAccess": ["combat", "shooting", "speed"]
+        },
+        {
+          "type": "brave",
+          "name": "Brave",
+          "max": 4,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Animosity"],
+          "startingExp": 6,
+          "skillAccess": ["combat", "shooting", "speed"]
+        },
+        {
+          "type": "shaman",
+          "name": "Shaman",
+          "max": 1,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 6 },
+          "specialRules": ["Wizard"],
+          "startingExp": 6,
+          "skillAccess": ["academic", "speed"],
+          "spellAccess": ["forest_goblin_spells"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "forest_goblin",
+          "name": "Forest Goblin",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Animosity"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "red_toof_goblin",
+          "name": "Red Toof Goblin",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Animosity", "Frenzy"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "slugga",
+          "name": "Slugga",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Animosity", "Sluggas"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "gigantic_spider",
+          "name": "Gigantic Spider",
+          "cost": 200,
+          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 5, "T": 5, "W": 3, "I": 4, "A": 2, "Ld": 4 },
+          "specialRules": ["Fear", "Large Target", "Stupidity", "Poisonous"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "gunnery_school_of_nuln",
+      "name": "Gunnery School of Nuln",
+      "source": "Nemesis Crown",
+      "description": "Students and instructors from the Imperial Gunnery School, bringing black powder superiority to the battlefield.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "senior_gunnery_officer",
+          "name": "Senior Gunnery Officer",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Hunter"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "instructor",
+          "name": "Instructor",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Expert Weaponsmith"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "shooting", "academic"]
+        },
+        {
+          "type": "senior_student",
+          "name": "Senior Student",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "underclassman",
+          "name": "Underclassman",
+          "max": 2,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "son_of_the_guns",
+          "name": "Son of the Guns",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "marksman",
+          "name": "Marksman",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Quick Reload"],
+          "maxGroupSize": 7
+        },
+        {
+          "type": "pistolier",
+          "name": "Pistolier",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Crack Shot"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "hochland_bandits",
+      "name": "Hochland Bandits",
+      "source": "Nemesis Crown",
+      "description": "Cunning outlaws and highwaymen from the forests of Hochland, preying on travellers and rival warbands.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "bandit_prince",
+          "name": "Bandit Prince",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "footpad",
+          "name": "Footpad",
+          "max": 2,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Concealment"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "huckster",
+          "name": "Huckster",
+          "max": 1,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 2, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Convincing Manner", "Slick Operator"],
+          "startingExp": 8,
+          "skillAccess": ["academic", "shooting", "speed"]
+        },
+        {
+          "type": "duelist",
+          "name": "Duelist",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": ["Swordmaster", "Weapon Knowledge"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "thug",
+          "name": "Thug",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "looter",
+          "name": "Looter",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 2, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Looting the Dead"],
+          "maxGroupSize": 4
+        },
+        {
+          "type": "blackheart",
+          "name": "Blackheart",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Hardened"],
+          "maxGroupSize": 2
+        },
+        {
+          "type": "poacher",
+          "name": "Poacher",
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Trailblazers"],
+          "maxGroupSize": 2
+        },
+        {
+          "type": "gutterscum",
+          "name": "Gutterscum",
+          "cost": 10,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Utterly Inept"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "horned_hunters",
+      "name": "Horned Hunters",
+      "source": "Nemesis Crown",
+      "description": "Zealous hunters devoted to Taal, the god of nature, tracking bandits and chaos through the wild forests.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "horned_hunter",
+          "name": "Horned Hunter",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Hang the Bandit!"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "strength", "speed", "horned_hunter_special"]
+        },
+        {
+          "type": "priest_of_taal",
+          "name": "Priest of Taal",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Prayers"],
+          "startingExp": 12,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"],
+          "spellAccess": ["prayers_of_taal"]
+        },
+        {
+          "type": "initiate",
+          "name": "Initiate",
+          "max": 3,
+          "required": false,
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Infiltrator", "Hang the Bandit!"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed", "horned_hunter_special"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "drunken_gang",
+          "name": "Drunken Gang",
+          "cost": 30,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Drunk"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "zealot",
+          "name": "Zealot",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "warhound",
+          "name": "Warhound",
+          "cost": 15,
+          "stats": { "M": 6, "WS": 4, "BS": 0, "S": 4, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 5 },
+          "specialRules": ["Animals"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "lizardmen",
+      "name": "Lizardmen",
+      "source": "Town Cryer",
+      "description": "Ancient reptilian warriors from the temple-cities of Lustria, executing the Great Plan of the Old Ones.",
+      "startingGold": 500,
+      "maxWarband": 20,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "skink_priest",
+          "name": "Skink Priest",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 6, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 5, "A": 1, "Ld": 7 },
+          "specialRules": ["Leader", "Wizard", "Cold Blooded", "Aquatic", "Jungle born"],
+          "startingExp": 20,
+          "skillAccess": ["shooting", "academic", "speed"],
+          "spellAccess": ["lizardmen_magic"]
+        },
+        {
+          "type": "saurus_totem_warrior",
+          "name": "Saurus Totem Warrior",
+          "max": 1,
+          "required": false,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 0, "S": 4, "T": 4, "W": 1, "I": 2, "A": 2, "Ld": 8 },
+          "specialRules": ["Cold Blooded", "Scaly Skin 5+", "Bite Attack"],
+          "startingExp": 11,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "skink_great_crest",
+          "name": "Skink Great Crest",
+          "max": 2,
+          "required": false,
+          "cost": 30,
+          "stats": { "M": 6, "WS": 3, "BS": 3, "S": 3, "T": 2, "W": 1, "I": 4, "A": 1, "Ld": 7 },
+          "specialRules": ["Cold Blooded", "Aquatic", "Jungle born"],
+          "startingExp": 8,
+          "skillAccess": ["shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "skink_brave",
+          "name": "Skink Brave",
+          "cost": 20,
+          "stats": { "M": 6, "WS": 2, "BS": 3, "S": 3, "T": 2, "W": 1, "I": 4, "A": 1, "Ld": 6 },
+          "specialRules": ["Cold Blooded", "Aquatic", "Jungle born"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "saurus_brave",
+          "name": "Saurus Brave",
+          "cost": 40,
+          "stats": { "M": 4, "WS": 3, "BS": 0, "S": 4, "T": 4, "W": 1, "I": 1, "A": 2, "Ld": 7 },
+          "specialRules": ["Cold Blooded", "Scaly Skin 5+", "Bite Attack"],
+          "maxGroupSize": 4
+        },
+        {
+          "type": "kroxigor",
+          "name": "Kroxigor",
+          "cost": 200,
+          "stats": { "M": 6, "WS": 3, "BS": 0, "S": 5, "T": 4, "W": 3, "I": 1, "A": 3, "Ld": 8 },
+          "specialRules": ["Cause Fear", "Large Target", "Scaly Skin 4+", "Aquatic", "Animals"],
+          "maxGroupSize": 1
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "armour"]
+      }
+    },
+    {
+      "id": "norse_explorers",
+      "name": "Norse Explorers",
+      "source": "Town Cryer",
+      "description": "Norse seafarers and raiders exploring Lustria for riches and glory.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "jarl",
+          "name": "Jarl",
+          "max": 1,
+          "required": true,
+          "cost": 70,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 4, "A": 2, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "berserker",
+          "name": "Berserker",
+          "max": 2,
+          "required": false,
+          "cost": 50,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 4, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Frenzy"],
+          "startingExp": 11,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "wulfen",
+          "name": "Wulfen",
+          "max": 1,
+          "required": false,
+          "cost": 90,
+          "stats": { "M": 6, "WS": 4, "BS": 0, "S": 4, "T": 4, "W": 2, "I": 4, "A": 2, "Ld": 7 },
+          "specialRules": ["Fear", "Bestial", "Immune to Psychology"],
+          "startingExp": 11,
+          "skillAccess": ["combat", "strength", "speed"]
+        },
+        {
+          "type": "bondsman",
+          "name": "Bondsman",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 2, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "marauder",
+          "name": "Marauder",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "hunter",
+          "name": "Hunter",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "wolf",
+          "name": "Wolf",
+          "cost": 15,
+          "stats": { "M": 9, "WS": 3, "BS": 0, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 5 },
+          "specialRules": ["Animals", "Pack Leader"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "mootlanders",
+      "name": "Mootlanders",
+      "source": "Citadel Journal",
+      "description": "Halfling warbands from the Moot seeking gold and abandoned kitchens.",
+      "startingGold": 500,
+      "maxWarband": 20,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "moot_elder",
+          "name": "Moot Elder",
+          "max": 1,
+          "required": true,
+          "cost": 55,
+          "stats": { "M": 4, "WS": 3, "BS": 5, "S": 2, "T": 2, "W": 1, "I": 6, "A": 1, "Ld": 9 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "speed"]
+        },
+        {
+          "type": "master_chef",
+          "name": "Master Chef",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 2, "W": 1, "I": 5, "A": 1, "Ld": 9 },
+          "specialRules": ["Inspired Cooking"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "academic", "speed"]
+        },
+        {
+          "type": "halfling_thief",
+          "name": "Halfling Thief",
+          "max": 3,
+          "required": false,
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 2, "T": 2, "W": 1, "I": 5, "A": 1, "Ld": 9 },
+          "specialRules": ["Sneaky"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "halfling_warrior",
+          "name": "Halfling Warrior",
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 4, "S": 2, "T": 2, "W": 1, "I": 5, "A": 1, "Ld": 8 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "halfling_scout",
+          "name": "Halfling Scout",
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 4, "S": 2, "T": 2, "W": 1, "I": 5, "A": 1, "Ld": 8 },
+          "specialRules": ["Keen Eyesight"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "imperial_outriders",
+      "name": "Imperial Outriders",
+      "source": "Nemesis Crown",
+      "description": "Swift mounted scouts dispatched by Imperial provinces to explore the Great Forest.",
+      "startingGold": 500,
+      "maxWarband": 12,
+      "alignment": "Order",
+      "heroes": [
+        {
+          "type": "knight",
+          "name": "Knight",
+          "max": 1,
+          "required": true,
+          "cost": 85,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader", "Ride"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "outrider",
+          "name": "Outrider",
+          "max": 2,
+          "required": false,
+          "cost": 65,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Ride"],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "scout",
+          "name": "Scout",
+          "max": 2,
+          "required": false,
+          "cost": 45,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Ride"],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "chasseur",
+          "name": "Chasseur",
+          "cost": 55,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Ride"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "hussar",
+          "name": "Hussar",
+          "cost": 60,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Ride", "Combat Riding"],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "groom",
+          "name": "Groom",
+          "cost": 50,
+          "stats": { "M": 4, "WS": 3, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": ["Ride", "Horse Handling"],
+          "maxGroupSize": 2
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "outlaws_of_stirwood",
+      "name": "Outlaws of Stirwood Forest",
+      "source": "Town Cryer",
+      "description": "Forest outlaws and bandits lurking in Stirwood Forest near Mordheim.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "bandit_leader",
+          "name": "Bandit Leader",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "champion",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "speed"]
+        },
+        {
+          "type": "cleric",
+          "name": "Cleric",
+          "max": 1,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Prayers of Sigmar"],
+          "startingExp": 8,
+          "skillAccess": ["academic"],
+          "spellAccess": ["prayers_of_sigmar"]
+        },
+        {
+          "type": "petty_thief",
+          "name": "Petty Thief",
+          "max": 2,
+          "required": false,
+          "cost": 20,
+          "stats": { "M": 4, "WS": 2, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "marksman",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 7
+        },
+        {
+          "type": "outlaw",
+          "name": "Outlaw",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
+      }
+    },
+    {
+      "id": "pirates",
+      "name": "Pirates",
+      "source": "Town Cryer",
+      "description": "Seafaring raiders and plunderers navigating the rivers near Mordheim.",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "Neutral",
+      "heroes": [
+        {
+          "type": "captain",
+          "name": "Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 4, "A": 1, "Ld": 8 },
+          "specialRules": ["Leader"],
+          "startingExp": 20,
+          "skillAccess": ["combat", "shooting", "academic", "strength", "speed"]
+        },
+        {
+          "type": "mate",
+          "name": "Mate",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        },
+        {
+          "type": "cabin_boy",
+          "name": "Cabin Boy",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": { "M": 4, "WS": 2, "BS": 2, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 6 },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": ["combat", "shooting", "strength", "speed"]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "crew",
+          "name": "Crew",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 5
+        },
+        {
+          "type": "gunner",
+          "name": "Gunner",
+          "cost": 25,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": [],
+          "maxGroupSize": 7
+        },
+        {
+          "type": "boatswain",
+          "name": "Boatswain",
+          "cost": 32,
+          "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+          "specialRules": ["Expert Riggers"],
+          "maxGroupSize": 5
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": ["hand_to_hand", "missiles", "armour"],
+        "henchmen": ["hand_to_hand", "missiles", "armour"]
       }
     }
   ]

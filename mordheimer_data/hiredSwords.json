@@ -1,0 +1,1047 @@
+[
+    {
+"type": "hiredsword",
+"name": "Dwarf Troll Slayer",
+"link": "/docs/campaigns/hired-swords/grade-1a#dwarf-troll-slayer",
+"cost": "25 gc",
+"upkeep": "10 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Hochland Bandits", "Ostermarkers", "Pirates", "Lustrian Reavers", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Elf Ranger",
+"link": "/docs/campaigns/hired-swords/grade-1a#elf-ranger",
+"cost": "40 gc",
+"upkeep": "20 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Freelancer",
+"link": "/docs/campaigns/hired-swords/grade-1a#freelancer",
+"cost": "50 gc",
+"upkeep": "20 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Hochland Bandits", "Imperial Outriders", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Halfling Scout",
+"link": "/docs/campaigns/hired-swords/grade-1a#halfling-scout",
+"cost": "15 gc",
+"upkeep": "5 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Maneaters", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Ogre Bodyguard",
+"link": "/docs/campaigns/hired-swords/grade-1a#ogre-bodyguard",
+"cost": "80 gc",
+"upkeep": "30 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Pit Fighter",
+"link": "/docs/campaigns/hired-swords/grade-1a#pit-fighter",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Warlock",
+"link": "/docs/campaigns/hired-swords/grade-1a#warlock",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Reiklanders", "Nipponese Expedition", "Skaven", "Undead", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Arabian Merchant",
+"link": "/docs/campaigns/hired-swords/grade-1a#arabian-merchant",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "1a",
+"source": "Town Cryer 22",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Beast Hunter",
+"link": "/docs/campaigns/hired-swords/grade-1a#beast-hunter",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "1a",
+"source": "Town Cryer 28",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+
+{
+"type": "hiredsword",
+"name": "Highwayman",
+"link": "/docs/campaigns/hired-swords/grade-1a#highwayman",
+"cost": "35 gc",
+"upkeep": "20 gc",
+"grade": "1a",
+"source": "Town Cryer 26",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Skaven", "Undead", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Imperial Assassin",
+"link": "/docs/campaigns/hired-swords/grade-1a#imperial-assassin",
+"cost": "40 gc",
+"upkeep": "20 gc",
+"grade": "1a",
+"source": "Town Cryer 6",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Undead", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+
+{
+"type": "hiredsword",
+"name": "Roadwarden",
+"link": "/docs/campaigns/hired-swords/grade-1a#roadwarden",
+"cost": "40 gc",
+"upkeep": "20 gc",
+"grade": "1a",
+"source": "Town Cryer 26",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Tilean Marksman",
+"link": "/docs/campaigns/hired-swords/grade-1a#tilean-marksman",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1a",
+"source": "Town Cryer 6",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+
+{
+"type": "hiredsword",
+"name": "Bard",
+"link": "/docs/campaigns/hired-swords/grade-1b#bard",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "1b",
+"source": "Town Cryer 13",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Big Game Hunter",
+"link": "/docs/campaigns/hired-swords/grade-1b#big-game-hunter",
+"cost": "40 gc",
+"upkeep": "18 gc",
+"grade": "1b",
+"source": "Town Cryer 13 (Lustria)",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Black Orc Overseer",
+"link": "/docs/campaigns/hired-swords/grade-1b#black-orc-overseer",
+"cost": "60 gc",
+"upkeep": "40 gc",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Orc Mob", "Black Orcs", "Forest Goblins", "Night Goblins", "Night Goblins (web)", "The Sons of Hashut"]
+},
+{
+"type": "hiredsword",
+"name": "Bounty Hunter",
+"link": "/docs/campaigns/hired-swords/grade-1b#bounty-hunter",
+"cost": "40 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 13",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Chameleon Skink",
+"link": "/docs/campaigns/hired-swords/grade-1b#chameleon-skink",
+"cost": "70 gc",
+"upkeep": "12 gc",
+"grade": "1b",
+"source": "Town Cryer 12 (Lustria)",
+"permittedWarbands": ["Lizardmen"]
+},
+{
+"type": "hiredsword",
+"name": "Clan Skryre Rat Ogre",
+"link": "/docs/campaigns/hired-swords/grade-1b#clan-skryre-rat-ogre",
+"cost": "100 gc",
+"upkeep": "1 wyrdstone",
+"grade": "1b",
+"source": "Town Cryer 25",
+"permittedWarbands": ["Skaven", "Skaven of Clan Pestilens"]
+},
+{
+"type": "hiredsword",
+"name": "Dark Elf Assassin",
+"link": "/docs/campaigns/hired-swords/grade-1b#dark-elf-assassin",
+"cost": "70 gc",
+"upkeep": "25 gc",
+"grade": "1b",
+"source": "Town Cryer 12 (Lustria)",
+"permittedWarbands": ["Cult of the Possessed", "Skaven", "Undead", "Dark Elves", "Forest Goblins", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Pirates", "Skaven of Clan Pestilens", "Tomb Guardians", "Black Dwarfs", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Druchii", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Duellist",
+"link": "/docs/campaigns/hired-swords/grade-1b#duellist",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 13",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Dwarf Pathfinder",
+"link": "/docs/campaigns/hired-swords/grade-1b#dwarf-pathfinder",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Dwarf Treasure Hunter",
+"link": "/docs/campaigns/hired-swords/grade-1b#dwarf-treasure-hunter",
+"cost": "55 gc",
+"upkeep": "30 gc",
+"grade": "1b",
+"source": "Fanatic Magazine Magazine 8",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Elf Mage",
+"link": "/docs/campaigns/hired-swords/grade-1b#elf-mage",
+"cost": "45 gc",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Fanatic Magazine Magazine 5",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Gaoler",
+"link": "/docs/campaigns/hired-swords/grade-1b#gaoler",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Mordheim Facebook Page",
+"permittedWarbands": ["Witch Hunters", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Halfling Thief",
+"link": "/docs/campaigns/hired-swords/grade-1b#halfling-thief",
+"cost": "25 gc",
+"upkeep": "15 gc*",
+"grade": "1b",
+"source": "Fanatic Magazine 7",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Dwarf Rangers", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Human Scout",
+"link": "/docs/campaigns/hired-swords/grade-1b#human-scout",
+"cost": "10 gc",
+"upkeep": "5 gc",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Kislev Ranger",
+"link": "/docs/campaigns/hired-swords/grade-1b#kislev-ranger",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Fanatic Magazine Magazine 6",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Dwarf Rangers", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Mule Skinner",
+"link": "/docs/campaigns/hired-swords/grade-1b#mule-skinner",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 14",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Nomad Scout",
+"link": "/docs/campaigns/hired-swords/grade-1b#nomad-scout",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 19 (Khemri)",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Norse Shaman",
+"link": "/docs/campaigns/hired-swords/grade-1b#norse-shaman",
+"cost": "45 gc",
+"upkeep": "25 gc",
+"grade": "1b",
+"source": "Town Cryer 12 (Lustria), Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "The Sons of Hashut", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Old Prospector",
+"link": "/docs/campaigns/hired-swords/grade-1b#old-prospector",
+"cost": "2 treasures",
+"upkeep": "1 treasure",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Druchii", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Pathfinder",
+"link": "/docs/campaigns/hired-swords/grade-1b#pathfinder",
+"cost": "60 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 12 (Lustria)",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Priest Of Morr",
+"link": "/docs/campaigns/hired-swords/grade-1b#priest-of-morr",
+"cost": "Hero",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Town Cryer 12",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Runesmith Journeyman",
+"link": "/docs/campaigns/hired-swords/grade-1b#runesmith-journeyman",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Hochland Bandits", "Ostermarkers", "Pirates", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Shadow Warrior",
+"link": "/docs/campaigns/hired-swords/grade-1b#shadow-warrior",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 13 (Lustria)",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Snake Charmer",
+"link": "/docs/campaigns/hired-swords/grade-1b#snake-charmer",
+"cost": "40 gc",
+"upkeep": "10 gc",
+"grade": "1b",
+"source": "Town Cryer 19 (Khemri)",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Thief",
+"link": "/docs/campaigns/hired-swords/grade-1b#thief",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 19 (Khemri)",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Tomb Robber",
+"link": "/docs/campaigns/hired-swords/grade-1b#tomb-robber",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 19 (Khemri)",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Warrior Priest Of Sigmar",
+"link": "/docs/campaigns/hired-swords/grade-1b#warrior-priest-of-sigmar",
+"cost": "40 gc",
+"upkeep": "20 gc",
+"grade": "1b",
+"source": "Town Cryer 28",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult"]
+},
+{
+"type": "hiredsword",
+"name": "Witch",
+"link": "/docs/campaigns/hired-swords/grade-1b#witch",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 13",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Skaven", "Undead", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Druchii", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Witch Hunter",
+"link": "/docs/campaigns/hired-swords/grade-1b#witch-hunter",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Wolf Priest of Ulric",
+"link": "/docs/campaigns/hired-swords/grade-1b#wolf-priest-of-ulric",
+"cost": "Hero",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Town Cryer 8",
+"permittedWarbands": ["Middenheimers"]
+},
+{
+"type": "hiredsword",
+"name": "Bone Goliath",
+"link": "/docs/campaigns/hired-swords/grade-1c#bone-goliath",
+"cost": "225 gc",
+"upkeep": "n/a",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["The Restless Dead"]
+},
+{
+"type": "hiredsword",
+"name": "Cathayan Merchant",
+"link": "/docs/campaigns/hired-swords/grade-1c#cathayan-merchant",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Battle Monks of Cathay", "Black Dwarfs", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Chaos Centaur",
+"link": "/docs/campaigns/hired-swords/grade-1c#chaos-centaur",
+"cost": "65 gc",
+"upkeep": "25 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Beastmen Raiders", "Black Dwarfs", "Maneaters", "Marauders of Chaos", "Norse Explorers", "The Sons of Hashut"]
+},
+{
+"type": "hiredsword",
+"name": "Coachman",
+"link": "/docs/campaigns/hired-swords/grade-1c#coachman",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Tomb Guardians", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Grave Robber",
+"link": "/docs/campaigns/hired-swords/grade-1c#grave-robber",
+"cost": "45 gc",
+"upkeep": "18 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Undead", "Tomb Guardians", "The Restless Dead"]
+},
+{
+"type": "hiredsword",
+"name": "Hobgoblin Scout",
+"link": "/docs/campaigns/hired-swords/grade-1c#hobgoblin-scout",
+"cost": "45 gc",
+"upkeep": "20 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Black Dwarfs", "Maneaters", "The Sons of Hashut"]
+},
+{
+"type": "hiredsword",
+"name": "Ninja",
+"link": "/docs/campaigns/hired-swords/grade-1c#ninja",
+"cost": "70 +3D6 gc",
+"upkeep": "n/a",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Tomb Guardians", "Trantios", "Battle Monks of Cathay", "Bretonnian Chapel Guard", "Merchant Caravans", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Pyromaniac",
+"link": "/docs/campaigns/hired-swords/grade-1c#pyromaniac",
+"cost": "25 gc",
+"upkeep": "10 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Hochland Bandits", "Ostermarkers", "Pirates", "Battle Monks of Cathay", "Merchant Caravans"]
+},
+{
+"type": "hiredsword",
+"name": "Swordsmith",
+"link": "/docs/campaigns/hired-swords/grade-1c#swordsmith",
+"cost": "60 gc",
+"upkeep": "15 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Hochland Bandits", "Ostermarkers", "Pirates", "Battle Monks of Cathay", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Beggar",
+"link": "/docs/campaigns/hired-swords/grade-2a#beggar",
+"cost": "10 gc",
+"upkeep": "5 gc",
+"grade": "2a",
+"source": "Fanatic Online 94",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "The Restless Dead", "The Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Chaos Fury",
+"link": "/docs/campaigns/hired-swords/grade-2a#chaos-fury",
+"cost": "30 gc",
+"upkeep": "20 gc",
+"grade": "2a",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Black Dwarfs", "Marauders of Chaos", "Norse Explorers", "Sons of Hashut:"]
+},
+{
+"type": "hiredsword",
+"name": "Cursed Hillman",
+"link": "/docs/campaigns/hired-swords/grade-2a#cursed-hillman",
+"cost": "60 gc",
+"upkeep": "25 gc",
+"grade": "2a",
+"source": "Fanatic Online 49",
+"permittedWarbands": ["Beastmen Raiders", "Cult of the Possessed", "Undead", "Tomb Guardians", "The Restless Dead"]
+},
+{
+"type": "hiredsword",
+"name": "Dark Mage",
+"link": "/docs/campaigns/hired-swords/grade-2a#dark-mage",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Letters of the Damned 6",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Dwarf Slayer Pirate",
+"link": "/docs/campaigns/hired-swords/grade-2a#dwarf-slayer-pirate",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Fanatic Online 45",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Hochland Bandits", "Miragleans", "Ostermarkers", "Pirates", "Remasens", "Tileans", "Trantios", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Emissary Of Chaos",
+"link": "/docs/campaigns/hired-swords/grade-2a#emissary-of-chaos",
+"cost": "50 gc",
+"upkeep": "20 gc",
+"grade": "2a",
+"source": "Fanatic Online 94",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dark Elves", "Norse Explorers", "Druchii"]
+},
+{
+"type": "hiredsword",
+"name": "Estalian Diestro",
+"link": "/docs/campaigns/hired-swords/grade-2a#estalian-diestro",
+"cost": "35 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Letters of the Damned 2",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Shadow Warriors", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Fallen Sister",
+"link": "/docs/campaigns/hired-swords/grade-2a#fallen-sister",
+"cost": "55 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Fanatic Online 25",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Goblin Lantern Bearer",
+"link": "/docs/campaigns/hired-swords/grade-2a#goblin-lantern-bearer",
+"cost": "15 gc",
+"upkeep": "5 gc",
+"grade": "2a",
+"source": "Fanatic Online 89",
+"permittedWarbands": ["Averlanders", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Gravesman",
+"link": "/docs/campaigns/hired-swords/grade-2a#gravesman",
+"cost": "25 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Letters of the Damned 5",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Halfling Knight",
+"link": "/docs/campaigns/hired-swords/grade-2a#halfling-knight",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "2a",
+"source": "Fanatic Online 94",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Imperial Tactician",
+"link": "/docs/campaigns/hired-swords/grade-2a#imperial-tactician",
+"cost": "40 gc",
+"upkeep": "20 gc",
+"grade": "2a",
+"source": "Fanatic Online 94",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Knight of the White Wolf",
+"link": "/docs/campaigns/hired-swords/grade-2a#knight-of-the-white-wolf",
+"cost": "55 gc",
+"upkeep": "20 gc",
+"grade": "2a",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Hochland Bandits", "Ostermarkers", "Pirates", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Ninja Gnoblar",
+"link": "/docs/campaigns/hired-swords/grade-2a#ninja-gnoblar",
+"cost": "35 gc",
+"upkeep": "10 gc",
+"grade": "2a",
+"source": "Mordheimer Information Center",
+"permittedWarbands": ["Maneaters", "Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Ogre Slave Master",
+"link": "/docs/campaigns/hired-swords/grade-2a#ogre-slave-master",
+"cost": "90 gc",
+"upkeep": "35 gc",
+"grade": "2a",
+"source": "Fanatic Online 89",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed"]
+},
+{
+"type": "hiredsword",
+"name": "Slaver",
+"link": "/docs/campaigns/hired-swords/grade-2a#slaver",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "2a",
+"source": "Fanatic Online 94",
+"permittedWarbands": ["Cult of the Possessed", "Skaven", "Undead", "Dark Elves", "Skaven of Clan Pestilens", "Tomb Guardians", "Norse Explorers", "The Restless Dead", "Grave Robbers"]
+},
+{
+"type": "hiredsword",
+"name": "Swashbuckler",
+"link": "/docs/campaigns/hired-swords/grade-2a#swashbuckler",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Fanatic Online 94",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Ungor Trapper",
+"link": "/docs/campaigns/hired-swords/grade-2a#ungor-trapper",
+"cost": "20 gc",
+"upkeep": "10 gc",
+"grade": "2a",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Beastmen Raiders", "Cult of the Possessed", "Marauders of Chaos", "Norse Explorers"]
+},
+{
+"type": "hiredsword",
+"name": "Weaponsmith",
+"link": "/docs/campaigns/hired-swords/grade-2a#weaponsmith",
+"cost": "30 gc",
+"upkeep": "15 gc",
+"grade": "2a",
+"source": "Fan Made from the Web",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "hiredsword",
+"name": "Wood Elf Hunter",
+"link": "/docs/campaigns/hired-swords/grade-2a#wood-elf-hunter",
+"cost": "50 gc",
+"upkeep": "20 gc",
+"grade": "2a",
+"source": "Letters of the Damned 2",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Merchant Caravans", "Dreamwalkers, Cult Of Morr"]
+},
+{
+"type": "dramatispersonae",
+"name": "Aenur, Sword of Twilight",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#aenur-sword-of-twilight",
+"cost": "150 gc",
+"upkeep": "n/a",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Druchii", "Grave Robbers", "Halflings", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Bertha Bestraufrung",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#bertha-bestraufrung",
+"cost": "n/a",
+"upkeep": "n/a",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Sisters of Sigmar"]
+},
+{
+"type": "dramatispersonae",
+"name": "Johann The Knife",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#johann-the-knife",
+"cost": "70 gc",
+"upkeep": "30 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Veskit, High Executioner of Clan Eshin",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#veskit-high-executioner-of-clan-eshin",
+"cost": "80 gc",
+"upkeep": "35 gc",
+"grade": "core",
+"source": "Mordheim Rulebook",
+"permittedWarbands": ["Skaven", "Skaven of Clan Pestilens", "Skaven of Clan Moulder"]
+},
+{
+"type": "dramatispersonae",
+"name": "Countess Marianna Chevaux",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#countess-marianna-chevaux",
+"cost": "150 gc",
+"upkeep": "75 gc*",
+"grade": "1a",
+"source": "Town Cryer 22",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Skaven", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Skaven of Clan Pestilens", "Tileans", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "Sons of Hashut", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Skaven of Clan Moulder", "Sorcerous Society", "Vampire Hunters of Sylvania"]
+},
+
+{
+"type": "dramatispersonae",
+"name": "Nicodemus, The Cursed Pilgrim",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#nicodemus-the-cursed-pilgrim",
+"cost": "1 wyrdstone",
+"upkeep": "1 wyrdstone",
+"grade": "1a",
+"source": "Mordheim Annual 2002",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Sorcerous Society", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Ulli & Marquand",
+"link": "/docs/campaigns/dramatis-personae/grade-1a#ulli--marquand",
+"cost": "30 gc",
+"upkeep": "n/a",
+"grade": "1a",
+"source": "Town Cryer 13",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Skaven", "Undead", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+
+{
+"type": "dramatispersonae",
+"name": "Abdul Alhazred, the Mad Sorcerer",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#abdul-alhazred-the-mad-sorcerer",
+"cost": "70 gc",
+"upkeep": "30 gc",
+"grade": "1b",
+"source": "Town Cryer 21 (Khemri)",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Skaven", "Undead", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "The Crow Master",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#the-crow-master",
+"cost": "65 gc",
+"upkeep": "15 gc",
+"grade": "1b",
+"source": "Town Cryer 25",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Skaven", "Undead", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Dreamwalkers, Cult Of Morr", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania"]
+},
+{
+"type": "dramatispersonae",
+"name": "Dark Emissary",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#dark-emissary",
+"cost": "n/a",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Town Cryer 15 (Albion)",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Orc Mob", "Skaven", "Undead", "Black Orcs", "Dark Elves", "Forest Goblins", "Skaven of Clan Pestilens", "Tomb Guardians", "Black Dwarfs", "Maneaters", "Marauders of Chaos", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Druchii", "Grave Robbers", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Skaven of Clan Moulder", "Survivors Of Strigos"]
+},
+{
+"type": "dramatispersonae",
+"name": "Dijin Katal, The Renegade Assassin",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#dijin-katal-the-renegade-assassin",
+"cost": "85 gc",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Town Cryer 15 (Lustria)",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Drenok Johansen, Wielder Of The Great Axe",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#drenok-johansen-wielder-of-the-great-axe",
+"cost": "70 gc",
+"upkeep": "30 gc",
+"grade": "1b",
+"source": "Town Cryer 15 (Lustria)",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers", "Masters Of Horror", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Sorcerous Society", "Vampire Hunters of Sylvania"]
+},
+{
+"type": "dramatispersonae",
+"name": "Heinrich ’Altdorf’ Schmidt",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#heinrich-altdorf-schmidt",
+"cost": "75 gc",
+"upkeep": "1 treasure",
+"grade": "1b",
+"source": "Town Cryer 21 (Khemri)",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers", "Masters Of Horror", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Sorcerous Society", "Vampire Hunters of Sylvania"]
+},
+{
+"type": "dramatispersonae",
+"name": "Khar-mel The Djinn",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#khar-mel-the-djinn",
+"cost": "80 gc",
+"upkeep": "30 gc",
+"grade": "1b",
+"source": "Town Cryer 21 (Khemri)",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Maximilian The Mad",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#maximilian-the-mad",
+"cost": "80 gc",
+"upkeep": "30 gc",
+"grade": "1b",
+"source": "Nemesis Crown Supplement",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Imperial Outriders", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers", "Masters Of Horror", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania"]
+},
+{
+"type": "dramatispersonae",
+"name": "Penthesilea, Mark Of The Serpent",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#penthesilea-mark-of-the-serpent",
+"cost": "n/a",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Town Cryer 15 (Lustria)",
+"permittedWarbands": ["Amazons (Mordheim)", "Amazons (Lustria)"]
+},
+{
+"type": "dramatispersonae",
+"name": "Truthsayer",
+"link": "/docs/campaigns/dramatis-personae/grade-1b#truthsayer",
+"cost": "n/a",
+"upkeep": "n/a",
+"grade": "1b",
+"source": "Town Cryer 15 (Albion)",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Halflings", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Belandysh, Condemned Champion Of Chen",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#belandysh-condemned-champion-of-chen",
+"cost": "90 gc, 5cp",
+"upkeep": "30 gc, 1cp",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Beastmen Raiders", "Cult of the Possessed", "Marauders of Chaos", "Norse Explorers"]
+},
+{
+"type": "dramatispersonae",
+"name": "Grand Master Ippan Shu",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#grand-master-ippan-shu",
+"cost": "75 gc, 3cp",
+"upkeep": "2cp",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Horned Hunters", "Imperial Outriders", "Miragleans", "Ostermarkers", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Battle Monks of Cathay", "Bretonnian Chapel Guard", "Lustrian Reavers", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Druchii", "Grave Robbers", "Masters Of Horror", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Innominatus, the Tilean Gladiator",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#innominatus-the-tilean-gladiator",
+"cost": "120 gc",
+"upkeep": "40 gc / 20 gc*",
+"grade": "1c",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Luthor, the Crimson Blade of Reikland",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#luthor-the-crimson-blade-of-reikland",
+"cost": "60 gc",
+"upkeep": "25 gc*",
+"grade": "1c",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Averlanders", "Kislevites", "Marienburgers", "Mazzalupo", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "Dreamwalkers, Cult Of Morr", "Grave Robbers", "Masters Of Horror", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania"]
+},
+{
+"type": "dramatispersonae",
+"name": "Luthor, the Dark Wizard Extraordinaire",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#luthor-the-dark-wizard-extraordinaire",
+"cost": "60 gc",
+"upkeep": "25 gc*",
+"grade": "1c",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Skaven", "Undead", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Luthor, the Master Archer of Drakwald",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#luthor-the-master-archer-of-drakwald",
+"cost": "60 gc",
+"upkeep": "25 gc*",
+"grade": "1c",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Averlanders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Miragleans", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Marauders of Chaos", "Merchant Caravans", "Norse Explorers", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Sorcerous Society", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Luthor, Treasure Hunter Par Excellence",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#luthor-treasure-hunter-par-excellence",
+"cost": "60 gc",
+"upkeep": "25 gc*",
+"grade": "1c",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Skaven", "Undead", "Witch Hunters", "Arabian Tomb Raiders", "Black Orcs", "Bretonnian Knights", "Dark Elves", "Dwarf Rangers", "Forest Goblins", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Skaven of Clan Pestilens", "Tileans", "Tomb Guardians", "Trantios", "Black Dwarfs", "Bretonnian Chapel Guard", "Lustrian Reavers", "Maneaters", "Marauders of Chaos", "Merchant Caravans", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "The Restless Dead", "Sons of Hashut", "Dreamwalkers, Cult Of Morr", "Druchii", "Dwarf Slayer Cult", "Grave Robbers", "Halflings", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Order Of The Mare", "Outlaws of Stirwood Forest, Redux", "Protectorate Of Sigmar", "Skaven of Clan Moulder", "Sorcerous Society", "Survivors Of Strigos", "Vampire Hunters of Sylvania", "Wood Elves of Athel Loren"]
+},
+{
+"type": "dramatispersonae",
+"name": "Maglah Khan's Horde",
+"link": "/docs/campaigns/dramatis-personae/grade-1c#maglah-khan's-horde",
+"cost": "80 gc",
+"upkeep": "25 gc",
+"grade": "1c",
+"source": "Border Town Burning Supplement",
+"permittedWarbands": ["Averlanders", "Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Marienburgers", "Mazzalupo", "Middenheimers", "Orc Mob", "Reiklanders", "Nipponese Expedition", "Black Orcs", "Forest Goblins", "Ostermarkers", "Pirates", "Black Dwarfs", "Maneaters", "Marauders of Chaos", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "Sons of Hashut", "Ogre Hunting Party"]
+},
+{
+"type": "dramatispersonae",
+"name": "Aksho'akhash, the Vile Dreadwing",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#aksho'akhash-the-vile-dreadwing",
+"cost": "30 gc",
+"upkeep": "30 gc",
+"grade": "2a",
+"source": "Mordheim Facebook Group",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Black Dwarfs", "Marauders of Chaos", "Norse Explorers", "Sons of Hashut"]
+},
+{
+"type": "dramatispersonae",
+"name": "Busty Gwen",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#busty-gwen",
+"cost": "Special",
+"upkeep": "Special",
+"grade": "2a",
+"source": "Fanatic Online 89",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed"]
+},
+{
+"type": "dramatispersonae",
+"name": "Dark Jester",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#dark-jester",
+"cost": "75 gc",
+"upkeep": "30 gc",
+"grade": "2a",
+"source": "Fanatic Online 17",
+"permittedWarbands": ["Carnival of Chaos"]
+},
+{
+"type": "dramatispersonae",
+"name": "Headless Horseman, The",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#headless-horseman-the",
+"cost": "100 gc",
+"upkeep": "n/a",
+"grade": "2a",
+"source": "Sylvania Supplement",
+"permittedWarbands": ["Averlanders", "Dwarf Treasure Hunters", "Kislevites", "Marienburgers", "Mazzalupo", "Middenheimers", "Ostlanders", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Arabian Tomb Raiders", "Bretonnian Knights", "Dwarf Rangers", "Gunnery School of Nuln", "Hochland Bandits", "Horned Hunters", "Imperial Outriders", "Lizardmen", "Miragleans", "Mootlanders", "Ostermarkers", "Outlaws of Stirwood Forest, The", "Pirates", "Pit Fighters", "Remasens", "Shadow Warriors", "Tileans", "Trantios", "Bretonnian Chapel Guard", "Lustrian Reavers", "Merchant Caravans", "Druchii", "Grave Robbers", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Skaven of Clan Moulder", "Survivors Of Strigos"]
+},
+{
+"type": "dramatispersonae",
+"name": "Maurice Schleige",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#maurice-schleige",
+"cost": "40 gc",
+"upkeep": "n/a",
+"grade": "2a",
+"source": "Fanatic Online 89",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Black Orcs", "Dark Elves", "Forest Goblins", "Ostermarkers", "Pirates", "Skaven of Clan Pestilens", "Tomb Guardians", "Black Dwarfs", "Maneaters", "Marauders of Chaos", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "Sons of Hashut", "Druchii", "Grave Robbers", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Skaven of Clan Moulder", "Survivors Of Strigos"]
+},
+{
+"type": "dramatispersonae",
+"name": "Sigmund Spindle, The Harvester Of Flesh",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#sigmund-spindle-the-harvester-of-flesh",
+"cost": "70 gc",
+"upkeep": "35 gc",
+"grade": "2a",
+"source": "Sylvania Supplement",
+"permittedWarbands": ["Beastmen Raiders", "Carnival of Chaos", "Cult of the Possessed", "Black Orcs", "Dark Elves", "Forest Goblins", "Skaven of Clan Pestilens", "Tomb Guardians", "Black Dwarfs", "Maneaters", "Marauders of Chaos", "Night Goblins", "Night Goblins (web)", "Norse Explorers", "Sons of Hashut", "Druchii", "Grave Robbers", "Masters Of Horror", "Necrarchs, the Soul Stealers", "Ogre Hunting Party", "Skaven of Clan Moulder", "Survivors Of Strigos"]
+},
+{
+"type": "dramatispersonae",
+"name": "William Schäkestange, Master Bard",
+"link": "/docs/campaigns/dramatis-personae/grade-2a#william-schäkestange-master-bard",
+"cost": "70 gc",
+"upkeep": "30 gc",
+"grade": "2a",
+"source": "Letters of the Damned 4",
+"permittedWarbands": ["Marienburgers", "Mazzalupo", "Middenheimers", "Reiklanders", "Nipponese Expedition", "Sisters of Sigmar", "Witch Hunters", "Ostermarkers", "Pirates", "Dreamwalkers, Cult Of Morr", "Halflings", "Protectorate Of Sigmar", "Sorcerous Society", "Vampire Hunters of Sylvania"]
+}
+]

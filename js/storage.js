@@ -24,11 +24,17 @@ const Storage = {
       rosters.push(roster);
     }
     this.saveAllRosters(rosters);
+
+    // Cloud sync (fire-and-forget)
+    if (typeof Cloud !== 'undefined') Cloud.enqueueSave(roster);
   },
 
   deleteRoster(id) {
     const rosters = this.getAllRosters().filter(r => r.id !== id);
     this.saveAllRosters(rosters);
+
+    // Cloud sync (fire-and-forget)
+    if (typeof Cloud !== 'undefined') Cloud.deleteRoster(id);
   },
 
   exportRoster(id) {
@@ -43,6 +49,8 @@ const Storage = {
       throw new Error('Invalid roster format');
     }
     roster.id = this.generateId(); // assign new id to avoid conflicts
+    if (!roster.hiredSwords) roster.hiredSwords = [];
+    if (!roster.customWarriors) roster.customWarriors = [];
     this.saveRoster(roster);
     return roster;
   },

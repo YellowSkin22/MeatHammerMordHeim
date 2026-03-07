@@ -4,23 +4,31 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mordheim Roster Manager</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=10">
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9760;</text></svg>">
 </head>
 <body>
 
+  <!-- ===== NOTIFICATION BANNERS ===== -->
+  <div id="notification-banners"></div>
+
   <!-- ===== HEADER ===== -->
   <header class="app-header">
-    <div style="display:flex; align-items:center; gap:0.8rem;">
+    <div class="header-left" style="display:flex; align-items:center; gap:0.8rem;">
       <button id="btn-back" class="btn btn-sm hidden" onclick="UI.goBack()">&#8592; Back</button>
       <div class="app-title">
         <span class="skull-icon">&#9760;</span>
-        MORDHEIM ROSTER
+        <span class="app-title-text">MORDHEIM ROSTER</span>
       </div>
     </div>
-    <div class="header-actions">
-      <button class="btn btn-sm" onclick="UI.importRoster()">Import</button>
-      <button class="btn btn-sm btn-primary" onclick="UI.openCreateModal()">+ New Warband</button>
+    <div class="header-right">
+      <div id="auth-area" class="auth-area"></div>
+      <div class="header-actions">
+        <button class="btn btn-sm btn-primary" onclick="UI.openCreateModal()"><span class="btn-label-full">+ New Warband</span><span class="btn-label-compact">+</span></button>
+      </div>
     </div>
   </header>
 
@@ -30,9 +38,13 @@
     <div id="roster-list" class="view active">
       <div class="roster-list-header">
         <h2>Your Warbands</h2>
+        <button class="btn btn-sm" onclick="UI.importRoster()">Import</button>
       </div>
       <div id="roster-grid" class="roster-grid"></div>
     </div>
+
+    <!-- ===== TIER OVERVIEW VIEW ===== -->
+    <div id="tier-overview" class="view"></div>
 
     <!-- ===== ROSTER EDITOR VIEW ===== -->
     <div id="roster-editor" class="view">
@@ -83,18 +95,38 @@
         <div class="section-panel" id="heroes-section">
           <div class="section-header" onclick="UI.toggleSection('heroes-section')">
             <h3><span class="toggle-icon">&#9660;</span> Heroes</h3>
-            <div id="hero-add-buttons" style="display:flex; gap:0.3rem; flex-wrap:wrap;"></div>
+            <div id="hero-add-buttons" class="section-add-controls" style="display:flex; gap:0.3rem; align-items:center;"></div>
           </div>
           <div class="section-content" id="heroes-content"></div>
+        </div>
+
+        <!-- Hired Swords Section -->
+        <div class="section-panel" id="hired-swords-section">
+          <div class="section-header" onclick="UI.toggleSection('hired-swords-section')">
+            <h3><span class="toggle-icon">&#9660;</span> Hired Swords</h3>
+            <div id="hired-swords-add-buttons" class="section-add-controls" style="display:flex; gap:0.3rem; align-items:center;"></div>
+          </div>
+          <div class="section-content" id="hired-swords-content"></div>
         </div>
 
         <!-- Henchmen Section -->
         <div class="section-panel" id="henchmen-section">
           <div class="section-header" onclick="UI.toggleSection('henchmen-section')">
             <h3><span class="toggle-icon">&#9660;</span> Henchmen</h3>
-            <div id="henchmen-add-buttons" style="display:flex; gap:0.3rem; flex-wrap:wrap;"></div>
+            <div id="henchmen-add-buttons" class="section-add-controls" style="display:flex; gap:0.3rem; align-items:center;"></div>
           </div>
           <div class="section-content" id="henchmen-content"></div>
+        </div>
+
+        <!-- Custom Section -->
+        <div class="section-panel" id="custom-section">
+          <div class="section-header" onclick="UI.toggleSection('custom-section')">
+            <h3><span class="toggle-icon">&#9660;</span> Custom</h3>
+            <div id="custom-add-buttons" class="section-add-controls" style="display:flex; gap:0.3rem; align-items:center;">
+              <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.openCustomWarriorModal()">+ Create</button>
+            </div>
+          </div>
+          <div class="section-content" id="custom-content"></div>
         </div>
       </div>
 
@@ -128,6 +160,14 @@
                   <span class="text-accent">shards</span>
                 </div>
               </div>
+              <div class="treasury-item">
+                <div class="treasury-label">Member Limit</div>
+                <div class="treasury-inline mt-1">
+                  <button class="btn btn-sm" onclick="UI.adjustMemberLimit(-1)" style="padding:0.2rem 0.5rem;">−</button>
+                  <span id="member-limit-display" class="text-accent" style="min-width:30px; text-align:center; font-weight:600;"></span>
+                  <button class="btn btn-sm" onclick="UI.adjustMemberLimit(1)" style="padding:0.2rem 0.5rem;">+</button>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -138,7 +178,7 @@
             <h3>Battle Log</h3>
           </div>
           <div class="section-content">
-            <div style="display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;">
+            <div class="battle-log-form" style="display:flex; gap:0.5rem; margin-bottom:1rem; flex-wrap:wrap;">
               <select id="battle-result-input" class="form-control" style="flex:1; min-width:150px;">
                 <option value="">-- Result --</option>
                 <option value="Victory">Victory</option>
@@ -250,6 +290,73 @@
     </div>
   </div>
 
+  <!-- ===== CUSTOM WARRIOR MODAL ===== -->
+  <div id="custom-warrior-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Create Custom Warrior</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('custom-warrior-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" id="custom-name" class="form-control" placeholder="e.g. Pit Champion">
+        </div>
+        <div class="form-group">
+          <label>Cost (gc)</label>
+          <input type="number" id="custom-cost" class="form-control" value="0" min="0">
+        </div>
+        <div class="form-group">
+          <label>Stats</label>
+          <div class="custom-stat-grid" style="display:grid; grid-template-columns:repeat(9, 1fr); gap:0.3rem; text-align:center;">
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">M</div><input type="number" id="custom-stat-M" class="form-control" value="4" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">WS</div><input type="number" id="custom-stat-WS" class="form-control" value="3" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">BS</div><input type="number" id="custom-stat-BS" class="form-control" value="3" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">S</div><input type="number" id="custom-stat-S" class="form-control" value="3" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">T</div><input type="number" id="custom-stat-T" class="form-control" value="3" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">W</div><input type="number" id="custom-stat-W" class="form-control" value="1" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">I</div><input type="number" id="custom-stat-I" class="form-control" value="3" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">A</div><input type="number" id="custom-stat-A" class="form-control" value="1" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+            <div><div style="font-size:0.7rem; color:var(--text-muted);">Ld</div><input type="number" id="custom-stat-Ld" class="form-control" value="7" min="0" max="10" style="text-align:center; padding:0.2rem;"></div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Special Rules (comma-separated)</label>
+          <input type="text" id="custom-rules" class="form-control" placeholder="e.g. Fear, Large Target">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="UI.closeModal('custom-warrior-modal')">Cancel</button>
+        <button class="btn btn-primary" onclick="UI.submitCustomWarrior()">Create</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== AUTH MODAL ===== -->
+  <div id="auth-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="auth-modal-title">Sign In</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('auth-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" id="auth-email" class="form-control" placeholder="you@example.com">
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" id="auth-password" class="form-control" placeholder="Password (min 6 characters)">
+        </div>
+        <p id="auth-error" style="font-size:0.85rem; min-height:1.2rem; color:var(--danger);"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" id="auth-toggle-btn" onclick="UI.toggleAuthMode()">Need an account?</button>
+        <button class="btn btn-primary" id="auth-submit-btn" onclick="UI.submitAuth()">Sign In</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== CONFIRM DIALOG ===== -->
   <div id="confirm-overlay" class="confirm-overlay">
     <div class="confirm-box">
@@ -266,16 +373,27 @@
   <div id="toast-container" class="toast-container"></div>
 
   <!-- ===== SCRIPTS ===== -->
-  <script src="js/data.js"></script>
-  <script src="js/storage.js"></script>
-  <script src="js/roster.js"></script>
-  <script src="js/ui.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="js/cloud.js?v=9"></script>
+  <script src="js/data.js?v=6"></script>
+  <script src="js/storage.js?v=6"></script>
+  <script src="js/roster.js?v=5"></script>
+  <script src="js/ui.js?v=10"></script>
   <script>
     // Boot the app
     (async function() {
       try {
+        Cloud.init();
         await DataService.loadAll();
         UI.init();
+        // Fetch and render notifications (public, no auth needed)
+        Cloud.fetchActiveNotifications().then(n => UI.renderNotifications(n));
+        // If already signed in (session restored), refresh tier and sync
+        if (Cloud.isSignedIn()) {
+          await Cloud.refreshTier();
+          UI.renderAuthState();
+          if (Cloud.canAccess('cloud_sync')) Cloud.fullSync();
+        }
       } catch (err) {
         console.error('Failed to initialize:', err);
         document.body.innerHTML = '<div style="padding:2rem; color:#8b6914; text-align:center;">' +
