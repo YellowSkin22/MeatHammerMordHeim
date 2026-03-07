@@ -4,8 +4,139 @@ const UI = {
 
   init() {
     this.bindGlobalEvents();
+    this.renderAuthState();
     this.showView('roster-list');
     this.renderRosterList();
+  },
+
+  // === AUTH UI ===
+  authMode: 'signin',
+
+  renderAuthState() {
+    const area = document.getElementById('auth-area');
+    if (!area) return;
+
+    if (typeof Cloud !== 'undefined' && Cloud.isSignedIn()) {
+      const email = this.esc(Cloud.getUserEmail() || '');
+      const tier = Cloud.getTier();
+      const tierLabel = tier.charAt(0).toUpperCase() + tier.slice(1);
+      const syncHtml = Cloud.canAccess('cloud_sync')
+        ? `<span id="sync-indicator" class="sync-indicator sync-synced" title="Cloud sync active"></span>`
+        : '';
+      area.innerHTML = `
+        <div class="auth-user">
+          <span class="auth-name">${email}</span>
+          <span class="tier-badge tier-${tier}">${tierLabel}</span>
+          ${syncHtml}
+          <a class="tier-link" onclick="UI.showTierOverview()">Plans</a>
+          ${Cloud.isAdmin() ? '<a class="tier-link" href="admin.html" target="_blank">Admin</a>' : ''}
+          <button class="btn btn-sm" onclick="Cloud.signOut()">Sign Out</button>
+        </div>
+      `;
+    } else {
+      area.innerHTML = `
+        <a class="tier-link" onclick="UI.showTierOverview()">Plans</a>
+        <button class="btn btn-sm" onclick="UI.openAuthModal()">
+          &#9729; Sign in
+        </button>
+      `;
+    }
+  },
+
+  // === NOTIFICATION BANNERS ===
+  renderNotifications(notifications) {
+    const container = document.getElementById('notification-banners');
+    if (!container) return;
+    if (!notifications || notifications.length === 0) {
+      container.innerHTML = '';
+      return;
+    }
+    const html = notifications
+      .filter(n => !sessionStorage.getItem('dismissed_notif_' + n.id))
+      .map(n => `
+        <div class="notification-banner" data-notif-id="${this.escAttr(n.id)}">
+          <div class="notification-banner-message">${this.esc(n.message)}</div>
+          <button class="notification-banner-dismiss"
+            onclick="UI.dismissNotification('${this.escAttr(n.id)}')"
+            aria-label="Dismiss">&times;</button>
+        </div>
+      `).join('');
+    container.innerHTML = html;
+  },
+
+  dismissNotification(id) {
+    sessionStorage.setItem('dismissed_notif_' + id, '1');
+    const banner = document.querySelector(`.notification-banner[data-notif-id="${CSS.escape(id)}"]`);
+    if (banner) banner.remove();
+  },
+
+  openAuthModal() {
+    this.authMode = 'signin';
+    document.getElementById('auth-modal-title').textContent = 'Sign In';
+    document.getElementById('auth-submit-btn').textContent = 'Sign In';
+    document.getElementById('auth-toggle-btn').textContent = 'Need an account?';
+    document.getElementById('auth-email').value = '';
+    document.getElementById('auth-password').value = '';
+    document.getElementById('auth-error').textContent = '';
+    document.getElementById('auth-modal').classList.add('active');
+  },
+
+  toggleAuthMode() {
+    if (this.authMode === 'signin') {
+      this.authMode = 'signup';
+      document.getElementById('auth-modal-title').textContent = 'Create Account';
+      document.getElementById('auth-submit-btn').textContent = 'Create Account';
+      document.getElementById('auth-toggle-btn').textContent = 'Already have an account?';
+    } else {
+      this.authMode = 'signin';
+      document.getElementById('auth-modal-title').textContent = 'Sign In';
+      document.getElementById('auth-submit-btn').textContent = 'Sign In';
+      document.getElementById('auth-toggle-btn').textContent = 'Need an account?';
+    }
+    document.getElementById('auth-error').textContent = '';
+  },
+
+  async submitAuth() {
+    const email = document.getElementById('auth-email').value.trim();
+    const password = document.getElementById('auth-password').value;
+    const errorEl = document.getElementById('auth-error');
+
+    if (!email || !password) {
+      errorEl.textContent = 'Please enter both email and password.';
+      return;
+    }
+    if (password.length < 6) {
+      errorEl.textContent = 'Password must be at least 6 characters.';
+      return;
+    }
+
+    errorEl.textContent = '';
+    const btn = document.getElementById('auth-submit-btn');
+    btn.disabled = true;
+    btn.textContent = this.authMode === 'signin' ? 'Signing in...' : 'Creating account...';
+
+    let success;
+    if (this.authMode === 'signin') {
+      success = await Cloud.signIn(email, password);
+    } else {
+      success = await Cloud.signUp(email, password);
+    }
+
+    btn.disabled = false;
+    btn.textContent = this.authMode === 'signin' ? 'Sign In' : 'Create Account';
+
+    if (success) {
+      this.closeModal('auth-modal');
+    }
+  },
+
+  renderSyncIndicator(state) {
+    const el = document.getElementById('sync-indicator');
+    if (!el) return;
+    el.className = 'sync-indicator sync-' + state;
+    el.title = state === 'syncing' ? 'Syncing...'
+             : state === 'synced' ? 'All changes saved to cloud'
+             : 'Sync error — changes saved locally';
   },
 
   // === VIEWS ===
@@ -16,7 +147,7 @@ const UI = {
 
     // Update header
     const backBtn = document.getElementById('btn-back');
-    if (viewId === 'roster-list') {
+    if (viewId === 'roster-list' || viewId === 'tier-overview') {
       backBtn.classList.add('hidden');
     } else {
       backBtn.classList.remove('hidden');
@@ -27,6 +158,23 @@ const UI = {
   renderRosterList() {
     const rosters = Storage.getAllRosters();
     const grid = document.getElementById('roster-grid');
+    const maxRosters = (typeof Cloud !== 'undefined') ? Cloud.getMaxRosters() : 3;
+    const atLimit = rosters.length >= maxRosters;
+
+    // Update header buttons visibility
+    const headerCreate = document.querySelector('.header-actions .btn-primary');
+    if (headerCreate) {
+      headerCreate.disabled = atLimit;
+      if (atLimit) headerCreate.title = `Roster limit reached (${rosters.length}/${maxRosters === Infinity ? '\u221e' : maxRosters})`;
+      else headerCreate.title = '';
+    }
+    const headerImport = document.querySelector('.header-actions .btn:not(.btn-primary)');
+    if (headerImport) {
+      const canImport = (typeof Cloud !== 'undefined') ? Cloud.canAccess('import_export') : false;
+      headerImport.disabled = !canImport;
+      if (!canImport) headerImport.title = 'Import requires Standard tier or above';
+      else headerImport.title = '';
+    }
 
     if (rosters.length === 0) {
       grid.innerHTML = `
@@ -54,7 +202,7 @@ const UI = {
             <div class="roster-card-stat">Battles: <strong>${r.battleLog.length}</strong></div>
           </div>
           <div class="roster-card-actions" onclick="event.stopPropagation()">
-            <button class="btn btn-sm" onclick="UI.exportRoster('${r.id}')">Export</button>
+            <button class="btn btn-sm" onclick="UI.exportRoster('${r.id}')" ${(typeof Cloud !== 'undefined' && !Cloud.canAccess('import_export')) ? 'disabled title="Requires Standard tier"' : ''}>Export</button>
             <button class="btn btn-sm btn-danger" onclick="UI.confirmDeleteRoster('${r.id}')">Delete</button>
           </div>
         </div>
@@ -64,6 +212,14 @@ const UI = {
 
   // === CREATE ROSTER MODAL ===
   openCreateModal() {
+    if (typeof Cloud !== 'undefined') {
+      const rosters = Storage.getAllRosters();
+      const max = Cloud.getMaxRosters();
+      if (rosters.length >= max) {
+        this.toast(`Roster limit reached (${rosters.length}/${max === Infinity ? '\u221e' : max}). Upgrade your tier for more.`, 'error');
+        return;
+      }
+    }
     const modal = document.getElementById('create-modal');
     const select = document.getElementById('create-warband-select');
     select.innerHTML = '<option value="">-- Select Warband --</option>' +
@@ -102,6 +258,8 @@ const UI = {
     const roster = Storage.getRoster(id);
     if (!roster) return this.toast('Roster not found.', 'error');
     this.currentRoster = roster;
+    if (!roster.hiredSwords) roster.hiredSwords = [];
+    if (!roster.customWarriors) roster.customWarriors = [];
     this.showView('roster-editor');
     this.renderRosterEditor();
   },
@@ -125,7 +283,7 @@ const UI = {
     document.getElementById('editor-warband-type').textContent = warband ? warband.name : r.warbandId;
 
     // Summary
-    document.getElementById('summary-members').textContent = `${memberCount} / ${warband.maxWarband}`;
+    document.getElementById('summary-members').textContent = `${memberCount} / ${this.getMaxMembers(r)}`;
     document.getElementById('summary-rating').textContent = rating;
     document.getElementById('summary-gold').textContent = r.gold + ' gc';
     document.getElementById('summary-spent').textContent = totalSpent + ' gc';
@@ -141,6 +299,13 @@ const UI = {
     const r = this.currentRoster;
     const warband = DataService.getWarband(r.warbandId);
 
+    // Capture collapsed state of warrior cards before re-render
+    const collapsedCards = new Set();
+    document.querySelectorAll('.warrior-card-body.collapsed').forEach(el => {
+      const id = el.id.replace('warrior-body-', '');
+      if (id) collapsedCards.add(id);
+    });
+
     // Heroes section
     const heroesContent = document.getElementById('heroes-content');
     if (r.heroes.length === 0) {
@@ -149,13 +314,19 @@ const UI = {
       heroesContent.innerHTML = r.heroes.map((h, idx) => this.renderWarriorCard(h, idx, true)).join('');
     }
 
-    // Hero add buttons
+    // Hero add dropdown
     const heroAddContainer = document.getElementById('hero-add-buttons');
-    heroAddContainer.innerHTML = warband.heroes.map(ht => {
-      const currentCount = r.heroes.filter(h => h.type === ht.type).length;
-      const disabled = currentCount >= ht.max ? 'disabled' : '';
-      return `<button class="btn btn-sm btn-primary" ${disabled} onclick="event.stopPropagation(); UI.addWarrior('${ht.type}', true)">${ht.name} (${ht.cost} gc)</button>`;
-    }).join(' ');
+    heroAddContainer.innerHTML = `
+      <select id="hero-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()">
+        <option value="">+ Add Hero</option>
+        ${warband.heroes.map(ht => {
+          const currentCount = r.heroes.filter(h => h.type === ht.type).length;
+          const atMax = currentCount >= ht.max;
+          return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
+        }).join('')}
+      </select>
+      <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarriorFromSelect('heroes')">Hire</button>
+    `;
 
     // Henchmen section
     const henchmenContent = document.getElementById('henchmen-content');
@@ -165,14 +336,62 @@ const UI = {
       henchmenContent.innerHTML = r.henchmen.map((h, idx) => this.renderWarriorCard(h, idx, false)).join('');
     }
 
-    // Henchmen add buttons
+    // Henchmen add dropdown
     const henchAddContainer = document.getElementById('henchmen-add-buttons');
-    henchAddContainer.innerHTML = warband.henchmen.map(ht => {
-      return `<button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarrior('${ht.type}', false)">${ht.name} (${ht.cost} gc)</button>`;
-    }).join(' ');
+    henchAddContainer.innerHTML = `
+      <select id="henchmen-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()">
+        <option value="">+ Add Henchman</option>
+        ${warband.henchmen.map(ht => {
+          return `<option value="${ht.type}">${ht.name} (${ht.cost} gc)</option>`;
+        }).join('')}
+      </select>
+      <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarriorFromSelect('henchmen')">Hire</button>
+    `;
+
+    // Hired Swords section
+    const hiredSwordsContent = document.getElementById('hired-swords-content');
+    if (r.hiredSwords.length === 0) {
+      hiredSwordsContent.innerHTML = '<p class="text-dim" style="padding: 0.5rem 0;">No hired swords recruited yet.</p>';
+    } else {
+      hiredSwordsContent.innerHTML = r.hiredSwords.map((hs, idx) => this.renderWarriorCard(hs, idx, true, 'hiredSwords')).join('');
+    }
+
+    // Hired Swords add dropdown
+    const hiredSwordsAddContainer = document.getElementById('hired-swords-add-buttons');
+    const availableHiredSwords = DataService.getAvailableHiredSwords(r.warbandId);
+    hiredSwordsAddContainer.innerHTML = `
+      <select id="hired-swords-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()">
+        <option value="">+ Hire Sword</option>
+        ${availableHiredSwords.map(ht => {
+          const currentCount = r.hiredSwords.filter(hs => hs.type === ht.type).length;
+          const atMax = currentCount >= (ht.max || 1);
+          return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
+        }).join('')}
+      </select>
+      <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarriorFromSelect('hiredSwords')">Hire</button>
+    `;
+
+    // Custom section
+    const customContent = document.getElementById('custom-content');
+    const canCustom = (typeof Cloud !== 'undefined') ? Cloud.canAccess('custom_warriors') : false;
+    const customAddBtns = document.getElementById('custom-add-buttons');
+    if (!canCustom) {
+      customContent.innerHTML = '<div class="locked-message"><span class="lock-icon">&#128274;</span> Custom warriors require <strong>Pro</strong> tier. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></div>';
+      if (customAddBtns) customAddBtns.innerHTML = '';
+    } else if ((r.customWarriors || []).length === 0) {
+      customContent.innerHTML = '<p class="text-dim" style="padding: 0.5rem 0;">No custom warriors created yet.</p>';
+    } else {
+      customContent.innerHTML = r.customWarriors.map((cw, idx) => this.renderWarriorCard(cw, idx, true, 'customWarriors')).join('');
+    }
+
+    // Restore collapsed state of warrior cards after re-render
+    collapsedCards.forEach(id => {
+      const body = document.getElementById('warrior-body-' + id);
+      if (body) body.classList.add('collapsed');
+    });
   },
 
-  renderWarriorCard(warrior, index, isHero) {
+  renderWarriorCard(warrior, index, isHero, listTypeOverride) {
     const eqCost = warrior.equipment.reduce((sum, eq) => {
       const item = DataService.getEquipmentItem(eq.id);
       return sum + (item ? item.cost : 0);
@@ -203,21 +422,27 @@ const UI = {
       `;
     }
 
-    const listType = isHero ? 'heroes' : 'henchmen';
+    const listType = listTypeOverride || (isHero ? 'heroes' : 'henchmen');
+    const cardTypeClass = listTypeOverride === 'hiredSwords' ? 'warrior-card--hired'
+      : listTypeOverride === 'customWarriors' ? 'warrior-card--custom'
+      : isHero ? 'warrior-card--hero' : 'warrior-card--henchman';
+    const showTypeName = warrior.name !== warrior.typeName;
 
     return `
-      <div class="warrior-card" id="warrior-${warrior.id}">
+      <div class="warrior-card ${cardTypeClass}" id="warrior-${warrior.id}">
         <div class="warrior-card-header" onclick="UI.toggleWarriorCard('${warrior.id}')">
           <div>
-            <span class="warrior-name">${this.esc(warrior.name)}</span>
-            <span class="warrior-type">${warrior.typeName}</span>
+            <span class="warrior-name" onclick="event.stopPropagation(); UI.inlineEditName(this, '${listType}', ${index})">${this.esc(warrior.name)}</span>
+            ${showTypeName ? `<span class="warrior-type">${warrior.typeName}</span>` : ''}
           </div>
           <span class="warrior-cost">${totalCost} gc</span>
         </div>
         <div class="warrior-card-body" id="warrior-body-${warrior.id}">
           <div class="form-group">
-            <input type="text" class="inline-edit" value="${this.esc(warrior.name)}"
-              onchange="UI.renameWarrior('${listType}', ${index}, this.value)" style="font-weight:600; font-size: 0.95rem; width: 100%;">
+            ${(typeof Cloud !== 'undefined' && Cloud.canAccess('warrior_names'))
+              ? `<input type="text" class="inline-edit" value="${this.esc(warrior.name)}"
+                  onchange="UI.renameWarrior('${listType}', ${index}, this.value)" style="font-weight:600; font-size: 0.95rem; width: 100%;">`
+              : `<span style="font-weight:600; font-size: 0.95rem;">${this.esc(warrior.name)}</span>`}
           </div>
 
           <div class="stat-line">
@@ -237,7 +462,7 @@ const UI = {
           ${warrior.specialRules.length > 0 ? `
           <div class="tag-section mt-1">
             <div class="tag-section-label">Special Rules</div>
-            <div class="tag-list">${warrior.specialRules.map(sr => `<span class="tag">${sr}</span>`).join('')}</div>
+            <div class="tag-list">${warrior.specialRules.map(sr => { const desc = DataService.getSpecialRuleDescription(sr); return '<span class="tag"' + (desc ? ' data-tooltip="' + this.escAttr(desc) + '"' : '') + '>' + this.esc(sr) + '</span>'; }).join('')}</div>
           </div>` : ''}
 
           <div class="tag-section mt-1">
@@ -245,7 +470,7 @@ const UI = {
             <div class="tag-list">
               ${warrior.equipment.map((eq, eqIdx) => {
                 const itemData = DataService.getEquipmentItem(eq.id);
-                const tooltip = itemData ? this.esc(itemData.rules) : '';
+                const tooltip = itemData ? this.escAttr(itemData.rules) : '';
                 return `<span class="tag equipment" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${eq.name} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>`;
               }).join('')}
               <button class="btn btn-sm" onclick="UI.openEquipmentModal('${listType}', ${index})">+ Add</button>
@@ -274,6 +499,11 @@ const UI = {
               `).join('')}
               <button class="btn btn-sm" onclick="UI.openInjuryModal('${listType}', ${index})">+ Add</button>
             </div>
+          </div>
+
+          <div class="tag-section mt-1">
+            <div class="tag-section-label">Notes</div>
+            <textarea class="warrior-notes" placeholder="Add notes..." onchange="UI.updateNotes('${listType}', ${index}, this.value)">${this.esc(warrior.notes || '')}</textarea>
           </div>
 
           <div class="warrior-actions">
@@ -333,8 +563,9 @@ const UI = {
     }
 
     const memberCount = RosterModel.getMemberCount(r);
-    if (memberCount >= warband.maxWarband) {
-      return this.toast(`Warband is full (${warband.maxWarband} members).`, 'error');
+    const maxMembers = this.getMaxMembers(r);
+    if (memberCount >= maxMembers) {
+      return this.toast(`Warband is full (${maxMembers} members).`, 'error');
     }
 
     const warrior = RosterModel.createWarrior(type, isHero, warband);
@@ -351,6 +582,86 @@ const UI = {
     this.toast(`${warrior.typeName} added.`, 'success');
   },
 
+  addHiredSword(type) {
+    const r = this.currentRoster;
+    const warband = DataService.getWarband(r.warbandId);
+    const template = DataService.getHiredSwordTemplate(type);
+
+    if (!template) return this.toast('Unknown hired sword type.', 'error');
+
+    const currentCount = r.hiredSwords.filter(hs => hs.type === type).length;
+    if (currentCount >= (template.max || 1)) {
+      return this.toast(`Maximum ${template.name}s reached.`, 'error');
+    }
+
+    const memberCount = RosterModel.getMemberCount(r);
+    const maxMembers = this.getMaxMembers(r);
+    if (memberCount >= maxMembers) {
+      return this.toast(`Warband is full (${maxMembers} members).`, 'error');
+    }
+
+    const warrior = RosterModel.createHiredSword(type);
+    if (!warrior) return this.toast('Failed to create hired sword.', 'error');
+
+    r.hiredSwords.push(warrior);
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+    this.toast(`${warrior.typeName} hired!`, 'success');
+  },
+
+  addWarriorFromSelect(section) {
+    const selectIds = { heroes: 'hero-add-select', hiredSwords: 'hired-swords-add-select', henchmen: 'henchmen-add-select' };
+    const select = document.getElementById(selectIds[section]);
+    if (!select || !select.value) return this.toast('Select a warrior type first.', 'error');
+    const type = select.value;
+
+    if (section === 'hiredSwords') {
+      this.addHiredSword(type);
+    } else {
+      this.addWarrior(type, section === 'heroes');
+    }
+    select.value = '';
+  },
+
+  openCustomWarriorModal() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('custom_warriors')) {
+      return this.toast('Custom warriors require Pro tier.', 'error');
+    }
+    document.getElementById('custom-name').value = '';
+    document.getElementById('custom-cost').value = '0';
+    document.getElementById('custom-stat-M').value = '4';
+    document.getElementById('custom-stat-WS').value = '3';
+    document.getElementById('custom-stat-BS').value = '3';
+    document.getElementById('custom-stat-S').value = '3';
+    document.getElementById('custom-stat-T').value = '3';
+    document.getElementById('custom-stat-W').value = '1';
+    document.getElementById('custom-stat-I').value = '3';
+    document.getElementById('custom-stat-A').value = '1';
+    document.getElementById('custom-stat-Ld').value = '7';
+    document.getElementById('custom-rules').value = '';
+    document.getElementById('custom-warrior-modal').classList.add('active');
+  },
+
+  submitCustomWarrior() {
+    const name = document.getElementById('custom-name').value.trim();
+    if (!name) return this.toast('Enter a warrior name.', 'error');
+    const cost = parseInt(document.getElementById('custom-cost').value) || 0;
+    const stats = {};
+    for (const stat of ['M','WS','BS','S','T','W','I','A','Ld']) {
+      stats[stat] = parseInt(document.getElementById('custom-stat-' + stat).value) || 0;
+    }
+    const rulesStr = document.getElementById('custom-rules').value.trim();
+    const specialRules = rulesStr ? rulesStr.split(',').map(s => s.trim()).filter(s => s) : [];
+
+    const warrior = RosterModel.createCustomWarrior(name, cost, stats, specialRules);
+    const r = this.currentRoster;
+    r.customWarriors.push(warrior);
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+    document.getElementById('custom-warrior-modal').classList.remove('active');
+    this.toast(`${name} created!`, 'success');
+  },
+
   removeWarrior(listType, index) {
     const r = this.currentRoster;
     const warrior = r[listType][index];
@@ -359,6 +670,32 @@ const UI = {
     this.saveCurrentRoster();
     this.renderRosterEditor();
     this.toast(`${warrior.name} removed.`, 'info');
+  },
+
+  inlineEditName(spanEl, listType, index) {
+    const warrior = this.currentRoster[listType][index];
+    if (!warrior) return;
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.value = warrior.name;
+    input.className = 'inline-edit-header';
+    input.style.cssText = 'font-weight:700; font-size:0.95rem; background:var(--bg-dark); color:var(--text-light); border:1px solid var(--primary); border-radius:4px; padding:0.1rem 0.3rem; width:100%;';
+    spanEl.replaceWith(input);
+    input.focus();
+    input.select();
+    const commit = () => {
+      this.renameWarrior(listType, index, input.value);
+      const newSpan = document.createElement('span');
+      newSpan.className = 'warrior-name';
+      newSpan.textContent = warrior.name;
+      newSpan.onclick = (e) => { e.stopPropagation(); this.inlineEditName(newSpan, listType, index); };
+      input.replaceWith(newSpan);
+    };
+    input.addEventListener('blur', commit);
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') input.blur();
+      if (e.key === 'Escape') { input.value = warrior.name; input.blur(); }
+    });
   },
 
   renameWarrior(listType, index, newName) {
@@ -371,6 +708,9 @@ const UI = {
     if (card) {
       const nameEl = card.querySelector('.warrior-name');
       if (nameEl) nameEl.textContent = warrior.name;
+      // Also sync the inline-edit input inside the card body
+      const bodyInput = card.querySelector('.warrior-card-body .inline-edit');
+      if (bodyInput) bodyInput.value = warrior.name;
     }
   },
 
@@ -380,8 +720,16 @@ const UI = {
     const warrior = r[listType][index];
     const warband = DataService.getWarband(r.warbandId);
 
-    const accessKey = listType === 'heroes' ? 'heroes' : 'henchmen';
-    const accessibleCategories = warband.equipmentAccess[accessKey] || [];
+    let accessibleCategories;
+    if (listType === 'customWarriors') {
+      accessibleCategories = Object.keys(DataService.equipment);
+    } else if (listType === 'hiredSwords') {
+      const template = DataService.getHiredSwordTemplate(warrior.type);
+      accessibleCategories = template ? template.equipmentAccess : [];
+    } else {
+      const accessKey = listType === 'heroes' ? 'heroes' : 'henchmen';
+      accessibleCategories = warband.equipmentAccess[accessKey] || [];
+    }
 
     const modal = document.getElementById('equipment-modal');
     const body = document.getElementById('equipment-modal-body');
@@ -396,7 +744,8 @@ const UI = {
       html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${catName}</h4>`;
       html += '<div style="display:flex; flex-wrap:wrap; gap:0.3rem;">';
       for (const item of items) {
-        html += `<button class="btn btn-sm" onclick="UI.selectEquipment('${listType}', ${index}, '${item.id}')">${item.name} (${item.cost} gc)</button>`;
+        const tooltip = item.rules ? ` data-tooltip="${this.escAttr(item.rules)}"` : '';
+        html += `<button class="btn btn-sm"${tooltip} onclick="UI.selectEquipment('${listType}', ${index}, '${item.id}')">${item.name} (${item.cost} gc)</button>`;
       }
       html += '</div>';
     }
@@ -427,9 +776,17 @@ const UI = {
   // === SKILL MODAL ===
   openSkillModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    const warband = DataService.getWarband(this.currentRoster.warbandId);
-    const template = warband.heroes.find(h => h.type === warrior.type);
-    const accessCategories = template ? template.skillAccess : [];
+    let accessCategories;
+    if (listType === 'customWarriors') {
+      accessCategories = Object.keys(DataService.skills);
+    } else if (listType === 'hiredSwords') {
+      const template = DataService.getHiredSwordTemplate(warrior.type);
+      accessCategories = template ? template.skillAccess : [];
+    } else {
+      const warband = DataService.getWarband(this.currentRoster.warbandId);
+      const template = warband.heroes.find(h => h.type === warrior.type);
+      accessCategories = template ? template.skillAccess : [];
+    }
 
     const modal = document.getElementById('skill-modal');
     const body = document.getElementById('skill-modal-body');
@@ -473,10 +830,18 @@ const UI = {
   // === SPELL MODAL ===
   openSpellModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    const warband = DataService.getWarband(this.currentRoster.warbandId);
-    const template = warband.heroes.find(h => h.type === warrior.type)
-      || warband.henchmen.find(h => h.type === warrior.type);
-    const spellLists = template && template.spellAccess ? template.spellAccess : [];
+    let spellLists;
+    if (listType === 'customWarriors') {
+      spellLists = Object.keys(DataService.spells);
+    } else if (listType === 'hiredSwords') {
+      const template = DataService.getHiredSwordTemplate(warrior.type);
+      spellLists = template && template.spellAccess ? template.spellAccess : [];
+    } else {
+      const warband = DataService.getWarband(this.currentRoster.warbandId);
+      const template = warband.heroes.find(h => h.type === warrior.type)
+        || warband.henchmen.find(h => h.type === warrior.type);
+      spellLists = template && template.spellAccess ? template.spellAccess : [];
+    }
 
     const modal = document.getElementById('spell-modal');
     const body = document.getElementById('spell-modal-body');
@@ -528,7 +893,7 @@ const UI = {
   // === INJURY MODAL ===
   openInjuryModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    const isHero = listType === 'heroes';
+    const isHero = listType === 'heroes' || listType === 'hiredSwords' || listType === 'customWarriors';
     const injuryList = isHero ? DataService.injuries.heroInjuries : DataService.injuries.henchmenInjuries;
 
     const modal = document.getElementById('injury-modal');
@@ -600,6 +965,14 @@ const UI = {
     }
   },
 
+  // === NOTES ===
+  updateNotes(listType, index, value) {
+    const warrior = this.currentRoster[listType][index];
+    if (!warrior) return;
+    warrior.notes = value;
+    this.saveCurrentRoster();
+  },
+
   // === EXPERIENCE ===
   adjustExp(listType, index, amount) {
     const warrior = this.currentRoster[listType][index];
@@ -628,6 +1001,9 @@ const UI = {
   renderProgressTab() {
     const r = this.currentRoster;
     const rating = RosterModel.calculateWarbandRating(r);
+    const canBattleLog = (typeof Cloud !== 'undefined') ? Cloud.canAccess('battle_log') : false;
+    const canViewBattleLog = (typeof Cloud !== 'undefined') ? (Cloud.TIER_RANK[Cloud.getTier()] >= Cloud.TIER_RANK['standard']) : false;
+    const canNotes = (typeof Cloud !== 'undefined') ? Cloud.canAccess('campaign_notes') : false;
 
     // Rating
     document.getElementById('progress-rating').textContent = rating;
@@ -635,12 +1011,39 @@ const UI = {
     // Gold management
     document.getElementById('gold-input').value = r.gold;
     document.getElementById('wyrdstone-input').value = r.wyrdstone;
+    document.getElementById('member-limit-display').textContent = this.getMaxMembers(r);
 
     // Battle log
-    this.renderBattleLog();
+    const battleForm = document.querySelector('.battle-log-form');
+    if (battleForm) {
+      if (canBattleLog) {
+        battleForm.style.display = '';
+      } else {
+        battleForm.style.display = 'none';
+      }
+    }
+    const battleContainer = document.getElementById('battle-log-entries');
+    if (!canViewBattleLog) {
+      battleContainer.innerHTML = '<div class="locked-message"><span class="lock-icon">&#128274;</span> Battle log requires <strong>Standard</strong> tier or above. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></div>';
+    } else {
+      this.renderBattleLog();
+      // If Standard but not Pro, add a note
+      if (canViewBattleLog && !canBattleLog && r.battleLog.length > 0) {
+        battleContainer.insertAdjacentHTML('beforeend', '<p class="text-dim" style="font-size:0.8rem; margin-top:0.5rem;">Upgrade to <strong>Pro</strong> to add new battles.</p>');
+      }
+    }
 
     // Notes
-    document.getElementById('roster-notes').value = r.notes || '';
+    const notesArea = document.getElementById('roster-notes');
+    if (!canNotes) {
+      notesArea.disabled = true;
+      notesArea.placeholder = 'Campaign notes require Standard tier or above.';
+      notesArea.value = '';
+    } else {
+      notesArea.disabled = false;
+      notesArea.placeholder = 'Write campaign notes, strategy, or lore here...';
+      notesArea.value = r.notes || '';
+    }
   },
 
   renderBattleLog() {
@@ -677,7 +1080,30 @@ const UI = {
     this.saveCurrentRoster();
   },
 
+  getMaxMembers(roster) {
+    if (roster.maxMembersOverride != null) return roster.maxMembersOverride;
+    const warband = DataService.getWarband(roster.warbandId);
+    return warband ? warband.maxWarband : 15;
+  },
+
+  adjustMemberLimit(amount) {
+    const r = this.currentRoster;
+    const warband = DataService.getWarband(r.warbandId);
+    const defaultMax = warband ? warband.maxWarband : 15;
+    const current = this.getMaxMembers(r);
+    const newVal = current + amount;
+    if (newVal < 1) return;
+    r.maxMembersOverride = newVal;
+    this.saveCurrentRoster();
+    document.getElementById('member-limit-display').textContent = newVal;
+    const memberCount = RosterModel.getMemberCount(r);
+    document.getElementById('summary-members').textContent = `${memberCount} / ${newVal}`;
+  },
+
   addBattle() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('battle_log')) {
+      return this.toast('Adding battles requires Pro tier.', 'error');
+    }
     const result = document.getElementById('battle-result-input').value.trim();
     if (!result) return this.toast('Enter a battle result.', 'error');
     const notes = document.getElementById('battle-notes-input').value.trim();
@@ -690,12 +1116,16 @@ const UI = {
   },
 
   updateNotes() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('campaign_notes')) return;
     this.currentRoster.notes = document.getElementById('roster-notes').value;
     this.saveCurrentRoster();
   },
 
   // === EXPORT PDF ===
   exportPDF() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('pdf_export')) {
+      return this.toast('PDF export requires Pro tier.', 'error');
+    }
     const r = this.currentRoster;
     if (!r) return this.toast('No roster open.', 'error');
     const warband = DataService.getWarband(r.warbandId);
@@ -764,6 +1194,14 @@ const UI = {
     const henchmenHtml = r.henchmen.length > 0
       ? r.henchmen.map(h => renderWarrior(h, false)).join('')
       : '<p class="empty">No henchmen recruited.</p>';
+
+    const hiredSwordsHtml = (r.hiredSwords || []).length > 0
+      ? r.hiredSwords.map(hs => renderWarrior(hs, true)).join('')
+      : '';
+
+    const customWarriorsHtml = (r.customWarriors || []).length > 0
+      ? r.customWarriors.map(cw => renderWarrior(cw, true)).join('')
+      : '';
 
     const battleLogHtml = r.battleLog.length > 0
       ? `<table class="battle-table">
@@ -835,7 +1273,7 @@ const UI = {
   </div>
 
   <div class="summary">
-    <div class="summary-item"><div class="label">Members</div><div class="value">${memberCount}${warband ? ' / ' + warband.maxWarband : ''}</div></div>
+    <div class="summary-item"><div class="label">Members</div><div class="value">${memberCount} / ${this.getMaxMembers(r)}</div></div>
     <div class="summary-item"><div class="label">Rating</div><div class="value">${rating}</div></div>
     <div class="summary-item"><div class="label">Treasury</div><div class="value gold">${r.gold} gc</div></div>
     <div class="summary-item"><div class="label">Wyrdstone</div><div class="value">${r.wyrdstone}</div></div>
@@ -848,6 +1286,12 @@ const UI = {
 
   <div class="section-title">Henchmen</div>
   ${henchmenHtml}
+
+  ${hiredSwordsHtml ? `<div class="section-title">Hired Swords</div>
+  ${hiredSwordsHtml}` : ''}
+
+  ${customWarriorsHtml ? `<div class="section-title">Custom Warriors</div>
+  ${customWarriorsHtml}` : ''}
 
   <div class="section-title">Battle Log</div>
   ${battleLogHtml}
@@ -869,6 +1313,9 @@ const UI = {
 
   // === EXPORT / IMPORT ===
   exportRoster(id) {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('import_export')) {
+      return this.toast('Export requires Standard tier or above.', 'error');
+    }
     const json = Storage.exportRoster(id);
     if (!json) return this.toast('Roster not found.', 'error');
     const blob = new Blob([json], { type: 'application/json' });
@@ -883,6 +1330,9 @@ const UI = {
   },
 
   importRoster() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('import_export')) {
+      return this.toast('Import requires Standard tier or above.', 'error');
+    }
     const input = document.createElement('input');
     input.type = 'file';
     input.accept = '.json';
@@ -917,6 +1367,70 @@ const UI = {
       this.toast(`"${roster.name}" deleted.`, 'info');
     };
     overlay.classList.add('active');
+  },
+
+  // === TIER OVERVIEW ===
+  showTierOverview() {
+    this.renderTierOverview();
+    this.showView('tier-overview');
+  },
+
+  renderTierOverview() {
+    const container = document.getElementById('tier-overview');
+    if (!container) return;
+    const currentTier = (typeof Cloud !== 'undefined' && Cloud.isSignedIn()) ? Cloud.getTier() : 'free';
+
+    const features = [
+      ['All 38 warbands',           true,    true,    true],
+      ['Max rosters',               '3',     '10',    '\u221e'],
+      ['Heroes & henchmen',         true,    true,    true],
+      ['Equipment, skills, spells', true,    true,    true],
+      ['Experience & stats',        true,    true,    true],
+      ['Injuries',                  true,    true,    true],
+      ['Hired swords',              true,    true,    true],
+      ['Custom warrior names',       false,   true,    true],
+      ['Campaign notes',            false,   true,    true],
+      ['Cloud sync',                false,   true,    true],
+      ['Import / export',           false,   true,    true],
+      ['Battle log',                false,   'View',  'Full'],
+      ['Custom warriors',           false,   false,   true],
+      ['PDF export',                false,   false,   true],
+    ];
+
+    const cell = (val, tier) => {
+      const hl = tier === currentTier ? ' tier-current' : '';
+      if (val === true)  return `<td class="tier-cell${hl} tier-yes">\u2713</td>`;
+      if (val === false) return `<td class="tier-cell${hl} tier-no">\u2717</td>`;
+      return `<td class="tier-cell${hl}">${val}</td>`;
+    };
+
+    const rows = features.map(([name, free, std, pro]) =>
+      `<tr><td class="tier-feature">${name}</td>${cell(free,'free')}${cell(std,'standard')}${cell(pro,'pro')}</tr>`
+    ).join('');
+
+    const thClass = (t) => t === currentTier ? 'tier-th tier-th-current' : 'tier-th';
+
+    container.innerHTML = `
+      <div class="tier-overview-header">
+        <h2>Plans</h2>
+        <button class="btn btn-sm" onclick="UI.goBack()">&#8592; Back</button>
+      </div>
+      ${Cloud.isSignedIn() ? `<p class="text-dim" style="margin-bottom:1rem;">Your current plan: <span class="tier-badge tier-${currentTier}">${currentTier.charAt(0).toUpperCase() + currentTier.slice(1)}</span></p>` : '<p class="text-dim" style="margin-bottom:1rem;">Sign in to access tier features.</p>'}
+      <div class="tier-table-wrap">
+        <table class="tier-table">
+          <thead>
+            <tr>
+              <th class="tier-feature-th">Feature</th>
+              <th class="${thClass('free')}">Free</th>
+              <th class="${thClass('standard')}">Standard</th>
+              <th class="${thClass('pro')}">Pro</th>
+            </tr>
+          </thead>
+          <tbody>${rows}</tbody>
+        </table>
+      </div>
+      <p class="text-dim" style="margin-top:1rem; font-size:0.8rem;">To upgrade your plan, contact the administrator.</p>
+    `;
   },
 
   // === NAVIGATION ===
@@ -985,6 +1499,47 @@ const UI = {
         this.saveCurrentRoster();
       }
     });
+
+    // Tooltip system (delegated, uses fixed-position element on body)
+    let tooltipEl = null;
+    document.addEventListener('mouseenter', (e) => {
+      const tag = e.target.closest('[data-tooltip]');
+      if (!tag) return;
+      const text = tag.getAttribute('data-tooltip');
+      if (!text) return;
+
+      if (tooltipEl) tooltipEl.remove();
+      tooltipEl = document.createElement('div');
+      tooltipEl.className = 'tooltip-popup';
+      tooltipEl.textContent = text;
+      document.body.appendChild(tooltipEl);
+
+      const rect = tag.getBoundingClientRect();
+      const ttRect = tooltipEl.getBoundingClientRect();
+      let left = rect.left;
+      let top = rect.top - ttRect.height - 8;
+
+      // Keep within viewport horizontally
+      if (left + ttRect.width > window.innerWidth - 8) {
+        left = window.innerWidth - ttRect.width - 8;
+      }
+      if (left < 8) left = 8;
+
+      // If no room above, show below
+      if (top < 8) {
+        top = rect.bottom + 8;
+      }
+
+      tooltipEl.style.left = left + 'px';
+      tooltipEl.style.top = top + 'px';
+    }, true);
+
+    document.addEventListener('mouseleave', (e) => {
+      if (e.target.closest('[data-tooltip]') && tooltipEl) {
+        tooltipEl.remove();
+        tooltipEl = null;
+      }
+    }, true);
   },
 
   // === UTILITY ===
@@ -992,5 +1547,9 @@ const UI = {
     const div = document.createElement('div');
     div.textContent = str;
     return div.innerHTML;
+  },
+
+  escAttr(str) {
+    return this.esc(str).replace(/"/g, '&quot;');
   }
 };

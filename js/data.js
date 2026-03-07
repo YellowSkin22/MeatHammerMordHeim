@@ -6,15 +6,20 @@ const DataService = {
   injuries: null,
   advancement: null,
   spells: null,
+  hiredSwords: null,
+  specialRules: null,
 
   async loadAll() {
-    const [warbands, equipment, skills, injuries, advancement, spells] = await Promise.all([
-      this.fetchJSON('data/warbands.json'),
-      this.fetchJSON('data/equipment.json'),
-      this.fetchJSON('data/skills.json'),
-      this.fetchJSON('data/injuries.json'),
-      this.fetchJSON('data/advancement.json'),
-      this.fetchJSON('data/spells.json'),
+    const v = 'v=5';
+    const [warbands, equipment, skills, injuries, advancement, spells, hiredSwords, specialRules] = await Promise.all([
+      this.fetchJSON('data/warbands.json?' + v),
+      this.fetchJSON('data/equipment.json?' + v),
+      this.fetchJSON('data/skills.json?' + v),
+      this.fetchJSON('data/injuries.json?' + v),
+      this.fetchJSON('data/advancement.json?' + v),
+      this.fetchJSON('data/spells.json?' + v),
+      this.fetchJSON('data/hired_swords.json?' + v),
+      this.fetchJSON('data/special_rules.json?' + v),
     ]);
 
     this.warbands = warbands.warbands;
@@ -23,6 +28,8 @@ const DataService = {
     this.injuries = injuries;
     this.advancement = advancement;
     this.spells = spells.spellLists;
+    this.hiredSwords = hiredSwords.hiredSwords;
+    this.specialRules = specialRules.specialRules;
   },
 
   async fetchJSON(path) {
@@ -86,5 +93,22 @@ const DataService = {
 
   getSpellsByList(listId) {
     return this.spells[listId]?.spells || [];
+  },
+
+  getHiredSwordTemplate(type) {
+    return this.hiredSwords.find(hs => hs.type === type);
+  },
+
+  getSpecialRuleDescription(ruleName) {
+    return this.specialRules?.[ruleName] || '';
+  },
+
+  getAvailableHiredSwords(warbandId) {
+    return this.hiredSwords.filter(hs => {
+      if (hs.warbandAllowList && hs.warbandAllowList.length > 0) {
+        return hs.warbandAllowList.includes(warbandId);
+      }
+      return !hs.warbandRestrictions || !hs.warbandRestrictions.includes(warbandId);
+    });
   }
 };
