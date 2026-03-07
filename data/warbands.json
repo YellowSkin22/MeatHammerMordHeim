@@ -528,7 +528,7 @@
           "specialRules": ["Wizard"],
           "startingExp": 8,
           "skillAccess": ["academic", "speed", "skaven_special"],
-          "spellAccess": ["eshin_sorcery"]
+          "spellAccess": ["magic_of_the_horned_rat"]
         },
         {
           "type": "black_skaven",
@@ -1515,7 +1515,7 @@
           "specialRules": ["Wizard"],
           "startingExp": 8,
           "skillAccess": ["academic", "speed", "clan_pestilens_special"],
-          "spellAccess": ["eshin_sorcery"]
+          "spellAccess": ["magic_of_the_horned_rat"]
         },
         {
           "type": "plague_monk",

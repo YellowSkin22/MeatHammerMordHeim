@@ -10,7 +10,7 @@ const DataService = {
   specialRules: null,
 
   async loadAll() {
-    const v = 'v=5';
+    const v = 'v=6';
     const [warbands, equipment, skills, injuries, advancement, spells, hiredSwords, specialRules] = await Promise.all([
       this.fetchJSON('data/warbands.json?' + v),
       this.fetchJSON('data/equipment.json?' + v),

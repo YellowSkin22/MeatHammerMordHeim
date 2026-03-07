@@ -44,15 +44,15 @@
         { "id": "favour_of_the_gods", "name": "Favour of the Gods", "difficulty": 8, "description": "The caster may re-roll all failed to hit and to wound rolls in close combat until the start of the next Mordheim turn." }
       ]
     },
-    "eshin_sorcery": {
-      "name": "Eshin Sorcery",
+    "magic_of_the_horned_rat": {
+      "name": "Magic of the Horned Rat",
       "spells": [
-        { "id": "black_fury", "name": "Black Fury", "difficulty": 8, "description": "The caster gains +2 Attacks and +1 Strength in close combat until the start of the next Mordheim turn." },
-        { "id": "gnawdoom", "name": "Gnawdoom", "difficulty": 7, "description": "A target within 8\" is attacked by a swarm of ghostly rats. The target suffers 2D6 S1 hits." },
-        { "id": "warpfire", "name": "Warpfire", "difficulty": 8, "description": "A green bolt of warpfire strikes a target within 8\". The target suffers a S5 hit with no armour save." },
-        { "id": "children_of_the_horned_rat", "name": "Children of the Horned Rat", "difficulty": "Auto", "description": "The caster summons D3 Giant Rats at the start of each battle. They are placed within 6\" of the caster." },
-        { "id": "sorcerers_curse", "name": "Sorcerer's Curse", "difficulty": 6, "description": "A single enemy model within 12\" must re-roll all successful armour saves until the start of the next Mordheim turn." },
-        { "id": "eye_of_the_warp", "name": "Eye of the Warp", "difficulty": 8, "description": "All enemy models within 6\" of the caster must pass a Leadership test or suffer -1 to all to hit rolls until the start of the next turn." }
+        { "id": "warpfire", "name": "Warpfire", "difficulty": 8, "description": "A green flame leaps from the Sorcerer's paw with a range of 8\", hitting the first model in its path. Causes D3 S4 hits on the target and one S3 hit on each model within 2\" of the target." },
+        { "id": "children_of_the_horned_rat", "name": "Children of the Horned Rat", "difficulty": "Auto", "description": "Must be used before the game and may only be used once. Summons D3 Giant Rats placed within 6\" of the Sorcerer. The rats disappear after the battle and do not count towards maximum warband size." },
+        { "id": "gnawdoom", "name": "Gnawdoom", "difficulty": 7, "description": "The target is attacked by rats. Causes 2D6 S1 hits on a single model within 8\" of the caster." },
+        { "id": "black_fury", "name": "Black Fury", "difficulty": 8, "description": "The Sorcerer may immediately charge any enemy model within 12\" (ignoring terrain and interposing models) and gains +2 Attacks and +1 Strength during this turn's hand-to-hand combat phase only." },
+        { "id": "eye_of_the_warp", "name": "Eye of the Warp", "difficulty": 8, "description": "All standing models in base contact with the Sorcerer must take a Leadership test. If failed, they each suffer a S3 hit and must run 2D6\" directly away from the Sorcerer." },
+        { "id": "sorcerers_curse", "name": "Sorcerer's Curse", "difficulty": 6, "description": "Range 12\", single model. The target must re-roll successful armour saves and to hit rolls during the Skaven hand-to-hand phase and the target's own next shooting and hand-to-hand combat phases." }
       ]
     },
     "lesser_magic": {
