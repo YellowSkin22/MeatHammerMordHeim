@@ -857,7 +857,7 @@ const UI = {
         const alreadyHas = (warrior.spells || []).find(s => s.id === spell.id);
         const disabled = alreadyHas ? 'disabled' : '';
         const diff = spell.difficulty === 'Auto' ? 'Auto' : 'Difficulty: ' + spell.difficulty;
-        html += '<button class="btn btn-sm" ' + disabled + ' onclick="UI.selectSpell(\'' + listType + '\', ' + index + ', \'' + spell.id + '\')" title="' + this.esc(spell.description) + '">' + spell.name + ' (' + diff + ')</button>';
+        html += '<button class="btn btn-sm" ' + disabled + ' data-tooltip="' + this.escAttr(spell.description) + '" onclick="UI.selectSpell(\'' + listType + '\', ' + index + ', \'' + spell.id + '\')">' + spell.name + ' (' + diff + ')</button>';
       }
       html += '</div>';
     }
