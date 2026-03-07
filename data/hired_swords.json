@@ -131,6 +131,28 @@
       "warbandRestrictions": ["undead", "cult_of_the_possessed", "skaven", "restless_dead"]
     },
     {
+      "type": "dwarf_troll_slayer",
+      "name": "Dwarf Troll Slayer",
+      "max": 1,
+      "cost": 25,
+      "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
+      "specialRules": ["Deathwish", "Hard to Kill", "Hard Head"],
+      "startingExp": 0,
+      "skillAccess": ["combat", "strength", "troll_slayer_special"],
+      "spellAccess": [],
+      "equipmentAccess": ["hand_to_hand"],
+      "warbandAllowList": [
+        "reikland", "middenheim", "marienburg", "witch_hunters", "sisters_of_sigmar",
+        "averlander", "ostlander", "kislevites", "bretonnians", "tileans",
+        "hochland_bandits", "gunnery_school_of_nuln", "imperial_outriders",
+        "outlaws_of_stirwood", "pirates", "norse_explorers", "mootlanders",
+        "pit_fighters",
+        "dwarf_treasure_hunters", "dwarf_rangers",
+        "dark_elves", "shadow_warriors"
+      ],
+      "hiringNotes": "May be hired by Mercenaries and Witch Hunters. Warbands that include Elves may hire but must pay 20gc upkeep per battle instead of 10gc."
+    },
+    {
       "type": "bone_goliath",
       "name": "Bone Goliath",
       "max": 1,
