@@ -7,7 +7,17 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=11">
+  <script>
+    // Apply theme before paint to prevent flash
+    (function() {
+      const stored = localStorage.getItem('mordheim_theme');
+      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+      if (stored === 'dark' || (!stored && prefersDark)) {
+        document.documentElement.dataset.theme = 'dark';
+      }
+    })();
+  </script>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>&#9760;</text></svg>">
 </head>
 <body>
@@ -27,6 +37,7 @@
     <div class="header-right">
       <div id="auth-area" class="auth-area"></div>
       <div class="header-actions">
+        <button id="btn-theme-toggle" class="btn-theme-toggle" title="Toggle dark mode" aria-label="Toggle dark mode">&#9790;</button>
         <button class="btn btn-sm btn-primary" onclick="UI.openCreateModal()"><span class="btn-label-full">+ New Warband</span><span class="btn-label-compact">+</span></button>
       </div>
     </div>

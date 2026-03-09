@@ -3,10 +3,42 @@ const UI = {
   currentRoster: null,
 
   init() {
+    this.initTheme();
     this.bindGlobalEvents();
     this.renderAuthState();
     this.showView('roster-list');
     this.renderRosterList();
+  },
+
+  // === THEME ===
+  initTheme() {
+    // Sync toggle icon with current theme (theme already applied by inline script)
+    this.updateThemeIcon();
+
+    // Listen for system theme changes (only when user hasn't set a preference)
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+      if (!localStorage.getItem('mordheim_theme')) {
+        document.documentElement.dataset.theme = e.matches ? 'dark' : 'light';
+        this.updateThemeIcon();
+      }
+    });
+  },
+
+  toggleTheme() {
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    const next = isDark ? 'light' : 'dark';
+    document.documentElement.dataset.theme = next;
+    localStorage.setItem('mordheim_theme', next);
+    this.updateThemeIcon();
+  },
+
+  updateThemeIcon() {
+    const btn = document.getElementById('btn-theme-toggle');
+    if (!btn) return;
+    const isDark = document.documentElement.dataset.theme === 'dark';
+    btn.textContent = isDark ? '\u2600' : '\u263E'; // ☀ / ☾
+    btn.title = isDark ? 'Switch to light mode' : 'Switch to dark mode';
+    btn.setAttribute('aria-label', btn.title);
   },
 
   // === AUTH UI ===
@@ -1480,6 +1512,9 @@ const UI = {
 
   // === GLOBAL EVENTS ===
   bindGlobalEvents() {
+    // Theme toggle
+    document.getElementById('btn-theme-toggle').addEventListener('click', () => this.toggleTheme());
+
     // Close modals on overlay click
     document.querySelectorAll('.modal-overlay').forEach(overlay => {
       overlay.addEventListener('click', (e) => {
