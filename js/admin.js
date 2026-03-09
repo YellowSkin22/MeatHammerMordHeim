@@ -209,8 +209,8 @@ const Admin = {
     const rows = notifications.map(n => {
       const date = new Date(n.created_at).toLocaleDateString();
       const status = n.is_active
-        ? '<span style="color:#27ae60;">Active</span>'
-        : '<span style="color:#999;">Inactive</span>';
+        ? '<span class="status-active">Active</span>'
+        : '<span class="status-inactive">Inactive</span>';
       return `
         <tr>
           <td style="max-width:400px; word-break:break-word;">${this.esc(n.message)}</td>

@@ -28,6 +28,31 @@
   --font-display: 'Cinzel', serif;
 }
 
+/* ===== DARK MODE THEME ===== */
+[data-theme="dark"] {
+  --bg-darkest: #1a1816;
+  --bg-dark: #242220;
+  --bg-card: #2e2b28;
+  --bg-card-hover: #36332f;
+  --bg-input: #242220;
+  --border: #3d3a36;
+  --border-hover: #5a5550;
+  --accent: #c9a033;
+  --accent-hover: #d4ab3d;
+  --accent-dim: #b89428;
+  --accent-glow: rgba(201, 160, 51, 0.15);
+  --danger: #d04444;
+  --danger-hover: #e05555;
+  --success: #3da63d;
+  --success-hover: #4ab84a;
+  --text: #e0dbd3;
+  --text-dim: #a39a8e;
+  --text-muted: #8a8078;
+  --text-bright: #f0ebe5;
+  --skull: #c9a033;
+  --shadow: rgba(0, 0, 0, 0.3);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
@@ -1673,3 +1698,70 @@ select.form-control {
   .tier-link { font-size: 0.7rem; }
   .tier-table th, .tier-table td { padding: 0.4rem 0.5rem; font-size: 0.78rem; }
 }
+
+/* ===== DARK MODE OVERRIDES ===== */
+
+/* Smooth theme transition */
+body, .app-header, .modal, .warrior-card, .roster-card,
+.tag, .btn, input, select, textarea, .section-header,
+.modal-overlay, .tooltip-popup {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Notification banner keeps its own hardcoded parchment style in all themes */
+[data-theme="dark"] .notification-banner {
+  background: linear-gradient(135deg, #fef3e0 0%, #fdecc8 100%);
+  border-bottom-color: #e8d5a0;
+  color: #2a231a;
+}
+
+[data-theme="dark"] .notification-banner-dismiss {
+  color: #6b6052;
+}
+
+/* Noise background — slightly brighter in dark mode */
+[data-theme="dark"] body {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Modal overlay — darker backdrop */
+[data-theme="dark"] .modal-overlay {
+  background: rgba(0, 0, 0, 0.65);
+}
+
+/* Tag colors — skill and spell need explicit dark overrides for contrast */
+[data-theme="dark"] .tag.skill {
+  border-color: #5a9ad4;
+  color: #7ab8e8;
+}
+
+[data-theme="dark"] .tag.spell-tag {
+  border-color: #a86cc4;
+  color: #c490de;
+}
+
+[data-theme="dark"] .tag.injury {
+  color: #e06060;
+}
+
+/* Theme toggle button */
+.btn-theme-toggle {
+  background: none;
+  border: 1px solid var(--border);
+  color: var(--text-dim);
+  border-radius: var(--radius);
+  padding: 0.3rem 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-theme-toggle:hover {
+  border-color: var(--border-hover);
+  color: var(--accent);
+}
+
+/* Admin status badges */
+.status-active { color: var(--success); }
+.status-inactive { color: var(--text-muted); }
