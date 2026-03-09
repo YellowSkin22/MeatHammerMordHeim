@@ -1765,3 +1765,22 @@ body, .app-header, .modal, .warrior-card, .roster-card,
 /* Admin status badges */
 .status-active { color: var(--success); }
 .status-inactive { color: var(--text-muted); }
+
+/* ===== FOOTER ===== */
+.app-footer {
+  text-align: center;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+
+.feedback-link {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  text-decoration: none;
+}
+
+.feedback-link:hover {
+  color: var(--accent);
+  text-decoration: underline;
+}
