@@ -349,7 +349,7 @@ const UI = {
     // Hero add dropdown
     const heroAddContainer = document.getElementById('hero-add-buttons');
     heroAddContainer.innerHTML = `
-      <select id="hero-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()">
+      <select id="hero-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('heroes')">
         <option value="">+ Add Hero</option>
         ${warband.heroes.map(ht => {
           const currentCount = r.heroes.filter(h => h.type === ht.type).length;
@@ -357,7 +357,6 @@ const UI = {
           return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
         }).join('')}
       </select>
-      <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarriorFromSelect('heroes')">Hire</button>
     `;
 
     // Henchmen section
@@ -371,13 +370,12 @@ const UI = {
     // Henchmen add dropdown
     const henchAddContainer = document.getElementById('henchmen-add-buttons');
     henchAddContainer.innerHTML = `
-      <select id="henchmen-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()">
+      <select id="henchmen-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('henchmen')">
         <option value="">+ Add Henchman</option>
         ${warband.henchmen.map(ht => {
           return `<option value="${ht.type}">${ht.name} (${ht.cost} gc)</option>`;
         }).join('')}
       </select>
-      <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarriorFromSelect('henchmen')">Hire</button>
     `;
 
     // Hired Swords section
@@ -392,7 +390,7 @@ const UI = {
     const hiredSwordsAddContainer = document.getElementById('hired-swords-add-buttons');
     const availableHiredSwords = DataService.getAvailableHiredSwords(r.warbandId);
     hiredSwordsAddContainer.innerHTML = `
-      <select id="hired-swords-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()">
+      <select id="hired-swords-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('hiredSwords')">
         <option value="">+ Hire Sword</option>
         ${availableHiredSwords.map(ht => {
           const currentCount = r.hiredSwords.filter(hs => hs.type === ht.type).length;
@@ -400,7 +398,6 @@ const UI = {
           return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
         }).join('')}
       </select>
-      <button class="btn btn-sm btn-primary" onclick="event.stopPropagation(); UI.addWarriorFromSelect('hiredSwords')">Hire</button>
     `;
 
     // Custom section
