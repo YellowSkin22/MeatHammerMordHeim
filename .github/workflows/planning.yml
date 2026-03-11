@@ -13,6 +13,7 @@ jobs:
     permissions:
       contents: read
       issues: write    # needed to post comments and manage labels
+      id-token: write
 
     steps:
       - name: Run Claude planner
