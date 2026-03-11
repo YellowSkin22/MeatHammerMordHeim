@@ -1,0 +1,45 @@
+name: Claude Planning Agent
+
+on:
+  issues:
+    types: [labeled]
+
+jobs:
+  plan:
+    # Only run when the "planning" label is added
+    if: github.event.label.name == 'planning'
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      issues: write    # needed to post comments and manage labels
+
+    steps:
+      - name: Run Claude planner
+        uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You are a planning agent for the MeatHammerMordheim app.
+
+            A "planning" label has been added to issue #${{ github.event.issue.number }}: "${{ github.event.issue.title }}"
+
+            Issue body:
+            ${{ github.event.issue.body }}
+
+            Your task:
+            1. Read the issue carefully and create a clear, implementable plan for this feature or fix.
+            2. Post the plan as a comment on this issue.
+            3. Once the comment has been posted, remove the "planning" label from the issue.
+            4. Add the "plan-review" label to the issue.
+
+            The plan should include:
+            - A brief summary of what needs to be built
+            - Step-by-step implementation approach with specific files/components
+            - Any Supabase/database changes needed
+            - Feature tier (free/paid) impact if relevant
+            - Definition of done checklist
+
+            If the issue references Mordheim rules or stats without enough detail, post a comment
+            asking for clarification instead of writing the plan.
+          allowed_tools: "Bash(gh issue comment *),Bash(gh issue edit *),Bash(gh label *)"
