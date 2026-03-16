@@ -351,6 +351,26 @@
     </div>
   </div>
 
+  <!-- ===== LAD'S GOT TALENT MODAL ===== -->
+  <div id="lads-got-talent-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Lad's Got Talent!</h3>
+        <button class="btn btn-icon" onclick="UI.closeModal('lads-got-talent-modal')">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <p><strong id="lgt-henchman-name"></strong> has shown exceptional talent and will be promoted to Hero. They keep all their stats, equipment, and experience.</p>
+        <p style="margin-top:0.75rem; font-weight:600;">Choose 2 skill lists for this hero:</p>
+        <div id="lgt-skill-lists" style="margin-top:0.5rem;"></div>
+        <p class="text-dim" style="margin-top:0.75rem; font-size:0.85rem;">After promotion, make one roll on the Heroes Advance table and apply the result manually.</p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="UI.closeModal('lads-got-talent-modal')">Cancel</button>
+        <button class="btn btn-primary" onclick="UI.submitLadsGotTalent()">Promote to Hero</button>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== AUTH MODAL ===== -->
   <div id="auth-modal" class="modal-overlay">
     <div class="modal">
@@ -396,8 +416,8 @@
   <script src="js/cloud.js?v=9"></script>
   <script src="js/data.js?v=7"></script>
   <script src="js/storage.js?v=6"></script>
-  <script src="js/roster.js?v=5"></script>
-  <script src="js/ui.js?v=12"></script>
+  <script src="js/roster.js?v=6"></script>
+  <script src="js/ui.js?v=13"></script>
   <script>
     // Boot the app
     (async function() {
