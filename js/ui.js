@@ -542,6 +542,7 @@ const UI = {
             ${!isHero ? `
               <button class="btn btn-sm" onclick="UI.adjustGroupSize(${index}, 1)">+1 Member</button>
               <button class="btn btn-sm" onclick="UI.adjustGroupSize(${index}, -1)">-1 Member</button>
+              <button class="btn btn-sm" onclick="UI.openLadsGotTalentModal(${index})">Lad's Got Talent</button>
             ` : ''}
             <button class="btn btn-sm btn-danger" onclick="UI.removeWarrior('${listType}', ${index})">Remove</button>
           </div>
@@ -691,6 +692,69 @@ const UI = {
     this.toast(`${name} created!`, 'success');
   },
 
+  // === LAD'S GOT TALENT ===
+  openLadsGotTalentModal(henchmanIndex) {
+    const r = this.currentRoster;
+    const warband = DataService.getWarband(r.warbandId);
+
+    // Max heroes check
+    const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+    if (r.heroes.length >= maxHeroes) {
+      return this.toast('Already at max heroes (' + maxHeroes + '). Roll again on the advancement table.', 'error');
+    }
+
+    // Collect all skill lists available to heroes in this warband (deduplicated)
+    const allSkillLists = [...new Set(warband.heroes.flatMap(h => h.skillAccess || []))];
+
+    const modal = document.getElementById('lads-got-talent-modal');
+    modal.dataset.henchmanIndex = henchmanIndex;
+
+    const henchman = r.henchmen[henchmanIndex];
+    document.getElementById('lgt-henchman-name').textContent = henchman.typeName;
+
+    // Render skill list checkboxes
+    const listContainer = document.getElementById('lgt-skill-lists');
+    listContainer.innerHTML = allSkillLists.map(catId => {
+      const catName = DataService.skills[catId]?.name || catId;
+      return '<label style="display:block; margin-bottom:0.4rem;">' +
+        '<input type="checkbox" class="lgt-skill-checkbox" value="' + catId + '"> ' +
+        this.esc(catName) +
+      '</label>';
+    }).join('');
+
+    modal.classList.add('active');
+  },
+
+  submitLadsGotTalent() {
+    const modal = document.getElementById('lads-got-talent-modal');
+    const henchmanIndex = parseInt(modal.dataset.henchmanIndex);
+    const r = this.currentRoster;
+    const henchman = r.henchmen[henchmanIndex];
+    if (!henchman) return;
+
+    // Validate exactly 2 skill lists chosen
+    const checked = [...document.querySelectorAll('.lgt-skill-checkbox:checked')];
+    if (checked.length !== 2) {
+      return this.toast('Choose exactly 2 skill lists.', 'error');
+    }
+    const skillAccess = checked.map(cb => cb.value);
+
+    // Create promoted hero
+    const hero = RosterModel.promoteHenchmanToHero(henchman, skillAccess);
+    r.heroes.push(hero);
+
+    // Reduce henchman group size; remove group if now empty
+    henchman.groupSize = (henchman.groupSize || 1) - 1;
+    if (henchman.groupSize <= 0) {
+      r.henchmen.splice(henchmanIndex, 1);
+    }
+
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
+    modal.classList.remove('active');
+    this.toast(hero.name + ' promoted to Hero! Make one roll on the Heroes Advance table.', 'success');
+  },
+
   removeWarrior(listType, index) {
     const r = this.currentRoster;
     const warrior = r[listType][index];
@@ -806,7 +870,9 @@ const UI = {
   openSkillModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
     let accessCategories;
-    if (listType === 'customWarriors') {
+    if (warrior.isPromotedHenchman) {
+      accessCategories = warrior.skillAccess || [];
+    } else if (listType === 'customWarriors') {
       accessCategories = Object.keys(DataService.skills);
     } else if (listType === 'hiredSwords') {
       const template = DataService.getHiredSwordTemplate(warrior.type);
@@ -860,7 +926,9 @@ const UI = {
   openSpellModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
     let spellLists;
-    if (listType === 'customWarriors') {
+    if (warrior.isPromotedHenchman) {
+      spellLists = [];
+    } else if (listType === 'customWarriors') {
       spellLists = Object.keys(DataService.spells);
     } else if (listType === 'hiredSwords') {
       const template = DataService.getHiredSwordTemplate(warrior.type);

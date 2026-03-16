@@ -100,6 +100,30 @@ const RosterModel = {
     };
   },
 
+  promoteHenchmanToHero(henchman, skillAccess) {
+    return {
+      id: Storage.generateId(),
+      type: henchman.type,
+      typeName: henchman.typeName,
+      name: henchman.name,
+      isHero: true,
+      isPromotedHenchman: true,
+      stats: { ...henchman.stats },
+      baseStats: { ...henchman.stats },
+      equipment: JSON.parse(JSON.stringify(henchman.equipment)),
+      skills: [],
+      spells: [],
+      injuries: JSON.parse(JSON.stringify(henchman.injuries)),
+      experience: henchman.experience,
+      advancementCount: 0,
+      missNextGame: false,
+      cost: henchman.cost,
+      specialRules: [...henchman.specialRules],
+      skillAccess: skillAccess,
+      notes: henchman.notes || '',
+    };
+  },
+
   addEquipment(warrior, itemId) {
     const item = DataService.getEquipmentItem(itemId);
     if (!item) return false;
