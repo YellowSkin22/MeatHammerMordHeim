@@ -42,7 +42,8 @@ Bootstrap sequence: `Cloud.init()` → `DataService.loadAll()` → `UI.init()` �
 - **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Add new content by editing JSON, not JS.
 - **Spell access** — `UI.hasSpellAccess()` checks `warrior.specialRules` for the strings `'Wizard'`, `'Warrior Wizard'`, or `'Prayers of Sigmar'`. Adding a new spell-casting hero requires one of these exact strings in the template's `specialRules`. The available spell lists come from `template.spellAccess` in `warbands.json`. Note: any new prayer type (e.g. "Prayers of Taal") must either be added to the `wizardRules` array in `hasSpellAccess()` or use the generic `'Wizard'` string in `specialRules`.
 - **Equipment access** — Controlled per-warband via `equipmentAccess.heroes` and `equipmentAccess.henchmen` arrays of category IDs. The `miscellaneous` category is always appended regardless of warband config (`ui.js:549`), so never include it in `equipmentAccess`.
-- **Event propagation** — Add warrior buttons inside `.section-header` elements use `event.stopPropagation()` to prevent triggering the parent's collapse toggle.
+- **Lad's Got Talent (promoted henchmen)** — `RosterModel.promoteHenchmanToHero()` creates a hero from a henchman, copying stats/equipment/injuries/experience. The promoted warrior goes into `roster.heroes[]` (not a separate array) with `isPromotedHenchman: true` and a user-chosen `skillAccess: [catId1, catId2]`. `baseStats` is set to match `stats` at promotion time so existing characteristic gains don't show as "modified". Max heroes is validated before promotion using `warband.heroes.reduce((sum, h) => sum + h.max, 0)`.
+- **Event propagation** — Warrior add `<select>` dropdowns inside `.section-header` elements carry `onclick="event.stopPropagation()"` to prevent triggering the parent's collapse toggle. The `onchange` handler fires `UI.addWarriorFromSelect()` immediately on selection — there is no separate "Hire" button.
 
 ## Tier System & Cloud Sync
 
@@ -64,7 +65,11 @@ Cloud sync uses **last-write-wins** conflict resolution based on `updatedAt` tim
 
 ## Supabase Backend
 
-Migrations are in `supabase/migrations/`. Key tables: `rosters` (RLS per user), `user_profiles` (tier, admin flag). A custom JWT hook injects `user_tier` and `is_admin` claims into access tokens.
+Migrations are in `supabase/migrations/`. Key tables: `rosters` (RLS per user), `user_profiles` (tier, admin flag), `notifications` (admin-managed banners). A custom JWT hook injects `user_tier` and `is_admin` claims into access tokens.
+
+Admin checks use `public.is_admin(auth.uid())` — a SECURITY DEFINER function that bypasses RLS to avoid recursion. Admin-only reads use SECURITY DEFINER RPCs (`get_all_notifications`, `get_all_users`) to bypass RLS. Admin writes (INSERT/UPDATE/DELETE) use direct table access with RLS policies that check `is_admin()`.
+
+**Notifications:** Public SELECT policy filters `is_active = true` (no auth required). An additional admin SELECT policy allows admins to read all notifications — this is required because PostgreSQL applies SELECT USING as implicit WITH CHECK on UPDATE new rows, so without it admins can't set `is_active = false`. Notification dismissal is per-session via `sessionStorage` key `dismissed_notif_{id}`.
 
 Push migrations with: `supabase db push --linked`
 
@@ -79,7 +84,7 @@ The one exception is `renameWarrior()`, which does a targeted DOM update on the 
 
 ## Warrior Object Shape
 
-Warriors stored in `roster.heroes[]` and `roster.henchmen[]`:
+Warriors stored across four arrays: `roster.heroes[]`, `roster.henchmen[]`, `roster.hiredSwords[]`, `roster.customWarriors[]`.
 
 ```js
 {
@@ -100,10 +105,17 @@ Warriors stored in `roster.heroes[]` and `roster.henchmen[]`:
   cost,         // baked in at creation
   specialRules, // [...strings]
   groupSize,    // henchmen only
+  // Type flags (at most one is true):
+  isHiredSword,       // hired swords — skill/spell/equipment access from hired_swords.json template
+  isCustom,           // custom warriors (Pro tier) — full access to all skills/spells/equipment
+  isPromotedHenchman, // Lad's Got Talent — skill access from warrior.skillAccess[], no spell access
+  skillAccess,        // promoted henchmen only — [catId1, catId2] chosen at promotion
 }
 ```
 
 Stats highlighted as modified in the UI when `stats[x] !== baseStats[x]`.
+
+**Type flag routing:** `openSkillModal()`, `openSpellModal()`, and `openEquipmentModal()` each branch on these flags to determine which categories to show. When adding a new warrior type or flag, update all three modals.
 
 ## UI Indexing
 
@@ -113,6 +125,15 @@ UI event handlers reference warriors by **array index** (`heroes[0]`, `henchmen[
 
 - `UI.esc(str)` — escapes `<`, `>`, `&` via `div.textContent → div.innerHTML`. Use for inserting user-controlled strings into HTML content.
 - `UI.escAttr(str)` — extends `esc()` to also escape `"` as `&quot;`. Use for inserting into HTML attribute values (e.g. `data-tooltip="..."`).
+
+## Theme System
+
+Dark/light mode is controlled via `data-theme="dark"` on `<html>`. The active theme is stored in `localStorage` under key `mordheim_theme`. A flash-prevention inline script in `<head>` applies the theme before first paint by reading `localStorage` and falling back to `window.matchMedia('(prefers-color-scheme: dark)')`.
+
+- `UI.initTheme()` — called at the start of `UI.init()`, syncs the toggle icon and registers a `matchMedia` change listener (only applies when no user preference is stored)
+- `UI.toggleTheme()` — flips the theme and writes to `localStorage`
+- CSS: all colours are CSS custom properties on `:root`. The `[data-theme="dark"]` selector overrides them. Dark mode component overrides (tag colours, modal overlay, noise texture, transitions) live at the bottom of `css/style.css` under `/* ===== DARK MODE OVERRIDES ===== */`
+- The notification banner is intentionally pinned to its parchment colours in dark mode — do not remove the `[data-theme="dark"] .notification-banner` override
 
 ## Tooltip System
 
