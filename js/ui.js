@@ -348,12 +348,14 @@ const UI = {
 
     // Hero add dropdown
     const heroAddContainer = document.getElementById('hero-add-buttons');
+    const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+    const atTotalCap = r.heroes.length >= maxHeroes;
     heroAddContainer.innerHTML = `
       <select id="hero-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('heroes')">
         <option value="">+ Add Hero</option>
         ${warband.heroes.map(ht => {
           const currentCount = r.heroes.filter(h => h.type === ht.type).length;
-          const atMax = currentCount >= ht.max;
+          const atMax = atTotalCap || currentCount >= ht.max;
           return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
         }).join('')}
       </select>
@@ -589,6 +591,11 @@ const UI = {
       const currentCount = r.heroes.filter(h => h.type === type).length;
       if (currentCount >= template.max) {
         return this.toast(`Maximum ${template.name}s reached (${template.max}).`, 'error');
+      }
+      // Total hero cap (includes promoted henchmen)
+      const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+      if (r.heroes.length >= maxHeroes) {
+        return this.toast(`Already at max heroes (${maxHeroes}).`, 'error');
       }
     }
 
