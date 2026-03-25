@@ -44,6 +44,7 @@ const RosterModel = {
       missNextGame: false,
       cost: template.cost,
       specialRules: [...(template.specialRules || [])],
+      notes: '',
     };
 
     if (!isHero) {
@@ -75,6 +76,7 @@ const RosterModel = {
       missNextGame: false,
       cost: template.cost,
       specialRules: [...(template.specialRules || [])],
+      notes: '',
     };
   },
 
@@ -97,6 +99,7 @@ const RosterModel = {
       missNextGame: false,
       cost: cost,
       specialRules: [...specialRules],
+      notes: '',
     };
   },
 
