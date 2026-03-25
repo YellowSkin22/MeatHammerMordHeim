@@ -534,7 +534,7 @@ const UI = {
 
           <div class="tag-section mt-1">
             <div class="tag-section-label">Notes</div>
-            <textarea class="warrior-notes" placeholder="Add notes..." onchange="UI.updateNotes('${listType}', ${index}, this.value)">${this.esc(warrior.notes || '')}</textarea>
+            <textarea class="warrior-notes" placeholder="Add notes..." oninput="UI.updateWarriorNotes('${listType}', ${index}, this.value)">${this.esc(warrior.notes || '')}</textarea>
           </div>
 
           <div class="warrior-actions">
@@ -1070,7 +1070,7 @@ const UI = {
   },
 
   // === NOTES ===
-  updateNotes(listType, index, value) {
+  updateWarriorNotes(listType, index, value) {
     const warrior = this.currentRoster[listType][index];
     if (!warrior) return;
     warrior.notes = value;
