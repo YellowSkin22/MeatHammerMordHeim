@@ -522,6 +522,7 @@ const UI = {
 
           ${this.renderSpellSection(warrior, listType, index)}
 
+          ${listType !== 'henchmen' && listType !== 'hiredSwords' ? `
           <div class="tag-section mt-1">
             <div class="tag-section-label">Injuries</div>
             <div class="tag-list">
@@ -531,6 +532,7 @@ const UI = {
               <button class="btn btn-sm" onclick="UI.openInjuryModal('${listType}', ${index})">+ Add</button>
             </div>
           </div>
+          ` : ''}
 
           <div class="tag-section mt-1">
             <div class="tag-section-label">Notes</div>
@@ -996,6 +998,7 @@ const UI = {
 
   // === INJURY MODAL ===
   openInjuryModal(listType, index) {
+    if (listType === 'henchmen' || listType === 'hiredSwords') return;
     const warrior = this.currentRoster[listType][index];
     const isHero = listType === 'heroes' || listType === 'hiredSwords' || listType === 'customWarriors';
     const injuryList = isHero ? DataService.injuries.heroInjuries : DataService.injuries.henchmenInjuries;
@@ -1250,14 +1253,14 @@ const UI = {
       }).join('');
     };
 
-    const renderWarrior = (warrior, isHero) => {
+    const renderWarrior = (warrior, listType) => {
       const eqCost = warrior.equipment.reduce((sum, eq) => {
         const item = DataService.getEquipmentItem(eq.id);
         return sum + (item ? item.cost : 0);
       }, 0);
 
       let expInfo = '';
-      if (isHero) {
+      if (listType !== 'henchmen') {
         const level = RosterModel.getHeroLevel(warrior.experience);
         expInfo = `Exp: ${warrior.experience} (Level ${level})`;
       } else {
@@ -1267,7 +1270,9 @@ const UI = {
       const equipment = warrior.equipment.map(eq => esc(eq.name)).join(', ') || '—';
       const skills = warrior.skills.map(sk => esc(sk.name)).join(', ') || '—';
       const spells = (warrior.spells || []).map(sp => esc(sp.name)).join(', ');
-      const injuries = warrior.injuries.map(inj => esc(inj.name)).join(', ');
+      const injuries = listType !== 'henchmen' && listType !== 'hiredSwords'
+        ? warrior.injuries.map(inj => esc(inj.name)).join(', ')
+        : '';
       const specials = warrior.specialRules.length > 0 ? warrior.specialRules.map(sr => esc(sr)).join(', ') : '';
 
       return `
@@ -1292,19 +1297,19 @@ const UI = {
     };
 
     const heroesHtml = r.heroes.length > 0
-      ? r.heroes.map(h => renderWarrior(h, true)).join('')
+      ? r.heroes.map(h => renderWarrior(h, 'heroes')).join('')
       : '<p class="empty">No heroes recruited.</p>';
 
     const henchmenHtml = r.henchmen.length > 0
-      ? r.henchmen.map(h => renderWarrior(h, false)).join('')
+      ? r.henchmen.map(h => renderWarrior(h, 'henchmen')).join('')
       : '<p class="empty">No henchmen recruited.</p>';
 
     const hiredSwordsHtml = (r.hiredSwords || []).length > 0
-      ? r.hiredSwords.map(hs => renderWarrior(hs, true)).join('')
+      ? r.hiredSwords.map(hs => renderWarrior(hs, 'hiredSwords')).join('')
       : '';
 
     const customWarriorsHtml = (r.customWarriors || []).length > 0
-      ? r.customWarriors.map(cw => renderWarrior(cw, true)).join('')
+      ? r.customWarriors.map(cw => renderWarrior(cw, 'customWarriors')).join('')
       : '';
 
     const battleLogHtml = r.battleLog.length > 0
