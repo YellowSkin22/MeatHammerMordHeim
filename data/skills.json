@@ -3,169 +3,611 @@
     "combat": {
       "name": "Combat Skills",
       "skills": [
-        { "id": "strike_to_injure", "name": "Strike to Injure", "description": "+1 to all injury rolls in close combat." },
-        { "id": "combat_master", "name": "Combat Master", "description": "Can fight against any number of opponents without penalty." },
-        { "id": "weapons_training", "name": "Weapons Training", "description": "Can use any hand-to-hand combat weapon." },
-        { "id": "web_of_steel", "name": "Web of Steel", "description": "If armed with two weapons, enemies suffer -1 to hit in close combat." },
-        { "id": "expert_swordsman", "name": "Expert Swordsman", "description": "Re-roll all missed attacks when using a sword." },
-        { "id": "step_aside", "name": "Step Aside", "description": "4+ ward save (dodge) against one hit per combat phase." }
+        {
+          "id": "strike_to_injure",
+          "name": "Strike to Injure",
+          "description": "Add +1 to all injury rolls caused by the model in hand-to-hand combat."
+        },
+        {
+          "id": "combat_master",
+          "name": "Combat Master",
+          "description": "Gains extra Attack when fighting multiple enemies and immune to 'All Alone' tests."
+        },
+        {
+          "id": "weapons_training",
+          "name": "Weapons Training",
+          "description": "Can use any hand-to-hand combat weapon, not just equipment options."
+        },
+        {
+          "id": "web_of_steel",
+          "name": "Web of Steel",
+          "description": "Gains +1 to all rolls on Critical Hit tables in hand-to-hand combat."
+        },
+        {
+          "id": "expert_swordsman",
+          "name": "Expert Swordsman",
+          "description": "May re-roll all missed attacks when charging with a sword."
+        },
+        {
+          "id": "step_aside",
+          "name": "Step Aside",
+          "description": "May make additional 5+ saving throw against wounds in close combat."
+        }
       ]
     },
     "shooting": {
       "name": "Shooting Skills",
       "skills": [
-        { "id": "quick_shot", "name": "Quick Shot", "description": "Can fire twice per turn with ranged weapons (but at -1 to hit)." },
-        { "id": "pistolier", "name": "Pistolier", "description": "Can fire while running. No penalties for moving and shooting with pistols." },
-        { "id": "eagle_eyes", "name": "Eagle Eyes", "description": "+6\" range with ranged weapons." },
-        { "id": "weapons_expert", "name": "Weapons Expert", "description": "Can use any missile weapon." },
-        { "id": "nimble", "name": "Nimble", "description": "No movement penalty for shooting." },
-        { "id": "trick_shooter", "name": "Trick Shooter", "description": "Ignore penalties for cover and obstacles when shooting." }
+        {
+          "id": "quick_shot",
+          "name": "Quick Shot",
+          "description": "May shoot twice per turn with bow or crossbow."
+        },
+        {
+          "id": "pistolier",
+          "name": "Pistolier",
+          "description": "May fire twice with brace of pistols or fire reloaded pistol same turn."
+        },
+        {
+          "id": "eagle_eyes",
+          "name": "Eagle Eyes",
+          "description": "Adds +6\" to range of any missile weapon."
+        },
+        {
+          "id": "weapons_expert",
+          "name": "Weapons Expert",
+          "description": "May use any missile weapon, not just warband options."
+        },
+        {
+          "id": "nimble",
+          "name": "Nimble",
+          "description": "May move and fire with normally-stationary weapons."
+        },
+        {
+          "id": "trick_shooter",
+          "name": "Trick Shooter",
+          "description": "Ignores all cover modifiers when using missile weapons."
+        },
+        {
+          "id": "hunter",
+          "name": "Hunter",
+          "description": "May fire each turn with handgun or Hochland long rifle."
+        },
+        {
+          "id": "knife_fighter",
+          "name": "Knife-Fighter",
+          "description": "May throw up to three knives/stars, dividing shots between targets."
+        }
       ]
     },
     "academic": {
       "name": "Academic Skills",
       "skills": [
-        { "id": "battle_tongue", "name": "Battle Tongue", "description": "One warrior within 6\" can re-roll one failed Leadership test per turn." },
-        { "id": "sorcery", "name": "Sorcery", "description": "+1 to casting attempts (Wizards only)." },
-        { "id": "streetwise", "name": "Streetwise", "description": "-1 to Rare item availability rolls." },
-        { "id": "haggle", "name": "Haggle", "description": "Reduce the cost of rare items by 2D6 gold crowns (minimum 1gc)." },
-        { "id": "arcane_lore", "name": "Arcane Lore", "description": "May learn spells from a random magic list (must have Wizard rule)." },
-        { "id": "wyrdstone_hunter", "name": "Wyrdstone Hunter", "description": "+1 to wyrdstone discovery rolls." }
+        {
+          "id": "battle_tongue",
+          "name": "Battle Tongue",
+          "description": "Increases Leader ability range by 6\"."
+        },
+        {
+          "id": "sorcery",
+          "name": "Sorcery",
+          "description": "+1 to spell casting rolls."
+        },
+        {
+          "id": "streetwise",
+          "name": "Streetwise",
+          "description": "+2 to rare item finding rolls."
+        },
+        {
+          "id": "haggle",
+          "name": "Haggle",
+          "description": "Deduct 2D6gc from item price once per post-battle."
+        },
+        {
+          "id": "arcane_lore",
+          "name": "Arcane Lore",
+          "description": "May learn Lesser Magic with Tome of Magic."
+        },
+        {
+          "id": "wyrdstone_hunter",
+          "name": "Wyrdstone Hunter",
+          "description": "Re-roll one dice on Exploration chart when searching ruins."
+        },
+        {
+          "id": "warrior_wizard",
+          "name": "Warrior Wizard",
+          "description": "Can wear armour and cast spells."
+        },
+        {
+          "id": "scribe",
+          "name": "Scribe",
+          "description": "Create scrolls granting +2 to spell/prayer difficulty rolls."
+        },
+        {
+          "id": "mind_focus",
+          "name": "Mind Focus",
+          "description": "Re-roll one dice in spell/prayer difficulty roll."
+        },
+        {
+          "id": "tactician",
+          "name": "Tactician",
+          "description": "Reposition warriors after opponent setup, advance up to 12\"."
+        },
+        {
+          "id": "hunch",
+          "name": "Hunch",
+          "description": "Position 3 warriors in ruins 12\" from enemies pre-battle."
+        },
+        {
+          "id": "magical_aptitude",
+          "name": "Magical Aptitude",
+          "description": "Attempt two spells per turn with Toughness test risk."
+        },
+        {
+          "id": "animal_handling",
+          "name": "Animal Handling",
+          "description": "Improves animal training; animals use handler's Leadership within 6\"; ignores stubbornness in base contact."
+        },
+        {
+          "id": "tomb_raider",
+          "name": "Tomb Raider",
+          "description": "Re-roll one dice on Exploration chart if not out of action."
+        },
+        {
+          "id": "trap_expert",
+          "name": "Trap Expert",
+          "description": "Never triggers traps himself."
+        },
+        {
+          "id": "driver",
+          "name": "Driver",
+          "description": "Re-roll Out of Control chart results for wagons."
+        },
+        {
+          "id": "strategist",
+          "name": "Strategist",
+          "description": "Hero misses battle to gain +1 campaign point afterward."
+        },
+        {
+          "id": "scholar",
+          "name": "Scholar",
+          "description": "Choose new spells/prayers or reduce difficulty of known one by -1."
+        },
+        {
+          "id": "drive_chariot",
+          "name": "drive chariot",
+          "description": "Required to charge while driving a chariot."
+        }
       ]
     },
     "strength": {
       "name": "Strength Skills",
       "skills": [
-        { "id": "mighty_blow", "name": "Mighty Blow", "description": "+1 Strength in close combat." },
-        { "id": "pit_fighter", "name": "Pit Fighter", "description": "+1 Attack, +1 Weapon Skill when fighting against two or more opponents." },
-        { "id": "resilient", "name": "Resilient", "description": "+1 Toughness." },
-        { "id": "fearsome", "name": "Fearsome", "description": "Causes Fear." },
-        { "id": "strongman", "name": "Strongman", "description": "Can use two-handed weapons without the 'strikes last' penalty." },
-        { "id": "unstoppable_charge", "name": "Unstoppable Charge", "description": "+1 Attack on the turn this model charges." }
+        {
+          "id": "mighty_blow",
+          "name": "Mighty Blow",
+          "description": "+1 Strength bonus in close combat (excluding pistols)."
+        },
+        {
+          "id": "pit_fighter",
+          "name": "Pit Fighter",
+          "description": "+1 to WS and +1 to Attacks when fighting inside buildings or ruins."
+        },
+        {
+          "id": "resilient",
+          "name": "Resilient",
+          "description": "Deduct -1 Strength from all hits against him in close combat."
+        },
+        {
+          "id": "fearsome",
+          "name": "Fearsome",
+          "description": "Causes fear in opposing models."
+        },
+        {
+          "id": "strongman",
+          "name": "Strongman",
+          "description": "May use double-handed weapons without striking last penalty."
+        },
+        {
+          "id": "unstoppable_charge",
+          "name": "Unstoppable Charge",
+          "description": "+1 to Weapon Skill when charging."
+        },
+        {
+          "id": "handyman",
+          "name": "Handyman",
+          "description": "Can repair one damaged wagon wheel when stationary."
+        },
+        {
+          "id": "beastmaster",
+          "name": "Beastmaster",
+          "description": "Can attempt to control animals in hand-to-hand combat via Leadership test."
+        }
       ]
     },
     "speed": {
       "name": "Speed Skills",
       "skills": [
-        { "id": "leap", "name": "Leap", "description": "Can jump up to 6\" across gaps. No Initiative test required." },
-        { "id": "sprint", "name": "Sprint", "description": "+1 Movement." },
-        { "id": "acrobat", "name": "Acrobat", "description": "Falls do not cause damage." },
-        { "id": "lightning_reflexes", "name": "Lightning Reflexes", "description": "Always strikes first in close combat." },
-        { "id": "jump_up", "name": "Jump Up", "description": "Can stand up for free instead of using half movement." },
-        { "id": "dodge", "name": "Dodge", "description": "5+ ward save against ranged attacks." }
+        {
+          "id": "leap",
+          "name": "Leap",
+          "description": "May leap D6\" in movement phase in addition to normal movement."
+        },
+        {
+          "id": "sprint",
+          "name": "Sprint",
+          "description": "May triple Movement rate when running or charging."
+        },
+        {
+          "id": "acrobat",
+          "name": "Acrobat",
+          "description": "Can fall/jump from up to 12\" with Initiative test, re-roll failed Diving Charge rolls."
+        },
+        {
+          "id": "lightning_reflexes",
+          "name": "Lightning Reflexes",
+          "description": "Will 'strike first' against chargers, using Initiative to determine order."
+        },
+        {
+          "id": "jump_up",
+          "name": "Jump Up",
+          "description": "May ignore knocked down results when rolling for injuries (with exceptions)."
+        },
+        {
+          "id": "dodge",
+          "name": "Dodge",
+          "description": "Avoid missile weapon hits on D6 roll of 5+."
+        },
+        {
+          "id": "scale_sheer_surfaces",
+          "name": "Scale Sheer Surfaces",
+          "description": "Can climb up/down twice normal Movement height without Initiative tests."
+        }
       ]
     },
     "dark_elf_special": {
       "name": "Dark Elf Special Skills",
       "skills": [
-        { "id": "fury_of_khaine", "name": "Fury of Khaine", "description": "+1 Attack when charging." },
-        { "id": "de_powerful_build", "name": "Powerful Build", "description": "May choose skills from the Strength table. May not be taken by the Sorceress. Max 2 warriors per warband." },
-        { "id": "fey_quickness", "name": "Fey Quickness", "description": "4+ dodge save against melee attacks (not cumulative with Step Aside)." },
-        { "id": "de_infiltration", "name": "Infiltration", "description": "Deployed after opponent, anywhere on table out of sight and more than 12\" from enemy." },
-        { "id": "master_of_poisons", "name": "Master of Poisons", "description": "May buy Dark Venom and Black Lotus at half price. May re-roll failed poison rolls." },
-        { "id": "soul_hunger", "name": "Soul Hunger", "description": "If this warrior takes an enemy out of action in close combat, gain +1 Attack for the rest of the battle (max +2)." }
+        {
+          "id": "fury_of_khaine",
+          "name": "Fury of Khaine",
+          "description": "+1 Attack when charging."
+        },
+        {
+          "id": "de_powerful_build",
+          "name": "Powerful Build",
+          "description": "May choose skills from the Strength table. May not be taken by the Sorceress. Max 2 warriors per warband."
+        },
+        {
+          "id": "fey_quickness",
+          "name": "Fey Quickness",
+          "description": "4+ dodge save against melee attacks (not cumulative with Step Aside)."
+        },
+        {
+          "id": "de_infiltration",
+          "name": "Infiltration",
+          "description": "Deployed after opponent, anywhere on table out of sight and more than 12\" from enemy."
+        },
+        {
+          "id": "master_of_poisons",
+          "name": "Master of Poisons",
+          "description": "May buy Dark Venom and Black Lotus at half price. May re-roll failed poison rolls."
+        },
+        {
+          "id": "soul_hunger",
+          "name": "Soul Hunger",
+          "description": "If this warrior takes an enemy out of action in close combat, gain +1 Attack for the rest of the battle (max +2)."
+        }
       ]
     },
     "dwarf_special": {
       "name": "Dwarf Special Skills",
       "skills": [
-        { "id": "master_of_blades", "name": "Master of Blades", "description": "When using a Parry weapon, parries on matching opponent's highest to hit roll. Two Parry weapons allow parrying two attacks." },
-        { "id": "extra_tough", "name": "Extra Tough", "description": "May re-roll once on the Serious Injury chart after being taken out of action. Second roll must be accepted." },
-        { "id": "resource_hunter", "name": "Resource Hunter", "description": "May modify one dice roll on the Exploration chart by +1/-1." },
-        { "id": "true_grit", "name": "True Grit", "description": "Injury table: 1-3 knocked down, 4-5 stunned, 6 out of action." },
-        { "id": "thick_skull", "name": "Thick Skull", "description": "3+ save on D6 to avoid being stunned (becomes knocked down). With helmet, save is 2+." }
+        {
+          "id": "master_of_blades",
+          "name": "Master of Blades",
+          "description": "When using a Parry weapon, parries on matching opponent's highest to hit roll. Two Parry weapons allow parrying two attacks."
+        },
+        {
+          "id": "extra_tough",
+          "name": "Extra Tough",
+          "description": "May re-roll once on the Serious Injury chart after being taken out of action. Second roll must be accepted."
+        },
+        {
+          "id": "resource_hunter",
+          "name": "Resource Hunter",
+          "description": "May modify one dice roll on the Exploration chart by +1/-1."
+        },
+        {
+          "id": "true_grit",
+          "name": "True Grit",
+          "description": "Injury table: 1-3 knocked down, 4-5 stunned, 6 out of action."
+        },
+        {
+          "id": "thick_skull",
+          "name": "Thick Skull",
+          "description": "3+ save on D6 to avoid being stunned (becomes knocked down). With helmet, save is 2+."
+        }
       ]
     },
     "troll_slayer_special": {
       "name": "Troll Slayer Skills",
       "skills": [
-        { "id": "ferocious_charge", "name": "Ferocious Charge", "description": "May double attacks on the turn he charges. Suffers -1 to hit that turn." },
-        { "id": "monster_slayer", "name": "Monster Slayer", "description": "Always wounds on 4+ regardless of Toughness, unless own Strength would need a lower roll." },
-        { "id": "berserker", "name": "Berserker", "description": "+1 to close combat to hit rolls during the turn he charges." }
+        {
+          "id": "ferocious_charge",
+          "name": "Ferocious Charge",
+          "description": "May double attacks on the turn he charges. Suffers -1 to hit that turn."
+        },
+        {
+          "id": "monster_slayer",
+          "name": "Monster Slayer",
+          "description": "Always wounds on 4+ regardless of Toughness, unless own Strength would need a lower roll."
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "description": "+1 to close combat to hit rolls during the turn he charges."
+        }
       ]
     },
     "beastmen_special": {
       "name": "Beastmen Special Skills",
       "skills": [
-        { "id": "shaggy_hide", "name": "Shaggy Hide", "description": "Gains a 6+ Armour Save that combines with other armour." },
-        { "id": "mutant", "name": "Mutant", "description": "May buy one mutation." },
-        { "id": "bm_fearless", "name": "Fearless", "description": "Immune to fear and All Alone tests." },
-        { "id": "horned_one", "name": "Horned One", "description": "Makes an additional Attack at basic Strength on the turn he charges." },
-        { "id": "bellowing_roar", "name": "Bellowing Roar", "description": "Chief only. Warband may re-roll failed Rout tests." },
-        { "id": "manhater", "name": "Manhater", "description": "Affected by Hatred when fighting any Human warbands." }
+        {
+          "id": "shaggy_hide",
+          "name": "Shaggy Hide",
+          "description": "Gains a 6+ Armour Save that combines with other armour."
+        },
+        {
+          "id": "mutant",
+          "name": "Mutant",
+          "description": "May buy one mutation."
+        },
+        {
+          "id": "bm_fearless",
+          "name": "Fearless",
+          "description": "Immune to fear and All Alone tests."
+        },
+        {
+          "id": "horned_one",
+          "name": "Horned One",
+          "description": "Makes an additional Attack at basic Strength on the turn he charges."
+        },
+        {
+          "id": "bellowing_roar",
+          "name": "Bellowing Roar",
+          "description": "Chief only. Warband may re-roll failed Rout tests."
+        },
+        {
+          "id": "manhater",
+          "name": "Manhater",
+          "description": "Affected by Hatred when fighting any Human warbands."
+        }
       ]
     },
     "orc_special": {
       "name": "Orc Special Skills",
       "skills": [
-        { "id": "ard_ead", "name": "'Ard 'Ead", "description": "3+ save to avoid being stunned (becomes knocked down). With helmet, save is 2+." },
-        { "id": "waaagh", "name": "Waaagh!", "description": "+D3\" to charge range." },
-        { "id": "ere_we_go", "name": "'Ere We Go!", "description": "Ignores fear tests when charging." },
-        { "id": "da_cunnin_plan", "name": "Da Cunnin' Plan", "description": "Boss only. Warband may re-roll failed Rout tests while Boss is not out of action." },
-        { "id": "well_ard", "name": "Well 'Ard", "description": "+1 to any armour saves." },
-        { "id": "eadbasher", "name": "'Eadbasher", "description": "Knocked down results in hand-to-hand count as stunned instead." }
+        {
+          "id": "ard_ead",
+          "name": "'Ard 'Ead",
+          "description": "3+ save to avoid being stunned (becomes knocked down). With helmet, save is 2+."
+        },
+        {
+          "id": "waaagh",
+          "name": "Waaagh!",
+          "description": "+D3\" to charge range."
+        },
+        {
+          "id": "ere_we_go",
+          "name": "'Ere We Go!",
+          "description": "Ignores fear tests when charging."
+        },
+        {
+          "id": "da_cunnin_plan",
+          "name": "Da Cunnin' Plan",
+          "description": "Boss only. Warband may re-roll failed Rout tests while Boss is not out of action."
+        },
+        {
+          "id": "well_ard",
+          "name": "Well 'Ard",
+          "description": "+1 to any armour saves."
+        },
+        {
+          "id": "eadbasher",
+          "name": "'Eadbasher",
+          "description": "Knocked down results in hand-to-hand count as stunned instead."
+        }
       ]
     },
     "shadow_warrior_special": {
       "name": "Shadow Warrior Special Skills",
       "skills": [
-        { "id": "sw_infiltration", "name": "Infiltration", "description": "Deployed after opponent, anywhere on table out of sight and more than 12\" from enemy." },
-        { "id": "see_in_shadows", "name": "See in Shadows", "description": "May always roll to charge opponents he cannot see (instead of normal 4\" limit)." },
-        { "id": "hide_in_shadows", "name": "Hide in Shadows", "description": "Enemy attempting to detect this warrior when Hidden must halve their Initiative before measuring distance." },
-        { "id": "sniper", "name": "Sniper", "description": "If Hidden, may shoot or cast spells and remain Hidden. Target gets Initiative test to spot the sniper if not taken out of action." },
-        { "id": "sw_powerful_build", "name": "Powerful Build", "description": "May choose skills from the Strength table. May NOT be taken by Shadow Weavers. Max 2 warriors per warband." },
-        { "id": "master_of_runes", "name": "Master of Runes", "description": "Shadow Weaver only. +1 to dispel roll with Elven Runestones. One warband member may re-roll a single failed armour save or Parry roll per battle." }
+        {
+          "id": "sw_infiltration",
+          "name": "Infiltration",
+          "description": "Deployed after opponent, anywhere on table out of sight and more than 12\" from enemy."
+        },
+        {
+          "id": "see_in_shadows",
+          "name": "See in Shadows",
+          "description": "May always roll to charge opponents he cannot see (instead of normal 4\" limit)."
+        },
+        {
+          "id": "hide_in_shadows",
+          "name": "Hide in Shadows",
+          "description": "Enemy attempting to detect this warrior when Hidden must halve their Initiative before measuring distance."
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "description": "If Hidden, may shoot or cast spells and remain Hidden. Target gets Initiative test to spot the sniper if not taken out of action."
+        },
+        {
+          "id": "sw_powerful_build",
+          "name": "Powerful Build",
+          "description": "May choose skills from the Strength table. May NOT be taken by Shadow Weavers. Max 2 warriors per warband."
+        },
+        {
+          "id": "master_of_runes",
+          "name": "Master of Runes",
+          "description": "Shadow Weaver only. +1 to dispel roll with Elven Runestones. One warband member may re-roll a single failed armour save or Parry roll per battle."
+        }
       ]
     },
     "pit_fighter_special": {
       "name": "Pit Fighter Special Skills",
       "skills": [
-        { "id": "bulging_biceps", "name": "Bulging Biceps", "description": "May use two-handed weapons without the strikes last penalty." },
-        { "id": "force_of_will", "name": "Force of Will", "description": "May re-roll failed Rout tests." },
-        { "id": "arms_master", "name": "Arms Master", "description": "Can use any hand-to-hand weapon regardless of race restrictions." },
-        { "id": "body_slam", "name": "Body Slam", "description": "On the charge, the warrior may make a single special attack at +1 Strength that causes knockdown on a wound." },
-        { "id": "grizzled_veteran", "name": "Grizzled Veteran", "description": "Immune to Fear and All Alone tests." }
+        {
+          "id": "bulging_biceps",
+          "name": "Bulging Biceps",
+          "description": "May use two-handed weapons without the strikes last penalty."
+        },
+        {
+          "id": "force_of_will",
+          "name": "Force of Will",
+          "description": "May re-roll failed Rout tests."
+        },
+        {
+          "id": "arms_master",
+          "name": "Arms Master",
+          "description": "Can use any hand-to-hand weapon regardless of race restrictions."
+        },
+        {
+          "id": "body_slam",
+          "name": "Body Slam",
+          "description": "On the charge, the warrior may make a single special attack at +1 Strength that causes knockdown on a wound."
+        },
+        {
+          "id": "grizzled_veteran",
+          "name": "Grizzled Veteran",
+          "description": "Immune to Fear and All Alone tests."
+        }
       ]
     },
     "skaven_special": {
       "name": "Skaven Special Skills",
       "skills": [
-        { "id": "black_hunger_eshin", "name": "Black Hunger", "description": "The Hero may declare at the beginning of his turn that he is using this skill. Add +1 Attack and +D3\" to total move for the duration of his own turn, but suffers D3 S3 hits with no armour save at the end of the turn." },
-        { "id": "tail_fighting", "name": "Tail Fighting", "description": "The Skaven may wield a shield, knife or sword with its tail. Gains an extra attack with the appropriate weapon or +1 bonus to armour save." },
-        { "id": "wall_runner", "name": "Wall Runner", "description": "Does not need to take an Initiative test when climbing up walls and other sheer surfaces." },
-        { "id": "infiltration", "name": "Infiltration", "description": "Always placed on the battlefield after the opposing warband. Can be placed anywhere on the table as long as out of sight and more than 12\" from any enemy model." },
-        { "id": "art_of_silent_death", "name": "Art of Silent Death", "description": "Can fight with bare paws without penalties, counting as having two weapons (+1 Attack). Causes a critical hit on a To Wound roll of 5-6 instead of just 6. May be used with Fighting Claws (+2 Attacks instead of +1)." }
+        {
+          "id": "black_hunger_eshin",
+          "name": "Black Hunger",
+          "description": "The Hero may declare at the beginning of his turn that he is using this skill. Add +1 Attack and +D3\" to total move for the duration of his own turn, but suffers D3 S3 hits with no armour save at the end of the turn."
+        },
+        {
+          "id": "tail_fighting",
+          "name": "Tail Fighting",
+          "description": "The Skaven may wield a shield, knife or sword with its tail. Gains an extra attack with the appropriate weapon or +1 bonus to armour save."
+        },
+        {
+          "id": "wall_runner",
+          "name": "Wall Runner",
+          "description": "Does not need to take an Initiative test when climbing up walls and other sheer surfaces."
+        },
+        {
+          "id": "infiltration",
+          "name": "Infiltration",
+          "description": "Always placed on the battlefield after the opposing warband. Can be placed anywhere on the table as long as out of sight and more than 12\" from any enemy model."
+        },
+        {
+          "id": "art_of_silent_death",
+          "name": "Art of Silent Death",
+          "description": "Can fight with bare paws without penalties, counting as having two weapons (+1 Attack). Causes a critical hit on a To Wound roll of 5-6 instead of just 6. May be used with Fighting Claws (+2 Attacks instead of +1)."
+        }
       ]
     },
     "clan_pestilens_special": {
       "name": "Clan Pestilens Special Skills",
       "skills": [
-        { "id": "black_hunger", "name": "Black Hunger", "description": "If this warrior takes an enemy out of action in close combat, immediately recover 1 Wound." },
-        { "id": "censer_bearer", "name": "Censer Bearer", "description": "May wield a Plague Censer without suffering the negative effects." },
-        { "id": "rotten_body", "name": "Rotten Body", "description": "+1 Toughness. Cannot be combined with Resilient." },
-        { "id": "contagious", "name": "Contagious", "description": "Enemy models in base contact at start of their turn must pass a Toughness test or suffer 1 wound (no armour save)." },
-        { "id": "ignore_pain", "name": "Ignore Pain", "description": "Treats Stunned results as Knocked Down." }
+        {
+          "id": "black_hunger",
+          "name": "Black Hunger",
+          "description": "If this warrior takes an enemy out of action in close combat, immediately recover 1 Wound."
+        },
+        {
+          "id": "censer_bearer",
+          "name": "Censer Bearer",
+          "description": "May wield a Plague Censer without suffering the negative effects."
+        },
+        {
+          "id": "rotten_body",
+          "name": "Rotten Body",
+          "description": "+1 Toughness. Cannot be combined with Resilient."
+        },
+        {
+          "id": "contagious",
+          "name": "Contagious",
+          "description": "Enemy models in base contact at start of their turn must pass a Toughness test or suffer 1 wound (no armour save)."
+        },
+        {
+          "id": "ignore_pain",
+          "name": "Ignore Pain",
+          "description": "Treats Stunned results as Knocked Down."
+        }
       ]
     },
     "bretonnian_special": {
       "name": "Bretonnian Knight Virtues",
       "skills": [
-        { "id": "virtue_of_purity", "name": "Virtue of Purity", "description": "Any spell cast against the knight will be dispelled on a D6 roll of 4+. This is a natural dispel on account of the knight's extreme piety." },
-        { "id": "virtue_of_valour", "name": "Virtue of Valour", "description": "If fighting a model with a higher Strength characteristic, the Knight may re-roll any failed to hit rolls in hand-to-hand combat." },
-        { "id": "virtue_of_discipline", "name": "Virtue of Discipline", "description": "Once per game, if the knight is not out of action, stunned or knocked down, you may re-roll a failed rout test." },
-        { "id": "virtue_of_noble_disdain", "name": "Virtue of Noble Disdain", "description": "The Knight is subject to hatred of all enemies armed with shooting weapons." },
-        { "id": "virtue_of_impetuous", "name": "Virtue of Impetuous", "description": "The Knight may add +D3\" to his move when charging. Roll each time you charge before moving." }
+        {
+          "id": "virtue_of_purity",
+          "name": "Virtue of Purity",
+          "description": "Any spell cast against the knight will be dispelled on a D6 roll of 4+. This is a natural dispel on account of the knight's extreme piety."
+        },
+        {
+          "id": "virtue_of_valour",
+          "name": "Virtue of Valour",
+          "description": "If fighting a model with a higher Strength characteristic, the Knight may re-roll any failed to hit rolls in hand-to-hand combat."
+        },
+        {
+          "id": "virtue_of_discipline",
+          "name": "Virtue of Discipline",
+          "description": "Once per game, if the knight is not out of action, stunned or knocked down, you may re-roll a failed rout test."
+        },
+        {
+          "id": "virtue_of_noble_disdain",
+          "name": "Virtue of Noble Disdain",
+          "description": "The Knight is subject to hatred of all enemies armed with shooting weapons."
+        },
+        {
+          "id": "virtue_of_impetuous",
+          "name": "Virtue of Impetuous",
+          "description": "The Knight may add +D3\" to his move when charging. Roll each time you charge before moving."
+        }
       ]
     },
     "horned_hunter_special": {
       "name": "Horned Hunter Special Skills",
       "skills": [
-        { "id": "master_trapper", "name": "Master Trapper", "description": "Trip wire range is extended to 4\". Traps set by a master trapper are triggered on a 2+." },
-        { "id": "hh_infiltration", "name": "Infiltration", "description": "Deployed after opponent, anywhere on the table out of sight and more than 12\" from any enemy model." },
-        { "id": "foul_odour", "name": "Foul Odour", "description": "All living enemies (not Undead or Possessed) are at -1 to hit this warrior in close combat. Cannot carry open flames; fire attacks against this warrior are at +1 Strength." },
-        { "id": "animal_friendship", "name": "Animal Friendship", "description": "Animals will never attack this warrior. Up to two wardogs owned by this warrior do not count against the warband's maximum number of models." },
-        { "id": "hh_pathfinder", "name": "Pathfinder", "description": "Roll one additional D6 during the exploration phase. A warband may only contain one pathfinder." },
-        { "id": "hh_hide_in_shadows", "name": "Hide in Shadows", "description": "Enemy models must halve their Initiative when attempting to find this warrior when he is Hidden." }
+        {
+          "id": "master_trapper",
+          "name": "Master Trapper",
+          "description": "Trip wire range is extended to 4\". Traps set by a master trapper are triggered on a 2+."
+        },
+        {
+          "id": "hh_infiltration",
+          "name": "Infiltration",
+          "description": "Deployed after opponent, anywhere on the table out of sight and more than 12\" from any enemy model."
+        },
+        {
+          "id": "foul_odour",
+          "name": "Foul Odour",
+          "description": "All living enemies (not Undead or Possessed) are at -1 to hit this warrior in close combat. Cannot carry open flames; fire attacks against this warrior are at +1 Strength."
+        },
+        {
+          "id": "animal_friendship",
+          "name": "Animal Friendship",
+          "description": "Animals will never attack this warrior. Up to two wardogs owned by this warrior do not count against the warband's maximum number of models."
+        },
+        {
+          "id": "hh_pathfinder",
+          "name": "Pathfinder",
+          "description": "Roll one additional D6 during the exploration phase. A warband may only contain one pathfinder."
+        },
+        {
+          "id": "hh_hide_in_shadows",
+          "name": "Hide in Shadows",
+          "description": "Enemy models must halve their Initiative when attempting to find this warrior when he is Hidden."
+        }
       ]
     }
   }

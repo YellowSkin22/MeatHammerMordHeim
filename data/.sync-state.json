@@ -1,0 +1,21 @@
+{
+  "lastChecked": "2026-03-25T12:56:10.955Z",
+  "files": {
+    "data/mergedEquipment.json": {
+      "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
+      "syncedAt": "2026-03-25T12:56:10.955Z"
+    },
+    "data/skills.json": {
+      "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
+      "syncedAt": "2026-03-25T12:56:10.955Z"
+    },
+    "data/magic.json": {
+      "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
+      "syncedAt": "2026-03-25T12:56:10.955Z"
+    },
+    "data/warbandFiles": {
+      "sha": "594d7e7e67ddf935e4b5d9a129b9d2eab6982c77",
+      "syncedAt": "2026-03-25T12:56:10.955Z"
+    }
+  }
+}
