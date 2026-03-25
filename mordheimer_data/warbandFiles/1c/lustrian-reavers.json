@@ -1,0 +1,696 @@
+{
+"id": "lustrian-reavers",
+"name": "Lustrian Reavers",
+"grade": "1c",
+"campaigngrade": "1c",
+"source": "Facebook (2024)",
+"sourceLink": "[https://broheim.net/downloads/warbands/facebook/Lustrian-Reavers-V1.2.pdf](https://broheim.net/downloads/warbands/facebook/Lustrian-Reavers-V1.2.pdf)",
+"setting": "Lustria",
+"author": "Tuomas Pirinen",
+"version": "",
+"lore": "<em>Countless expeditions of ambitious and greedy invaders from the Old World have been lost in Lustria. Some to diseases, others to Jungle Beasts, and many more to Lizardmen, the stern defenders of their ancient civilization. But despite all these hardships, the tales of the Cities of Gold lure more and more adventurers from beyond the sea.</em><br /><br /><em>Against the odds, some survive. The toughest, most skilled and the most resourceful often band together after the crews they arrive with succumb to the endless perils of the New World. These groups are known as Reavers: the most ruthless, skilled and dangerous of the invaders beyond the ocean. They have claimed the jungle their home, and they thrive within it thanks to their savagery. They are armed and equipped with the very best wargear salvaged from their fallen comrades and entire companies lost to the pitiless jungles of Lustria.</em><br /><br /><em>They scorn any newcomers as unwelcome competition for the riches the Reavers still feverishly look for, and only accept a few prospective new members into their small bands. These prospects tend to be young survivors of newly-arrived expeditions or settlers whose abodes were attacked by Lizardmen, Amazons or one of the many primordial monsters prowling the jungles of the New World. Most of these fresh recruits die well before they realize their dream of joining the Reavers as full-fledged members.</em><br /><br /><em>When one of the Reavers die, the warband spares no effort on recovering the lost equipment, weapons and armour, as a new Reaver is selected by the surviving Heroes. The newcomer is welcomed to the ranks of Reavers, and dons the panoply of the predecessor in a ceremony that often involved copious amounts of Estalian wine.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 10,
+"choiceFluff": "A Lustrian Reaver warband must include a minimum of three models. You have 500 gold crowns available to spend. The maximum number of warriors is 10, though some items like the Halfling Cookbook may increase this number as normal.",
+"admonitions": "<div className=\"admonition admonition-note\"><div className=\"admonition-heading\"><h5>maximum warband size</h5></div><div className=\"admonition-content\"><p>Note that the War Beasts from the Beastmaster also count towards your maximum number of models in the warband!</p></div></div>"
+},
+"specialSkills": false,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Rare Heroes",
+"ruleFull": "You can only ever buy one of each type of Heroes during the existence of your Warband, representing the extreme rarity of these the toughest of survivors of Lustria."
+},
+{
+"flavour": "",
+"rulename": "Promotions",
+"ruleFull": "When you lose one of the Heroes for whatever reason, you cannot buy a new one. However, you retain all the equipment of the fallen Hero<sup><Tooltip content=\"faq113\">❓</Tooltip></sup>, and you may now promote one of the Prospects into the role of the lost hero, as if that Henchman just successfully rolled Lad’s Got Talent on the Henchmen Advancement Table: You may choose two skill lists available to Heroes in your warband. These are the skill types your new Hero can choose from when the model gains new skills. The new Hero can immediately make one roll on the Heroes Advance table.<br /><br />The new Hero then gains the armour, weapons and equipment of the fallen Hero and assumes their position the Warband. The Prospect’s own equipment may be added to the Warband stash. If you have no Prospect currently in your Warband, you can promote the next one you hire."
+},
+{
+"flavour": "",
+"rulename": "Hired Swords",
+"ruleFull": "The Lustrian Reavers are proud and suspicious, and therefore rarely use Hired Swords. They may hire an Ogre Bodyguard, Dwarf Trollslayer, Tilean Marksman or a Big Game Hunter."
+}
+],
+"equipmentLists": [
+{
+"id": "hero-equipment-list",
+"title": "Hero Equipment List",
+"caveat": "Note that many of the Reavers already start with special equipment not listed below. This equipment cannot be replaced if lost.",
+"items": [
+{
+"name": "dagger",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "sword",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "mace",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "misericordia",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "lance",
+"cost": {
+"cost": 40
+}
+},
+{
+"name": "javelins",
+"alias": "Javelin",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "throwing knives",
+"alias": "Throwing Knives",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "blowpipe",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "pistol",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "light armour",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "shield",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "helmet",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "buckler",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "rope & hook",
+"alias": "Rope & Hook",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "crimson shade",
+"cost": {
+"cost": 35
+}
+},
+{
+"name": "dark venom",
+"cost": {
+"cost": 30
+}
+},
+{
+"name": "net",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "warhorse",
+"cost": {
+"cost": 80
+}
+},
+{
+"name": "warhound",
+"cost": {
+"cost": 20
+}
+}
+]
+},
+{
+"id": "prospect-equipment-list",
+"title": "Prospect Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "sword",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "hammer",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "spear",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "short bow",
+"alias": "Short bow",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "light armour",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "shield",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "helmet",
+"cost": {
+"cost": 10
+}
+}
+]
+}
+],
+"specialEquipment": [
+{
+"id": "masterwork-heavy-armour",
+"title": "Masterwork Heavy Armour",
+"cost": {
+"cost": 0
+},
+"flavour": "",
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "bec-de-corbin",
+"title": "Bec de Corbin",
+"cost": {
+"cost": 0
+},
+"flavour": "",
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "misericordia",
+"title": "Misericordia",
+"cost": {
+"cost": 0
+},
+"flavour": "",
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "firepots-miragliano",
+"title": "Firepots",
+"cost": {
+"cost": 0
+},
+"flavour": "",
+"specialRules": [],
+"admonitions": ""
+}
+],
+"fighters": [
+{
+"id": "conqueror",
+"type": "hero",
+"name": "Conqueror",
+"plural": "Conquerors",
+"race": "human",
+"flavour": "Conquerors are behemoths of men, unstoppable giants wearing the nigh-impenetrable Estalian Masterwork armour and wielding the dreaded Bec de Corbin. They are incredibly tough to take out in battle, but their dedication to the skills at arms means they are often sullen and morose loners who do not work well with others, and despise newcomers to their warbands.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 150,
+"startingXp": 24,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 2,
+"i": 3,
+"a": 2,
+"ld": 7
+},
+"equipmentLists": [
+"hero-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Starting Equipment",
+"ruleFull": "<a href=\"#masterwork-heavy-armour\">Masterwork Heavy Armour</a>, <a href=\"#bec-de-corbin\">Bec de Corbin</a>, <Tooltip>Helmet</Tooltip>. Further weapons, armour and equipment can be bought from the Reavers Equipment list."
+},
+{
+"flavour": "",
+"rulename": "Survivor",
+"ruleFull": "Cannot be taken out of Action unless the model is already Knocked Down or Stunned. Treat Out of Action as Stunned if the Conqueror is standing when receiving the Wound.<br /><br />In addition, the first time a Conqueror suffers a Dead result on the Serious Injury Chart, treat it as Multiple Injuries instead. This ability can save the Conqueror only one time."
+}
+],
+"admonitions": ""
+},
+{
+"id": "saurus-slayer",
+"type": "hero",
+"name": "Saurus Slayer",
+"plural": "Saurus Slayers",
+"race": "human",
+"flavour": "Saurus-slayers act as the champions of the Reavers, warriors who have survived where hundreds have fallen. They specialize in dueling Saurus warriors. All Lizardmen are deadly and ferocious opponents and only the mightiest of human warriors can best them in a single combat. Saurus-Slayers are men who have become accustomed to taking on and defeating these mighty guardians of Lustria, and adorn themselves with grisly trophies of their victories. These spoils of war often offer additional benefits and mystical protection to these supreme champions of Reaver Warbands.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 135,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 2,
+"ld": 8
+},
+"equipmentLists": [
+"hero-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Starting Equipment",
+"ruleFull": "<Tooltip>Heavy Armour</Tooltip>, <Tooltip>Misericordia</Tooltip>, 2 <Tooltip>Swords</Tooltip>, <Tooltip>Helmet</Tooltip>. Further weapons, armour and equipment can be bought from the Reavers Equipment list."
+},
+{
+"flavour": "",
+"rulename": "Duellist",
+"ruleFull": "If the Saurus Slayer is engaged with only a single opponent in melee, they can re-roll missed hits on the first turn whether they charged the enemy or were charged."
+},
+{
+"flavour": "",
+"rulename": "Special Equipment Access",
+"ruleFull": "Saurus-Slayers may purchase the following special equipment:<br /><br />- <strong>Lizardmen Skin Cloak</strong>: Grants 6+ <Tooltip>Ward save</Tooltip>, separate from Armour Save that is not reduced by enemy strength or other modifiers. (10 gc)<br />- <strong>Skull Mask</strong>: Causes <Tooltip>Fear</Tooltip>. (15 gc)<br />- <strong>Upgrade any sword into a Lizardman Sword</strong>: +1 to wound rolls due to Poison. (30 gc)<br />- <strong>Trophy Slann Holy Headdress</strong>: +2 bonus to armour saves. (35 gc)"
+}
+],
+"admonitions": ""
+},
+{
+"id": "reaver-beastmaster",
+"type": "hero",
+"name": "Reaver Beastmaster",
+"plural": "Reaver Beastmasters",
+"race": "human",
+"flavour": "Beastmasters are warriors who train and command fierce attack dogs and other beasts bred for war. Estalians are especially famous for their skills at raising beasts of the forest to serve them on the battlefield. Great slavering Tilean bloodhounds are the most common, but hunting hawks and even trained Barbary monkeys can be made into ferocious beasts of war by these expert animal handlers.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 90,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"hero-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Starting Equipment",
+"ruleFull": "<Tooltip>Heavy Armour</Tooltip>, <Tooltip>Spear</Tooltip>, <Tooltip>Sword</Tooltip>. Further weapons, armour and equipment can be bought from the Reavers Equipment list."
+},
+{
+"flavour": "",
+"rulename": "War Beasts",
+"ruleFull": "If your Warband includes a Beastmaster, you may include up to 2 War Beasts from the list below. These count towards the maximum size of the Warband. They must be bought when the Warband is created but can be replaced if killed. The War Beasts can use the Ld of the Beastmaster if they are within 6” of the Beastmaster."
+}
+],
+"admonitions": ""
+},
+{
+"id": "jungle-shadow",
+"type": "hero",
+"name": "Jungle Shadow",
+"plural": "Jungle Shadows",
+"race": "human",
+"flavour": "Jungle Shadows are survivors of desperate Jungle Warfare against skinks. Where their comrades died, the Shadows survived through woodcraft, cunning, ruthlessness, and stealth. They are the hunted who have become hunters. Many of them were mystics that escaped the persecution of the religious authorities in the Old World.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 90,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"hero-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": true,
+"academic": true,
+"strength": false,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Starting Equipment",
+"ruleFull": "<Tooltip>Javelins</Tooltip>, <Tooltip>Light Armour</Tooltip>, two <Tooltip>Daggers</Tooltip>. Further weapons, armour and equipment can be bought from the Reavers Equipment list."
+},
+{
+"flavour": "",
+"rulename": "Wizard Upgrade",
+"ruleFull": "At the cost of +30 Gold Crowns, you can make Jungle Shadow a Wizard. Jungle Shadow uses the <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a> list. Generate a single Spell as standard for a wizard. If you make the Jungle Shadow a Wizard, remove the Light Armour from the equipment list when starting out, and generate 1 Lesser Magic spell they can use."
+},
+{
+"flavour": "",
+"rulename": "Silent Hunter",
+"ruleFull": "Jungle Shadow is always considered to be <a href=\"/docs/rules/movement#hiding\">Hidden</a> if the model is touching any piece of terrain of 1” high. Shooting does not reveal Jungle Shadow’s position, though spellcasting does."
+},
+{
+"flavour": "",
+"rulename": "Surprise attack",
+"ruleFull": "If the Shadow attacks an enemy that has its back turned to the Jungle Shadow (i.e. the shot is coming from 180 degree angle from behind its facing), the Shadow can re-roll missed to hit rolls."
+},
+{
+"flavour": "",
+"rulename": "Canopy Walker",
+"ruleFull": "Jungle Shadow automatically passes all <a href=\"/docs/rules/movement#climbing\">climbing</a>, <a href=\"/docs/rules/movement#jumping-down\">jumping</a> and <a href=\"/docs/rules/movement#falling\">falling</a> off ledges tests."
+}
+],
+"admonitions": ""
+},
+{
+"id": "trapmaster",
+"type": "hero",
+"name": "Trapmaster",
+"plural": "Trapmasters",
+"race": "human",
+"flavour": "Combining the hunting skills of the Old World trappers with the fiendish skills of their skink enemies, the Trapmasters are essential for the Reaver warbands in controlling the battlefield, sniping at enemies from distance, and laying snares and traps to catch unwary foes.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 140,
+"startingXp": 17,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"hero-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": true,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Starting Equipment",
+"ruleFull": "<Tooltip>Heavy Armour</Tooltip>, <Tooltip>Sword</Tooltip>, Tilean Hunting Rifle (Treat as <Tooltip>Hochland Long Rifle</Tooltip>), <a href=\"#firepots-miragliano\">Firepots</a>, Leaf Coat (counts as an <Tooltip>Elven Cloak</Tooltip>). Further weapons, armour and equipment can be bought from the Reavers Equipment list."
+},
+{
+"flavour": "",
+"rulename": "Deadeye",
+"ruleFull": "Trapmaster suffers no penalties for shooting at long range."
+},
+{
+"flavour": "",
+"rulename": "Traps",
+"ruleFull": "The Trapmaster starts each game with 1 Trap and can buy up to 5 further of the following Traps before the start of the game at the cost of 5 GC each. Each trap is one use only. Traps are used in the Shooting Phase instead of shooting, 1 trap at a time, and cannot be used in Melee combat. When you use a trap, put 2 1” diameter Trap counters (one false, one real) anywhere within 3” of the Trapmaster, but at least 3” away from any other models. Any model that moves within 2” of the counter must flip it over. If it is a false one, nothing happens. If it is a real one, the model suffers D3 S5 Hits immediately. Traps do not cause Criticals. Remove the counters when the trap is sprung."
+}
+],
+"admonitions": ""
+},
+{
+"id": "prospects",
+"type": "henchman",
+"name": "Prospect",
+"plural": "Prospects",
+"race": "human",
+"flavour": "Your warband may include up to 5 Prospects - newly-arrived hopefuls who seek a chance to join the Reavers by serving them as guards, porters and menial labourers, as well as cannon fodder in their savage jungle fights.",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 35,
+"startingXp": 0,
+"gainExp": true,
+"promotable": false,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"prospect-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Promotion Only",
+"ruleFull": "Re-roll any Lad’s Got Talent results on Henchmen Advancement table. When promoted, you can then hire a new Prospect as the model no longer counts as one of them."
+}
+],
+"admonitions": "<div className=\"fighter\"><p><strong>Weapons/Armour:</strong> Purchased from the Prospects Equipment List.</p></div>"
+},
+{
+"id": "estalian-warhound",
+"type": "henchman",
+"name": "Estalian Warhound",
+"plural": "Estalian Warhounds",
+"race": "warhound",
+"minQty": 0,
+"maxQty": 2,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 25,
+"startingXp": 0,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 6,
+"ws": 4,
+"bs": 0,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 5
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "5+ armour save",
+"ruleFull": "Beastmasters raise savage Estalian warhounds: giant beasts trained to bring down any prey or enemy, and protected by padded armour to ward off arrows and iron collars against blades."
+},
+{
+"flavour": "",
+"rulename": "Animal",
+"ruleFull": "All the War Beasts are subject to the rules of Animals and may not gain experience. They suffer injuries exactly as Henchmen (if taken out of action they are dead on a roll of 1-2 on D6)."
+}
+],
+"admonitions": ""
+},
+{
+"id": "barbary-monkey",
+"type": "henchman",
+"name": "Barbary Monkey",
+"plural": "Barbary Monkeys",
+"race": "monkey",
+"minQty": 0,
+"maxQty": 1,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 40,
+"startingXp": 0,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 6,
+"ws": 4,
+"bs": 0,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 5,
+"a": 2,
+"ld": 6
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Nimble",
+"ruleFull": "Can climb any sheer surfaces without taking Initiative tests. Can re-roll all failed <a href=\"/docs/rules/movement#diving-charge\">Diving Charge</a> tests. The Monkey can enter buildings unlike other animals. Due to its agility, the Monkey also has a 5+ <Tooltip>Ward save</Tooltip> which it can take against any and all wounds it suffers in Melee combat or from shooting/magic or even falling damage."
+},
+{
+"flavour": "",
+"rulename": "Animal",
+"ruleFull": "All the War Beasts are subject to the rules of Animals and may not gain experience. They suffer injuries exactly as Henchmen (if taken out of action they are dead on a roll of 1-2 on D6)."
+}
+],
+"admonitions": ""
+},
+{
+"id": "tilean-hunting-hawk",
+"type": "henchman",
+"name": "Tilean Hunting Hawk",
+"plural": "Tilean Hunting Hawks",
+"race": "hawk",
+"minQty": 0,
+"maxQty": 1,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 30,
+"startingXp": 0,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 12,
+"ws": 4,
+"bs": 0,
+"s": 4,
+"t": 3,
+"w": "-",
+"i": 5,
+"a": 1,
+"ld": "-"
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Part of the Equipment",
+"ruleFull": "Acts at the same time as the Beastmaster. Can attack any enemy within 12” as a melee attack, even those out of line of sight (unless Hidden), and return to the Beastmaster immediately. The hawk cannot be targeted separately by any attack or spell. The Hawk does not attack if the Beastmaster is engaged in hand-to-hand combat, being too busy to command the hawk!"
+},
+{
+"flavour": "",
+"rulename": "Animal",
+"ruleFull": "All the War Beasts are subject to the rules of Animals and may not gain experience. They suffer injuries exactly as Henchmen (if taken out of action they are dead on a roll of 1-2 on D6)."
+}
+],
+"admonitions": ""
+}
+]
+}

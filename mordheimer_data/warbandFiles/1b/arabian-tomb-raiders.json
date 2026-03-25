@@ -1,0 +1,414 @@
+{
+"id": "arabian-tomb-raiders",
+"name": "Arabian Tomb Raiders",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Town Cryer #20",
+"sourceLink": "[https://broheim.net/downloads/towncryer/TownCryer20.pdf#page=16](https://broheim.net/downloads/towncryer/TownCryer20.pdf#page=16)",
+"setting": "Khemri",
+"author": "",
+"version": "",
+"lore": "<em>The nomads of Araby live on the fringes of the great desert Araby, to the west of the Land of the Dead. There are a few scattered towns and settlements, but the nomad tribesmen shun these places in favor of a wandering lifestyle. The nomad tribes of Araby have been living in the deep deserts for centuries, their realms dictated by the life-giving oases. There are hundreds of different tribes of nomads — the Tuareg, the Dervishes, the northern Fuzzywuzzies, the Al’Rahem, and the near-legendary Muktarhin, to mention but a few.</em><br /><br /><em>Although they have a very fastidious code of honor between them, which to many Old Worlders would appear almost ritualistic, many bitter rivalries and blood feuds often flare up between tribes over the slightest of things. These blood feuds are so brutal they can last for generations and make a Tilean vendetta seem like a child’s argument over a broken toy! A strange people by all accounts and with many bizarre customs and superstitions, they are difficult people to deal with, especially for Old Worlders whom they view with suspicion and dislike.</em><br /><br /><em>They are, however, masters of desert survival, and any Old Worlder explorer hoping to survive in the unforgiving deserts of their land will need a nomad guide just to stay alive. These hardy people can live in the deep desert for months, traveling from oasis to oasis, navigating using the stars and knowing how to avoid the worst dangers of the desert. Nomads are also justly feared as raiders and bandits because in their culture, stealing is a just and righteous thing to do so long as it is from a rival tribe. Theft within the tribe is most harshly dealt with.</em><br /><br /><em>Some nomadic tribes occasionally wander into the Lands of the Dead, but this is rare and mainly because they have become lost in a freak sandstorm. Generally speaking, even Nomads will not travel for long within these dread lands, for theirs is an ancient people whose ancestors once traded with the Nehekharans before the catastrophe. Tales and songs are passed down through generations, warning the tribe of the fall of the kingdoms of the west and of the curse of the one they call Nagash the Black. For this reason, they seldom venture too close to the legendary cities of the Tomb Kings. Sometimes, though, a young sheikh eager to prove his worth in the tales of his people will seek out knowledge of the Land of the Dead so that he may claim a name for himself and discover untold riches. Needless to say, many of these reckless individuals and their bands of loyal followers are never seen or heard of again...</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "An Araby Nomad warband must include a minimum of three models. You have 500 gold crowns to recruit your initial warband. The maximum number of warriors in the warband may never exceed 15."
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Hate Undead",
+"ruleFull": "The men of Araby have suffered heavily at the hands (or should that be claws!) of the Tomb King’s armies in the Land of the Dead. Therefore, Araby Nomad Heroes hate all Undead."
+}
+],
+"equipmentLists": [
+{
+"id": "warrior-equipment-list",
+"title": "Warrior equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "Jambiya",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "sword",
+"alias": "Scimitar",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "flail",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "short bow",
+"alias": "Shortbow",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "tufenk",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "handgun",
+"alias": "",
+"cost": {
+"cost": 35
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 50
+}
+}
+]
+},
+{
+"id": "slave-equipment-list",
+"title": "Slave equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "Jambiya",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "club",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "katar",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "Scimitar",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "sheikh",
+"type": "hero",
+"name": "Sheikh",
+"plural": "Sheikhs",
+"race": "human",
+"flavour": "The Sheikh is the undisputed leader of the warband. The Sheikh is a hardened warrior living in the burning hell of the desert and having to constantly fight off bandits, members of other rival tribes, and of course, the evil Undead. He is often also the head of the tribe, respected and trusted by his fellow tribesmen. To all the Nomads, the Sheikh’s word is law, and they obey without question, such is their custom. Only very rarely will another member of the tribe, who is of noble birth, challenge the Sheikh’s leadership and then single combat is fought to determine who has the divine right to lead the tribe.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 60,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"warrior-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "The Sheikh is the leader of the Warband and any Tomb Raiders within 6\" may use his Leadership characteristic for any Leadership tests."
+}
+],
+"admonitions": ""
+},
+{
+"id": "champion",
+"type": "hero",
+"name": "Champion",
+"plural": "Champions",
+"race": "human",
+"flavour": "Noble relatives of the Sheikh’s family are fanatically loyal to him and give him the necessary support and muscle when needed. The Champion keeps the rest of the Warband in line, disciplines those who have offended the Sheikh, divides up the booty (after the Sheikh has taken his chosen share, of course), and tells tall tales by the fireside to ensure the warband’s morale and respect for him. Needless to say, the Champion needs to be a tough fighter if he is to lead by example.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 40,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"warrior-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "mystic",
+"type": "hero",
+"name": "Mystic",
+"plural": "Mystics",
+"race": "human",
+"flavour": "In the distant past, the Arabians were renowned for their studies in the magical arts, whether they were originally taught by the Elves, as were the men of the Old World, is not known. The wisemen of Araby have mastered a strange aspect of color magic, known as Elementalism, which is based on the four primary elements: earth, wind, fire, and water. Unlike the flamboyant and fabulously wealthy sorcerers of the cities, the mystics of the nomadic tribes are more shamanic and are revered by their fellow tribesmen. These scholars are an integral part of the tribe and take a great part in guiding and motivating the tribe as a whole.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 40,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"warrior-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": true,
+"strength": false,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Wizard",
+"ruleFull": "A Mystic is a Wizard. He uses spells from the <a href=\"/docs/magic/arabian-elemental-magic\">Elemental Magic</a> list. He starts with a single spell chosen at random from the list."
+}
+],
+"admonitions": ""
+},
+{
+"id": "bedouin",
+"type": "henchman",
+"name": "Bedouin",
+"plural": "Bedouins",
+"race": "human",
+"flavour": "Bedouins are nomadic tribesmen who live on the outskirts of tribal life as the tribesmen themselves do with the rest of civilization. Loners by nature, they are experts in desert craft and make excellent scouts and guides for their tribe or outsiders who are willing to pay enough for their services.",
+"minQty": 0,
+"maxQty": 2,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 35,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"warrior-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Desert Trader",
+"ruleFull": "Add +1 to your search for Equipping/Trading result. Note that you only get +1 even if you have two Bedouins."
+}
+],
+"admonitions": ""
+},
+{
+"id": "nomad-warriors",
+"type": "henchman",
+"name": "Nomad Warrior",
+"plural": "Nomad Warriors",
+"race": "human",
+"flavour": "All the males of the tribe are warriors first and foremost; some may be talented in the crafts of weaving or weapon smithing, but all are brought up from an early age in the use of weapons, primarily the bow and the scimitar. These people are hardy, being used to living in the harsh conditions of the desert. They are also a very superstitious people, and their trust is very hard to gain, especially for outsiders. Many are members of the Sheikh’s extended family, and their loyalty is unquestioned.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"warrior-equipment-list"
+],
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "slaves",
+"type": "henchman",
+"name": "Slave",
+"plural": "Slaves",
+"race": "human",
+"flavour": "Slavery is rife in Araby, and indeed the slave markets of Al-Haikk or Lashiek are a testament to this. Many Old Worlders look upon the Arabians with a great deal of contempt and see them as nothing more than barbarians. Nomads look upon slaves as nothing more than a commodity. Most slaves are those taken captive from other tribes, and theirs is a short and often brutal existence. When it comes to battle, they are unmotivated and make poor fighters.",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 15,
+"gainExp": true,
+"promotable": false,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"slave-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Life of Slavery",
+"ruleFull": "A Slave may gain experience, but if he rolls Lad’s got Talent, the leader executes the Slave, and he is removed from the roster. The rest of the group may then re-roll their advance."
+}
+],
+"admonitions": ""
+}
+]
+}

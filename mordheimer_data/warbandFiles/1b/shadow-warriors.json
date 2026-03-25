@@ -1,0 +1,364 @@
+{
+"id": "shadow-warriors",
+"name": "Shadow Warriors",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Town Cryer #10, revised in Mordheim Annual 2002",
+"sourceLink": "[https://broheim.net/downloads/warbands/unofficial/Shadow%20Warriors.pdf](https://broheim.net/downloads/warbands/unofficial/Shadow%20Warriors.pdf)",
+"setting": "Mordheim",
+"author": "",
+"version": "",
+"lore": "<em>Nagarythe was once one of the most prosperous and beautiful of the kingdoms of the High Elven land of Ulthuan. When the Witch King Malekith and his mother Morathi led the kingdom of Nagarythe astray into worship of the Chaos Gods, not all of their people followed. When Malekith led his people in a rebellion against the rightful Phoenix King, those who had not been converted to depravity remained loyal to the throne of Ulthuan and waged a secret war, a war of shadows, against the Witch King and his armies. When the Witch King was defeated and forced to flee with his followers, most of these ‘shadow warriors’ were killed, drowned by the sea as their land was torn asunder by the Witch King’s foul magics.</em><br /><br /><em>The people of Nagarythe that survived became a nation of wanderers, moving from place to place and never really welcomed by other High Elves, for these Shadow Elves as they became known had gained a reputation for being a fierce and warlike people, full of cruelty. This reputation, while probably only partially true, sets the Shadow Elves apart from other members of their race. This, along with their grim attitude and generally dark presence, makes other High Elves feel ill at ease around them. In Ulthuan they are misfits and outcasts, and many of these proud people seek their fortunes outside Ulthuan entirely. They truly are a race ‘in the shadows’ between the cruel darkness of the Dark Elves, and the beautiful light of the other High Elves.</em><br /><br /><em>Some of the Elves of Nagarythe have been driven mad by this condition, but most have accepted their existence, and are driven on by a desire for revenge against the arch nemesis the Witch King and his perverse mother. The Shadow Elves form themselves into warbands and travel the lands of Ulthuan and the Known World, sometimes fighting Dark Elves (and other forces of Chaos) when they find them, and fighting just to survive the remainder of the time. Some still work in the service of the Phoenix king, acting as scouts and trackers for his armies. Sometimes small units of these warriors will be sent by their king to distant lands on a special mission for Ulthuan – recovery of ancient artifacts left behind when the High Elves abandoned the Old World, or sabotage of a rumoured plot of the Dark Elves. When sent on such a mission, these bands bring their military trappings with them – standards and war horns, unit insignia fiercely emblazoned on their shields – for the Shadow Elves take pride in their loyalty to the Phoenix King. Other warbands represent small groups of warriors seeking their fortune... though still loyal to Ulthuan, they may no longer feel welcome in their island home, or perhaps they represent a family pursuing a personal vendetta against a particular Dark Elf leader. Whatever the case, bands of Shadow Warriors may occasionally be seen roving the lands of the Old World to exploring the steamy jungles of Lustria.</em><br /><br /><em>Due to their wandering nature, it’s not uncommon to see Shadow Warriors travelling the lands of the Empire, so they should fit right in in your normal games of Mordheim. However, the Empire is not the only land these tireless warriors travel to in their quest to rid the world of Dark Elves. As more settings are introduced for the game, you will be able to take your Shadow Warriors to other lands, such as the jungles of Lustria as introduced in Lustria Cities of Gold. You should not feel constrained to keep the Shadow Warriors in one city, it is their nature to wander.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 12,
+"choiceFluff": "A Shadow Warrior Warband must include a minimum of 3 models. You have 500 Gold Crowns which you can use to recruit your initial warband. Maximum number of warriors in the warband is 12."
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Hate Dark Elves",
+"ruleFull": "All warriors in a Shadow Warrior Warband (excluding any Hired Swords) have an unyielding <Tooltip>hatred</Tooltip> for Dark Elves."
+},
+{
+"flavour": "",
+"rulename": "Excellent Sight",
+"ruleFull": "Elves have eyesight unmatched by mere humans. All the Elves in a Shadow Warrior Warband can spot Hidden enemies from twice as far away as other warriors (i.e. twice their Initiative in inches)."
+},
+{
+"flavour": "",
+"rulename": "Distaste for Poison",
+"ruleFull": "The use of poisons and various drugs is a Dark Elf specialty. As such, it is frowned upon by Shadow Warriors, even more so than by other High Elves. Warriors in a Shadow Warrior Warband may not use poisons of any type."
+},
+{
+"flavour": "",
+"rulename": "Unforgiving",
+"ruleFull": "In addition to their hatred of their corrupt kin, the folk of Nagarythe have a long history of struggle against the forces of Chaos. In multiplayer games, a Shadow Warrior warband may never forge an alliance with any Warband of a Chaotic nature (Possessed, Skaven, Beastmen, Dark Elves, etc.)."
+},
+{
+"flavour": "",
+"rulename": "Tolerant",
+"ruleFull": "Due to their outsider status with their own people, the Elves of Nagarythe have learned to stifle their distaste for ‘lesser races’, and have even been known to work alongside them from time to time. A Shadow Warrior Warband may hire any Hired Sword that is not of a Chaotic or evil bent (so no Skaven, Possessed, Beastmen, Dark Elves, Undead, etc.). They also shun the company of anyone specialising in the use of poison (so no Assassins)."
+}
+],
+"equipmentLists": [
+{
+"id": "shadow-warrior-equipment-list",
+"title": "Shadow Warrior equipment lists",
+"caveat": "The following lists are used by Shadow Warrior warbands to pick their weapons:",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "ithilmar weapon",
+"alias": "",
+"cost": {
+"costMod": "2 x price",
+"costSuffix": "Heroes only"
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "long bow",
+"alias": "Long bow",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "elf bow",
+"alias": "",
+"cost": {
+"cost": 35
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "ithilmar armour",
+"alias": "",
+"cost": {
+"cost": 60,
+"costSuffix": "Heroes only"
+}
+},
+{
+"name": "standard of nagarythe",
+"alias": "",
+"cost": {
+"cost": 75,
+"costSuffix": "Heroes only"
+}
+},
+{
+"name": "war horn of nagarythe",
+"alias": "",
+"cost": {
+"cost": 25,
+"costSuffix": "Heroes only"
+}
+},
+{
+"name": "elven cloak",
+"alias": "",
+"cost": {
+"cost": 75
+}
+},
+{
+"name": "elven wine",
+"alias": "",
+"cost": {
+"cost": 50,
+"costSuffix": "Heroes only"
+}
+},
+{
+"name": "elven runestones",
+"alias": "",
+"cost": {
+"cost": 50,
+"costSuffix": "Heroes only"
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "shadow-master",
+"type": "hero",
+"name": "Shadow Master",
+"plural": "Shadow Masters",
+"race": "elf",
+"flavour": "Shadow Master is a very honourable title among the warriors of the Shadow Elves… it is given to one who has fought in the shadow war for so long that he rules the darkness that he fights from. Often a member of the former Nagarythe nobility, the captain of a Shadow Warrior Warband is known by the honourable title ‘Shadow Master’. These proud and strong-willed warriors often gather a small band of their followers and seek a life away from the hesitant charity and distasteful stares of Ulthuan.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 70,
+"startingXp": 20,
+"statblock": {
+"m": 5,
+"ws": 5,
+"bs": 5,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 6,
+"a": 1,
+"ld": 9
+},
+"equipmentLists": [
+"shadow-warrior-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": true,
+"strength": false,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any warrior within 6\" of the Shadow Master may use his Leadership characteristic when taking any Leadership tests."
+}
+],
+"admonitions": ""
+},
+{
+"id": "shadow-walkers",
+"type": "hero",
+"name": "Shadow Walker",
+"plural": "Shadow Walkers",
+"race": "elf",
+"flavour": "One step down from the title of Shadow Master is Shadow Walker. A walker in the shadows is considered to have made friends with the darkness, and while he does not command it, it gives him aid when asked. Shadow Walkers are seasoned veterans in the war against the Dark Elves. They are skilled trackers and hunters, and the most trusted lieutenants of the Warband’s captain, the Shadow Master.",
+"minQty": 0,
+"maxQty": 3,
+"costGc": 45,
+"startingXp": 12,
+"statblock": {
+"m": 5,
+"ws": 5,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 6,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"shadow-warrior-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": false,
+"speed": true,
+"special": true
+},
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "shadow-weaver",
+"type": "hero",
+"name": "Shadow Weaver",
+"plural": "Shadow Weavers",
+"race": "elf",
+"flavour": "All High Elves have some aptitude for magic, and those with the greatest aptitude are taught how to bend the Winds of Magic to their will. Shadow Weavers are the mages of Nagarythe. Due to the nature of their unending war against the Dark Elves, the mages of Nagarythe tend to specialise in magics that use shadows to conceal their presence and confound their enemies. In fact the title Shadow Weaver comes from the nature of their magic… like a talented tailor, the Shadow Weaver takes the threads of shadow and fashions them into shapes and forms of his choosing.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 55,
+"startingXp": 12,
+"statblock": {
+"m": 5,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 6,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"shadow-warrior-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": true,
+"strength": false,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Wizard",
+"ruleFull": "The Shadow Weaver is a wizard and may use the <a href=\"/docs/magic/shadow-warrior\">Shadow Magic</a>."
+}
+],
+"admonitions": ""
+},
+{
+"id": "shadow-warriors",
+"type": "henchman",
+"name": "Shadow Warrior",
+"plural": "Shadow Warriors",
+"race": "elf",
+"flavour": "Most of the warriors in the Shadow Warrior Warband are veterans of at least one battle, and all have lost loved ones to the depravity of the Dark Elves.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 35,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 5,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 6,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"shadow-warrior-equipment-list"
+],
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "shadow-warrior-novices",
+"type": "henchman",
+"name": "Shadow Warrior Novice",
+"plural": "Shadow Warrior Novices",
+"race": "elf",
+"flavour": "These are untested Shadow Elves, newly inducted into the warband. Often these warriors are younger cousins who are setting out from Ulthuan for the first time. Due to their hard existence, it is often a quick progression from Novice to full Warrior, however.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 5,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 5,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"shadow-warrior-equipment-list"
+],
+"specialRules": [],
+"admonitions": ""
+}
+]
+}

@@ -1,0 +1,631 @@
+{
+"id": "bretonnian-chapel-guard",
+"name": "Bretonnian Chapel Guard",
+"grade": "1c",
+"campaigngrade": "1c",
+"source": "Fan made from the web",
+"sourceLink": "[https://broheim.net/downloads/warbands/web/Bretonnian%20Chapel%20Guard.pdf](https://broheim.net/downloads/warbands/web/Bretonnian%20Chapel%20Guard.pdf)",
+"setting": "Mordheim",
+"author": "",
+"version": "",
+"lore": "<em>The Bretonnian countryside is dotted with various chapels. Some of them are large cathedrals of stone and glass, while others are no bigger than woodsheds. They all have one thing in common: they mark someplace sacred to the Lady of the Lake. Perhaps on that spot a battle was fought in her name, or one of her chosen Grail Knights passed away, or, most important of all, the Lady herself appeared before some worthy soul. It is no surprise then that many knights errant, in search of fame, would stop by these markers, in search of inspiration. Likewise, devout Questing Knights will also visit the chapels in their travels, hoping that the Lady would visit the sacred spot twice.</em><br /><br /><em>It is the role of the damsels and prophetesses to see to the care of these markers. If one of them is threatened, perhaps by a marauding Greenskin band or similar vandals, she may send out word. Knights will drag their squires and peasant bowmen with them into the fray, and battle pilgrims will congregate en masse in order to defend the remains of a fallen saint. Strangely enough, sometimes the damsels do not need to send missives out at all… wandering warriors will naturally gravitate to the spot, anticipating the battle to come in their very souls.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "A Bretonnian Chapel Guard warband must include a minimum of three models. You start with 500gc to buy your initial warband. The maximum number of warriors in your warband may never exceed 15."
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Chivalry",
+"ruleFull": "No Knight may ever use any missile weapon at all, with the exception of Holy Water. Likewise, they will never use any drug or poison, nor learn any spells (prayers are allowed)."
+},
+{
+"flavour": "",
+"rulename": "Lord’s Boon",
+"ruleFull": "Every Knight, either at warband formation or upon later recruitment, is likely to start with some sort of boon from the baron, marquis, or similar lord he serves. Each Knight may, upon purchase, start with ONE of the following items, which is bought at half cost: a Warhorse, Light Armour, OR Heavy Armour. This item may not be traded, given to another warrior, or sold. The warrior may set it aside and choose not to use it, but no Bretonnian warrior would dare use a boon item that belonged to another Knight, even after the warrior’s death. If the Knight dies, his \"Lord’s Boon\" item is removed from the warband, having been buried with him or returned to his benefactor."
+},
+{
+"flavour": "",
+"rulename": "Virtue of Purity",
+"ruleFull": "Knights with the Virtue of Purity may never voluntarily break from combat, unless he is knocked down. He is immune to All Alone and any other mundane effect that would cause him to leave combat. Magical spells and effects that would cause him to flee (ex. Dread of Aramar) affect him as normal."
+}
+],
+"equipmentLists": [
+{
+"id": "knights-equipment-list",
+"title": "Knights Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "broadsword",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "morning star",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "flail",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "lance",
+"alias": "",
+"cost": {
+"cost": 20,
+"costSuffix": "Not Questing Knight"
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "heavy armour",
+"alias": "",
+"cost": {
+"cost": 50
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "kite shield",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "barding",
+"alias": "",
+"cost": {
+"cost": 30
+}
+},
+{
+"name": "warhorse",
+"alias": "",
+"cost": {
+"cost": 80
+}
+},
+{
+"name": "lucky charm",
+"alias": "",
+"cost": {
+"cost": 10
+}
+}
+]
+},
+{
+"id": "pilgrims-equipment-list",
+"title": "Pilgrims’ equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "shortsword",
+"alias": "",
+"cost": {
+"cost": 7
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "halberd",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "holy relic",
+"alias": "",
+"cost": {
+"cost": 25,
+"costSuffix": "Pilgrim only"
+}
+}
+]
+},
+{
+"id": "bowmen-equipment-list",
+"title": "Bowmen equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "shortsword",
+"alias": "",
+"cost": {
+"cost": 7
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "long bow",
+"alias": "Long Bow",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "horse",
+"alias": "",
+"cost": {
+"cost": 40,
+"costSuffix": "Damsel & Squire Only"
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "questing-knight",
+"type": "hero",
+"name": "Questing Knight",
+"plural": "Questing Knights",
+"race": "human",
+"flavour": "Questing Knights are devout nobles who have forsaken property in order to search for the Holy Grail, the sacred artifact of the lady of the lake. They seek out the deadliest of foes, in order to make themselves worthy of the lady.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 75,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"knights-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any warrior within 6\" of the Questing Knight may use his Leadership characteristic when taking Leadership tests."
+},
+{
+"flavour": "",
+"rulename": "Knight",
+"ruleFull": "The Questing Knight has the following rules from above apply to him; Chivalry, Lord’s Boon and Virtue of Purity."
+},
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "A Questing Knight starts with the skill <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride Warhorse</a>."
+},
+{
+"flavour": "",
+"rulename": "Vow of Poverty",
+"ruleFull": "May not take a Lance."
+}
+],
+"admonitions": ""
+},
+{
+"id": "damsel",
+"type": "hero",
+"name": "Damsel",
+"plural": "Damsels",
+"race": "human",
+"flavour": "Raised by the worshippers of the Lady from a very early age, the Damsels travel the country of Bretonnia, aiding the great dukedoms in times of war. Their ways are mysterious, and are regarded more reverently than any other females in the land.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 35,
+"startingXp": 12,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"bowmen-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": true,
+"strength": false,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Prayercaster",
+"ruleFull": "The Damsel starts with one prayer from the <a href=\"/docs/magic/ladys-prayers\">Lady's Prayers</a> list, and can learn additional prayers as outlined in the Magic section."
+}
+],
+"admonitions": ""
+},
+{
+"id": "knight-errant",
+"type": "hero",
+"name": "Knight Errant",
+"plural": "Knights Errant",
+"race": "human",
+"flavour": "Knights Errant are brash, bold young knights, who are filled with more guts than healthy fear. They are often poorer nobles, wearing outdated second-hand armour, which was granted to them by a generous donor. They seek to prove their worth, in honour of their benefactors, their ladies fair, and their own egos.",
+"minQty": 0,
+"maxQty": 3,
+"costGc": 35,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"knights-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Knight",
+"ruleFull": "The Knight Errant has the following rules from above apply to him; Chivalry, Lord’s Boon and Virtue of Purity."
+},
+{
+"flavour": "",
+"rulename": "Vain",
+"ruleFull": "The Knight may not wear a helmet, as it reduces their chances of being noticed by pretty ladies."
+},
+{
+"flavour": "",
+"rulename": "Impetuous",
+"ruleFull": "During each Movement Phase, after declaring charges, a Knight Errant that is not in combat and did not charge this turn must charge an opposing standing warrior (not knocked down or stunned) that is within range if they are able.<br /><br />Likewise, a Knight Errant that declared a charge against a knocked down or stunned opponent will be compelled to charge a viable standing opponent instead. If you wish, you may choose to have the Knight take a leadership test (they may use their Leader's Leadership if they are within range); if the test is passed, they may move as normal or charge their original target.<br /><br />When making a compelled charge, the Knight Errant automatically passes all fear tests or any other psychology tests that would prevent them from charging."
+}
+],
+"admonitions": ""
+},
+{
+"id": "squires",
+"type": "henchman",
+"name": "Squire",
+"plural": "Squires",
+"race": "human",
+"flavour": "Knights are served by their Squires, who are often poorer relations or illegitimate offspring. They are trained and schooled by the knight himself. If a squire performs some great deed or service to his master he may even be raised to the ranks of knighthood!",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"pilgrims-equipment-list",
+"bowmen-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Knighthood",
+"ruleFull": "When a Squire rolls \"The Lad's Got Talent\", you may choose one of two options when promoting him to a hero: to have him remain a Squire, or to have him become a Knight Errant. <em>(Note: in this manner, you <strong>may</strong> have more than three Knights Errant in your Warband).</em><br /><br />If you choose to keep him a Squire, he may choose two skill lists from following lists: Combat, Academic, Strength, or Speed. He retains his normal Squire equipment tables.<br /><br />If you choose to make him a Knight Errant, he immediately gains the following rules/bonuses instead of receiving an immediate advancement: ‘Knight’, ‘Vain’ and ‘Impetuous’. The new knight may learn Special Skills, in addition to two other skill sets, but must immediately switch his equipment to Knight Equipment list. The new knight may never use missile weapons."
+}
+],
+"admonitions": ""
+},
+{
+"id": "battle-pilgrims",
+"type": "henchman",
+"name": "Battle Pilgrim",
+"plural": "Battle Pilgrims",
+"race": "human",
+"flavour": "Battle Pilgrims are zealous peasants that will guard the remains of a dead Grail Knight, and keep vigil over any chapel that houses it. If the chapel is secured by a heavy watch, small numbers of the pilgrims will allow themselves to follow a Questing Knight in his journeys, as he secures the forests and glen around the gravesite.",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 30,
+"gainExp": true,
+"promotable": false,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"pilgrims-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Low Caste",
+"ruleFull": "Battle Pilgrims are peasants, and while they are not stupid, there is a glass ceiling to what they can attain in Bretonnian society. Low Caste henchmen learn experience and advance as normal, but reroll any results of \"The Lad's Got Talent\", and may never become heroes."
+},
+{
+"flavour": "",
+"rulename": "Hatred",
+"ruleFull": "Battle Pilgrims suffer <Tooltip>Hatred</Tooltip> against all of their enemies, seeing them as enemies and heretics to the true Lady’s cause."
+},
+{
+"flavour": "",
+"rulename": "Stubborn",
+"ruleFull": "Battle Pilgrims reroll all failed Leadership rolls once, accepting the second result."
+},
+{
+"flavour": "",
+"rulename": "Holy Relics",
+"ruleFull": "Battle Pilgrims may be given a <Tooltip>Holy Relic</Tooltip>, regardless of the fact that henchman are not normally allowed to take Miscellaneous items. If a Battle Pilgrim owns a Holy Relic, he gains the ability <Tooltip>Frenzy</Tooltip> (Reminder: when frenzied, he is immune to Hatred.) It is possible to give a Holy Relic to Battle Pilgrim that is a part of a larger henchman group. If you do not have enough Holy Relics for every member of the group, the Pilgrim with the relic will break off and form his own individual henchman group."
+}
+],
+"admonitions": ""
+},
+{
+"id": "bowmen",
+"type": "henchman",
+"name": "Bowman",
+"plural": "Bowmen",
+"race": "human",
+"flavour": "Peasant Bowmen are inbred serfs recruited by local lords. They may be the last remaining property to a Questing Knight, or perhaps they were loaned by the local lord. Whatever the origin, their lack of bravery is balanced by their skill with a long bow.",
+"minQty": 0,
+"maxQty": 7,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 15,
+"gainExp": true,
+"promotable": false,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 4
+},
+"equipmentLists": [
+"bowmen-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Low Caste",
+"ruleFull": "Bowmen are peasants, and while they are not stupid, there is a glass ceiling to what they can attain in Bretonnian society. Low Caste henchmen learn experience and advance as normal, but reroll any results of \"The Lad's Got Talent\", and may never become heroes."
+}
+],
+"admonitions": ""
+}
+],
+"sourceCitation": ""
+}

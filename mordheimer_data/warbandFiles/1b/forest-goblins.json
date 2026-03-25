@@ -1,0 +1,502 @@
+{
+    "id": "forest-goblins",
+    "name": "Forest Goblins",
+    "grade": "1b",
+    "campaigngrade": "1b",
+    "source": "Nemesis Crown Supplement",
+    "sourceLink": "https://broheim.net/downloads/warbands/supplement/nemesiscrown/Forest%20Goblins.pdf",
+    "setting": "Nemesis Crown",
+    "author": "",
+    "version": "",
+    "lore": "<em>Forest Goblin tribes dwell deep within The Great Forest. They have completely adapted to their surroundings, learning stealth and camouflage to evade their neighbours.</em><br /><br /><em>Gold motivates the Forest Goblins as it does any warband, albeit for different reasons. It is worthless to them as currency but as a metallic resource, it is valuable nonetheless. Instead of using gold to buy weapons and armour, Forest Goblins actually coat their stone equipment with the metal. This has led unscrupulous leaders to send their henchmen into certain ambush, only to arrive later to collect the arrowheads and spear points from the remains of their former employees.</em><br /><br /><em>Forest Goblins are able to create poisons with a precision surpassing even the Dark Elves. Their natural surroundings harbour any number of poisonous creatures, including the gigantic spiders they are rumoured to prod into combat with their enemies. Coating their weapons with deadly venom, the Goblins are capable of felling any foe, no matter their size. Led by their Chieftain (usually the Goblin with the loudest voice), the Forest Goblins appear from nowhere and strike with feral ferocity before receding into the trees, leaving injuries as the only proof they were ever there.</em>",
+    "warbandRules": {
+      "startingGc": null,
+      "maxModels": null,
+      "choiceFluff": null
+    },
+    "specialSkills": false,
+    "specialRules": [
+      {
+        
+        "flavour": "",
+        "rulename": "Natives:",
+        "ruleFull": "Used to poking through the underbrush, Forest Goblins suffer no movement penalties from moving through any wooded terrain."
+      },
+      {
+        
+        "flavour": "",
+        "rulename": "Animosity",
+        "ruleFull": "Orcs and Goblins enjoy nothing more than a good scrap, unfortunately they’re not always very discerning about who they scrap with! To represent this, at the start of the Orc player’s turn, roll a D6 for each Henchman who is either an Orc or a Goblin. A roll of 1 means that the warrior has taken offense to something one of his mates has done or said. Do not roll for models that are engaged in hand-to-hand combat (they’re already scrappin’!). To find out just how offended the model is, roll another D6 and consult the following chart to see what happens:\n\n<details>\n\n<summary><strong>Animosity Result</strong></summary>\n\n| D6                         | Result                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |\n| :------------------------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |\n|           <strong>1</strong>            | <strong>\"I ’Erd Dat!\"</strong><br /> <em>The warrior decides that the nearest friendly Orc or Goblin Henchman has insulted his lineage or personal hygiene and must pay the price!</em> <br />    If there is a friendly Orc or Goblin Henchman or Hired Sword within charge reach (if there are multiple targets within reach, choose the one nearest to the mad model), the offended warrior will immediately charge and fight a round of hand-to-hand combat against the source of his ire. At the end of this round of combat, the models will immediately move 1\" apart and no longer count as being in close combat (unless one of them fails another Animosity test and rolls this result again). <br />    If there are no friendly Orc or Goblin Henchmen or Hired Swords within charge reach, and the warrior is armed with a missile weapon, he immediately takes a shot at the nearest friendly Orc or Goblin Henchman or Hired Sword. If none of the above applies, or if the nearest friendly model is an Orc Hero, the warrior behaves as if a 2-5 had been rolled on this chart. In any case, the warrior in question may take no other action this turn, though he may defend himself if attacked in hand-to-hand combat. |\n|          <strong>2-5</strong>           | <strong>\"Wud Yoo Say?\"</strong><br /> <em>The warrior is fairly certain he heard an offensive sound from the nearest friendly Orc or Goblin, but he’s not quite sure. He spends the turn hurling insults at his mate.</em> <br />    He may do nothing else this turn, though he may defend himself if attacked in hand-to-hand combat.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |\n|           <strong>6</strong>            | <strong>\"I’ll Show Yer!\"</strong><br /> <em>The warrior imagines that his mates are laughing about him behind his back and calling him silly names. To show them up he decides that he’ll be the first one to the scrap!</em> <br />    This model must move as quickly as possible towards the nearest enemy model, charging into combat if possible. If there are no enemy models within sight, the Orc or Goblin warrior may make a normal move immediately. This move is in addition to his regular move in the Movement phase, so he may therefore move twice in a single turn if you wish. <br />    If the extra move takes the Orc or Goblin warrior within charge reach of an enemy model, the warrior must charge into close combat during his regular movement.                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |\n\n</details>"
+      }
+    ],
+    "equipmentLists": [
+      {
+        "id": "hero-equipment-list",
+        "title": "Hero Equipment List",
+        "caveat": "",
+        "items": [
+          {
+            "name": "dagger",
+            "alias": "",
+            "cost": {
+              "costPrefix": "1st free/",
+              "cost": 2
+            }
+          },
+          {
+            "name": "axe",
+            "alias": "",
+            "cost": {
+              "cost": 5
+            }
+          },
+          {
+            "name": "sword",
+            "alias": "",
+            "cost": {
+              "cost": 10
+            }
+          },
+          {
+            "name": "two-handed weapon",
+            "alias": "",
+            "cost": {
+              "cost": 15
+            }
+          },
+          {
+            "name": "spear",
+            "alias": "",
+            "cost": {
+              "cost": 5
+            }
+          },
+          {
+            "name": "halberd",
+            "alias": "",
+            "cost": {
+              "cost": 10
+            }
+          },
+          {
+            "name": "boss pole",
+            "alias": "",
+            "cost": {
+              "cost": 20
+            }
+          },
+          {
+            "name": "blowpipe",
+            "alias": "",
+            "cost": {
+              "cost": 25
+            }
+          },
+          {
+            "name": "short bow",
+            "alias": "",
+            "cost": {
+              "cost": 5
+            }
+          },
+          {
+            "name": "light armour",
+            "alias": "",
+            "cost": {
+              "cost": 20
+            }
+          },
+          {
+            "name": "shield",
+            "alias": "",
+            "cost": {
+              "cost": 5
+            }
+          }
+        ]
+      },
+      {
+        "id": "henchmen-equipment-list",
+        "title": "Henchmen Equipment List",
+        "caveat": "",
+        "items": [
+          {
+            "name": "dagger",
+            "alias": "",
+            "cost": {
+              "costPrefix": "1st free/",
+              "cost": 2
+            }
+          },
+          {
+            "name": "sword",
+            "alias": "",
+            "cost": {
+              "cost": 10
+            }
+          },
+          {
+            "name": "spear",
+            "alias": "",
+            "cost": {
+              "cost": 5
+            }
+          },
+          {
+            "name": "blowpipe",
+            "alias": "",
+            "cost": {
+              "cost": 25
+            }
+          },
+          {
+            "name": "throwing weapons",
+            "alias": "",
+            "cost": {
+              "cost": 15
+            }
+          },
+          {
+            "name": "bow",
+            "alias": "",
+            "cost": {
+              "cost": 10
+            }
+          },
+          {
+            "name": "shield",
+            "alias": "",
+            "cost": {
+              "cost": 5
+            }
+          }
+        ]
+      }
+    ],
+    "fighters": [
+      {
+        "id": "chieftain",
+        "type": "hero",
+        "name": "Chieftain",
+        "plural": "Chieftains",
+        "race": "human",
+        "flavour": "Forest Goblins are usually led by the biggest, strongest, and most cunning Goblin in the band. This Chieftain routinely comes up with ways to drive off the Old World invaders, and collect gold for Mork and Gork.",
+        "costGc": 50,
+        "statblock": {
+          "m": 4,
+          "ws": 3,
+          "bs": 4,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 4,
+          "a": 1,
+          "ld": 7
+        },
+        "equipmentLists": [
+          "hero-equipment-list"
+        ],
+        "specialRules": [          {
+            
+            "flavour": "",
+            "rulename": "Leader",
+            "ruleFull": "Any warrior within 6\" of the Chieftain may use his Leadership characteristic when taking Leadership tests."
+          },
+        {
+            
+            "flavour": "",
+            "rulename": "Ride Spiders",
+            "ruleFull": "The Chieftain can ride Giant Spiders and the Gigantic Spider as detailed in the ‘Blazing Saddles’ article."
+          }],
+        "admonitions": "",
+        "minQty": 1,
+        "maxQty": 1,
+        "startingXp": 17,
+        "skillAccess": {
+          "combat": true,
+          "shooting": true,
+          "academic": true,
+          "strength": false,
+          "speed": true,
+          "special": false
+        }
+      },
+            
+      {
+        "id": "braves",
+        "type": "hero",
+        "name": "Braves",
+        "plural": "Braves",
+        "race": "human",
+        "flavour": "Forest Goblin Braves are just a tad more intelligent than their peers, and aid the Chieftain in directing them in battle. This does not improve their temperament, however, since they are as prone to infighting as their henchmen.",
+        "costGc": 20,
+        "statblock": {
+          "m": 4,
+          "ws": 2,
+          "bs": 3,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 3,
+          "a": 1,
+          "ld": 6
+        },
+        "equipmentLists": [
+          "hero-equipment-list"
+        ],
+        "specialRules": [
+          {
+            
+            "flavour": "",
+            "rulename": "Animosity",
+            "ruleFull": "Braves are subject to the rules for <Tooltip>Animosity</Tooltip>."
+          }
+        ],
+        "admonitions": "",
+        "minQty": 0,
+        "maxQty": 4,
+        "startingXp": 0,
+        "skillAccess": {
+          "combat": true,
+          "shooting": true,
+          "academic": false,
+          "strength": false,
+          "speed": true,
+          "special": true
+        }
+      },
+      {
+        "id": "shaman",
+        "type": "hero",
+        "name": "Shaman",
+        "plural": "Shamans",
+        "race": "human",
+        "flavour": "Shamans use the power of the Waaagh to direct the might of G’rrk and M’rrk against their foes. Usually found scrounging up mysterious animal parts instead of gold, most other Goblins agree that ‘dey is odd’.",
+        "costGc": 20,
+        "statblock": {
+          "m": 4,
+          "ws": 2,
+          "bs": 3,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 4,
+          "a": 1,
+          "ld": 6
+        },
+        "equipmentLists": [
+          "hero-equipment-list"
+        ],
+        "specialRules": [          {
+            
+            "flavour": "",
+            "rulename": "Wizard:",
+            "ruleFull": "A Shaman begins with one spell randomly chosen from the Forest Goblin Spell list."
+          }],
+        "admonitions": "",
+        "minQty": 0,
+        "maxQty": 1,
+        "startingXp": 6,
+        "skillAccess": {
+          "combat": false,
+          "shooting": false,
+          "academic": true,
+          "strength": false,
+          "speed": true,
+          "special": false
+        }
+      },
+      {
+        "id": "forest-goblins",
+        "type": "henchman",
+        "name": "Forest Goblin",
+        "plural": "Forest Goblins",
+        "race": "goblin",
+        "flavour": "Forest Goblin warriors form the rank and file of a Goblin warband. They use their natural talents to harass their enemies while keeping out of sight in the dense foliage.",
+        "costGc": 15,
+        "statblock": {
+          "m": 4,
+          "ws": 2,
+          "bs": 3,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 3,
+          "a": 1,
+          "ld": 6
+        },
+        "equipmentLists": [
+          "henchmen-equipment-list"
+        ],
+        "specialRules": [  {
+            
+            "flavour": "",
+            "rulename": "Animosity",
+            "ruleFull": "Forest Goblins are subject to the rules for <Tooltip>Animosity</Tooltip>."
+          }],
+        "admonitions": "",
+        "groupSize": {
+          "min": 1,
+          "max": 5
+        },
+        "gainExp": false,
+        "promotable": false
+      },
+      {
+        "id": "red-toof-goblins",
+        "type": "henchman",
+        "name": "Red Toof Goblin",
+        "plural": "Red Toof Goblins",
+        "race": "goblin",
+        "flavour": "Of all the various factions that comprise the Forest Goblins, the infamous Red Toof tribe is the most feared. They are elite shock troops, valued by Chieftains for their berserk rage in battle.",
+        "costGc": 25,
+        "statblock": {
+          "m": 4,
+          "ws": 2,
+          "bs": 3,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 3,
+          "a": 1,
+          "ld": 6
+        },
+        "equipmentLists": [
+          "henchmen-equipment-list"
+        ],
+        "specialRules": [  {
+            
+            "flavour": "",
+            "rulename": "Animosity",
+            "ruleFull": "Red Toof Boyz are subject to the rules for <Tooltip>Animosity</Tooltip>."
+          },
+        {
+            
+            "flavour": "",
+            "rulename": "Berserkers",
+            "ruleFull": "Forest Goblins of the Red Toof tribe allow themselves to be bitten by all sorts of poisonous wildlife before entering battle. The mingling venom drives them into frothing convulsions, making them extremely ferocious. Red Toof Boyz are affected by the rules for <Tooltip>Frenzy</Tooltip> as described in the Mordheim rulebook. In addition, if they begin their turn within charge range of an enemy, they are immune to animosity for that turn."
+          }],
+        "admonitions": "",
+        "minQty": 0,
+        "maxQty": 5,
+        "groupSize": {
+          "min": 1,
+          "max": 5
+        },
+        "gainExp": true,
+        "promotable": true
+      },
+      {
+        "id": "sluggas",
+        "type": "henchman",
+        "name": "Slugga",
+        "plural": "Sluggas",
+        "race": "human",
+        "flavour": "Sluggas practice the art of throwing various objects until they can hurl several projectiles in a split second. This makes them useful for distracting enemies with a hail of heavy stones.",
+        "costGc": 20,
+        "statblock": {
+          "m": 4,
+          "ws": 2,
+          "bs": 3,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 3,
+          "a": 1,
+          "ld": 6
+        },
+        "equipmentLists": [
+          "henchmen-equipment-list"
+        ],
+        "specialRules": [  {
+            
+            "flavour": "",
+            "rulename": "Animosity",
+            "ruleFull": "Sluggas are subject to the rules for <Tooltip>Animosity</Tooltip>."
+          },
+        {
+            
+            "flavour": "",
+            "rulename": "Sluggas",
+            "ruleFull": "In the shooting phase, the Sluggas may throw thrown weapons up to three times. This may not be combined with Quick Shot if they should be promoted to hero status."
+          }],
+        "admonitions": "",
+        "minQty": 0,
+        "maxQty": 5,
+        "groupSize": {
+          "min": 1,
+          "max": 5
+        },
+        "gainExp": true,
+        "promotable": true
+      },
+      {
+        "id": "gigantic-spider",
+        "type": "henchman",
+        "name": "Gigantic Spider",
+        "plural": "Gigantic Spider",
+        "race": "animal",
+        "flavour": "Gigantic Spiders are best avoided when encountered in the wild, due to their deadly poison and huge size. When urged into fighting by Forest Goblin beastmasters, they become doubly dangerous and much harder to evade.",
+        "costGc": 200,
+        "statblock": {
+          "m": 6,
+          "ws": 3,
+          "bs": 0,
+          "s": 5,
+          "t": 5,
+          "w": 3,
+          "i": 4,
+          "a": 2,
+          "ld": 4
+        },
+        "equipmentLists": [],
+        "specialRules": [
+          {
+            
+            "flavour": "",
+            "rulename": "Fear:",
+            "ruleFull": "Gigantic Spiders cause <Tooltip>fear</Tooltip> as described in the Mordheim Rulebook."
+          },
+          {
+            
+            "flavour": "",
+            "rulename": "Large Monster:",
+            "ruleFull": "Gigantic Spiders are large targets, and may always be shot at."
+          },
+          {
+            
+            "flavour": "",
+            "rulename": "Poisonous:",
+            "ruleFull": "The Gigantic Spider’s maw drips with vile poisons. When it wounds an enemy and a roll is made on the injury table, 1: knocked down, 2-4: stunned, and 5-6: Out of Action."
+          },
+          {
+            
+            "flavour": "",
+            "rulename": "Native:",
+            "ruleFull": "Negotiating woodlands is no trouble for spiders. They move through any wooded terrain without penalty."
+          },
+          {
+            
+            "flavour": "",
+            "rulename": "Non-sentient:",
+            "ruleFull": "Spiders are affected by the <Tooltip>stupidity</Tooltip> rules in the Mordheim rulebook. In addition, they never gain experience, as they are animals. Note however that they may climb as normal."
+          },
+          {
+            
+            "flavour": "",
+            "rulename": "May Ride:",
+            "ruleFull": "The Forest Goblin Chieftain, may ride the Gigantic Spider.<sup><Tooltip content=\"err126\">✏️</Tooltip></sup> He gains +1 armour save, and shall\nmove at the Gigantic Spider’s rate of 6. Shooting attacks hit the Chieftain on a die roll of 1-2, and the\nGigantic Spider on a 3-6. In close combat, the opponent may choose which to hit. The Gigantic Spider no longer has to check for <Tooltip>stupidity</Tooltip> if it is being ridden, as the Chieftain is directing its actions."
+          }
+        ],
+        "admonitions": "",
+        "minQty": 0,
+        "maxQty": 1,
+        "groupSize": {
+          "min": 1,
+          "max": 5
+        },
+        "gainExp": true,
+        "promotable": true
+      }
+    ]
+  }

@@ -1,0 +1,556 @@
+{
+"id": "black-orcs",
+"name": "Black Orcs",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Nemesis Crown",
+"sourceLink": "[https://broheim.net/downloads/warbands/supplement/nemesiscrown/Black%20Orcs.pdf](https://broheim.net/downloads/warbands/supplement/nemesiscrown/Black%20Orcs.pdf)",
+"setting": "Nemesis Crown",
+"author": "",
+"version": "",
+"lore": "<em>Smarter, stronger, more vicious and better equipped than the normal Orc (and that’s saying something about Orcs). Black Orcs are amongst some of the worst foes anyone can face in single combat and a band of them is certainly something to put the fear into the hearts of men. They do appear more built than born and it is little wonder that there are many rumours regarding their origins.</em><br /><br /><em>Since the Storm of Chaos there are many, many more of these monsters now wandering the Empire, having followed Grimgor Ironhide in his Waaagh! Where once the forces of the Empire could have tracked down warbands in a matter of weeks, now there is no means or enough men to perform such a task and thus the Black Orcs roam freely.</em><br /><br /><em>What aims do the Black Orcs have? What is the point of a tornado? It is meaningless to ponder such matters because all the Orcs want is to fight and that means attacking whoever crosses their path. Whatever they gain from such battling is simply that they get to fight. There is no logic from them nor can any be expected.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 12,
+"choiceFluff": "A Black Orc warband must include a minimum of three models. You have 500 Gold Crowns with which you can use to recruit your initial warband. The maximum number of warriors in the warband may never exceed 12."
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Let the goons do the work",
+"ruleFull": "Black Orcs rely on themselves to do the killing and do not ride mounts of any kind. Only normal Orcs may ride a boar or other such mount."
+},
+{
+"flavour": "",
+"rulename": "Da Boss is Dead!",
+"ruleFull": "If the Boss should be killed a Black Orc will always assume leadership of the warband before any other type, irrespective of relative experience. The replacement will automatically acquire the \"Oi Behave!\" skill."
+},
+{
+"flavour": "",
+"rulename": "Animosity",
+"ruleFull": "Orcs and Goblins enjoy nothing more than a good scrap, unfortunately they’re not always very discerning about who they scrap with! To represent this, at the start of the Orc player’s turn, roll a D6 for each Henchman who is either an Orc or a Goblin. A roll of 1 means that the warrior has taken offense to something one of his mates has done or said. Do not roll for models that are engaged in hand-to-hand combat (they’re already scrappin’!). To find out just how offended the model is, roll another D6 and consult the following chart to see what happens:<br /><br /><table><thead><tr><th>D6</th><th>Result</th></tr></thead><tbody><tr><td><strong>1</strong></td><td><strong>“I ’Erd Dat!”</strong><br /><em>The warrior decides that the nearest friendly Orc or Goblin Henchman has insulted his lineage or personal hygiene and must pay the price!</em><br />    If there is a friendly Orc or Goblin Henchman or Hired Sword within charge reach (if there are multiple targets within reach, choose the one nearest to the mad model), the offended warrior will immediately charge and fight a round of hand-to-hand combat against the source of his ire. At the end of this round of combat, the models will immediately move 1\" apart and no longer count as being in close combat (unless one of them fails another Animosity test and rolls this result again).<br />If there are no friendly Orc or Goblin Henchmen or Hired Swords within charge reach, and the warrior is armed with a missile weapon, he immediately takes a shot at the nearest friendly Orc or Goblin Henchman or Hired Sword. If none of the above applies, or if the nearest friendly model is an Orc Hero, the warrior behaves as if a 2-5 had been rolled on this chart. In any case, the warrior in question may take no other action this turn, though he may defend himself if attacked in hand-to-hand combat.</td></tr><tr><td><strong>2-5</strong></td><td><strong>“Wud Yoo Say?”</strong><br /><em>The warrior is fairly certain he heard an offensive sound from the nearest friendly Orc or Goblin, but he’s not quite sure. He spends the turn hurling insults at his mate.</em><br />    He may do nothing else this turn, though he may defend himself if attacked in hand-to-hand combat.</td></tr><tr><td><strong>6</strong></td><td><strong>“I’ll Show Yer!”</strong><br /><em>The warrior imagines that his mates are laughing about him behind his back and calling him silly names. To show them up he decides that he’ll be the first one to the scrap!</em><br />    This model must move as quickly as possible towards the nearest enemy model, charging into combat if possible. If there are no enemy models within sight, the Orc or Goblin warrior may make a normal move immediately. This move is in addition to his regular move in the Movement phase, so he may therefore move twice in a single turn if you wish.<br />    If the extra move takes the Orc or Goblin warrior within charge reach of an enemy model, the warrior must charge into close combat during his regular movement.</td></tr></tbody></table>"
+}
+],
+"equipmentLists": [
+{
+"id": "black-orc-list",
+"title": "Black Orc List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "morning star",
+"alias": "Choppa",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "crossbow",
+"alias": "",
+"cost": {
+"cost": 25
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "heavy armour",
+"alias": "",
+"cost": {
+"cost": 50
+}
+}
+]
+},
+{
+"id": "henchmen-list",
+"title": "Henchmen List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "morning star",
+"alias": "Choppa",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15,
+"costSuffix": "Boyz and Nuttaz only"
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "crossbow",
+"alias": "",
+"cost": {
+"cost": 25,
+"costSuffix": "Shootaz only"
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "black-orc-boss",
+"type": "hero",
+"name": "Black Orc Boss",
+"plural": "Black Orc Bosses",
+"race": "black orc",
+"flavour": "Amongst some of the toughest of the tough, a Black Orc Boss has fought in numerous battles and proven to the gods just how truly powerful they can become. Taking a warband is the start of their ambitions as they will seek victories to meld the Boyz into larger and larger warbands until they have a Horde at their beck and call.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 90,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 4,
+"t": 4,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"black-orc-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any warrior within 6\" of the Boss may use his Leadership characteristic when taking Leadership tests."
+},
+{
+"flavour": "",
+"rulename": "Black Orc",
+"ruleFull": "Model starts with a natural 6+ Armour Black Orc Save. This save may be combined with other equipment to improve it."
+},
+{
+"flavour": "",
+"rulename": "Oi Behave!",
+"ruleFull": "If any Henchman fails his Animosity test within 6” of the Boss, the player may opt to have the boss stamp his authority (and clenched fist) on the situation.<br /><br />The misbehaving Henchman will receive an automatic hit at the strength of the Orc player’s choosing. If the Henchman is still on his feet after his slap, he may add a number equal to the strength of the slap to his subsequent roll to determine the effects of Animosity.<br /><br />E.g. The player decides that the Boss will hit a misbehaving Henchman with a S2 slap. If the slap fails to Knock Down, Stun or Out of Action the Henchman, then he adds +2 to the Animosity Effect roll."
+}
+],
+"admonitions": ""
+},
+{
+"id": "black-orcs",
+"type": "hero",
+"name": "Black Orc",
+"plural": "Black Orcs",
+"race": "black orc",
+"flavour": "In it for the mayhem, maybe even some loyalty to the Boss of the warband, these Black Orcs lead the charge at every turn, knowing that killing is only at arm’s reach all the time and they don’t care what the target is, some Imperial peasant, herd of Beastmen or even the Boyz in the warband. The Black Orcs just don’t care.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 60,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"black-orc-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Black Orc",
+"ruleFull": "Model starts with a natural 6+ Armour Black Orc Save. This save may be combined with other equipment to improve it."
+}
+],
+"admonitions": ""
+},
+{
+"id": "younguns",
+"type": "hero",
+"name": "Young’un",
+"plural": "Young’uns",
+"race": "orc",
+"flavour": "Keen eager and, above all, green recruits to any warband, these lads haven’t seen anywhere near as much action as the others in the warband and they’re plenty keen to get in there and do some damage. Of course one day, they know it’ll be their warband.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 25,
+"startingXp": 0,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 4,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"henchmen-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": false,
+"speed": false,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Black Orc Blood",
+"ruleFull": "One Young’un may be upgraded to a Black Orc Young’un for 10gc. This upgrade allows him to take the ‘Proven Warrior’ skill upgrade, thus making him a fully-fledged Black Orc Warrior."
+}
+],
+"admonitions": ""
+},
+{
+"id": "orc-boyz",
+"type": "henchman",
+"name": "Orc Boy",
+"plural": "Orc Boyz",
+"race": "orc",
+"flavour": "No warband would be complete without the warm bodies to makeup the number and thus the Boyz are essential, purely because the Black Orcs need someone to kick around when they can’t find anything else to do it too.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 4,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"henchmen-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Animosity",
+"ruleFull": "At the start of every turn, every Orc Boy must take a Ld Test for Animosity"
+}
+],
+"admonitions": "<div className=\"admonition admonition-info\"><div className=\"admonition-heading\"><h5>Conflicting rules</h5></div><div className=\"admonition-content\"><p>The Animosity rules referenced up top specify to use the rules from the 2002 Annual. In the annual there is no need to take a Ld test but instead Animosity triggers on a roll of a 1 on a D6. The text in the henchmen entry likely was supposed to read \"At the start of every turn, every Orc Boy must take a test for Animosity\"</p></div></div>"
+},
+{
+"id": "orc-shootaz",
+"type": "henchman",
+"name": "Orc Shoota",
+"plural": "Orc Shootaz",
+"race": "orc",
+"flavour": "Not all Orcs enjoy getting into a fight straight away. Some are hunters, tracking prey and shooting it down from a distance, others recognise that sometimes you need to soften up a really tough foe from a distance before moving in to finish them off. This is the closest Orcs come to outright cowardice.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 4,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"henchmen-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Animosity",
+"ruleFull": "At the start of every turn, every Shoota must take a Ld Test for Animosity."
+},
+{
+"flavour": "",
+"rulename": "Uncommon",
+"ruleFull": "A warband may not hire more Shootaz than they have Boyz. If a boy dies and the Shootaz outnumber the Boyz, the next hire must be a boy so that the balance is restored."
+}
+],
+"admonitions": "<div className=\"admonition admonition-info\"><div className=\"admonition-heading\"><h5>Conflicting rules</h5></div><div className=\"admonition-content\"><p>The Animosity rules referenced up top specify to use the rules from the 2002 Annual. In the annual there is no need to take a Ld test but instead Animosity triggers on a roll of a 1 on a D6. The text in the henchmen entry likely was supposed to read \"At the start of every turn, every Shoota must take a test for Animosity\"</p></div></div>"
+},
+{
+"id": "orc-nuttaz",
+"type": "henchman",
+"name": "Orc Nutta",
+"plural": "Orc Nuttaz",
+"race": "orc",
+"flavour": "These are Orcs who have been left a little bit… unstable by the Storm of Chaos. They ain’t right in the head, I tell you, especially by Orc standards. Eventually they’ll kill themselves, but only after they’ve killed everyone else.",
+"minQty": 0,
+"maxQty": 4,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 40,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 2,
+"s": 3,
+"t": 4,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": "5*"
+},
+"equipmentLists": [
+"henchmen-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Unstable",
+"ruleFull": "These Orcs are not quite all there. They do not suffer from Animosity, but instead have a host of their own issues to deal with."
+},
+{
+"flavour": "",
+"rulename": "Crazy",
+"ruleFull": "Nuttaz always pass any Leadership-based Tests they have to take. A side effect of this is that their minds are too far-gone and they may never learn Academic Skills should they become a Hero on an Advance Roll."
+},
+{
+"flavour": "",
+"rulename": "Savage",
+"ruleFull": "Nuttaz must always run or charge their maximum distance towards the nearest opponent they can see. Friendly models do not block line of sight. Additionally they fight with an extra attack whilst in combat. This does not appear on their profile nor does it count towards the racial maximum. If no enemy is visible they are moved under the player’s control. They can never use any form of armour or ranged weapons. Nuttaz are also too unstable for other Boyz and can never have the Leader ability or use their Ld stat for rout tests, excepting them as being the only models left on the board."
+}
+],
+"admonitions": ""
+},
+{
+"id": "troll",
+"type": "henchman",
+"name": "Troll",
+"plural": "Trolls",
+"race": "troll",
+"flavour": "Trolls are not intelligent enough to recognise the value of gold, but large amounts of food can often instil a certain loyalty in them. Black Orc Boss like having Trolls in their bands because it’s good to have someone who’ll follow any order, no matter how stupid or suicidal.",
+"minQty": 0,
+"maxQty": 1,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 200,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 6,
+"ws": 3,
+"bs": 1,
+"s": 5,
+"t": 4,
+"w": 3,
+"i": 1,
+"a": 3,
+"ld": 4
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Fear",
+"ruleFull": "Trolls are frightening monsters which cause <Tooltip>fear</Tooltip>."
+},
+{
+"flavour": "",
+"rulename": "Stupidity",
+"ruleFull": "A Troll is subject to the rules for <Tooltip>stupidity</Tooltip>."
+},
+{
+"flavour": "",
+"rulename": "Regeneration",
+"ruleFull": "Trolls have a unique physiology that allows them to regenerate wounds. Whenever an enemy successfully inflicts a wound on a Troll roll a D6, on a result of 4 or more the wound is ignored and the Troll is unhurt. Trolls may not regenerate wounds caused by fire or fire-based magic. Trolls never roll for Injury after a battle, unless they were taken Out of Action by a Flaming weapon or spell. Then they roll after the battle as a normal Henchman."
+},
+{
+"flavour": "",
+"rulename": "Dumb Monster",
+"ruleFull": "A Troll is far too stupid to ever learn any new skills. Trolls do not gain experience."
+},
+{
+"flavour": "",
+"rulename": "Always Hungry",
+"ruleFull": "A Troll requires an upkeep cost. This upkeep represents the copious amounts of food that must be fed to the Troll in order to keep him loyal to the warband. The warband must pay 20 gold crowns after every game in order to keep the Troll. If a warband lacks the gold to pay the upkeep, the Boss has the option to let him count as 2 members, letting the Troll cost only 5 crowns. However this does effectively drop your maximum warband size down to 11 models."
+},
+{
+"flavour": "",
+"rulename": "Vomit Attack",
+"ruleFull": "Instead of his normal attacks, a Troll can regurgitate its highly corrosive digestive juices on an unfortunate hand-to-hand combat opponent. This is a single attack that automatically hits with a Strength of 5 and ignores armour saves."
+},
+{
+"flavour": "",
+"rulename": "Large Target",
+"ruleFull": "Trolls are Large Targets as defined in the shooting rules."
+}
+],
+"admonitions": ""
+}
+]
+}

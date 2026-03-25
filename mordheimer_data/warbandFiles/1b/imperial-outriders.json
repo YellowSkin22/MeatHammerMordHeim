@@ -1,0 +1,453 @@
+{
+"id": "imperial-outriders",
+"name": "Imperial Outriders",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Nemesis Crown Supplement",
+"sourceLink": "[https://broheim.net/downloads/warbands/supplement/nemesiscrown/Imperial%20Outriders.pdf](https://broheim.net/downloads/warbands/supplement/nemesiscrown/Imperial%20Outriders.pdf)",
+"setting": "Nemesis Crown",
+"author": "Mordheim Nemesis Crown Development Team",
+"version": "",
+"lore": "<em>As rumours of the discovery of the Nemesis Crown spread across the land, the various provinces of the Empire despatch bands of swift horsemen to scout the Great Forest.</em><br /><br /><em>Theirs is not to take on the enemy in a head-on clash. Instead their role is about stealth. Outpacing and outmanouevring the enemy to leave them empty-handed as they gallop into the distance with the prize.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 12,
+"choiceFluff": ""
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Hired Swords",
+"ruleFull": "The Imperial Outriders may only be accompanied by mounted Hired Swords. This includes the Freelance Knight from the Mordheim Rulebook and the Roadwarden from the Empire In Flames supplement. The Highwayman keeps himself a safe distance from any official representatives of the Empire and so may not be hired."
+}
+],
+"equipmentLists": [
+{
+"id": "imperial-outriders-equipment-list",
+"title": "Imperial Outriders equipment list",
+"caveat": "The following lists are used by Imperial Outrider warbands to pick their weapons:",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "morning star",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "lance",
+"alias": "",
+"cost": {
+"cost": 40
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "heavy armour",
+"alias": "",
+"cost": {
+"cost": 50
+}
+},
+{
+"name": "barding",
+"alias": "",
+"cost": {
+"cost": 80
+}
+},
+{
+"name": "ithilmar armour",
+"alias": "",
+"cost": {
+"cost": 90
+}
+},
+{
+"name": "gromril armour",
+"alias": "",
+"cost": {
+"cost": 150
+}
+}
+]
+},
+{
+"id": "outrider-missile-weapon-list",
+"title": "Outrider Missile Weapon List",
+"caveat": "",
+"items": [
+{
+"name": "pistol",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "handgun",
+"alias": "",
+"cost": {
+"cost": 35
+}
+},
+{
+"name": "blunderbuss",
+"alias": "",
+"cost": {
+"cost": 30
+}
+},
+{
+"name": "hochland long rifle",
+"alias": "",
+"cost": {
+"cost": 200
+}
+}
+]
+},
+{
+"id": "scout-missile-weapon-list",
+"title": "Scout Missile Weapon List",
+"caveat": "",
+"items": [
+{
+"name": "throwing knives",
+"alias": "",
+"cost": {
+"cost": 15
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "knight",
+"type": "hero",
+"name": "Knight",
+"plural": "Knights",
+"race": "human",
+"flavour": "Knights who show the greatest potential are often chosen to lead small bands on quests into dangerous territory in order to prove their worth.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 85,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"imperial-outriders-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any warrior within 6” of the Knight may use his Leadership characteristic when taking a Leadership test."
+},
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "The Knight has the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride skill</a> as detailed in the Blazing Saddles article."
+}
+],
+"admonitions": "The Knight may be equipped with hand-to-hand weapons and armour chosen from the Imperial Outriders’ equipment list. The Knight comes with a Riding Horse. This may be upgraded to a Warhorse for an additional +40 gc."
+},
+{
+"id": "outriders",
+"type": "hero",
+"name": "Outrider",
+"plural": "Outriders",
+"race": "human",
+"flavour": "Usually the offspring of nobility, Outriders are often cocksure young guns and confident in the saddle. Eager to earn their spurs they readily sign up for dangerous missions requiring speed, stealth and bravery.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 65,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"imperial-outriders-equipment-list",
+"outrider-missile-weapon-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "Outriders have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride skill</a> as detailed in the Blazing Saddles article."
+}
+],
+"admonitions": "Outriders may be equipped with hand-to-hand weapons and armour chosen from the Imperial Outriders’ Equipment List. They may be equipped with missile weapons from the Outriders’ Missile Weapon List. Outriders come with a Riding Horse which may be upgraded to a Warhorse for an additional +40 gc."
+},
+{
+"id": "scouts",
+"type": "hero",
+"name": "Scout",
+"plural": "Scouts",
+"race": "human",
+"flavour": "Accustomed to riding fast over long distances, Empire couriers are an obvious choice to include in raids into the wilder lands. Less experienced at fighting, they need to learn quickly or risk falling at the wayside.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 45,
+"startingXp": 0,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"imperial-outriders-equipment-list",
+"scout-missile-weapon-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": false,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "Scouts have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride skill</a> as detailed in the Blazing Saddles article."
+}
+],
+"admonitions": "Scouts may be equipped with hand-to-hand weapons and armour chosen from the Imperial Outriders’ Equipment List. They may be equipped with missile weapons from the Scouts’ Missile Weapon List. Scouts come with a Riding Horse."
+},
+{
+"id": "chasseurs",
+"type": "henchman",
+"name": "Chasseur",
+"plural": "Chasseurs",
+"race": "human",
+"flavour": "Skilled at firing a range of Blackpowder weapons from the saddle, these men are regarded as the finest young prospects of the Empire’s armies. Chasseurs provide vital missile cover for the band.",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 55,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"imperial-outriders-equipment-list",
+"outrider-missile-weapon-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "Chasseurs have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride skill</a> as detailed in the Blazing Saddles article."
+}
+],
+"admonitions": "Chasseurs may be equipped with hand-to-hand weapons and armour chosen from the Imperial Outriders’ Equipment List. They may be equipped with missile weapons from the Outriders’ Missile Weapon List. Chasseurs come with a Riding Horse."
+},
+{
+"id": "hussars",
+"type": "henchman",
+"name": "Hussar",
+"plural": "Hussars",
+"race": "human",
+"flavour": "Selected for their combat skills, these grizzled warriors pack a hard punch as the Outriders charge.",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 60,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"imperial-outriders-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "Horsemen have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride skill</a> as detailed in the Blazing Saddles article."
+},
+{
+"flavour": "",
+"rulename": "Combat Riding",
+"ruleFull": "Horsemen have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#combat-riding\">Combat Riding skill</a> as detailed in the Blazing Saddles article."
+}
+],
+"admonitions": "Hussars may be equipped with hand-to-hand weapons and armour chosen from the Imperial Outriders’ Equipment List. Hussars come with a Riding Horse. This may be upgraded to a Warhorse for an additional +40 gc."
+},
+{
+"id": "grooms",
+"type": "henchman",
+"name": "Groom",
+"plural": "Grooms",
+"race": "human",
+"flavour": "Unskilled in the ways of war, nevertheless these young men have an empathy with the steeds. Grooms have a vital part to play in their party.",
+"minQty": 0,
+"maxQty": 2,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 50,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"imperial-outriders-equipment-list",
+"scout-missile-weapon-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Ride",
+"ruleFull": "Grooms have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#ride-eg-ride-horse\">Ride skill</a> as detailed in the Blazing Saddles article."
+},
+{
+"flavour": "",
+"rulename": "Horse Handling",
+"ruleFull": "Grooms have the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles#beast-handler--eg-dog-handler\">Animal Handling skill</a> as detailed in the Blazing Saddles article."
+}
+],
+"admonitions": "Grooms may be equipped with hand-to-hand weapons, missile weapons and armour chosen from the Imperial Outriders’ Equipment List. They may be equipped with missile weapons from the Scouts’ Missile Weapon List. Grooms come with a Riding Horse."
+}
+]
+}

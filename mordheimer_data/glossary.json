@@ -1,0 +1,1170 @@
+[
+  {
+    "type": "serious injury",
+    "name": "11-15 Dead",
+    "tags": ["11-15", "dead", "11-15 dead"],
+    "relatedTerms": [{"link": "/docs/campaigns#11-15-dead"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The warrior is dead; remove him from the roster. All weapons and equipment are lost.</p>",
+        "ruleFull": "<p>The warrior is dead and his body is abandoned in the dark alleys of Mordheim, never to be found again. All the weapons and equipment he carried are lost. Remove him from the warband’s roster.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "16-21 Multiple Injuries",
+    "tags": ["16-21", "multiple injuries", "16-21 multiple injuries"],
+    "relatedTerms": [{"link": "/docs/campaigns#16-21-multiple-injuries"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Roll D6 times on this table, re-rolling Dead, Captured, or Multiple Injuries results.</p>",
+        "ruleFull": "<p>The warrior is not dead but has suffered a lot of wounds. Roll D6 times on this table. Re-roll any ‘Dead’, ‘Captured’ and further ‘Multiple Injuries’ results.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "22 Leg Wound",
+    "tags": ["22", "leg wound", "22 leg wound"],
+    "relatedTerms": [{"link": "/docs/campaigns#22-leg-wound"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>-1 Movement permanently.</p>",
+        "ruleFull": "<p>The warrior’s leg is broken. He suffers a -1 Movement characteristic penalty from now on.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "23 Arm Wound",
+    "tags": ["23", "arm wound", "23 arm wound"],
+    "relatedTerms": [{"link": "/docs/campaigns#23-arm-wound"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Roll D6: 1 = arm amputated (one one-handed weapon only); 2-6 = miss next game.</p>",
+        "ruleFull": "<p>Roll again: 1 = Severe arm wound. The arm must be amputated. The warrior may only use a single onehanded weapon from now on. 2-6 = Light wound. The warrior must miss the next game.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "24 Madness",
+    "tags": ["24", "madness", "24 madness"],
+    "relatedTerms": [{"link": "/docs/campaigns#24-madness"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Roll D6: 1-3 = stupidity; 4-6 = frenzy.</p>",
+        "ruleFull": "<p>Roll a D6. On a 1-3 the warrior suffers from <a href=\"/docs/rules/leadership-psychology#stupidity\">stupidity</a>; on 4-6 the warrior suffers from <a href=\"/docs/rules/leadership-psychology#frenzy\">frenzy</a> from now on.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "25 Smashed Leg",
+    "tags": ["25", "smashed leg", "25 smashed leg"],
+    "relatedTerms": [{"link": "/docs/campaigns#25-smashed-leg"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Roll D6: 1 = may not run anymore permanently; 2-6 = miss next game.</p>",
+        "ruleFull": "<p>Roll again: 1 = The warrior may not run any more but he may still charge. 2-6 = The warrior misses the next game.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "26 Chest Wound",
+    "tags": ["26", "chest wound", "26 chest wound"],
+    "relatedTerms": [{"link": "/docs/campaigns#26-chest-wound"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>-1 Toughness permanently.</p>",
+        "ruleFull": "<p>The warrior has been badly wounded in the chest. He recovers but is weakened by the injury so his Toughness is reduced by -1.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "31 Blinded In One Eye",
+    "tags": ["31", "blinded in one eye", "31 blinded in one eye"],
+    "relatedTerms": [{"link": "/docs/campaigns#31-blinded-in-one-eye"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>-1 BS; retire if both eyes lost.</p>",
+        "ruleFull": "<p>The warrior survives but loses the sight in one eye; randomly determine which. A character that loses an eye has his Ballistic Skill reduced by -1. If the warrior is subsequently blinded in his remaining good eye he must retire from the warband.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "32 Old Battle Wound",
+    "tags": ["32", "old battle wound", "32 old battle wound"],
+    "relatedTerms": [{"link": "/docs/campaigns#32-old-battle-wound"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Roll D6 at start of each battle; on 1 may not fight.</p>",
+        "ruleFull": "<p>The warrior survives, but his wound will prevent him from fighting if you roll a 1 on a D6 at the start of any battle. Roll at the start of each battle from now on.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "33 Nervous Condition",
+    "tags": ["33", "nervous condition", "33 nervous condition"],
+    "relatedTerms": [{"link": "/docs/campaigns#33-nervous-condition"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>-1 Initiative permanently.</p>",
+        "ruleFull": "<p>The warrior’s nervous system has been damaged. His Initiative is permanently reduced by -1.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "34 Hand Injury",
+    "tags": ["34", "hand injury", "34 hand injury"],
+    "relatedTerms": [{"link": "/docs/campaigns#34-hand-injury"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>-1 WS permanently.</p>",
+        "ruleFull": "<p>The warrior’s hand is badly injured. His Weapon Skill is permanently reduced by -1.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "35 Deep Wound",
+    "tags": ["35", "deep wound", "35 deep wound"],
+    "relatedTerms": [{"link": "/docs/campaigns#35-deep-wound"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Miss next D3 games.</p>",
+        "ruleFull": "<p>The warrior has suffered a serious wound and must miss the next D3 games while he is recovering. He may do nothing at all while recovering.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "36 Robbed",
+    "tags": ["36", "robbed", "36 robbed"],
+    "relatedTerms": [{"link": "/docs/campaigns#36-robbed"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Escapes but loses all equipment.</p>",
+        "ruleFull": "<p>The warrior manages to escape, but all his weapons, armour and equipment are lost.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "41-55 Full Recovery",
+    "tags": ["41-55", "full recovery", "41-55 full recovery"],
+    "relatedTerms": [{"link": "/docs/campaigns#41-55-full-recovery"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Full recovery, no lasting effects.</p>",
+        "ruleFull": "<p>The warrior has been knocked unconscious, or suffers a light wound from which he makes a full recovery.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "56 Bitter Enmity",
+    "tags": ["56", "bitter enmity", "56 bitter enmity"],
+    "relatedTerms": [{"link": "/docs/campaigns#56-bitter-enmity"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Full recovery, now hates:<br /> - 1-3 The individual who caused the injury. If it was a Henchman, he hates the enemy leader instead.<br /> - 4 The leader of the warband that caused the injury.<br /> - 5 The entire warband of the warrior responsible for the injury.<br /> - 6 All warbands of that type.</p>",
+        "ruleFull": "<p>The warrior makes a full physical recovery, but is psychologically scarred by his experience. From now on the warrior <a href=\"/docs/rules/leadership-psychology#hatred\">hates</a> the following (roll a D6):</p><table><thead><tr><th>D6</th><th>Result</th></tr></thead><tbody><tr><td>1-3</td><td>The individual who caused the injury. If it was a Henchman, he hates the enemy leader instead.</td></tr><tr><td>4</td><td>The leader of the warband that caused the injury.</td></tr><tr><td>5</td><td>The entire warband of the warrior responsible for the injury.</td></tr><tr><td>6</td><td>All warbands of that type.</td></tr></tbody></table>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "61 Captured",
+    "tags": ["61", "captured", "61 captured"],
+    "relatedTerms": [{"link": "/docs/campaigns#61-captured"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A captive may be ransomed (price set by captor), exchanged for a captive of the captor’s warband, or sold to slavers for D6×5 gc. <br /><br />Undead may kill the captive to gain a Zombie; Possessed may sacrifice them for +1 leader XP. <br /><br />Ransomed or exchanged captives keep their equipment; if sold to slavers, killed, or zombified, captors keep it.</p>",
+        "ruleFull": "<p>The warrior regains consciousness and finds himself held captive by the other warband.<br /><br />He may be ransomed at a price set by the captor or exchanged for one of their warband who is being held captive.<br /><br />Captives may be sold to slavers at a price of D6x5 gc. Undead may kill their captive and gain a new Zombie. The Possessed may sacrifice the prisoner. The leader of the warband will gain +1 Experience if they do so.<br /><br />Captives who are exchanged or ransomed retain all their weapons, armour and equipment; if captives are sold, killed or turned to Zombies, their weaponry, etc, is retained by their captors.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "62-63 Hardened",
+    "tags": ["62-63", "hardened", "62-63 hardened"],
+    "relatedTerms": [{"link": "/docs/campaigns#62-63-hardened"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Immune to fear from now on.</p>",
+        "ruleFull": "<p>The warrior survives and becomes inured to the horrors of Mordheim. From now on he is immune to fear.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "64 Horrible Scars",
+    "tags": ["64", "horrible scars", "64 horrible scars"],
+    "relatedTerms": [{"link": "/docs/campaigns#64-horrible-scars"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Causes fear from now on.</p>",
+        "ruleFull": "<p>The warrior causes <a href=\"/docs/rules/leadership-psychology#fear\">fear</a> from now on.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "65 Sold To The Pits",
+    "tags": ["65", "sold to the pits", "65 sold to the pits"],
+    "relatedTerms": [{"link": "/docs/campaigns#65-sold-to-the-pits"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Fights a <a href=\"/docs/campaigns/hired-swords/grade-1a#pit-fighter\">Pit Fighter</a>. Win: +2 XP, 50 gc, keep gear. Lose: D66 injury roll (11-35) or death; lose gear if survive.</p>",
+        "ruleFull": "<p>The warrior wakes up in the infamous fighting pits of Cutthroat’s Haven and must fight against a <a href=\"/docs/campaigns/hired-swords/grade-1a#pit-fighter\">Pit Fighter</a>.<br /><br />Roll to see which side charges, and fight the battle as normal. If the warrior loses, roll to see whether he is dead or injured (ie, a D66 roll of 11-35). If he is not dead, he is thrown out of the fighting pits without his armour and weapons and may re-join his warband.<br /><br />If the warrior wins he gains 50 gc, +2 Experience and is free to rejoin his warband with all his weapons and equipment.</p>"
+      }
+    ]
+  },
+  {
+    "type": "serious injury",
+    "name": "66 Survives Against The Odds",
+    "tags": ["66", "survives against the odds", "66 survives against the odds"],
+    "relatedTerms": [{"link": "/docs/campaigns#66-survives-against-the-odds"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Survives; +1 Experience.</p>",
+        "ruleFull": "<p>The warrior survives and rejoins his warband. He gains +1 Experience.</p>"
+      }
+    ]
+  },
+    {
+      "type": "rules",
+      "name": "Parry",
+      "tags": [
+      "parry",
+      "parries",
+      "parried",
+      "parrying"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/close-combat#parry"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>When hit, roll a D6, if it's higher than the attacker’s to-hit roll, the attack is parried. Hits made on a 6 can't be parried.<br /><br />Only one parry is allowed per combat phase, and it must be against the highest hit roll.<br /><br />You can only parry the first enemy to strike (highest Initiative).<br /><br />Attacks with double or more your model’s Strength can't be parried.<br /><br />Sword + buckler allows a re-roll on failed parries. Two swords do not.</p>",
+        "ruleFull": "<p>When hit, roll a D6, if it's higher than the attacker’s to-hit roll, the attack is parried. Hits made on a 6 can't be parried.<br /><br />Only one parry is allowed per combat phase, and it must be against the highest hit roll.<br /><br />You can only parry the first enemy to strike (highest Initiative).<br /><br />Attacks with double or more your model’s Strength can't be parried.<br /><br />Sword + buckler allows a re-roll on failed parries. Two swords do not.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Ward Saves",
+      "tags": [
+      "ward",
+      "ward save"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/shooting#ward-saves"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A magical save taken in addition to regular armour saves.</p>",
+        "ruleFull": "<p>Some troops types and creatures are protected by more than mere physical armour. They may be shielded by magical charms or blessings, given protection by the gods of the Warhammer world, or perhaps they are just astoundingly lucky.<br /><br />Models with this sort of protection are referred to as having a Ward save or Ward. This type of save is quite different from an armour save and it is very important to understand the difference from the beginning.<br /><br />Wards represent magical or divine protection which can save a warrior when armour would be of no use at all. Unlike an armour save, a Ward is never modified by Strength modifiers, etc. Even if a hit ignores all armour saves, a model with a Ward may still try to take its Ward save as normal. A model may only ever take one Ward save against each wound it has suffered. <br /><br />Sometimes a model has both an armour save and a Ward save. In this case, the model must take the armour save first and, if it is failed, the model is allowed to try to make a Ward save. No model can ever try to make more than one Ward save against a wound it has suffered. If a model has two Ward saves for any reason, use the better Ward save.</p>"
+      }
+    ]
+    },
+     {
+      "type": "rules",
+      "name": "Strike First",
+      "tags": [
+      "strike first",
+      "strikes first"
+    ],
+    "relatedTerms": [{"link": ""}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A magical save taken in addition to regular armour saves.</p>",
+        "ruleFull": "<p>Some troops types and creatures are protected by more than mere physical armour. They may be shielded by magical charms or blessings, given protection by the gods of the Warhammer world, or perhaps they are just astoundingly lucky.<br /><br />Models with this sort of protection are referred to as having a Ward save or Ward. This type of save is quite different from an armour save and it is very important to understand the difference from the beginning.<br /><br />Wards represent magical or divine protection which can save a warrior when armour would be of no use at all. Unlike an armour save, a Ward is never modified by Strength modifiers, etc. Even if a hit ignores all armour saves, a model with a Ward may still try to take its Ward save as normal. A model may only ever take one Ward save against each wound it has suffered. <br /><br />Sometimes a model has both an armour save and a Ward save. In this case, the model must take the armour save first and, if it is failed, the model is allowed to try to make a Ward save. No model can ever try to make more than one Ward save against a wound it has suffered. If a model has two Ward saves for any reason, use the better Ward save.</p>"
+      }
+    ]
+    },
+
+
+        {
+      "type": "rules",
+      "name": "Dodge Saves",
+      "tags": [
+      "dodge save"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/shooting#ward-saves"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A save taken in addition to regular armour saves.</p>",
+        "ruleFull": "<p>A Dodge Save is taken exactly like a Ward Save: it is not affected by the Strength of the attack or by armour-piercing effects. It represents the model’s ability to evade an incoming blow rather than absorb it with armour. Unless otherwise stated, a Dodge Save may be taken after failing an Armour Save. A Dodge Save cannot be made against attacks where the model has no chance to react (e.g., attacks from behind, magical effects that do not require to-hit rolls, or hits from templates), unless specifically allowed.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Magic",
+      "tags": [
+      "magic",
+      "prayers",
+      "prayer",
+      "magic section"
+    ],
+    "relatedTerms": [{"link": "/docs/magic"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Spells are cast in the shooting phase, even in close combat, by rolling 2D6 equal to or above the spell’s Difficulty. Failure ends casting for the turn; success allows the spell to be cast that turn, missile weapons cannot be used (running is allowed).<br /><br />Wizards cannot wear armour or use shields/bucklers, except for Prayer casters, who can.<br /><br />Damaging spells work like shooting or melee damage, never cause critical hits, and allow armour saves unless stated otherwise.<br /><br />Each wizard starts with one random spell and may gain more; duplicates are re-rolled or have their Difficulty reduced by 1.</p>",
+        "ruleFull": "<p>Spells are cast in the shooting phase, and can be used even if the caster is in hand-to-hand combat. To use a spell, the wizard must roll equal to or greater than the spell’s Difficulty score on 2D6. If he fails, he may not cast a spell that turn. If the test is passed the spell may be used as described overleaf. A wizard may cast one spell per turn and may not use missile weapons if he wants to cast a spell. He can however run!<br /><br />A wizard may not use magic if he is wearing armour or has a shield or buckler. The only exceptions are Prayers. Prayer casters such as Sisters of Sigmar and Warrior Priests may wear armour and use their prayers.<br /><br />Some spells cause direct damage, and are resolved the same way as damage from shooting or blows in hand-to-hand combat. Spells do not cause critical hits. Models always receive armour saves against wounds caused by spells unless noted otherwise.<br /><br />Each wizard starts with one randomly determined spell, but may gain more. Roll a D6 and consult the appropriate chart. If you get the same spell twice, roll again or lower the spell’s difficulty by 1.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Poisons",
+      "tags": [
+      "poison",
+      "poisons"
+    ],
+    "relatedTerms": [{"link": "/docs/weapons-armour/miscellaneous-equipment#poisons-and-drugs"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The use of poison is almost universally abhorred, but in the ruthless and brutal battles fought in Mordheim, desperate warbands often resort to the use of envenomed blades.<br /><br />Poison may not be used with blackpowder weapons. When you buy a vial of poison, there is always only enough to last the duration of one battle. You can only poison a single weapon with one vial of poison.</p>",
+        "ruleFull": "<p>The use of poison is almost universally abhorred, but in the ruthless and brutal battles fought in Mordheim, desperate warbands often resort to the use of envenomed blades.<br /><br />Poison may not be used with blackpowder weapons. When you buy a vial of poison, there is always only enough to last the duration of one battle. You can only poison a single weapon with one vial of poison.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Locating Rare items",
+      "tags": [
+      "locate rare items",
+      "locating rare items",
+      "rarity roll",
+      "availability"
+    ],
+    "relatedTerms": [{"link": "/docs/campaigns/trading#availability"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Rare items have a rating (e.g., Rare 9) and require a 2D6 roll equal to or higher than the rating to obtain. Each successful roll buys one item, and each Hero may make only one roll per post-battle sequence. Heroes taken out of action in the last battle cannot search for rare items.</p>",
+        "ruleFull": "<p>The Price chart has a column marked ‘Availability’. Common items are always available, and can be bought in any quantity. Items marked ‘rare’ are more difficult to find. A rare item’s availability is indicated by a number, for example ‘Rare 9’.<br /><br />Whenever a Hero wants to buy a rare item, roll 2D6 and compare the result to the number stated. If the roll is equal or greater, the item is available. For example, you need to roll 9 or more to acquire an item marked ‘Rare 9’. You can only buy one rare item for each successful roll. You may also only make one roll for each Hero looking for rare items. For example, if your warband has four Heroes, you may make four rolls to locate rare items. Warriors taken out of action during the last battle may not look for rare items.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Recovery Phase",
+      "tags": [
+      "recovery phase",
+      "recovery phases"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/the-turn#recovery-phase"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>In the recovery phase, a fleeing model may rally by passing a 2D6 Leadership test; success stops fleeing but the model cannot move or shoot that turn (casting is allowed). A model cannot rally if the nearest model is an enemy. Also, stunned models become knocked down, and knocked down models may stand up.</p>",
+        "ruleFull": "<p>During the recovery phase you may attempt to rally any of your models who have lost their nerve (see the Recovery Phase rules). To take a Rally test, roll 2D6. If the score is equal to or less than the model’s Leadership value the model stops fleeing and has rallied; turn it to face in any direction you wish. The model cannot move or shoot for the rest of the turn, but models able to do so can cast spells. If the test is failed, the model will continue to flee towards the closest table edge.<br /><br />Note that a model <strong>cannot</strong> rally if the closest model to him is an enemy model (<em>fleeing, stunned, knocked down</em> and <em>hidden</em> models are not taken into consideration for this).<br /><br />During the recovery phase, warriors in your warband who have been <em>stunned</em> become <em>knocked</em> down instead and warriors who have been <em>knocked</em> down may stand up (see the <a href=\"http://localhost:3000/docs/rules/wounds-and-injuries\">Injuries section</a>).</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Large Target",
+      "tags": [
+      "large",
+      "large target",
+      "large targets"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/shooting#hit-modifiers"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>You may always choose to shoot at a Large Target if you can see it, whether it is in cover or not and even if it is not the closest target. Shooting at a large target grants a +1 modifier to the hit roll</p>",
+        "ruleFull": "<p>You may always choose to shoot at a Large Target if you can see it, whether it is in cover or not and even if it is not the closest target. Shooting at a large target grants a +1 modifier to the hit roll</p>"
+      }
+    ]
+    },
+
+
+
+    {
+      "type": "rules",
+      "name": "climbing",
+      "tags": [
+      "climb",
+      "climbs",
+      "climbing"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/movement#climbing"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Any non-animal model can climb if in base contact with the obstacle at the start of its movement. It may climb up to its Movement value (no running), using leftover movement normally. Obstacles higher than the model’s Movement cannot be climbed. An Initiative test is required, failure when climbing up stops movement; failure when climbing down causes the model to fall from its starting point.</p>",
+        "ruleFull": "<p>Often the ruined buildings of Mordheim do not have stairs or ladders, so your warriors will have to climb to reach the upper floors of buildings.<br /><br />Any model (except animals!) can climb up or down fences, walls, etc. He must be touching what he wants to climb at the start of his movement phase. He may climb up to his total Movement in a single movement phase (but cannot run while he is climbing). Any remaining movement can be used as normal. If the height is more than the model’s normal move, he cannot climb the wall.<br /><br />To climb, a model must take an Initiative test. If he fails it whilst climbing up, he cannot move that turn. If he fails it while climbing down, he falls from where he started his descent (see the Falling section).</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Diving Charge",
+      "tags": [
+      "diving charge"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/movement#diving-charge"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A model on a balcony or overhang may diving charge an enemy within 2\" of its landing point. Take an Initiative test for each full 2\" dropped (max 6\"). Failing any test causes a fall, ending movement and the charge. Success grants +1 Strength and +1 to hit for the next combat phase.</p>",
+        "ruleFull": "<p>You may charge any enemy troops that are below a balcony or overhang, etc, that your model is on. If an enemy model is within 2\" of the place where your warrior lands, he may make a diving charge against it. Take an Initiative test for each full 2\" of height your model jumped down from, up to a maximum of 6\", like a normal jump. If he fails any of them, your model has fallen and suffers damage, may not move any more during the movement phase and cannot charge the enemy. If he succeeds, the model gains a +1 Strength bonus and +1 to hit bonus but only during the following hand-to-hand combat phase.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Hiding",
+      "tags": [
+      "hide",
+      "hiding",
+      "hidden"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/movement#hiding"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A model can hide if it ends its move behind suitable cover and the player declares it, placing a Hidden counter.<br /><br />Models cannot hide if they ran, fled, were stunned, or charged that turn.<br /><br />They may remain hidden for multiple turns while staying in cover and out of enemy sight.<br /><br />Hidden models cannot be seen, targeted, or charged, but lose hidden status if spotted, if they shoot or cast spells, or if they move into view. Enemies automatically detect hidden models within a distance equal to their Initiative in inches.</p>",
+        "ruleFull": "<p>The Hiding rule represents warriors concealing themselves in a way that our unmoving and dramatically posed models cannot. A hiding warrior keeps as still as possible, just peeking out of cover.<br /><br />A model can hide if he ends his move behind a low wall, a column or in a similar position where he could reasonably conceal himself. The player must declare that the warrior is hiding and place a Hidden counter beside the model for it to count as being hidden.<br /><br />A model that runs, flees, is stunned or charges cannot hide that turn. His sudden burst of speed does not give him time to hide.<br /><br />A model may stay hidden over several turns, so long as he stays behind a wall or similar feature. He may even move around so long as he stays hidden while doing so. If an enemy moves so that he can see the hidden warrior, the model is no longer hidden and the counter is removed. When hidden, a warrior cannot be seen, shot at or charged.<br /><br />While hiding, a model cannot shoot or cast spells without giving away its position. If a hidden model shoots, or moves so that he can be seen, he is no longer hidden and can be shot at as normal.<br /><br />A model may not hide if he is too close to an enemy model – he will be seen or heard no matter how well concealed. Enemy warriors will always see, hear or otherwise detect hidden foes within their Initiative value in inches. So a warrior whose Initiative value is 3 will automatically spot all hidden enemies within 3\".</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Jumping",
+      "tags": [
+      "jump",
+      "jumping",
+      "jumped",
+      "jump down",
+      "jump over gaps",
+      "jumping down",
+      "jumping over gaps"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/movement#jumping-down"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A model may jump down up to 6\", taking an Initiative test for each full 2\". Failing any test causes a fall, damage, and ends movement; success allows movement to continue without using Movement allowance. Models may also jump gaps up to 3\", deducting the distance from movement. If the gap exceeds remaining movement, the model falls automatically. Otherwise, an Initiative test is required; failure causes a fall. Models can jump gaps when moving, charging, or firing (if not running).</p>",
+        "ruleFull": "<p>Your warrior may jump down from high places (up to a maximum height of 6\") such as walkways and balconies at any time during his movement phase. Take an Initiative test for every full 2\" he jumps down. If he fails any of the tests, the model falls from the point where he jumped, takes damage (see Falling) and may not move any more during the movement phase. If successful, the model can continue his movement as normal (jumping down does not use up any of the model’s Movement allowance).<br /><br />Models may jump over gaps (up to a maximum of 3\") and streets, (eg, from the roof of a building to another). Deduct the distance jumped from the model’s movement but remember that you cannot measure the distance before jumping. If your model does not have enough movement to jump the distance, he automatically falls. If your model is able to cover the distance, he must pass an Initiative test or fall. A model may jump over a gap and still fire a missile weapon if it is not running. It may also jump as part of its charge or running move.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Falling",
+      "tags": [
+      "fall",
+      "falling"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/movement#falling"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A falling model suffers D3 hits at Strength equal to the fall height in inches, with no armour saves and no critical hits. It cannot move further or hide that turn, even if uninjured.</p>",
+        "ruleFull": "<p>A model that falls takes D3 hits at a Strength equal to the height in inches that it fell (eg, if the model fell 4\", it would take D3 hits at Strength 4). No armour saves apply. Falling will not cause critical hits. A model that falls may not move any further or hide during that turn, even if it is not hurt.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Critical Hits",
+      "tags": [
+      "critical hit",
+      "critical hits"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/shooting#critical-hits"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Rolling a 6 to wound in hand-to-hand or shooting causes a critical hit, unless 6s are required to wound. Only one critical hit may be caused per combat phase per warrior. Roll on the Critical Hit chart:</p><ul><li><strong>1–2:</strong> Double to 2 wounds; armour saves allowed.</li><li><strong>3–4:</strong> Double to 2 wounds; ignores armour.</li><li><strong>5–6:</strong> Double to 2 wounds; ignores armour; +2 to Injury rolls.</li></ul><p>If multiple wound multipliers apply, use the highest.</p>",
+        "ruleFull": "<p>If you roll a 6 when rolling to wound (for hand-to-hand combat and shooting only) you will cause a critical hit. Roll a D6 and consult the Critical Hit chart below to determine the damage caused by the critical hit. You should also roll to see whether the target makes its armour save or suffers damage as normal.</p><p>In addition, if the attacker normally needs 6s to wound his target, he cannot cause a critical hit. His opponent is simply too tough to suffer a serious injury at the hands of such a puny creature!</p><p>Each warrior may only cause one critical hit in each hand-to-hand combat phase (see the Close Combat section), so if he has several attacks, the first 6 you roll to wound will cause a critical hit.</p><h3>Critical Hit Chart</h3><table><thead><tr><th>D6</th><th>Result</th></tr></thead><tbody><tr><td>1–2</td><td><strong>Hits a vital part.</strong> The wound is doubled to 2 wounds. Roll any armour saves before doubling the wound.</td></tr><tr><td>3–4</td><td><strong>Hits an exposed spot.</strong> The wound is doubled to 2 wounds. The attack ignores all armour saves.</td></tr><tr><td>5–6</td><td><strong>Master strike!</strong> The wound is doubled to 2 wounds. The attack ignores all armour saves. You gain +2 to any Injury rolls.</td></tr></tbody></table><p>If a critical hit causes more than 1 wound, and the weapon the attacking model is using normally causes several wounds, then use the one that causes the most damage.</p>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Losing Control",
+      "tags": [
+      "out of control",
+      "losing control",
+"loss of control",
+"whoa boy! table",
+"whoa boy!",
+"whoa boy"
+    ],
+    "relatedTerms": [{"link": "/docs/optional-rules/mounted-combat/blazing-saddles#losing-control"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>If a mounted warrior has lost his last wound, then the player must roll on the Whoa Boy! table. This replaces the normal Injuries chart. If critical hits are suffered, then roll as many times as is required, taking the most serious result.</p><strong>Whoa Boy! Table</strong><table><thead><tr><th>D6</th><th>Result</th></tr></thead><tbody><tr><td>1–2</td><td>The rider is temporarily disorientated and his mount rears up. The rider keeps his seat but must spend his next turn stationary regaining control, unable to move or shoot. If attacked, treat the rider as fallen down.</td></tr><tr><td>3–4</td><td>The rider falls off his mount and is stunned, taking an additional S2 hit in the process with no armour save. In addition, roll a D6: on a roll of 1–3, the mount immediately bolts 3D6&quot; in a random direction and continues until it has left the table – the mount may be recovered after the battle; on a roll of 4–6, the mount remains stationary and the warrior may remount once recovered. Note: the mount does not count as unridden or unled in this instance.</td></tr><tr><td>5–6</td><td>The rider and his mount crash to the ground together. The rider and mount are automatically out of action. In addition, roll a D6: on a roll of 1–2 the mount lands on top of its rider, crushing him. If this happens, the warrior must roll twice on the Serious Injuries chart after the battle. In addition, after the battle roll a D6: on a roll of 1–2 the mount was crippled or killed by the fall and is removed from the warband roster.</td></tr></tbody></table>",
+        "ruleFull": "<p>If a mounted warrior has lost his last wound, then the player must roll on the Whoa Boy! table. This replaces the normal Injuries chart. If critical hits are suffered, then roll as many times as is required, taking the most serious result.</p><strong>Whoa Boy! Table</strong><table><thead><tr><th>D6</th><th>Result</th></tr></thead><tbody><tr><td>1–2</td><td>The rider is temporarily disorientated and his mount rears up. The rider keeps his seat but must spend his next turn stationary regaining control, unable to move or shoot. If attacked, treat the rider as fallen down.</td></tr><tr><td>3–4</td><td>The rider falls off his mount and is stunned, taking an additional S2 hit in the process with no armour save. In addition, roll a D6: on a roll of 1–3, the mount immediately bolts 3D6&quot; in a random direction and continues until it has left the table – the mount may be recovered after the battle; on a roll of 4–6, the mount remains stationary and the warrior may remount once recovered. Note: the mount does not count as unridden or unled in this instance.</td></tr><tr><td>5–6</td><td>The rider and his mount crash to the ground together. The rider and mount are automatically out of action. In addition, roll a D6: on a roll of 1–2 the mount lands on top of its rider, crushing him. If this happens, the warrior must roll twice on the Serious Injuries chart after the battle. In addition, after the battle roll a D6: on a roll of 1–2 the mount was crippled or killed by the fall and is removed from the warband roster.</td></tr></tbody></table>"
+      }
+    ]
+    },
+    {
+      "type": "rules",
+      "name": "Human Warrior",
+      "tags": [
+      "human warrior",
+      "human warriors"
+    ],
+    "relatedTerms": [{"link": "/docs/warbands/grade-1a-warbands/mercenaries#warriors"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The default human warrior profile is listed below:</p><table><thead><tr><th></th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr></thead><tbody><tr><td>Human</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>7</td></tr></tbody></table><p><strong>Weapons/Armour:</strong> If the human warrior may be equipped with weapons and armour, this may be chosen from the <a href=\"/docs/warbands/grade-1a-warbands/mercenaries#mercenary-equipment-lists\">Mercenary Equipment</a> list.</p>",
+        "ruleFull": "<p>The default human warrior profile is listed below:</p><table><thead><tr><th></th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr></thead><tbody><tr><td>Human</td><td>4</td><td>3</td><td>3</td><td>3</td><td>3</td><td>1</td><td>3</td><td>1</td><td>7</td></tr></tbody></table><p><strong>Weapons/Armour:</strong> If the human warrior may be equipped with weapons and armour, this may be chosen from the <a href=\"/docs/warbands/grade-1a-warbands/mercenaries#mercenary-equipment-lists\">Mercenary Equipment</a> list.</p>"
+      }
+    ]
+    },
+  {
+    "type": "rules",
+    "name": "Minderz",
+    "source": "Mordheim Annual 2002",
+    "caveat": "",
+    "grade":  "1a",
+    "permittedWarbands":  "all",
+    "tags": ["minderz"],
+    "relatedTerms": [{"link": "/docs/warbands/grade-1a-warbands/orc-mob#0--5-cave-squigs"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "Each Cave Squig must always remain within 6\" of a Goblin Warrior, who keeps the creature in line. If a Cave Squig finds itself without a Goblin within 6\" at the start of its Movement phase, it will go wild. From that point on, move the Squig 2D6\" in a random direction during each of its Movement phases. If its movement takes it into contact with another model (friend or foe), it will engage the model in hand-to-hand combat as normal. The Cave Squig is out of the Orc & Goblin player’s control until the end of the game.",
+        "ruleFull": "Each Cave Squig must always remain within 6\" of a Goblin Warrior, who keeps the creature in line. If a Cave Squig finds itself without a Goblin within 6\" at the start of its Movement phase, it will go wild. From that point on, move the Squig 2D6\" in a random direction during each of its Movement phases. If its movement takes it into contact with another model (friend or foe), it will engage the model in hand-to-hand combat as normal. The Cave Squig is out of the Orc & Goblin player’s control until the end of the game."
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Exploration",
+    "source": "",
+    "caveat": "",
+    "tags": ["exploration", "exploration phase", "exploration chart"],
+    "relatedTerms": [{"link": "/docs/campaigns/income#exploration-procedure"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<ol><li>Roll 1D6 for each of your Heroes who survived the battle and one extra dice if you won, plus any extra dice allowed by skills or equipment. Note, however, that you must pick a maximum of six dice out of all the dice you roll, even if you are allowed to roll seven dice or more.</li><li>Some things, such as skills and equipment, (like the Mordheim Map) may allow you to re-roll dice. If your warband includes an Elf Ranger, you may modify one dice by +1 or -1.</li><li>If you rolled any doubles, triples, etc, you have found an unusual location in Mordheim. Consult the Exploration chart below to see what you find. Refer to the appropriate entry on the following pages and follow the instructions given there.</li><li>Add the results together and consult the chart below to see how many shards of wyrdstone you have found. Mark down the amount of wyrdstone on your warband’s roster sheet.</li></ol><h4>Number Of Wyrdstone Shards Found</h4><table><thead><tr><th>Dice Result</th><th>Shards Found</th></tr></thead><tbody><tr><td>1-5</td><td>1</td></tr><tr><td>6-11</td><td>2</td></tr><tr><td>12-17</td><td>3</td></tr><tr><td>18-24</td><td>4</td></tr><tr><td>25-30</td><td>5</td></tr><tr><td>31-35</td><td>6</td></tr><tr><td>36+</td><td>7</td></tr></tbody></table>",
+        "ruleFull": "<ol><li>Roll 1D6 for each of your Heroes who survived the battle and one extra dice if you won, plus any extra dice allowed by skills or equipment. Note, however, that you must pick a maximum of six dice out of all the dice you roll, even if you are allowed to roll seven dice or more.</li><li>Some things, such as skills and equipment, (like the Mordheim Map) may allow you to re-roll dice. If your warband includes an Elf Ranger, you may modify one dice by +1 or -1.</li><li>If you rolled any doubles, triples, etc, you have found an unusual location in Mordheim. Consult the Exploration chart below to see what you find. Refer to the appropriate entry on the following pages and follow the instructions given there.</li><li>Add the results together and consult the chart below to see how many shards of wyrdstone you have found. Mark down the amount of wyrdstone on your warband’s roster sheet.</li></ol><h4>Number Of Wyrdstone Shards Found</h4><table><thead><tr><th>Dice Result</th><th>Shards Found</th></tr></thead><tbody><tr><td>1-5</td><td>1</td></tr><tr><td>6-11</td><td>2</td></tr><tr><td>12-17</td><td>3</td></tr><tr><td>18-24</td><td>4</td></tr><tr><td>25-30</td><td>5</td></tr><tr><td>31-35</td><td>6</td></tr><tr><td>36+</td><td>7</td></tr></tbody></table>"
+      }
+    ]
+  },
+
+  {
+    "type": "psychology",
+    "name": "Routing",
+    "caveat": "",
+    "tags": ["rout", "routing"],
+    "relatedTerms": [{"link": "/docs/rules/leadership-psychology#the-rout-test"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p><p>A player must make a Rout test or voluntarily Rout at the start of his turn if a quarter (25%) or more of his warband is out of action.<table><thead><tr><th>No. of Warriors</th><th>OOAs</th></tr></thead><tbody><tr><td>1 - 4</td><td>1</td></tr><tr><td>5 - 8</td><td>2</td></tr><tr><td>9 - 12</td><td>3</td></tr><tr><td>13 - 16</td><td>4</td></tr><tr><td>17 - 20</td><td>5</td></tr><tr><td>21 - 24</td><td>6</td></tr></tbody></table></p>",
+        "ruleFull": "Being outnumbered and alone is a nerve-racking situation for any warrior.\n\nIf your warrior is fighting alone against two or more opponents, and there are no friendly models within 6\" (knocked down, stunned or fleeing friends do not count), he must make a test at the end of his combat phase. The test is taken against the model's Leadership on 2D6. If the warrior scores equal to or under his Leadership his nerve holds. If the score is greater than his Leadership, the warrior breaks from combat and runs. Each one of his opponents may make one automatic hit against him as he turns to run. If the model survives, he runs 2D6\" directly away from his enemies.<br /><br />At the start of each of his turns, the warrior must take another Leadership test. If he passes, he stops but can do nothing else during his own turn except cast spells. If he fails or is charged, he runs 2D6\" towards the nearest table edge, avoiding any enemy models. If he reaches the table edge before he has managed to recover his nerves, he is removed from combat.<br /><br />If a warrior is charged while he is fleeing, the charger is moved into base contact as normal, but the fleeing warrior will then run a further 2D6\" towards the table edge, before any blows can be struck."
+      }
+    ]
+  },
+  {
+    "type": "psychology",
+    "name": "All Alone",
+    "caveat": "",
+    "tags": ["all alone", "all-alone"],
+    "relatedTerms": [{"link": "/docs/rules/leadership-psychology#all-alone"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>If a warrior is outnumbered in combat (no friendly models within 6'', excluding knocked down, stunned, or fleeing), he must take a Leadership test at the end of the combat phase. If fails, he breaks, each enemy makes one automatic hit, and he flees 2D6'' away.<br /><br />At the start of each of his turns, he must test again. If passed, he stops but can only cast spells; if failed (or charged), he flees 2D6'' toward the nearest table edge. If he reaches it, he's removed.<br /><br />If charged while fleeing, he immediately flees another 2D6'' before combat.",
+        "ruleFull": "Being outnumbered and alone is a nerve-racking situation for any warrior.\n\nIf your warrior is fighting alone against two or more opponents, and there are no friendly models within 6\" (knocked down, stunned or fleeing friends do not count), he must make a test at the end of his combat phase. The test is taken against the model's Leadership on 2D6. If the warrior scores equal to or under his Leadership his nerve holds. If the score is greater than his Leadership, the warrior breaks from combat and runs. Each one of his opponents may make one automatic hit against him as he turns to run. If the model survives, he runs 2D6\" directly away from his enemies.<br /><br />At the start of each of his turns, the warrior must take another Leadership test. If he passes, he stops but can do nothing else during his own turn except cast spells. If he fails or is charged, he runs 2D6\" towards the nearest table edge, avoiding any enemy models. If he reaches the table edge before he has managed to recover his nerves, he is removed from combat.<br /><br />If a warrior is charged while he is fleeing, the charger is moved into base contact as normal, but the fleeing warrior will then run a further 2D6\" towards the table edge, before any blows can be struck."
+      }
+    ]
+  },
+  {
+    "type": "psychology",
+    "name": "Fear",
+    "caveat": "",
+    "tags": ["fear", "fears"],
+    "relatedTerms": [{"link": "/docs/rules/leadership-psychology#fear"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Models must take Leadership tests when: a) Charged by fear-causing enemy (must roll 6s to hit if failed), or b) Attempting to charge fear-causing enemy (cannot charge if failed). Fear-causing creatures ignore these tests.",
+        "ruleFull": "Fear is a natural reaction to huge or unnerving creatures. A model must take a fear test (ie, test against his Leadership) in the following situations. Note that creatures that cause fear can ignore these tests.\n\n**a) If the model is charged by a warrior or a creature which causes _fear_.**\n\nIf a warrior is charged by an enemy that he fears then he must take a test to overcome that fear. Test when the charge is declared and is determined to be within range. If the test is passed the model may fight as normal. If it is failed, the model must roll 6s to score hits in that round of combat.\n\n**b) If the model wishes to charge a _fear_-causing enemy.**\n\nIf a warrior wishes to charge an enemy that it fears then it must take a test to overcome this. If it fails the model may not charge and must remain stationary for the turn. Treat this as a failed charge."
+      }
+    ]
+  },
+  {
+    "type": "psychology",
+    "name": "Frenzy",
+    "caveat": "",
+    "tags": ["frenzy",
+      "frenzied"],
+    "relatedTerms": [{"link": "/docs/rules/leadership-psychology#frenzy"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Must charge if enemy within range. Fight with double Attacks in combat. Immune to other psychology while within charge range. Loses frenzy if knocked down or stunned.",
+        "ruleFull": "Some warriors can work themselves into a berserk state of fury, a whirlwind of destruction in which all concern for their own personal safety is ignored in favour of mindless violence. These warriors are described as being frenzied.\n\nFrenzied models must always charge if there are any enemy models within charge range (check after charges have been declared). The player has no choice in this matter – the warrior will automatically declare a charge.\n\nFrenzied warriors fight with double their Attacks characteristic in hand-to-hand combat. Warriors with 1 Attack therefore have 2 Attacks, warriors with 2 Attacks have 4, etc. If a warrior is carrying a weapon in each hand, he receives +1 Attack for this as normal. This extra Attack is not doubled.\n\nOnce they are within charge range, frenzied warriors are immune to all other psychology, such as fear and don't have to take these tests as long as they remain within charge range.\n\nIf a frenzied model is knocked down or stunned, he is no longer frenzied. He continues to fight as normal for the rest of the battle."
+      }
+    ]
+  },
+  {
+    "type": "psychology",
+    "name": "Hatred",
+    "caveat": "",
+    "tags": [
+      "hatred",
+      "hates",
+      "hate"
+    ],
+    "relatedTerms": [{"link": "/docs/rules/leadership-psychology#hatred"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>May re-roll missed attacks in first turn of combat against hated enemies. Bonus only applies in first turn of each combat.",
+        "ruleFull": "Hatred is a very powerful emotion, and during this era of strife and war, bitter rivalry is commonplace.\n\nWarriors who fight enemies they hate in hand-to-hand combat may re-roll any misses when they attack in the first turn of each hand-to-hand combat. This bonus applies only in the first turn of each combat and represents the warrior venting his pent-up hatred on his foe. After the initial round of hand-to-hand combat he loses some impetus and subsequently fights as normal for the rest of the combat."
+      }
+    ]
+  },
+  {
+  "type": "psychology",
+  "name": "Stupidity",
+  "caveat": "",
+  "tags": ["stupidity", "stupid"],
+  "relatedTerms": [{"link": "/docs/rules/leadership-psychology#stupidity"}],
+  "Rules": [
+    {
+      "rulename": "",
+      "ruleAbbreviated": "<p>At start of turn, must pass Leadership test or suffer effects: Cannot cast spells or fight in combat. If not in combat, roll D6: 1-3 moves forward half speed (won't charge), 4-6 stands inactive. Effects last until next turn's test.",
+      "ruleFull": "Many large and powerful creatures, as well as some of the more unhinged individuals in Mordheim, are unfortunately rather stupid.<br/><br/>Models that are stupid test at the start of their turn to see if they overcome their stupidity. Make a test for each model affected by stupidity. If you pass the test by rolling their Leadership value or less on 2D6 then all is well – the creatures behave reasonably intelligently and the player may move and fight with them as normal.<br/><br/>If the test is failed all is not well. Until the start of his next turn (when it takes a new Stupidity test) the model will not cast spells or fight in hand-to-hand combat (though his opponent will still have to roll to hit him as normal).<br/><br/>If a model who fails a Stupidity test is not in hand-to-hand combat, roll a D6.<br/><br/><table><thead><tr><th>D6</th><th>Result</th></tr></thead><tbody><tr><td>1-3</td><td>The warrior moves directly forward at half speed in a shambling manner. He will not charge an enemy (stop his movement 1\" away from any enemy he would have come into contact with). He can fall down from the edge of a sheer drop (see the Falling rules) or hit an obstacle, in which case he stops. The model will not shoot this turn.</td></tr><tr><td>4-6</td><td>The warrior stands inactive and drools a bit during this turn. He may do nothing else, as drooling is <em>so</em> demanding.</td></tr></tbody></table><br/><br/>Regardless of whether the test is passed or failed, the result applies until the start of the model's following turn (when it takes a new Stupidity test)."
+    }
+  ]
+},
+{
+  "type": "psychology",
+  "name": "Animosity",
+  "caveat": "",
+  "tags": ["animosity"],
+  "relatedTerms": [{"link": "/docs/rules/leadership-psychology#animosity"}],
+  "Rules": [
+    {
+      "rulename": "",
+      "ruleAbbreviated": "<p>Orcs and Goblins must test at start of turn. On 1: roll on Animosity chart (1: attack nearest friendly, 2-5: do nothing but insult, 6: move aggressively toward enemy). No test if already in combat.</p>",
+      "ruleFull": "<p>Orcs and Goblins enjoy nothing more than a good scrap, unfortunately they're not always very discerning about who they scrap with! To represent this, at the start of the Orc player's turn, roll a D6 for each Henchman who is either an Orc or a Goblin. A roll of 1 means that the warrior has taken offense to something one of his mates has done or said. Do not roll for models that are engaged in hand-to-hand combat (they're already scrappin'!). To find out just how offended the model is, roll another D6 and consult the following chart to see what happens:</p><table><thead><tr><th style='text-align:center'>D6</th><th>Result</th></tr></thead><tbody><tr><td style='text-align:center'><strong>1</strong></td><td><strong>\"I 'Erd Dat!\"</strong><br/><em>The warrior decides that the nearest friendly Orc or Goblin Henchman has insulted his lineage or personal hygiene and must pay the price!</em><br/>&nbsp;&nbsp;&nbsp;&nbsp;If there is a friendly Orc or Goblin Henchman or Hired Sword within charge reach (if there are multiple targets within reach, choose the one nearest to the mad model), the offended warrior will immediately charge and fight a round of hand-to-hand combat against the source of his ire. At the end of this round of combat, the models will immediately move 1\" apart and no longer count as being in close combat (unless one of them fails another Animosity test and rolls this result again).<br/>&nbsp;&nbsp;&nbsp;&nbsp;If there are no friendly Orc or Goblin Henchmen or Hired Swords within charge reach, and the warrior is armed with a missile weapon, he immediately takes a shot at the nearest friendly Orc or Goblin Henchman or Hired Sword. If none of the above applies, or if the nearest friendly model is an Orc Hero, the warrior behaves as if a 2-5 had been rolled on this chart. In any case, the warrior in question may take no other action this turn, though he may defend himself if attacked in hand-to-hand combat.</td></tr><tr><td style='text-align:center'><strong>2-5</strong></td><td><strong>\"Wud Yoo Say?\"</strong><br/><em>The warrior is fairly certain he heard an offensive sound from the nearest friendly Orc or Goblin, but he's not quite sure. He spends the turn hurling insults at his mate.</em><br/>&nbsp;&nbsp;&nbsp;&nbsp;He may do nothing else this turn, though he may defend himself if attacked in hand-to-hand combat.</td></tr><tr><td style='text-align:center'><strong>6</strong></td><td><strong>\"I'll Show Yer!\"</strong><br/><em>The warrior imagines that his mates are laughing about him behind his back and calling him silly names. To show them up he decides that he'll be the first one to the scrap!</em><br/>&nbsp;&nbsp;&nbsp;&nbsp;This model must move as quickly as possible towards the nearest enemy model, charging into combat if possible. If there are no enemy models within sight, the Orc or Goblin warrior may make a normal move immediately. This move is in addition to his regular move in the Movement phase, so he may therefore move twice in a single turn if you wish.<br/>&nbsp;&nbsp;&nbsp;&nbsp;If the extra move takes the Orc or Goblin warrior within charge reach of an enemy model, the warrior must charge into close combat during his regular movement.</td></tr></tbody></table>"
+    }
+  ]
+},
+
+
+
+
+
+{
+    "type": "rules",
+    "name": "Combat Skills",
+    "tags": ["combat skills", "combat"],
+    "relatedTerms": [
+      {
+        "link": "/docs/campaigns/skills#strike-to-injure"
+      }
+    ],
+    "Rules": [
+           {
+        "rulename": "",
+        "ruleAbbreviated": "<em>Can choose from the following list when a skill advancement is rolled:</em>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Strike to Injure",
+        "ruleAbbreviated": "Add +1 to all injury rolls caused by the model in hand-to-hand combat.",
+        "ruleFull": "The warrior can land his blows with uncanny accuracy. Add +1 to all injury rolls caused by the model in hand-to-hand combat."
+      },
+      {
+        "rulename": "Combat Master",
+        "ruleAbbreviated": "Gains extra Attack when fighting multiple enemies and immune to 'All Alone' tests.",
+        "ruleFull": "The warrior is able to take on several opponents at once. If he fights against more than one enemy at a time, he gains an extra Attack in each hand-to-hand combat phase as long as he is fighting two or more enemy models. In addition, the warrior is immune to 'All Alone' tests."
+      },
+      {
+        "rulename": "Weapons Training",
+        "ruleAbbreviated": "Can use any hand-to-hand combat weapon, not just equipment options.",
+        "ruleFull": "A warrior with this skill is adept at using many different weapons. He may use any hand-to-hand combat weapon he comes across, not just those in his equipment options."
+      },
+      {
+        "rulename": "Web of Steel",
+        "ruleAbbreviated": "Gains +1 to all rolls on Critical Hit tables in hand-to-hand combat.",
+        "ruleFull": "Few can match the ability of this warrior. He fights with great skill, weaving a web of steel around him. The model gains +1 to all his rolls on Critical Hit tables in hand-to-hand combat."
+      },
+      {
+        "rulename": "Expert Swordsman",
+        "ruleAbbreviated": "May re-roll all missed attacks when charging with a sword.",
+        "ruleFull": "This warrior has been expertly taught in the art of swordsmanship. He may re-roll all missed attacks if he is using a sword in the hand-to-hand phase of the turn that he charges. Note that this only applies when they are armed with normal swords or weeping blades, and not with doublehanded swords or any other weapons."
+      },
+      {
+        "rulename": "Step Aside",
+        "ruleAbbreviated": "May make additional 5+ saving throw against wounds in close combat.",
+        "ruleFull": "The warrior has a natural ability to avoid injury in combat. Each time he suffers a wound in close combat he may make an additional saving throw of 5+. This save is never modified and is taken after all other armour saves."
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Shooting Skills",
+    "source": "",
+    "caveat": "",
+    "tags": [
+      "shooting skills", "shooting"
+    ],
+    "relatedTerms": [
+      {
+        "link": "/docs/campaigns/skills#quick-shot"
+      }
+    ],
+    "Rules": [
+           {
+        "rulename": "",
+        "ruleAbbreviated": "<em>Can choose from the following list when a skill advancement is rolled:</em>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Quick Shot",
+        "ruleAbbreviated": "May shoot twice per turn with bow or crossbow.",
+        "ruleFull": "The warrior may shoot twice per turn with a bow or crossbow (but not a crossbow pistol)."
+      },
+      {
+        "rulename": "Pistolier",
+        "ruleAbbreviated": "May fire twice with brace of pistols or fire reloaded pistol same turn.",
+        "ruleFull": "The warrior is an expert at using all kinds of pistols. If he is equipped with a brace of pistols of any type (including crossbow pistols), he may fire twice in the Shooting phase (though note that normal reloading rules apply). If he has a single pistol then he may fire it in the same turn it was reloaded."
+      },
+      {
+        "rulename": "Eagle Eyes",
+        "ruleAbbreviated": "Adds +6\" to range of any missile weapon.",
+        "ruleFull": "The warrior's sight is exceptionally keen. He adds +6\" to the range of any missile weapon he is using."
+      },
+      {
+        "rulename": "Weapons Expert",
+        "ruleAbbreviated": "May use any missile weapon, not just warband options.",
+        "ruleFull": "The warrior has been trained to use some of the more unusual weapons of the known world. He may use any missile weapon he comes across, not just the weapons available from his warband's list."
+      },
+      {
+        "rulename": "Nimble",
+        "ruleAbbreviated": "May move and fire with normally-stationary weapons.",
+        "ruleFull": "The warrior may move and fire with weapons that are normally only used if the firer has not moved. Note that this skill cannot be combined with the Quick Shot skill."
+      },
+      {
+        "rulename": "Trick Shooter",
+        "ruleAbbreviated": "Ignores all cover modifiers when using missile weapons.",
+        "ruleFull": "The warrior can shoot through the tiniest gap without it affecting his aim. He ignores all modifiers for cover when using missile weapons."
+      },
+      {
+        "rulename": "Hunter",
+        "ruleAbbreviated": "May fire each turn with handgun or Hochland long rifle.",
+        "ruleFull": "The warrior is an expert at getting his weapon loaded and ready. He may fire each turn with a handgun or Hochland long rifle."
+      },
+      {
+        "rulename": "Knife-Fighter",
+        "ruleAbbreviated": "May throw up to three knives/stars, dividing shots between targets.",
+        "ruleFull": "The warrior is an unrivalled expert at using throwing knives and throwing stars. He can throw a maximum of three of these missiles in his shooting phase and may divide his shots between any targets within range as he wishes. Note that this skill cannot be combined with the Quick Shot skill."
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Academic Skills",
+    "source": "",
+    "caveat": "",
+    "tags": [
+      "academic skills", "academic skill", "academic"
+    ],
+    "relatedTerms": [
+      {
+        "link": "/docs/campaigns/skills#battle-tongue"
+      }
+    ],
+    "Rules": [
+           {
+        "rulename": "",
+        "ruleAbbreviated": "<em>Can choose from the following list when a skill advancement is rolled:</em>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Battle Tongue",
+        "ruleAbbreviated": "Increases Leader ability range by 6\".",
+        "ruleFull": "This skill may only be chosen by a leader. The warrior has drilled his warband to follow short barked commands. This increases the range of his Leader ability by 6\". Note that Undead leaders may not use this skill."
+      },
+      {
+        "rulename": "Sorcery",
+        "ruleAbbreviated": "+1 to spell casting rolls.",
+        "ruleFull": "This skill may only be taken by Heroes capable of casting spells. A warrior with this skill gains +1 to his rolls to see whether he can cast spells successfully or not. Note that Sisters of Sigmar and Warrior-Priests may not use this skill."
+      },
+      {
+        "rulename": "Streetwise",
+        "ruleAbbreviated": "+2 to rare item finding rolls.",
+        "ruleFull": "A warrior with this skill has good contacts and knows where to purchase rare items. He may add +2 to the roll that determines his chances of finding such items (see the <a href=\"/docs/campaigns/trading\">Trading section</a>)."
+      },
+      {
+        "rulename": "Haggle",
+        "ruleAbbreviated": "Deduct 2D6gc from item price once per post-battle.",
+        "ruleFull": "The warrior knows all the tricks of bargaining and haggling. He may deduct 2D6 gold crowns from the price of any single item (to a minimum cost of 1gc) once per post battle sequence."
+      },
+      {
+        "rulename": "Arcane Lore",
+        "ruleAbbreviated": "May learn Lesser Magic with Tome of Magic.",
+        "ruleFull": "Witch Hunters, Sisters of Sigmar and Warrior-Priests may not have this skill. Any warrior with this skill may learn <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a> if he owns a Tome of Magic."
+      },
+      {
+        "rulename": "Wyrdstone Hunter",
+        "ruleAbbreviated": "Re-roll one dice on Exploration chart when searching ruins.",
+        "ruleFull": "The warrior has an uncanny ability to find hidden shards of wyrdstone. If a Hero with this skill is searching the ruins in the exploration phase you may re-roll one dice when rolling on the Exploration chart. The second result stands."
+      },
+      {
+        "rulename": "Warrior Wizard",
+        "ruleAbbreviated": "Can wear armour and cast spells.",
+        "ruleFull": "This skill may only be taken by spellcasters. The mental powers of the wizard allow him to wear armour and cast spells."
+      },
+      {
+        "rulename": "Scribe",
+        "ruleAbbreviated": "Create scrolls granting +2 to spell/prayer difficulty rolls.",
+        "ruleFull": "The warrior is a natural adept at writing and making scrolls. Any warrior with the ability to cast spells or use prayers may take this skill. It allows them to make a scroll before the battle and inscribe a single spell or prayer upon it that they are versed in. The scroll may be used just before they are about to cast the spell or prayer and allows the caster +2 to his difficulty roll.\n\nOnce used the scroll will crumble to dust and is useless. Scrolls may not be saved up from battle to battle if they are not used."
+      },
+      {
+        "rulename": "Mind Focus",
+        "ruleAbbreviated": "Re-roll one dice in spell/prayer difficulty roll.",
+        "ruleFull": "The warrior possesses a great strength of mind which allows him to concentrate beyond the levels of most normal men. This skill may only be taken by a warrior capable of using prayers or casting spells. When using a spell or prayer the warrior with this skill may reroll one dice roll used in the difficulty roll."
+      },
+      {
+        "rulename": "Tactician",
+        "ruleAbbreviated": "Reposition warriors after opponent setup, advance up to 12\".",
+        "ruleFull": "This skill may only be taken by a warband leader. The warrior has a great tactical mind and can often find the best positions for his warriors to meet the oncoming attack. In any scenario the warband leader may reposition his warriors after his opponent has set up and may even advance them up to 12 inch onto the board instead of 8 inch."
+      },
+      {
+        "rulename": "Hunch",
+        "ruleAbbreviated": "Position 3 warriors in ruins 12\" from enemies pre-battle.",
+        "ruleFull": "This skill may only be taken by the warband leader. The warrior has an uncanny knack of placing his men in the right place at the right time, as if he senses danger through instinct alone. In any scenario the warband leader may position up to 3 of his men capable of earning experience in any ruined building on the board that is at least 12 inch away from an enemy model and not in the enemy deployment zone."
+      },
+      {
+        "rulename": "Magical Aptitude",
+        "ruleAbbreviated": "Attempt two spells per turn with Toughness test risk.",
+        "ruleFull": "This skill may only be taken by a warrior capable of casting spells. It may not be used by Sisters of Sigmar or Warrior Priests. The warrior has a keep aptitude for magic and can push himself beyond normal limits to produce a storm of spells. The warrior may attempt to cast two spells each turn as long as he is not in hand-to-hand combat. After attempting the first spell, he must take a toughness test. If he passes he may attempt a second spell that turn or even cast the same spell twice. If he fails he must roll on the injury table immediately with no saves treating out of action results as stunned instead."
+      },
+      {
+        "rulename": "Animal Handling",
+        "ruleAbbreviated": "<p>Improves animal training; animals use handler's Leadership within 6\"; ignores stubbornness in base contact.</p>",
+        "ruleFull": "<p>This skill is highly beneficial if non-ridden animals are to be included in a warband. This skill must be taken for specific animals and may be taken multiple times for different animals. It represents knowledge of the general care and well being of the animal as well as training techniques.</p><p>A warrior with this skill has a beneficial effect on the animals under his care. If a warrior has the Animal Handling skill for a particular animal, any such animals may use his Leadership provided he is within 6\". If the warband's leader is also nearby, a player may choose which of the warriors' Leadership to use unless the animal is stupid, in which case only the handler's Leadership may be used. In addition, stubborn animals with a handler in base contact, ignore the effects of stubbornness.</p>"
+      },
+      {
+        "rulename": "Tomb Raider",
+        "ruleAbbreviated": "Re-roll one dice on Exploration chart if not out of action.",
+        "ruleFull": "The hero is experienced in traversing the underground tunnels to locate the hidden chambers. If the hero was not taken out of action and is free to explore in the Exploration phase, you may re-roll one dice on the Exploration chart. Note that this skill replaces the Wyrdstone Hunter skill in the Mordheim Rulebook."
+      },
+      {
+        "rulename": "Trap Expert",
+        "ruleAbbreviated": "Never triggers traps himself.; Can disarm traps (6+ for Simple, 8+ for Complex).; Can restore dud traps (6+ for Simple, 8+ for Complex).",
+        "ruleFull": "This Hero is able to detect traps in the tombs with relative ease. A character who possesses this skill will never set off traps himself (but may be subject to their effects if he is too close to one if it goes off).\n\nHe can attempt to disarm any traps he comes across. He must stop at the trap during his Movement phase, and may do nothing else that turn. To disarm a Simple trap, he must roll 6+ on 2D6. To disarm a Complex trap, he must roll 8+ on 2D6. If unsuccessful, he must test against his Initiative. A failed test means he has inadvertently set off the trap himself!\n\nHe is also able to restore dud traps or previously de-activated traps back into active traps. To determine what a dud trap becomes, roll a D6: 1-4: Simple, 5-6: Complex. Obviously a previously disarmed trap will revert back to what it was. If restoring a Simple trap, he must roll a 6+ on 2D6. If restoring a Complex trap, he must roll an 8+. Failure will mean that the trap bas failed to activate."
+      },
+      {
+        "rulename": "Driver",
+        "ruleAbbreviated": "Re-roll Out of Control chart results for wagons.",
+        "ruleFull": "A wagon driven by a Hero with this skill may re-roll results on the Out of Control chart. The second result must be accepted even if it is worse."
+      },
+      {
+        "rulename": "Strategist",
+        "ruleAbbreviated": "Hero misses battle to gain +1 campaign point afterward.",
+        "ruleFull": "The Hero has great strategic skills. Before each battle a Hero with this skill may decide to develop plans that further the tactical ambitions of the warband. Choosing to have this model voluntarily miss the next battle due to the Hero's pondering means the warband gains +1 campaign point after the battle.\n\nThe Hero does count for calculating warband rating as normal and determining the prices for selling wyrdstone/treasure. However, he does not count as part of the warband when taking Rout tests. Initial warband size is considered to be one model less during the battle. The Hero does not gain +1 Experience for surviving a battle since he did not take part in the fight."
+      },
+      {
+        "rulename": "Scholar",
+        "ruleAbbreviated": "Choose new spells/prayers or reduce difficulty of known one by -1.",
+        "ruleFull": "Only warriors capable of casting spells or using prayers may pick this skill. Whenever the warrior may learn a new spell or prayer through an advance, he may choose which one he learns instead of determining at random, or he may decrease the difficulty of any one spell or prayer he already knows by –1 permanently."
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Strength Skills",
+    "source": "",
+    "caveat": "",
+    "tags": [
+      "strength skills", "strength"
+    ],
+    "relatedTerms": [
+      {
+        "link": "/docs/campaigns/skills#mighty-blow"
+      }
+    ],
+    "Rules": [
+           {
+        "rulename": "",
+        "ruleAbbreviated": "<em>Can choose from the following list when a skill advancement is rolled:</em>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Mighty Blow",
+        "ruleAbbreviated": "+1 Strength bonus in close combat (excluding pistols).",
+        "ruleFull": "The warrior knows how to use his strength to maximum effect and has a +1 Strength bonus in close combat (excluding pistols). As his Strength is used for close combat weapons, the bonus applies to all such weapons."
+      },
+      {
+        "rulename": "Pit Fighter",
+        "ruleAbbreviated": "+1 to WS and +1 to Attacks when fighting inside buildings or ruins.",
+        "ruleFull": "The warrior has learned how to fight in enclosed spaces from his time in the dangerous fighting pits of the Empire. He is an expert at fighting in confined areas and adds +1 to his WS and +1 to his Attacks if he is fighting inside buildings or ruins. It's a good idea to define which bits of your terrain collection count as 'buildings or ruins' at the start of a battle to avoid confusion later."
+      },
+      {
+        "rulename": "Resilient",
+        "ruleAbbreviated": "Deduct -1 Strength from all hits against him in close combat.",
+        "ruleFull": "The warrior is covered in battle scars. Deduct -1 Strength from all hits against him in close combat. This does not affect armour save modifiers."
+      },
+      {
+        "rulename": "Fearsome",
+        "ruleAbbreviated": "Causes fear in opposing models.",
+        "ruleFull": "Such is the reputation and physique of the model that he causes fear in opposing models."
+      },
+      {
+        "rulename": "Strongman",
+        "ruleAbbreviated": "May use double-handed weapons without striking last penalty.",
+        "ruleFull": "The warrior is capable of great feats of strength. He may use a double-handed weapon without the usual penalty of always striking last. Work out order of battle as you would with other weapons."
+      },
+      {
+        "rulename": "Unstoppable Charge",
+        "ruleAbbreviated": "+1 to Weapon Skill when charging.",
+        "ruleFull": "When he charges, the warrior is almost impossible to halt. He adds +1 to his Weapon Skill when charging."
+      },
+      {
+        "rulename": "Handyman",
+        "ruleAbbreviated": "Can repair one damaged wagon wheel when stationary.",
+        "ruleFull": "The warrior is skilled in fixing minor damage on the wagon. If the wagon is stationary and has not moved during the last turn then if the warrior is in contact with the wagon, he may repair one previously damaged wheel. The Hero may do nothing else that turn and the wagon may not be moved. He can even set in a new wheel if it flew off. A wagon cannot be repaired if an enemy model is in contact with the handyman or the wagon, as the situation is far too dangerous to focus on the cart."
+      },
+      {
+        "rulename": "Beastmaster",
+        "ruleAbbreviated": "Can attempt to control animals in hand-to-hand combat via Leadership test.",
+        "ruleFull": "The Hero is able to communicate on a primal level with any beast he encounters. If the model confronts an animal (not mount!) in hand-to-hand combat, then before combat is fought he may take a Leadership test. If the test is failed combat proceeds as normal. If the test is successful the animal falls under his command. Place the models 1\" apart from each other. The player may now control the animal model. However, the beastmaster must pass a Leadership test at the beginning of his turn otherwise control over the animal is lost. The animal must always remain within 6\" of the Hero or control is lost immediately. No more than one animal can be controlled this way."
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Speed Skills",
+    "source": "",
+    "caveat": "",
+    "tags": [
+      "speed skills", "speed"
+    ],
+    "relatedTerms": [
+      {
+        "link": "/docs/campaigns/skills#speed-skill"
+      }
+    ],
+    "Rules": [
+     {
+        "rulename": "",
+        "ruleAbbreviated": "<em>Can choose from the following list when a skill advancement is rolled:</em>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Leap",
+        "ruleAbbreviated": "May leap D6\" in movement phase in addition to normal movement.",
+        "ruleFull": "The warrior may leap D6\" in the movement phase in addition to his normal movement. He may move and leap, run and leap, or charge and leap, but he can only leap once per turn.\n\nA leaping warrior may jump over opposing man-sized models, including enemies, and obstacles 1\" high, without penalty.\n\nThe leap may also be used to leap over gaps, but in this case you must commit the warrior to making the leap before rolling the dice to see how far he jumps. If he fails to make it all the way across, he falls through the gap (see Falling)."
+      },
+      {
+        "rulename": "Sprint",
+        "ruleAbbreviated": "May triple Movement rate when running or charging.",
+        "ruleFull": "The warrior may triple his Movement rate when he runs or charges, rather than doubling it as normal."
+      },
+      {
+        "rulename": "Acrobat",
+        "ruleAbbreviated": "Can fall/jump from up to 12\" with Initiative test, re-roll failed Diving Charge rolls.",
+        "ruleFull": "The warrior is incredibly supple and agile. He may fall or jump from a height of up to 12\" without taking any damage if he passes a single Initiative test, and can re-roll failed Diving Charge rolls. He can still only make a diving charge from a height of up to 6\"."
+      },
+      {
+        "rulename": "Lightning Reflexes",
+        "ruleAbbreviated": "Will 'strike first' against chargers, using Initiative to determine order.",
+        "ruleFull": "If the warrior is charged he will 'strike first' against those that charged that turn. As the charger(s) will also normally 'strike first' (for charging), the order of attack between the charger(s) and the warrior with this skill will be determined by comparing Initiative values."
+      },
+      {
+        "rulename": "Jump Up",
+        "ruleAbbreviated": "May ignore knocked down results when rolling for injuries (with exceptions).",
+        "ruleFull": "The warrior can regain his footing in an instant, springing to his feet immediately if he is knocked down. The warrior may ignore knocked down results when rolling for injuries, unless he is knocked down because of a successful save from wearing a helmet or because he has the No Pain special rule."
+      },
+      {
+        "rulename": "Dodge",
+        "ruleAbbreviated": "Avoid missile weapon hits on D6 roll of 5+.",
+        "ruleFull": "A warrior with this skill is nimble and as fast as quicksilver. He can avoid any hits from a missile weapon on a D6 roll of 5+. Note that this roll is taken against missiles as soon as a hit is scored to see whether the warrior dodges it or not, before rolling to wound, and before any effects from other skills or equipment (such as lucky charms)."
+      },
+      {
+        "rulename": "Scale Sheer Surfaces",
+        "ruleAbbreviated": "Can climb up/down twice normal Movement height without Initiative tests.",
+        "ruleFull": "A warrior with this skill can scale even the highest wall or fence with ease. He can climb up or down a height equal to twice his normal Movement, and does not need to make Initiative tests when doing so."
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Cavalry Skills",
+    "source": "",
+    "caveat": "",
+    "tags": [
+      "cavalry skills", "cavalry"
+    ],
+    "relatedTerms": [
+      {
+        "link": "/docs/optional-rules/mounted-combat/Empire%20in%20Flames#special-riding-skills"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Ride",
+        "ruleAbbreviated": "<p>Gain ability to ride a specific animal. Must learn again for each mount type.</p>",
+        "ruleFull": "<p>This skill is vital if a rider wishes to ride an animal into combat. The skill is specific to a particular type of animal and must be gained again if the warrior wishes to be able to ride a different kind of animal. For instance, a warrior with Ride Horse would need to gain the skill Ride Warhorse if he wanted to be able to ride such a spirited mount.</p>"
+      },
+      {
+        "rulename": "Cavalry Commander",
+        "ruleAbbreviated": "<p>Leader on mount extends Leadership range by +6\".</p>",
+        "ruleFull": "<p>Mounted heroes are an impressive sight. With a good vantage point, they can see (and be seen) far more readily than if they were on foot. If the warband's leader has this skill and is mounted, he may add an extra 6\" to the distance within which other warriors in the warband may use his Leadership. This is in addition to any other bonuses that increase the range of the leader's influence.</p>"
+      },
+      {
+        "rulename": "Trick Riding",
+        "ruleAbbreviated": "<p>Missile attacks -1 to hit rider; Initiative test or roll on Whoa Boy! table.</p>",
+        "ruleFull": "<p>By athletically hanging off the side of his mount, a rider makes himself harder to hit. While a rider is trick riding all missile attacks against him suffer -1 to hit in addition to other modifiers. The rider must declare that he is trick riding before moving. He must then make an Initiative test and, if successful, may move full distance. If he fails he loses control of his mount and must roll immediately on the Whoa Boy! table. This skill may not be used with heavy armour because of the agility required. In addition, trick riding requires both hands, so the model may not use a shield or missile weapons whilst using the skill. Warriors without <em>Ride</em> may not use this skill.</p>"
+      },
+      {
+        "rulename": "Combat Riding",
+        "ruleAbbreviated": "<p>May make extra S4 attack when charging unmounted opponents.</p>",
+        "ruleFull": "<p>The rider has trained his mount to use its bulk to trample any unmounted enemy before him. A warrior with this skill may make a single additional S4 attack when charging an unmounted opponent. In subsequent rounds of combat, or if charged by enemy warriors, the mounted warrior fights as normal.</p>"
+      },
+      {
+        "rulename": "Evade",
+        "ruleAbbreviated": "<p>Always strikes first vs dismounted; if equal Initiative, higher XP strikes first.</p>",
+        "ruleFull": "<p>The rider has trained his mount to swerve from side to side in combat, wrong-footing his opponent. A rider with this skill always strikes first in close combat against dismounted opponents. When charged by an opponent, or otherwise fighting an enemy also entitled to strike first, attacks are carried out in order of Initiative. If Initiative is equal, the model with greater experience strikes first. Warriors without <em>Ride</em> may not use this skill.</p>"
+      },
+      {
+        "rulename": "Running Dismount",
+        "ruleAbbreviated": "<p>May dismount at mount’s move distance, counts as Diving Charge if engaging enemy.</p>",
+        "ruleFull": "<p>The rider is able to dismount from his mount at speed. The rider may ride up to the mount's normal move distance and then dismount immediately. No further movement or shooting is possible. This skill may be used to move into contact with the enemy, counting as a Diving Charge from a height of 2\" - all the usual rules for diving charges apply. Note that the rider then counts as dismounted, gaining no further assistance from his mount.</p>"
+      },
+      {
+        "rulename": "Athletic Mount",
+        "ruleAbbreviated": "<p>May leap onto mount within half Move and immediately run or charge.</p>",
+        "ruleFull": "<p>Without breaking stride, the warrior is able to leap onto the back of his mount and immediately spur it into a full gallop. Once the warrior is on board, the mount may make a run or charge move as normal. The warrior must be within half his full move distance of his steed to use this skill.</p>"
+      },
+      {
+        "rulename": "Horse Archer",
+        "ruleAbbreviated": "<p>360° arc shooting while mounted, -1 to hit if running.</p>",
+        "ruleFull": "<p>The rider has learned the skills of the steppe nomads and can shoot from a running mount. The rider may shoot in a 360 degree arc whilst mounted, and may shoot while his mount is running; however the shot suffers a -1 to hit penalty in addition to all other normal modifiers. Warriors without <em>Ride</em> may not use this skill.</p>"
+      },
+      {
+        "rulename": "Mounted Combat Master",
+        "ruleAbbreviated": "<p>Mounted vs mounted: wounded enemy adds +1 to Whoa Boy! table roll.</p>",
+        "ruleFull": "<p>The rider is especially skilled at combat against a mounted opponent. If the model is fighting mounted against a mounted opponent and successfully wounds the enemy, the wounded model must add +1 to his roll on the Whoa Boy! table. Warriors without <em>Ride</em> may not use this skill.</p>"
+      }
+    ]
+  },
+  {
+    "type": "rules",
+    "name": "Special Skills",
+    "source": "",
+    "caveat": "",
+    "tags": [
+      "special skills", "special"
+    ],
+    "relatedTerms": [
+      {
+        "link": ""
+      }
+    ],
+    "Rules": [
+     {
+        "rulename": "",
+        "ruleAbbreviated": "See the warband page for special skills",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "equipment",
+    "name": "Ball Shot",
+    "tags": ["ball shot"],
+    "relatedTerms": [{"link": "/docs/weapons-armour/blackpowder#swivel-gun"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p><strong>Maximum Range:</strong> 36\";<br /><strong>Strength:</strong> 5;<br /><strong>Special Rule:</strong> Armour Save -2, Concussion.</p><p><strong>Concussion:</strong>Treat any resulting Injury Rolls of 2-4 as a Stunned result.</p>",
+        "ruleFull": "<p><strong>Maximum Range:</strong> 36\";<br /><strong>Strength:</strong> 5;<br /><strong>Special Rule:</strong> Armour Save -2, Concussion.</p><p><strong>Concussion:</strong> The impact of the heavy lead projectile is enough to rattle even the hardiest warrior. Treat any resulting Injury Rolls of 2-4 as a Stunned result.</p>"
+      }
+    ]
+  },
+    {
+    "type": "equipment",
+    "name": "Chain Shot",
+    "tags": ["chain shot"],
+    "relatedTerms": [{"link": "/docs/weapons-armour/blackpowder#swivel-gun"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p><strong>Maximum Range:</strong> 24\";<br /><strong>Strength:</strong> 4;<br /><strong>Special Rule:</strong> Armour Save -1, All Wrapped Up!</p><p><strong>All Wrapped Up!</strong> Enemy hit by Chain Shot which are not wounded, are Knocked Down on a roll of 4+, even if they normally can never be Knocked Down.</p>",
+        "ruleFull": "<p><strong>Maximum Range:</strong> 24\";<br /><strong>Strength:</strong> 4;<br /><strong>Special Rule:</strong> Armour Save -1, All Wrapped Up!</p><p><strong>All Wrapped Up!</strong> Enemy hit by Chain Shot which are not wounded, are Knocked Down on a roll of 4+, even if they normally can never be Knocked Down.</p>"
+      }
+    ]
+  },
+ {
+    "type": "equipment",
+    "name": "Grape Shot",
+    "tags": ["grape shot"],
+    "relatedTerms": [{"link": "/docs/weapons-armour/blackpowder#swivel-gun"}],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p><strong>Maximum Range:</strong> 24\";<br /><strong>Strength:</strong> 3;<br /><strong>Special Rule:</strong> It's Everywhere!</p><p><strong>It's Everywhere!</strong> If a hit is scored, D6 other enemy models within 4\" of the target and also in Line of Sight will automatically take a single hit. If the original target was in the open, no hits can be applied to models in cover though (only if the original target was in cover can hits go to models in cover as well). The closest enemy model to the target must take the first hit, then the next closest, and so on. Models in <Tooltip>Hiding</Tooltip> will also count towards being close to the target, and can be hit as well. There is no Armour Save modifier from Grape Shot hits. Pirates know to duck out of the way when they hear a Swivel Gun going off, and thus are never hit by friendly Grape Shot.</p>",
+        "ruleFull": "<p><strong>Maximum Range:</strong> 24\";<br /><strong>Strength:</strong> 3;<br /><strong>Special Rule:</strong> It's Everywhere!</p><p><strong>It's Everywhere!</strong> If a hit is scored, D6 other enemy models within 4\" of the target and also in Line of Sight will automatically take a single hit. If the original target was in the open, no hits can be applied to models in cover though (only if the original target was in cover can hits go to models in cover as well). The closest enemy model to the target must take the first hit, then the next closest, and so on. Models in <Tooltip>Hiding</Tooltip> will also count towards being close to the target, and can be hit as well. There is no Armour Save modifier from Grape Shot hits. Pirates know to duck out of the way when they hear a Swivel Gun going off, and thus are never hit by friendly Grape Shot.</p>"
+      }
+    ]
+  }
+
+
+
+
+
+
+
+
+
+
+]
+
+
+
+
+
+
+

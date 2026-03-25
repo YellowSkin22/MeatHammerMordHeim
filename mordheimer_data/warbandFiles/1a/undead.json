@@ -1,0 +1,450 @@
+{
+"id": "undead",
+"name": "The Undead",
+"grade": "1a",
+"campaigngrade": "1a",
+"source": "Mordheim Rulebook",
+"sourceLink": "https://broheim.net/downloads/warbands/official/Undead.pdf",
+"setting": "Mordheim",
+"author": "",
+"version": "",
+"lore": "<em>Count Vlad von Carstein and his wife Isabella have ruled the province of Sylvania for as long as anyone can remember – peasants whisper of some dark secret, Witch Hunters revile them, and the Priests of Sigmar shun their court. Indeed, Sylvania has the most dire reputation of all the provinces of the Empire. Few men sent to spy on the rulers of Sylvania have ever returned from those dark Sylvanian forests, and then rarely with their sanity intact.</em><br /><br /><em>In the dimly-lit chamber of the Drakenhof castle, on a throne of black obsidian, sits Vlad von Carstein, the ruler of Sylvania. He waits in shadows, having set himself apart from the politics and bickering of the Empire. For he holds a terrible secret: he, and all the ruling aristocracy of his province are Vampires, undying monsters from beyond the grave. Here he patiently waits, drinking the blood of maidens from gold goblets.</em><br /><br /><em>For many long years Vlad has gathered his strength and mustered his Undead legions in secrecy. One day soon he will march from the forests of Sylvania at the head of an army of restless dead. The pieces of magic stone that lie scattered among the ruins of Mordheim can give the Count the power to challenge the nobles of the Empire and enslave the men of the Old World.</em><br /><br /><em>Wyrdstone holds enough captured magical energy to unleash a great spell of doom to rival that of Nagash the Black. If the Count is successful, he will raise all the dead between the Worlds Edge Mountains and the borders of Stirland, and go to war against the divided rulers of the Empire. His plans laid out, Vlad sends his thralls, the immortal Vampires, to do his bidding.</em><br /><br /><em>During dark, moonless nights, black coaches arrive at the gates of Mordheim carrying coffins. Ghouls scuttle from their hiding places to greet them, and corpses are stirred by a command which the living cannot hear. Following the commands of the Vampire, they hunt for shards of wyrdstone.</em><br /><br /><em>The night belongs to the Undead, and in Mordheim it is always night.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "An Undead warband must include a minimum of three models. You have 500 gold crowns to recruit your warband. The maximum number of warriors in the warband may never exceed 15."
+},
+"specialSkills": false,
+"specialRules": [],
+"equipmentLists": [
+{
+"id": "undead-equipment",
+"title": "Undead Equipment",
+"hidetitle": true,
+"caveat": "The following lists are used by Undead warbands to pick their equipment.",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "halberd",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "short bow",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "heavy armour",
+"alias": "",
+"cost": {
+"cost": 50
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "vampire",
+"type": "hero",
+"name": "Vampire",
+"plural": "Vampires",
+"race": "undead",
+"flavour": "Vampires lead the Undead in their search for the magical stones that will give their master the power to conquer the Empire.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 110,
+"startingXp": 20,
+"statblock": {
+"m": 6,
+"ws": 4,
+"bs": 4,
+"s": 4,
+"t": 4,
+"w": 2,
+"i": 5,
+"a": 2,
+"ld": 8
+},
+"equipmentLists": [
+"undead-equipment"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any models in the warband within 6\" of the Vampire may use his Leadership instead of their own."
+},
+{
+
+"flavour": "",
+"rulename": "Cause Fear",
+"ruleFull": "Vampires are terrifying Undead creatures and therefore cause fear."
+},
+{
+
+"flavour": "",
+"rulename": "Immune to Psychology",
+"ruleFull": "Vampires are not affected by psychology (such as fear) and never leave combat."
+},
+{
+
+"flavour": "",
+"rulename": "Immune to Poison",
+"ruleFull": "Vampires are not affected by any poison."
+},
+{
+
+"flavour": "",
+"rulename": "No Pain",
+"ruleFull": "Vampires treat a ‘stunned’ result on the <a href=\"/docs/rules/wounds-and-injuries#injuries\">Injury chart</a> as ‘knocked down’."
+}
+],
+"admonitions": ""
+},
+{
+"id": "necromancer",
+"type": "hero",
+"name": "Necromancer",
+"plural": "Necromancers",
+"race": "human",
+"flavour": "Necromancers are evil wizards, studying the corrupt art of Necromancy. Many of them are acolytes and servants of Vlad von Carstein, and follow the agents of their master to the city of the Damned. Others are recruited from amongst wizards and warlocks who have come under the suspicion of the various agents of Sigmar and have fled to Mordheim to avoid persecution.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 35,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"undead-equipment"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": true,
+"strength": false,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+
+"flavour": "",
+"rulename": "Wizard",
+"ruleFull": "Necromancers are wizards and so are able to use <a href=\"/docs/magic/necromancy\">Necromantic</a> magic."
+}
+],
+"admonitions": ""
+},
+{
+"id": "dregs",
+"type": "hero",
+"name": "Dregs",
+"plural": "Dregs",
+"race": "human",
+"flavour": "Dregs are the most miserable human survivors of the demise of Mordheim. They are deformed and rejected individuals, shunned even by the other men and women who still live in the ruins and catacombs of the city.",
+"minQty": 0,
+"maxQty": 3,
+"costGc": 20,
+"startingXp": 0,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"undead-equipment"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": false
+},
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "ghouls",
+"type": "henchman",
+"name": "Ghouls",
+"race": "ghoul",
+"plural": "Ghouls",
+"flavour": "Ghouls are the descendants of evil and insane men who ate the flesh of the dead. When the lean and hungry times of famine come upon the Old World, the most depraved and destitute took to feasting on corpses to survive.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 40,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 4,
+"w": 1,
+"i": 3,
+"a": 2,
+"ld": 5
+},
+"equipmentLists": [],
+"specialRules": [
+{
+
+"flavour": "",
+"rulename": "Cause Fear",
+"ruleFull": "Ghouls are twisted and repulsive creatures and therefore cause fear."
+}
+],
+"admonitions": ""
+},
+{
+"id": "dire-wolves",
+"type": "henchman",
+"name": "Dire wolves",
+"plural": "Dire wolves",
+"flavour": "Dire Wolves are slavering Undead hounds, the animated remains of the giant wolves of the Worlds Edge Mountains. Their chilling howls can strike fear into the hearts of even the bravest warriors or most ruthless Dwarf mercenaries. They prowl the streets of Mordheim like shadows, and many men have died with the cold jaws of a Dire Wolf around their neck.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"minQty": 0,
+"maxQty": 5,
+"costGc": 50,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 9,
+"ws": 3,
+"bs": 0,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 4
+},
+"equipmentLists": [],
+"specialRules": [
+{
+
+"flavour": "",
+"rulename": "Charge",
+"ruleFull": "Dire Wolves are slavering creatures that overpower their opponents when they charge. Dire Wolves fight with 2 attacks instead of 1 during the turn they charge."
+},
+{
+
+"flavour": "",
+"rulename": "May not Run",
+"ruleFull": "Dire Wolves are slow to react and may not run (but may charge normally)."
+},
+{
+
+"flavour": "",
+"rulename": "Cause Fear",
+"ruleFull": "Dire Wolves are terrifying Undead creatures and therefore cause fear."
+},
+{
+
+"flavour": "",
+"rulename": "Immune to Psychology",
+"ruleFull": "Dire Wolves are not affected by psychology and never leave combat."
+},
+{
+
+"flavour": "",
+"rulename": "Immune to Poison",
+"ruleFull": "Dire Wolves are not affected by any poison."
+},
+{
+
+"flavour": "",
+"rulename": "Unliving",
+"ruleFull": "Dire Wolves do not gain experience. You can’t teach an old dog new tricks!"
+},
+{
+
+"flavour": "",
+"rulename": "No Pain",
+"ruleFull": "Dire Wolves treat a ‘stunned’ result on the <a href=\"/docs/rules/wounds-and-injuries#injuries\">Injury chart</a> as ‘knocked down’."
+}
+],
+"admonitions": ""
+},
+{
+"id": "zombies",
+"type": "henchman",
+"name": "Zombies",
+"plural": "Zombies",
+"flavour": "Zombies are the most common of the Undead: creatures animated by the will of their Necromantic masters.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 15,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 0,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 1,
+"a": 1,
+"ld": 5
+},
+"equipmentLists": [],
+"specialRules": [
+{
+
+"flavour": "",
+"rulename": "Cause Fear",
+"ruleFull": "Zombies are terrifying Undead creatures and therefore cause fear."
+},
+{
+
+"flavour": "",
+"rulename": "May not run",
+"ruleFull": "Zombies are slow Undead creatures and may not run (but may charge normally)."
+},
+{
+
+"flavour": "",
+"rulename": "Immune to Psychology",
+"ruleFull": "Zombies are not affected by psychology and never leave combat."
+},
+{
+
+"flavour": "",
+"rulename": "Immune to Poison",
+"ruleFull": "Zombies are not affected by any poison."
+},
+{
+
+"flavour": "",
+"rulename": "No Pain",
+"ruleFull": "Zombies treat a stunned result on the Injury chart as knocked down."
+},
+{
+
+"flavour": "",
+"rulename": "No Brain",
+"ruleFull": "Zombies never gain experience. They do not learn from their mistakes. What did you expect?"
+}
+],
+"admonitions": ""
+}
+]
+}

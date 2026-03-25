@@ -1,0 +1,373 @@
+{
+  "id": "beastmen-raiders",
+  "name": "Beastmen Raiders",
+  "grade": "1a",
+  "campaigngrade": "1a",
+  "source": "Empire in Flames",
+  "sourceLink": "https://broheim.net/downloads/warbands/unofficial/Beastmen%2C%20Errata%27d.pdf",
+  "setting": "Empire in Flames",
+  "author": "",
+  "version": "",
+  "lore": "<em>The Beastmen are brutish, wild and unnatural creatures that live in the deep forests. Anyone travelling through this untamed wilderness risks being attacked by these unpredictable raiders. Many of those who dwell within the forests around the outskirts of Mordheim claim that these vile creatures of Chaos outnumber mankind, though such statements are impossible to prove, for the Beastmen build no cities and do not create any structured form of society as such. Order and organisation are alien and hated by them, and they roam where they will, pillaging and killing for whatever they have need or want for. They willingly turn on each other, picking on the weakest amongst them for food and fun.</em><br /><br /><em>The Beastmen naturally form into roaming warbands, though whether they do so consciously or merely instinctively is unknown. A small warband is able to move swiftly through the wilderness unnoticed, and can cover hundreds of miles each season as they travel where they will. They are led by the strongest and most ferocious of their kind, and if ever one within the warband senses a weakness in their leader, they will turn on him in a brutish leadership challenge that can only result in one of the two being killed and consumed by the victor. Literally thousands of these small warbands infest the dark forests of the Old World, preying upon travellers and farmsteads.</em><br /><br /><em>A Beastmen warband attacks without warning, and villagers, merchants and travellers live in constant fear of ambush from these forest denizens. They try to prepare themselves for such an event, and often desperately appeal to the nobles to scour the forests with their State troops – however, at such a time of political upheaval, the nobles have far more pressing concerns than the pleas of low-born villagers. Forced to fend for themselves, terrified villagers hack down great swathes of the forest around their settlements, and sometimes hire the services of mercenaries to protect them, barricading themselves indoors when they hear rumours of a marauding band within the area. Nevertheless, purges of the forest are nearly always hopeless, for the Beastmen warbands generally move far away from an area they have struck well before organised retaliation can be mounted.</em><br /><br /><em>The more isolated farms and villages are most at risk from attack, being far from any aid. Frequently, travellers will discover buildings and farms burnt to the ground, cattle butchered and lying where they were cut down. Full of malevolence, Beastmen take particular delight in tearing down the carefully constructed and ordered structures of men. They smash down fences and rip buildings down to rubble, allowing them to be reclaimed by the forests. They maliciously soil and blight painstakingly planted crops, and will tear the throats from newborn lambs merely for sport.</em><br /><br /><em>Beastmen warbands often form temporary encampments, from which to raid the surrounding areas. These are crude things, usually little more than a place to store any plundered loot and food. They may include roughly staked out pens for their massive war hounds or for holding captives – both are taunted and starved for no other reason than it is in the Beastmens nature to behave so. Typically, a warband will remain at this encampment until it makes one sizeable raid, whereupon the Beastman chief will move his camp to another area. These encampments are often positioned nearby roads and settlements, for such areas are ripe for plunder. The Beastmen are a constant threat, and even if travellers are lucky enough not to encounter them, their presence can always be felt, watching and waiting in the twisted shadows amongst the dark trees. None can predict their movements, and many live in constant fear of their attacks.</em><br /><br /><hr /><br /><br /><em>Beastmen are brutish creatures, the Children of Chaos and Old Night. They roam the great forests of the Old World, and are amongst the most bitter enemies of Mankind. The raging power of Chaos has given them a ferocious vitality which makes them shrug off ghastly wounds and carry on fighting regardless of the consequences. Even the Orcs are comparatively vulnerable to damage compared to the awesome vitality of the Beastmen.</em><br /><br /><em>Beastmen are a crossbreed between men and animals, usually resulting in the horned head of a goat, though many other variations are also known to exist. The Beastmen are divided into to two distinct breeds: Ungors, who are more numerous, twisted creatures that combine the worst qualities of man and beast, and Bestigors, a giant breed of Beastmen, a mix between some powerful animal and man.</em><br /><br /><em>The Ungor are smaller Beastmen, who cannot compete with Bestigors in strength and power. They may have one horn or many, but these won’t be recognised as those of goat.</em><br /><br /><em>Bray Shaman are very special Beastmen and are revered by all Beastmen, for they are the prophets and servants of Chaos Powers.</em><br /><br /><em>Each warband of Beastmen includes a mix of some Bestigor, Gor warriors and Ungor who are the mainstay of the tribes.</em><br /><br /><em>Seven great Herdstones stand hidden in the forests surrounding the city of Mordheim. From there the Beastmen warbands come to raid the city: Warherd of Thulak, Headtakers of Gorlord Zharak, the Horned Ones of Krazak Gore, and many others.</em><br /><br /><em>The shards of the meteorite are seen as holy objects, which can be sold to the powerful Beastlords and revered Shamans in exchange for new weapons and services of warriors.</em><br /><br /><em>For the tribes of Beastmen the battles fought in Mordheim are part of a great religious war, an effort to bring down the civilisation of man which offends the Chaos gods. After the taint of Man has been wiped from the face of the earth then the Beastmen shall inherit.</em><br /><br /><em>Appearance: Beastmen Bestigor stand some six-seven feet tall, and their heavily muscled bodies are covered with fur. Ungor are lesser Beastmen, no larger than Humans, but their tough bodies and vicious tempers easily make them a match to any Human warrior.</em><br /><br /><em>Beastmen wear little clothing, but often dress in the fur of their defeated rivals. They usually carry the skulls of their vanquished enemies as these are thought to bring good luck. While most Beastmen have dark brown skin and fur, black-furred or even albino Beastmen are not unknown.</em><br /><br /><em>Beastmen wear heavy armlets and necklaces which serve as armour as well as decoration.</em><br /><br /><em>Apart from the most primitive clubs and wooden shields, the Beastmen make few weapons. It is not the nature of Chaos to create, but to destroy.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "A Beastmen warband must include a minimum of 3 models. You have 500 Gold Crowns which you can use to recruit your initial warband. The maximum number of warriors in the warband is 15, though some buildings in the warband’s encampment may increase this."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "rulename": "Animals",
+      "flavour": "",
+      "ruleFull": "Beastmen are fearsome creatures of Chaos that do not interact with other races other than in war. A Beastmen warband may never hire any Hired Swords unless specifically stated with the Hired Sword."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "beastmen-equipment",
+      "title": "Beastmen Equipment List",
+      "hidetitle": true,
+      "caveat": "The following lists are used by Beastman warbands to pick their weapons:",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "Battle Axe",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "ungor-equipment",
+      "title": "Ungor Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "Battle Axe",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "beastmen-chieftain",
+      "type": "hero",
+      "name": "Beastmen Chieftain",
+      "plural": "Beastmen Chieftains",
+      "race": "other beastmen",
+      "flavour": "Beastmen Shamans are prophets of the Dark Gods, and the most respected of all the Beastmen.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 65,
+      "startingXp": 20,
+      "statblock": { "m": 5, "ws": 4, "bs": 3, "s": 4, "t": 4, "w": 1, "i": 4, "a": 1, "ld": 7 },
+      "equipmentLists": ["beastmen-equipment"],
+      "skillAccess": { "combat": true, "shooting": false, "academic": false, "strength": true, "speed": true, "special": true },
+      "specialRules": [
+        {
+          
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any Warrior within 6\" of the Beastman Chieftain may use his Leadership characteristic when taking Leadership tests."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "beastmen-shaman",
+      "type": "hero",
+      "name": "Beastmen Shaman",
+      "plural": "Beastmen Shamans",
+      "race": "other beastmen",
+      "flavour": "Beastmen Shamans are prophets of the Dark Gods, and the most respected of all the Beastmen.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 45,
+      "startingXp": 11,
+      "statblock": { "m": 5, "ws": 4, "bs": 3, "s": 3, "t": 4, "w": 1, "i": 3, "a": 1, "ld": 6 },
+      "equipmentLists": ["beastmen-equipment"],
+      "skillAccess": { "combat": true, "shooting": false, "academic": false, "strength": false, "speed": true, "special": true },
+      "specialRules": [
+        {
+          
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "A Beastmen Shaman is a Wizard and may use <a href=\"/docs/magic/chaos-rituals\">Chaos Rituals</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "bestigors",
+      "type": "hero",
+      "name": "Bestigors",
+      "plural": "Bestigors",
+      "race": "other beastmen",
+      "flavour": "Bestigors are the largest type of Beastmen, the great horned warriors of the Beastmen warbands. They are massive creatures with an inhuman resistance of pain.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 45,
+      "startingXp": 8,
+      "statblock": { "m": 5, "ws": 4, "bs": 3, "s": 4, "t": 4, "w": 1, "i": 3, "a": 1, "ld": 7 },
+      "equipmentLists": ["beastmen-equipment"],
+      "skillAccess": { "combat": true, "shooting": false, "academic": false, "strength": true, "speed": false, "special": true },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "centigor",
+      "type": "hero",
+      "name": "Centigor",
+      "plural": "Centigors",
+      "race": "centigor",
+      "flavour": "A Centigor is a disturbing cross between a horse or oxen and Beastman. Being quadruped grants them great strength and speed whilst their humanoid upper torsos allow them to wield weapons. These beastcentaurs are powerful creatures but they are not particularly agile or dexterous.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 80,
+      "startingXp": 8,
+      "statblock": { "m": 8, "ws": 4, "bs": 3, "s": 4, "t": 4, "w": 1, "i": 2, "a": "1(2)", "ld": 7 },
+      "equipmentLists": ["beastmen-equipment"],
+      "skillAccess": { "combat": true, "shooting": false, "academic": false, "strength": true, "speed": false, "special": true },
+      "specialRules": [
+        {
+          
+          "flavour": "",
+          "rulename": "Drunken",
+          "ruleFull": "Centigor are inclined to drink vast quantities of noxious beer and looted wine and spirits before battle, working themselves up into a drunken frenzy. Roll 1D6 at the start of each turn. On a roll of 1, they must test for stupidity that turn. On a roll of 2-5 nothing happens and on the roll of a 6 they become subject to frenzy for that turn. Whilst subject to either stupidity or frenzy, they are immune to all other forms of psychology."
+        },
+        {
+          
+          "flavour": "",
+          "rulename": "Woodland Dwelling",
+          "ruleFull": "Centigors are creatures of the deep, dark forests. They suffer no movement penalties for moving through wooded areas."
+        },
+        {
+          
+          "flavour": "",
+          "rulename": "Trample",
+          "ruleFull": "As well as their weapons, Centigors use their hooves and sheer size to crush their enemies. This counts as an additional attack, which does not benefit from weapon bonuses or penalties..."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "ungor",
+      "type": "henchman",
+      "name": "Ungor",
+      "race": "ungor",
+      "plural": "Ungor",
+      "flavour": "Ungor are the most numerous of the Beastmen. They are small, spiteful creatures, but dangerous in large masses.",
+      "groupSize": { "min": 1, "max": 5 },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": { "m": 5, "ws": 3, "bs": 3, "s": 3, "t": 3, "w": 1, "i": 3, "a": 1, "ld": 6 },
+      "equipmentLists": ["ungor-equipment"],
+      "specialRules": [
+        {
+          
+          "flavour": "",
+          "rulename": "Lowest of the Low",
+          "ruleFull": "Ungor are on the lowest rung of Beastmen society and regardless of how much Experience they accrue they will never acquire a position of authority. If an Ungor rolls ‘That lad’s got talent’ it must be re-rolled."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "gor",
+      "type": "henchman",
+      "name": "Gor",
+      "plural": "Gor",
+      "race": "other beastmen",
+      "flavour": "Gor are nearly as numerous as Ungor but are larger and more brutish.",
+      "groupSize": { "min": 1, "max": 5 },
+      "minQty": 0,
+      "maxQty": 5,
+      "costGc": 35,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": { "m": 5, "ws": 4, "bs": 3, "s": 3, "t": 4, "w": 1, "i": 3, "a": 1, "ld": 6 },
+      "equipmentLists": ["beastmen-equipment"],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "warhounds-of-chaos",
+      "type": "henchman",
+      "name": "Warhounds of Chaos",
+      "plural": "Warhounds of Chaos",
+      "flavour": "Chaos Hounds are titanic, mastiff-like creatures which are insanely dangerous in combat.",
+      "groupSize": { "min": 1, "max": 5 },
+      "minQty": 0,
+      "maxQty": 5,
+      "costGc": 15,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": { "m": 7, "ws": 4, "bs": 0, "s": 4, "t": 3, "w": 1, "i": 3, "a": 1, "ld": 5 },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          
+          "flavour": "",
+          "rulename": "Animals",
+          "ruleFull": "Chaos Hounds are animals and never gain Experience."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "minotaur",
+      "type": "henchman",
+      "name": "Minotaur",
+      "plural": "Minotaurs",
+      "flavour": "Minotaurs are gigantic, bull-headed Beastmen. Fearsome and powerful, any Beastmen Chief will try to recruit a Minotaur into his warband if possible.",
+      "groupSize": { "min": 1, "max": 1 },
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 200,
+      "gainExp": true,
+      "promotable": false,
+      "statblock": { "m": 6, "ws": 4, "bs": 3, "s": 4, "t": 4, "w": 3, "i": 4, "a": 3, "ld": 8 },
+      "equipmentLists": ["beastmen-equipment"],
+      "specialRules": [
+        {
+          
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "Minotaurs are huge, bellowing monsters and cause fear."
+        },
+        {
+          
+          "flavour": "",
+          "rulename": "Bloodgreed",
+          "ruleFull": "If a Minotaur puts all of its enemies out of action in hand-to-hand combat, it becomes frenzied on a D6 roll of 4+."
+        },
+        {
+          
+          "flavour": "",
+          "rulename": "Animal",
+          "ruleFull": "A Minotaur is far more bestial than its Beastmen brethren and, although it may gain Experience, it may never become a Hero."
+        },
+        {
+          
+          "flavour": "",
+          "rulename": "Large Target",
+          "ruleFull": "Minotaurs are Large Targets as defined in the shooting rules."
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}

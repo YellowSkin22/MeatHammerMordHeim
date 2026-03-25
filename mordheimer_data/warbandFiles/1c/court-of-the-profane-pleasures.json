@@ -1,0 +1,674 @@
+{
+"id": "court-of-the-profane-pleasures",
+"name": "Court of the Profane Pleasures",
+"grade": "1c",
+"campaigngrade": "1c",
+"source": "Tuomas Pirinen",
+"sourceLink": "[https://broheim.net/downloads/warbands/experimental/Court%20of%20Profane%20Pleasures.pdf](https://broheim.net/downloads/warbands/experimental/Court%20of%20Profane%20Pleasures.pdf)",
+"setting": "Mordheim",
+"author": "Tuomas Pirinen",
+"version": "",
+"lore": "<em>When the Shadowlord demanded fealty from the hidden Chaos Cultists of Mordheim, most bend their knee willingly and eagerly. However, within the upper echelons of the Ostermark’s nobility there are those who were corrupted by the Lord of Pleasure long before the coming of the Comet. Once the Cataclysm hit, these depraved cultists rose from their hiding places, revelling in their depravity. They now hunt for captives to be used in forbidden rituals in the catacombs below the city. They drug and lobotomise captives to be used and discarded at their whim. Above ground, they hunt for more flesh to be brought into the agonizing embrace of Slaanesh.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "A Court of profane Pleasures warband must include a minimum of three models. You have 500 gold crowns available to spend to recruit your warband. The maximum number of warriors is 15, though some items like the Halfling Cookbook may increase this number."
+},
+"specialSkills": false,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Corruption of the Mind and Flesh",
+"ruleFull": "Whenever an enemy model, be it Hero or a Henchman of the opponents of the Warband or one of their own models dies, the Warband may opt to perform an obscene ritual to attach a part of the dying warrior into one of the Slaaneshi Beastmen, Cultist or the Slaaneshi Hounds: arm, leg, head or strips of muscle, for example. You can take one stat of the fallen warrior and replace it with the same stat of the Beastman, Cultist or Hound. We encourage players to convert the model to represent the corrupted creature with appropriate new body parts. This ritual costs 1 Wyrdstone, and 1 Hero cannot search for Rare items at the market while performing the ritual."
+},
+{
+"flavour": "",
+"rulename": "Mutations",
+"ruleFull": "Any Hero may buy one of the following Mutations when you recruit them (<em>see <a href=\"/docs/warbands/grade-1a-warbands/cult-of-the-possessed#mutations\">Cults of Possessed</a> Rules for Mutations</em>):<br />- Extra arm<br />- Tentacle<br />- Great Claw"
+}
+],
+"equipmentLists": [
+{
+"id": "court-of-pleasures-equipment-list",
+"title": "Court of Pleasures Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "hedonist whip",
+"alias": "",
+"cost": {
+"cost": 15,
+"costSuffix": "Heroes only"
+}
+},
+{
+"name": "slaaneshi man-catcher",
+"alias": "",
+"cost": {
+"cost": 30,
+"costSuffix": "Whipmaster only"
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "pistol",
+"alias": "",
+"cost": {
+"cost": 15,
+"braceCost": 30
+}
+},
+{
+"name": "long rifle",
+"alias": "",
+"cost": {
+"cost": 200
+}
+},
+{
+"name": "crossbow pistol",
+"alias": "",
+"cost": {
+"cost": 35
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "crimson shade",
+"alias": "",
+"cost": {
+"cost": 35
+}
+}
+]
+},
+{
+"id": "wretches-equipment-list",
+"title": "Wretches Equipment List",
+"caveat": "This list is for Thralls only.",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "short bow",
+"alias": "Short Bow",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+}
+]
+}
+],
+"specialEquipment": [
+{
+"id": "slaaneshi-man-catcher",
+"title": "Slaaneshi Man-Catcher",
+"cost": {
+"cost": 30
+},
+"availability": "Rare 10",
+"flavour": "",
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Range",
+"ruleFull": "Close combat"
+},
+{
+"flavour": "",
+"rulename": "Strength",
+"ruleFull": "As user +1"
+},
+{
+"flavour": "",
+"rulename": "Special Rules",
+"ruleFull": "Requires two hands, Lock"
+},
+{
+"flavour": "",
+"rulename": "Lock",
+"ruleFull": "If it hits and causes an unsaved wound, do not roll on the injury chart. Instead, the enemy is knocked down, and cannot stand up as long as it is in melee combat with the wielder. The target cannot move away from the combat unless magic is used. The wielder can move (and drags the enemy with them) as long as they are not engaged in combat with any other model.<br /><br />The Man-Catcher does not work on Large creatures such as Ogres, or Steeds such as Horses. If you switch weapons while using the Man-Catcher, the opponent can then stand up as normal in their recovery phase.<br /><br />At the end of the battle, the target model is captured as a result of a 61 on the Serious Injury chart if still pinned down by the Man-Catcher. This happens even if it is a Henchman."
+}
+],
+"admonitions": ""
+},
+{
+"id": "hedonist-whip",
+"title": "Hedonist Whip",
+"cost": {
+"cost": 15
+},
+"availability": "Common",
+"flavour": "",
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Range",
+"ruleFull": "Close combat"
+},
+{
+"flavour": "",
+"rulename": "Strength",
+"ruleFull": "As user"
+},
+{
+"flavour": "",
+"rulename": "Special Rules",
+"ruleFull": "Cannot be parried, Whipcrack"
+},
+{
+"flavour": "",
+"rulename": "Cannot be parried",
+"ruleFull": "The Hedonist Whip is a flexible weapon and the zealots of the Dark Prince use it with great expertise. Attempts to parry its strikes are futile. A model attacked by a Hedonist Whip may not make parries with swords or bucklers."
+},
+{
+"flavour": "",
+"rulename": "Whipcrack",
+"ruleFull": "When the wielder charges they gain +1A for that turn. This bonus attack is added after any other modifications. When the wielder is charged they gain +1A that they may only use against the charger. This additional attack will ‘strike first’. If the wielder is simultaneously charged by two or more opponents, they will still only receive a total of +1A. If the wielder is using two whips at the same time, then they get +1A for the additional hand weapon, but only the first whip gets the Whipcrack +1A."
+}
+],
+"admonitions": ""
+}
+],
+"fighters": [
+{
+"id": "slaaneshi-whipmaster",
+"type": "hero",
+"name": "Slaaneshi Whipmaster",
+"plural": "Slaaneshi Whipmasters",
+"race": "human",
+"flavour": "Whipmasters are experts at applying pain and pleasure on their enemies and their own depraved companions in equal measure. Pain and Pleasure are closely intertwined, and both are held as holy in the eyes of Slaanesh.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 70,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": false,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Agony and Ecstasy",
+"ruleFull": "The Whipmaster who is armed with a Hedonist Whip may decide to use one of its attacks to scourge one friendly model within 3\". This attack automatically hits and has +1 on its rolls to wound. Roll for any injuries as standard. As a reward for such a pious act of devotion, Slaanesh rewards the Whipmaster with a surge of ecstasy that makes the Whipmaster all but invulnerable. The Whipmaster doubles its Toughness. Take a Leadership test at the start of each new turn of the Slaaneshi player. On a failure, this effect ends, though it can be re-activated."
+},
+{
+"flavour": "",
+"rulename": "Pain and Pleasure",
+"ruleFull": "Whenever the Whipmaster suffers an unsaved wound, they will be subject to the rules of Frenzy until the end of their next turn — this Frenzy is not negated by being Knocked Down or Stunned."
+}
+],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-danseuse",
+"type": "hero",
+"name": "Slaaneshi Danseuse",
+"plural": "Slaaneshi Danseuses",
+"race": "human",
+"flavour": "These dervishes of depravity dance and carouse in honor of Slaanesh in the streets of Mordheim. Their enthralling moves often freeze even hardened warriors while they slowly slice their enchanted victims to quivering shreds.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 70,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": false,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Strange Allure",
+"ruleFull": "An enemy wishing to attack a Danseuse in melee combat or with a missile attack must pass a Leadership test to do so before making its attacks. On a failure, the model must re-roll any successful hits."
+}
+],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-flesh-merchant",
+"type": "hero",
+"name": "Slaaneshi Flesh Merchant",
+"plural": "Slaaneshi Flesh Merchants",
+"race": "human",
+"flavour": "Flesh Merchants are tasked with selling, trading and using the poor unfortunates that are captured or lured into the service of the Prince of Chaos.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 65,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": false,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Pound of Flesh",
+"ruleFull": "Before the battle, you may decide to give one of the Wretches to the Flesh Merchant to carry as a “meat shield” as part of the Merchant’s Equipment. When the Flesh Merchant suffers a wound for any reason, you may elect to let the slave take the hit instead. In this case the Slave is taken Out of Action and removed from the game. The Wretch can make its normal Attacks in melee if used as a Meat Shield. The model does not have a base of its own, and cannot be targeted by enemy attacks. If the Merchant dies, the Wretch is lost with it."
+},
+{
+"flavour": "",
+"rulename": "Cruel Fate",
+"ruleFull": "Any captives the warband gains through combat results or exploration can be turned into Wretches at no cost. This is achieved via lobotomy, torture and other acts of depravity."
+}
+],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-priest-of-obscene",
+"type": "hero",
+"name": "Slaaneshi Priest of Obscene",
+"plural": "Slaaneshi Priests of Obscene",
+"race": "human",
+"flavour": "Priests of Slaanesh practice corrupt and profane magic and rituals. They often cut themselves in order to bring themselves to the brink of ecstasy that powers their sorcery.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 50,
+"startingXp": 6,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": false,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Flesh Reserve",
+"ruleFull": "Before the battle, you may decide to give one of the Wretches to the Priest to carry as a “sacrificial pawn” as part of the Priest’s Equipment. When the Priest fails to cast a spell, they can choose to sacrifice the Wretch to re-roll the spell roll. The Wretch can make its normal Attacks in melee until it’s alive. The model does not have a base of its own and cannot be targeted by enemy attacks. If the Priest dies, the Wretch is lost with it."
+},
+{
+"flavour": "",
+"rulename": "Wizard",
+"ruleFull": "The Priest of Obscene is a Wizard and uses the Chaos Rituals Spell list."
+}
+],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-devout",
+"type": "hero",
+"name": "Slaaneshi Devout",
+"plural": "Slaaneshi Devout",
+"race": "human",
+"flavour": "Devout are possessed by Slaanesh to the level that their flesh molds according to the whims of the Prince of Corruption. Their physical form flickers between the extremes of feminine and masculine.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 65,
+"startingXp": 8,
+"statblock": [
+{
+"title": "Base*",
+"m": "4",
+"ws": "3",
+"bs": "3",
+"s": "3",
+"t": "3",
+"w": "1",
+"i": "3",
+"a": "1",
+"ld": "7"
+},
+{
+"title": "Male Form",
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 1,
+"i": 3,
+"a": 2,
+"ld": 7
+},
+{
+"title": "Female Form",
+"m": 6,
+"ws": 3,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 5,
+"a": 1,
+"ld": 9
+}
+],
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": false,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Fluctuating Form",
+"ruleFull": "At the beginning of the battle, and every turn in the Recovery phase, if not engaged in close combat, you may choose whether the Devout manifests in male or female aspect. If you choose male, the Devout gains +1 WS, S, A, and T. If you choose female aspect, you gain +1 BS, +2 I, +2 Ld and +2 M."
+},
+{
+"flavour": "",
+"rulename": "Immune to Psychology",
+"ruleFull": "The Devout is immune to Psychology and all alone tests."
+}
+],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-chaos-hounds",
+"type": "henchman",
+"name": "Slaaneshi Chaos Hound",
+"plural": "Slaaneshi Chaos Hounds",
+"race": "chaos hound",
+"minQty": 0,
+"maxQty": 3,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 15,
+"gainExp": false,
+"promotable": false,
+"flavour": "Hounds of Slaanesh are sinuous, lithe and beautiful, yet unsettling and repulsive to see at the same time.",
+"statblock": {
+"m": 7,
+"ws": 4,
+"bs": 0,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 3
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Animal",
+"ruleFull": "Chaos Hounds are animals and never gain any experience."
+}
+],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-beastmen",
+"type": "henchman",
+"name": "Slaaneshi Beastman",
+"plural": "Slaaneshi Beastmen",
+"race": "beastman",
+"minQty": 0,
+"maxQty": 3,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 35,
+"gainExp": true,
+"promotable": true,
+"flavour": "Beastmen of Slaanesh tend to be more agile and slight of build than those of other Chaos gods, and they exhibit more humanlike qualities than full Gors.",
+"statblock": {
+"m": 5,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 4,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "slaaneshi-wretches",
+"type": "henchman",
+"name": "Slaaneshi Wretch",
+"plural": "Slaaneshi Wretches",
+"race": "human",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 10,
+"gainExp": true,
+"promotable": false,
+"flavour": "Your warband may include any number of Wretches — humans enslaved by the false promises of the Prince of Chaos. They live to sacrifice their lives for the Prince of Chaos.",
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 5
+},
+"equipmentLists": [
+"wretches-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Slaves to Darkness",
+"ruleFull": "Wretches are Immune to all psychology and All Alone tests if within 6\" of a friendly Hero. Wretches can’t become Heroes. If you roll The Lad’s Got Talent result on the chart, and then roll it again, the model receives a Serious Injury as if it were a Hero (roll it immediately)."
+}
+],
+"admonitions": ""
+},
+{
+"id": "cultists",
+"type": "henchman",
+"name": "Cultist",
+"plural": "Cultists",
+"race": "human",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"flavour": "Members of the pleasure court offer their body to the Prince of Corruption. Their lustful deeds and the use of drugs have driven them to the brink of insanity.",
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"court-of-pleasures-equipment-list"
+],
+"specialRules": [],
+"admonitions": ""
+}
+]
+}

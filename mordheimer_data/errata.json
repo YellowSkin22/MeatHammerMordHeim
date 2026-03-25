@@ -1,0 +1,2421 @@
+[
+{
+  "type": "errata",
+  "tags": ["err0"],
+  "caveat": "superseded by unwieldy rule",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+  "Rules": [
+    {
+      "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 42, “Strike First” rule.",
+      "ruleAbbreviated": "<p>Add: “If the model is armed with a spear and another weapon, resolve any strikes with the other weapon according to when it would normally strike.”</p>",
+      "ruleFull": ""
+    }
+  ]
+},
+  {
+    "type": "errata",
+    "tags": ["err1"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 46, Crossbow Pistol “Shoot in hand-to-hand combat” rule.",
+        "ruleAbbreviated": "<p>Add, “This bonus attack is in addition to any close combat weapon attacks.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err2"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 47 & 48, “Hand-to-Hand” rule.",
+        "ruleAbbreviated": "<p>Add, “These attacks are resolved with a model’s weapon skill like any normal close combat attack and likewise may be parried.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err3"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 48, “Accuracy” rule.",
+        "ruleAbbreviated": "<p>Change the last sentence to read, “All shots and close combat attacks from a duelling pistol have a +1 bonus to hit.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err4"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 52, “Bugman’s Ale”.",
+        "ruleAbbreviated": "<p>Add, “There is only enough ale to supply the warband for one battle.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err5"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 53, “Tome of Magic”.",
+        "ruleAbbreviated": "<p>Add, “The benefits from each tome of Magic apply to only one model.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err6"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 53, “Animals”.",
+        "ruleAbbreviated": "<p>Change, “Only Humans can buy horses and warhorses.” to, “Only Humans can buy or use horses and warhorses.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err7"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 57, “Hearts of Steel”.",
+        "ruleAbbreviated": "<p>Add, “The effects of this spell last until the caster is knocked down, stunned or put out of action. If cast again the effects are not cumulative, i.e. the maximum bonus to Rout Tests remains +1.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err8"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 58, “Spell of Awakening”.",
+        "ruleAbbreviated": "<p>Add, “The new Zombie follows all the normal Zombie rules (immune to poison, causes fear) except for retaining his profile, weapons and armour.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err9"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 65, “Calculate the Warband Rating”.",
+        "ruleAbbreviated": "<p>Delete the reference to “Ogres” since they are Hired Swords and add to the warband rating based on their description, not this general rule.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err10"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 69.",
+        "ruleAbbreviated": "<p>The entry for marksmen should read, “Your warband may include no more than seven Marksmen.” in line with p.71.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err11"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 91.",
+        "ruleAbbreviated": "<p>The cost for a Blowpipe should be 25gc, in line with p.92.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err12"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 93.",
+        "ruleAbbreviated": "<p>The entry on the skill chart for “Warlock Engineer” should read “Eshin Sorcerer”.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err13"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 121, “The lad’s got talent” entry in the Henchmen advance table.",
+        "ruleAbbreviated": "<p>Replace the last sentence with, “The remaining members of the henchmen group, if any, roll again for the advance that they have earned, re-rolling any results of 10-12.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err14"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=104", 
+        "term": "Mordheim Annual 2002, Page 102"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 134, 2nd paragraph.",
+        "ruleAbbreviated": "<p>Replace the sentence, “If you won your last game, you may re-roll any one dice but you must accept the second result.” with, “If you won your last game, you may roll one extra dice.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+   {
+    "type": "errata",
+    "tags": ["err15"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 155, “Hire Fee”.",
+        "ruleAbbreviated": "<p>Add, “A request for Bertha to aid the warband must be made for each battle you wish her to help the warband.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err16"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 163.",
+        "ruleAbbreviated": "<p>Add, “Armour may be purchased for a warhorse, called barding (refer to the Trading chart). It adds a further +1 bonus to the model’s armour save, but subtracts one from his movement. A normal horse may not wear barding. A barded warhorse is only killed on a serious injury roll of “1” if the model goes out of action.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err17"],
+    "caveat": "already implemented in annual oppulent goods",
+        "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/towncryer/TownCryer12.pdf#page=42", 
+        "term": "Town Cryer 12, page 41"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Opulent Goods. Hammer of Witches.",
+        "ruleAbbreviated": "<p>To allow for other enemies of Sigmar, add Beastmen, Chaos, Daemons, Orcs and Goblins to the list of warbands and models hated.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err18"],
+    "caveat": "",
+        "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/towncryer/TownCryer12.pdf#page=42", 
+        "term": "Town Cryer 12, page 41"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Opulent Goods. Wyrdstone Pendulum.",
+        "ruleAbbreviated": "<p>Add “This dice may not be re-rolled”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err19"],
+    "caveat": "",
+        "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/towncryer/TownCryer12.pdf#page=42", 
+        "term": "Town Cryer 12, page 41"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Opulent Goods. Toughened Leathers.",
+        "ruleAbbreviated": "<p>Add “Even though Toughened Leathers are purchased as miscellaneous equipment and need not be listed on a Hero’s starting armour list to be taken, they are still armour and prevent spell casting.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err20"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 8, “Bretonnian Warbands”.",
+        "ruleAbbreviated": "<p>Change the cost of Bretonnian swords from 5gc to 10gc.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err21"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 8, “Bretonnian Warbands”.",
+        "ruleAbbreviated": "<p>Add to the Knight’s Equipment list, “Axe...5gc”.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err22"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 8, “Bretonnian Warbands”.",
+        "ruleAbbreviated": "<p>The Bretonnian Special Skills list has the further line “Bretonnian Questing Knights may use the following skills...” Since all of the skills are Knight’s Virtues, references to any Hero being able to take them should be deleted, and the list redefined as “Knight Virtues”.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err23"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 8, “At the Mouth of Madness” Rules for Insanity.",
+        "ruleAbbreviated": "<p>Under “Going Insane” replace the sentence, “For each hero the normal experience track is used” with, “For each hero the normal experience track is used, but marked off from the opposite end.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err24"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 8, “At the Mouth of Madness” Rules for Insanity.",
+        "ruleAbbreviated": "<p>In the Insanity Table:<br />“Criminal Psychosis”: replace the reference to Animosity with Hatred.<br />“Fear of Heights”: the warrior must make an All Alone test not a Fear test.<br />“Panzaism/Quixotism”: delete the reference to failing a leadership test for Frenzy.<br />“I hate you all”: replace, “...and Animosity to friendly warriors” with, “...and must roll for Animosity just like an Orc henchman at the start of each turn”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err25"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 9, Pirate Warband, “Kidnapped!”.",
+        "ruleAbbreviated": "<p>Delete the reference to being captured on a serious injury roll of 62, that is a result of ‘Hardened’.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err26"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 9, Pirate Warband.",
+        "ruleAbbreviated": "<p>The Pirate Captain should have an Initiative of 4 and not 3</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err27"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 9, Pirate Warband.",
+        "ruleAbbreviated": "<p>Change the cost of Cat O’ Nine Tails on the price chart to 8gc, the same as on p.36.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err28"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 9, Pirate Warband.",
+        "ruleAbbreviated": "<p>Toughened Leathers should cost Pirates 5gc and not 7gc.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err29"],
+    "caveat": "can't pass html in tables",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 9, Pirate Warband.",
+        "ruleAbbreviated": "<p>The cost for a Spy Glass should be 20gc and not 206gc! It’s obviously a typo.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+    {
+    "type": "errata",
+    "tags": ["err30"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 26, 2nd column.",
+        "ruleAbbreviated": "<p>Replace the third paragraph (“A model may charge... past the enemy!”) with the following: “If an unengaged (ie, not in hand-to-hand combat) enemy model lies within 2\" of the charge route, that model may choose to intercept the charger if he wishes. This ‘interception area’ is shown in the diagram above. Only one enemy model may attempt to intercept each charger. If the intercepting warrior would normally require a Fear test to engage the charger then he must pass one in order to be allowed to intercept. Failure means he will not move. If the intercepting warrior causes fear then move the models into contact and then take a Fear test for the original charger (assuming he would normally do so) as if he was the one being charged. Regardless of the results of this test it is still the original charger who counts as charging in the subsequent round of combat, not the intercepting warrior.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err31"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 26, 2nd column.",
+        "ruleAbbreviated": "<p>Add the following to the end of the last paragraph on the page: “A model that charges will ‘strike first’ in the first round of the ensuing combat.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err32"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 29, Closest Target.",
+        "ruleAbbreviated": "<p>Add the following sentence as a new paragraph after the first: “You may always choose to shoot at a Large Target if you can see it, whether it is in cover or not and even if it is not the closest target.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err33"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 30, 1st column.",
+        "ruleAbbreviated": "<p>Insert the following new paragraph after the first paragraph and before the diagram: “If a shot misses its target by 1, and that target claimed the -1 modifier for cover, then the shot strikes the cover instead. Normally this doesn’t matter, but in the case where a model is concealed behind another warrior, or when the cover is a powder keg, it might be extremely important!”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err34"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 31, Hit Modifiers.",
+        "ruleAbbreviated": "<p>Change the definition of -1 Moving and shooting to: “If your model has moved at all (other than standing up, or turning to face your target) during this turn.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err35"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 31, Hit Modifiers.",
+        "ruleAbbreviated": "<p>Change the definition of +1 Large Target to: “If either the target model has the Large Target special rule (such as an Ogre), or whose main ‘body’ is over 2\" tall or wide (such as most buildings).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err36"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=1", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 26"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 34, Who Strikes First.",
+        "ruleAbbreviated": "<p>Replace the paragraph with the following: “Normally, models fight in order of descending Initiative with the highest striking first. If their Initiatives are equal, roll a dice to see who fights first. <br /><br />If a model stood up in the Recovery phase of that turn, then he will strike last irrespective of any other circumstances.<br /><br />Sometimes a model will be allowed to ‘strike first’ for some reason. Most commonly this is because they charged in that turn, but some equipment, skills and spells produce the same effect. If only one model ‘strikes first’ then it does so and the remainder of the combatants strike in Initiative order as described above.<br /><br />If there are several models who are each entitled to ‘strike first’, then they determine the order of combat between themselves by Initiative, as described above. Once all those that were eligible to ‘strike first’ have fought, any other combatants fight in Initiative order.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err37"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 38, Voluntary Rout.",
+        "ruleAbbreviated": "<p>Replace the paragraph with: “A player may choose to voluntarily Rout at the start of any of his own turns if he wishes, but only if he was already required to take a Rout test or if a quarter (25%) or more of his warband are out of action.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err38"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 39, Fear.",
+        "ruleAbbreviated": "<p>In the paragraph labelled “a)”, replace the last sentence with: “If it is failed, the model must roll 6s to score hits in that round of combat.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err39"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 39, Stupidity.",
+        "ruleAbbreviated": "<p>Replace the third paragraph with: “If the test is failed all is not well. Until the start of his next turn (when it takes a new Stupidity test) the model will not cast spells or fight in hand-to-hand combat (though his opponent will still have to roll to hit him as normal).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err40"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 39, Stupidity.",
+        "ruleAbbreviated": "<p>Add the following paragraph at the end of the Stupidity section: “Regardless of whether the test is passed or failed, the result applies until the start of the model’s following turn (when it takes a new Stupidity test).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err41"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 42, Spear.",
+        "ruleAbbreviated": "<p>Replace the Strike First rule with: “Strike first: A warrior with a spear ‘strikes first’ in the first turn of a hand-to-hand combat.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err42"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 42, Spear.",
+        "ruleAbbreviated": "<p>Add a new special rule between “Strike First” and “Cavalry bonus”: “Unwieldy: A warrior with a spear may only use a shield or a buckler in his other hand. He may not use a second weapon.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err43"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 45, Sling.",
+        "ruleAbbreviated": "<p>Add the following sentence to the end of the Fire Twice at Half Range special rule: “If the model fires twice then each shot is at -1 to hit.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err44"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 53, Lucky Charm.",
+        "ruleAbbreviated": "<p>Replace the second paragraph with: “The first time a model with a Lucky Charm is hit in a battle they roll a D6. On a 4+ the hit is discarded and no damage is suffered. Owning two or more Charms does not confer any extra benefits, the model may still only try to discard the first hit.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err45"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 54, Halfling Cookbook.",
+        "ruleAbbreviated": "<p>Replace the brackets at the end of the second paragraph with: “(note that neither an Undead warband nor a Carnival of Chaos warband can use this item).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err46"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 58, Re-Animation.",
+        "ruleAbbreviated": "<p>Replace the first sentence with: “One Zombie that went out of action during the last hand-to-hand combat or Shooting phase immediately returns to battle.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err47"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 60, Silver Arrows of Arha.",
+        "ruleAbbreviated": "<p>Replace the first sentence with: “Unlike other spells, this cannot be cast whilst in hand-to-hand combat. The spell summons D6+2 arrows which the wizard can use to shoot against one enemy model.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err48"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=2", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 27"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 65, 1st column, 1st paragraph of Weapons and Armour.",
+        "ruleAbbreviated": "<p>Replace the first sentence with: “Each warrior you recruit can be armed with up to two close combat weapons (in addition to his free dagger), up to two different missile weapons and any armour chosen from the appropriate list. For these purposes, a brace of pistols counts as a single missile weapon.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err49"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 85, Steel Whip weapon stat line.",
+        "ruleAbbreviated": "<p>Under range, replace “4\\\"” with “Close combat”:</p>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 85, Steel Whip weapon stat line.",
+        "ruleAbbreviated": "<p>Under special rules, replace “reach” with “whipcrack”:</p>",
+        "ruleFull": ""
+      },
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 85, Steel Whip special rules.",
+        "ruleAbbreviated": "<p>Replace the reach special rule with: “Whipcrack: When the wielder charges they gain +1A for that turn. This bonus attack is added after any other modifications. When the wielder is charged they gain +1A that they may only use against the charger. This additional attack will ‘strike first’. If the wielder is simultaneously charged by two or more opponents they will still only receive a total of +1A. If the wielder is using two whips at the same time then they get +1A for the additional hand weapon, but only the first whip gets the whipcrack +1A.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err52"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 95, Rat Ogre.",
+        "ruleAbbreviated": "<p>Replace the Large special rule with: “Large Target: Rat Ogres are Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err53"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 117, Post Battle Sequence.",
+        "ruleAbbreviated": "<p>Stages 1-3 remain as they are. Stage 5 is renumbered stage 10. Stage 4 is replaced by the following new stages:<br /><br /><strong>4 Sell wyrdstone.</strong> This can only be done once per Post Battle sequence.<br /><br /><strong>5 Check available veterans.</strong> Roll to see how much Experience worth of veterans is available for hire. You don’t have to commit to hiring any at this point.<br /><br /><strong>6 Make Rarity rolls and buy Rare items.</strong> Make rolls for any Rare items you intend to buy and pay for them. These items go into the warband’s stash.<br /><br /><strong>7 Look for Dramatis Personae,</strong> if you want to hire any.<br /><br /><strong>8 Hire new recruits & buy common items.</strong> New recruits come equipped with their free dagger and may be bought Common items. This is done in any order and may be done several times. Note that newly hired recruits cannot buy Rare items. They can, however, be equipped with Rare items if there are any in the warband’s stash in stage 9.<br /><br /><strong>9 Reallocate equipment.</strong> Swap equipment between models as desired (provided they are eligible to use it).</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err54"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 117, Death of a Leader.",
+        "ruleAbbreviated": "<p>Replace the last sentence of the second paragraph (“In the case of Undead warbands...”) with: “You can buy a Vampire after the next game, at which point the Necromancer will step down (whether he wants to or not) and lose the Leader skill.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err55"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 117, Death of a Leader.",
+        "ruleAbbreviated": "<p>Add the following paragraph at the end of this section: “If the leader of a Sisters of Sigmar, Possessed or Carnival of Chaos warband dies then their successor will be entitled to learn to use magic in their stead. The new leader may choose a prayer/spell from the appropriate list, instead of rolling on the Advance table, the first time they are eligible for an advance. After this they are considered to be a wizard/use prayers as appropriate for their warband and use the Advance table as normal.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err56"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 121, Henchmen.",
+        "ruleAbbreviated": "<p>In the first paragraph of this section, change the second sentence to read: “If the dice roll indicates an increase in a characteristic which has already been increased (or is at its racial maximum), roll again until an unincreased characteristic is rolled.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err57"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 121, Characteristic Increase.",
+        "ruleAbbreviated": "<p>In the initial paragraph, change the third sentence to read: “If both are already at their racial maximum, you may increase any other (that is not already at its racial maximum) by +1 instead.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err58"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 121, Characteristic Increase.",
+        "ruleAbbreviated": "<p>Replace the existing Ogre maximum characteristics with: Ogre (Ogre Bodyguard Hired Sword)<br /><br /><table><tr><th>Profile</th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr><tr><td></td><td>6</td><td>6</td><td>5</td><td>5</td><td>5</td><td>5</td><td>6</td><td>5</td><td>9</td></tr></table></p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err59"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 121, Characteristic Increase.",
+        "ruleAbbreviated": "<p>Add the maximum characteristics for Halflings: Halflings (Halfling Scout Hired Sword, et al)<br /><br /><table><tr><th>Profile</th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr><tr><td></td><td>4</td><td>5</td><td>7</td><td>3</td><td>3</td><td>3</td><td>9</td><td>4</td><td>10</td><td></td></tr></table></p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err60"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 122, Expert Swordsman skill description.",
+        "ruleAbbreviated": "<p>Add the following to the end: “Note that this only applies when they are armed with normal swords or weeping blades, and not with doublehanded swords or any other weapons.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err61"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=3", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 28"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 122, Quick Shot.",
+        "ruleAbbreviated": "<p>Replace the description with: “Quick Shot: The warrior may shoot twice per turn with a bow or crossbow (but not a crossbow pistol).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err62"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 122, Pistolier.",
+        "ruleAbbreviated": "<p>Replace the second sentence of the description with: “If he is equipped with a brace of pistols of any type (including crossbow pistols), he may fire twice in the Shooting phase (though note that normal reloading rules apply). If he has a single pistol then he may fire it in the same turn it was reloaded.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err63"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 122, Hunter.",
+        "ruleAbbreviated": "<p>Replace the second sentence of the description with: “He may fire each turn with a handgun or Hochland long rifle.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err64"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 123, Haggle.",
+        "ruleAbbreviated": "<p>Replace the second sentence with: “He may deduct 2D6 gold crowns from the price of any single item (to a minimum cost of 1gc) once per Post Battle sequence.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err65"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 123, Pit Fighter.",
+        "ruleAbbreviated": "<p>Add the following at the end of the description: “It's a good idea to define which bits of your terrain collection count as ‘buildings or ruins’ at the start of a battle to avoid confusion later.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err66"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 123, Lightning Reflexes.",
+        "ruleAbbreviated": "<p>Replace the entry with: “If the warrior is charged he will ‘strike first’ against those that charged that turn. As the charger(s) will also normally ‘strike first’ (for charging), the order of attack between the charger(s) and the warrior with this skill will be determined by comparing Initiative values.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err67"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 123, Jump Up.",
+        "ruleAbbreviated": "<p>Replace the last sentence with: “The warrior may ignore knocked down results when rolling for injuries, unless he is knocked down because of a successful save from wearing a helmet or because he has the No Pain special rule.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err68"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 123, Dodge.",
+        "ruleAbbreviated": "<p>Replace the last sentence with: “Note that this roll is taken against missiles as soon as a hit is scored to see whether the warrior dodges it or not, before rolling to wound, and before any effects from other skills or equipment (such as lucky charms).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err69"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 144, New recruits.",
+        "ruleAbbreviated": "<p>Replace the first paragraph of this section (“New warriors... at least one battle”) with: “New warriors are recruited in the same way as the original warband with the notable exception of equipment. After the start of a campaign, a new hireling can only buy Common items from his warband’s equipment chart freely. He may only be given Rare items from his warband’s equipment chart if the warband can obtain them via the normal trading rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err70"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 147, Recruiting Hired Swords.",
+        "ruleAbbreviated": "<p>In the third paragraph of this section, replace the first two sentences with: “Hired Swords do not count towards the maximum number of warriors or Heroes a warband may have on its roster and don’t affect your income from selling wyrdstone. However, Hired Swords do count as part of the warband for purposes of Rout tests, etc whilst in battle.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err71"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 148, Ogre Bodyguard.",
+        "ruleAbbreviated": "<p>Replace the Large special rule with: “Large Target: Ogres are Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err72"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=4", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 29"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Rule book (English, 1st Printing), Page 150, Freelancer.",
+        "ruleAbbreviated": "<p>Under Equipment, replace the second sentence with: “If you are using the optional rules for mounted models, a Freelancer rides a warhorse (and has the Ride Warhorse skill from the Blazing Saddles article).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err73"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=5", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 30"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 3, Man-Eater.",
+        "ruleAbbreviated": "<p>Replace the last sentence with: “Opponents are +1 to hit the tree in hand-to-hand combat, due to the fact that it is rooted to the spot. The Tree is a Large Target.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err74"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 6, Forbidden Fruit.",
+        "ruleAbbreviated": "<p>Add the following to the end of the paragraph: “The Tree is a Large Target.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err75"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 7, Itsy-Bitsy Spider.",
+        "ruleAbbreviated": "<p>Add a new special rule: “Large Target: Gigantic Spiders are Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err76"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 9, Orc Equipment Lists.",
+        "ruleAbbreviated": "<p>Add a club at 3gc to the list of hand-to-hand combat weapons available to the Orcs.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err77"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 11, Troll.",
+        "ruleAbbreviated": "<p>Add a new special rule: “Large Target: Trolls are Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err78"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 21, Dwarf Warrior Equipment Lists.",
+        "ruleAbbreviated": "<p>Add a brace of pistols at 30gc to the list of missile weapons available to the Dwarf Warriors.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err79"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 22, Dwarf Engineer.",
+        "ruleAbbreviated": "<p>Replace the Expert Weaponsmith special rule with: “Expert Weaponsmith: A Dwarf Engineer is a master of mechanical devices. By using stronger construction materials and time-tested secrets of Dwarf engineering, a Dwarf Engineer can increase the distance the warband’s missile weapons can shoot. Missile weapons bought from the warband’s basic equipment lists have their range increased by 3\" for pistols and 6\" for crossbows and handguns. Range increases only apply in battles in which the Engineer takes part (though they do apply even if he is yet to enter the battlefield or has already been taken out of action in this battle). He has no effect on the equipment of Hired Swords.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err80"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 25, Nicodemus.",
+        "ruleAbbreviated": "<p>Add Witch Hunters to the list of warbands that cannot hire Nicodemus.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err81"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 34, Great Beasts in Mordheim.",
+        "ruleAbbreviated": "<p>Insert a new sentence between the fourth and fifth (after “..a new lair in the ruined city.”): “Even so, all monsters count as Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err82"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 66, 2nd column.",
+        "ruleAbbreviated": "<p>Add a new special rule between Armour Bonus and Bolting Mounts: “Large Target: All models mounted on a riding creature from this section count as Large Targets as defined in the shooting rules. Unridden riding creatures are not Large Targets.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err83"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Mordheim Annual 2002, Page 81, Trained Bear.",
+        "ruleAbbreviated": "<p>Add a new special rule: “Large Target: Bears are Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err84"],
+    "caveat": "can't pass html in tables",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 17.",
+        "ruleAbbreviated": "<p>Change the price of a Horseman’s Hammer to 12gc.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err85"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 24, 2nd column.",
+        "ruleAbbreviated": "<p>Add a new special rule between Armour Bonus and Bolting Mounts: “Large Target: All models mounted on a riding creature from this section count as Large Targets as defined in the shooting rules. Unridden riding creatures are not Large Targets.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err86"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 60, Special Rules.",
+        "ruleAbbreviated": "<p>Add the following Special rule: “Tainted: The Carnival is a similarly unclean mass of mutation and Chaos to the Possessed and so counts as such for purposes of exploration and serious injuries.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err87"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 66, Nurgle’s Rot.",
+        "ruleAbbreviated": "<p>Change the fifth sentence to read: “If the Tainted One makes a successful To Wound roll of a 6 with any of his hand-to-hand attacks, the target model will contract the Rot (note: Nurgle’s Rot only affects the living, so Undead, Daemons and Possessed are immune).”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err88"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 71, Beastmen Skill tables.",
+        "ruleAbbreviated": "<p>The ‘3s’ in the table should be ticks.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err89"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 71, Maximum Characteristics.",
+        "ruleAbbreviated": "<p>Replace the entry with:<br /><br /><table><tr><th>Profile</th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr><tr><td>Ungor</td><td>6</td><td>6</td><td>6</td><td>4</td><td>4</td><td>3</td><td>7</td><td>4</td><td>7</td></tr><tr><td>Centigors</td><td>9</td><td>7</td><td>6</td><td>4</td><td>5</td><td>4</td><td>6</td><td>4</td><td>9</td></tr><tr><td>Minotaur</td><td>6</td><td>6</td><td>5</td><td>5</td><td>5</td><td>5</td><td>6</td><td>5</td><td>9</td></tr><tr><td>Other Beastmen**</td><td>5</td><td>7</td><td>6</td><td>4</td><td>5</td><td>4</td><td>6</td><td>4</td><td>9</td></tr></table>*This includes all the non-Centigor Heroes and the Gor Henchmen.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err90"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 73, Minotaur.",
+        "ruleAbbreviated": "<p>Replace the Large special rule with: “Large Target: Minotaurs are Large Targets as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err91"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 74, Shaggy Hide skill.",
+        "ruleAbbreviated": "<p>Replace the existing definition with the following: “The Beastman’s massively shaggy hide acts as armour, deflecting sword strokes and protecting him from harm. The model gains a 6+ Armour Save that can be combined with other armour as normal.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err92"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Errata.pdf#page=6", 
+        "term": "The 2005 Mordheim Rules Review, Fanatic Magazine #10, Page 31"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Empire in Flames, Page 78, The Thing in the Woods.",
+        "ruleAbbreviated": "<p>Replace the Large Beast special rule with: “Large Target: The Balewolf is a Large Target as defined in the shooting rules.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err93"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/towncryer/TownCryer13.pdf#page=25", 
+        "term": "Errata: Town Cryer 13, page 23"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Town Cryer 12, page 18 Dark Elves",
+        "ruleAbbreviated": "<p>Originally in Town Cryer 12, Light Armour was mistakenly costed at 50 gc, this was corrected to 20 gc in a small errata in Town Cryer 13.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+    {
+    "type": "errata",
+    "tags": ["err94"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 30, Obsidian Weapon.",
+        "ruleAbbreviated": "<p>Add an “Obsidian Weapon” to the new weapons. See the current PDF files for the full rules of this weapon. Also add this entry to the Price Chart (p.34): Obisidian Weapons, 4 x Price, Rare 12, (Marauders of Chaos, Norse, Beastmen, Chaos Dwarfs, Possessed and Carnival of Chaos only.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err95"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 31, Ladders.",
+        "ruleAbbreviated": "<p>Adjust the following sentence to make clear that Henchmen may also use ladders: A Ladder requires two models, Heroes or Henchmen, (or a single large model) to carry it.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err96"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 34, Price Chart.",
+        "ruleAbbreviated": "<p>Add the following entry to the Price Chart: Steel Whip, 10gc, Common (Sisters of Sigmar and Chaos Dwarfs only)</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err97"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 37, Chaos Artefacts.",
+        "ruleAbbreviated": "<p>Add the following sentence to the rules for Ghartok’s Skull: Unlike other armour the helmet does not hinder its wearer from casting spells or rituals.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err98"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 40, The Scion of Chaos.",
+        "ruleAbbreviated": "<p>Replace “M 7” with “M 8” under the 35 Daemon Prince achievement.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err99"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 42, Celestial Protectorate.",
+        "ruleAbbreviated": "<p>Add the following sentence to +D3 Emissary’s Report: It would be too risky for the Emissary to take the Chaos Artefacts with him so they must remain with another Hero from the warband while he makes a report.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err100"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 49, Horrors of the Underground.",
+        "ruleAbbreviated": "<p>Add the following sentence to the “ending the game” section: If the egg has been found when one warband routs, the winner automatically acquires it.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err101"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 59, Chaos Dragon Hunt.",
+        "ruleAbbreviated": "<p>Add the following sentence to the “ending the game” section: When there is only one warband left and the dragon is still alive, then the player may choose whether he wants to end the game as the winner or continue fighting until either the dragon is taken out of action or the warband fails a Rout test.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err102"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 80, Bear.",
+        "ruleAbbreviated": "<p>Replace “Beastmaster skill” with “Bear Handler skill”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err103"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=1",
+        "term": "Border Town Burning Errata & FAQ, Page 1"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 87, Wild Boar.",
+        "ruleAbbreviated": "<p>Add the following to the “May be Allied” section: “One of the Heroes must have the Boar Handler skill.”</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+    {
+    "type": "errata",
+    "tags": ["err104"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 126, Spawn of Chaos.",
+        "ruleAbbreviated": "<p>Change the last sentence of the ‘Spawn of Chaos’ rule under ‘Eye of the Gods’ to the following: His experience, skills, injuries and equipment are lost.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err105"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 126, Marauders of Chaos Hired Swords.",
+        "ruleAbbreviated": "<p>Replace the Hired Swords section with the following: Hired Swords: Marauders of Chaos may only hire the following Hired Swords: Pit Fighters, Ogres, Norse Shamans and Imperial Assassins plus any other Hired Swords which specify they may be hired by Marauders of Chaos. Witches and Warlocks may be hired except by warbands that include warriors with the Mark of Arkhar.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err106"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 127, Steel Whip.",
+        "ruleAbbreviated": "<p>Replace all instances of “Steel whip” with “Barbed Whip” so as to avoid confusion with the Sisters of Sigmar weapon of that name.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+  {
+    "type": "errata",
+    "tags": ["err107"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 132, Touch of Onogal.",
+        "ruleAbbreviated": "<p>Update the following sentence from the rules for the Touch of Onogal spell: If the model dies permanently, replace it with a Nurgle Plague Bearer (see Bestiary for rules) for the rest of the game under the Seer’s control.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err108"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 155, Daggers.",
+        "ruleAbbreviated": "<p>Add Daggers for 2 gc to the Soldiers equipment list.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err109"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 158, Fish-hook Shot.",
+        "ruleAbbreviated": "<p>Add the following sentence after the Fish-hook Shot’s Caused Fall rule: Apply a +1 modifier to the Strength test against large models. When a mount gets knocked down, the rider falls off (see 3-4 on the Whoa Boy! table).</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err110"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 163, Gluttony special rule.",
+        "ruleAbbreviated": "<p>Add mounts to the list of models that can be consumed for the Gluttony special rule: Any member or animal (including mounts) from your warband can be eaten in the same way!</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err111"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 163, Maximum profile.",
+        "ruleAbbreviated": "<p>Change the maximum profile to that given on page 6 of the Rules Review:<br /><br /><table><tr><th>Profile</th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr><tr><td>Ogre</td><td>6</td><td>6</td><td>5</td><td>5</td><td>5</td><td>5</td><td>6</td><td>5</td><td>9</td></tr></table></p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err112"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 167, Sabretusks.",
+        "ruleAbbreviated": "<p>Add the following special rule: Animals: Sabretusks are animals and thus do not gain experience.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err113"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 158, Black Dwarf Special Rules.",
+        "ruleAbbreviated": "<p>Add the following sentence after the warbands’ Special rules: The following special rules apply to all warriors in the warband excluding Informers.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err114"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 159, Chaos Dwarf equipment list.",
+        "ruleAbbreviated": "<p>Add “1st free” to the Dagger entry in the Chaos Dwarf equipment list as with other warbands.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err115"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 159, Chaos Engineer.",
+        "ruleAbbreviated": "<p>Adjust the “Chaos Engineer” skill as follows: Whenever a Hero with this skill searches for Chaos armour (including Mechanical Suits) or Obsidian Weapons, he gets +3 on the roll.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err116"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 169, Ninja.",
+        "ruleAbbreviated": "<p>May be Hired: Battle Monks of Cathay and any warband except Skaven, Orcs & Goblins, Beastmen, Marauders of Chaos, Norse and Chaos Dwarfs may hire a Ninja.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err117"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 170, Swordsmith.",
+        "ruleAbbreviated": "<p>Add the following skill to the Swordsmith’s special skills: Farrier: Between each battle the Swordsmith freshly shoes all equine beasts in the warband. Newly shod equines are much less likely to suffer a fatal fall during battle! Whenever a Horse, Mule, Warhorse, Elven Steed or a Chaos Centaur is taken out of action, remove the creature from the warband roster on a 1 instead of a 1 or 2.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err118"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 171, Cathayan Merchant.",
+        "ruleAbbreviated": "<p>May be Hired: Any warband which includes Humans or Dwarfs may hire a Cathayan Merchant, including Battle Monks of Cathay.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+  {
+    "type": "errata",
+    "tags": ["err119"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://bordertownburning.com/pdf/Errata.pdf#page=2",
+        "term": "Border Town Burning Errata & FAQ, Page 2"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Errata: Border Town Burning, Page 177, Ippan Shu.",
+        "ruleAbbreviated": "<p>May be Hired: Any warband which includes Humans or Elves, including Battle Monks, may hire Ippan Shu, not including Dark Elves, Outlaws and Bandits.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+    {
+    "type": "errata",
+    "tags": ["err120"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The author for the Lustria warband confirmed The Wulfen in Town Crier for Lustria was supposed to be 2 wounds like in Border Town Burning. It was a copy paste error by whoever did the layout.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+    {
+    "type": "errata",
+    "tags": ["err121"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://www.facebook.com/groups/2254256510/posts/10159354298361511/",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The original Town Cryer Publication stated the warband may include up to 7 gunners in the \"Choice of Warriors\" section, but had 0 - 2 in the unit entry. The author, Tim Huckelbery, confirmed this was supposed to be 7 gunners, and that it was accidentally changed to 2 when published in Town Cryer.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+    {
+    "type": "errata",
+    "tags": ["err122"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>A Pistol brace was printed as 60gc, but it most likely is meant to be 30gc (2 x pistol price).</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+
+    {
+    "type": "errata",
+    "tags": ["err123"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://broheim.net/downloads/rules/Mordheim%20Annual%202002.pdf#page=105", 
+        "term": "Mordheim Annual 2002, Page 103"
+      }
+      ],
+    "Rules": [
+      {
+        "rulename": "Errata: Town Cryer 8, “Bretonnian Warbands”.",
+        "ruleAbbreviated": "<p>The cost and rarity of Bretonnian barding differs radically from that listed on the trading chart. This is special Bretonnian blessed horse armour not normally available except to Bretonnian knights.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+      {
+    "type": "errata",
+    "tags": ["err124"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>In the Original Town Cryer publication, the Norse Shaman had an Initiative of 1, this was confirmed an error by the author and was corrected in Border Town Burning to be Initiative 4.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+        {
+    "type": "errata",
+    "tags": ["err125"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://web.archive.org/web/20121020030006/http://cianty.ashtonsanders.com/nc/",
+        "term": "Web Archive"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Replace the Giant Spider Mount with the Giant Spider from the Blazing Saddles article (see page 65 of the Mordheim Annual).</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err126"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://web.archive.org/web/20121020030006/http://cianty.ashtonsanders.com/nc/",
+        "term": "Web Archive"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Delete the first sentence of the Gigantic Spider's May Ride rule. The reference to the optional rules from the rulebook is outdated. The extended rules for mounted warriors are in effect (see 'Blazing Saddles' article on page 65 of the Mordheim Annual, or 'Mounted Warriors' on page 24 of the Empire in Flames supplement).</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err127"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://web.archive.org/web/20121020030006/http://cianty.ashtonsanders.com/nc/",
+        "term": "Web Archive"
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>Replace the rules for the Rapier with the official rules from the Mordheim Annual (page 84).</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err128"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The rules for the kitchen knife were clearly designed to reflect a dagger and not an axe (the cleaver does this), and thus should provide +1 to the save.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err129"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "https://www.facebook.com/groups/2254256510/posts/10161312864541511/?comment_id=10161313772111511",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "Almost all cavalry skills specify that you need the Ride skill to use them, however, Athletic Mount doesn't say: \"Warriors without Ride may not use this skill.\" Is this correct?",
+        "ruleAbbreviated": "<p>It’s an omission by GW. All skills require Ride.</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err130"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>There is no Out of Action roll post game, this is supposed to say Serious Injury</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err131"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The original material had an upkeep of 40 which is directly contradicted by the Wanderer rule...</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+          {
+    "type": "errata",
+    "tags": ["err132"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The the unit entry states 0 - 2</p>",
+        "ruleFull": ""
+      }
+    ]
+  },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+{
+    "type": "errata",
+    "tags": ["err999"],
+    "caveat": "",
+    "relatedTerms": [
+      {
+        "link": "",
+        "term": ""
+      }
+    ],
+    "Rules": [
+      {
+        "rulename": "",
+        "ruleAbbreviated": "<p>The maximum characteristic increase for henchmen is +1 to any stat, so even though their racial maximum is higher, as a henchman, they cannot achieve that.</p>",
+        "ruleFull": ""
+      }
+    ]
+  }
+]

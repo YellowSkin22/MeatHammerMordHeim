@@ -1,0 +1,479 @@
+{
+"id": "horned-hunters",
+"name": "Horned Hunters",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Nemesis Crown Supplement",
+"sourceLink": "[https://broheim.net/downloads/warbands/supplement/nemesiscrown/Horned%20Hunters.pdf](https://broheim.net/downloads/warbands/supplement/nemesiscrown/Horned%20Hunters.pdf)",
+"setting": "Nemesis Crown",
+"author": "Mordheim Nemesis Crown Development Team",
+"version": "",
+"lore": "<em>Horned Hunters prowl the woods both within the crater walls of the Taalbaston and throughout Talabecland and claim allegiance only to Taal – the God of nature and wilderness.</em><br /><br /><em>The rites of Taal demand great mental, physical, and emotional fortitude from its practitioners. Some see the trappings of civilisation – cities, courts, and the like – as a failing in the interpretation of Taal’s will. Followers of Taal avoid firearms and other works of science, preferring to take pride in self strength and natural skill.</em><br /><br /><em>Taal is represented as a powerfully built man with long, wild hair crowned with the skull of a great stag. He wears animal skins and golden leaves flutter from his beard. In some tales he manifests as one of his totems: a stag or bear. Devotees dress in the image of their patron deity. While Taal is not usually revered in cities, in Talabheim, which is founded on river trade, he is called the Father of Rivers and is the city’s foremost God.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 12,
+"choiceFluff": "A Horned Hunter warband is a cult composed of feral devotees to Taal, the God of nature and the wilds. The warband must include a minimum of three models. You have 500 gold crowns which you can use to recruit your initial warband. The maximum number of warriors in the warband may never exceed 12."
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Woodcraft",
+"ruleFull": "Followers of Taal make their homes in the wilderness and shall only frequent towns or cities when it is compulsory for them to do so. They are expert woodsmen and their knowledge of the wilds is unrivalled by all except perhaps the Wood Elves. Horned Hunter warbands move through any difficult terrain they encounter without suffering any movement penalties."
+}
+],
+"equipmentLists": [
+{
+"id": "horned-hunter-equipment-list",
+"title": "Horned Hunter equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "short bow",
+"alias": "Short Bow",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "long bow",
+"alias": "Long bow",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "toughened leathers",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "hunting arrows",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "blessed stag hide",
+"alias": "",
+"cost": {
+"cost": 40
+}
+},
+{
+"name": "trip wire",
+"alias": "",
+"cost": {
+"cost": 15
+}
+}
+]
+},
+{
+"id": "henchmen-equipment-list",
+"title": "Henchmen equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "toughened leathers",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "horned-hunter",
+"type": "hero",
+"name": "Horned Hunter",
+"plural": "Horned Hunters",
+"race": "human",
+"flavour": "The Horned Hunters are deeply zealous and shun the city of Talabheim. They safeguard pilgrims from the predations of bandits and hunt down dangerous beasts and the Mutants that flout Taal’s will.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 60,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"horned-hunter-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any warrior within 6\" of the Horned Hunter may use his Leadership value when taking Leadership tests."
+},
+{
+"flavour": "",
+"rulename": "Hang the Bandit!",
+"ruleFull": "A Horned Hunter <em>hates</em> all Bandits and Outlaws."
+}
+],
+"admonitions": ""
+},
+{
+"id": "priest-of-taal",
+"type": "hero",
+"name": "Priest of Taal",
+"plural": "Priests of Taal",
+"race": "human",
+"flavour": "It is said that every priest of Taal is born during the darkest phase of the moon. A few Priests are ordained by their hierarchs to live in the wilderness, following the Path of Taal. They are guardians of wild places and those who wander them. To the creatures of Chaos lurking in the woods, they are terrors.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 45,
+"startingXp": 12,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"horned-hunter-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Prayers",
+"ruleFull": "A Priest of Taal may use the <a href=\"/docs/magic/prayers-of-taal\">Prayers of Taal</a>."
+},
+{
+"flavour": "",
+"rulename": "Strictures",
+"ruleFull": "Priests of Taal may never wear heavy armour."
+}
+],
+"admonitions": ""
+},
+{
+"id": "initiates",
+"type": "hero",
+"name": "Initiate",
+"plural": "Initiates",
+"race": "human",
+"flavour": "Part of their initiation into this group is to undergo extensive tattooing, covering their chest and face. These feral hunters serve as masterful scouts.",
+"minQty": 0,
+"maxQty": 3,
+"costGc": 40,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"horned-hunter-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Infiltrator",
+"ruleFull": "A warrior with this skill is always placed on the battlefield after the opposing warband and can be placed anywhere on the table as long as it is out of sight of the opposing warband and more than 12\" away from any enemy model.<br /><br />If both players have models which infiltrate, roll a D6 for each, and the lowest roll sets up first."
+},
+{
+"flavour": "",
+"rulename": "Hang the Bandit!",
+"ruleFull": "Taal’s Initiates <em>hate</em> all Bandits and Outlaws."
+},
+{
+"flavour": "",
+"rulename": "Strictures",
+"ruleFull": "Taal’s Initiates may never wear armour."
+}
+],
+"admonitions": ""
+},
+{
+"id": "drunken-gang",
+"type": "henchman",
+"name": "Drunken Gang",
+"plural": "Drunken Gang",
+"race": "human",
+"flavour": "The militia is a hodgepodge of trusted citizens, woodsmen, and hunters that band together in times of need. Ancient law dictates all able-bodied men must muster when summoned by the Hunters Council in times of war. Though how many come depends on the amount of Rotfire moonshine consumed the night before. For this reason the army commonly refers to them as the ‘Drunken Gang’. Despite its malign reputation, the militia is capable, made up of rugged and dependable Talabeclanders.",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 30,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"henchmen-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Drunk",
+"ruleFull": "The militia are blasted out of their tiny minds on Rotfire moonshine and cheap ale. As such, they automatically pass all Leadership-based tests they are required to take."
+}
+],
+"admonitions": ""
+},
+{
+"id": "zealots",
+"type": "henchman",
+"name": "Zealot",
+"plural": "Zealots",
+"race": "human",
+"flavour": "While they lack the fiery rhetoric of most zealots, Taal’s followers are still fervent in their beliefs. They give up much in the way of a material life. They shun normal clothing and armour and wear animal skins, loincloths or less.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 20,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"henchmen-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Strictures",
+"ruleFull": "Zealots may never wear armour."
+}
+],
+"admonitions": ""
+},
+{
+"id": "warhounds",
+"type": "henchman",
+"name": "Warhound",
+"plural": "Warhounds",
+"race": "warhound",
+"minQty": 0,
+"maxQty": 5,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 15,
+"gainExp": false,
+"promotable": false,
+"flavour": "Horned Hunters often keep packs of ferocious hunting dogs. With their huge jaws and powerful bite, they are perfect for hunting down (and tearing apart) any bandits, beasts and mutants.",
+"statblock": {
+"m": 6,
+"ws": 4,
+"bs": 0,
+"s": 4,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 5
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Animals",
+"ruleFull": "Warhounds are animals and thus do not gain experience."
+}
+],
+"admonitions": ""
+}
+]
+}

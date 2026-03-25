@@ -1,0 +1,452 @@
+{
+"id": "amazons-mordheim",
+"name": "Amazons (Mordheim)",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Town Cryer #23",
+"sourceLink": "[https://broheim.net/downloads/warbands/unofficial/Amazons.pdf](https://broheim.net/downloads/warbands/unofficial/Amazons.pdf)",
+"setting": "Mordheim",
+"author": "",
+"version": "",
+"lore": "<em>Most of the cutthroats and scum that risk their lives daily scouring the ruins of Mordheim are drawn there by the lure of Wyrdstone and the riches that it brings. For a few, such as the Sisters of Sigmar, there are other more powerful motivating factors like redemption. However, for a certain other group of exclusively female warriors, Mordheim has no such attractions. For the mysterious Amazons that have been brought to the damned city in chains, escape is all that they seek.</em><br /><br /><em>Very little is known about these strange warrior women from far across the Great Western Ocean. According to Norse saga, they originate from the colony of Skeggi founded by Losteriksson long ago on the eastern coast of Lustria. When large numbers of warriors deserted Losteriksson’s settlement because they were impatient to go and find gold, they left their wives behind. When they did not return, these and many other Norse maidens who had come to Skeggi hoping to find a brave and wealthy warrior as a husband were bitterly disappointed. Furthermore, the number of warriors defending Skeggi was badly depleted.</em><br /><br /><em>These resolute Norse women became Valkyries, by which name the dreaded Norse women warriors are known. Unfortunately, women warriors are not accepted by Norse warrior society, which holds that ‘axe wielding in battle is man’s work and not for women!’ After helping to beat off the foe, the Norse women warriors were in no mood to put away their weapons and go back to weaving breeches for the menfolk. The Valkyries were forced to leave Skeggi. They were given a longship and sailed far along the coast and up the estuary of a great river.</em><br /><br /><em>The Valkyries finally settled in a swampy island in the middle of the river, surrounded on all sides by impenetrable jungle. The island contained the deserted ruins of Lizardmen temples, and this place became the Valkyries’ stronghold. Many years later, these same warriors were encountered by Elf and Dwarf adventurers who had sailed up the river and attacked the settlement, thinking it to be a Lizardman city. They were beaten off and fled, bringing back tales of strange warrior women worshipping Lizardmen gods. They called them the ‘Amazons’ after the name of the river. The island they called ‘Heart of Darkness’ because of the denseness of the surrounding jungle.</em><br /><br /><em>Needless to say, the Amazons now bear scant resemblance to proper Norse Valkyries, having adopted the trappings of the Lizardman culture which they found in the ruins. Furthermore, the fact that they are still there, and their numbers have never been replenished and are never likely to be, lends credibility to the rumor that they have discovered a strange tropical drug which gives them everlasting youth and longevity. This rumor alone has attracted many would-be raiders to their stronghold, for such a potion would be more valuable than gold. The Amazons have never taken sides with the Lizardmen, nor have the Lizardmen ever sought their help. They remain invaders as far as the Lizardmen are concerned. The Amazons, therefore, are alone and never fight for anyone except themselves.</em><br /><br /><em>In recent years, more and more invaders have assailed the once hidden, exotic homeland of the Amazons, notably the Tilean expedition of Juan Cornetto in 1997. Raiders have pillaged the arcane riches of the Amazon temples and enslaved much of the population, carrying them off across the sea to the courts and bazaars of the Old World. Before the comet struck doomed Mordheim, Count Steinhardt purchased several hundred Amazons from Tilean slavers. These he used either as exotic gifts to sniveling, sycophantic courtiers or as his own personal concubines. It is said that during lavish parties held just before the city of sin was cleansed with fire, the depraved Count instructed his Amazon harem to perform an exotic dance for his noble guests. Most of the guests were so overcome by the mesmerizing dance that many of the Amazons were able to escape the palace and city into the surrounding countryside. These fugitives have adapted well to the wilds of the Empire, and their numbers have been swollen by more escapees from traveling shows and the fairs of Cutthroat’s Den and the Black Pit.</em><br /><br /><em>Of particular interest are the weapons and equipment carried by the Amazons. To those Old Worlders who liberated them, these items just appear as fanciful ‘mock’ swords, amulets, and staffs to be put on display as status symbols. Once activated by the rituals of the Amazons, however, they are fearsome arcane devices from an age of great magical power.</em><br /><br /><em>So, the Amazons find themselves trapped in a very alien environment far from home, but this doesn’t stop them from trying to return. These fiercely independent ladies form warbands to recover the green stones that the brutish men covet so greedily. They then sell these in an attempt to make sufficient gold to perhaps pay for safe passage back to their homeland.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "An Amazon warband must include a minimum of three models. You have 500 gcs to recruit your initial warband. The maximum number of models in the warband is 15."
+},
+"specialSkills": false,
+"specialRules": [
+{
+"heading": "",
+"flavour": "",
+"rulename": "Sacrifice",
+"ruleFull": "The Amazons are quick to sacrifice any captive to their gods. The Amazons follow the rules for Possessed in the Rulebook when it comes to captives."
+},
+{
+"heading": "",
+"flavour": "",
+"rulename": "Not one of us",
+"ruleFull": "Due to the Amazons’ isolationism and suspicions about other races they never side with anyone else. For this reason, the Amazons may not have any Hired Swords or Dramatis Personae unless they are actually Amazons themselves."
+}
+],
+"equipmentLists": [
+{
+"id": "heroines-equipment-list",
+"title": "Heroines Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "club",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "claw of the old ones",
+"alias": "",
+"cost": {
+"cost": 30
+}
+},
+{
+"name": "sunstaff",
+"alias": "",
+"cost": {
+"cost": 50
+}
+},
+{
+"name": "sun gauntlet",
+"alias": "",
+"cost": {
+"cost": 40
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "amulet of the moon",
+"alias": "",
+"cost": {
+"cost": 50
+}
+},
+{
+"name": "healing herbs",
+"alias": "",
+"cost": {
+"cost": 35
+}
+}
+]
+},
+{
+"id": "henchwomen-equipment-list",
+"title": "Henchwomen equipment list",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "club",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "sling",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+}
+]
+},
+{
+"id": "scout-equipment-list",
+"title": "Scout Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "club",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "sling",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "javelins",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "priestess",
+"type": "hero",
+"name": "Priestess",
+"plural": "Priestesses",
+"race": "human",
+"flavour": "Priestesses are part of the religious sisterhood that rules Amazon society. They are powerful sorceresses and their word is law. The younger, more junior members of the Priestesshood often gather war parties to search for Slann artifacts and also conduct the ritual sacrifices of captured enemies.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 70,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 4,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"heroines-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any models in the warband within 6\" of the Priestess may use her Leadership instead of their own."
+},
+{
+"flavour": "",
+"rulename": "Wizard",
+"ruleFull": "The Priestess is a Wizard and may use <a href=\"/docs/magic/amazon-rituals\">Amazon Rituals</a>. She starts with one ritual chosen at random from the list."
+}
+],
+"admonitions": ""
+},
+{
+"id": "champion",
+"type": "hero",
+"name": "Champion",
+"plural": "Champions",
+"race": "human",
+"flavour": "Champions are veterans that have participated in dozens of war parties over the years. They are the right-hand girls to the Priestesses and also act as their bodyguards. They are skilled in fighting with a variety of different weapons including the legendary claws of the Old Ones.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 35,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"heroines-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": false,
+"speed": true,
+"special": false
+},
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "totem-warrior",
+"type": "hero",
+"name": "Totem Warrior",
+"plural": "Totem Warriors",
+"race": "human",
+"flavour": "There is a peculiar sect within Amazon society that attracts the most bloodthirsty, unhinged members of the population. These sisters are feared and revered in equal amounts. They are the Totem Warriors – Amazons that follow animal totems like the Eagle, Pirahna, Jaguar, etc, and adorn themselves in the skins and feathers of their patron gods. Totem warriors are addicted to dangerous narcotic substances that are made from the various rare herbs that grow wild in the jungles of Lustria. Before they go into battle they imbibe quantities of psychedelic herbs and enter a kill-frenzy – making them very ferocious opponents indeed.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 30,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"heroines-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": true,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Frenzy",
+"ruleFull": "Totem Warriors are utterly fanatical, blood crazed individuals. They are also totally out of their heads on dangerous, psychedelic, herbal concoctions prepared by their sisters. Totem Warriors are mad berserkers who care little about danger or the prospect of death. They are subject to the rules for <Tooltip>frenzy</Tooltip>."
+}
+],
+"admonitions": ""
+},
+{
+"id": "amazon-warriors",
+"type": "henchman",
+"name": "Amazon Warrior",
+"plural": "Amazon Warriors",
+"race": "human",
+"flavour": "Every Amazon woman is trained in the ways of warfare from birth and is hardened by a life in the unforgiving nature of their jungle environment. On the shattered streets of Mordheim, things are hardly that different as they have just traded the dense jungle undergrowth for broken buildings and rubble.",
+"minQty": 1,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"henchwomen-equipment-list"
+],
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "scouts",
+"type": "henchman",
+"name": "Scout",
+"plural": "Scouts",
+"race": "human",
+"flavour": "Scouts are known for their exceptional speed and agility. They are just at home stealthily picking their way through the rubble strewn streets of the City of the Damned and hiding in the ruins setting up ambushes.",
+"minQty": 0,
+"maxQty": 3,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 30,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"scout-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Stealthy",
+"ruleFull": "A Scout may deploy twice the distance onto the battlefield than other warriors and may start the battle Hiding."
+}
+],
+"admonitions": ""
+}
+]
+}

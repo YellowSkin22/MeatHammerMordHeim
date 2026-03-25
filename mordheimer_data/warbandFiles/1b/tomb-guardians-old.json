@@ -1,0 +1,561 @@
+{
+"id": "nehekhara-tomb-guards",
+"name": "Nehekhara Tomb Guards",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "grafixgibs.tripod.com",
+"sourceLink": "[https://grafixgibs.tripod.com/downloads/index.htm](https://grafixgibs.tripod.com/downloads/index.htm)",
+"setting": "Khemri",
+"author": "",
+"version": "",
+"lore": "<em>The hordes of the dead are terrible to behold walking resolutely forward, bones rattling, dry flesh creaking, and clutching ancient and rusty weapons or those torn from the grip of defeated enemies. How can you kill what is already dead?</em><br /><br /><em>Nehekhara arose around -2500, imperial year, as the first true human civilization in the area now called the Land of the Dead. This ancient kingdom was built along the river valleys of Northern Nehekhara. From the earliest period of their civilization, the Nehekharans buried their dead in pyramid cities in the desert outside of their townships. The Nehekrarians believed that the soul and spirit lives on for as long as the body remains intact. They started to experiment with mummifying the body in order to preserve it forever, and thus the soul and spirit giving them eternal life. The Mortuary cult was formed to study the arts of mummification and perform the rituals of awakening. After many centuries the priests had uncovered the secret and were able to mummify and preserve a body.</em><br /><br /><em>The ruling kings and his family and trusted advisors were entombed in great sarcophagi and huge pyramids. As each generation passed larger and more elaborate tombs were built until in the deserts beyond each city stood a necropolis - a city of the dead, and as the years passed these cities became bigger than the towns of the living. The tombs guarded by titanic statues and fortified like great keeps, built to keep their inhabitants secure through all eternity. Bridges spanned the gaps between the doorways on the pyramid tops and cities grew into a vast intertwined jumble of structures.</em><br /><br /><em>The preservation of the body depended on the wealth and status of that person, a farmer would be buried in a small family tomb while the ruling kings and their family and trusted advisors were entombed in great sarcophagi and huge pyramids. Every Nehekharian were buried with a number of items that they held dear, the rattle of a shield or perhaps the tools of an artisan. The more wealthy the person, the more precious items were buried with him. Not all of the Mummies belong to wealthy merchants or mighty warriors, artisans was a highstanding class in the old Nehekrarian empire. One reason for their highstanding was that they were the actual builders and architects of the tombs. Thus many of them either died rich or the families of some of their customers granted them an expensive treatment.</em><br /><br /><em>You cannot actually destroy a Mummy unless you destroy its inner organs that are safely kept within jars, there are 4 jars and each jar is protected by a spirit. Thus Mummies have no fear of being destroyed, unless you raid their tomb - where you will encounter their strongest defenses. These jars are hidden in the depths of the tombs but some are buried in lost or hidden oases. It is whispered that some of the mightiest Tomb Kings have managed to hide their jars in the underworld of the dead, this would explain their incredible resilience. Centuries after their deaths, the Tomb Kings rise from their tombs to wage huge wars against the living. While these powerful generals command their massive armies, their jars are vulnerable to attack from tomb robbers and crusaders. To protect the jars, the Tomb Kings call forth many of their fellow mummies from the dead. Some of these mummies are sent out in small groups to stop potential threats and warn the main force, which stays at the pyramid, about large forces that are advancing toward the pyramid.</em>",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "The Warriors of the Dead must include at least 3 models. You have 500 Summoning points which to form your warband with. The maximum number of models in the warband is 15."
+},
+"specialSkills": false,
+"specialRules": [
+{
+"flavour": "The warriors of the Tomb Kings are already dead and are unaffected by wounds that could daze or cripple a living warrior. Their lack of emotion means that they look upon Ogres and Youngbloods with equal ambivalence. These special rules apply to all warriors in the warband that have the special rule Undead.",
+"rulename": "Cause Fear",
+"ruleFull": "All Undead warriors cause Fear."
+},
+{
+"flavour": "",
+"rulename": "Immune to Psychology",
+"ruleFull": "All Undead warriors are immune to psychology and never leave combat."
+},
+{
+"flavour": "",
+"rulename": "No pain",
+"ruleFull": "All Undead warriors treat a <em>Stunned</em> result as <em>Knocked Down</em>."
+},
+{
+"flavour": "",
+"rulename": "May not run",
+"ruleFull": "No Undead warrior may run, but may charge as normal."
+},
+{
+"flavour": "",
+"rulename": "Immune to poison",
+"ruleFull": "No Undead warrior is affected by poison."
+},
+{
+"flavour": "",
+"rulename": "No Brain",
+"ruleFull": "Skeletons are quite dead and never gain experience, this rule only affects Skeletons. While the Mummy Prince, Mummy Warriors and Tomb Guards don't actually learn new skills they rather remember the skills they knew when they were alive. Liche Priests are undead but have retained a form of living mind and are capable of learning from their experiences."
+},
+{
+"flavour": "",
+"rulename": "Flammable",
+"ruleFull": "The Mummy Prince and the Mummy Warriors are mummies and the following rules apply. Mummies are dry as tinder and wrapped in bandages soaked in highly flammable chemicals. A hit from a fire-based attack will cause double the normal number of wounds."
+},
+{
+"flavour": "",
+"rulename": "Do not Drink",
+"ruleFull": "Undead models do not need food and water, however any living animals that accompany the Mummies follow the water rules as normal."
+},
+{
+"flavour": "",
+"rulename": "Home Ground",
+"ruleFull": "The Tomb Guardians live in the Necropolises and have no trouble locating the hidden tombs in search of weapons and armour to help them defend their homes. The Tomb Guardian warband will always roll one extra dice in the exploration phase, this only apply in the Cities of the Dead setting."
+}
+],
+"equipmentLists": [
+{
+"id": "undead-equipment-list",
+"title": "Undead Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "Bronze Dagger",
+"cost": {
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "Bronze Axe",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "Bronze Sword",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "Bronze Spear",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "morning star",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "halberd",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "flail",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "bow",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "asp arrows",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "nehekhara javelin",
+"alias": "Nehekhara Javelin",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "helmet",
+"alias": "Bronze Helmet",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "Bronze Breast Plate",
+"cost": {
+"cost": 20
+}
+}
+]
+},
+{
+"id": "liche-priest-equipment-list",
+"title": "Liche Priest Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "Bronze Dagger",
+"cost": {
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "staff",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "sword",
+"alias": "Bronze Sword",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "morning star",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "serpent staff",
+"alias": "Serpent Staff",
+"cost": {
+"cost": 30
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "mummy-prince",
+"type": "hero",
+"name": "Mummy Prince",
+"plural": "Mummy Princes",
+"race": "mummy",
+"flavour": "The legions of the dead are lead by the Mummy Prince, trusted officers and captains in the Nehekharian armies. But not all Mummies were soldiers in their living life and some were the great engineers and artisans who constructed the Necropolises and were granted mummification for their accomplishes.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 90,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 2,
+"i": 3,
+"a": 1,
+"ld": 8
+},
+"equipmentLists": [
+"undead-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "The Mummy Prince is the warbands leader and follow all rules for leaders."
+},
+{
+"flavour": "",
+"rulename": "Undead",
+"ruleFull": "The Mummy Prince is undead and follow all rules for the Undead."
+}
+],
+"admonitions": ""
+},
+{
+"id": "liche-priest",
+"type": "hero",
+"name": "Liche Priest",
+"plural": "Liche Priests",
+"race": "liche priest",
+"flavour": "The Mortuary Cult perfected their magic over a thousand years until the cult could cheat death itself. The priests now hold a special kind of power by the Tomb Kings side as they alone hold the power to invoke the power to allow the Tomb Kings armies to march to war again.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 55,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"liche-priest-equipment-list"
+],
+"skillAccess": {
+"combat": false,
+"shooting": false,
+"academic": true,
+"strength": false,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Wizard",
+"ruleFull": "The Liche Priest is a wizard and may use Necromantic magic or Liche Priest scrolls, see the Liche Priests section for more details."
+},
+{
+"flavour": "",
+"rulename": "Undead",
+"ruleFull": "The Liche Priest is undead and follow all rules for the Undead."
+}
+],
+"admonitions": ""
+},
+{
+"id": "mummy-warriors",
+"type": "hero",
+"name": "Mummy Warrior",
+"plural": "Mummy Warriors",
+"race": "mummy",
+"flavour": "In the old Nehekrarian empire those that could afford it would have their bodies mummified to grant them eternal life. With the coming of Nagash, the Lichelord, their slumber has been disturbed and they now inhabit the Necropolises hidden in the desert along with their servants and former subjects in the form of Skeletons.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 70,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 2,
+"i": 2,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"undead-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": true,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": false
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Undead",
+"ruleFull": "The Mummy Warriors are undead and follow all rules for the Undead."
+}
+],
+"admonitions": ""
+},
+{
+"id": "skeleton-soldiers",
+"type": "henchman",
+"name": "Skeleton Soldier",
+"plural": "Skeleton Soldiers",
+"race": "skeleton",
+"flavour": "With the coming of Nagash and his great ritual the inhabitants of the Necropolises were brought back to the land of the living. The Kings and Lords once more command their legions, but this time the legions are made up of Skeleton Soldiers rather than living soldiers. Everyone in the the old Nehekrarian empire was mummified but not everyone could afford the best embalmers or could afford to build a solid tomb. Thus most of the mummies ended up as skeletons when the sand caught hold of their rags and the wind uncovered their bones to the sun.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 5
+},
+"equipmentLists": [
+"undead-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Undead",
+"ruleFull": "The Skeletons are undead and follow all rules for the Undead."
+}
+],
+"admonitions": ""
+},
+{
+"id": "tomb-guards",
+"type": "henchman",
+"name": "Tomb Guard",
+"plural": "Tomb Guards",
+"race": "tomb guard",
+"flavour": "As the Kings and Lords were awakened, so were their bodyguards, the Tomb Guards; faithful in death as they were in life. Often armed with the best armour and weapons, they are always at the side of their",
+"minQty": 0,
+"maxQty": 2,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 35,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 5
+},
+"equipmentLists": [
+"undead-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Undead",
+"ruleFull": "The Tomb Guards are undead and follow all rules for the Undead, note that Tomb Guards do gain experience."
+}
+],
+"admonitions": ""
+},
+{
+"id": "tomb-scorpions",
+"type": "henchman",
+"name": "Tomb Scorpion",
+"plural": "Tomb Scorpions",
+"race": "scorpion",
+"flavour": "The ancients tombs are often protected by scorpions, they dwell in the dark cracks and niches of the tomb and will attack any raider that invade their home. The Liche Priests can summon these scorpions to venture outside of the tombs to attack the invaders outside.",
+"minQty": 0,
+"maxQty": 3,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 15,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 5,
+"ws": 2,
+"bs": "–",
+"s": 1,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 4
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Living",
+"ruleFull": "The Scorpions are living beings and may run and are affected by Psychology."
+},
+{
+"flavour": "",
+"rulename": "Animals",
+"ruleFull": "The Scorpions are animals and doesn't get experience points."
+},
+{
+"flavour": "",
+"rulename": "Scorpions sting",
+"ruleFull": "The Scorpions attacks their stinging tails. The attack is made at Strength 4, however if the warrior that is hit is immune to Poison the Strength of the hit is reduced to 1."
+}
+],
+"admonitions": ""
+},
+{
+"id": "stone-golem",
+"type": "henchman",
+"name": "Stone Golem",
+"plural": "Stone Golems",
+"race": "stone golem",
+"flavour": "The Stone Golems were created to guard the pyramids while the great Tomb Kings slept. They are giant statues, twice the height of a man. Most are humanoid shaped and most have the head of an animal, they are known to have been made in all manner of shapes, even gigantic skeletons.",
+"minQty": 0,
+"maxQty": 1,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 125,
+"gainExp": false,
+"promotable": false,
+"statblock": {
+"m": 3,
+"ws": 3,
+"bs": "–",
+"s": 5,
+"t": 4,
+"w": 3,
+"i": 1,
+"a": 2,
+"ld": 5
+},
+"equipmentLists": [],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Cause Fear",
+"ruleFull": "Stone Golems are giant, (seemingly) living statues and therefore cause fear."
+},
+{
+"flavour": "",
+"rulename": "Immune to Psychology",
+"ruleFull": "Stone Golems do not think for themselves and therefore are not affected by psychology and never leave combat."
+},
+{
+"flavour": "",
+"rulename": "Immune to Poison",
+"ruleFull": "Stone Golems are not affected by any poison."
+},
+{
+"flavour": "",
+"rulename": "No Brain",
+"ruleFull": "Stone Golems do not think for themselves and do not gain experience."
+},
+{
+"flavour": "",
+"rulename": "May not Hide",
+"ruleFull": "Stone Golems are far to big to hide and may not do so."
+},
+{
+"flavour": "",
+"rulename": "Large",
+"ruleFull": "Stone Golems are huge statues and therefore make tempting targets for archers. Any model may shoot at a Stone Golem, even if it is not the closest target."
+},
+{
+"flavour": "",
+"rulename": "Does not eat",
+"ruleFull": "Stone Golems do not require water."
+},
+{
+"flavour": "",
+"rulename": "Animated",
+"ruleFull": "The Stone Golem cannot run and is not considered to be an Undead model."
+}
+],
+"admonitions": "Stone Golems do not use weapons or armor, but have a natural save of 4+ due to the fact that they are made of stone. They are not affected by normal penalties for not using weapons."
+}
+]
+}

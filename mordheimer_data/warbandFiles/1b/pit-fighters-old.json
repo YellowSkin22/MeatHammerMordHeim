@@ -1,0 +1,639 @@
+{
+"id": "pit-fighters-old",
+"name": "Pit Fighters (old)",
+"grade": "1b",
+"campaigngrade": "1b",
+"source": "Town Cryer #14",
+"sourceLink": "[https://broheim.net/downloads/towncryer/TownCryer14.pdf#page=36](https://broheim.net/downloads/towncryer/TownCryer14.pdf#page=36)",
+"setting": "Mordheim",
+"author": "",
+"version": "",
+"lore": "<em>All across the world you can find gladiatorial pit fights, where hardy fighters take up arms against each other. From the vicious pits of Cutthroat’s Haven to the Black Pits surrounding Mordheim, there can be heard the clash of steel. In most places, local law bans these fights, but the culture itself remains a haven for ex-mercenaries, escaped convicts, and itinerant conmen — and bribes to local officials ensure that this brutal sport continues unabated.</em><br /><br /><em>There are as many different types of fights as there are venues, from small fistfights in an old barn or a back alley to huge conflicts with many heavily armed combatants. Most fighters are slaves who work for the so-called ‘circuit’. They try to earn their freedom by paying off their owners with a large cut of the winnings. Most successful Pit Fighters live for the sport (and, of course, often die for it also!) because they know little else.</em><br /><br /><em>The men in this Warband consist solely of professional Pit Fighters who were either able to buy their freedom or have escaped. Now they roam the streets of Mordheim in search of the Wyrdstone that would bring them wealth faster than anyone can imagine.</em><br /><br /><em>The Pit Fighters are used to fighting in streets and small corridors, and this makes them a much-feared opponent. The Pit King is the most skilled and cunning Pit Fighter of them all, who leads his band with an iron fist.</em><br /><br /><strong>Appearance:</strong> Pit Fighters are grizzled veteran warriors covered with many scars of battle, they are armed with special Pit Weapons and Armour, their bodies well developed and muscular. They wear little clothing and only partial armour known as Pit Armour.",
+"warbandRules": {
+"startingGc": 500,
+"maxModels": 15,
+"choiceFluff": "A Pit Fighter warband must include a minimum of three models. You have 500 gcs to recruit your initial warband. The maximum number of warriors in the warband is 15, though some buildings in the warband’s encampment may increase this.",
+"admonitions": "<div className=\"admonition admonition-info\"><div className=\"admonition-content\"><p>These are the original Pit Fighter rules from Town Cryer #14</p></div></div>"
+},
+"specialSkills": true,
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Hired Swords",
+"ruleFull": "Pit Fighters may hire all Hired Swords available except for the Elf Ranger, who feels working with such dirty and brutish individuals would just not do."
+},
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "All Pit Fighters have the Pit Fighter skill as described in the Strength Skill List except the Pit Fighter Initiates.(Pit Fighter Skill: +1 WS, +1 A when fighting in ruins, buildings and The Pit.)"
+},
+{
+"flavour": "",
+"rulename": "Free the Slaves!",
+"ruleFull": "Pit Fighters hate all Slavers. The Pit Fighters will never sell their captured opponents to the slavers."
+},
+{
+"flavour": "",
+"rulename": "In the Pit!",
+"ruleFull": "Pit Fighters who capture an opponent may decide to let him fight in the infamous fighting pits of Cutthroat’s Haven (use the rules that appeared earlier in this magazine). The Pit Fighter Warband may decide to send in one or more of their own fighters to fight the captive, if the Pit Fighter wins he gains +2 Experience, the Warband gets all the Captive’s armour and weapons +50ge, if the Pit Fighter loses then roll to see whether he is dead or injured as normal (ignore all following results: Robbed, Captured, Hardened, Sold to the Pits and Survives Against the Odds), he will not lose his armour or weapons, the Captive will get the 50 gc and the +2 Experience when he wins. If the Captive wins the audience decides whether he gains his freedom. Roll a D6 on a 4+ the audience raise their thumbs and he is free. A 1-3 means he remains the Pit Fighters Captive and may be fielded in the pits after future games."
+}
+],
+"equipmentLists": [
+{
+"id": "pit-fighters-equipment-list",
+"title": "Pit Fighters Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "dwarf axe",
+"alias": "",
+"cost": {
+"cost": 15,
+"costSuffix": "Only available to the Dwarf Trollslayer."
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "morning star",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "double-handed weapon",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "halberd",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "flail",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "war chain",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "fist spike",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "spiked gauntlet",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "gromril weapon",
+"alias": "",
+"cost": {
+"costMod": "3 × cost"
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "heavy armour",
+"alias": "",
+"cost": {
+"cost": 50
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+}
+]
+},
+{
+"id": "pursuer-equipment-list",
+"title": "Pursuer Equipment List",
+"caveat": "",
+"items": [
+{
+"name": "dagger",
+"alias": "",
+"cost": {
+"costPrefix": "1st free/",
+"cost": 2
+}
+},
+{
+"name": "mace",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "hammer",
+"alias": "",
+"cost": {
+"cost": 3
+}
+},
+{
+"name": "axe",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "sword",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "spear",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "trident",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "throwing knives",
+"alias": "",
+"cost": {
+"cost": 15
+}
+},
+{
+"name": "javelins",
+"alias": "Javelin",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "net",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "hardened leather",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "light armour",
+"alias": "",
+"cost": {
+"cost": 20
+}
+},
+{
+"name": "helmet",
+"alias": "",
+"cost": {
+"cost": 10
+}
+},
+{
+"name": "shield",
+"alias": "",
+"cost": {
+"cost": 5
+}
+},
+{
+"name": "buckler",
+"alias": "",
+"cost": {
+"cost": 5
+}
+}
+]
+}
+],
+"fighters": [
+{
+"id": "pit-king",
+"type": "hero",
+"name": "Pit King",
+"plural": "Pit Kings",
+"race": "human",
+"flavour": "A Pit King is the leader of the Warband. A Pit King is a very renowned warrior; a spectacular fighter used to pleasing the baying crowd with his martial display and bloody triumphs. He has managed to buy or free enough fellow Pit Fighters to start a Warband of his own. He’s the smartest and toughest Pit Fighter around and will fight anybody who puts his position in danger. He is held in a mixture of awe and fear by his fellows and his loyalty to his men is psychopathic and violent. There are, however, few better fighters in the Known World, so which place would be more fitting for them than the dangerous fighting pits then! Battling against the most hardened veterans and monsters known in the Old World, it seems that they have found themselves a second place, to call home.",
+"minQty": 1,
+"maxQty": 1,
+"costGc": 80,
+"startingXp": 20,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 1,
+"i": 4,
+"a": 2,
+"ld": 8
+},
+"equipmentLists": [
+"pit-fighters-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": true,
+"strength": true,
+"speed": true,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Leader",
+"ruleFull": "Any models in the warband within 6\" of the King may use his Leadership instead of their own."
+},
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "See Strength Skill section."
+}
+],
+"admonitions": ""
+},
+{
+"id": "dwarf-troll-slayer",
+"type": "hero",
+"name": "Dwarf Troll Slayer",
+"plural": "Dwarf Troll Slayers",
+"race": "dwarf",
+"flavour": "Troll Slayers are members of the morbid Dwarf cult obsessed with seeking an honourable death in combat. Having committed some unforgivable crime or been dishonoured in some way, a Dwarf will forsake his home and wander off to die fighting the enemies of Dwarf kind. Troll Slayers are insanely dangerous individuals, psychopathic and violent. There are, however, few better fighters in the Known World, so which place would be more fitting for them than the dangerous fighting pits then! Battling against the most hardened veterans and monsters known in the Old World, it seems that they have found themselves a second place, to call home.",
+"minQty": 0,
+"maxQty": 1,
+"costGc": 50,
+"startingXp": 8,
+"statblock": {
+"m": 3,
+"ws": 4,
+"bs": 3,
+"s": 4,
+"t": 4,
+"w": 1,
+"i": 2,
+"a": 1,
+"ld": 9
+},
+"equipmentLists": [
+"pit-fighters-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "See Strength Skill section."
+},
+{
+"flavour": "",
+"rulename": "Hard to Kill",
+"ruleFull": "Dwarfs are tough, resilient individuals who can only be taken out of action on a roll of 6 instead of 5–6 when rolling on the injury chart. Treat a roll of 1–2 as knocked down, 3–5 as stunned, and 6 as out of action."
+},
+{
+"flavour": "",
+"rulename": "Hard Head",
+"ruleFull": "Dwarfs ignore the special rules for maces, clubs, etc. They are not easy to knock out!"
+},
+{
+"flavour": "",
+"rulename": "Hate Orcs and Goblins",
+"ruleFull": "All Dwarfs hate Orcs and Goblins. See the psychology section of the Mordheim rules for details on the effects of hatred."
+},
+{
+"flavour": "",
+"rulename": "Grudgebearers",
+"ruleFull": "Dwarfs hold an ancient grudge against Elves from the days when the two races fought for the supremacy of the Old World. If the Pit Fighters ever hire any kind of Elven Hired Sword he will leave the warband immediately; he refuses to fight alongside these pansy Elves!"
+},
+{
+"flavour": "",
+"rulename": "Death Wish",
+"ruleFull": "Troll Slayers seek an honourable death in combat. They are completely immune to all psychology and never need to test if fighting alone."
+}
+],
+"admonitions": ""
+},
+{
+"id": "pit-veterans",
+"type": "hero",
+"name": "Pit Veteran",
+"plural": "Pit Veterans",
+"race": "human",
+"flavour": "Pit Fighter Veterans are experienced fighters who carry out the orders of the Pit King with ruthless efficiency. These men ensure that the warband is held together with iron-hard discipline.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 35,
+"startingXp": 8,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 4,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"pit-fighters-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": true
+},
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "See Strength Skill section."
+}
+],
+"admonitions": ""
+},
+{
+"id": "pit-fighter-initiates",
+"type": "hero",
+"name": "Pit Fighter Initiate",
+"plural": "Pit Fighter Initiates",
+"race": "human",
+"flavour": "Pit Fighter Initiates are young men who have just picked up their arms in the Pit, and they will have to prove themselves in the heat of the battle.",
+"minQty": 0,
+"maxQty": 2,
+"costGc": 15,
+"startingXp": 0,
+"statblock": {
+"m": 4,
+"ws": 2,
+"bs": 2,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 6
+},
+"equipmentLists": [
+"pit-fighters-equipment-list"
+],
+"skillAccess": {
+"combat": true,
+"shooting": false,
+"academic": false,
+"strength": true,
+"speed": false,
+"special": true
+},
+"specialRules": [],
+"admonitions": ""
+},
+{
+"id": "ogre-pit-fighter",
+"type": "henchman",
+"name": "Ogre Pit Fighter",
+"plural": "Ogre Pit Fighters",
+"race": "ogre",
+"flavour": "The Ogre Pit Fighter is one of the most brutal and feared of all Pit Fighters. These massive, savage fighters are often called upon to fight such fearsome beasts as captured Trolls in some of the most incredible bouts held at the pits.",
+"minQty": 0,
+"maxQty": 1,
+"groupSize": {
+"min": 1,
+"max": 1
+},
+"costGc": 165,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 6,
+"ws": 3,
+"bs": 2,
+"s": 4,
+"t": 4,
+"w": 3,
+"i": 3,
+"a": 2,
+"ld": 7
+},
+"equipmentLists": [
+"pit-fighters-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "See Strength Skill section."
+},
+{
+"flavour": "",
+"rulename": "Fear",
+"ruleFull": "Ogre Pit Fighters are large, threatening creatures that cause Fear. See the Psychology section for details."
+},
+{
+"flavour": "",
+"rulename": "Large",
+"ruleFull": "Ogre Pit Fighters are huge, lumbering creatures and therefore make tempting targets for archers. Any model may shoot at the Ogre Pit Fighter, even if he is not the closest target."
+},
+{
+"flavour": "",
+"rulename": "Skills",
+"ruleFull": "An Ogre Pit Fighter who becomes a Hero as a result of The Lad’s Got Talent may choose from the Combat, Strength and Pit Fighter Special Skills."
+},
+{
+"flavour": "",
+"rulename": "Slow Witted",
+"ruleFull": "Although Ogres are capable of earning experience and bettering themselves they are not the smartest creatures. Ogres only gain advances at half the rate of everyone else (i.e., they must accrue twice as much experience as normal to get an advance)."
+}
+],
+"admonitions": ""
+},
+{
+"id": "pursuers",
+"type": "henchman",
+"name": "Pursuer",
+"plural": "Pursuers",
+"race": "human",
+"flavour": "Pursuers are a special martial type of pit fighter often used for ‘warm-up fights’ before the main show. These men are usually lightly armed with tridents, nets, javelins or war chains with which they pursue and harry their enemies in a hit and run style of warfare. This style of fighting dates back to ancient times in Tilea when gladiators, as they were known in the Tilean tongue, would fight in massive stone arenas.",
+"minQty": 0,
+"maxQty": 7,
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 25,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 3,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"pursuer-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "See Strength Skill section."
+}
+],
+"admonitions": ""
+},
+{
+"id": "pit-fighters",
+"type": "henchman",
+"name": "Pit Fighter",
+"plural": "Pit Fighters",
+"race": "human",
+"flavour": "Pit Fighters are the close combat specialists of the warband, armed with a variety of weapons and armour.",
+"groupSize": {
+"min": 1,
+"max": 5
+},
+"costGc": 35,
+"gainExp": true,
+"promotable": true,
+"statblock": {
+"m": 4,
+"ws": 4,
+"bs": 3,
+"s": 3,
+"t": 3,
+"w": 1,
+"i": 3,
+"a": 1,
+"ld": 7
+},
+"equipmentLists": [
+"pit-fighters-equipment-list"
+],
+"specialRules": [
+{
+"flavour": "",
+"rulename": "Pit Fighter",
+"ruleFull": "See Strength Skill section."
+},
+{
+"flavour": "",
+"rulename": "Arms Master",
+"ruleFull": "See Pit Fighter Skill section."
+}
+],
+"admonitions": ""
+}
+]
+}
