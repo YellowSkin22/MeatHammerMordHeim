@@ -1,5 +1,5 @@
 {
-  "lastChecked": "2026-03-26T20:29:14.889Z",
+  "lastChecked": "2026-03-26T20:38:54.987Z",
   "files": {
     "data/mergedEquipment.json": {
       "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
@@ -14,8 +14,8 @@
       "syncedAt": "2026-03-26T20:29:14.889Z"
     },
     "data/warbandFiles": {
-      "sha": "121264e30c45aa9468bbe86e6118d33343d33158",
-      "syncedAt": "2026-03-26T20:29:14.889Z"
+      "sha": "3194116c3f9c88e01eea231e5f2a92fe6033a970",
+      "syncedAt": "2026-03-26T20:38:54.987Z"
     }
   }
 }
