@@ -823,6 +823,7 @@ const UI = {
     const warband = DataService.getWarband(r.warbandId);
 
     let accessibleCategories;
+    let warbandAllowedEquipment = null; // null = no warband dropdown
     if (listType === 'customWarriors') {
       accessibleCategories = Object.keys(DataService.equipment);
     } else if (listType === 'hiredSwords') {
@@ -831,29 +832,70 @@ const UI = {
     } else {
       const accessKey = listType === 'heroes' ? 'heroes' : 'henchmen';
       accessibleCategories = warband.equipmentAccess[accessKey] || [];
+      // Find the fighter template to get warband-specific allowed equipment
+      const fighterList = listType === 'heroes' ? warband.heroes : warband.henchmen;
+      const template = fighterList.find(f => f.type === warrior.type);
+      if (template && template.allowedEquipment) {
+        warbandAllowedEquipment = template.allowedEquipment;
+      }
     }
 
     const modal = document.getElementById('equipment-modal');
     const body = document.getElementById('equipment-modal-body');
 
     let html = '';
-    // Add miscellaneous always
+
+    // ── Warband Equipment dropdown (heroes/henchmen only) ──────────────────
+    if (warbandAllowedEquipment !== null) {
+      // Group warband items by category
+      const warbandByCat = {};
+      for (const item of warbandAllowedEquipment) {
+        const catId = DataService.getEquipmentItem(item.id)?.category || 'miscellaneous';
+        if (!warbandByCat[catId]) warbandByCat[catId] = [];
+        warbandByCat[catId].push(item);
+      }
+      html += '<div style="margin-bottom:1rem;">';
+      html += '<label style="display:block;font-size:0.8rem;text-transform:uppercase;font-weight:600;margin-bottom:0.3rem;">Warband Equipment</label>';
+      html += `<select style="width:100%;padding:0.4rem;" onchange="UI.selectEquipmentFromSelect(this,'${listType}',${index})">`;
+      html += '<option value="">— select item —</option>';
+      for (const [catId, items] of Object.entries(warbandByCat)) {
+        const catName = DataService.equipment[catId]?.name || catId;
+        html += `<optgroup label="${this.escAttr(catName)}">`;
+        for (const item of items) {
+          const prefix = item.costPrefix ? `${item.costPrefix}` : '';
+          html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${prefix}${item.cost} gc)</option>`;
+        }
+        html += '</optgroup>';
+      }
+      html += '</select></div>';
+    }
+
+    // ── All Equipment dropdown ─────────────────────────────────────────────
     const allCats = [...accessibleCategories, 'miscellaneous'];
+    html += '<div>';
+    html += '<label style="display:block;font-size:0.8rem;text-transform:uppercase;font-weight:600;margin-bottom:0.3rem;">All Equipment</label>';
+    html += `<select style="width:100%;padding:0.4rem;" onchange="UI.selectEquipmentFromSelect(this,'${listType}',${index})">`;
+    html += '<option value="">— select item —</option>';
     for (const catId of allCats) {
       const items = DataService.getEquipmentByCategory(catId);
       if (items.length === 0) continue;
       const catName = DataService.equipment[catId]?.name || catId;
-      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${catName}</h4>`;
-      html += '<div style="display:flex; flex-wrap:wrap; gap:0.3rem;">';
+      html += `<optgroup label="${this.escAttr(catName)}">`;
       for (const item of items) {
-        const tooltip = item.rules ? ` data-tooltip="${this.escAttr(item.rules)}"` : '';
-        html += `<button class="btn btn-sm"${tooltip} onclick="UI.selectEquipment('${listType}', ${index}, '${item.id}')">${item.name} (${item.cost} gc)</button>`;
+        html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${item.cost} gc)</option>`;
       }
-      html += '</div>';
+      html += '</optgroup>';
     }
+    html += '</select></div>';
 
     body.innerHTML = html;
     modal.classList.add('active');
+  },
+
+  selectEquipmentFromSelect(select, listType, index) {
+    const itemId = select.value;
+    if (!itemId) return;
+    this.selectEquipment(listType, index, itemId);
   },
 
   selectEquipment(listType, index, itemId) {
