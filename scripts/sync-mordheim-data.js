@@ -171,8 +171,8 @@ function transformEquipment(sourceItems, existing) {
       id,
       name:     src.name,
       cost:     src.cost?.cost ?? prev?.cost ?? 0,
-      range:    prev?.range    ?? '',
-      strength: prev?.strength ?? '',
+      range:    src.range      ?? prev?.range    ?? '',
+      strength: src.strength   ?? prev?.strength ?? '',
       rules:    rules          || prev?.rules || '',
       category: catKey,
     };
@@ -180,7 +180,8 @@ function transformEquipment(sourceItems, existing) {
     seenIds.add(id);
 
     if (prev) {
-      if (item.cost !== prev.cost || item.name !== prev.name || item.rules !== prev.rules) {
+      if (item.cost !== prev.cost || item.name !== prev.name || item.rules !== prev.rules ||
+          item.range !== prev.range || item.strength !== prev.strength) {
         updated.push(id);
       }
     } else {
