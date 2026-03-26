@@ -171,8 +171,8 @@ function transformEquipment(sourceItems, existing) {
       id,
       name:     src.name,
       cost:     src.cost?.cost ?? prev?.cost ?? 0,
-      range:    prev?.range    ?? '',
-      strength: prev?.strength ?? '',
+      range:    src.range      ?? prev?.range    ?? '',
+      strength: src.strength   ?? prev?.strength ?? '',
       rules:    rules          || prev?.rules || '',
       category: catKey,
     };
@@ -180,7 +180,8 @@ function transformEquipment(sourceItems, existing) {
     seenIds.add(id);
 
     if (prev) {
-      if (item.cost !== prev.cost || item.name !== prev.name || item.rules !== prev.rules) {
+      if (item.cost !== prev.cost || item.name !== prev.name || item.rules !== prev.rules ||
+          item.range !== prev.range || item.strength !== prev.strength) {
         updated.push(id);
       }
     } else {
@@ -355,7 +356,19 @@ function transformSpells(sourceData, existing) {
 //     groupSize.max         → maxGroupSize
 //
 // spellAccess: cross-referenced from magic.json permittedWarbands by warband name + fighter name
+// allowedEquipment: resolved from fighter.equipmentLists → warband.equipmentLists items, cross-ref'd against equipment.json
 // equipmentAccess: defaults to all three categories for both heroes and henchmen
+
+function buildEquipmentNameLookup(equipmentData) {
+  // Returns: { "lowercase item name" → { id, category } }
+  const map = {};
+  for (const [catId, cat] of Object.entries(equipmentData.categories || {})) {
+    for (const item of (cat.items || [])) {
+      map[item.name.toLowerCase()] = { id: item.id, category: catId };
+    }
+  }
+  return map;
+}
 
 function buildSpellAccessMap(magicData) {
   // Returns: { "Warband Name": { "Fighter Name": ["spell-list-id", ...] } }
@@ -392,39 +405,59 @@ function findSpellAccess(spellMap, warbandName, fighterName) {
   return ftMap[ftKey];
 }
 
-function transformOneWarband(src, spellMap) {
+function resolveAllowedEquipment(fighter, src, equipmentLookup) {
+  const allowedEquipment = [];
+  for (const listId of (fighter.equipmentLists || [])) {
+    const list = (src.equipmentLists || []).find(l => l.id === listId);
+    if (!list) continue;
+    for (const item of (list.items || [])) {
+      const match = equipmentLookup[item.name.toLowerCase()];
+      if (!match) continue; // skip items not in our equipment.json
+      if (allowedEquipment.some(e => e.id === match.id)) continue; // deduplicate
+      const entry = { id: match.id, name: item.name, cost: item.cost?.cost ?? 0 };
+      if (item.cost?.costPrefix) entry.costPrefix = item.cost.costPrefix;
+      allowedEquipment.push(entry);
+    }
+  }
+  return allowedEquipment;
+}
+
+function transformOneWarband(src, spellMap, equipmentLookup) {
   const heroes   = [];
   const henchmen = [];
 
   for (const fighter of (src.fighters || [])) {
-    const stats        = mapStatKeys(fighter.statblock);
-    const specialRules = (fighter.specialRules || []).map(r => r.rulename).filter(Boolean);
-    const skillAccess  = Object.entries(fighter.skillAccess || {})
+    const stats            = mapStatKeys(fighter.statblock);
+    const specialRules     = (fighter.specialRules || []).map(r => r.rulename).filter(Boolean);
+    const skillAccess      = Object.entries(fighter.skillAccess || {})
       .filter(([k, v]) => v && k !== 'special')
       .map(([k]) => k);
+    const allowedEquipment = resolveAllowedEquipment(fighter, src, equipmentLookup);
 
     if (fighter.type === 'hero') {
       const spellAccess = findSpellAccess(spellMap, src.name, fighter.name);
       heroes.push({
-        type:        fighter.id,
-        name:        fighter.name,
-        max:         fighter.maxQty  ?? 1,
-        required:    (fighter.minQty ?? 0) >= 1,
-        cost:        fighter.costGc  ?? 0,
+        type:             fighter.id,
+        name:             fighter.name,
+        max:              fighter.maxQty  ?? 1,
+        required:         (fighter.minQty ?? 0) >= 1,
+        cost:             fighter.costGc  ?? 0,
         stats,
         specialRules,
-        startingExp: fighter.startingXp ?? 0,
+        startingExp:      fighter.startingXp ?? 0,
         skillAccess,
         spellAccess,
+        allowedEquipment,
       });
     } else if (fighter.type === 'henchman') {
       henchmen.push({
-        type:         fighter.id,
-        name:         fighter.name,
-        cost:         fighter.costGc ?? 0,
+        type:             fighter.id,
+        name:             fighter.name,
+        cost:             fighter.costGc ?? 0,
         stats,
         specialRules,
-        maxGroupSize: fighter.groupSize?.max ?? 5,
+        maxGroupSize:     fighter.groupSize?.max ?? 5,
+        allowedEquipment,
       });
     }
   }
@@ -450,7 +483,7 @@ function transformOneWarband(src, spellMap) {
   };
 }
 
-function transformWarbands(warbandFiles, existing, magicData) {
+function transformWarbands(warbandFiles, existing, magicData, equipmentLookup) {
   const spellMap = buildSpellAccessMap(magicData);
 
   // Build lookup of existing warbands to preserve hand-tuned fields
@@ -466,7 +499,7 @@ function transformWarbands(warbandFiles, existing, magicData) {
   for (const src of warbandFiles) {
     if (!src.id || !src.fighters) continue;
 
-    const transformed = transformOneWarband(src, spellMap);
+    const transformed = transformOneWarband(src, spellMap, equipmentLookup);
     const prev        = existingById[transformed.id];
 
     if (prev) {
@@ -700,8 +733,10 @@ async function main() {
 
       process.stdout.write(`(${warbandDocs.length} files) `);
 
-      const existing = readJson(path.join(DATA_DIR, 'warbands.json'));
-      const { data, added, updated } = transformWarbands(warbandDocs, existing, magicData);
+      const existing          = readJson(path.join(DATA_DIR, 'warbands.json'));
+      const existingEquipment = readJson(path.join(DATA_DIR, 'equipment.json'));
+      const equipmentLookup   = buildEquipmentNameLookup(existingEquipment);
+      const { data, added, updated } = transformWarbands(warbandDocs, existing, magicData, equipmentLookup);
       validateWarbands(data);
       if (!dryRun) writeJson(path.join(DATA_DIR, 'warbands.json'), data);
       summary.added[label]   = added;
