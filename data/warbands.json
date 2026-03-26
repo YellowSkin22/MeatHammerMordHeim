@@ -27465,8 +27465,8 @@
           "allowedEquipment": [
             {
               "id": "dagger",
-              "name": "dagger",
-              "cost": 2
+              "name": "dagger (free)",
+              "cost": 0
             },
             {
               "id": "mace",
@@ -27573,8 +27573,8 @@
           "allowedEquipment": [
             {
               "id": "dagger",
-              "name": "dagger",
-              "cost": 2
+              "name": "dagger (free)",
+              "cost": 0
             },
             {
               "id": "mace",
@@ -27683,8 +27683,8 @@
           "allowedEquipment": [
             {
               "id": "dagger",
-              "name": "dagger",
-              "cost": 2
+              "name": "dagger (free)",
+              "cost": 0
             },
             {
               "id": "mace",
@@ -27813,8 +27813,8 @@
           "allowedEquipment": [
             {
               "id": "dagger",
-              "name": "dagger",
-              "cost": 2
+              "name": "dagger (free)",
+              "cost": 0
             },
             {
               "id": "mace",
@@ -27915,8 +27915,8 @@
           "allowedEquipment": [
             {
               "id": "dagger",
-              "name": "dagger",
-              "cost": 2
+              "name": "dagger (free)",
+              "cost": 0
             },
             {
               "id": "mace",
