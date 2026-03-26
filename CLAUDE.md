@@ -22,6 +22,10 @@ netlify deploy --prod --dir=. --site=37f849ae-7c23-4bcc-99a1-a7fbadc69ef6
 ```
 Live at: https://meathammer-mordheim.netlify.app
 
+## Rules
+
+- **Core game mechanics are always free tier** — features that are fundamental to playing the game (managing warriors, tracking stats, equipment, skills, injuries, experience, warband rating) must never be gated behind `standard` or `pro`. If a request would move a core mechanic behind a tier check, ask for explicit confirmation that this rule is being intentionally broken before proceeding.
+
 ## Architecture
 
 Vanilla JS single-page app with five globals loaded in order by `index.html`:
