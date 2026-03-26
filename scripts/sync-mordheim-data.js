@@ -411,7 +411,10 @@ function resolveAllowedEquipment(fighter, src, equipmentLookup) {
     const list = (src.equipmentLists || []).find(l => l.id === listId);
     if (!list) continue;
     for (const item of (list.items || [])) {
-      const match = equipmentLookup[item.name.toLowerCase()];
+      const nameLower = item.name.toLowerCase();
+      // Fallback: strip parenthetical suffix (e.g. "dagger (free)" → "dagger")
+      const baseNameLower = nameLower.replace(/\s*\([^)]*\)\s*$/, '').trim();
+      const match = equipmentLookup[nameLower] || equipmentLookup[baseNameLower];
       if (!match) continue; // skip items not in our equipment.json
       if (allowedEquipment.some(e => e.id === match.id)) continue; // deduplicate
       const entry = { id: match.id, name: item.name, cost: item.cost?.cost ?? 0 };
