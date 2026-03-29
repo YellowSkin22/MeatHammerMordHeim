@@ -1,5 +1,18 @@
 # Migration Plan: YellowSkin → Uncle-Mel Data Structure
 
+## Progress Tracker
+
+| Phase | Status | Commit |
+| ----- | ------ | ------ |
+| Phase 1 — Equipment | ✅ **Complete — awaiting test sign-off** | `29e295f` |
+| Phase 2 — Warband Data | ⏳ Not started | — |
+| Phase 3 — Access Logic | ⏳ Not started | — |
+| Phase 4 — Skills & Remaining Sources | ⏳ Not started | — |
+
+**Last updated:** 2026-03-29
+
+---
+
 ## Principles
 
 1. **Uncle-Mel's data is the source of truth** — we do not reshape his files; we change our app logic to read his structure natively.
@@ -8,9 +21,16 @@
 
 ---
 
-## Phase 1 — Equipment
+## Phase 1 — Equipment ✅ Complete
 
 **Goal:** Switch the app to read equipment directly from Uncle-Mel's `mergedEquipment.json` (246 items, flat array). All equipment display and selection must work correctly after this phase.
+
+**What was done:**
+- `data/mergedEquipment.json` added to repo (246 items, sourced directly from Uncle-Mel)
+- `DataService` updated: loads flat array, generates slug `id` at runtime, flattens `specialRules[]` to `rules` string, normalises casing; added `getEquipmentCategoryName()`, `getEquipmentTypes()`, and legacy category ID mapping for backward compat with `warbands.json` until Phase 3
+- `ui.js` updated: cost reads `item.cost?.cost`, category names via helper, `customWarriors` modal uses `getEquipmentTypes()`
+- Sync script updated: writes `mergedEquipment.json` directly (no transform); `buildEquipmentNameLookup` and `validateEquipment` updated for flat array
+- `data/equipment.json` remains in repo but is no longer loaded by the app — will be removed in Phase 4 cleanup
 
 ### Changes
 
