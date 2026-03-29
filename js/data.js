@@ -1,7 +1,7 @@
 // Data loading module - loads JSON data files
 const DataService = {
   warbands: null,
-  equipment: null,
+  equipment: null, // flat array from mergedEquipment.json
   skills: null,
   injuries: null,
   advancement: null,
@@ -9,11 +9,36 @@ const DataService = {
   hiredSwords: null,
   specialRules: null,
 
+  CATEGORY_NAMES: {
+    melee:       'Hand-to-Hand Combat Weapons',
+    missile:     'Missile Weapons',
+    blackpowder: 'Blackpowder Weapons',
+    armour:      'Armour',
+    misc:        'Miscellaneous Equipment',
+    animal:      'Animals',
+  },
+
+  // Maps legacy category IDs (used in warbands.json until Phase 3) to Uncle Mel types
+  LEGACY_CATEGORY_MAP: {
+    hand_to_hand:  ['melee'],
+    missiles:      ['missile', 'blackpowder'],
+    armour:        ['armour'],
+    miscellaneous: ['misc'],
+  },
+
+  slugify(str) {
+    return str
+      .toLowerCase()
+      .replace(/[''']/g, '')
+      .replace(/[^a-z0-9]+/g, '_')
+      .replace(/^_|_$/g, '');
+  },
+
   async loadAll() {
-    const v = 'v=7';
+    const v = 'v=8';
     const [warbands, equipment, skills, injuries, advancement, spells, hiredSwords, specialRules] = await Promise.all([
       this.fetchJSON('data/warbands.json?' + v),
-      this.fetchJSON('data/equipment.json?' + v),
+      this.fetchJSON('data/mergedEquipment.json?' + v),
       this.fetchJSON('data/skills.json?' + v),
       this.fetchJSON('data/injuries.json?' + v),
       this.fetchJSON('data/advancement.json?' + v),
@@ -23,7 +48,17 @@ const DataService = {
     ]);
 
     this.warbands = warbands.warbands;
-    this.equipment = equipment.categories;
+    // Process flat array: generate slug id, flatten specialRules to rules string, normalise casing
+    this.equipment = equipment.map(item => {
+      const id = this.slugify(item.name);
+      const rules = (item.specialRules || [])
+        .map(r => (r.ruleAbbreviated || r.ruleFull || '').replace(/<[^>]+>/g, '').trim())
+        .filter(Boolean)
+        .join(' ');
+      const caveat = item.caveat ?? item.Caveat ?? '';
+      const modelCaveat = item.modelCaveat ?? item.modelcaveat ?? '';
+      return { ...item, id, rules, caveat, modelCaveat };
+    });
     this.skills = skills.skillCategories;
     this.injuries = injuries;
     this.advancement = advancement;
@@ -43,23 +78,28 @@ const DataService = {
   },
 
   getEquipmentItem(itemId) {
-    for (const cat of Object.values(this.equipment)) {
-      const item = cat.items.find(i => i.id === itemId);
-      if (item) return item;
-    }
-    return null;
+    return this.equipment.find(i => i.id === itemId) || null;
   },
 
   getEquipmentByCategory(categoryId) {
-    return this.equipment[categoryId]?.items || [];
+    const types = this.LEGACY_CATEGORY_MAP[categoryId] || [categoryId];
+    return this.equipment.filter(i => types.includes(i.type));
   },
 
   getAllEquipment() {
-    const all = [];
-    for (const cat of Object.values(this.equipment)) {
-      all.push(...cat.items);
-    }
-    return all;
+    return this.equipment;
+  },
+
+  getEquipmentCategoryName(typeOrCategoryId) {
+    if (this.CATEGORY_NAMES[typeOrCategoryId]) return this.CATEGORY_NAMES[typeOrCategoryId];
+    const types = this.LEGACY_CATEGORY_MAP[typeOrCategoryId];
+    if (types?.length === 1) return this.CATEGORY_NAMES[types[0]] || typeOrCategoryId;
+    if (types?.length > 1) return types.map(t => this.CATEGORY_NAMES[t] || t).join(' / ');
+    return typeOrCategoryId;
+  },
+
+  getEquipmentTypes() {
+    return [...new Set(this.equipment.map(i => i.type))];
   },
 
   getSkill(skillId) {

@@ -425,7 +425,7 @@ const UI = {
   renderWarriorCard(warrior, index, isHero, listTypeOverride) {
     const eqCost = warrior.equipment.reduce((sum, eq) => {
       const item = DataService.getEquipmentItem(eq.id);
-      return sum + (item ? item.cost : 0);
+      return sum + (item ? (item.cost?.cost ?? 0) : 0);
     }, 0);
     const totalCost = warrior.cost + eqCost;
 
@@ -825,7 +825,7 @@ const UI = {
     let accessibleCategories;
     let warbandAllowedEquipment = null; // null = no warband dropdown
     if (listType === 'customWarriors') {
-      accessibleCategories = Object.keys(DataService.equipment);
+      accessibleCategories = DataService.getEquipmentTypes();
     } else if (listType === 'hiredSwords') {
       const template = DataService.getHiredSwordTemplate(warrior.type);
       accessibleCategories = template ? template.equipmentAccess : [];
@@ -859,7 +859,7 @@ const UI = {
       html += `<select style="width:100%;padding:0.4rem;" onchange="UI.selectEquipmentFromSelect(this,'${listType}',${index})">`;
       html += '<option value="">— select item —</option>';
       for (const [catId, items] of Object.entries(warbandByCat)) {
-        const catName = DataService.equipment[catId]?.name || catId;
+        const catName = DataService.getEquipmentCategoryName(catId);
         html += `<optgroup label="${this.escAttr(catName)}">`;
         for (const item of items) {
           const prefix = item.costPrefix ? `${item.costPrefix}` : '';
@@ -879,10 +879,10 @@ const UI = {
     for (const catId of allCats) {
       const items = DataService.getEquipmentByCategory(catId);
       if (items.length === 0) continue;
-      const catName = DataService.equipment[catId]?.name || catId;
+      const catName = DataService.getEquipmentCategoryName(catId);
       html += `<optgroup label="${this.escAttr(catName)}">`;
       for (const item of items) {
-        html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${item.cost} gc)</option>`;
+        html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${item.cost?.cost ?? 0} gc)</option>`;
       }
       html += '</optgroup>';
     }
@@ -1298,7 +1298,7 @@ const UI = {
     const renderWarrior = (warrior, listType) => {
       const eqCost = warrior.equipment.reduce((sum, eq) => {
         const item = DataService.getEquipmentItem(eq.id);
-        return sum + (item ? item.cost : 0);
+        return sum + (item ? (item.cost?.cost ?? 0) : 0);
       }, 0);
 
       let expInfo = '';

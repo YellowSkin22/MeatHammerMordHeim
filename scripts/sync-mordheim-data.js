@@ -107,18 +107,13 @@ function writeJson(filePath, data) {
   fs.writeFileSync(filePath, JSON.stringify(data, null, 2) + '\n');
 }
 
-// ─── Equipment transformer ────────────────────────────────────────────────
+// ─── Equipment ────────────────────────────────────────────────────────────
 //
 // Source: mergedEquipment.json — flat array, types: melee/missile/blackpowder/armour/misc/animal
-// Ours:   equipment.json — { categories: { hand_to_hand: { items: [] }, ... } }
+// Stored as-is to data/mergedEquipment.json — no transformation needed.
+// App reads Uncle Mel's structure directly (Phase 1 migration).
 //
-// Type mapping:
-//   melee        → hand_to_hand
-//   missile      → missiles
-//   blackpowder  → missiles
-//   armour       → armour
-//   misc         → miscellaneous
-//   animal       → SKIP
+// EQUIP_TYPE_MAP is still used by the warband transformer to resolve allowedEquipment category IDs.
 
 const EQUIP_TYPE_MAP = {
   melee:       'hand_to_hand',
@@ -128,79 +123,6 @@ const EQUIP_TYPE_MAP = {
   misc:        'miscellaneous',
   animal:      null,
 };
-
-const CATEGORY_NAMES = {
-  hand_to_hand:  'Hand-to-Hand Combat Weapons',
-  missiles:      'Missile Weapons',
-  armour:        'Armour',
-  miscellaneous: 'Miscellaneous Equipment',
-};
-
-function transformEquipment(sourceItems, existing) {
-  // Build lookup of existing items by id (to preserve range/strength fields not in source)
-  const existingById = {};
-  for (const cat of Object.values(existing.categories || {})) {
-    for (const item of (cat.items || [])) {
-      existingById[item.id] = item;
-    }
-  }
-
-  // Build fresh category buckets
-  const result = { categories: {} };
-  for (const [catId, catName] of Object.entries(CATEGORY_NAMES)) {
-    result.categories[catId] = { name: catName, items: [] };
-  }
-
-  // Track which IDs came from source (to preserve existing-only items)
-  const seenIds = new Set();
-  const added = [], updated = [];
-
-  for (const src of sourceItems) {
-    const catKey = EQUIP_TYPE_MAP[src.type];
-    if (!catKey) continue;
-
-    const id   = slugify(src.name);
-    const prev = existingById[id];
-
-    const rules = (src.specialRules || [])
-      .map(r => stripHtml(r.ruleAbbreviated || r.ruleFull || ''))
-      .filter(Boolean)
-      .join(' ');
-
-    const item = {
-      id,
-      name:     src.name,
-      cost:     src.cost?.cost ?? prev?.cost ?? 0,
-      range:    src.range      ?? prev?.range    ?? '',
-      strength: src.strength   ?? prev?.strength ?? '',
-      rules:    rules          || prev?.rules || '',
-      category: catKey,
-    };
-
-    seenIds.add(id);
-
-    if (prev) {
-      if (item.cost !== prev.cost || item.name !== prev.name || item.rules !== prev.rules ||
-          item.range !== prev.range || item.strength !== prev.strength) {
-        updated.push(id);
-      }
-    } else {
-      added.push(id);
-    }
-
-    result.categories[catKey].items.push(item);
-  }
-
-  // Preserve existing items not in source (no deletions)
-  for (const [id, prev] of Object.entries(existingById)) {
-    if (seenIds.has(id)) continue;
-    const catKey = prev.category;
-    if (!result.categories[catKey]) continue;
-    result.categories[catKey].items.push(prev);
-  }
-
-  return { data: result, added, updated };
-}
 
 // ─── Skills transformer ───────────────────────────────────────────────────
 //
@@ -359,13 +281,15 @@ function transformSpells(sourceData, existing) {
 // allowedEquipment: resolved from fighter.equipmentLists → warband.equipmentLists items, cross-ref'd against equipment.json
 // equipmentAccess: defaults to all three categories for both heroes and henchmen
 
-function buildEquipmentNameLookup(equipmentData) {
+function buildEquipmentNameLookup(equipmentItems) {
+  // equipmentItems: flat array from mergedEquipment.json
   // Returns: { "lowercase item name" → { id, category } }
   const map = {};
-  for (const [catId, cat] of Object.entries(equipmentData.categories || {})) {
-    for (const item of (cat.items || [])) {
-      map[item.name.toLowerCase()] = { id: item.id, category: catId };
-    }
+  for (const item of (equipmentItems || [])) {
+    const catId = EQUIP_TYPE_MAP[item.type];
+    if (!catId) continue;
+    const id = slugify(item.name);
+    map[item.name.toLowerCase()] = { id, category: catId };
   }
   return map;
 }
@@ -550,12 +474,11 @@ function validateWarbands(data) {
 }
 
 function validateEquipment(data) {
-  if (!data.categories) throw new Error('Missing categories object');
-  for (const [catId, cat] of Object.entries(data.categories)) {
-    for (const item of (cat.items || [])) {
-      if (!item.id)   throw new Error(`Equipment item missing id in ${catId}`);
-      if (!item.name) throw new Error(`Equipment ${item.id} missing name`);
-    }
+  if (!Array.isArray(data)) throw new Error('Equipment must be a flat array');
+  if (data.length === 0)    throw new Error('Equipment array is empty');
+  for (const item of data) {
+    if (!item.name) throw new Error(`Equipment item missing name`);
+    if (!item.type) throw new Error(`Equipment "${item.name}" missing type`);
   }
 }
 
@@ -653,19 +576,17 @@ async function main() {
 
   const summary = { added: {}, updated: {}, errors: [] };
 
-  // Equipment
+  // Equipment — write Uncle Mel's file directly, no transformation
   if (changes.equipment) {
     const label = 'equipment';
     try {
       process.stdout.write('  equipment... ');
-      const src      = ghRaw('data/mergedEquipment.json');
-      const existing = readJson(path.join(DATA_DIR, 'equipment.json'));
-      const { data, added, updated } = transformEquipment(src, existing);
-      validateEquipment(data);
-      if (!dryRun) writeJson(path.join(DATA_DIR, 'equipment.json'), data);
-      summary.added[label]   = added;
-      summary.updated[label] = updated;
-      console.log(`+${added.length} added, ~${updated.length} updated ✓`);
+      const src = ghRaw('data/mergedEquipment.json');
+      validateEquipment(src);
+      if (!dryRun) writeJson(path.join(DATA_DIR, 'mergedEquipment.json'), src);
+      summary.added[label]   = [];
+      summary.updated[label] = [];
+      console.log(`${src.length} items ✓`);
     } catch (err) {
       summary.errors.push(`Equipment: ${err.message}`);
       console.log(`FAILED: ${err.message}`);
@@ -737,7 +658,7 @@ async function main() {
       process.stdout.write(`(${warbandDocs.length} files) `);
 
       const existing          = readJson(path.join(DATA_DIR, 'warbands.json'));
-      const existingEquipment = readJson(path.join(DATA_DIR, 'equipment.json'));
+      const existingEquipment = readJson(path.join(DATA_DIR, 'mergedEquipment.json'));
       const equipmentLookup   = buildEquipmentNameLookup(existingEquipment);
       const { data, added, updated } = transformWarbands(warbandDocs, existing, magicData, equipmentLookup);
       validateWarbands(data);
