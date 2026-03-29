@@ -1,3 +1,9 @@
+## Purpose of this document
+
+This mapping exists to support migrating the app from its own hand-maintained data files to sourcing directly from Uncle-Mel's data structure. **Uncle-Mel's files are the target — we do not reshape his data.** Instead, this document identifies what our app logic, schema, and UI need to change so they can read Uncle-Mel's structure natively. All decisions and action items should be framed from that perspective.
+
+---
+
 ### Warbands
 ## General Comments
 1. Every Warband has their own file
@@ -14,7 +20,8 @@
 | `description` | `lore` (Uncle-Mel's value is HTML-formatted) | Flavour text shown to the player |
 | `startingGold` | `warbandRules.startingGc` | Gold crowns available at warband creation |
 | `maxWarband` | `warbandRules.maxModels` | Hard cap on total number of warriors |
-| `alignment` | ⚠️ **NOT PRESENT** in Uncle-Mel. Our field is also empty for all 38 warbands — confirm whether this field should be dropped or populated manually | Faction alignment (Order / Neutral / Undead); currently unused |
+| `choiceFluff` (to be added) | `warbandRules.choiceFluff` | Human-readable warband composition rules. **Decision: import and store now, do not display in UI yet.** |
+| ~~`alignment`~~ | Not present in Uncle-Mel. **Decision: drop this field.** | Faction alignment; was unused — will not be migrated |
 | `equipmentAccess` (category-level per heroes/henchmen) | ⚠️ **STRUCTURAL DIFFERENCE** — Uncle-Mel does not use equipment categories. Each fighter references named equipment lists by ID (`equipmentLists: ["list-id"]`), and the actual items live in warband-level `equipmentLists[].items[]`. See Equipment section below | Controls which equipment categories are available in the buy-equipment modal |
 | **— HERO LEVEL (`heroes[]` → `fighters[]` where `type == "hero"`) —** | | |
 | `type` | `id` | Internal slug used to identify the warrior type (e.g. `captain`) |
@@ -34,7 +41,7 @@
 | `specialRules[]` (array of strings, e.g. `["Leader"]`) | `specialRules[].rulename` (array of objects `{flavour, rulename, ruleFull}`) | Special abilities and traits; drive tooltip descriptions and UI gating (e.g. spell access checks for `"Wizard"`) |
 | `startingExp` | `startingXp` | Experience points the warrior begins with at hire |
 | `skillAccess[]` (array of strings, e.g. `["combat","shooting"]`) | `skillAccess` (object with boolean values, e.g. `{combat: true, shooting: true, special: false}`) | Skill categories available when the hero gains an advancement |
-| `spellAccess[]` (e.g. `["prayers-of-sigmar"]`) | ⚠️ **NOT PRESENT** in Uncle-Mel. This field drives the spell selection UI. Needs to be retained and populated manually or derived from `specialRules` during migration | Spell lists available in the buy-spell modal; only populated for spell-casting heroes |
+| `spellAccess[]` (e.g. `["prayers-of-sigmar"]`) | derived from `magic.json` → `spellLists[listId].permittedWarbands[]` where `{warband, fighter}` matches the current warband and fighter name | Spell lists available in the buy-spell modal; only populated for spell-casting heroes |
 | `allowedEquipment[]` (inline array per warrior) | referenced indirectly: `equipmentLists[]` IDs on the fighter → warband-level `equipmentLists[].items[]` | Items the warrior is permitted to buy, with their warband-specific costs |
 | **— HENCHMAN LEVEL (`henchmen[]` → `fighters[]` where `type == "henchman"`) —** | | |
 | `type` | `id` | Internal slug used to identify the henchman type |
@@ -43,9 +50,9 @@
 | `stats.*` | `statblock.*` (same lowercase conversion as heroes) | Base stat line (same fields as heroes) |
 | `specialRules[]` (array of strings) | `specialRules[].rulename` | Special abilities; same role as on heroes |
 | `maxGroupSize` | `groupSize.max` | Maximum number of models in a single henchman group |
-| ⚠️ **NOT PRESENT** | `groupSize.min` — Uncle-Mel tracks minimum group size; confirm default (assume 0?) | Minimum models required when purchasing this henchman group |
-| ⚠️ **NOT PRESENT** | `gainExp` (boolean) — whether henchmen in this group gain experience; confirm if needed | Flags whether this henchman type earns XP after battles |
-| ⚠️ **NOT PRESENT** | `promotable` (boolean) — whether a henchman can be promoted ("Lad's Got Talent"); confirm if needed | Flags eligibility for the "Lad's Got Talent" hero promotion |
+| `groupSize.min` (to be added) | `groupSize.min` | Minimum models required when purchasing this henchman group. **Decision: import and store the field now, but do not use it in the UI yet.** |
+| `gainExp` (to be added) | `gainExp` | Flags whether this henchman type earns XP after battles. **Decision: import and store now, do not use in UI yet.** |
+| `promotable` (to be added) | `promotable` | Flags eligibility for the "Lad's Got Talent" hero promotion. **Decision: import and store now, do not use in UI yet.** |
 | `allowedEquipment[]` | same indirect reference via `equipmentLists[]` IDs as heroes | Items the henchman group is permitted to buy |
 
 ---
@@ -54,21 +61,21 @@
 
 | # | Topic | Detail |
 | - | ----- | ------ |
-| 1 | `alignment` | Field exists in our schema but is empty for all 38 warbands. Uncle-Mel has no equivalent. Should it be dropped, or do you want to populate it manually (values seen: `Order`, `Neutral`, `Undead`)? |
-| 2 | `spellAccess[]` | Uncle-Mel has no spell access field. Our UI relies on it to show spell selection for 23 heroes across 16 warbands. During migration this will need to be retained and either migrated manually or derived from `specialRules` (e.g. a fighter with rulename `"Wizard"` → assign spell list). Confirm approach |
-| 3 | `groupSize.min` on henchmen | Uncle-Mel tracks a minimum group size. Our schema only has `maxGroupSize`. Should `groupSize.min` be added to our schema, or ignored? |
-| 4 | `gainExp` / `promotable` on henchmen | Uncle-Mel flags whether a henchman group gains XP and is promotable. These are implicit in our current model (all henchmen gain XP; promotion is a UI action). Confirm whether to import and expose these flags |
-| 5 | Equipment list structure | Uncle-Mel uses named, reusable equipment lists at warband level (e.g. `"mountainguard-equipment-list"`) referenced by ID on each fighter. Our model inlines `allowedEquipment[]` directly on each warrior. Migration must flatten Uncle-Mel's lists into per-fighter inline arrays. Confirm this is the intended approach |
-| 6 | `plural` / `race` / `flavour` / `admonitions` on fighters | Uncle-Mel includes these fields on every fighter; we don't have them. Should any be imported into our schema? |
-| 7 | `warbandRules.choiceFluff` | Uncle-Mel includes a human-readable text description of warband composition rules. We have no equivalent. Should it be imported (e.g. as a `compositionNote` field)? |
-| 8 | Uncle-Mel grade 1c warbands | Uncle-Mel's `1c/` folder contains warbands not currently in our app (e.g. Battle Monks of Cathay, Black Dwarfs, Night Goblins). Are these in scope for migration? |
-| 9 | Duplicate/old files in Uncle-Mel | Uncle-Mel's `1b/` folder contains `pit-fighters-old.json`, `tileans-original.json`, `tomb-guardians-old.json`. Confirm which version to use for each |
-| 10 | Core warbands (Reikland, Middenheim, Marienburg) | These three are separate files in our repo but Uncle-Mel merges them under a single `mercenaries.json`. Confirm how to handle the split |
-| 18 | Migration scope — warbands | Are we migrating only our existing 38 warbands, or also importing new warbands from Uncle-Mel? Uncle-Mel has 48+ warband files across grades 1a/1b/1c |
-| 19 | `lore` HTML rendering | Uncle-Mel's `lore` field contains HTML tags (e.g. `<em>`, `<br />`). Our UI renders `description` as plain text. Decision needed: strip HTML tags on import, or update the UI to render HTML? |
-| 20 | Warband-level `specialRules[]` | Uncle-Mel has a `specialRules[]` array at the warband level (distinct from fighter-level rules) representing warband-wide traits. We have no equivalent field. Import and add to schema, or ignore? |
-| 21 | `specialSkills` boolean on warbands | Uncle-Mel flags each warband with a `specialSkills` boolean indicating whether it has unique skill categories. We have no equivalent. Import or ignore? |
-| 22 | `skillAccess.special` in transform | Uncle-Mel's `skillAccess` object includes a `special` key (boolean) representing access to warband-specific skill categories. Our array-based `skillAccess` uses explicit category IDs. Confirm how `special: true` should be resolved during migration (which category ID does it map to per warband?) |
+| ~~1~~ | ~~`alignment`~~ | ✅ **Decision: drop.** Field was empty for all 38 warbands and unused in the UI. Will not be migrated. |
+| ~~2~~ | ~~`spellAccess[]`~~ | ✅ **Decision: derive from `magic.json`.** Each spell list in `spellLists[listId].permittedWarbands[]` contains `{warband, fighter}` entries. During migration, iterate all spell lists and map matching entries to the relevant fighter's `spellAccess[]`. |
+| ~~3~~ | ~~`groupSize.min` on henchmen~~ | ✅ **Decision: import and store now, use later.** Add `groupSize.min` to the henchman schema during migration but leave it unused in the UI until needed. |
+| ~~4~~ | ~~`gainExp` / `promotable` on henchmen~~ | ✅ **Decision: import and store now, use later.** Add both fields to the henchman schema during migration but leave them unused in the UI until needed. |
+| 5 | Equipment list structure | Uncle-Mel uses named, reusable equipment lists at warband level referenced by ID on each fighter. Our app currently inlines `allowedEquipment[]` per warrior. **App logic must change** to resolve equipment by looking up the fighter's `equipmentLists[]` IDs against the warband-level `equipmentLists[]` array. `equipmentAccess` category filtering will also need to be reworked to derive from these lists instead. |
+| ~~6~~ | ~~`plural` / `race` / `flavour` / `admonitions` on fighters~~ | ✅ **Decision: import and store now, use later.** Add all four fields to the fighter schema during migration but do not use in the UI yet. |
+| ~~7~~ | ~~`warbandRules.choiceFluff`~~ | ✅ **Decision: import and store now, use later.** Add to schema during migration but do not display in the UI yet. |
+| ~~8~~ | ~~Uncle-Mel grade 1c warbands~~ | ✅ **Decision: in scope.** All grade 1c warbands from Uncle-Mel will be included in the migration. |
+| ~~9~~ | ~~Duplicate/old files in Uncle-Mel~~ | ✅ **Decision: ingest all available warbands.** Use the current (non-old, non-original) versions where duplicates exist (`pit-fighters.json`, `tileans.json`, `tomb-guardians.json`). Skip `*-old.json` and `*-original.json` files. |
+| ~~10~~ | ~~Core warbands (Reikland, Middenheim, Marienburg)~~ | ✅ **Decision: follow Uncle-Mel's structure.** Ingest `mercenaries.json` as-is. Our three separate warband files will be replaced by this single file. App logic must adapt accordingly. |
+| ~~18~~ | ~~Migration scope — warbands~~ | ✅ **Decision: ingest all warbands from Uncle-Mel** across grades 1a, 1b, and 1c. Resolved by items 8 and 9. |
+| ~~19~~ | ~~`lore` HTML rendering~~ | ✅ **Decision: strip HTML tags.** Strip tags from `lore` when reading the data, keeping plain text only. No UI changes required. |
+| ~~20~~ | ~~Warband-level `specialRules[]`~~ | ✅ **Decision: import and store now, use later.** Add to warband schema during migration but do not use in the UI yet. |
+| ~~21~~ | ~~`specialSkills` boolean on warbands~~ | ✅ **Decision: import and store now, use later.** Add to warband schema during migration but do not use in the UI yet. |
+| ~~22~~ | ~~`skillAccess.special` in transform~~ | ✅ **Decision: amend app logic.** Update our skill access logic to read Uncle-Mel's `skillAccess` object (boolean per category) directly, including the `special` key, rather than our current array of category ID strings. |
 
 ---
 
@@ -79,18 +86,18 @@
 | ------------- | ------------- | ------- |
 | **— CATEGORY LEVEL (`categories.*`) —** | | |
 | `hand_to_hand` (category key) | `type: "melee"` | Hand-to-hand combat weapons |
-| `missiles` (category key) | `type: "missile"` **+** `type: "blackpowder"` | ⚠️ **SPLIT** — Uncle-Mel separates ranged into two types; our single category maps to both |
+| ~~`missiles`~~ → `missile` + `blackpowder` | `type: "missile"` and `type: "blackpowder"` | **Decision: follow Uncle-Mel's structure.** Our single `missiles` category is replaced by two. App logic must handle both. |
 | `armour` (category key) | `type: "armour"` | Protective equipment |
 | `miscellaneous` (category key) | `type: "misc"` | All other equipment |
-| ⚠️ **NOT PRESENT** | `type: "animal"` (14 items) | Mounts and ridden animals; no equivalent in our schema |
+| `animal` (to be added) | `type: "animal"` (14 items) | Mounts and ridden animals. **Decision: in scope.** Add as a new category; app logic must handle `statblock[]` on these items. |
 | `categories.[id].name` | derived from `type` | Human-readable category label shown in the equipment modal |
 | **— ITEM LEVEL —** | | |
 | `id` | derived: slugified `name` or `tags[0]` | Unique item key used for lookups and `allowedEquipment` references |
 | `name` | `name` | Display name shown on warrior card and in equipment modal |
-| `cost` (plain number) | `cost.cost` (nested object `{cost: N}`) | Base gold crown price; Uncle-Mel also has optional `cost.costPrefix` (e.g. `"1st free/"`) and `cost.costSuffix` for conditional pricing |
+| ~~`cost` (plain number)~~ → `cost` object | `cost` object `{cost, costPrefix?, costSuffix?}` | Base gold crown price with optional conditional pricing. **Decision: adopt Uncle-Mel's structure.** App logic and UI must be updated. |
 | `range` | `range` | Weapon range shown in equipment tooltip (e.g. `"Close Combat"`, `"24\""`) |
 | `strength` | `strength` | Weapon strength shown in equipment tooltip (e.g. `"As user"`, `"3"`) |
-| `rules` (single plain-text string) | `specialRules[]` (array of objects `{rulename, ruleAbbreviated, ruleFull}`) | Rules text shown as description; Uncle-Mel's structured format also includes full and abbreviated variants |
+| ~~`rules` (plain string)~~ → `specialRules[]` | `specialRules[]` array of objects `{rulename, ruleAbbreviated, ruleFull}` | Rules text shown as description. **Decision: follow Uncle-Mel's structure.** App logic and UI must be updated to read the structured format. |
 | `category` | derived from `type` | Back-reference to the category this item belongs to |
 | ⚠️ **NOT PRESENT** | `availability` (number, 0 = common) | Rarity value used for trading post rolls |
 | ⚠️ **NOT PRESENT** | `grade` | Which campaign grade introduces this item (e.g. `"core"`, `"1b"`) |
@@ -112,13 +119,13 @@
 
 | # | Topic | Detail |
 | - | ----- | ------ |
-| 11 | `missiles` category split | Uncle-Mel separates ranged weapons into `missile` and `blackpowder`. Should our schema adopt this split, or keep a single category and map both to it? |
-| 12 | `animal` type | Uncle-Mel has 14 mount/animal items (Chaos Steed, Warhorse, etc.) with full statblocks. We have no equivalent category. Are animals in scope? |
-| 13 | `cost` structure | Uncle-Mel's `cost` is an object with optional `costPrefix`/`costSuffix` (e.g. `"1st free/"`, `"(Bergjaeger only)"`). Our cost is a plain number. Should we adopt the richer structure to support conditional pricing? |
-| 14 | `rules` vs `specialRules[]` | Uncle-Mel stores rules as structured objects with full and abbreviated text. Our `rules` is a single flat string. Should we adopt the structured format, or flatten Uncle-Mel's data into our existing string field? |
-| 15 | `permittedWarbands` / `excludedWarbands` | Uncle-Mel tracks global item availability per warband directly on the item. We control this at the warband level via `allowedEquipment`. Confirm whether to import these fields or continue relying on warband-level lists |
-| 16 | `availability` (rarity) | Uncle-Mel tracks rarity numbers for trading post rules. We don't. Should this be imported for future trading post feature support? |
-| 17 | Casing inconsistencies in Uncle-Mel | `Caveat`/`caveat` and `modelCaveat`/`modelcaveat` appear with inconsistent casing in `mergedEquipment.json`. Migration script will need to handle both variants |
-| 23 | Migration scope — equipment | Are we migrating only our existing 79 items, or importing all 246 items from Uncle-Mel's `mergedEquipment.json`? Uncle-Mel has 3x more items across all types |
+| ~~11~~ | ~~`missiles` category split~~ | ✅ **Decision: follow Uncle-Mel's structure.** Replace our single `missiles` category with Uncle-Mel's two separate types: `missile` and `blackpowder`. App logic must be updated to handle both. |
+| ~~12~~ | ~~`animal` type~~ | ✅ **Decision: in scope.** Add `animal` as a new equipment category. App logic must be updated to handle the `statblock[]` field present on animal items. |
+| ~~13~~ | ~~`cost` structure~~ | ✅ **Decision: adopt Uncle-Mel's structure.** Replace our plain `cost` number with Uncle-Mel's `cost` object `{cost, costPrefix?, costSuffix?}`. App logic and UI must be updated to handle the richer structure. |
+| ~~14~~ | ~~`rules` vs `specialRules[]`~~ | ✅ **Decision: follow Uncle-Mel's structure.** Replace our flat `rules` string with Uncle-Mel's `specialRules[]` array of objects `{rulename, ruleAbbreviated, ruleFull}`. App logic and UI must be updated to read the structured format. |
+| ~~15~~ | ~~`permittedWarbands` / `excludedWarbands`~~ | ✅ **Decision: change the app.** Our `equipmentAccess` category logic will be replaced. App must read `permittedWarbands` and `excludedWarbands` directly from Uncle-Mel's item data to determine availability per warband. |
+| ~~16~~ | ~~`availability` (rarity)~~ | ✅ **Decision: import and store now, use later.** Add `availability` to the item schema during migration but do not use in the UI yet. |
+| ~~17~~ | ~~Casing inconsistencies in Uncle-Mel~~ | ✅ **Decision: handle in app and report upstream.** App will normalise both casing variants (`Caveat`/`caveat`, `modelCaveat`/`modelcaveat`) at read time. Uncle-Mel will be informed of the inconsistency so it can be fixed in the source data. |
+| ~~23~~ | ~~Migration scope — equipment~~ | ✅ **Decision: import all.** All 246 items from Uncle-Mel's `mergedEquipment.json` will be ingested across all types. |
 
 ###
