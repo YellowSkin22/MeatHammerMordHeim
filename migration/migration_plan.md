@@ -64,7 +64,7 @@
   - `specialRules[].rulename` → replaces `specialRules[]` strings (read rulename only for now)
 - Store new fields without using them in UI yet: `groupSize.min`, `gainExp`, `promotable`, `plural`, `race`, `flavour`, `admonitions`, `warbandRules.choiceFluff`, warband-level `specialRules[]`, `specialSkills`
 - Strip HTML tags from `lore` field; expose as `description`
-- Handle `mercenaries.json` — ingest as a single warband entry, replacing the previous three separate files (Reikland, Middenheim, Marienburg)
+- Handle `subfactions` — at load time, expand any warband with a `subfactions.options[]` field into one entry per option, each inheriting shared fighters and equipment but using the subfaction name as display name. Covers Reikland / Middenheim / Marienburg and any future subfaction warbands.
 
 #### `js/roster.js`
 - Update `createWarrior()` to read from new fighter field names (`costGc`, `startingXp`, `statblock`, `maxQty`, `groupSize.max`)
@@ -144,4 +144,4 @@
 | - | ---- |
 | A | Confirm whether `injuries.json` and `advancement.json` have Uncle-Mel equivalents, or whether they remain hand-maintained |
 | B | Raise casing inconsistencies (`Caveat`/`caveat`, `modelCaveat`/`modelcaveat`) with Uncle-Mel before Phase 1 ships |
-| C | Confirm how `mercenaries.json` distinguishes Reikland / Middenheim / Marienburg internally — app may need to handle sub-variants |
+| ~~C~~ | ~~Confirm how `mercenaries.json` distinguishes Reikland / Middenheim / Marienburg internally~~ | ✅ **Decision: expand subfactions into separate selectable warbands.** Uncle-Mel uses a `subfactions` object (`{default, options[]}`) on the warband. At load time, `DataService` must detect this field and generate one warband entry per subfaction option, each inheriting the shared fighters and equipment lists but using the subfaction name as its display name. This pattern must be applied generically in case other warbands use `subfactions` in the future. |
