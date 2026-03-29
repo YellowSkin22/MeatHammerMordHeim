@@ -272,7 +272,7 @@ function transformSpells(sourceData, existing) {
 //     costGc                → cost
 //     statblock (lowercase) → stats (uppercase M/WS/BS/S/T/W/I/A/Ld)
 //     startingXp            → startingExp
-//     skillAccess (object)  → skillAccess (array of truthy keys, excluding "special")
+//     skillAccess (object or subfaction array) → skillAccess (array of truthy keys, excluding "special")
 //     specialRules[].rulename → specialRules[] (flat string array)
 //   fighters[type=henchman] → henchmen[]
 //     groupSize.max         → maxGroupSize
@@ -349,20 +349,37 @@ function resolveAllowedEquipment(fighter, src, equipmentLookup) {
   return allowedEquipment;
 }
 
-function transformOneWarband(src, spellMap, equipmentLookup) {
-  const heroes   = [];
-  const henchmen = [];
+function resolveSkillAccess(fighter, subfaction) {
+  // skillAccess is either:
+  //   - an object: { combat: true, shooting: false, ... }  (non-subfaction warbands)
+  //   - an array:  [{ subfaction: "Name", skills: { ... } }, ...]  (subfaction warbands)
+  if (Array.isArray(fighter.skillAccess)) {
+    const entry = subfaction
+      ? fighter.skillAccess.find(e => e.subfaction === subfaction)
+      : fighter.skillAccess[0];
+    return entry
+      ? Object.entries(entry.skills || {}).filter(([k, v]) => v && k !== 'special').map(([k]) => k)
+      : [];
+  }
+  return Object.entries(fighter.skillAccess || {})
+    .filter(([k, v]) => v && k !== 'special')
+    .map(([k]) => k);
+}
+
+function transformOneWarband(src, spellMap, equipmentLookup, subfaction = null) {
+  const warbandName = subfaction || src.name;
+  const warbandId   = subfaction ? slugify(subfaction) : src.id;
+  const heroes      = [];
+  const henchmen    = [];
 
   for (const fighter of (src.fighters || [])) {
     const stats            = mapStatKeys(fighter.statblock);
     const specialRules     = (fighter.specialRules || []).map(r => r.rulename).filter(Boolean);
-    const skillAccess      = Object.entries(fighter.skillAccess || {})
-      .filter(([k, v]) => v && k !== 'special')
-      .map(([k]) => k);
+    const skillAccess      = resolveSkillAccess(fighter, subfaction);
     const allowedEquipment = resolveAllowedEquipment(fighter, src, equipmentLookup);
 
     if (fighter.type === 'hero') {
-      const spellAccess = findSpellAccess(spellMap, src.name, fighter.name);
+      const spellAccess = findSpellAccess(spellMap, warbandName, fighter.name);
       heroes.push({
         type:             fighter.id,
         name:             fighter.name,
@@ -394,8 +411,8 @@ function transformOneWarband(src, spellMap, equipmentLookup) {
   ).replace(/\s+/g, ' ').slice(0, 300);
 
   return {
-    id:           src.id,
-    name:         src.name,
+    id:           warbandId,
+    name:         warbandName,
     source:       src.source || '',
     description,
     startingGold: src.warbandRules?.startingGc ?? 500,
@@ -426,21 +443,27 @@ function transformWarbands(warbandFiles, existing, magicData, equipmentLookup) {
   for (const src of warbandFiles) {
     if (!src.id || !src.fighters) continue;
 
-    const transformed = transformOneWarband(src, spellMap, equipmentLookup);
-    const prev        = existingById[transformed.id];
+    // Expand subfaction warbands (e.g. Mercenaries → Reikland / Middenheim / Marienburg)
+    const subfactionOptions = src.subfactions?.options;
+    const expansions = subfactionOptions
+      ? subfactionOptions.map(opt => ({ subfaction: opt }))
+      : [{ subfaction: null }];
 
-    if (prev) {
-      // Preserve manually tuned fields
-      if (prev.alignment)    transformed.alignment    = prev.alignment;
-      if (prev.description)  transformed.description  = prev.description;
-      // Preserve custom equipmentAccess overrides if they exist
-      if (prev.equipmentAccess) transformed.equipmentAccess = prev.equipmentAccess;
-      updated.push(transformed.id);
-    } else {
-      added.push(transformed.id);
+    for (const { subfaction } of expansions) {
+      const transformed = transformOneWarband(src, spellMap, equipmentLookup, subfaction);
+      const prev        = existingById[transformed.id];
+
+      if (prev) {
+        if (prev.alignment)       transformed.alignment       = prev.alignment;
+        if (prev.description)     transformed.description     = prev.description;
+        if (prev.equipmentAccess) transformed.equipmentAccess = prev.equipmentAccess;
+        updated.push(transformed.id);
+      } else {
+        added.push(transformed.id);
+      }
+
+      result.warbands.push(transformed);
     }
-
-    result.warbands.push(transformed);
   }
 
   // Per project decision: do NOT preserve warbands absent from source
@@ -642,7 +665,10 @@ async function main() {
         n.path.endsWith('.json') &&
         n.type === 'blob' &&
         !n.path.includes('reference') &&
-        !n.path.includes('test')
+        !n.path.includes('test') &&
+        !/-old\.json$/.test(n.path) &&
+        !/-original\.json$/.test(n.path) &&
+        !/-web\.json$/.test(n.path)
       );
 
       const warbandDocs = [];
