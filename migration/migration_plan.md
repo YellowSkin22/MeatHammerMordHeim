@@ -5,11 +5,11 @@
 | Phase | Status | Commit |
 | ----- | ------ | ------ |
 | Phase 1 — Equipment | ✅ **Complete — awaiting test sign-off** | `29e295f` |
-| Phase 2 — Warband Data | ⏳ Not started | — |
+| Phase 2 — Warband Data | ✅ **Complete — awaiting test sign-off** | `efc304d` |
 | Phase 3 — Access Logic | ⏳ Not started | — |
 | Phase 4 — Skills & Remaining Sources | ⏳ Not started | — |
 
-**Last updated:** 2026-03-29
+**Last updated:** 2026-03-29 (Phase 2 complete)
 
 ---
 
