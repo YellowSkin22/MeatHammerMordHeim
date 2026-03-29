@@ -2400,8 +2400,8 @@
             {
               "id": "gromril_weapon",
               "name": "gromril weapon",
-              "cost": 0,
-              "costPrefix": "3 times the cost"
+              "cost": "",
+              "costPrefix": "3 x Price"
             },
             {
               "id": "pistol",
@@ -2603,8 +2603,8 @@
             {
               "id": "gromril_weapon",
               "name": "gromril weapon",
-              "cost": 0,
-              "costPrefix": "3 times the cost"
+              "cost": "",
+              "costPrefix": "3 x Price"
             },
             {
               "id": "pistol",
@@ -2707,8 +2707,8 @@
             {
               "id": "gromril_weapon",
               "name": "gromril weapon",
-              "cost": 0,
-              "costPrefix": "3 times the cost"
+              "cost": "",
+              "costPrefix": "3 x Price"
             },
             {
               "id": "pistol",
@@ -2890,8 +2890,8 @@
             {
               "id": "gromril_weapon",
               "name": "gromril weapon",
-              "cost": 0,
-              "costPrefix": "3 times the cost"
+              "cost": "",
+              "costPrefix": "3 x Price"
             },
             {
               "id": "pistol",
@@ -3840,8 +3840,8 @@
       }
     },
     {
-      "id": "mercenaries",
-      "name": "Mercenaries",
+      "id": "reikland_mercenaries",
+      "name": "Reikland Mercenaries",
       "source": "Mordheim Rulebook",
       "description": "This is a time of unremitting war, civil strife, violence and famine. A time of orphan children and wanton slaughter. For warriors these are good times! Since the discovery of wyrdstone Mordheim has become a magnet for fighting men from all over the Empire. Nobles, merchants, and the Temple of Sigma",
       "startingGold": 500,
@@ -3870,9 +3870,11 @@
           ],
           "startingExp": 20,
           "skillAccess": [
-            "0",
-            "1",
-            "2"
+            "combat",
+            "shooting",
+            "academic",
+            "strength",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -3994,9 +3996,9 @@
           "specialRules": [],
           "startingExp": 8,
           "skillAccess": [
-            "0",
-            "1",
-            "2"
+            "combat",
+            "shooting",
+            "strength"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -4118,9 +4120,1451 @@
           "specialRules": [],
           "startingExp": 0,
           "skillAccess": [
-            "0",
-            "1",
-            "2"
+            "combat",
+            "shooting",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warriors",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": {
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "marksmen",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": {
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "handgun",
+              "name": "handgun",
+              "cost": 35
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "swordsmen",
+          "name": "Swordsman",
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [
+            "Expert Swordsmen"
+          ],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ],
+        "henchmen": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ]
+      }
+    },
+    {
+      "id": "middenheim_mercenaries",
+      "name": "Middenheim Mercenaries",
+      "source": "Mordheim Rulebook",
+      "description": "This is a time of unremitting war, civil strife, violence and famine. A time of orphan children and wanton slaughter. For warriors these are good times! Since the discovery of wyrdstone Mordheim has become a magnet for fighting men from all over the Empire. Nobles, merchants, and the Temple of Sigma",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "",
+      "heroes": [
+        {
+          "type": "mercenary-captain",
+          "name": "Mercenary Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 4,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Leader"
+          ],
+          "startingExp": 20,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "academic",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "champions",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "youngbloods",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": {
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 6
+          },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": [
+            "combat",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warriors",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": {
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "marksmen",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": {
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "handgun",
+              "name": "handgun",
+              "cost": 35
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "swordsmen",
+          "name": "Swordsman",
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [
+            "Expert Swordsmen"
+          ],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ],
+        "henchmen": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ]
+      }
+    },
+    {
+      "id": "marienburg_mercenaries",
+      "name": "Marienburg Mercenaries",
+      "source": "Mordheim Rulebook",
+      "description": "This is a time of unremitting war, civil strife, violence and famine. A time of orphan children and wanton slaughter. For warriors these are good times! Since the discovery of wyrdstone Mordheim has become a magnet for fighting men from all over the Empire. Nobles, merchants, and the Temple of Sigma",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "",
+      "heroes": [
+        {
+          "type": "mercenary-captain",
+          "name": "Mercenary Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 4,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Leader"
+          ],
+          "startingExp": 20,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "academic",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "champions",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "wolfcloak",
+              "name": "wolfcloak",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "youngbloods",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": {
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 6
+          },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -6214,8 +7658,516 @@
       }
     },
     {
+      "id": "skaven-of-clan-eshin",
+      "name": "Skaven",
+      "source": "Mordheim Rulebook",
+      "description": "Unbeknownst to man, for thousands of years he has shared his world with another and altogether different race. There have always been signs for those who cared to see them: a scurrying black shadow, an inhuman scream from the sewer, scuttling shapes at the back of the cellar. All these years these c",
+      "startingGold": 500,
+      "maxWarband": 20,
+      "alignment": "",
+      "heroes": [
+        {
+          "type": "assassin-adept",
+          "name": "Assassin Adept",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": {
+            "M": 6,
+            "WS": 4,
+            "BS": 4,
+            "S": 4,
+            "T": 3,
+            "W": 1,
+            "I": 5,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [
+            "Leader",
+            "Perfect Killer"
+          ],
+          "startingExp": 20,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "academic",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "weeping_blades",
+              "name": "weeping blades",
+              "cost": 50
+            },
+            {
+              "id": "fighting_claws",
+              "name": "fighting claws",
+              "cost": 35
+            },
+            {
+              "id": "sling",
+              "name": "sling",
+              "cost": 2
+            },
+            {
+              "id": "throwing_knives_stars",
+              "name": "throwing knives/stars",
+              "cost": 15
+            },
+            {
+              "id": "blowpipe",
+              "name": "blowpipe",
+              "cost": 25
+            },
+            {
+              "id": "warplock_pistol",
+              "name": "warplock pistol",
+              "cost": 35
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "black-skaven",
+          "name": "Black Skaven",
+          "max": 2,
+          "required": false,
+          "cost": 40,
+          "stats": {
+            "M": 6,
+            "WS": 4,
+            "BS": 3,
+            "S": 4,
+            "T": 3,
+            "W": 1,
+            "I": 5,
+            "A": 1,
+            "Ld": 6
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "weeping_blades",
+              "name": "weeping blades",
+              "cost": 50
+            },
+            {
+              "id": "fighting_claws",
+              "name": "fighting claws",
+              "cost": 35
+            },
+            {
+              "id": "sling",
+              "name": "sling",
+              "cost": 2
+            },
+            {
+              "id": "throwing_knives_stars",
+              "name": "throwing knives/stars",
+              "cost": 15
+            },
+            {
+              "id": "blowpipe",
+              "name": "blowpipe",
+              "cost": 25
+            },
+            {
+              "id": "warplock_pistol",
+              "name": "warplock pistol",
+              "cost": 35
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "eshin-sorcerer",
+          "name": "Eshin Sorcerer",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": {
+            "M": 5,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 6
+          },
+          "specialRules": [
+            "Magic User"
+          ],
+          "startingExp": 8,
+          "skillAccess": [
+            "academic",
+            "speed"
+          ],
+          "spellAccess": [
+            "magic-of-the-horned-rat"
+          ],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "weeping_blades",
+              "name": "weeping blades",
+              "cost": 50
+            },
+            {
+              "id": "fighting_claws",
+              "name": "fighting claws",
+              "cost": 35
+            },
+            {
+              "id": "sling",
+              "name": "sling",
+              "cost": 2
+            },
+            {
+              "id": "throwing_knives_stars",
+              "name": "throwing knives/stars",
+              "cost": 15
+            },
+            {
+              "id": "blowpipe",
+              "name": "blowpipe",
+              "cost": 25
+            },
+            {
+              "id": "warplock_pistol",
+              "name": "warplock pistol",
+              "cost": 35
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "night-runners",
+          "name": "Night Runners",
+          "max": 2,
+          "required": false,
+          "cost": 20,
+          "stats": {
+            "M": 6,
+            "WS": 2,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 4
+          },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": [
+            "combat",
+            "shooting"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "club",
+              "name": "club",
+              "cost": 3
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "sling",
+              "name": "sling",
+              "cost": 2
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "verminkin",
+          "name": "Verminkin",
+          "cost": 20,
+          "stats": {
+            "M": 5,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 5
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "club",
+              "name": "club",
+              "cost": 3
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "sling",
+              "name": "sling",
+              "cost": 2
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "giant-rats",
+          "name": "Giant Rats",
+          "cost": 15,
+          "stats": {
+            "M": 6,
+            "WS": 2,
+            "BS": 0,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 4
+          },
+          "specialRules": [
+            "Weapons/Armour",
+            "Pack Size",
+            "Experience"
+          ],
+          "maxGroupSize": 5,
+          "allowedEquipment": []
+        },
+        {
+          "type": "rat-ogre",
+          "name": "Rat Ogre",
+          "cost": 210,
+          "stats": {
+            "M": 6,
+            "WS": 3,
+            "BS": 3,
+            "S": 5,
+            "T": 5,
+            "W": 3,
+            "I": 4,
+            "A": 3,
+            "Ld": 4
+          },
+          "specialRules": [
+            "Weapons/Armour",
+            "Fear",
+            "Stupidity",
+            "Experience",
+            "Large Target"
+          ],
+          "maxGroupSize": 1,
+          "allowedEquipment": []
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ],
+        "henchmen": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ]
+      }
+    },
+    {
       "id": "undead",
-      "name": "The Undead",
+      "name": "Undead",
       "source": "Mordheim Rulebook",
       "description": "Risen dead and vampiric lords seeking the cursed wyrdstone.",
       "startingGold": 500,
@@ -6353,7 +8305,9 @@
             "academic",
             "speed"
           ],
-          "spellAccess": [],
+          "spellAccess": [
+            "necromancy"
+          ],
           "allowedEquipment": [
             {
               "id": "dagger",
@@ -11038,7 +12992,7 @@
             "Ld": 6
           },
           "specialRules": [
-            "Wizard:"
+            "Wizard"
           ],
           "startingExp": 6,
           "skillAccess": [
@@ -15417,6 +17371,7 @@
             "Ld": 7
           },
           "specialRules": [
+            "Hiring a Cleric",
             "Disciple of Sigmar"
           ],
           "startingExp": 8,
@@ -16432,836 +18387,6 @@
             {
               "id": "toughened_leathers",
               "name": "toughened leathers",
-              "cost": 5
-            }
-          ]
-        }
-      ],
-      "equipmentAccess": {
-        "heroes": [
-          "hand_to_hand",
-          "missiles",
-          "armour"
-        ],
-        "henchmen": [
-          "hand_to_hand",
-          "missiles",
-          "armour"
-        ]
-      }
-    },
-    {
-      "id": "pit-fighters-old",
-      "name": "Pit Fighters (old)",
-      "source": "Town Cryer #14",
-      "description": "All across the world you can find gladiatorial pit fights, where hardy fighters take up arms against each other. From the vicious pits of Cutthroat’s Haven to the Black Pits surrounding Mordheim, there can be heard the clash of steel. In most places, local law bans these fights, but the culture itse",
-      "startingGold": 500,
-      "maxWarband": 15,
-      "alignment": "",
-      "heroes": [
-        {
-          "type": "pit-king",
-          "name": "Pit King",
-          "max": 1,
-          "required": true,
-          "cost": 80,
-          "stats": {
-            "M": 4,
-            "WS": 4,
-            "BS": 3,
-            "S": 4,
-            "T": 4,
-            "W": 1,
-            "I": 4,
-            "A": 2,
-            "Ld": 8
-          },
-          "specialRules": [
-            "Leader",
-            "Pit Fighter"
-          ],
-          "startingExp": 20,
-          "skillAccess": [
-            "combat",
-            "academic",
-            "strength",
-            "speed"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "dwarf_axe",
-              "name": "dwarf axe",
-              "cost": 15
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "flail",
-              "name": "flail",
-              "cost": 15
-            },
-            {
-              "id": "spiked_gauntlet",
-              "name": "spiked gauntlet",
-              "cost": 20
-            },
-            {
-              "id": "gromril_weapon",
-              "name": "gromril weapon",
-              "cost": 0
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "heavy_armour",
-              "name": "heavy armour",
-              "cost": 50
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "dwarf-troll-slayer",
-          "name": "Dwarf Troll Slayer",
-          "max": 1,
-          "required": false,
-          "cost": 50,
-          "stats": {
-            "M": 3,
-            "WS": 4,
-            "BS": 3,
-            "S": 4,
-            "T": 4,
-            "W": 1,
-            "I": 2,
-            "A": 1,
-            "Ld": 9
-          },
-          "specialRules": [
-            "Pit Fighter",
-            "Hard to Kill",
-            "Hard Head",
-            "Hate Orcs and Goblins",
-            "Grudgebearers",
-            "Death Wish"
-          ],
-          "startingExp": 8,
-          "skillAccess": [
-            "combat",
-            "strength"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "dwarf_axe",
-              "name": "dwarf axe",
-              "cost": 15
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "flail",
-              "name": "flail",
-              "cost": 15
-            },
-            {
-              "id": "spiked_gauntlet",
-              "name": "spiked gauntlet",
-              "cost": 20
-            },
-            {
-              "id": "gromril_weapon",
-              "name": "gromril weapon",
-              "cost": 0
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "heavy_armour",
-              "name": "heavy armour",
-              "cost": 50
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "pit-veterans",
-          "name": "Pit Veteran",
-          "max": 2,
-          "required": false,
-          "cost": 35,
-          "stats": {
-            "M": 4,
-            "WS": 4,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 4,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Pit Fighter"
-          ],
-          "startingExp": 8,
-          "skillAccess": [
-            "combat",
-            "strength"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "dwarf_axe",
-              "name": "dwarf axe",
-              "cost": 15
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "flail",
-              "name": "flail",
-              "cost": 15
-            },
-            {
-              "id": "spiked_gauntlet",
-              "name": "spiked gauntlet",
-              "cost": 20
-            },
-            {
-              "id": "gromril_weapon",
-              "name": "gromril weapon",
-              "cost": 0
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "heavy_armour",
-              "name": "heavy armour",
-              "cost": 50
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "pit-fighter-initiates",
-          "name": "Pit Fighter Initiate",
-          "max": 2,
-          "required": false,
-          "cost": 15,
-          "stats": {
-            "M": 4,
-            "WS": 2,
-            "BS": 2,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 6
-          },
-          "specialRules": [],
-          "startingExp": 0,
-          "skillAccess": [
-            "combat",
-            "strength"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "dwarf_axe",
-              "name": "dwarf axe",
-              "cost": 15
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "flail",
-              "name": "flail",
-              "cost": 15
-            },
-            {
-              "id": "spiked_gauntlet",
-              "name": "spiked gauntlet",
-              "cost": 20
-            },
-            {
-              "id": "gromril_weapon",
-              "name": "gromril weapon",
-              "cost": 0
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "heavy_armour",
-              "name": "heavy armour",
-              "cost": 50
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        }
-      ],
-      "henchmen": [
-        {
-          "type": "ogre-pit-fighter",
-          "name": "Ogre Pit Fighter",
-          "cost": 165,
-          "stats": {
-            "M": 6,
-            "WS": 3,
-            "BS": 2,
-            "S": 4,
-            "T": 4,
-            "W": 3,
-            "I": 3,
-            "A": 2,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Pit Fighter",
-            "Fear",
-            "Large",
-            "Skills",
-            "Slow Witted"
-          ],
-          "maxGroupSize": 1,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "dwarf_axe",
-              "name": "dwarf axe",
-              "cost": 15
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "flail",
-              "name": "flail",
-              "cost": 15
-            },
-            {
-              "id": "spiked_gauntlet",
-              "name": "spiked gauntlet",
-              "cost": 20
-            },
-            {
-              "id": "gromril_weapon",
-              "name": "gromril weapon",
-              "cost": 0
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "heavy_armour",
-              "name": "heavy armour",
-              "cost": 50
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "pursuers",
-          "name": "Pursuer",
-          "cost": 25,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Pit Fighter"
-          ],
-          "maxGroupSize": 5,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "trident",
-              "name": "trident",
-              "cost": 15
-            },
-            {
-              "id": "javelins",
-              "name": "javelins",
-              "cost": 10
-            },
-            {
-              "id": "net",
-              "name": "net",
-              "cost": 5
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "pit-fighters",
-          "name": "Pit Fighter",
-          "cost": 35,
-          "stats": {
-            "M": 4,
-            "WS": 4,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Pit Fighter",
-            "Arms Master"
-          ],
-          "maxGroupSize": 5,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "axe",
-              "name": "axe",
-              "cost": 5
-            },
-            {
-              "id": "dwarf_axe",
-              "name": "dwarf axe",
-              "cost": 15
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "flail",
-              "name": "flail",
-              "cost": 15
-            },
-            {
-              "id": "spiked_gauntlet",
-              "name": "spiked gauntlet",
-              "cost": 20
-            },
-            {
-              "id": "gromril_weapon",
-              "name": "gromril weapon",
-              "cost": 0
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "heavy_armour",
-              "name": "heavy armour",
-              "cost": 50
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
               "cost": 5
             }
           ]
@@ -18663,585 +19788,13 @@
       }
     },
     {
-      "id": "tileans-old",
-      "name": "Tileans (old)",
-      "source": "Original submission for Town Cryer",
-      "description": "From the Alcatani Fellowship to the Venators of Voland, the Tilean countrymen have scoured the Warhammer world for centuries in search of riches. Hiring themselves out for any job that will bring a gold ducat and doesn’t offend their few morals, the Tilean adventurer seeks fame, fortune and to satis",
+      "id": "miragleans",
+      "name": "Miragleans",
+      "source": "Town Cryer #14",
+      "description": "The land of Tilea is home to some of the most wealthy and aloof people in the Old World. A land that is divided by its own competition of trade and separated by personal feuds and warring city-states. It is civic pride and a desire for financial status that drives each and every Tilean. To this end,",
       "startingGold": 500,
       "maxWarband": 15,
       "alignment": "",
-      "heroes": [
-        {
-          "type": "captain",
-          "name": "Captain",
-          "max": 1,
-          "required": true,
-          "cost": 60,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [],
-          "startingExp": 20,
-          "skillAccess": [
-            "0",
-            "1",
-            "2"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 5
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "crossbow",
-              "name": "crossbow",
-              "cost": 25
-            },
-            {
-              "id": "pistol",
-              "name": "pistol",
-              "cost": 15
-            },
-            {
-              "id": "bow",
-              "name": "bow",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "champion",
-          "name": "Champion",
-          "max": 2,
-          "required": false,
-          "cost": 35,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [],
-          "startingExp": 8,
-          "skillAccess": [
-            "0",
-            "1",
-            "2"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 5
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "crossbow",
-              "name": "crossbow",
-              "cost": 25
-            },
-            {
-              "id": "pistol",
-              "name": "pistol",
-              "cost": 15
-            },
-            {
-              "id": "bow",
-              "name": "bow",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "youngbloods",
-          "name": "Youngblood",
-          "max": 2,
-          "required": false,
-          "cost": 15,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [],
-          "startingExp": 0,
-          "skillAccess": [
-            "0",
-            "1",
-            "2"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 5
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "crossbow",
-              "name": "crossbow",
-              "cost": 25
-            },
-            {
-              "id": "pistol",
-              "name": "pistol",
-              "cost": 15
-            },
-            {
-              "id": "bow",
-              "name": "bow",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        }
-      ],
-      "henchmen": [
-        {
-          "type": "warriors",
-          "name": "Warrior",
-          "cost": 25,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [],
-          "maxGroupSize": 6,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 5
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "crossbow",
-              "name": "crossbow",
-              "cost": 25
-            },
-            {
-              "id": "pistol",
-              "name": "pistol",
-              "cost": 15
-            },
-            {
-              "id": "bow",
-              "name": "bow",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        },
-        {
-          "type": "marksmen",
-          "name": "Marksman",
-          "cost": 25,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [],
-          "maxGroupSize": 7,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "crossbow",
-              "name": "crossbow",
-              "cost": 25
-            },
-            {
-              "id": "pistol",
-              "name": "pistol",
-              "cost": 15
-            },
-            {
-              "id": "long_bow",
-              "name": "long bow",
-              "cost": 15
-            },
-            {
-              "id": "handgun",
-              "name": "handgun",
-              "cost": 35
-            },
-            {
-              "id": "hunting_rifle",
-              "name": "hunting rifle",
-              "cost": 200
-            }
-          ]
-        },
-        {
-          "type": "duelists",
-          "name": "Duelist",
-          "cost": 35,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Special note for the duelists"
-          ],
-          "maxGroupSize": 6,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "mace",
-              "name": "mace",
-              "cost": 3
-            },
-            {
-              "id": "hammer",
-              "name": "hammer",
-              "cost": 3
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 5
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 15
-            },
-            {
-              "id": "crossbow",
-              "name": "crossbow",
-              "cost": 25
-            },
-            {
-              "id": "pistol",
-              "name": "pistol",
-              "cost": 15
-            },
-            {
-              "id": "bow",
-              "name": "bow",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "buckler",
-              "name": "buckler",
-              "cost": 5
-            }
-          ]
-        }
-      ],
-      "equipmentAccess": {
-        "heroes": [
-          "hand_to_hand",
-          "missiles",
-          "armour"
-        ],
-        "henchmen": [
-          "hand_to_hand",
-          "missiles",
-          "armour"
-        ]
-      }
-    },
-    {
-      "id": "tileans",
-      "name": "Tileans",
-      "source": "Town Cryer #14",
-      "description": "Mercenary warbands from the wealthy city-states of Tilea. Variants: Miraglean (+1 BS crossbow, hate Skaven), Remasen (re-roll rout vs Dark Elves, +1 Ld heroes), Trantio (+100gc starting gold).",
-      "startingGold": 500,
-      "maxWarband": 15,
-      "alignment": "Neutral",
       "heroes": [
         {
           "type": "captain",
@@ -19265,9 +19818,11 @@
           ],
           "startingExp": 20,
           "skillAccess": [
-            "0",
-            "1",
-            "2"
+            "combat",
+            "shooting",
+            "academic",
+            "strength",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -19389,9 +19944,9 @@
           "specialRules": [],
           "startingExp": 8,
           "skillAccess": [
-            "0",
-            "1",
-            "2"
+            "combat",
+            "shooting",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -19513,9 +20068,9 @@
           "specialRules": [],
           "startingExp": 0,
           "skillAccess": [
-            "0",
-            "1",
-            "2"
+            "shooting",
+            "strength",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -19954,51 +20509,58 @@
       }
     },
     {
-      "id": "nehekhara-tomb-guards",
-      "name": "Nehekhara Tomb Guards",
-      "source": "grafixgibs.tripod.com",
-      "description": "The hordes of the dead are terrible to behold walking resolutely forward, bones rattling, dry flesh creaking, and clutching ancient and rusty weapons or those torn from the grip of defeated enemies. How can you kill what is already dead? Nehekhara arose around -2500, imperial year, as the first true",
+      "id": "remasens",
+      "name": "Remasens",
+      "source": "Town Cryer #14",
+      "description": "The land of Tilea is home to some of the most wealthy and aloof people in the Old World. A land that is divided by its own competition of trade and separated by personal feuds and warring city-states. It is civic pride and a desire for financial status that drives each and every Tilean. To this end,",
       "startingGold": 500,
       "maxWarband": 15,
       "alignment": "",
       "heroes": [
         {
-          "type": "mummy-prince",
-          "name": "Mummy Prince",
+          "type": "captain",
+          "name": "Captain",
           "max": 1,
           "required": true,
-          "cost": 90,
+          "cost": 60,
           "stats": {
             "M": 4,
             "WS": 4,
-            "BS": 3,
-            "S": 4,
-            "T": 4,
-            "W": 2,
-            "I": 3,
-            "A": 1,
+            "BS": 4,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 2,
             "Ld": 8
           },
           "specialRules": [
-            "Leader",
-            "Undead"
+            "Leader"
           ],
           "startingExp": 20,
           "skillAccess": [
             "combat",
             "shooting",
-            "strength"
+            "academic",
+            "strength",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
             {
               "id": "dagger",
               "name": "dagger",
-              "cost": 2
+              "cost": 2,
+              "costPrefix": "1st free/"
             },
             {
               "id": "mace",
               "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
               "cost": 3
             },
             {
@@ -20017,9 +20579,19 @@
               "cost": 10
             },
             {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
               "id": "morning_star",
               "name": "morning star",
-              "cost": 10
+              "cost": 15
             },
             {
               "id": "double_handed_weapon",
@@ -20027,14 +20599,24 @@
               "cost": 15
             },
             {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
             },
             {
-              "id": "flail",
-              "name": "flail",
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
               "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
             },
             {
               "id": "bow",
@@ -20042,9 +20624,9 @@
               "cost": 10
             },
             {
-              "id": "asp_arrows",
-              "name": "asp arrows",
-              "cost": 10
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
             },
             {
               "id": "shield",
@@ -20052,48 +20634,172 @@
               "cost": 5
             },
             {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
               "id": "helmet",
               "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "champions",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "academic",
+            "strength"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
               "cost": 10
             },
             {
               "id": "light_armour",
               "name": "light armour",
               "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
             }
           ]
         },
         {
-          "type": "liche-priest",
-          "name": "Liche Priest",
-          "max": 1,
+          "type": "youngbloods",
+          "name": "Youngblood",
+          "max": 2,
           "required": false,
-          "cost": 55,
+          "cost": 15,
           "stats": {
             "M": 4,
-            "WS": 3,
-            "BS": 3,
+            "WS": 2,
+            "BS": 2,
             "S": 3,
             "T": 3,
             "W": 1,
             "I": 3,
             "A": 1,
-            "Ld": 7
+            "Ld": 6
           },
-          "specialRules": [
-            "Wizard",
-            "Undead"
-          ],
-          "startingExp": 8,
+          "specialRules": [],
+          "startingExp": 0,
           "skillAccess": [
-            "academic"
+            "combat",
+            "academic",
+            "speed"
           ],
           "spellAccess": [],
           "allowedEquipment": [
             {
               "id": "dagger",
               "name": "dagger",
-              "cost": 2
+              "cost": 2,
+              "costPrefix": "1st free/"
             },
             {
               "id": "mace",
@@ -20101,58 +20807,8 @@
               "cost": 3
             },
             {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 10
-            },
-            {
-              "id": "serpent_staff",
-              "name": "serpent staff",
-              "cost": 30
-            }
-          ]
-        },
-        {
-          "type": "mummy-warriors",
-          "name": "Mummy Warrior",
-          "max": 2,
-          "required": false,
-          "cost": 70,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 4,
-            "T": 4,
-            "W": 2,
-            "I": 2,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Undead"
-          ],
-          "startingExp": 8,
-          "skillAccess": [
-            "combat",
-            "shooting",
-            "strength"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2
-            },
-            {
-              "id": "mace",
-              "name": "mace",
+              "id": "hammer",
+              "name": "hammer",
               "cost": 3
             },
             {
@@ -20171,9 +20827,19 @@
               "cost": 10
             },
             {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
               "id": "morning_star",
               "name": "morning star",
-              "cost": 10
+              "cost": 15
             },
             {
               "id": "double_handed_weapon",
@@ -20181,14 +20847,24 @@
               "cost": 15
             },
             {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
             },
             {
-              "id": "flail",
-              "name": "flail",
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
               "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
             },
             {
               "id": "bow",
@@ -20196,9 +20872,9 @@
               "cost": 10
             },
             {
-              "id": "asp_arrows",
-              "name": "asp arrows",
-              "cost": 10
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
             },
             {
               "id": "shield",
@@ -20206,47 +20882,51 @@
               "cost": 5
             },
             {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
               "id": "helmet",
               "name": "helmet",
               "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
             }
           ]
         }
       ],
       "henchmen": [
         {
-          "type": "skeleton-soldiers",
-          "name": "Skeleton Soldier",
+          "type": "warriors",
+          "name": "Warrior",
           "cost": 25,
           "stats": {
             "M": 4,
-            "WS": 2,
-            "BS": 2,
+            "WS": 3,
+            "BS": 3,
             "S": 3,
             "T": 3,
             "W": 1,
-            "I": 2,
+            "I": 3,
             "A": 1,
-            "Ld": 5
+            "Ld": 7
           },
-          "specialRules": [
-            "Undead"
-          ],
+          "specialRules": [],
           "maxGroupSize": 5,
           "allowedEquipment": [
             {
               "id": "dagger",
               "name": "dagger",
-              "cost": 2
+              "cost": 2,
+              "costPrefix": "1st free/"
             },
             {
               "id": "mace",
               "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
               "cost": 3
             },
             {
@@ -20265,9 +20945,19 @@
               "cost": 10
             },
             {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
               "id": "morning_star",
               "name": "morning star",
-              "cost": 10
+              "cost": 15
             },
             {
               "id": "double_handed_weapon",
@@ -20275,14 +20965,24 @@
               "cost": 15
             },
             {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
             },
             {
-              "id": "flail",
-              "name": "flail",
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
               "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
             },
             {
               "id": "bow",
@@ -20290,9 +20990,9 @@
               "cost": 10
             },
             {
-              "id": "asp_arrows",
-              "name": "asp arrows",
-              "cost": 10
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
             },
             {
               "id": "shield",
@@ -20300,45 +21000,49 @@
               "cost": 5
             },
             {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
               "id": "helmet",
               "name": "helmet",
               "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
             }
           ]
         },
         {
-          "type": "tomb-guards",
-          "name": "Tomb Guard",
-          "cost": 35,
+          "type": "marksmen",
+          "name": "Marksman",
+          "cost": 25,
           "stats": {
             "M": 4,
             "WS": 3,
-            "BS": 2,
+            "BS": 3,
             "S": 3,
             "T": 3,
             "W": 1,
-            "I": 2,
+            "I": 3,
             "A": 1,
-            "Ld": 5
+            "Ld": 7
           },
-          "specialRules": [
-            "Undead"
-          ],
+          "specialRules": [],
           "maxGroupSize": 5,
           "allowedEquipment": [
             {
               "id": "dagger",
               "name": "dagger",
-              "cost": 2
+              "cost": 2,
+              "costPrefix": "1st free/"
             },
             {
               "id": "mace",
               "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
               "cost": 3
             },
             {
@@ -20352,107 +21056,885 @@
               "cost": 10
             },
             {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
             },
             {
-              "id": "morning_star",
-              "name": "morning star",
-              "cost": 10
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
+              "id": "pistol",
+              "name": "pistol",
               "cost": 15
             },
             {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
             },
             {
-              "id": "flail",
-              "name": "flail",
+              "id": "long_bow",
+              "name": "long bow",
               "cost": 15
             },
             {
-              "id": "bow",
-              "name": "bow",
-              "cost": 10
+              "id": "handgun",
+              "name": "handgun",
+              "cost": 35
             },
             {
-              "id": "asp_arrows",
-              "name": "asp arrows",
-              "cost": 10
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
+              "id": "hunting_rifle",
+              "name": "hunting rifle",
+              "cost": 200
             },
             {
               "id": "light_armour",
               "name": "light armour",
               "cost": 20
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
             }
           ]
         },
         {
-          "type": "tomb-scorpions",
-          "name": "Tomb Scorpion",
-          "cost": 15,
+          "type": "duelists",
+          "name": "Duelist",
+          "cost": 35,
           "stats": {
-            "M": 5,
-            "WS": 2,
-            "BS": "–",
-            "S": 1,
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
             "T": 3,
             "W": 1,
             "I": 4,
             "A": 1,
-            "Ld": 4
+            "Ld": 7
           },
           "specialRules": [
-            "Living",
-            "Animals",
-            "Scorpions sting"
+            "Cloak & Dagger"
           ],
-          "maxGroupSize": 1,
-          "allowedEquipment": []
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ],
+        "henchmen": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ]
+      }
+    },
+    {
+      "id": "trantios",
+      "name": "Trantios",
+      "source": "Town Cryer #14",
+      "description": "The land of Tilea is home to some of the most wealthy and aloof people in the Old World. A land that is divided by its own competition of trade and separated by personal feuds and warring city-states. It is civic pride and a desire for financial status that drives each and every Tilean. To this end,",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "",
+      "heroes": [
+        {
+          "type": "captain",
+          "name": "Captain",
+          "max": 1,
+          "required": true,
+          "cost": 60,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 4,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 2,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Leader"
+          ],
+          "startingExp": 20,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "academic",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
         },
         {
-          "type": "stone-golem",
-          "name": "Stone Golem",
-          "cost": 125,
+          "type": "champions",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 35,
           "stats": {
-            "M": 3,
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "youngbloods",
+          "name": "Youngblood",
+          "max": 2,
+          "required": false,
+          "cost": 15,
+          "stats": {
+            "M": 4,
+            "WS": 2,
+            "BS": 2,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 6
+          },
+          "specialRules": [],
+          "startingExp": 0,
+          "skillAccess": [
+            "combat",
+            "shooting",
+            "strength"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "warriors",
+          "name": "Warrior",
+          "cost": 25,
+          "stats": {
+            "M": 4,
             "WS": 3,
-            "BS": "–",
-            "S": 5,
-            "T": 4,
-            "W": 3,
-            "I": 1,
-            "A": 2,
-            "Ld": 5
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "marksmen",
+          "name": "Marksman",
+          "cost": 25,
+          "stats": {
+            "M": 4,
+            "WS": 3,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "long_bow",
+              "name": "long bow",
+              "cost": 15
+            },
+            {
+              "id": "handgun",
+              "name": "handgun",
+              "cost": 35
+            },
+            {
+              "id": "hunting_rifle",
+              "name": "hunting rifle",
+              "cost": 200
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
+        },
+        {
+          "type": "duelists",
+          "name": "Duelist",
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
           },
           "specialRules": [
-            "Cause Fear",
-            "Immune to Psychology",
-            "Immune to Poison",
-            "No Brain",
-            "May not Hide",
-            "Large",
-            "Does not eat",
-            "Animated"
+            "Cloak & Dagger"
           ],
-          "maxGroupSize": 1,
-          "allowedEquipment": []
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "mace",
+              "name": "mace",
+              "cost": 3
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "pike",
+              "name": "pike",
+              "cost": 12
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "rapier",
+              "name": "rapier",
+              "cost": 15
+            },
+            {
+              "id": "crossbow",
+              "name": "crossbow",
+              "cost": 25
+            },
+            {
+              "id": "pistol",
+              "name": "pistol",
+              "cost": 15
+            },
+            {
+              "id": "duelling_pistol",
+              "name": "duelling pistol",
+              "cost": 25
+            },
+            {
+              "id": "bow",
+              "name": "bow",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "buckler",
+              "name": "buckler",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            }
+          ]
         }
       ],
       "equipmentAccess": {
@@ -25155,8 +26637,8 @@
       }
     },
     {
-      "id": "marauders-of-chaos",
-      "name": "Marauders of Chaos",
+      "id": "the_norse",
+      "name": "The Norse",
       "source": "Border Town Burning",
       "description": "The primitive men who dwell in the Northern lands on the border of the Chaos Wastes are called Marauders of Chaos. They live in tribes and worship strange gods long forgotten by the civilised world. These Northmen are great warriors and they endlessly strive to win the attention of their patron gods",
       "startingGold": 500,
@@ -25290,12 +26772,955 @@
             "combat",
             "academic"
           ],
-          "spellAccess": [
-            "chaos-rituals",
-            "onogal-rituals",
-            "shornaal-rituals",
-            "tchar-rituals"
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "barbed_whip",
+              "name": "barbed whip",
+              "cost": 15
+            },
+            {
+              "id": "great_axe",
+              "name": "great axe",
+              "cost": 25
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            }
+          ]
+        },
+        {
+          "type": "champions",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 45,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 4,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "strength"
           ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "barbed_whip",
+              "name": "barbed whip",
+              "cost": 15
+            },
+            {
+              "id": "great_axe",
+              "name": "great axe",
+              "cost": 25
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            }
+          ]
+        },
+        {
+          "type": "condemned",
+          "name": "Condemned",
+          "max": 1,
+          "required": false,
+          "cost": 55,
+          "stats": {
+            "M": 4,
+            "WS": "D6",
+            "BS": 3,
+            "S": "D6",
+            "T": "D6",
+            "W": 1,
+            "I": 4,
+            "A": "D3",
+            "Ld": 7
+          },
+          "specialRules": [
+            "Inconsistency",
+            "Fear",
+            "Experience",
+            "Fate"
+          ],
+          "startingExp": 8,
+          "skillAccess": [
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": []
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "chaos-marauders",
+          "name": "Chaos Marauder",
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            }
+          ]
+        },
+        {
+          "type": "warhounds-of-chaos",
+          "name": "Warhound of Chaos",
+          "cost": 15,
+          "stats": {
+            "M": 7,
+            "WS": 4,
+            "BS": 0,
+            "S": 4,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 5
+          },
+          "specialRules": [
+            "Animals"
+          ],
+          "maxGroupSize": 5,
+          "allowedEquipment": []
+        },
+        {
+          "type": "spawn-of-chaos",
+          "name": "Spawn of Chaos",
+          "cost": 180,
+          "stats": {
+            "M": "2D6",
+            "WS": 3,
+            "BS": 0,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": "D6+1",
+            "Ld": 10
+          },
+          "specialRules": [
+            "Special Attacks",
+            "Fear",
+            "Special Movement",
+            "Psychology",
+            "No Brain",
+            "Large"
+          ],
+          "maxGroupSize": 1,
+          "allowedEquipment": []
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ],
+        "henchmen": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ]
+      }
+    },
+    {
+      "id": "the_kurgan",
+      "name": "The Kurgan",
+      "source": "Border Town Burning",
+      "description": "The primitive men who dwell in the Northern lands on the border of the Chaos Wastes are called Marauders of Chaos. They live in tribes and worship strange gods long forgotten by the civilised world. These Northmen are great warriors and they endlessly strive to win the attention of their patron gods",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "",
+      "heroes": [
+        {
+          "type": "marauder-chieftain",
+          "name": "Marauder Chieftain",
+          "max": 1,
+          "required": true,
+          "cost": 95,
+          "stats": {
+            "M": 4,
+            "WS": 5,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 1,
+            "I": 5,
+            "A": 1,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Leader"
+          ],
+          "startingExp": 20,
+          "skillAccess": [
+            "combat",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "barbed_whip",
+              "name": "barbed whip",
+              "cost": 15
+            },
+            {
+              "id": "great_axe",
+              "name": "great axe",
+              "cost": 25
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            }
+          ]
+        },
+        {
+          "type": "seer",
+          "name": "Seer",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Wizard",
+            "Mark of Chaos"
+          ],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "academic"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "barbed_whip",
+              "name": "barbed whip",
+              "cost": 15
+            },
+            {
+              "id": "great_axe",
+              "name": "great axe",
+              "cost": 25
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            }
+          ]
+        },
+        {
+          "type": "champions",
+          "name": "Champion",
+          "max": 2,
+          "required": false,
+          "cost": 45,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 4,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "strength"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "barbed_whip",
+              "name": "barbed whip",
+              "cost": 15
+            },
+            {
+              "id": "great_axe",
+              "name": "great axe",
+              "cost": 25
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            }
+          ]
+        },
+        {
+          "type": "condemned",
+          "name": "Condemned",
+          "max": 1,
+          "required": false,
+          "cost": 55,
+          "stats": {
+            "M": 4,
+            "WS": "D6",
+            "BS": 3,
+            "S": "D6",
+            "T": "D6",
+            "W": 1,
+            "I": 4,
+            "A": "D3",
+            "Ld": 7
+          },
+          "specialRules": [
+            "Inconsistency",
+            "Fear",
+            "Experience",
+            "Fate"
+          ],
+          "startingExp": 8,
+          "skillAccess": [
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": []
+        }
+      ],
+      "henchmen": [
+        {
+          "type": "chaos-marauders",
+          "name": "Chaos Marauder",
+          "cost": 35,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 7
+          },
+          "specialRules": [],
+          "maxGroupSize": 5,
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "spear",
+              "name": "spear",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            }
+          ]
+        },
+        {
+          "type": "warhounds-of-chaos",
+          "name": "Warhound of Chaos",
+          "cost": 15,
+          "stats": {
+            "M": 7,
+            "WS": 4,
+            "BS": 0,
+            "S": 4,
+            "T": 3,
+            "W": 1,
+            "I": 3,
+            "A": 1,
+            "Ld": 5
+          },
+          "specialRules": [
+            "Animals"
+          ],
+          "maxGroupSize": 5,
+          "allowedEquipment": []
+        },
+        {
+          "type": "spawn-of-chaos",
+          "name": "Spawn of Chaos",
+          "cost": 180,
+          "stats": {
+            "M": "2D6",
+            "WS": 3,
+            "BS": 0,
+            "S": 4,
+            "T": 5,
+            "W": 3,
+            "I": 2,
+            "A": "D6+1",
+            "Ld": 10
+          },
+          "specialRules": [
+            "Special Attacks",
+            "Fear",
+            "Special Movement",
+            "Psychology",
+            "No Brain",
+            "Large"
+          ],
+          "maxGroupSize": 1,
+          "allowedEquipment": []
+        }
+      ],
+      "equipmentAccess": {
+        "heroes": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ],
+        "henchmen": [
+          "hand_to_hand",
+          "missiles",
+          "armour"
+        ]
+      }
+    },
+    {
+      "id": "the_hung",
+      "name": "The Hung",
+      "source": "Border Town Burning",
+      "description": "The primitive men who dwell in the Northern lands on the border of the Chaos Wastes are called Marauders of Chaos. They live in tribes and worship strange gods long forgotten by the civilised world. These Northmen are great warriors and they endlessly strive to win the attention of their patron gods",
+      "startingGold": 500,
+      "maxWarband": 15,
+      "alignment": "",
+      "heroes": [
+        {
+          "type": "marauder-chieftain",
+          "name": "Marauder Chieftain",
+          "max": 1,
+          "required": true,
+          "cost": 95,
+          "stats": {
+            "M": 4,
+            "WS": 5,
+            "BS": 3,
+            "S": 4,
+            "T": 4,
+            "W": 1,
+            "I": 5,
+            "A": 1,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Leader"
+          ],
+          "startingExp": 20,
+          "skillAccess": [
+            "combat",
+            "strength",
+            "speed"
+          ],
+          "spellAccess": [],
+          "allowedEquipment": [
+            {
+              "id": "dagger",
+              "name": "dagger",
+              "cost": 2,
+              "costPrefix": "1st free/"
+            },
+            {
+              "id": "hammer",
+              "name": "hammer",
+              "cost": 3
+            },
+            {
+              "id": "axe",
+              "name": "axe",
+              "cost": 5
+            },
+            {
+              "id": "sword",
+              "name": "sword",
+              "cost": 10
+            },
+            {
+              "id": "halberd",
+              "name": "halberd",
+              "cost": 10
+            },
+            {
+              "id": "morning_star",
+              "name": "morning star",
+              "cost": 15
+            },
+            {
+              "id": "double_handed_weapon",
+              "name": "double-handed weapon",
+              "cost": 15
+            },
+            {
+              "id": "flail",
+              "name": "flail",
+              "cost": 15
+            },
+            {
+              "id": "barbed_whip",
+              "name": "barbed whip",
+              "cost": 15
+            },
+            {
+              "id": "great_axe",
+              "name": "great axe",
+              "cost": 25
+            },
+            {
+              "id": "shield",
+              "name": "shield",
+              "cost": 5
+            },
+            {
+              "id": "helmet",
+              "name": "helmet",
+              "cost": 10
+            },
+            {
+              "id": "light_armour",
+              "name": "light armour",
+              "cost": 20
+            },
+            {
+              "id": "heavy_armour",
+              "name": "heavy armour",
+              "cost": 50
+            }
+          ]
+        },
+        {
+          "type": "seer",
+          "name": "Seer",
+          "max": 1,
+          "required": false,
+          "cost": 45,
+          "stats": {
+            "M": 4,
+            "WS": 4,
+            "BS": 3,
+            "S": 3,
+            "T": 3,
+            "W": 1,
+            "I": 4,
+            "A": 1,
+            "Ld": 8
+          },
+          "specialRules": [
+            "Wizard",
+            "Mark of Chaos"
+          ],
+          "startingExp": 8,
+          "skillAccess": [
+            "combat",
+            "academic"
+          ],
+          "spellAccess": [],
           "allowedEquipment": [
             {
               "id": "dagger",
@@ -26183,686 +28608,6 @@
               "cost": 10
             }
           ]
-        }
-      ],
-      "equipmentAccess": {
-        "heroes": [
-          "hand_to_hand",
-          "missiles",
-          "armour"
-        ],
-        "henchmen": [
-          "hand_to_hand",
-          "missiles",
-          "armour"
-        ]
-      }
-    },
-    {
-      "id": "night-goblins-web",
-      "name": "Night Goblins (web)",
-      "source": "Fan made from the web",
-      "description": "Much of the Old World is infested with tribes of Orcs and Goblins. Night Goblins especially like the deep dark places and avoid the daylight wherever possible. Whilst they are quite capable of digging their own tunnels, and will do so to avoid contact with others, they prefer to occupy existing cham",
-      "startingGold": 500,
-      "maxWarband": 20,
-      "alignment": "",
-      "heroes": [
-        {
-          "type": "boss",
-          "name": "Boss",
-          "max": 1,
-          "required": true,
-          "cost": 45,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 4,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 4,
-            "A": 1,
-            "Ld": 7
-          },
-          "specialRules": [
-            "Leader",
-            "Da Biggest Boss"
-          ],
-          "startingExp": 17,
-          "skillAccess": [
-            "combat",
-            "shooting",
-            "strength",
-            "speed"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 3
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "boss_pole",
-              "name": "boss pole",
-              "cost": 20
-            },
-            {
-              "id": "poison_daggers",
-              "name": "poison daggers",
-              "cost": 25
-            },
-            {
-              "id": "short_bow",
-              "name": "short bow",
-              "cost": 5
-            },
-            {
-              "id": "sling",
-              "name": "sling",
-              "cost": 2
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "net",
-              "name": "net",
-              "cost": 5
-            },
-            {
-              "id": "mad_cap_mushrooms",
-              "name": "mad cap mushrooms",
-              "cost": 15
-            },
-            {
-              "id": "squig_prodder",
-              "name": "squig prodder",
-              "cost": 15
-            }
-          ]
-        },
-        {
-          "type": "squig-herder",
-          "name": "Squig Herder",
-          "max": 1,
-          "required": false,
-          "cost": 35,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 4,
-            "A": 1,
-            "Ld": 6
-          },
-          "specialRules": [
-            "Handle Animal - Squig",
-            "Master Herder"
-          ],
-          "startingExp": 6,
-          "skillAccess": [
-            "combat",
-            "speed"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 3
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "boss_pole",
-              "name": "boss pole",
-              "cost": 20
-            },
-            {
-              "id": "poison_daggers",
-              "name": "poison daggers",
-              "cost": 25
-            },
-            {
-              "id": "short_bow",
-              "name": "short bow",
-              "cost": 5
-            },
-            {
-              "id": "sling",
-              "name": "sling",
-              "cost": 2
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "net",
-              "name": "net",
-              "cost": 5
-            },
-            {
-              "id": "mad_cap_mushrooms",
-              "name": "mad cap mushrooms",
-              "cost": 15
-            },
-            {
-              "id": "squig_prodder",
-              "name": "squig prodder",
-              "cost": 15
-            }
-          ]
-        },
-        {
-          "type": "goonz",
-          "name": "Goonz",
-          "max": 3,
-          "required": false,
-          "cost": 20,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 6
-          },
-          "specialRules": [],
-          "startingExp": 4,
-          "skillAccess": [
-            "combat",
-            "shooting",
-            "speed"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 3
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "boss_pole",
-              "name": "boss pole",
-              "cost": 20
-            },
-            {
-              "id": "poison_daggers",
-              "name": "poison daggers",
-              "cost": 25
-            },
-            {
-              "id": "short_bow",
-              "name": "short bow",
-              "cost": 5
-            },
-            {
-              "id": "sling",
-              "name": "sling",
-              "cost": 2
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "net",
-              "name": "net",
-              "cost": 5
-            },
-            {
-              "id": "mad_cap_mushrooms",
-              "name": "mad cap mushrooms",
-              "cost": 15
-            },
-            {
-              "id": "squig_prodder",
-              "name": "squig prodder",
-              "cost": 15
-            }
-          ]
-        },
-        {
-          "type": "shaman",
-          "name": "Shaman",
-          "max": 1,
-          "required": false,
-          "cost": 25,
-          "stats": {
-            "M": 4,
-            "WS": 2,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 4,
-            "A": 1,
-            "Ld": 6
-          },
-          "specialRules": [
-            "Wizard",
-            "Fungus Brew"
-          ],
-          "startingExp": 6,
-          "skillAccess": [
-            "academic",
-            "speed"
-          ],
-          "spellAccess": [],
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 3
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 10
-            },
-            {
-              "id": "halberd",
-              "name": "halberd",
-              "cost": 10
-            },
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "boss_pole",
-              "name": "boss pole",
-              "cost": 20
-            },
-            {
-              "id": "poison_daggers",
-              "name": "poison daggers",
-              "cost": 25
-            },
-            {
-              "id": "short_bow",
-              "name": "short bow",
-              "cost": 5
-            },
-            {
-              "id": "sling",
-              "name": "sling",
-              "cost": 2
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "helmet",
-              "name": "helmet",
-              "cost": 10
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "net",
-              "name": "net",
-              "cost": 5
-            },
-            {
-              "id": "mad_cap_mushrooms",
-              "name": "mad cap mushrooms",
-              "cost": 15
-            },
-            {
-              "id": "squig_prodder",
-              "name": "squig prodder",
-              "cost": 15
-            }
-          ]
-        }
-      ],
-      "henchmen": [
-        {
-          "type": "night-goblin-warriors",
-          "name": "Night Goblin Warrior",
-          "cost": 15,
-          "stats": {
-            "M": 4,
-            "WS": 2,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 5
-          },
-          "specialRules": [
-            "Animosity"
-          ],
-          "maxGroupSize": 5,
-          "allowedEquipment": [
-            {
-              "id": "dagger",
-              "name": "dagger",
-              "cost": 2,
-              "costPrefix": "1st free/"
-            },
-            {
-              "id": "club",
-              "name": "club",
-              "cost": 3
-            },
-            {
-              "id": "sword",
-              "name": "sword",
-              "cost": 10
-            },
-            {
-              "id": "spear",
-              "name": "spear",
-              "cost": 5
-            },
-            {
-              "id": "short_bow",
-              "name": "short bow",
-              "cost": 5
-            },
-            {
-              "id": "shield",
-              "name": "shield",
-              "cost": 5
-            },
-            {
-              "id": "light_armour",
-              "name": "light armour",
-              "cost": 20
-            },
-            {
-              "id": "net",
-              "name": "net",
-              "cost": 5
-            },
-            {
-              "id": "mad_cap_mushrooms",
-              "name": "mad cap mushrooms",
-              "cost": 15
-            },
-            {
-              "id": "squig_prodder",
-              "name": "squig prodder",
-              "cost": 15
-            }
-          ]
-        },
-        {
-          "type": "night-goblin-fanatics",
-          "name": "Night Goblin Fanatic",
-          "cost": 20,
-          "stats": {
-            "M": 4,
-            "WS": 3,
-            "BS": 3,
-            "S": 3,
-            "T": 3,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 5
-          },
-          "specialRules": [
-            "Addict",
-            "Loony"
-          ],
-          "maxGroupSize": 5,
-          "allowedEquipment": [
-            {
-              "id": "double_handed_weapon",
-              "name": "double-handed weapon",
-              "cost": 15
-            },
-            {
-              "id": "poison_daggers",
-              "name": "poison daggers",
-              "cost": 25
-            },
-            {
-              "id": "mad_cap_mushrooms",
-              "name": "mad cap mushrooms",
-              "cost": 15
-            }
-          ]
-        },
-        {
-          "type": "cave-squigs",
-          "name": "Cave Squig",
-          "cost": 15,
-          "stats": {
-            "M": "2d6",
-            "WS": 4,
-            "BS": 0,
-            "S": 4,
-            "T": 3,
-            "W": 1,
-            "I": 4,
-            "A": 1,
-            "Ld": 5
-          },
-          "specialRules": [
-            "Movement",
-            "Minderz",
-            "Just Squigs",
-            "Animals"
-          ],
-          "maxGroupSize": 5,
-          "allowedEquipment": []
-        },
-        {
-          "type": "snotlings",
-          "name": "Snotling",
-          "cost": 10,
-          "stats": {
-            "M": 4,
-            "WS": 2,
-            "BS": 2,
-            "S": 2,
-            "T": 2,
-            "W": 1,
-            "I": 3,
-            "A": 1,
-            "Ld": 4
-          },
-          "specialRules": [
-            "Mob",
-            "Weedy",
-            "Dodgy",
-            "Insignificant"
-          ],
-          "maxGroupSize": 5,
-          "allowedEquipment": []
-        },
-        {
-          "type": "great-squig",
-          "name": "Great Squig",
-          "cost": 210,
-          "stats": {
-            "M": "3D6",
-            "WS": 4,
-            "BS": 0,
-            "S": 5,
-            "T": 5,
-            "W": 3,
-            "I": 4,
-            "A": 3,
-            "Ld": 5
-          },
-          "specialRules": [
-            "Movement",
-            "Wild",
-            "Cause Fear",
-            "Large Target",
-            "Animal"
-          ],
-          "maxGroupSize": 1,
-          "allowedEquipment": []
-        },
-        {
-          "type": "troll",
-          "name": "Troll",
-          "cost": 200,
-          "stats": {
-            "M": 6,
-            "WS": 3,
-            "BS": 1,
-            "S": 5,
-            "T": 4,
-            "W": 3,
-            "I": 1,
-            "A": 3,
-            "Ld": 4
-          },
-          "specialRules": [
-            "Fear",
-            "Stupidity",
-            "Regeneration",
-            "Dumb Monster",
-            "Always Hungry",
-            "Vomit Attack",
-            "Large Target"
-          ],
-          "maxGroupSize": 1,
-          "allowedEquipment": []
         }
       ],
       "equipmentAccess": {

@@ -1,21 +1,21 @@
 {
-  "lastChecked": "2026-03-26T21:23:10.552Z",
+  "lastChecked": "2026-03-29T20:55:48.061Z",
   "files": {
     "data/mergedEquipment.json": {
-      "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
-      "syncedAt": "2026-03-26T21:05:52.480Z"
+      "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
+      "syncedAt": "2026-03-29T20:55:48.061Z"
     },
     "data/skills.json": {
-      "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
-      "syncedAt": "2026-03-26T21:05:52.480Z"
+      "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
+      "syncedAt": "2026-03-29T20:55:48.061Z"
     },
     "data/magic.json": {
-      "sha": "7c7fe1c314ada6280bc154f5104e4c871b5dffef",
-      "syncedAt": "2026-03-26T21:05:52.480Z"
+      "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
+      "syncedAt": "2026-03-29T20:55:48.061Z"
     },
     "data/warbandFiles": {
-      "sha": "121264e30c45aa9468bbe86e6118d33343d33158",
-      "syncedAt": "2026-03-26T21:23:10.552Z"
+      "sha": "6f9aa8d8335b09fa27950a002ea0044d06ac0361",
+      "syncedAt": "2026-03-29T20:55:48.061Z"
     }
   }
 }

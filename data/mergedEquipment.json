@@ -3671,7 +3671,7 @@
     },
     "caveat": "Maneaters only"
   },
-{
+  {
     "type": "melee",
     "name": "Pike",
     "link": "/docs/weapons-armour/close-combat#pike",
@@ -4447,7 +4447,7 @@
       "cost": 75,
       "numD6": 3
     },
-    "caveat":"Kislevite ",
+    "caveat": "Kislevite ",
     "modelCaveat": "Heroes only"
   },
   {
@@ -4496,7 +4496,7 @@
         "availability": 7
       }
     ],
-    "caveat": "Not available to Witch Hunters, Warrior-Priests or Sisters of Sigmar. ", 
+    "caveat": "Not available to Witch Hunters, Warrior-Priests or Sisters of Sigmar. ",
     "rulesCaveat": "Rare 7 for Skaven and Lizardmen, 10 gc and Common For Skink Heroes"
   },
   {
@@ -6970,7 +6970,7 @@
       "numD6": 3
     },
     "caveat": "Shadow Warriors only, ",
-    "rulesCaveat": "May only be purchased when the warband is created" 
+    "rulesCaveat": "May only be purchased when the warband is created"
   },
   {
     "type": "misc",
