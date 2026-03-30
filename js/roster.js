@@ -123,8 +123,8 @@ const RosterModel = {
       name: henchman.name,
       isHero: true,
       isPromotedHenchman: true,
-      equipment: JSON.parse(JSON.stringify(henchman.equipment)),
-      injuries: JSON.parse(JSON.stringify(henchman.injuries)),
+      equipment: JSON.parse(JSON.stringify(henchman.equipment || [])),
+      injuries: JSON.parse(JSON.stringify(henchman.injuries || [])),
       notes: henchman.notes || '',
       skillAccess,
     };
@@ -212,7 +212,7 @@ const RosterModel = {
   // || [] guards handle legacy rosters saved before hiredSwords/customWarriors
   // arrays were introduced.
   _heroLike(roster) {
-    return [...roster.heroes, ...(roster.hiredSwords || []), ...(roster.customWarriors || [])];
+    return [...(roster.heroes || []), ...(roster.hiredSwords || []), ...(roster.customWarriors || [])];
   },
 
   calculateWarbandRating(roster) {
