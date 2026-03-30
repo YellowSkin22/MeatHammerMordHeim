@@ -1,9 +1,18 @@
 // Roster model and logic
 const RosterModel = {
 
-  // Shared base fields for every warrior object.
-  // Callers spread this and add their own type flags and overrides.
+  // Returns shared base fields for every warrior object.
+  // Callers MUST spread this and at minimum override `isHero` (defaults false).
+  // `name` defaults to `typeName`; callers preserving an existing warrior's name
+  // (e.g. promoteHenchmanToHero) must also override `name`.
+  // `equipment` and `injuries` are fresh empty arrays; callers carrying over
+  // existing data must override those fields with deep clones.
   _baseWarrior(id, type, typeName, stats, cost, specialRules, experience) {
+    if (!Array.isArray(specialRules)) {
+      throw new TypeError(
+        `_baseWarrior: expected specialRules to be an array, got ${typeof specialRules} for type "${type}"`
+      );
+    }
     return {
       id,
       type,
@@ -16,11 +25,11 @@ const RosterModel = {
       skills: [],
       spells: [],
       injuries: [],
-      experience: experience || 0,
+      experience: experience ?? 0,
       advancementCount: 0,
       missNextGame: false,
       cost,
-      specialRules: [...(specialRules || [])],
+      specialRules: [...specialRules],
       notes: '',
     };
   },
@@ -92,10 +101,20 @@ const RosterModel = {
   },
 
   promoteHenchmanToHero(henchman, skillAccess) {
+    if (!Array.isArray(henchman.specialRules)) {
+      console.warn(
+        `promoteHenchmanToHero: henchman "${henchman.name}" (${henchman.type}) has no specialRules array (got ${typeof henchman.specialRules}). Defaulting to [].`
+      );
+    }
+    if (henchman.experience == null) {
+      console.warn(
+        `promoteHenchmanToHero: henchman "${henchman.name}" (${henchman.type}) has no experience value. Defaulting to 0.`
+      );
+    }
     return {
       ...this._baseWarrior(
         Storage.generateId(), henchman.type, henchman.typeName,
-        henchman.stats, henchman.cost, henchman.specialRules,
+        henchman.stats, henchman.cost, henchman.specialRules || [],
         henchman.experience
       ),
       name: henchman.name,
@@ -183,20 +202,24 @@ const RosterModel = {
     return experience + 10;
   },
 
-  // Returns the three hero-like arrays concatenated. Henchmen stay separate
-  // because their calculations differ (they use groupSize multipliers).
+  // Returns heroes, hiredSwords, and customWarriors as a single flat array.
+  // Henchmen are kept separate because they represent groups and scale by
+  // groupSize — their cost, rating, and member count all multiply by groupSize,
+  // which hero-like warriors never do.
   _heroLike(roster) {
     return [...roster.heroes, ...(roster.hiredSwords || []), ...(roster.customWarriors || [])];
   },
 
   calculateWarbandRating(roster) {
     let rating = 0;
+    // Hero-like: 5 base + 1 per experience point + 5 per equipment item.
     for (const w of this._heroLike(roster)) {
-      rating += 5 + w.experience + w.equipment.length * 5;
+      rating += 5 + Number(w.experience) + w.equipment.length * 5;
     }
+    // Henchmen: (5 + experience per model) × groupSize.
     for (const hg of roster.henchmen) {
       const n = hg.groupSize || 1;
-      rating += n * 5 + hg.experience * n;
+      rating += n * 5 + Number(hg.experience) * n;
     }
     return rating;
   },
