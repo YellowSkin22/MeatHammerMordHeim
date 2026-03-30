@@ -26,6 +26,8 @@ Live at: https://meathammer-mordheim.netlify.app
 
 - **Core game mechanics are always free tier** — features that are fundamental to playing the game (managing warriors, tracking stats, equipment, skills, injuries, experience, warband rating) must never be gated behind `standard` or `pro`. If a request would move a core mechanic behind a tier check, ask for explicit confirmation that this rule is being intentionally broken before proceeding.
 
+- **All changes go through a PR** — never push directly to `main`. Start every piece of work on a feature or fix branch (`feature/short-description` or `fix/short-description`), then open a pull request into `main` when complete. The only exceptions are automated sync commits from `sync-mordheim-data.js` and doc-only typo fixes.
+
 ## Architecture
 
 Vanilla JS single-page app with five globals loaded in order by `index.html`:
