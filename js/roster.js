@@ -1,6 +1,42 @@
 // Roster model and logic
 const RosterModel = {
 
+  // Returns shared base fields for every warrior object.
+  // Callers MUST spread this and at minimum override `isHero` (defaults false).
+  // `name` defaults to `typeName`; callers preserving an existing warrior's name
+  // (e.g. promoteHenchmanToHero) must also override `name`.
+  // `equipment`, `skills`, `spells`, `injuries`, and `notes` are fresh empty
+  // values; callers carrying over existing data must override those fields
+  // (use deep clones for arrays).
+  // Throws TypeError if `specialRules` is not an array — callers passing
+  // external/synced data should normalise with `|| []` before calling.
+  _baseWarrior(id, type, typeName, stats, cost, specialRules, experience) {
+    if (!Array.isArray(specialRules)) {
+      throw new TypeError(
+        `_baseWarrior: expected specialRules to be an array, got ${typeof specialRules} for type "${type}"`
+      );
+    }
+    return {
+      id,
+      type,
+      typeName,
+      name: typeName,
+      isHero: false,
+      stats: { ...stats },
+      baseStats: { ...stats },
+      equipment: [],
+      skills: [],
+      spells: [],
+      injuries: [],
+      experience: experience ?? 0,
+      advancementCount: 0,
+      missNextGame: false,
+      cost,
+      specialRules: [...specialRules],
+      notes: '',
+    };
+  },
+
   createRoster(name, warbandId) {
     const warband = DataService.getWarband(warbandId);
     if (!warband) throw new Error('Unknown warband: ' + warbandId);
@@ -28,28 +64,15 @@ const RosterModel = {
     if (!template) return null;
 
     const warrior = {
-      id: Storage.generateId(),
-      type: template.type,
-      typeName: template.name,
-      name: template.name,
+      ...this._baseWarrior(
+        Storage.generateId(), template.type, template.name,
+        template.stats, template.cost, template.specialRules || [],
+        isHero ? (template.startingExp || 0) : 0
+      ),
       isHero,
-      stats: { ...template.stats },
-      baseStats: { ...template.stats },
-      equipment: [],
-      skills: [],
-      spells: [],
-      injuries: [],
-      experience: isHero ? (template.startingExp || 0) : 0,
-      advancementCount: 0,
-      missNextGame: false,
-      cost: template.cost,
-      specialRules: [...(template.specialRules || [])],
-      notes: '',
     };
 
-    if (!isHero) {
-      warrior.groupSize = 1;
-    }
+    if (!isHero) warrior.groupSize = 1;
 
     return warrior;
   },
@@ -59,71 +82,51 @@ const RosterModel = {
     if (!template) return null;
 
     return {
-      id: Storage.generateId(),
-      type: template.type,
-      typeName: template.name,
-      name: template.name,
+      ...this._baseWarrior(
+        Storage.generateId(), template.type, template.name,
+        template.stats, template.cost, template.specialRules || [],
+        template.startingExp || 0
+      ),
       isHero: true,
       isHiredSword: true,
-      stats: { ...template.stats },
-      baseStats: { ...template.stats },
-      equipment: [],
-      skills: [],
-      spells: [],
-      injuries: [],
-      experience: template.startingExp || 0,
-      advancementCount: 0,
-      missNextGame: false,
-      cost: template.cost,
-      specialRules: [...(template.specialRules || [])],
-      notes: '',
     };
   },
 
   createCustomWarrior(name, cost, stats, specialRules) {
     return {
-      id: Storage.generateId(),
-      type: 'custom',
-      typeName: name,
-      name: name,
+      ...this._baseWarrior(
+        Storage.generateId(), 'custom', name,
+        stats, cost, specialRules, 0
+      ),
       isHero: true,
       isCustom: true,
-      stats: { ...stats },
-      baseStats: { ...stats },
-      equipment: [],
-      skills: [],
-      spells: [],
-      injuries: [],
-      experience: 0,
-      advancementCount: 0,
-      missNextGame: false,
-      cost: cost,
-      specialRules: [...specialRules],
-      notes: '',
     };
   },
 
   promoteHenchmanToHero(henchman, skillAccess) {
+    if (!Array.isArray(henchman.specialRules)) {
+      console.warn(
+        `promoteHenchmanToHero: henchman "${henchman.name}" (${henchman.type}) has no specialRules array (got ${typeof henchman.specialRules}). Defaulting to [].`
+      );
+    }
+    if (henchman.experience == null) {
+      console.warn(
+        `promoteHenchmanToHero: henchman "${henchman.name}" (${henchman.type}) has no experience value. Defaulting to 0.`
+      );
+    }
     return {
-      id: Storage.generateId(),
-      type: henchman.type,
-      typeName: henchman.typeName,
+      ...this._baseWarrior(
+        Storage.generateId(), henchman.type, henchman.typeName,
+        henchman.stats, henchman.cost, henchman.specialRules || [],
+        henchman.experience
+      ),
       name: henchman.name,
       isHero: true,
       isPromotedHenchman: true,
-      stats: { ...henchman.stats },
-      baseStats: { ...henchman.stats },
-      equipment: JSON.parse(JSON.stringify(henchman.equipment)),
-      skills: [],
-      spells: [],
-      injuries: JSON.parse(JSON.stringify(henchman.injuries)),
-      experience: henchman.experience,
-      advancementCount: 0,
-      missNextGame: false,
-      cost: henchman.cost,
-      specialRules: [...henchman.specialRules],
-      skillAccess: skillAccess,
+      equipment: JSON.parse(JSON.stringify(henchman.equipment || [])),
+      injuries: JSON.parse(JSON.stringify(henchman.injuries || [])),
       notes: henchman.notes || '',
+      skillAccess,
     };
   },
 
@@ -202,73 +205,54 @@ const RosterModel = {
     return experience + 10;
   },
 
+  // Returns heroes, hiredSwords, and customWarriors as a single flat array.
+  // Henchmen are kept separate because they represent groups and scale by
+  // groupSize — their cost, rating, and member count all multiply by groupSize,
+  // which hero-like warriors never do.
+  // || [] guards handle legacy rosters saved before hiredSwords/customWarriors
+  // arrays were introduced.
+  _heroLike(roster) {
+    return [...(roster.heroes || []), ...(roster.hiredSwords || []), ...(roster.customWarriors || [])];
+  },
+
   calculateWarbandRating(roster) {
     let rating = 0;
-    // heroes: 5 per experience point + 5 base
-    for (const h of roster.heroes) {
-      rating += 5 + (h.experience * 1);
-      rating += h.equipment.length * 5;
+    // Hero-like: 5 base + 1 per XP + 5 per equipment item.
+    // NOTE: uses 1 pt/XP as a simplification; official Mordheim rules use 5 pts/XP.
+    for (const w of this._heroLike(roster)) {
+      rating += 5 + Number(w.experience) + w.equipment.length * 5;
     }
-    // hired swords: same as heroes
-    for (const hs of (roster.hiredSwords || [])) {
-      rating += 5 + (hs.experience * 1);
-      rating += hs.equipment.length * 5;
-    }
-    // custom warriors: same as heroes
-    for (const cw of (roster.customWarriors || [])) {
-      rating += 5 + (cw.experience * 1);
-      rating += cw.equipment.length * 5;
-    }
-    // henchmen: 5 per member
+    // Henchmen: (5 + experience per model) × groupSize. Equipment not rated for henchmen.
     for (const hg of roster.henchmen) {
-      const groupCount = hg.groupSize || 1;
-      rating += groupCount * 5;
-      rating += hg.experience * groupCount;
+      const n = hg.groupSize || 1;
+      rating += n * 5 + Number(hg.experience) * n;
     }
     return rating;
   },
 
   calculateTotalCost(roster) {
     let total = 0;
-    for (const h of roster.heroes) {
-      total += h.cost;
-      for (const eq of h.equipment) {
-        const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += item.cost;
-      }
-    }
-    for (const hs of (roster.hiredSwords || [])) {
-      total += hs.cost;
-      for (const eq of hs.equipment) {
-        const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += item.cost;
-      }
-    }
-    for (const cw of (roster.customWarriors || [])) {
-      total += cw.cost;
-      for (const eq of cw.equipment) {
+    for (const w of this._heroLike(roster)) {
+      total += w.cost;
+      for (const eq of w.equipment) {
         const item = DataService.getEquipmentItem(eq.id);
         if (item) total += item.cost;
       }
     }
     for (const hg of roster.henchmen) {
-      const groupCount = hg.groupSize || 1;
-      total += hg.cost * groupCount;
+      const n = hg.groupSize || 1;
+      total += hg.cost * n;
       for (const eq of hg.equipment) {
         const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += item.cost * groupCount;
+        if (item) total += item.cost * n;
       }
     }
     return total;
   },
 
   getMemberCount(roster) {
-    let count = roster.heroes.length;
-    count += (roster.hiredSwords || []).length;
-    count += (roster.customWarriors || []).length;
-    for (const hg of roster.henchmen) {
-      count += hg.groupSize || 1;
-    }
+    let count = this._heroLike(roster).length;
+    for (const hg of roster.henchmen) count += hg.groupSize || 1;
     return count;
   },
 
