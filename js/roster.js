@@ -5,8 +5,11 @@ const RosterModel = {
   // Callers MUST spread this and at minimum override `isHero` (defaults false).
   // `name` defaults to `typeName`; callers preserving an existing warrior's name
   // (e.g. promoteHenchmanToHero) must also override `name`.
-  // `equipment` and `injuries` are fresh empty arrays; callers carrying over
-  // existing data must override those fields with deep clones.
+  // `equipment`, `skills`, `spells`, `injuries`, and `notes` are fresh empty
+  // values; callers carrying over existing data must override those fields
+  // (use deep clones for arrays).
+  // Throws TypeError if `specialRules` is not an array — callers passing
+  // external/synced data should normalise with `|| []` before calling.
   _baseWarrior(id, type, typeName, stats, cost, specialRules, experience) {
     if (!Array.isArray(specialRules)) {
       throw new TypeError(
@@ -63,7 +66,7 @@ const RosterModel = {
     const warrior = {
       ...this._baseWarrior(
         Storage.generateId(), template.type, template.name,
-        template.stats, template.cost, template.specialRules,
+        template.stats, template.cost, template.specialRules || [],
         isHero ? (template.startingExp || 0) : 0
       ),
       isHero,
@@ -81,7 +84,7 @@ const RosterModel = {
     return {
       ...this._baseWarrior(
         Storage.generateId(), template.type, template.name,
-        template.stats, template.cost, template.specialRules,
+        template.stats, template.cost, template.specialRules || [],
         template.startingExp || 0
       ),
       isHero: true,
@@ -206,17 +209,20 @@ const RosterModel = {
   // Henchmen are kept separate because they represent groups and scale by
   // groupSize — their cost, rating, and member count all multiply by groupSize,
   // which hero-like warriors never do.
+  // || [] guards handle legacy rosters saved before hiredSwords/customWarriors
+  // arrays were introduced.
   _heroLike(roster) {
     return [...roster.heroes, ...(roster.hiredSwords || []), ...(roster.customWarriors || [])];
   },
 
   calculateWarbandRating(roster) {
     let rating = 0;
-    // Hero-like: 5 base + 1 per experience point + 5 per equipment item.
+    // Hero-like: 5 base + 1 per XP + 5 per equipment item.
+    // NOTE: uses 1 pt/XP as a simplification; official Mordheim rules use 5 pts/XP.
     for (const w of this._heroLike(roster)) {
       rating += 5 + Number(w.experience) + w.equipment.length * 5;
     }
-    // Henchmen: (5 + experience per model) × groupSize.
+    // Henchmen: (5 + experience per model) × groupSize. Equipment not rated for henchmen.
     for (const hg of roster.henchmen) {
       const n = hg.groupSize || 1;
       rating += n * 5 + Number(hg.experience) * n;
