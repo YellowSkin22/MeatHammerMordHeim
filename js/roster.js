@@ -236,7 +236,7 @@ const RosterModel = {
       total += w.cost;
       for (const eq of w.equipment) {
         const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += item.cost;
+        if (item) total += item.cost?.cost ?? 0;
       }
     }
     for (const hg of roster.henchmen) {
@@ -244,7 +244,7 @@ const RosterModel = {
       total += hg.cost * n;
       for (const eq of hg.equipment) {
         const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += item.cost * n;
+        if (item) total += (item.cost?.cost ?? 0) * n;
       }
     }
     return total;
