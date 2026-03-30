@@ -7,7 +7,7 @@
 | Phase 1 — Equipment | ✅ **Complete — awaiting test sign-off** | `29e295f` |
 | Phase 2 — Warband Data | ✅ **Complete — awaiting test sign-off** | `efc304d` |
 | Phase 3 — Access Logic | ✅ **Complete — awaiting test sign-off** | `d4db097` |
-| Phase 4 — Skills & Remaining Sources | ✅ **Complete — awaiting test sign-off** | `TBD` |
+| Phase 4 — Skills & Remaining Sources | ✅ **Complete — awaiting test sign-off** | `cfe9503` |
 
 **Last updated:** 2026-03-30 (Phase 4 complete)
 
