@@ -236,7 +236,11 @@ const RosterModel = {
       total += w.cost;
       for (const eq of w.equipment) {
         const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += item.cost?.cost ?? 0;
+        if (item) {
+          const cost = item.cost?.cost;
+          if (typeof cost !== 'number') console.warn(`calculateTotalCost: no numeric cost for "${item.name}" (${JSON.stringify(item.cost)})`);
+          total += cost ?? 0;
+        }
       }
     }
     for (const hg of roster.henchmen) {
@@ -244,7 +248,11 @@ const RosterModel = {
       total += hg.cost * n;
       for (const eq of hg.equipment) {
         const item = DataService.getEquipmentItem(eq.id);
-        if (item) total += (item.cost?.cost ?? 0) * n;
+        if (item) {
+          const cost = item.cost?.cost;
+          if (typeof cost !== 'number') console.warn(`calculateTotalCost: no numeric cost for "${item.name}" (${JSON.stringify(item.cost)})`);
+          total += (cost ?? 0) * n;
+        }
       }
     }
     return total;
