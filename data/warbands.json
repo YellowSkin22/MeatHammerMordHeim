@@ -789,7 +789,8 @@
           "skillAccess": [
             "combat",
             "strength",
-            "speed"
+            "speed",
+            "beastmen_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -874,7 +875,8 @@
           "startingExp": 11,
           "skillAccess": [
             "combat",
-            "speed"
+            "speed",
+            "beastmen_special"
           ],
           "spellAccess": [
             "chaos-rituals"
@@ -959,7 +961,8 @@
           "startingExp": 8,
           "skillAccess": [
             "combat",
-            "strength"
+            "strength",
+            "beastmen_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -1046,7 +1049,8 @@
           "startingExp": 8,
           "skillAccess": [
             "combat",
-            "strength"
+            "strength",
+            "beastmen_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -2347,7 +2351,9 @@
           "skillAccess": [
             "combat",
             "shooting",
-            "strength"
+            "strength",
+            "dwarf_special",
+            "troll_slayer_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -2458,7 +2464,9 @@
           "startingExp": 10,
           "skillAccess": [
             "combat",
-            "shooting"
+            "shooting",
+            "dwarf_special",
+            "troll_slayer_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -2550,7 +2558,9 @@
           "startingExp": 8,
           "skillAccess": [
             "combat",
-            "strength"
+            "strength",
+            "dwarf_special",
+            "troll_slayer_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -6036,7 +6046,8 @@
             "combat",
             "shooting",
             "strength",
-            "speed"
+            "speed",
+            "orc_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -6131,7 +6142,8 @@
           ],
           "startingExp": 10,
           "skillAccess": [
-            "strength"
+            "strength",
+            "orc_special"
           ],
           "spellAccess": [
             "waaaagh"
@@ -6227,7 +6239,8 @@
           "skillAccess": [
             "combat",
             "shooting",
-            "strength"
+            "strength",
+            "orc_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -7693,7 +7706,8 @@
             "shooting",
             "academic",
             "strength",
-            "speed"
+            "speed",
+            "skaven_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -7793,7 +7807,8 @@
             "combat",
             "shooting",
             "strength",
-            "speed"
+            "speed",
+            "skaven_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -7893,7 +7908,8 @@
           "startingExp": 8,
           "skillAccess": [
             "academic",
-            "speed"
+            "speed",
+            "skaven_special"
           ],
           "spellAccess": [
             "magic-of-the-horned-rat"
@@ -7993,7 +8009,8 @@
           "startingExp": 0,
           "skillAccess": [
             "combat",
-            "shooting"
+            "shooting",
+            "skaven_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -11097,7 +11114,8 @@
           "skillAccess": [
             "combat",
             "strength",
-            "speed"
+            "speed",
+            "bretonnian_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -11187,7 +11205,8 @@
           "startingExp": 8,
           "skillAccess": [
             "combat",
-            "speed"
+            "speed",
+            "bretonnian_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -11513,7 +11532,8 @@
             "combat",
             "shooting",
             "academic",
-            "speed"
+            "speed",
+            "dark_elf_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -11623,7 +11643,8 @@
           "startingExp": 8,
           "skillAccess": [
             "combat",
-            "speed"
+            "speed",
+            "dark_elf_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -11733,7 +11754,8 @@
           "startingExp": 12,
           "skillAccess": [
             "combat",
-            "speed"
+            "speed",
+            "dark_elf_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -11843,7 +11865,8 @@
           "startingExp": 12,
           "skillAccess": [
             "academic",
-            "speed"
+            "speed",
+            "dark_elf_special"
           ],
           "spellAccess": [
             "dark-elf-magic"
@@ -14709,7 +14732,8 @@
             "combat",
             "shooting",
             "strength",
-            "speed"
+            "speed",
+            "horned_hunter_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -14822,7 +14846,8 @@
             "combat",
             "academic",
             "strength",
-            "speed"
+            "speed",
+            "horned_hunter_special"
           ],
           "spellAccess": [
             "prayers-of-taal"
@@ -14938,7 +14963,8 @@
             "combat",
             "shooting",
             "strength",
-            "speed"
+            "speed",
+            "horned_hunter_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -18439,7 +18465,8 @@
           "skillAccess": [
             "combat",
             "strength",
-            "speed"
+            "speed",
+            "pit_fighter_special"
           ],
           "spellAccess": [],
           "allowedEquipment": []
@@ -18472,7 +18499,8 @@
           "startingExp": 8,
           "skillAccess": [
             "combat",
-            "strength"
+            "strength",
+            "pit_fighter_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -18558,7 +18586,8 @@
           "skillAccess": [
             "combat",
             "strength",
-            "speed"
+            "speed",
+            "pit_fighter_special"
           ],
           "spellAccess": [],
           "allowedEquipment": []
@@ -18738,7 +18767,8 @@
             "combat",
             "shooting",
             "academic",
-            "speed"
+            "speed",
+            "shadow_warrior_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -18852,7 +18882,8 @@
           "skillAccess": [
             "combat",
             "shooting",
-            "speed"
+            "speed",
+            "shadow_warrior_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -18968,7 +18999,8 @@
           "skillAccess": [
             "combat",
             "academic",
-            "speed"
+            "speed",
+            "shadow_warrior_special"
           ],
           "spellAccess": [
             "shadow-warrior-magic"
@@ -19325,7 +19357,8 @@
             "shooting",
             "academic",
             "strength",
-            "speed"
+            "speed",
+            "clan_pestilens_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -19415,7 +19448,8 @@
           "startingExp": 8,
           "skillAccess": [
             "academic",
-            "speed"
+            "speed",
+            "clan_pestilens_special"
           ],
           "spellAccess": [
             "magic-of-the-horned-rat"
@@ -19507,7 +19541,8 @@
             "combat",
             "shooting",
             "strength",
-            "speed"
+            "speed",
+            "clan_pestilens_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
@@ -19596,7 +19631,8 @@
           "skillAccess": [
             "combat",
             "shooting",
-            "speed"
+            "speed",
+            "clan_pestilens_special"
           ],
           "spellAccess": [],
           "allowedEquipment": [
