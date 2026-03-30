@@ -269,9 +269,54 @@
       "name": "Dark Elf Special Skills",
       "skills": [
         {
+          "id": "infiltration",
+          "name": "Infiltration",
+          "description": "Placed last anywhere on the table, more than 12\" from the enemy, out of line of sight. If both players have infiltrating models, roll off for each model, lowest sets up first"
+        },
+        {
           "id": "fury_of_khaine",
           "name": "Fury of Khaine",
-          "description": "+1 Attack when charging."
+          "description": "May follow up 4\" after taking all opponents OOA; starts new combat next turn; no follow-up in opponent’s turn."
+        },
+        {
+          "id": "fey_quickness",
+          "name": "Fey Quickness",
+          "description": "Ignores melee/missile on 6; improves to 4+ with Step Aside or Dodge in relevant area."
+        },
+        {
+          "id": "master_of_poisons",
+          "name": "Master of Poisons",
+          "description": "If not searching for rare items, may make D3–1 Dark Venom doses for next battle (cannot sell/trade)."
+        },
+        {
+          "id": "powerful_build",
+          "name": "Powerful Build",
+          "description": "May choose Strength skills."
+        },
+        {
+          "id": "frenzied_charge",
+          "name": "Frenzied Charge",
+          "description": "May make a 4\" follow-up move if all opponents taken OOA; next combat counts as charging."
+        },
+        {
+          "id": "poisoner",
+          "name": "Poisoner",
+          "description": "If no rare search, may make D2 doses of Dark Venom for next battle (not sellable or tradeable)."
+        },
+        {
+          "id": "marksman_of_naggaroth",
+          "name": "Marksman of Naggaroth",
+          "description": "Ignores long range penalty with crossbows; if stationary, fires repeater crossbow twice (no penalty) or three times (–1 penalty)."
+        },
+        {
+          "id": "will_to_survive",
+          "name": "Will to Survive",
+          "description": "On death Serious Injury, pass Leadership to survive (miss D3 battles instead)."
+        },
+        {
+          "id": "keen_sight",
+          "name": "Keen Sight",
+          "description": "Spots Hidden enemies at twice normal distance (2× Initiative)."
         },
         {
           "id": "de_powerful_build",
@@ -279,19 +324,9 @@
           "description": "May choose skills from the Strength table. May not be taken by the Sorceress. Max 2 warriors per warband."
         },
         {
-          "id": "fey_quickness",
-          "name": "Fey Quickness",
-          "description": "4+ dodge save against melee attacks (not cumulative with Step Aside)."
-        },
-        {
           "id": "de_infiltration",
           "name": "Infiltration",
           "description": "Deployed after opponent, anywhere on table out of sight and more than 12\" from enemy."
-        },
-        {
-          "id": "master_of_poisons",
-          "name": "Master of Poisons",
-          "description": "May buy Dark Venom and Black Lotus at half price. May re-roll failed poison rolls."
         },
         {
           "id": "soul_hunger",
@@ -306,27 +341,62 @@
         {
           "id": "master_of_blades",
           "name": "Master of Blades",
-          "description": "When using a Parry weapon, parries on matching opponent's highest to hit roll. Two Parry weapons allow parrying two attacks."
+          "description": "Parries succeed on beating or matching opponent’s hit rolls; with two parry weapons, may parry two attacks; may re-roll failed parries with two Dwarf axes."
         },
         {
           "id": "extra_tough",
           "name": "Extra Tough",
-          "description": "May re-roll once on the Serious Injury chart after being taken out of action. Second roll must be accepted."
+          "description": "May re-roll Serious Injury dice once; second result must be accepted."
         },
         {
           "id": "resource_hunter",
           "name": "Resource Hunter",
-          "description": "May modify one dice roll on the Exploration chart by +1/-1."
+          "description": "May modify one Exploration dice roll by +1 or -1."
         },
         {
           "id": "true_grit",
           "name": "True Grit",
-          "description": "Injury table: 1-3 knocked down, 4-5 stunned, 6 out of action."
+          "description": "Injury table: 1–3 knocked down, 4–5 stunned, 6 out of action."
         },
         {
           "id": "thick_skull",
           "name": "Thick Skull",
-          "description": "3+ save on D6 to avoid being stunned (becomes knocked down). With helmet, save is 2+."
+          "description": "3+ save to avoid being stunned (2+ with helmet), treat stunned as knocked down."
+        },
+        {
+          "id": "combat_master",
+          "name": "Combat Master",
+          "description": "Parries succeed on matching opponent's hit rolls; with two parry weapons may parry two attacks."
+        },
+        {
+          "id": "ferocious_charge",
+          "name": "Ferocious Charge",
+          "description": "Slayer may double attacks on charge, suffers –1 to hit that turn."
+        },
+        {
+          "id": "monster_slayer",
+          "name": "Monster Slayer",
+          "description": "Always wounds on 4+, unless strength means a lower roll is needed."
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "description": "+1 to hit rolls on the charge."
+        },
+        {
+          "id": "chaos_engineer",
+          "name": "chaos engineer",
+          "description": "+3 on Chaos armour/Obsidian Weapons search rolls; ignores Rarity/Gift of Chaos; may not wear Chaos Armour."
+        },
+        {
+          "id": "tyrant",
+          "name": "tyrant",
+          "description": "Leader may re-roll failed Rout tests if not down/stunned; if leader OOA, warband tests immediately."
+        },
+        {
+          "id": "unlimited_hatred",
+          "name": "Unlimited hatred",
+          "description": "Suffers hatred against everyone."
         }
       ]
     },
@@ -334,19 +404,59 @@
       "name": "Troll Slayer Skills",
       "skills": [
         {
+          "id": "true_grit",
+          "name": "True Grit",
+          "description": "Injury table: 1–3 knocked down, 4–5 stunned, 6 out of action."
+        },
+        {
+          "id": "thick_skull",
+          "name": "Thick Skull",
+          "description": "3+ save to avoid being stunned (2+ with helmet), treat stunned as knocked down."
+        },
+        {
           "id": "ferocious_charge",
           "name": "Ferocious Charge",
-          "description": "May double attacks on the turn he charges. Suffers -1 to hit that turn."
+          "description": "Slayer may double attacks on charge, suffers –1 to hit that turn."
         },
         {
           "id": "monster_slayer",
           "name": "Monster Slayer",
-          "description": "Always wounds on 4+ regardless of Toughness, unless own Strength would need a lower roll."
+          "description": "Always wounds on 4+, unless strength means a lower roll is needed."
         },
         {
           "id": "berserker",
           "name": "Berserker",
-          "description": "+1 to close combat to hit rolls during the turn he charges."
+          "description": "+1 to hit rolls on the charge."
+        },
+        {
+          "id": "deathwish",
+          "name": "Deathwish",
+          "description": "Immune to all psychology; never tests when alone."
+        },
+        {
+          "id": "deathblow",
+          "name": "Deathblow",
+          "description": "If OOA in HtH, immediately make remaining attacks, even if stunned/knocked down."
+        },
+        {
+          "id": "relentless",
+          "name": "Relentless",
+          "description": "Failed charge may still move full distance toward target."
+        },
+        {
+          "id": "axe_mastery",
+          "name": "Axe Mastery",
+          "description": "May reroll missed attacks with axe or Dwarf axe on charge."
+        },
+        {
+          "id": "songster",
+          "name": "Songster",
+          "description": "Models within 6\" reroll Leadership with +1 Ld (max 10)."
+        },
+        {
+          "id": "song_of_honor",
+          "name": "Song of Honor",
+          "description": "If Slayer dies, one surviving Slayer Hero gains +2 XP."
         }
       ]
     },
@@ -356,32 +466,37 @@
         {
           "id": "shaggy_hide",
           "name": "Shaggy Hide",
-          "description": "Gains a 6+ Armour Save that combines with other armour."
+          "description": "The model gains a 6+ Armour Save that can be combined with other armour as normal."
         },
         {
           "id": "mutant",
           "name": "Mutant",
-          "description": "May buy one mutation."
+          "description": "May buy one mutation (see Mutants rules)."
         },
         {
-          "id": "bm_fearless",
+          "id": "fearless",
           "name": "Fearless",
           "description": "Immune to fear and All Alone tests."
         },
         {
           "id": "horned_one",
           "name": "Horned One",
-          "description": "Makes an additional Attack at basic Strength on the turn he charges."
+          "description": "Makes an additional Attack with base Strength on a charge."
         },
         {
           "id": "bellowing_roar",
           "name": "Bellowing Roar",
-          "description": "Chief only. Warband may re-roll failed Rout tests."
+          "description": "Chief may re-roll failed Rout tests."
         },
         {
           "id": "manhater",
           "name": "Manhater",
-          "description": "Affected by Hatred when fighting any Human warbands."
+          "description": "Hates all Human warbands (per hatred rules)."
+        },
+        {
+          "id": "bm_fearless",
+          "name": "Fearless",
+          "description": "Immune to fear and All Alone tests."
         }
       ]
     },
@@ -390,33 +505,38 @@
       "skills": [
         {
           "id": "ard_ead",
-          "name": "'Ard 'Ead",
-          "description": "3+ save to avoid being stunned (becomes knocked down). With helmet, save is 2+."
+          "name": "’ard ead",
+          "description": "3+ save to avoid being stunned (2+ with helmet), treat stunned as knocked down."
         },
         {
           "id": "waaagh",
-          "name": "Waaagh!",
-          "description": "+D3\" to charge range."
+          "name": "waaagh!",
+          "description": "May add +D3\" to charge range."
         },
         {
           "id": "ere_we_go",
-          "name": "'Ere We Go!",
-          "description": "Ignores fear tests when charging."
+          "name": "’ere we go!",
+          "description": "May ignore fear tests when charging."
         },
         {
           "id": "da_cunnin_plan",
-          "name": "Da Cunnin' Plan",
-          "description": "Boss only. Warband may re-roll failed Rout tests while Boss is not out of action."
+          "name": "da cunnin’ plan",
+          "description": "Boss may re-roll failed Rout tests while active."
         },
         {
           "id": "well_ard",
-          "name": "Well 'Ard",
-          "description": "+1 to any armour saves."
+          "name": "well ’ard",
+          "description": "+1 to all armour saves."
         },
         {
           "id": "eadbasher",
-          "name": "'Eadbasher",
-          "description": "Knocked down results in hand-to-hand count as stunned instead."
+          "name": "’eadbasher",
+          "description": "Hand-to-hand knocked down results count as stunned instead."
+        },
+        {
+          "id": "proven_warrior",
+          "name": "proven warrior",
+          "description": "Black Orc Young’un with 25 XP may gain Black Orc Warrior status and follow their rules."
         }
       ]
     },
@@ -424,34 +544,44 @@
       "name": "Shadow Warrior Special Skills",
       "skills": [
         {
+          "id": "infiltration",
+          "name": "Infiltration",
+          "description": "Placed last anywhere on the table, more than 12\" from the enemy, out of line of sight. If both players have infiltrating models, roll off for each model, lowest sets up first"
+        },
+        {
+          "id": "see_in_shadows",
+          "name": "See in Shadows",
+          "description": "May always charge unseen enemies if able to reach them."
+        },
+        {
+          "id": "hide_in_shadows",
+          "name": "Hide in Shadows",
+          "description": "Enemies halve Initiative when spotting this Hidden model."
+        },
+        {
+          "id": "sniper",
+          "name": "Sniper",
+          "description": "May shoot/cast while Hidden; if target survives, tests Initiative to spot Sniper."
+        },
+        {
+          "id": "powerful_build",
+          "name": "Powerful Build",
+          "description": "May choose Strength skills."
+        },
+        {
+          "id": "master_of_runes",
+          "name": "Master of Runes",
+          "description": "+1 to dispel with Elven Runestones; may let one warrior re-roll armour or Parry save once per battle."
+        },
+        {
           "id": "sw_infiltration",
           "name": "Infiltration",
           "description": "Deployed after opponent, anywhere on table out of sight and more than 12\" from enemy."
         },
         {
-          "id": "see_in_shadows",
-          "name": "See in Shadows",
-          "description": "May always roll to charge opponents he cannot see (instead of normal 4\" limit)."
-        },
-        {
-          "id": "hide_in_shadows",
-          "name": "Hide in Shadows",
-          "description": "Enemy attempting to detect this warrior when Hidden must halve their Initiative before measuring distance."
-        },
-        {
-          "id": "sniper",
-          "name": "Sniper",
-          "description": "If Hidden, may shoot or cast spells and remain Hidden. Target gets Initiative test to spot the sniper if not taken out of action."
-        },
-        {
           "id": "sw_powerful_build",
           "name": "Powerful Build",
           "description": "May choose skills from the Strength table. May NOT be taken by Shadow Weavers. Max 2 warriors per warband."
-        },
-        {
-          "id": "master_of_runes",
-          "name": "Master of Runes",
-          "description": "Shadow Weaver only. +1 to dispel roll with Elven Runestones. One warband member may re-roll a single failed armour save or Parry roll per battle."
         }
       ]
     },
@@ -459,29 +589,44 @@
       "name": "Pit Fighter Special Skills",
       "skills": [
         {
+          "id": "ferocious_charge",
+          "name": "Ferocious Charge",
+          "description": "Slayer may double attacks on charge, suffers –1 to hit that turn."
+        },
+        {
+          "id": "monster_slayer",
+          "name": "Monster Slayer",
+          "description": "Always wounds on 4+, unless strength means a lower roll is needed."
+        },
+        {
+          "id": "berserker",
+          "name": "Berserker",
+          "description": "+1 to hit rolls on the charge."
+        },
+        {
           "id": "bulging_biceps",
           "name": "Bulging Biceps",
-          "description": "May use two-handed weapons without the strikes last penalty."
+          "description": "Ignores heavy weapon penalties; Strength bonus applies every round."
         },
         {
           "id": "force_of_will",
           "name": "Force of Will",
-          "description": "May re-roll failed Rout tests."
+          "description": "May roll D6 ≤ Toughness after OOA to get back up; harder each round; removed after second OOA."
         },
         {
           "id": "arms_master",
           "name": "Arms Master",
-          "description": "Can use any hand-to-hand weapon regardless of race restrictions."
+          "description": "Ignores ‘difficult to use’ weapon rules; can combine any weapons."
         },
         {
           "id": "body_slam",
           "name": "Body Slam",
-          "description": "On the charge, the warrior may make a single special attack at +1 Strength that causes knockdown on a wound."
+          "description": "May charge with single +1S, +1 to hit attack, crits on 5+; no weapon bonuses."
         },
         {
           "id": "grizzled_veteran",
           "name": "Grizzled Veteran",
-          "description": "Immune to Fear and All Alone tests."
+          "description": "Immune to all psychology."
         }
       ]
     },
@@ -489,29 +634,34 @@
       "name": "Skaven Special Skills",
       "skills": [
         {
-          "id": "black_hunger_eshin",
-          "name": "Black Hunger",
-          "description": "The Hero may declare at the beginning of his turn that he is using this skill. Add +1 Attack and +D3\" to total move for the duration of his own turn, but suffers D3 S3 hits with no armour save at the end of the turn."
+          "id": "black_hunger",
+          "name": "black hunger",
+          "description": "May gain +1 attack and +D3\" move this turn; suffers D3 S3 hits after, no save."
         },
         {
           "id": "tail_fighting",
-          "name": "Tail Fighting",
-          "description": "The Skaven may wield a shield, knife or sword with its tail. Gains an extra attack with the appropriate weapon or +1 bonus to armour save."
+          "name": "tail fighting",
+          "description": "May use tail to wield shield, knife or sword; gains extra attack or +1 armour save."
         },
         {
           "id": "wall_runner",
-          "name": "Wall Runner",
-          "description": "Does not need to take an Initiative test when climbing up walls and other sheer surfaces."
+          "name": "wall runner",
+          "description": "No Initiative test needed to climb walls or sheer surfaces."
+        },
+        {
+          "id": "art_of_silent_death",
+          "name": "art of silent death",
+          "description": "Fights bare-handed with no penalty, counts as two weapons, crits on 5–6. Stacks with Fighting Claws."
         },
         {
           "id": "infiltration",
           "name": "Infiltration",
-          "description": "Always placed on the battlefield after the opposing warband. Can be placed anywhere on the table as long as out of sight and more than 12\" from any enemy model."
+          "description": "Placed last anywhere on the table, more than 12\" from the enemy, out of line of sight. If both players have infiltrating models, roll off for each model, lowest sets up first"
         },
         {
-          "id": "art_of_silent_death",
-          "name": "Art of Silent Death",
-          "description": "Can fight with bare paws without penalties, counting as having two weapons (+1 Attack). Causes a critical hit on a To Wound roll of 5-6 instead of just 6. May be used with Fighting Claws (+2 Attacks instead of +1)."
+          "id": "black_hunger_eshin",
+          "name": "Black Hunger",
+          "description": "The Hero may declare at the beginning of his turn that he is using this skill. Add +1 Attack and +D3\" to total move for the duration of his own turn, but suffers D3 S3 hits with no armour save at the end of the turn."
         }
       ]
     },
@@ -520,28 +670,28 @@
       "skills": [
         {
           "id": "black_hunger",
-          "name": "Black Hunger",
-          "description": "If this warrior takes an enemy out of action in close combat, immediately recover 1 Wound."
+          "name": "black hunger",
+          "description": "May gain +1 attack and +D3\" move this turn; suffers D3 S3 hits after, no save."
         },
         {
           "id": "censer_bearer",
-          "name": "Censer Bearer",
-          "description": "May wield a Plague Censer without suffering the negative effects."
+          "name": "censer bearer",
+          "description": "Gains frenzy ; may only use censer in close combat."
         },
         {
           "id": "rotten_body",
-          "name": "Rotten Body",
-          "description": "+1 Toughness. Cannot be combined with Resilient."
+          "name": "rotten body",
+          "description": "Immune to poison/disease; recovers automatically if OOA from failed censer test."
         },
         {
           "id": "contagious",
-          "name": "Contagious",
-          "description": "Enemy models in base contact at start of their turn must pass a Toughness test or suffer 1 wound (no armour save)."
+          "name": "contagious",
+          "description": "Models who put this warrior OOA must test Toughness or take an automatic wound (6 always wounds); undead/possessed exempt."
         },
         {
           "id": "ignore_pain",
-          "name": "Ignore Pain",
-          "description": "Treats Stunned results as Knocked Down."
+          "name": "ignore pain",
+          "description": "Treats Stunned injuries as Knocked Down."
         }
       ]
     },
@@ -551,27 +701,52 @@
         {
           "id": "virtue_of_purity",
           "name": "Virtue of Purity",
-          "description": "Any spell cast against the knight will be dispelled on a D6 roll of 4+. This is a natural dispel on account of the knight's extreme piety."
+          "description": "Dispel spells cast against him on 4+ (natural dispel)."
         },
         {
           "id": "virtue_of_valour",
           "name": "Virtue of Valour",
-          "description": "If fighting a model with a higher Strength characteristic, the Knight may re-roll any failed to hit rolls in hand-to-hand combat."
+          "description": "May re-roll failed to hit rolls vs. enemies with higher Strength."
         },
         {
           "id": "virtue_of_discipline",
           "name": "Virtue of Discipline",
-          "description": "Once per game, if the knight is not out of action, stunned or knocked down, you may re-roll a failed rout test."
+          "description": "Once per game, may re-roll failed Rout test if not out of action, stunned, or knocked down."
         },
         {
           "id": "virtue_of_noble_disdain",
           "name": "Virtue of Noble Disdain",
-          "description": "The Knight is subject to hatred of all enemies armed with shooting weapons."
+          "description": "hates all enemies with shooting weapons."
         },
         {
           "id": "virtue_of_impetuous",
           "name": "Virtue of Impetuous",
-          "description": "The Knight may add +D3\" to his move when charging. Roll each time you charge before moving."
+          "description": "May add +D3\" to move when charging (roll before moving)."
+        },
+        {
+          "id": "renowned_virtue",
+          "name": "Renowned Virtue",
+          "description": "May learn one Virtue from the Bretonnian Knight Virtues list; may only take once."
+        },
+        {
+          "id": "questing_vow",
+          "name": "Questing Vow",
+          "description": "If fighting fear-causing enemy, may re-roll Leadership tests once, second result applies."
+        },
+        {
+          "id": "shield_bash",
+          "name": "Shield Bash",
+          "description": "May make extra attack each turn with shield/kite shield at –1 Strength (counts as club)."
+        },
+        {
+          "id": "bulging_muscles",
+          "name": "Bulging Muscles",
+          "description": "Keeps Strength bonus from Flails/Morning Stars after first combat round."
+        },
+        {
+          "id": "untiring",
+          "name": "Untiring",
+          "description": "Ignores armour movement penalties on foot; save never worse than 5+ vs non-magical effects."
         }
       ]
     },
@@ -579,24 +754,39 @@
       "name": "Horned Hunter Special Skills",
       "skills": [
         {
+          "id": "animal_friendship",
+          "name": "Animal friendship",
+          "description": "Animals never attack him; up to two wardogs do not count toward warband size."
+        },
+        {
+          "id": "infiltration",
+          "name": "Infiltration",
+          "description": "Placed last anywhere on the table, more than 12\" from the enemy, out of line of sight. If both players have infiltrating models, roll off for each model, lowest sets up first"
+        },
+        {
           "id": "master_trapper",
-          "name": "Master Trapper",
-          "description": "Trip wire range is extended to 4\". Traps set by a master trapper are triggered on a 2+."
+          "name": "master trapper",
+          "description": "Trip wire range 4\"; traps trigger on 2+."
+        },
+        {
+          "id": "foul_odour",
+          "name": "foul odour",
+          "description": "Living enemies –1 to hit in close combat; cannot carry flames; fire attacks +1 Strength vs him."
+        },
+        {
+          "id": "pathfinder",
+          "name": "pathfinder",
+          "description": "Roll one extra D6 in exploration; only one pathfinder per warband."
+        },
+        {
+          "id": "hide_in_shadows",
+          "name": "hide in shadows",
+          "description": "Enemies halve Initiative when trying to spot this Hidden model."
         },
         {
           "id": "hh_infiltration",
           "name": "Infiltration",
           "description": "Deployed after opponent, anywhere on the table out of sight and more than 12\" from any enemy model."
-        },
-        {
-          "id": "foul_odour",
-          "name": "Foul Odour",
-          "description": "All living enemies (not Undead or Possessed) are at -1 to hit this warrior in close combat. Cannot carry open flames; fire attacks against this warrior are at +1 Strength."
-        },
-        {
-          "id": "animal_friendship",
-          "name": "Animal Friendship",
-          "description": "Animals will never attack this warrior. Up to two wardogs owned by this warrior do not count against the warband's maximum number of models."
         },
         {
           "id": "hh_pathfinder",
