@@ -160,6 +160,27 @@ const SKILL_SUBTYPE_MAP = {
   'Speed Skill':    'speed',
 };
 
+// Maps Uncle-Mel warband names → our special skill category IDs
+const SPECIAL_SKILL_CATEGORY_MAP = {
+  'Dark Elves':               'dark_elf_special',
+  'Druchii':                  'dark_elf_special',
+  'Dwarf Treasure Hunters':   'dwarf_special',
+  'Dwarf Rangers':            'dwarf_special',
+  'Black Dwarfs':             'dwarf_special',
+  'The Sons of Hashut':       'dwarf_special',
+  'Dwarf Slayer Cult':        'troll_slayer_special',
+  'Beastmen Raiders':         'beastmen_special',
+  'Orc Mob':                  'orc_special',
+  'Black Orcs':               'orc_special',
+  'Shadow Warriors':          'shadow_warrior_special',
+  'Pit Fighters':             'pit_fighter_special',
+  'Skaven':                   'skaven_special',
+  'Skaven of Clan Pestilens': 'clan_pestilens_special',
+  'Bretonnians':              'bretonnian_special',
+  'Bretonnian Chapel Guard':  'bretonnian_special',
+  'Horned Hunters':           'horned_hunter_special',
+};
+
 function transformSkills(sourceItems, existing) {
   // Seed with existing categories (preserves category names and any custom categories)
   const result = { skillCategories: {} };
@@ -209,6 +230,46 @@ function transformSkills(sourceItems, existing) {
     result.skillCategories[catKey].skills.push({ id, name: src.name, description });
   }
 
+  // ── Special skills ───────────────────────────────────────────────────────
+  for (const src of sourceItems) {
+    if (src.subtype !== 'Special Skill') continue;
+
+    const warbands = Array.isArray(src.permittedWarbands)
+      ? src.permittedWarbands
+      : [src.permittedWarbands];
+
+    const catIds = [...new Set(
+      warbands.map(wb => SPECIAL_SKILL_CATEGORY_MAP[wb]).filter(Boolean)
+    )];
+    if (catIds.length === 0) continue;
+
+    const id   = slugify(src.name);
+    const prev = existingById[id];
+
+    const description = stripHtml(
+      (src.Rules?.[0]?.ruleAbbreviated) ||
+      (src.Rules?.[0]?.ruleFull)        ||
+      prev?.description                 ||
+      ''
+    );
+
+    if (!seenIds.has(id)) {
+      seenIds.add(id);
+      if (prev) {
+        if (description !== prev.description || src.name !== prev.name) updated.push(id);
+      } else {
+        added.push(id);
+      }
+    }
+
+    for (const catId of catIds) {
+      if (!result.skillCategories[catId]) continue;
+      if (!result.skillCategories[catId].skills.some(s => s.id === id)) {
+        result.skillCategories[catId].skills.push({ id, name: src.name, description });
+      }
+    }
+  }
+
   // Preserve existing skills not in source
   for (const [catId, cat] of Object.entries(existing.skillCategories || {})) {
     if (!result.skillCategories[catId]) continue;
@@ -216,57 +277,6 @@ function transformSkills(sourceItems, existing) {
       if (seenIds.has(skill.id)) continue;
       result.skillCategories[catId].skills.push(skill);
     }
-  }
-
-  return { data: result, added, updated };
-}
-
-// ─── Spells transformer ───────────────────────────────────────────────────
-//
-// Source: magic.json — { spellLists: { [id]: { name, permittedWarbands, spells[] } } }
-// Ours:   spells.json — { spellLists: { [id]: { name, spells[] } } }
-//
-// Both share the same top-level structure — closest match of all four files.
-
-function transformSpells(sourceData, existing) {
-  const result = { spellLists: { ...(existing.spellLists || {}) } };
-  const added = [], updated = [];
-
-  for (const [listId, srcList] of Object.entries(sourceData.spellLists || {})) {
-    const existingSpells = {};
-    for (const sp of (existing.spellLists?.[listId]?.spells || [])) {
-      existingSpells[sp.id] = sp;
-    }
-
-    const spells = [];
-    for (const src of (srcList.spells || [])) {
-      // Some source entries lack an id — generate one from the name
-      const id          = src.id || slugify(src.name);
-      const prev        = existingSpells[id];
-      const description = stripHtml(src.ruleFull || src.ruleAbbreviated || prev?.description || '');
-
-      if (prev) {
-        if (description !== prev.description || src.name !== prev.name) {
-          updated.push(`${listId}/${id}`);
-        }
-      } else {
-        added.push(`${listId}/${id}`);
-      }
-
-      spells.push({
-        id,
-        name:        src.name,
-        difficulty:  src.difficulty,
-        description,
-      });
-    }
-
-    // Preserve spells not in source
-    for (const [id, sp] of Object.entries(existingSpells)) {
-      if (!spells.some(s => s.id === id)) spells.push(sp);
-    }
-
-    result.spellLists[listId] = { name: srcList.name, spells };
   }
 
   return { data: result, added, updated };
@@ -540,17 +550,6 @@ function validateSkills(data) {
   }
 }
 
-function validateSpells(data) {
-  if (!data.spellLists) throw new Error('Missing spellLists object');
-  for (const [listId, list] of Object.entries(data.spellLists)) {
-    for (const spell of (list.spells || [])) {
-      if (!spell.id)                throw new Error(`Spell missing id in ${listId}`);
-      if (!spell.name)              throw new Error(`Spell ${spell.id} missing name`);
-      if (spell.difficulty == null) throw new Error(`Spell ${spell.id} missing difficulty`);
-    }
-  }
-}
-
 // ─── Main ─────────────────────────────────────────────────────────────────
 
 async function main() {
@@ -660,21 +659,15 @@ async function main() {
     }
   }
 
-  // Spells / magic
+  // Spells / magic — write Uncle Mel's file directly, no transformation needed
   if (changes.magic) {
     const label = 'spells';
     try {
       process.stdout.write('  spells... ');
-      // Save raw magic.json for Phase 3 — data.js loads it directly
       if (!dryRun) writeJson(path.join(DATA_DIR, 'magic.json'), magicData);
-      // Also transform to spells.json (kept until Phase 4 cleanup)
-      const existing = readJson(path.join(DATA_DIR, 'spells.json'));
-      const { data, added, updated } = transformSpells(magicData, existing);
-      validateSpells(data);
-      if (!dryRun) writeJson(path.join(DATA_DIR, 'spells.json'), data);
-      summary.added[label]   = added;
-      summary.updated[label] = updated;
-      console.log(`${Object.keys(magicData.spellLists || {}).length} lists, +${added.length} new spells ✓`);
+      summary.added[label]   = [];
+      summary.updated[label] = [];
+      console.log(`${Object.keys(magicData.spellLists || {}).length} lists ✓`);
     } catch (err) {
       summary.errors.push(`Spells: ${err.message}`);
       console.log(`FAILED: ${err.message}`);
