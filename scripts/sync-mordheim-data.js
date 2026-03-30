@@ -124,6 +124,20 @@ const EQUIP_TYPE_MAP = {
   animal:      null,
 };
 
+// Maps warband ID → special skill category IDs (for fighters with skillAccess.special === true)
+const WARBAND_SPECIAL_SKILL_CATEGORIES = {
+  'dark-elves':               ['dark_elf_special'],
+  'dwarf-treasure-hunters':   ['dwarf_special', 'troll_slayer_special'],
+  'beastmen-raiders':         ['beastmen_special'],
+  'orc-mob':                  ['orc_special'],
+  'shadow-warriors':          ['shadow_warrior_special'],
+  'pit-fighters':             ['pit_fighter_special'],
+  'skaven-of-clan-eshin':     ['skaven_special'],
+  'skaven-of-clan-pestilens': ['clan_pestilens_special'],
+  'bretonnians':              ['bretonnian_special'],
+  'horned-hunters':           ['horned_hunter_special'],
+};
+
 // ─── Skills transformer ───────────────────────────────────────────────────
 //
 // Source: skills.json — flat array with subtype field
@@ -349,21 +363,32 @@ function resolveAllowedEquipment(fighter, src, equipmentLookup) {
   return allowedEquipment;
 }
 
-function resolveSkillAccess(fighter, subfaction) {
+function resolveSkillAccess(fighter, subfaction, warbandId) {
   // skillAccess is either:
-  //   - an object: { combat: true, shooting: false, ... }  (non-subfaction warbands)
+  //   - an object: { combat: true, shooting: false, ..., special: true }  (non-subfaction warbands)
   //   - an array:  [{ subfaction: "Name", skills: { ... } }, ...]  (subfaction warbands)
+  let skillsObj;
   if (Array.isArray(fighter.skillAccess)) {
     const entry = subfaction
       ? fighter.skillAccess.find(e => e.subfaction === subfaction)
       : fighter.skillAccess[0];
-    return entry
-      ? Object.entries(entry.skills || {}).filter(([k, v]) => v && k !== 'special').map(([k]) => k)
-      : [];
+    skillsObj = entry?.skills || {};
+  } else {
+    skillsObj = fighter.skillAccess || {};
   }
-  return Object.entries(fighter.skillAccess || {})
+
+  const result = Object.entries(skillsObj)
     .filter(([k, v]) => v && k !== 'special')
     .map(([k]) => k);
+
+  // Append warband-specific skill categories when fighter has special: true
+  if (skillsObj.special && warbandId) {
+    for (const catId of (WARBAND_SPECIAL_SKILL_CATEGORIES[warbandId] || [])) {
+      if (!result.includes(catId)) result.push(catId);
+    }
+  }
+
+  return result;
 }
 
 function transformOneWarband(src, spellMap, equipmentLookup, subfaction = null) {
@@ -375,7 +400,7 @@ function transformOneWarband(src, spellMap, equipmentLookup, subfaction = null) 
   for (const fighter of (src.fighters || [])) {
     const stats            = mapStatKeys(fighter.statblock);
     const specialRules     = (fighter.specialRules || []).map(r => r.rulename).filter(Boolean);
-    const skillAccess      = resolveSkillAccess(fighter, subfaction);
+    const skillAccess      = resolveSkillAccess(fighter, subfaction, src.id);
     const allowedEquipment = resolveAllowedEquipment(fighter, src, equipmentLookup);
 
     if (fighter.type === 'hero') {
@@ -640,13 +665,16 @@ async function main() {
     const label = 'spells';
     try {
       process.stdout.write('  spells... ');
+      // Save raw magic.json for Phase 3 — data.js loads it directly
+      if (!dryRun) writeJson(path.join(DATA_DIR, 'magic.json'), magicData);
+      // Also transform to spells.json (kept until Phase 4 cleanup)
       const existing = readJson(path.join(DATA_DIR, 'spells.json'));
       const { data, added, updated } = transformSpells(magicData, existing);
       validateSpells(data);
       if (!dryRun) writeJson(path.join(DATA_DIR, 'spells.json'), data);
       summary.added[label]   = added;
       summary.updated[label] = updated;
-      console.log(`+${added.length} added, ~${updated.length} updated ✓`);
+      console.log(`${Object.keys(magicData.spellLists || {}).length} lists, +${added.length} new spells ✓`);
     } catch (err) {
       summary.errors.push(`Spells: ${err.message}`);
       console.log(`FAILED: ${err.message}`);

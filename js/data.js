@@ -18,7 +18,7 @@ const DataService = {
     animal:      'Animals',
   },
 
-  // Maps legacy category IDs (used in warbands.json until Phase 3) to Uncle Mel types
+  // Maps legacy category IDs (used in hired_swords.json until Phase 4) to Uncle Mel types
   LEGACY_CATEGORY_MAP: {
     hand_to_hand:  ['melee'],
     missiles:      ['missile', 'blackpowder'],
@@ -34,15 +34,28 @@ const DataService = {
       .replace(/^_|_$/g, '');
   },
 
+  _stripHtml(str) {
+    if (!str) return '';
+    return str
+      .replace(/<[^>]+>/g, ' ')
+      .replace(/&amp;/g, '&')
+      .replace(/&lt;/g, '<')
+      .replace(/&gt;/g, '>')
+      .replace(/&quot;/g, '"')
+      .replace(/&#39;/g, "'")
+      .replace(/\s{2,}/g, ' ')
+      .trim();
+  },
+
   async loadAll() {
-    const v = 'v=9';
-    const [warbands, equipment, skills, injuries, advancement, spells, hiredSwords, specialRules] = await Promise.all([
+    const v = 'v=10';
+    const [warbands, equipment, skills, injuries, advancement, magic, hiredSwords, specialRules] = await Promise.all([
       this.fetchJSON('data/warbands.json?' + v),
       this.fetchJSON('data/mergedEquipment.json?' + v),
       this.fetchJSON('data/skills.json?' + v),
       this.fetchJSON('data/injuries.json?' + v),
       this.fetchJSON('data/advancement.json?' + v),
-      this.fetchJSON('data/spells.json?' + v),
+      this.fetchJSON('data/magic.json?' + v),
       this.fetchJSON('data/hired_swords.json?' + v),
       this.fetchJSON('data/special_rules.json?' + v),
     ]);
@@ -62,9 +75,82 @@ const DataService = {
     this.skills = skills.skillCategories;
     this.injuries = injuries;
     this.advancement = advancement;
-    this.spells = spells.spellLists;
+    // Process spells from magic.json (Uncle Mel's raw format)
+    this.spells = this._processSpellLists(magic.spellLists || {});
+    // Build spellAccess per warband hero at load time
+    this._buildSpellAccess(magic);
     this.hiredSwords = hiredSwords.hiredSwords;
     this.specialRules = specialRules.specialRules;
+  },
+
+  _processSpellLists(spellLists) {
+    const result = {};
+    for (const [listId, list] of Object.entries(spellLists)) {
+      const spells = (list.spells || []).map(s => {
+        const id = s.id || this.slugify(s.name);
+        const description = this._stripHtml(s.ruleAbbreviated || s.ruleFull || '');
+        return { id, name: s.name, difficulty: s.difficulty, description };
+      });
+      result[listId] = { name: list.name, spells };
+    }
+    return result;
+  },
+
+  _buildSpellAccess(magic) {
+    // Build lookup: { "Warband Name": { "Fighter Name": ["list-id", ...] } }
+    const spellMap = {};
+    for (const [listId, list] of Object.entries(magic.spellLists || {})) {
+      for (const entry of (list.permittedWarbands || [])) {
+        const wb = entry.warband || '';
+        const ft = entry.fighter || '';
+        if (!spellMap[wb]) spellMap[wb] = {};
+        if (!spellMap[wb][ft]) spellMap[wb][ft] = [];
+        spellMap[wb][ft].push(listId);
+      }
+    }
+    // Apply computed spellAccess to each warband hero template
+    for (const warband of (this.warbands || [])) {
+      for (const hero of warband.heroes) {
+        hero.spellAccess = this._findSpellAccess(spellMap, warband.name, hero.name);
+      }
+    }
+  },
+
+  _findSpellAccess(spellMap, warbandName, fighterName) {
+    const wbKeys = Object.keys(spellMap);
+    const wbKey = wbKeys.find(k => k === warbandName)
+      || wbKeys.find(k => k.toLowerCase() === warbandName.toLowerCase())
+      || wbKeys.find(k => warbandName.toLowerCase().includes(k.toLowerCase()))
+      || wbKeys.find(k => k.toLowerCase().includes(warbandName.toLowerCase()));
+    if (!wbKey) return [];
+
+    const ftMap = spellMap[wbKey];
+    const ftKeys = Object.keys(ftMap);
+    const ftKey = ftKeys.find(k => k === fighterName)
+      || ftKeys.find(k => k.toLowerCase() === fighterName.toLowerCase())
+      || ftKeys.find(k => fighterName.toLowerCase().includes(k.toLowerCase()))
+      || ftKeys.find(k => k.toLowerCase().includes(fighterName.toLowerCase()));
+    if (!ftKey) return [];
+
+    return ftMap[ftKey];
+  },
+
+  canWarbandAccess(item, warbandName) {
+    const permitted = item.permittedWarbands;
+    const excluded  = item.excludedWarbands;
+
+    // Check exclusions first
+    if (Array.isArray(excluded) && excluded.includes(warbandName)) return false;
+
+    // Check permissions
+    if (!permitted || (Array.isArray(permitted) && permitted.length === 0) || permitted === 'all') {
+      return true;
+    }
+    if (Array.isArray(permitted)) {
+      return permitted.includes(warbandName);
+    }
+    // Single string warband name
+    return permitted === warbandName;
   },
 
   async fetchJSON(path) {

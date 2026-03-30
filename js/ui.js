@@ -556,7 +556,14 @@ const UI = {
   },
 
   hasSpellAccess(warrior) {
-    const wizardRules = ['Wizard', 'Warrior Wizard', 'Prayers of Sigmar'];
+    // Check template spellAccess (computed at load time from magic.json)
+    if (this.currentRoster && !warrior.isHiredSword && !warrior.isCustom && !warrior.isPromotedHenchman) {
+      const warband = DataService.getWarband(this.currentRoster.warbandId);
+      const template = warband?.heroes.find(h => h.type === warrior.type);
+      if (template?.spellAccess?.length > 0) return true;
+    }
+    // Fallback: specialRules keyword check (covers hired swords, custom warriors, old data)
+    const wizardRules = ['Wizard', 'Warrior Wizard', 'Prayers of Sigmar', 'Magic User', 'Prayers', 'Spellcaster', 'Prayercaster'];
     return warrior.specialRules.some(r => wizardRules.includes(r));
   },
 
@@ -822,20 +829,18 @@ const UI = {
     const warrior = r[listType][index];
     const warband = DataService.getWarband(r.warbandId);
 
-    let accessibleCategories;
-    let warbandAllowedEquipment = null; // null = no warband dropdown
-    if (listType === 'customWarriors') {
-      accessibleCategories = DataService.getEquipmentTypes();
-    } else if (listType === 'hiredSwords') {
+    let warbandAllowedEquipment = null; // null = no Warband Equipment dropdown
+    // Legacy category list used only for hired swords (Phase 4 will replace)
+    let hiredSwordCategories = null;
+
+    if (listType === 'hiredSwords') {
       const template = DataService.getHiredSwordTemplate(warrior.type);
-      accessibleCategories = template ? template.equipmentAccess : [];
-    } else {
-      const accessKey = listType === 'heroes' ? 'heroes' : 'henchmen';
-      accessibleCategories = warband.equipmentAccess[accessKey] || [];
-      // Find the fighter template to get warband-specific allowed equipment
-      const fighterList = listType === 'heroes' ? warband.heroes : warband.henchmen;
-      const template = fighterList.find(f => f.type === warrior.type);
-      if (template && template.allowedEquipment) {
+      hiredSwordCategories = template ? template.equipmentAccess : [];
+    } else if (listType !== 'customWarriors') {
+      // heroes / henchmen: find warband-specific equipment list
+      const fighterList = listType === 'heroes' ? warband?.heroes : warband?.henchmen;
+      const template = fighterList?.find(f => f.type === warrior.type);
+      if (template?.allowedEquipment) {
         warbandAllowedEquipment = template.allowedEquipment;
       }
     }
@@ -847,19 +852,19 @@ const UI = {
 
     // ── Warband Equipment dropdown (heroes/henchmen only) ──────────────────
     if (warbandAllowedEquipment !== null) {
-      // Group warband items by category
-      const warbandByCat = {};
+      // Group by item type (Uncle Mel types: melee/missile/armour/misc/etc.)
+      const warbandByType = {};
       for (const item of warbandAllowedEquipment) {
-        const catId = DataService.getEquipmentItem(item.id)?.category || 'miscellaneous';
-        if (!warbandByCat[catId]) warbandByCat[catId] = [];
-        warbandByCat[catId].push(item);
+        const type = DataService.getEquipmentItem(item.id)?.type || 'misc';
+        if (!warbandByType[type]) warbandByType[type] = [];
+        warbandByType[type].push(item);
       }
       html += '<div style="margin-bottom:1rem;">';
       html += '<label style="display:block;font-size:0.8rem;text-transform:uppercase;font-weight:600;margin-bottom:0.3rem;">Warband Equipment</label>';
       html += `<select style="width:100%;padding:0.4rem;" onchange="UI.selectEquipmentFromSelect(this,'${listType}',${index})">`;
       html += '<option value="">— select item —</option>';
-      for (const [catId, items] of Object.entries(warbandByCat)) {
-        const catName = DataService.getEquipmentCategoryName(catId);
+      for (const [type, items] of Object.entries(warbandByType)) {
+        const catName = DataService.getEquipmentCategoryName(type);
         html += `<optgroup label="${this.escAttr(catName)}">`;
         for (const item of items) {
           const prefix = item.costPrefix ? `${item.costPrefix}` : '';
@@ -871,15 +876,38 @@ const UI = {
     }
 
     // ── All Equipment dropdown ─────────────────────────────────────────────
-    const allCats = [...accessibleCategories, 'miscellaneous'];
+    // Build item list based on listType:
+    //   customWarriors → all equipment
+    //   hiredSwords    → filtered by legacy equipmentAccess categories
+    //   heroes/henchmen → filtered by permittedWarbands / excludedWarbands
+    let allItems;
+    if (listType === 'customWarriors') {
+      allItems = DataService.getAllEquipment();
+    } else if (listType === 'hiredSwords') {
+      const cats = [...(hiredSwordCategories || []), 'miscellaneous'];
+      allItems = cats.flatMap(catId => DataService.getEquipmentByCategory(catId));
+    } else {
+      allItems = DataService.getAllEquipment()
+        .filter(item => DataService.canWarbandAccess(item, warband?.name || ''));
+    }
+
+    // Deduplicate and group by type
+    const seenIds = new Set();
+    const byType = {};
+    for (const item of allItems) {
+      if (seenIds.has(item.id)) continue;
+      seenIds.add(item.id);
+      if (!byType[item.type]) byType[item.type] = [];
+      byType[item.type].push(item);
+    }
+
     html += '<div>';
     html += '<label style="display:block;font-size:0.8rem;text-transform:uppercase;font-weight:600;margin-bottom:0.3rem;">All Equipment</label>';
     html += `<select style="width:100%;padding:0.4rem;" onchange="UI.selectEquipmentFromSelect(this,'${listType}',${index})">`;
     html += '<option value="">— select item —</option>';
-    for (const catId of allCats) {
-      const items = DataService.getEquipmentByCategory(catId);
+    for (const [type, items] of Object.entries(byType)) {
       if (items.length === 0) continue;
-      const catName = DataService.getEquipmentCategoryName(catId);
+      const catName = DataService.getEquipmentCategoryName(type);
       html += `<optgroup label="${this.escAttr(catName)}">`;
       for (const item of items) {
         html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${item.cost?.cost ?? 0} gc)</option>`;
