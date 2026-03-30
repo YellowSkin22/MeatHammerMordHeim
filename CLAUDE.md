@@ -26,6 +26,8 @@ Live at: https://meathammer-mordheim.netlify.app
 
 - **Core game mechanics are always free tier** — features that are fundamental to playing the game (managing warriors, tracking stats, equipment, skills, injuries, experience, warband rating) must never be gated behind `standard` or `pro`. If a request would move a core mechanic behind a tier check, ask for explicit confirmation that this rule is being intentionally broken before proceeding.
 
+- **All changes go through a PR** — never push directly to `main`. Start every piece of work on a feature or fix branch (`feature/short-description` or `fix/short-description`), then open a pull request into `main` when complete. The only exceptions are automated sync commits from `sync-mordheim-data.js` and doc-only typo fixes.
+
 ## Architecture
 
 Vanilla JS single-page app with five globals loaded in order by `index.html`:
@@ -43,9 +45,9 @@ Bootstrap sequence: `Cloud.init()` → `DataService.loadAll()` → `UI.init()` �
 ## Key Design Decisions
 
 - **Warrior cost is baked in at creation time** — `createWarrior()` copies `template.cost` into the warrior object. Changing costs in `warbands.json` only affects newly created warriors.
-- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Add new content by editing JSON, not JS.
-- **Spell access** — `UI.hasSpellAccess()` checks `warrior.specialRules` for the strings `'Wizard'`, `'Warrior Wizard'`, or `'Prayers of Sigmar'`. Adding a new spell-casting hero requires one of these exact strings in the template's `specialRules`. The available spell lists come from `template.spellAccess` in `warbands.json`. Note: any new prayer type (e.g. "Prayers of Taal") must either be added to the `wizardRules` array in `hasSpellAccess()` or use the generic `'Wizard'` string in `specialRules`.
-- **Equipment access** — Controlled per-warband via `equipmentAccess.heroes` and `equipmentAccess.henchmen` arrays of category IDs. The `miscellaneous` category is always appended regardless of warband config (`ui.js:549`), so never include it in `equipmentAccess`.
+- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from Uncle-Mel/JSON-derulo; only hand-maintained files (`hired_swords.json`, `injuries.json`, `advancement.json`, `special_rules.json`) should be edited directly.
+- **Spell access** — `UI.hasSpellAccess()` first checks `template.spellAccess.length > 0` (computed at load time from `magic.json` by `DataService._buildSpellAccess()`). Falls back to checking `warrior.specialRules` for `'Wizard'`, `'Warrior Wizard'`, `'Prayers of Sigmar'`, `'Magic User'`, `'Prayers'`, `'Spellcaster'`, or `'Prayercaster'`. The fallback covers hired swords, custom warriors, and old data.
+- **Equipment access** — Heroes and henchmen see items filtered by `DataService.canWarbandAccess(item, warbandName)` against `mergedEquipment.json`'s `permittedWarbands` / `excludedWarbands` fields. Hired swords use the legacy `equipmentAccess` category array from `hired_swords.json`.
 - **Lad's Got Talent (promoted henchmen)** — `RosterModel.promoteHenchmanToHero()` creates a hero from a henchman, copying stats/equipment/injuries/experience. The promoted warrior goes into `roster.heroes[]` (not a separate array) with `isPromotedHenchman: true` and a user-chosen `skillAccess: [catId1, catId2]`. `baseStats` is set to match `stats` at promotion time so existing characteristic gains don't show as "modified". Max heroes is validated before promotion using `warband.heroes.reduce((sum, h) => sum + h.max, 0)`.
 - **Event propagation** — Warrior add `<select>` dropdowns inside `.section-header` elements carry `onclick="event.stopPropagation()"` to prevent triggering the parent's collapse toggle. The `onchange` handler fires `UI.addWarriorFromSelect()` immediately on selection — there is no separate "Hire" button.
 
@@ -149,16 +151,18 @@ Tooltips on special rules and equipment tags use a JS-based approach (not CSS ps
 
 ## Data Files
 
+Synced nightly from Uncle-Mel/JSON-derulo via `scripts/sync-mordheim-data.js`. Hand-maintained files are noted.
+
 | File | Purpose |
 |------|---------|
-| `data/warbands.json` | 38 warband definitions with hero/henchman templates, stat lines, skill access, equipment restrictions |
-| `data/equipment.json` | 79 equipment items across 4 categories (hand_to_hand, missiles, armour, miscellaneous) |
-| `data/skills.json` | 15 skill categories: 5 standard (combat, shooting, academic, strength, speed) + 10 warband-specific |
-| `data/spells.json` | 16 spell lists covering all magic-using warbands |
-| `data/injuries.json` | Hero and henchman injury tables |
-| `data/advancement.json` | Experience thresholds, max stat values, advancement rules |
-| `data/hired_swords.json` | Hired Sword templates with stats, restrictions, and equipment access |
-| `data/special_rules.json` | 130 special rule descriptions keyed by rule name, used for tooltips |
+| `data/warbands.json` | 53 warband definitions (synced + subfactions expanded); hero/henchman templates, stat lines, skill/spell access |
+| `data/mergedEquipment.json` | 246 equipment items (flat array); `type` field as category, `permittedWarbands`/`excludedWarbands` for access control |
+| `data/skills.json` | 16 skill categories: 5 standard (combat, shooting, academic, strength, speed) + 11 warband-specific |
+| `data/magic.json` | 30 spell lists; `spellLists[id].permittedWarbands[]` used to build `spellAccess` per fighter at load time |
+| `data/injuries.json` | Hero and henchman injury tables — **hand-maintained** (no Uncle-Mel equivalent) |
+| `data/advancement.json` | Experience thresholds, max stat values, advancement rules — **hand-maintained** |
+| `data/hired_swords.json` | Hired Sword templates with stats, restrictions, and equipment access — **hand-maintained** (Uncle-Mel's file lacks stats) |
+| `data/special_rules.json` | 130 special rule descriptions keyed by rule name, used for tooltips — **hand-maintained** |
 
 ### Validating JSON
 
@@ -169,22 +173,22 @@ node -e "JSON.parse(require('fs').readFileSync('data/FILENAME.json','utf8')); co
 
 ## Adding a New Warband
 
-1. Add warband object to the `warbands` array in `data/warbands.json` with structure: `{ id, name, source, description, startingGold, maxWarband, alignment, heroes[], henchmen[], equipmentAccess }`
-2. Hero structure: `{ type, name, max, required, cost, stats{M,WS,BS,S,T,W,I,A,Ld}, specialRules[], startingExp, skillAccess[], spellAccess[] }`
-3. Henchman structure: `{ type, name, cost, stats{}, specialRules[], maxGroupSize }`
-4. If the warband has unique spells, add a new spell list to `data/spells.json` and reference it in `spellAccess`
-5. If the warband has unique skills, add a new skill category to `data/skills.json` and reference it in `skillAccess`
-6. If the warband uses unique equipment, add items to appropriate categories in `data/equipment.json`
-7. Spell-casting heroes must have `'Wizard'` or `'Prayers of Sigmar'` in `specialRules` for the UI to show the spell section
-8. Add any new special rules to `data/special_rules.json` for tooltip descriptions
+Warbands are synced from Uncle-Mel/JSON-derulo — do not hand-edit `data/warbands.json`. To add content:
 
-## Warbands (38 total)
+1. Contribute the warband JSON to Uncle-Mel's repo and run `scripts/sync-mordheim-data.js` — the sync script handles transformation and subfaction expansion.
+2. If the warband needs a new **warband-specific skill category**, add it to `data/skills.json` manually and add an entry to `SPECIAL_SKILL_CATEGORY_MAP` in `sync-mordheim-data.js` so Special Skills route into it.
+3. If the warband introduces new **special rules**, add them to `data/special_rules.json` for tooltip descriptions.
+4. Spell-casting heroes are detected at load time via `DataService._buildSpellAccess()` — no manual `spellAccess` entries needed if the spell list is in `magic.json`.
+
+## Warbands (53 total)
 
 **Core (8):** Reikland, Middenheim, Marienburg, Witch Hunters, Sisters of Sigmar, Undead, Cult of the Possessed, Skaven.
 
 **Grade 1a (10):** Restless Dead, Dark Elves, Shadow Warriors, Averlanders, Beastmen Raiders, Carnival of Chaos, Dwarf Treasure Hunters, Kislevites, Orc Mob, Ostlanders.
 
 **Grade 1b (20):** Amazons (Lustria), Amazons (Mordheim), Arabian Tomb Raiders, Black Orcs, Bretonnians, Dwarf Rangers, Forest Goblins, Gunnery School of Nuln, Hochland Bandits, Horned Hunters, Imperial Outriders, Lizardmen, Mootlanders, Norse Explorers, Outlaws of Stirwood Forest, Pirates, Pit Fighters, Skaven Pestilens, Tileans, Tomb Guardians.
+
+**Grade 1c (15):** Synced from Uncle-Mel's `warbandFiles/1c/` folder. Subfactions (e.g. Mercenaries → Reikland/Middenheim/Marienburg) are expanded into separate selectable entries at load time.
 
 ## Scraping mordheimer.net
 
