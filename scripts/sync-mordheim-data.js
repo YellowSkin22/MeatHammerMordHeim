@@ -30,9 +30,10 @@ const REQUIRED_STAT_KEYS = ['M', 'WS', 'BS', 'S', 'T', 'W', 'I', 'A', 'Ld'];
 
 // Files to track for change detection (path in source repo → internal key)
 const TRACKED_FILES = [
-  { key: 'equipment', path: 'data/mergedEquipment.json' },
-  { key: 'skills',    path: 'data/skills.json'          },
-  { key: 'magic',     path: 'data/magic.json'           },
+  { key: 'equipment',   path: 'data/mergedEquipment.json' },
+  { key: 'skills',      path: 'data/skills.json'          },
+  { key: 'magic',       path: 'data/magic.json'           },
+  { key: 'hiredSwords', path: 'data/hiredSwords.json'     },
 ];
 const WARBAND_FOLDER = 'data/warbandFiles';
 
@@ -136,6 +137,83 @@ const WARBAND_SPECIAL_SKILL_CATEGORIES = {
   'skaven-of-clan-pestilens': ['clan_pestilens_special'],
   'bretonnians':              ['bretonnian_special'],
   'horned-hunters':           ['horned_hunter_special'],
+};
+
+// Maps Uncle-Mel permittedWarbands display names → our warband IDs (data/warbands.json)
+const HIRED_SWORD_WARBAND_NAME_MAP = {
+  'Arabian Tomb Raiders':             'arabian-tomb-raiders',
+  'Averlanders':                      'averlander-mercenaries',
+  'Battle Monks of Cathay':           'battle-monks-of-cathay',
+  'Beastmen Raiders':                 'beastmen-raiders',
+  'Black Dwarfs':                     'black-dwarfs',
+  'Black Orcs':                       'black-orcs',
+  'Bretonnian Chapel Guard':          'bretonnian-chapel-guard',
+  'Bretonnian Knights':               'bretonnians',
+  'Carnival of Chaos':                'carnival-of-chaos',
+  'Cult of the Possessed':            'cult-of-the-possessed',
+  'Dark Elves':                       'dark-elves',
+  'Dreamwalkers, Cult Of Morr':       'the-restless-dead',
+  'Druchii':                          'dark-elves',
+  'Dwarf Rangers':                    'dwarf-rangers',
+  'Dwarf Slayer Cult':                'dwarf-treasure-hunters',
+  'Dwarf Treasure Hunters':           'dwarf-treasure-hunters',
+  'Forest Goblins':                   'forest-goblins',
+  'Grave Robbers':                    'arabian-tomb-raiders',
+  'Gunnery School of Nuln':           'gunnery-school-of-nuln',
+  'Hochland Bandits':                 'hochland-bandits',
+  'Horned Hunters':                   'horned-hunters',
+  'Imperial Outriders':               'imperial-outriders',
+  'Kislevites':                       'kislevites',
+  'Lizardmen':                        'lizardmen',
+  'Lustrian Reavers':                 'lustrian-reavers',
+  'Maneaters':                        'maneaters',
+  'Marauders of Chaos':               'the_kurgan',
+  'Marienburgers':                    'marienburg_mercenaries',
+  'Merchant Caravans':                'merchant-caravans',
+  'Middenheimers':                    'middenheim_mercenaries',
+  'Miragleans':                       'miragleans',
+  'Mootlanders':                      'mootlanders',
+  'Night Goblins':                    'night-goblins',
+  'Night Goblins (web)':              'night-goblins',
+  'Nipponese Expedition':             'battle-monks-of-cathay',
+  'Norse Explorers':                  'norse-explorers',
+  'Orc Mob':                          'orc-mob',
+  'Ostermarkers':                     'ostlander-mercenaries',
+  'Ostlanders':                       'ostlander-mercenaries',
+  'Outlaws of Stirwood Forest, The':  'outlaws-of-stirwood-forest',
+  'Pirates':                          'pirates',
+  'Pit Fighters':                     'pit-fighters',
+  'Reiklanders':                      'reikland_mercenaries',
+  'Remasens':                         'remasens',
+  'Shadow Warriors':                  'shadow-warriors',
+  'Sisters of Sigmar':                'sisters-of-sigmar',
+  'Skaven':                           'skaven-of-clan-eshin',
+  'Skaven of Clan Pestilens':         'skaven-of-clan-pestilens',
+  'Sons of Hashut:':                  'the-sons-of-hashut',
+  'The Restless Dead':                'the-restless-dead',
+  'The Sons of Hashut':               'the-sons-of-hashut',
+  'Tileans':                          'trantios',
+  'Tomb Guardians':                   'tomb-guardians',
+  'Trantios':                         'trantios',
+  'Undead':                           'undead',
+  'Witch Hunters':                    'witch-hunters',
+  'Mazzalupo':                        'miragleans',
+};
+
+// Maps hired sword entry key → spell list IDs
+// Derived from Uncle-Mel skillText links and specialRules.
+// Only entries with at least one spell list are included; all others default to [].
+const HIRED_SWORD_SPELL_ACCESS_MAP = {
+  'warlock':                  ['lesser-magic'],
+  'elf-mage':                 ['spells-of-the-djedhi'],
+  'norse-shaman':             ['norse-runes'],
+  'warrior-priest-of-sigmar': ['prayers-of-sigmar'],
+  'witch':                    ['charms-and-hexes'],
+  'fallen-sister':            ['lesser-magic'],
+  'priest-of-morr':           ['funerary-rites'],
+  'wolf-priest-of-ulric':     ['prayers-of-ulric'],
+  // dark-mage uses "Dark Magic list" which has no matching entry in magic.json;
+  // the UI hasSpellAccess() fallback detects them via the "Wizard" special rule.
 };
 
 // ─── Skills transformer ───────────────────────────────────────────────────
