@@ -390,7 +390,7 @@ const UI = {
 
     // Hired Swords add dropdown
     const hiredSwordsAddContainer = document.getElementById('hired-swords-add-buttons');
-    const availableHiredSwords = DataService.getAvailableHiredSwords(r.warbandId);
+    const availableHiredSwords = DataService.getAvailableHiredSwords(r.warbandId).sort((a, b) => a.name.localeCompare(b.name));
     hiredSwordsAddContainer.innerHTML = `
       <select id="hired-swords-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('hiredSwords')">
         <option value="">+ Hire Sword</option>
