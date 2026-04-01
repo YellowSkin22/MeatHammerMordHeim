@@ -30,9 +30,10 @@ const REQUIRED_STAT_KEYS = ['M', 'WS', 'BS', 'S', 'T', 'W', 'I', 'A', 'Ld'];
 
 // Files to track for change detection (path in source repo → internal key)
 const TRACKED_FILES = [
-  { key: 'equipment', path: 'data/mergedEquipment.json' },
-  { key: 'skills',    path: 'data/skills.json'          },
-  { key: 'magic',     path: 'data/magic.json'           },
+  { key: 'equipment',   path: 'data/mergedEquipment.json' },
+  { key: 'skills',      path: 'data/skills.json'          },
+  { key: 'magic',       path: 'data/magic.json'           },
+  { key: 'hiredSwords', path: 'data/hiredSwords.json'     },
 ];
 const WARBAND_FOLDER = 'data/warbandFiles';
 
@@ -136,6 +137,85 @@ const WARBAND_SPECIAL_SKILL_CATEGORIES = {
   'skaven-of-clan-pestilens': ['clan_pestilens_special'],
   'bretonnians':              ['bretonnian_special'],
   'horned-hunters':           ['horned_hunter_special'],
+};
+
+// Maps Uncle-Mel permittedWarbands display names → our warband IDs (data/warbands.json)
+const HIRED_SWORD_WARBAND_NAME_MAP = {
+  // Note: some warband IDs use underscores rather than hyphens (e.g. reikland_mercenaries, the_kurgan).
+  // This is an artifact of how the sync script generated those IDs — matches data/warbands.json exactly, do not normalise.
+  'Arabian Tomb Raiders':             'arabian-tomb-raiders',
+  'Averlanders':                      'averlander-mercenaries',
+  'Battle Monks of Cathay':           'battle-monks-of-cathay',
+  'Beastmen Raiders':                 'beastmen-raiders',
+  'Black Dwarfs':                     'black-dwarfs',
+  'Black Orcs':                       'black-orcs',
+  'Bretonnian Chapel Guard':          'bretonnian-chapel-guard',
+  'Bretonnian Knights':               'bretonnians',
+  'Carnival of Chaos':                'carnival-of-chaos',
+  'Cult of the Possessed':            'cult-of-the-possessed',
+  'Dark Elves':                       'dark-elves',
+  'Dreamwalkers, Cult Of Morr':       'the-restless-dead',
+  'Druchii':                          'dark-elves',
+  'Dwarf Rangers':                    'dwarf-rangers',
+  'Dwarf Slayer Cult':                'dwarf-treasure-hunters',
+  'Dwarf Treasure Hunters':           'dwarf-treasure-hunters',
+  'Forest Goblins':                   'forest-goblins',
+  'Grave Robbers':                    'arabian-tomb-raiders',
+  'Gunnery School of Nuln':           'gunnery-school-of-nuln',
+  'Hochland Bandits':                 'hochland-bandits',
+  'Horned Hunters':                   'horned-hunters',
+  'Imperial Outriders':               'imperial-outriders',
+  'Kislevites':                       'kislevites',
+  'Lizardmen':                        'lizardmen',
+  'Lustrian Reavers':                 'lustrian-reavers',
+  'Maneaters':                        'maneaters',
+  'Marauders of Chaos':               'the_kurgan',
+  'Marienburgers':                    'marienburg_mercenaries',
+  'Mazzalupo':                        'miragleans',
+  'Merchant Caravans':                'merchant-caravans',
+  'Middenheimers':                    'middenheim_mercenaries',
+  'Miragleans':                       'miragleans',
+  'Mootlanders':                      'mootlanders',
+  'Night Goblins':                    'night-goblins',
+  'Night Goblins (web)':              'night-goblins',
+  'Nipponese Expedition':             'battle-monks-of-cathay',
+  'Norse Explorers':                  'norse-explorers',
+  'Orc Mob':                          'orc-mob',
+  'Ostermarkers':                     'ostlander-mercenaries',
+  'Ostlanders':                       'ostlander-mercenaries',
+  'Outlaws of Stirwood Forest, The':  'outlaws-of-stirwood-forest',
+  'Pirates':                          'pirates',
+  'Pit Fighters':                     'pit-fighters',
+  'Reiklanders':                      'reikland_mercenaries',
+  'Remasens':                         'remasens',
+  'Shadow Warriors':                  'shadow-warriors',
+  'Sisters of Sigmar':                'sisters-of-sigmar',
+  'Skaven':                           'skaven-of-clan-eshin',
+  'Skaven of Clan Pestilens':         'skaven-of-clan-pestilens',
+  'Sons of Hashut:':                  'the-sons-of-hashut',  // upstream typo — colon is intentional
+  'The Restless Dead':                'the-restless-dead',
+  'The Sons of Hashut':               'the-sons-of-hashut',
+  'Tileans':                          'trantios',
+  'Tomb Guardians':                   'tomb-guardians',
+  'Trantios':                         'trantios',
+  'Undead':                           'undead',
+  'Witch Hunters':                    'witch-hunters',
+};
+
+// Maps hired sword entry key → spell list IDs
+// Derived from Uncle-Mel skillText links and specialRules.
+// Only entries with at least one spell list are included; all others default to [].
+const HIRED_SWORD_SPELL_ACCESS_MAP = {
+  'warlock':                  ['lesser-magic'],
+  'elf-mage':                 ['spells-of-the-djedhi'],
+  'norse-shaman':             ['norse-runes'],
+  'warrior-priest-of-sigmar': ['prayers-of-sigmar'],
+  'witch':                    ['charms-and-hexes'],
+  'fallen-sister':            ['lesser-magic'],
+  'priest-of-morr':           ['funerary-rites'],
+  'wolf-priest-of-ulric':     ['prayers-of-ulric'],
+  // dark-mage uses "Dark Magic list" which has no matching entry in magic.json;
+  // the UI hasSpellAccess() fallback detects them via the "Wizard" special rule.
 };
 
 // ─── Skills transformer ───────────────────────────────────────────────────
@@ -507,6 +587,72 @@ function transformWarbands(warbandFiles, existing, magicData, equipmentLookup) {
   return { data: result, added, updated };
 }
 
+// ─── Hired Swords transformer ─────────────────────────────────────────────
+//
+// Source: hiredSwords.json — keyed object { "dwarf-troll-slayer": { ... } }
+// Ours:   hired_swords.json — { hiredSwords: [] }
+//
+// Key field mappings:
+//   key                       → type (hyphens → underscores)
+//   cost                      → cost (parseInt; floor of range strings like "35-45")
+//   statblock (lowercase)     → stats (uppercase via mapStatKeys)
+//   specialRules[].rulename   → specialRules (flat string array)
+//   skillAccess { k: bool }   → skillAccess (truthy keys, excluding "special")
+//   permittedWarbands[]       → warbandAllowList (via HIRED_SWORD_WARBAND_NAME_MAP)
+//   (absent)                  → max (always 1)
+//   (absent)                  → startingExp (always 0)
+//   (absent)                  → spellAccess (via HIRED_SWORD_SPELL_ACCESS_MAP; default [])
+//   (absent)                  → equipmentAccess (hardcoded ["hand_to_hand","missiles","armour"] for all;
+//                               Uncle-Mel has no equipment access categories — per-entry restrictions
+//                               from the old hand-maintained file are intentionally dropped)
+
+function transformHiredSwords(source) {
+  const result  = { hiredSwords: [] };
+  const added   = [];
+
+  for (const [key, src] of Object.entries(source)) {
+    const type         = key.replace(/-/g, '_');
+    const stats        = mapStatKeys(src.statblock);
+    const specialRules = (src.specialRules || []).map(r => r.rulename).filter(Boolean);
+    const skillAccess  = Object.entries(src.skillAccess || {})
+      .filter(([k, v]) => v && k !== 'special')  // hired swords have no warband-specific special skill categories
+      .map(([k]) => k);
+
+    const warbandAllowList = [];
+    for (const wbName of (src.permittedWarbands || [])) {
+      const id = HIRED_SWORD_WARBAND_NAME_MAP[wbName];
+      if (id && !warbandAllowList.includes(id)) {
+        warbandAllowList.push(id);
+      } else if (!id) {
+        console.warn(`    ⚠  Hired sword "${key}": unmapped warband "${wbName}" — add to HIRED_SWORD_WARBAND_NAME_MAP`);
+      }
+    }
+
+    const parsedCost = parseInt(src.cost);
+    if (isNaN(parsedCost)) {
+      console.warn(`    ⚠  Hired sword "${key}" has non-numeric cost "${src.cost}" — defaulting to 0`);
+    }
+
+    result.hiredSwords.push({
+      type,
+      name:             src.name,
+      max:              1,
+      cost:             isNaN(parsedCost) ? 0 : parsedCost,
+      stats,
+      specialRules,
+      startingExp:      0,
+      skillAccess,
+      spellAccess:      HIRED_SWORD_SPELL_ACCESS_MAP[key] || [],
+      equipmentAccess:  ['hand_to_hand', 'missiles', 'armour'],
+      warbandAllowList,
+    });
+
+    added.push(type);
+  }
+
+  return { data: result, added };
+}
+
 // ─── Validators ───────────────────────────────────────────────────────────
 
 function validateWarbands(data) {
@@ -546,6 +692,28 @@ function validateSkills(data) {
     for (const skill of (cat.skills || [])) {
       if (!skill.id)   throw new Error(`Skill missing id in ${catId}`);
       if (!skill.name) throw new Error(`Skill ${skill.id} missing name`);
+    }
+  }
+}
+
+function validateHiredSwords(data) {
+  if (!Array.isArray(data.hiredSwords)) throw new Error('Missing hiredSwords array');
+  if (data.hiredSwords.length === 0)    throw new Error('hiredSwords array is empty');
+  for (const hs of data.hiredSwords) {
+    if (!hs.type)                        throw new Error(`Hired sword missing type`);
+    if (!hs.name)                        throw new Error(`Hired sword ${hs.type} missing name`);
+    if (!hs.stats)                       throw new Error(`Hired sword ${hs.type} missing stats`);
+    if (typeof hs.cost !== 'number')     throw new Error(`Hired sword ${hs.type} missing cost`);
+    for (const key of REQUIRED_STAT_KEYS) {
+      if (hs.stats[key] == null) {
+        throw new Error(`Hired sword ${hs.type} missing stat ${key}`);
+      }
+    }
+    if (!Array.isArray(hs.warbandAllowList)) {
+      throw new Error(`Hired sword ${hs.type} missing warbandAllowList array`);
+    }
+    if (hs.warbandAllowList.length === 0) {
+      console.warn(`    ⚠  Hired sword ${hs.type} has empty warbandAllowList — no warband can hire them`);
     }
   }
 }
@@ -716,6 +884,25 @@ async function main() {
     } catch (err) {
       summary.errors.push(`Warbands: ${err.message}`);
       console.log(`FAILED: ${err.message}`);
+    }
+  }
+
+  // Hired Swords
+  if (changes.hiredSwords) {
+    const label = 'hiredSwords';
+    try {
+      process.stdout.write('  hiredSwords... ');
+      const src = ghRaw('data/hiredSwords.json');
+      const { data, added } = transformHiredSwords(src);
+      validateHiredSwords(data);
+      if (!dryRun) writeJson(path.join(DATA_DIR, 'hired_swords.json'), data);
+      summary.added[label]   = added;
+      summary.updated[label] = [];
+      console.log(`total: ${data.hiredSwords.length} ✓`);
+    } catch (err) {
+      summary.errors.push(`HiredSwords: ${err.message}`);
+      console.error(`FAILED: ${err.message}`);
+      if (err.stack) console.error(err.stack);
     }
   }
 

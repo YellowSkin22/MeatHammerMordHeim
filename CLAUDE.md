@@ -161,7 +161,7 @@ Synced nightly from Uncle-Mel/JSON-derulo via `scripts/sync-mordheim-data.js`. H
 | `data/magic.json` | 30 spell lists; `spellLists[id].permittedWarbands[]` used to build `spellAccess` per fighter at load time |
 | `data/injuries.json` | Hero and henchman injury tables — **hand-maintained** (no Uncle-Mel equivalent) |
 | `data/advancement.json` | Experience thresholds, max stat values, advancement rules — **hand-maintained** |
-| `data/hired_swords.json` | Hired Sword templates with stats, restrictions, and equipment access — **hand-maintained** (Uncle-Mel's file lacks stats) |
+| `data/hired_swords.json` | Hired Sword templates with stats and warband allow-lists — **synced** from Uncle-Mel's `hiredSwords.json`. `spellAccess` is derived from `HIRED_SWORD_SPELL_ACCESS_MAP` in the sync script; `equipmentAccess` defaults to all three categories (Uncle-Mel carries no category data). Uses `warbandAllowList` (allow-list), not `warbandRestrictions` (deny-list). |
 | `data/special_rules.json` | 130 special rule descriptions keyed by rule name, used for tooltips — **hand-maintained** |
 
 ### Validating JSON
