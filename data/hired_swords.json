@@ -1,170 +1,4073 @@
 {
   "hiredSwords": [
     {
-      "type": "ogre_bodyguard",
-      "name": "Ogre Bodyguard",
+      "type": "dwarf_troll_slayer",
+      "name": "Dwarf Troll Slayer",
       "max": 1,
-      "cost": 80,
-      "stats": { "M": 6, "WS": 3, "BS": 2, "S": 4, "T": 4, "W": 3, "I": 3, "A": 2, "Ld": 7 },
-      "specialRules": ["Fear", "Large Target"],
+      "cost": 25,
+      "stats": {
+        "M": 3,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 4,
+        "W": 1,
+        "I": 2,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Deathwish",
+        "Hard to Kill",
+        "Hard Head"
+      ],
       "startingExp": 0,
-      "skillAccess": ["combat", "strength"],
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
       "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "armour"],
-      "warbandRestrictions": []
-    },
-    {
-      "type": "halfling_scout",
-      "name": "Halfling Scout",
-      "max": 1,
-      "cost": 15,
-      "stats": { "M": 4, "WS": 2, "BS": 4, "S": 2, "T": 2, "W": 1, "I": 4, "A": 1, "Ld": 8 },
-      "specialRules": ["Sneaky"],
-      "startingExp": 0,
-      "skillAccess": ["shooting", "speed"],
-      "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "missiles"],
-      "warbandRestrictions": []
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "lustrian-reavers",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
     },
     {
       "type": "elf_ranger",
       "name": "Elf Ranger",
       "max": 1,
-      "cost": 80,
-      "stats": { "M": 5, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 6, "A": 1, "Ld": 8 },
-      "specialRules": ["Excellent Sight"],
+      "cost": 40,
+      "stats": {
+        "M": 5,
+        "WS": 4,
+        "BS": 5,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 6,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Seeker",
+        "Excellent Sight"
+      ],
       "startingExp": 0,
-      "skillAccess": ["combat", "shooting", "speed"],
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
       "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "missiles", "armour"],
-      "warbandRestrictions": ["undead", "cult_of_the_possessed", "skaven"]
-    },
-    {
-      "type": "warlock",
-      "name": "Warlock",
-      "max": 1,
-      "cost": 35,
-      "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
-      "specialRules": ["Wizard"],
-      "startingExp": 0,
-      "skillAccess": ["academic", "speed"],
-      "spellAccess": ["lesser_magic"],
-      "equipmentAccess": ["hand_to_hand"],
-      "warbandRestrictions": ["witch_hunters", "sisters_of_sigmar"]
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
     },
     {
       "type": "freelancer",
       "name": "Freelancer",
       "max": 1,
       "cost": 50,
-      "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
       "specialRules": [],
       "startingExp": 0,
-      "skillAccess": ["combat", "shooting", "strength", "speed"],
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
       "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "missiles", "armour"],
-      "warbandRestrictions": []
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "hochland-bandits",
+        "imperial-outriders",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "halfling_scout",
+      "name": "Halfling Scout",
+      "max": 1,
+      "cost": 15,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 4,
+        "S": 2,
+        "T": 2,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Cook"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "maneaters",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "ogre_bodyguard",
+      "name": "Ogre Bodyguard",
+      "max": 1,
+      "cost": 80,
+      "stats": {
+        "M": 6,
+        "WS": 3,
+        "BS": 2,
+        "S": 4,
+        "T": 4,
+        "W": 3,
+        "I": 3,
+        "A": 2,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Fear",
+        "Large Target"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "orc-mob",
+        "ostlander-mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "black-orcs",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "lustrian-reavers",
+        "maneaters",
+        "the_kurgan",
+        "merchant-caravans",
+        "night-goblins",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
     },
     {
       "type": "pit_fighter",
       "name": "Pit Fighter",
       "max": 1,
       "cost": 30,
-      "stats": { "M": 4, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 3, "A": 1, "Ld": 7 },
-      "specialRules": ["Pit Fighter"],
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 4,
+        "T": 4,
+        "W": 1,
+        "I": 4,
+        "A": 2,
+        "Ld": 7
+      },
+      "specialRules": [],
       "startingExp": 0,
-      "skillAccess": ["combat", "strength"],
+      "skillAccess": [
+        "combat",
+        "strength",
+        "speed"
+      ],
       "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "armour"],
-      "warbandRestrictions": []
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "orc-mob",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "black-orcs",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "the_kurgan",
+        "merchant-caravans",
+        "night-goblins",
+        "norse-explorers",
+        "the-sons-of-hashut",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "warlock",
+      "name": "Warlock",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Wizard"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic"
+      ],
+      "spellAccess": [
+        "lesser-magic"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "orc-mob",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "skaven-of-clan-eshin",
+        "undead",
+        "arabian-tomb-raiders",
+        "black-orcs",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "the_kurgan",
+        "merchant-caravans",
+        "night-goblins",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "arabian_merchant",
+      "name": "Arabian Merchant",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Haggle",
+        "Pawnbroker",
+        "Marketeer",
+        "Black Market",
+        "Foreign Wares",
+        "Fencer"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "beast_hunter",
+      "name": "Beast Hunter",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 4,
+        "W": 1,
+        "I": 4,
+        "A": 2,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Beastmen Vengeance",
+        "Skull Rack",
+        "Predator"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "highwayman",
+      "name": "Highwayman",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Expert Pistolier",
+        "Expert Rider",
+        "Unscrupulous"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "skaven-of-clan-eshin",
+        "undead",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "imperial_assassin",
+      "name": "Imperial Assassin",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 5,
+        "A": 2,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Poisoner",
+        "Weapons Master"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "undead",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "the_kurgan",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "roadwarden",
+      "name": "Roadwarden",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Expert Rider",
+        "Lethal Marksman",
+        "Stern"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "imperial-outriders",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
     },
     {
       "type": "tilean_marksman",
       "name": "Tilean Marksman",
       "max": 1,
       "cost": 30,
-      "stats": { "M": 4, "WS": 3, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
-      "specialRules": [],
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Steady Hands",
+        "Dead Eye Shot"
+      ],
       "startingExp": 0,
-      "skillAccess": ["combat", "shooting", "speed"],
+      "skillAccess": [
+        "shooting"
+      ],
       "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "missiles", "armour"],
-      "warbandRestrictions": []
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "lustrian-reavers",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "bard",
+      "name": "Bard",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Songster"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "big_game_hunter",
+      "name": "Big Game Hunter",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Set Traps"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "academic"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "lustrian-reavers",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "black_orc_overseer",
+      "name": "Black Orc Overseer",
+      "max": 1,
+      "cost": 60,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 4,
+        "T": 4,
+        "W": 1,
+        "I": 2,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "I said 'shut it'",
+        "Who'se Da Man!"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "orc-mob",
+        "black-orcs",
+        "forest-goblins",
+        "night-goblins",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "bounty_hunter",
+      "name": "Bounty Hunter",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 4,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Capture"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "chameleon_skink",
+      "name": "Chameleon Skink",
+      "max": 1,
+      "cost": 70,
+      "stats": {
+        "M": 6,
+        "WS": 4,
+        "BS": 4,
+        "S": 4,
+        "T": 2,
+        "W": 1,
+        "I": 5,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Lizardmen Special Skills",
+        "Chameleon Skin",
+        "Infiltrator"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "lizardmen"
+      ]
+    },
+    {
+      "type": "clan_skryre_rat_ogre",
+      "name": "Clan Skryre Rat Ogre",
+      "max": 1,
+      "cost": 100,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 5,
+        "T": 5,
+        "W": 3,
+        "I": 1,
+        "A": 3,
+        "Ld": 10
+      },
+      "specialRules": [
+        "Large",
+        "Fear",
+        "Bio Machinery",
+        "Wyrdstone Powered",
+        "May not run",
+        "Immune to Poison",
+        "Warpfire Thrower",
+        "Jet of Flame",
+        "Unreliable"
+      ],
+      "startingExp": 0,
+      "skillAccess": [],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "skaven-of-clan-eshin",
+        "skaven-of-clan-pestilens"
+      ]
+    },
+    {
+      "type": "dark_elf_assassin",
+      "name": "Dark Elf Assassin",
+      "max": 1,
+      "cost": 70,
+      "stats": {
+        "M": 5,
+        "WS": 5,
+        "BS": 5,
+        "S": 4,
+        "T": 4,
+        "W": 1,
+        "I": 7,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Perfect Killer",
+        "Kindred Hatred"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "cult-of-the-possessed",
+        "skaven-of-clan-eshin",
+        "undead",
+        "dark-elves",
+        "forest-goblins",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "pirates",
+        "skaven-of-clan-pestilens",
+        "tomb-guardians",
+        "black-dwarfs",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut",
+        "arabian-tomb-raiders"
+      ]
+    },
+    {
+      "type": "duellist",
+      "name": "Duellist",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 2,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Darting Steel"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "dwarf_pathfinder",
+      "name": "Dwarf Pathfinder",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 3,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 4,
+        "W": 1,
+        "I": 2,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Explorer",
+        "Hard to Kill",
+        "Hard Head",
+        "Hate Orcs and Goblins",
+        "Elf Grudge",
+        "Magic"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
     },
     {
       "type": "dwarf_treasure_hunter",
       "name": "Dwarf Treasure Hunter",
       "max": 1,
-      "cost": 25,
-      "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
-      "specialRules": ["Hard to Kill", "Thick Skulled"],
-      "startingExp": 0,
-      "skillAccess": ["combat", "shooting", "strength"],
-      "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "missiles", "armour"],
-      "warbandRestrictions": ["skaven", "cult_of_the_possessed", "undead", "restless_dead"]
-    },
-    {
-      "type": "hired_swordsman",
-      "name": "Hired Swordsman",
-      "max": 1,
-      "cost": 15,
-      "stats": { "M": 4, "WS": 3, "BS": 3, "S": 3, "T": 3, "W": 1, "I": 3, "A": 1, "Ld": 7 },
-      "specialRules": [],
-      "startingExp": 0,
-      "skillAccess": ["combat", "speed"],
-      "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "armour"],
-      "warbandRestrictions": []
-    },
-    {
-      "type": "imperial_assassin",
-      "name": "Imperial Assassin",
-      "max": 1,
-      "cost": 50,
-      "stats": { "M": 4, "WS": 4, "BS": 4, "S": 3, "T": 3, "W": 1, "I": 5, "A": 2, "Ld": 8 },
-      "specialRules": ["Dodge", "Stealth"],
-      "startingExp": 0,
-      "skillAccess": ["combat", "shooting", "speed"],
-      "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand", "missiles"],
-      "warbandRestrictions": ["undead", "cult_of_the_possessed", "skaven", "restless_dead"]
-    },
-    {
-      "type": "dwarf_troll_slayer",
-      "name": "Dwarf Troll Slayer",
-      "max": 1,
-      "cost": 25,
-      "stats": { "M": 3, "WS": 4, "BS": 3, "S": 3, "T": 4, "W": 1, "I": 2, "A": 1, "Ld": 9 },
-      "specialRules": ["Deathwish", "Hard to Kill", "Hard Head"],
-      "startingExp": 0,
-      "skillAccess": ["combat", "strength", "troll_slayer_special"],
-      "spellAccess": [],
-      "equipmentAccess": ["hand_to_hand"],
-      "warbandAllowList": [
-        "reikland", "middenheim", "marienburg", "witch_hunters", "sisters_of_sigmar",
-        "averlander", "ostlander", "kislevites", "bretonnians", "tileans",
-        "hochland_bandits", "gunnery_school_of_nuln", "imperial_outriders",
-        "outlaws_of_stirwood", "pirates", "norse_explorers", "mootlanders",
-        "pit_fighters",
-        "dwarf_treasure_hunters", "dwarf_rangers",
-        "dark_elves", "shadow_warriors"
+      "cost": 55,
+      "stats": {
+        "M": 3,
+        "WS": 5,
+        "BS": 4,
+        "S": 3,
+        "T": 4,
+        "W": 1,
+        "I": 2,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Hard to Kill",
+        "Hard Head",
+        "Hates Orcs & Goblins",
+        "Mining Pick",
+        "Lantern Rig",
+        "Treasure Maps"
       ],
-      "hiringNotes": "May be hired by Mercenaries and Witch Hunters. Warbands that include Elves may hire but must pay 20gc upkeep per battle instead of 10gc."
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "elf_mage",
+      "name": "Elf Mage",
+      "max": 1,
+      "cost": 45,
+      "stats": {
+        "M": 5,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 2,
+        "I": 6,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Fey",
+        "Sorcery",
+        "Wanderer",
+        "Wizard"
+      ],
+      "startingExp": 0,
+      "skillAccess": [],
+      "spellAccess": [
+        "spells-of-the-djedhi"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "gaoler",
+      "name": "Gaoler",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 2,
+        "S": 4,
+        "T": 4,
+        "W": 2,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Torturer’s grapple",
+        "Devout",
+        "Inured to pain",
+        "Hatred"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "witch-hunters",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "halfling_thief",
+      "name": "Halfling Thief",
+      "max": 1,
+      "cost": 25,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 4,
+        "S": 2,
+        "T": 2,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Infiltrator",
+        "Pick Locks",
+        "Cutpurse",
+        "Uneasy Ally"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "dwarf-rangers",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "human_scout",
+      "name": "Human Scout",
+      "max": 1,
+      "cost": 10,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 6
+      },
+      "specialRules": [
+        "Not a Fighter"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "kislev_ranger",
+      "name": "Kislev Ranger",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Heart Strike",
+        "Hunter’s Cloak",
+        "Loner",
+        "Seeker"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "academic",
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "dwarf-rangers",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "mule_skinner",
+      "name": "Mule Skinner",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Animal Handler",
+        "Whip",
+        "Disarm",
+        "Note"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "academic",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "nomad_scout",
+      "name": "Nomad Scout",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Son of the Desert"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "norse_shaman",
+      "name": "Norse Shaman",
+      "max": 1,
+      "cost": 45,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Runes"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "academic"
+      ],
+      "spellAccess": [
+        "norse-runes"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "the_kurgan",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "old_prospector",
+      "name": "Old Prospector",
+      "max": 1,
+      "cost": 2,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Hardened",
+        "Finders Keepers",
+        "Old Coot"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "pathfinder",
+      "name": "Pathfinder",
+      "max": 1,
+      "cost": 60,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Lay of the Land",
+        "Knowledge of Myths and Legends"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "priest_of_morr",
+      "name": "Priest Of Morr",
+      "max": 1,
+      "cost": 0,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Loner",
+        "Funerary Rites",
+        "Scythe"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic",
+        "speed"
+      ],
+      "spellAccess": [
+        "funerary-rites"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "runesmith_journeyman",
+      "name": "Runesmith Journeyman",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 3,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 4,
+        "W": 1,
+        "I": 2,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Runesmith",
+        "Armourer",
+        "Armour",
+        "Hate Orcs and Goblins",
+        "Hard to Kill",
+        "Hard Head",
+        "Rune Use",
+        "Durable"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "shadow_warrior",
+      "name": "Shadow Warrior",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 5,
+        "WS": 4,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 6,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Hates Dark Elves",
+        "Excellent Sight",
+        "Bitter Enemies",
+        "Infiltration"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "snake_charmer",
+      "name": "Snake Charmer",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Snake Charmer",
+        "Immune to poison",
+        "Venomous",
+        "Animals",
+        "Snake hunter"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "thief",
+      "name": "Thief",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Thief's Cloak",
+        "Tea-Leaf!"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-sons-of-hashut",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "tomb_robber",
+      "name": "Tomb Robber",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 5,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Explorer",
+        "Traps",
+        "Excellent Reflexes"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "warrior_priest_of_sigmar",
+      "name": "Warrior Priest Of Sigmar",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Prayers"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic"
+      ],
+      "spellAccess": [
+        "prayers-of-sigmar"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "witch",
+      "name": "Witch",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 2,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Wizard",
+        "Recluse",
+        "Potions",
+        "Reluctant"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic"
+      ],
+      "spellAccess": [
+        "charms-and-hexes"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "skaven-of-clan-eshin",
+        "undead",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "the_kurgan",
+        "merchant-caravans",
+        "night-goblins",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "witch_hunter",
+      "name": "Witch Hunter",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Burn the Witch",
+        "In Sigmar’s name",
+        "Sigmar’s reward"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "academic",
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "bretonnians",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "wolf_priest_of_ulric",
+      "name": "Wolf Priest of Ulric",
+      "max": 1,
+      "cost": 0,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Hatred",
+        "Wolf Companion",
+        "Animals"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "academic",
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [
+        "prayers-of-ulric"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "middenheim_mercenaries"
+      ]
     },
     {
       "type": "bone_goliath",
       "name": "Bone Goliath",
       "max": 1,
       "cost": 225,
-      "stats": { "M": 5, "WS": 3, "BS": 0, "S": 5, "T": 5, "W": 3, "I": 2, "A": 3, "Ld": 6 },
-      "specialRules": ["Cause Fear", "May Not Run", "Immune to Psychology", "Immune to Poison", "Undead Construct", "Assembly", "Large", "No Pain", "Mindless"],
+      "stats": {
+        "M": 5,
+        "WS": 3,
+        "BS": 0,
+        "S": 5,
+        "T": 5,
+        "W": 3,
+        "I": 2,
+        "A": 3,
+        "Ld": 6
+      },
+      "specialRules": [
+        "Cause Fear",
+        "May not run",
+        "Immune to Psychology",
+        "Immune to Poison",
+        "Undead Construct",
+        "Assembly",
+        "Large",
+        "No Pain",
+        "Mindless"
+      ],
       "startingExp": 0,
       "skillAccess": [],
       "spellAccess": [],
-      "equipmentAccess": [],
-      "warbandRestrictions": [],
-      "warbandAllowList": ["restless_dead"]
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "cathayan_merchant",
+      "name": "Cathayan Merchant",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Haggle",
+        "Pawnbroker",
+        "Marketeer",
+        "Black Market",
+        "Exotic Wares"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-sons-of-hashut",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "chaos_centaur",
+      "name": "Chaos Centaur",
+      "max": 1,
+      "cost": 65,
+      "stats": {
+        "M": 8,
+        "WS": 4,
+        "BS": 3,
+        "S": 4,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": "1(2)",
+        "Ld": 7
+      },
+      "specialRules": [
+        "Drunken",
+        "Woodland Dwelling",
+        "Trample"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "beastmen-raiders",
+        "black-dwarfs",
+        "maneaters",
+        "the_kurgan",
+        "norse-explorers",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "coachman",
+      "name": "Coachman",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Driver",
+        "Handyman"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "tomb-guardians",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "grave_robber",
+      "name": "Grave Robber",
+      "max": 1,
+      "cost": 45,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 6
+      },
+      "specialRules": [
+        "Hatred",
+        "Grave Robbing"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "undead",
+        "tomb-guardians",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "hobgoblin_scout",
+      "name": "Hobgoblin Scout",
+      "max": 1,
+      "cost": 45,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Ride",
+        "Loner",
+        "Traitor"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "black-dwarfs",
+        "maneaters",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "ninja",
+      "name": "Ninja",
+      "max": 1,
+      "cost": 70,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 5,
+        "A": 2,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Strictly Business",
+        "Secrecy"
+      ],
+      "startingExp": 0,
+      "skillAccess": [],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "tomb-guardians",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "pyromaniac",
+      "name": "Pyromaniac",
+      "max": 1,
+      "cost": 25,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Crazed Firestarter",
+        "Rockets"
+      ],
+      "startingExp": 0,
+      "skillAccess": [],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans"
+      ]
+    },
+    {
+      "type": "swordsmith",
+      "name": "Swordsmith",
+      "max": 1,
+      "cost": 60,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 4,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Master Craftsman"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "beggar",
+      "name": "Beggar",
+      "max": 1,
+      "cost": 10,
+      "stats": {
+        "M": 4,
+        "WS": 1,
+        "BS": 1,
+        "S": 2,
+        "T": 2,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 5
+      },
+      "specialRules": [
+        "Scrounge",
+        "Not a Threat"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "black-dwarfs",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "chaos_fury",
+      "name": "Chaos Fury",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 4,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 2,
+        "Ld": 10
+      },
+      "specialRules": [
+        "Fear",
+        "Daemonic Flesh",
+        "Daemonic Mind",
+        "Daemonic Instability",
+        "Fly",
+        "Malicious"
+      ],
+      "startingExp": 0,
+      "skillAccess": [],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "beastmen-raiders",
+        "carnival-of-chaos",
+        "cult-of-the-possessed",
+        "black-dwarfs",
+        "the_kurgan",
+        "norse-explorers",
+        "the-sons-of-hashut"
+      ]
+    },
+    {
+      "type": "cursed_hillman",
+      "name": "Cursed Hillman",
+      "max": 1,
+      "cost": 60,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Hunter",
+        "Thin Flesh",
+        "Lycanthrope"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "beastmen-raiders",
+        "cult-of-the-possessed",
+        "undead",
+        "tomb-guardians",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "dark_mage",
+      "name": "Dark Mage",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 2,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Wizard",
+        "Despise Despoilers",
+        "Self Assured",
+        "Dark Magic"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "academic"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "battle-monks-of-cathay",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "dwarf_slayer_pirate",
+      "name": "Dwarf Slayer Pirate",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 3,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 4,
+        "W": 1,
+        "I": 2,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Deathwish",
+        "Hard to Kill",
+        "Hard Head",
+        "Festooned with Pistols",
+        "Raging Drunk"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "ostlander-mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "witch-hunters",
+        "hochland-bandits",
+        "pirates",
+        "remasens",
+        "trantios",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "emissary_of_chaos",
+      "name": "Emissary of Chaos",
+      "max": 1,
+      "cost": 50,
+      "stats": {
+        "M": 4,
+        "WS": 5,
+        "BS": 3,
+        "S": 4,
+        "T": 4,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Special Skills"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "academic",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "beastmen-raiders",
+        "carnival-of-chaos",
+        "cult-of-the-possessed",
+        "dark-elves",
+        "norse-explorers"
+      ]
+    },
+    {
+      "type": "estalian_diestro",
+      "name": "Estalian Diestro",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Rapier",
+        "Main Gauche"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "shadow-warriors",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "fallen_sister",
+      "name": "The Fallen Sister",
+      "max": 1,
+      "cost": 55,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Wizard",
+        "Warrior Wizard",
+        "Ashamed and Afraid"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [
+        "lesser-magic"
+      ],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "goblin_lantern_bearer",
+      "name": "Goblin Lantern Bearer",
+      "max": 1,
+      "cost": 15,
+      "stats": {
+        "M": 4,
+        "WS": 2,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 5
+      },
+      "specialRules": [
+        "Smart (for a Goblin)",
+        "Very Lucky",
+        "Small Size"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "cult-of-the-possessed",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "orc-mob",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "undead",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "forest-goblins",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "tomb-guardians",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "night-goblins",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "gravesman",
+      "name": "Gravesman",
+      "max": 1,
+      "cost": 25,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "He’s o’er dere"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "halfling_knight",
+      "name": "Halfling Knight",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Slay Large Creature"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "imperial_tactician",
+      "name": "Imperial Tactician",
+      "max": 1,
+      "cost": 40,
+      "stats": {
+        "M": "4(3)",
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 5,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Expert Tactician",
+        "Read the Battle"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "trantios",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "knight_of_the_white_wolf",
+      "name": "Knight of the White Wolf",
+      "max": 1,
+      "cost": 55,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 4,
+        "T": 4,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 9
+      },
+      "specialRules": [
+        "Pride of Ar-Ulric",
+        "Cavalryman",
+        "Among Wolves"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "hochland-bandits",
+        "ostlander-mercenaries",
+        "pirates",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "ninja_gnoblar",
+      "name": "Ninja Gnoblar",
+      "max": 1,
+      "cost": 35,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 6
+      },
+      "specialRules": [
+        "Stealthy",
+        "Rooftop to Rooftop"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "maneaters",
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "skaven-of-clan-eshin",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dark-elves",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "skaven-of-clan-pestilens",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "norse-explorers",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "ogre_slave_master",
+      "name": "Ogre Slave Master",
+      "max": 1,
+      "cost": 90,
+      "stats": {
+        "M": 6,
+        "WS": 3,
+        "BS": 2,
+        "S": 4,
+        "T": 4,
+        "W": 3,
+        "I": 4,
+        "A": 2,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Slave Master",
+        "Fear",
+        "Large Target"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "beastmen-raiders",
+        "carnival-of-chaos",
+        "cult-of-the-possessed"
+      ]
+    },
+    {
+      "type": "slaver",
+      "name": "Slaver",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 4,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Slaver"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "strength"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "cult-of-the-possessed",
+        "skaven-of-clan-eshin",
+        "undead",
+        "dark-elves",
+        "skaven-of-clan-pestilens",
+        "tomb-guardians",
+        "norse-explorers",
+        "the-restless-dead",
+        "arabian-tomb-raiders"
+      ]
+    },
+    {
+      "type": "swashbuckler",
+      "name": "Swashbuckler",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 4,
+        "BS": 3,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 5,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Acrobatic",
+        "Nimble",
+        "Charismatic"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "combat",
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "ungor_trapper",
+      "name": "Ungor Trapper",
+      "max": 1,
+      "cost": 20,
+      "stats": {
+        "M": 5,
+        "WS": 3,
+        "BS": 4,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 6
+      },
+      "specialRules": [
+        "Set Traps",
+        "Hunter’s Eye",
+        "Excellent Sight",
+        "Just a Twit"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "beastmen-raiders",
+        "cult-of-the-possessed",
+        "the_kurgan",
+        "norse-explorers"
+      ]
+    },
+    {
+      "type": "weaponsmith",
+      "name": "Weaponsmith",
+      "max": 1,
+      "cost": 30,
+      "stats": {
+        "M": 4,
+        "WS": 3,
+        "BS": 3,
+        "S": 4,
+        "T": 3,
+        "W": 1,
+        "I": 3,
+        "A": 1,
+        "Ld": 7
+      },
+      "specialRules": [
+        "Maintenance"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "strength",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
+    },
+    {
+      "type": "wood_elf_hunter",
+      "name": "Wood Elf Hunter",
+      "max": 1,
+      "cost": 50,
+      "stats": {
+        "M": 5,
+        "WS": 4,
+        "BS": 5,
+        "S": 3,
+        "T": 3,
+        "W": 1,
+        "I": 6,
+        "A": 1,
+        "Ld": 8
+      },
+      "specialRules": [
+        "Stalk",
+        "Hunted",
+        "Keen Eyed"
+      ],
+      "startingExp": 0,
+      "skillAccess": [
+        "shooting",
+        "speed"
+      ],
+      "spellAccess": [],
+      "equipmentAccess": [
+        "hand_to_hand",
+        "missiles",
+        "armour"
+      ],
+      "warbandAllowList": [
+        "averlander-mercenaries",
+        "dwarf-treasure-hunters",
+        "kislevites",
+        "marienburg_mercenaries",
+        "miragleans",
+        "middenheim_mercenaries",
+        "reikland_mercenaries",
+        "battle-monks-of-cathay",
+        "sisters-of-sigmar",
+        "witch-hunters",
+        "arabian-tomb-raiders",
+        "bretonnians",
+        "dwarf-rangers",
+        "gunnery-school-of-nuln",
+        "hochland-bandits",
+        "horned-hunters",
+        "lizardmen",
+        "mootlanders",
+        "ostlander-mercenaries",
+        "outlaws-of-stirwood-forest",
+        "pirates",
+        "pit-fighters",
+        "remasens",
+        "shadow-warriors",
+        "trantios",
+        "bretonnian-chapel-guard",
+        "merchant-caravans",
+        "the-restless-dead"
+      ]
     }
   ]
 }
