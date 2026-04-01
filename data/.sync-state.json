@@ -1,21 +1,25 @@
 {
-  "lastChecked": "2026-03-30T07:40:06.582Z",
+  "lastChecked": "2026-04-01T08:36:01.351Z",
   "files": {
     "data/mergedEquipment.json": {
       "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
-      "syncedAt": "2026-03-30T07:40:06.582Z"
+      "syncedAt": "2026-04-01T08:36:01.351Z"
     },
     "data/skills.json": {
       "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
-      "syncedAt": "2026-03-30T07:40:06.582Z"
+      "syncedAt": "2026-04-01T08:36:01.351Z"
     },
     "data/magic.json": {
       "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
-      "syncedAt": "2026-03-30T07:40:06.582Z"
+      "syncedAt": "2026-04-01T08:36:01.351Z"
     },
     "data/warbandFiles": {
       "sha": "6f9aa8d8335b09fa27950a002ea0044d06ac0361",
-      "syncedAt": "2026-03-30T07:40:06.582Z"
+      "syncedAt": "2026-04-01T08:36:01.351Z"
+    },
+    "data/hiredSwords.json": {
+      "sha": "5d382bdf33abdad008028f157ec47fed12027f8e",
+      "syncedAt": "2026-04-01T08:36:01.351Z"
     }
   }
 }
