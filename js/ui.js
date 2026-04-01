@@ -868,7 +868,7 @@ const UI = {
         html += `<optgroup label="${this.escAttr(catName)}">`;
         for (const item of items) {
           const prefix = item.costPrefix ? `${item.costPrefix}` : '';
-          html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${prefix}${item.cost} gc)</option>`;
+          html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${prefix}${item.cost?.cost ?? 0} gc)</option>`;
         }
         html += '</optgroup>';
       }
