@@ -141,8 +141,8 @@ const WARBAND_SPECIAL_SKILL_CATEGORIES = {
 
 // Maps Uncle-Mel permittedWarbands display names → our warband IDs (data/warbands.json)
 const HIRED_SWORD_WARBAND_NAME_MAP = {
-  // Note: some warband IDs use underscores (grade 1c subfactions) rather than hyphens.
-  // This matches data/warbands.json exactly — do not normalise.
+  // Note: some warband IDs use underscores rather than hyphens (e.g. reikland_mercenaries, the_kurgan).
+  // This is an artifact of how the sync script generated those IDs — matches data/warbands.json exactly, do not normalise.
   'Arabian Tomb Raiders':             'arabian-tomb-raiders',
   'Averlanders':                      'averlander-mercenaries',
   'Battle Monks of Cathay':           'battle-monks-of-cathay',
@@ -594,13 +594,17 @@ function transformWarbands(warbandFiles, existing, magicData, equipmentLookup) {
 //
 // Key field mappings:
 //   key                       → type (hyphens → underscores)
-//   cost                      → cost (parseInt)
+//   cost                      → cost (parseInt; floor of range strings like "35-45")
 //   statblock (lowercase)     → stats (uppercase via mapStatKeys)
 //   specialRules[].rulename   → specialRules (flat string array)
 //   skillAccess { k: bool }   → skillAccess (truthy keys, excluding "special")
 //   permittedWarbands[]       → warbandAllowList (via HIRED_SWORD_WARBAND_NAME_MAP)
+//   (absent)                  → max (always 1)
+//   (absent)                  → startingExp (always 0)
 //   (absent)                  → spellAccess (via HIRED_SWORD_SPELL_ACCESS_MAP; default [])
-//   (absent)                  → equipmentAccess (always ["hand_to_hand","missiles","armour"])
+//   (absent)                  → equipmentAccess (hardcoded ["hand_to_hand","missiles","armour"] for all;
+//                               Uncle-Mel has no equipment access categories — per-entry restrictions
+//                               from the old hand-maintained file are intentionally dropped)
 
 function transformHiredSwords(source) {
   const result  = { hiredSwords: [] };
@@ -617,14 +621,23 @@ function transformHiredSwords(source) {
     const warbandAllowList = [];
     for (const wbName of (src.permittedWarbands || [])) {
       const id = HIRED_SWORD_WARBAND_NAME_MAP[wbName];
-      if (id && !warbandAllowList.includes(id)) warbandAllowList.push(id);
+      if (id && !warbandAllowList.includes(id)) {
+        warbandAllowList.push(id);
+      } else if (!id) {
+        console.warn(`    ⚠  Hired sword "${key}": unmapped warband "${wbName}" — add to HIRED_SWORD_WARBAND_NAME_MAP`);
+      }
+    }
+
+    const parsedCost = parseInt(src.cost);
+    if (isNaN(parsedCost)) {
+      console.warn(`    ⚠  Hired sword "${key}" has non-numeric cost "${src.cost}" — defaulting to 0`);
     }
 
     result.hiredSwords.push({
       type,
       name:             src.name,
       max:              1,
-      cost:             parseInt(src.cost) || 0,  // parseInt handles numeric-or-range strings; floor value is intentional
+      cost:             isNaN(parsedCost) ? 0 : parsedCost,
       stats,
       specialRules,
       startingExp:      0,
@@ -687,13 +700,20 @@ function validateHiredSwords(data) {
   if (!Array.isArray(data.hiredSwords)) throw new Error('Missing hiredSwords array');
   if (data.hiredSwords.length === 0)    throw new Error('hiredSwords array is empty');
   for (const hs of data.hiredSwords) {
-    if (!hs.type)  throw new Error(`Hired sword missing type`);
-    if (!hs.name)  throw new Error(`Hired sword ${hs.type} missing name`);
-    if (!hs.stats) throw new Error(`Hired sword ${hs.type} missing stats`);
+    if (!hs.type)                        throw new Error(`Hired sword missing type`);
+    if (!hs.name)                        throw new Error(`Hired sword ${hs.type} missing name`);
+    if (!hs.stats)                       throw new Error(`Hired sword ${hs.type} missing stats`);
+    if (typeof hs.cost !== 'number')     throw new Error(`Hired sword ${hs.type} missing cost`);
     for (const key of REQUIRED_STAT_KEYS) {
       if (hs.stats[key] == null) {
         throw new Error(`Hired sword ${hs.type} missing stat ${key}`);
       }
+    }
+    if (!Array.isArray(hs.warbandAllowList)) {
+      throw new Error(`Hired sword ${hs.type} missing warbandAllowList array`);
+    }
+    if (hs.warbandAllowList.length === 0) {
+      console.warn(`    ⚠  Hired sword ${hs.type} has empty warbandAllowList — no warband can hire them`);
     }
   }
 }
@@ -881,7 +901,8 @@ async function main() {
       console.log(`total: ${data.hiredSwords.length} ✓`);
     } catch (err) {
       summary.errors.push(`HiredSwords: ${err.message}`);
-      console.log(`FAILED: ${err.message}`);
+      console.error(`FAILED: ${err.message}`);
+      if (err.stack) console.error(err.stack);
     }
   }
 
