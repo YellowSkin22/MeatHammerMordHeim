@@ -141,6 +141,8 @@ const WARBAND_SPECIAL_SKILL_CATEGORIES = {
 
 // Maps Uncle-Mel permittedWarbands display names → our warband IDs (data/warbands.json)
 const HIRED_SWORD_WARBAND_NAME_MAP = {
+  // Note: some warband IDs use underscores (grade 1c subfactions) rather than hyphens.
+  // This matches data/warbands.json exactly — do not normalise.
   'Arabian Tomb Raiders':             'arabian-tomb-raiders',
   'Averlanders':                      'averlander-mercenaries',
   'Battle Monks of Cathay':           'battle-monks-of-cathay',
@@ -169,6 +171,7 @@ const HIRED_SWORD_WARBAND_NAME_MAP = {
   'Maneaters':                        'maneaters',
   'Marauders of Chaos':               'the_kurgan',
   'Marienburgers':                    'marienburg_mercenaries',
+  'Mazzalupo':                        'miragleans',
   'Merchant Caravans':                'merchant-caravans',
   'Middenheimers':                    'middenheim_mercenaries',
   'Miragleans':                       'miragleans',
@@ -189,7 +192,7 @@ const HIRED_SWORD_WARBAND_NAME_MAP = {
   'Sisters of Sigmar':                'sisters-of-sigmar',
   'Skaven':                           'skaven-of-clan-eshin',
   'Skaven of Clan Pestilens':         'skaven-of-clan-pestilens',
-  'Sons of Hashut:':                  'the-sons-of-hashut',
+  'Sons of Hashut:':                  'the-sons-of-hashut',  // upstream typo — colon is intentional
   'The Restless Dead':                'the-restless-dead',
   'The Sons of Hashut':               'the-sons-of-hashut',
   'Tileans':                          'trantios',
@@ -197,7 +200,6 @@ const HIRED_SWORD_WARBAND_NAME_MAP = {
   'Trantios':                         'trantios',
   'Undead':                           'undead',
   'Witch Hunters':                    'witch-hunters',
-  'Mazzalupo':                        'miragleans',
 };
 
 // Maps hired sword entry key → spell list IDs
