@@ -48,7 +48,7 @@ const DataService = {
   },
 
   async loadAll() {
-    const v = 'v=10';
+    const v = 'v=11';
     const [warbands, equipment, skills, injuries, advancement, magic, hiredSwords, specialRules] = await Promise.all([
       this.fetchJSON('data/warbands.json?' + v),
       this.fetchJSON('data/mergedEquipment.json?' + v),
