@@ -587,6 +587,59 @@ function transformWarbands(warbandFiles, existing, magicData, equipmentLookup) {
   return { data: result, added, updated };
 }
 
+// ─── Hired Swords transformer ─────────────────────────────────────────────
+//
+// Source: hiredSwords.json — keyed object { "dwarf-troll-slayer": { ... } }
+// Ours:   hired_swords.json — { hiredSwords: [] }
+//
+// Key field mappings:
+//   key                       → type (hyphens → underscores)
+//   cost                      → cost (parseInt)
+//   statblock (lowercase)     → stats (uppercase via mapStatKeys)
+//   specialRules[].rulename   → specialRules (flat string array)
+//   skillAccess { k: bool }   → skillAccess (truthy keys, excluding "special")
+//   permittedWarbands[]       → warbandAllowList (via HIRED_SWORD_WARBAND_NAME_MAP)
+//   (absent)                  → spellAccess (via HIRED_SWORD_SPELL_ACCESS_MAP; default [])
+//   (absent)                  → equipmentAccess (always ["hand_to_hand","missiles","armour"])
+
+function transformHiredSwords(source) {
+  const result  = { hiredSwords: [] };
+  const added   = [];
+
+  for (const [key, src] of Object.entries(source)) {
+    const type         = key.replace(/-/g, '_');
+    const stats        = mapStatKeys(src.statblock);
+    const specialRules = (src.specialRules || []).map(r => r.rulename).filter(Boolean);
+    const skillAccess  = Object.entries(src.skillAccess || {})
+      .filter(([k, v]) => v && k !== 'special')
+      .map(([k]) => k);
+
+    const warbandAllowList = [];
+    for (const wbName of (src.permittedWarbands || [])) {
+      const id = HIRED_SWORD_WARBAND_NAME_MAP[wbName];
+      if (id && !warbandAllowList.includes(id)) warbandAllowList.push(id);
+    }
+
+    result.hiredSwords.push({
+      type,
+      name:             src.name,
+      max:              1,
+      cost:             parseInt(src.cost) || 0,
+      stats,
+      specialRules,
+      startingExp:      0,
+      skillAccess,
+      spellAccess:      HIRED_SWORD_SPELL_ACCESS_MAP[key] || [],
+      equipmentAccess:  ['hand_to_hand', 'missiles', 'armour'],
+      warbandAllowList,
+    });
+
+    added.push(type);
+  }
+
+  return { data: result, added };
+}
+
 // ─── Validators ───────────────────────────────────────────────────────────
 
 function validateWarbands(data) {
