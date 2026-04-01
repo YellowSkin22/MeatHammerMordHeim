@@ -867,6 +867,24 @@ async function main() {
     }
   }
 
+  // Hired Swords
+  if (changes.hiredSwords) {
+    const label = 'hiredSwords';
+    try {
+      process.stdout.write('  hiredSwords... ');
+      const src = ghRaw('data/hiredSwords.json');
+      const { data, added } = transformHiredSwords(src);
+      validateHiredSwords(data);
+      if (!dryRun) writeJson(path.join(DATA_DIR, 'hired_swords.json'), data);
+      summary.added[label]   = added;
+      summary.updated[label] = [];
+      console.log(`total: ${data.hiredSwords.length} ✓`);
+    } catch (err) {
+      summary.errors.push(`HiredSwords: ${err.message}`);
+      console.log(`FAILED: ${err.message}`);
+    }
+  }
+
   // ── Abort on errors (before committing) ─────────────────────────────────
   if (summary.errors.length > 0) {
     console.error('\n❌  Validation errors — aborting (no files committed):\n');
