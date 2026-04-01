@@ -683,6 +683,21 @@ function validateSkills(data) {
   }
 }
 
+function validateHiredSwords(data) {
+  if (!Array.isArray(data.hiredSwords)) throw new Error('Missing hiredSwords array');
+  if (data.hiredSwords.length === 0)    throw new Error('hiredSwords array is empty');
+  for (const hs of data.hiredSwords) {
+    if (!hs.type)  throw new Error(`Hired sword missing type`);
+    if (!hs.name)  throw new Error(`Hired sword ${hs.type} missing name`);
+    if (!hs.stats) throw new Error(`Hired sword ${hs.type} missing stats`);
+    for (const key of REQUIRED_STAT_KEYS) {
+      if (hs.stats[key] == null) {
+        throw new Error(`Hired sword ${hs.type} missing stat ${key}`);
+      }
+    }
+  }
+}
+
 // ─── Main ─────────────────────────────────────────────────────────────────
 
 async function main() {
