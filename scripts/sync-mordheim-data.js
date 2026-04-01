@@ -611,7 +611,7 @@ function transformHiredSwords(source) {
     const stats        = mapStatKeys(src.statblock);
     const specialRules = (src.specialRules || []).map(r => r.rulename).filter(Boolean);
     const skillAccess  = Object.entries(src.skillAccess || {})
-      .filter(([k, v]) => v && k !== 'special')
+      .filter(([k, v]) => v && k !== 'special')  // hired swords have no warband-specific special skill categories
       .map(([k]) => k);
 
     const warbandAllowList = [];
@@ -624,7 +624,7 @@ function transformHiredSwords(source) {
       type,
       name:             src.name,
       max:              1,
-      cost:             parseInt(src.cost) || 0,
+      cost:             parseInt(src.cost) || 0,  // parseInt handles numeric-or-range strings; floor value is intentional
       stats,
       specialRules,
       startingExp:      0,
