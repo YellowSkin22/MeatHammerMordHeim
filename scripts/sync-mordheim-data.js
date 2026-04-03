@@ -33,7 +33,7 @@ const VERBATIM_FILES = [
 ];
 
 // Warband files matching these patterns are skipped (non-canonical variants)
-const SKIP_PATTERNS = [/-old\.json$/, /-original\.json$/, /reference/, /test\.ps1/];
+const SKIP_PATTERNS = [/-old\.json$/, /-original\.json$/, /-web\.json$/, /reference/, /test\.ps1/];
 
 // ─── GitHub helpers ───────────────────────────────────────────────────────
 
