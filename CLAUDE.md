@@ -45,9 +45,9 @@ Bootstrap sequence: `Cloud.init()` → `DataService.loadAll()` → `UI.init()` �
 ## Key Design Decisions
 
 - **Warrior cost is baked in at creation time** — `createWarrior()` copies `template.cost` into the warrior object. Changing costs in `warbands.json` only affects newly created warriors.
-- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from Uncle-Mel/JSON-derulo; only hand-maintained files (`hired_swords.json`, `injuries.json`, `advancement.json`, `special_rules.json`) should be edited directly.
+- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from Uncle-Mel/JSON-derulo; only hand-maintained files (`injuries.json`, `advancement.json`, `special_rules.json`) should be edited directly.
 - **Spell access** — `UI.hasSpellAccess()` first checks `template.spellAccess.length > 0` (computed at load time from `magic.json` by `DataService._buildSpellAccess()`). Falls back to checking `warrior.specialRules` for `'Wizard'`, `'Warrior Wizard'`, `'Prayers of Sigmar'`, `'Magic User'`, `'Prayers'`, `'Spellcaster'`, or `'Prayercaster'`. The fallback covers hired swords, custom warriors, and old data.
-- **Equipment access** — Heroes and henchmen see items filtered by `DataService.canWarbandAccess(item, warbandName)` against `mergedEquipment.json`'s `permittedWarbands` / `excludedWarbands` fields. Hired swords use the legacy `equipmentAccess` category array from `hired_swords.json`.
+- **Equipment access** — Heroes and henchmen see items filtered by `DataService.canWarbandAccess(item, warbandName)` against `mergedEquipment.json`'s `permittedWarbands` / `excludedWarbands` fields. Hired swords use the `equipmentAccess` category array from `hired_swords.json` (all entries default to `['hand_to_hand', 'missiles', 'armour']` — mapped to Uncle-Mel types via `DataService.LEGACY_CATEGORY_MAP`).
 - **Lad's Got Talent (promoted henchmen)** — `RosterModel.promoteHenchmanToHero()` creates a hero from a henchman, copying stats/equipment/injuries/experience. The promoted warrior goes into `roster.heroes[]` (not a separate array) with `isPromotedHenchman: true` and a user-chosen `skillAccess: [catId1, catId2]`. `baseStats` is set to match `stats` at promotion time so existing characteristic gains don't show as "modified". Max heroes is validated before promotion using `warband.heroes.reduce((sum, h) => sum + h.max, 0)`.
 - **Event propagation** — Warrior add `<select>` dropdowns inside `.section-header` elements carry `onclick="event.stopPropagation()"` to prevent triggering the parent's collapse toggle. The `onchange` handler fires `UI.addWarriorFromSelect()` immediately on selection — there is no separate "Hire" button.
 
@@ -153,6 +153,13 @@ Tooltips on special rules and equipment tags use a JS-based approach (not CSS ps
 
 Synced nightly from Uncle-Mel/JSON-derulo via `scripts/sync-mordheim-data.js`. Hand-maintained files are noted.
 
+Run the sync manually:
+```bash
+node scripts/sync-mordheim-data.js           # live run (writes files + commit)
+node scripts/sync-mordheim-data.js --dry-run # preview changes without writing
+node scripts/sync-mordheim-data.js --force   # re-process all files even if SHA unchanged
+```
+
 | File | Purpose |
 |------|---------|
 | `data/warbands.json` | 53 warband definitions (synced + subfactions expanded); hero/henchman templates, stat lines, skill/spell access |
@@ -162,7 +169,7 @@ Synced nightly from Uncle-Mel/JSON-derulo via `scripts/sync-mordheim-data.js`. H
 | `data/injuries.json` | Hero and henchman injury tables — **hand-maintained** (no Uncle-Mel equivalent) |
 | `data/advancement.json` | Experience thresholds, max stat values, advancement rules — **hand-maintained** |
 | `data/hired_swords.json` | Hired Sword templates with stats and warband allow-lists — **synced** from Uncle-Mel's `hiredSwords.json`. `spellAccess` is derived from `HIRED_SWORD_SPELL_ACCESS_MAP` in the sync script; `equipmentAccess` defaults to all three categories (Uncle-Mel carries no category data). Uses `warbandAllowList` (allow-list), not `warbandRestrictions` (deny-list). |
-| `data/special_rules.json` | 130 special rule descriptions keyed by rule name, used for tooltips — **hand-maintained** |
+| `data/special_rules.json` | 135 special rule descriptions keyed by rule name, used for tooltips — **hand-maintained** |
 
 ### Validating JSON
 
