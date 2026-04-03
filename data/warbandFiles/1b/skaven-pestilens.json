@@ -1,0 +1,464 @@
+{
+  "id": "skaven-of-clan-pestilens",
+  "name": "Skaven of Clan Pestilens",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Town Cryer #29",
+  "sourceLink": "[https://broheim.net/downloads/warbands/unofficial/Pestilens%2C%20Errata%27d.pdf](https://broheim.net/downloads/warbands/unofficial/Pestilens%2C%20Errata%27d.pdf)",
+  "setting": "Mordheim",
+  "author": "",
+  "version": "",
+  "lore": "<em>\"Jarod glanced down the street... All seemed clear. He could not immediately tell why, but he was sure someone, or something was there. Maybe it was just that strange odour hanging around the ruins here. He shivered, although Mordheim seemed to have its own special smell, this made him think of death.\"</em><br /><br /><em>\"A sudden noise made him jump up and bring his crossbow to bear on the still empty street. A strange mist started to creep in and soft squeaks could be made out. As Jarod sounded the alarm, two figures rushed towards him. Dressed in tattered cloaks, they wielded what looked like a spiked censer. Almost suffocating in the bellowing smoke, he fired his crossbow. Then, just before the spiked smoking ball smashed his skull, he saw two red gleaming eyes in a disease ridden skaven face.\"</em><br /><br /><em>In the Old World sickness and plague are a fact of life and many people blame rats for spreading contagion. They are more right than they know.</em><br /><br /><em>The Skaven of Clan Pestilens revel in filth and foulness. Hardened by exposure to diseases not even imagined by man.kind, they use their disgusting knowledge against their enemies.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "A Clan Pestilens band must include a minimum of 3 models. You start with 500 warp tokens to form your warband with. The warband can have a maximum of 15 models."
+  },
+  "specialSkills": true,
+  "specialRules": [],
+  "equipmentLists": [
+    {
+      "id": "heroes-equipment-list",
+      "title": "Heroes equipment lists",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "flail",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "disease dagger",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "censer",
+          "alias": "",
+          "cost": {
+            "cost": 40
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "henchmen-equipment-list",
+      "title": "Henchmen",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "plague-priest",
+      "type": "hero",
+      "name": "Plague Priest",
+      "plural": "Plague Priests",
+      "race": "skaven",
+      "flavour": "The Plague Priest is one of the most disgusting disciples of the corrupted Clan Pestilens brotherhood. As leader of a small band of devoted to the Clan, the contagion and the wide spreading of diseases are his main goals in the streets of Mordheim.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 85,
+      "startingXp": 20,
+      "statblock": {
+        "m": 5,
+        "ws": 4,
+        "bs": 4,
+        "s": 4,
+        "t": 4,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "heroes-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": true,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any warrior within 6\" of the Plague Priest may use his Leadership instead of his own."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "pestilens-sorcerer",
+      "type": "hero",
+      "name": "Pestilens Sorcerer",
+      "plural": "Pestilens Sorcerers",
+      "race": "skaven",
+      "flavour": "The Pestilens Sorcerer is a twisted alchemist, always looking for new and more terrible forms of contagion, under the vigilant supervision of his dreadful master, the Horned Rat.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 45,
+      "startingXp": 8,
+      "statblock": {
+        "m": 5,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "heroes-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Spellcaster",
+          "ruleFull": "The Pestilens Sorcerer is a spellcaster and may cast spells from the <a href=\"#magic-of-the-horned-rat\">Horned Rat</a> spell list."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "plague-monks",
+      "type": "hero",
+      "name": "Plague Monk",
+      "plural": "Plague Monks",
+      "race": "skaven",
+      "flavour": "The Plague Monks are among the most fanatic and dangerous members of Clan Pestilens, to them is usually given the honour to chant the Liturgicus Infecticus in combat.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 45,
+      "startingXp": 8,
+      "statblock": {
+        "m": 5,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "heroes-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "monk-initiates",
+      "type": "hero",
+      "name": "Monk Initiate",
+      "plural": "Monk Initiates",
+      "race": "skaven",
+      "flavour": "The Monk Initiates are young skavens devoted to the Clan Pestilens discipline, waiting to be promoted as true Plague Monks.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 20,
+      "startingXp": 0,
+      "statblock": {
+        "m": 5,
+        "ws": 2,
+        "bs": 3,
+        "s": 2,
+        "t": 2,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 4
+      },
+      "equipmentLists": [
+        "heroes-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "plague-novices",
+      "type": "henchman",
+      "name": "Plague Novice",
+      "plural": "Plague Novices",
+      "race": "skaven",
+      "flavour": "They are the lower rank of Clan Pestilens. They infest the Mordheim streets, coming just before the terrible Plague Monks and their clouds of pestilential fumes. Dream of every Plague Novice is to be chosen someday to be a Monk, and to be given the privilege of chanting the Liturgicus Infecticus.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 20,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 5,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "henchmen-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "giant-rats",
+      "type": "henchman",
+      "name": "Giant Rat",
+      "plural": "Giant Rats",
+      "race": "giant rat",
+      "minQty": 0,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 15,
+      "gainExp": false,
+      "promotable": false,
+      "flavour": "Giant contagious rats follow the Clan Pestilens during its battles.",
+      "statblock": {
+        "m": 6,
+        "ws": 2,
+        "bs": 0,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 4
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Weapons/Armour",
+          "ruleFull": "None. Giant Rats never use any armour or weapons."
+        },
+        {
+          "flavour": "",
+          "rulename": "Experience",
+          "ruleFull": "Giant Rats are animals and do not gain experience."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "rat-ogre",
+      "type": "henchman",
+      "name": "Rat Ogre",
+      "plural": "Rat Ogres",
+      "race": "rat ogre",
+      "minQty": 0,
+      "maxQty": 1,
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "costGc": 210,
+      "gainExp": false,
+      "promotable": false,
+      "flavour": "These terrible monsters are often chosen as personal bodyguards by Skaven of higher ranks.",
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 3,
+        "s": 5,
+        "t": 5,
+        "w": 3,
+        "i": 4,
+        "a": 3,
+        "ld": 4
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Weapons/Armour",
+          "ruleFull": "Jaws, claws and brute force! Rat Ogres can never use weapons or armour."
+        },
+        {
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "Rat Ogres are so frightening they cause <Tooltip>fear</Tooltip>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Stupidity",
+          "ruleFull": "A Rat Ogre is subject to <Tooltip>stupidity</Tooltip> unless a Skaven Hero is within 6\" of it."
+        },
+        {
+          "flavour": "",
+          "rulename": "Experience",
+          "ruleFull": "Rat Ogres do not gain experience."
+        },
+        {
+          "flavour": "",
+          "rulename": "Large Target",
+          "ruleFull": "Rat Ogres are Large Targets as defined in the shooting rules."
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}

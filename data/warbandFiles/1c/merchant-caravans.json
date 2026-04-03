@@ -1,0 +1,592 @@
+{
+  "id": "merchant-caravans",
+  "name": "Merchant Caravans",
+  "grade": "1c",
+  "campaigngrade": "1c",
+  "source": "Border Town Burning",
+  "sourceLink": "https://broheim.net/downloads/warbands/supplement/btb/Merchant%20Caravans.pdf",
+  "setting": "Cathay Borderlands",
+  "author": "",
+  "version": "",
+  "lore": "<em>Money. There are three ways to gain it – inherit, steal, or earn. Earning it is the most honorable means, since no one who has spent a life working hard is begrudged any comforts on their deathbed. But how it is earned is another matter! For some, a long life spent toiling for pittance is a life wasted, and they seek ways to gain affluence more rapidly. For opportunists, the chance to make a lot of money in one go is too much to pass up.</em><br /><br /><em>Blackguards attach themselves to merchant caravans traveling towards distant lands to line their pockets. Sometimes the destinations are to Lustria or the Southlands, ship-bound for the best part. When the journey remains on land, their destination lies in the far eastern lands of Ind and Cathay, lands shrouded in myths and legends, tall tales, and rumors. From these lands, a merchant can make their name and fortune in a single journey, if they survive.</em><br /><br /><em>For between the Old World and traders paradise lay the Dark Lands and the Mountains of Mourn, realms where lives fall at the mercy of the environment, where the predations of natural creatures are lethal beyond imagination, where the dead roam eternally, where bands of pillagers seek to replenish supplies, where death awaits the unprepared and the bone idle. Even the largest caravans are in peril every minute of every day they travel. Safe havens are few and far between and only deemed safe as long as you have the coin to pay for their protection.</em><br /><br /><em>Only one in every ten caravans fulfills a successful destiny. Because fortunes can be made from an individual venture, the risk is more than equal to the reward, if not lessened. A greedy merchant will not stop at one expedition when in returning there is an expectation of further and greater profit. That so many would gamble their lives time and again speaks volumes of the wealth to the East. Even when alongside an army of sell-swords who drain the purse to protect the investment, the lure is more than enough for an Arabyan trader or one of those racketeers from Marienburg. Each trip may take years to complete, but the Silk Road remains open for anyone wishing to use it.</em><br /><br /><em>Since the Tilean brothers Ricco and Robbio opened this dangerous yet lucrative trade route, it has attracted the most daring or foolhardy of merchants regularly. Each of them dreaming of the golden realm that lies beyond the horizon. The wastes are littered with the tattered and broken remnants of those who failed, a warning that their folly came at too high a price.</em>",
+  "warbandRules": {
+    "startingGc": 600,
+    "maxModels": 12,
+    "choiceFluff": "A Merchant Caravan must include a minimum of three models. You have 600 gold crowns which you can use to recruit and equip your warband. The maximum number of warriors in the warband is 12. #### Heroes"
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "Merchant",
+      "ruleFull": "The Merchant is the warband's leader (any Warrior within 6“ of him may use his Leadership when taking Ld tests) and the one who is in charge of the business. If the Merchant leaves the caravan (e.g. dies permanently through Serious Injuries), a new leader is determined as normal.\nThe new leader gets the Merchant special rule, allowing him to choose new skills from the Merchant's special skills section. The model counts as a Merchant for all purposes just as the previous Merchant used to. If no model in the warband is allowed to become the leader, an Apprentice must be bought as soon as possible to become the leader."
+    },
+    {
+      "flavour": "",
+      "rulename": "Trade",
+      "ruleFull": "Instead of searching for rare items the Merchant may sell a rare item that has been stored in the Trade Cart during the preceding battle. This must be done before Heroes of either warband search for rare items.\nRoll a D6 to determine how many gold coins the Merchant would get for the item.\n\n| D6  | Gold coins                            |\n| --- | ------------------------------------- |\n| 1-2 | Half the item's basic price           |\n| 3-4 | The item's full basic price           |\n| 5-6 | Full plus half the item's basic price |\n\nNote that the Merchant may decide whether he wants to sell the item for that price or if he wants to try again after the next battle. This can be combined with the wholesale skill to sell up to D3+1 items each game."
+    },
+    {
+      "flavour": "",
+      "rulename": "Open for Business",
+      "ruleFull": "All players may choose to send any of their Heroes to the Merchant instead of having them search for rare items. A Hero doing so may buy one item from the warband's stored equipment if the players can agree on a price (including exchange deals with items and Treasures). Instead of buying an item, a Hero may also go to the Merchant to sell any one item (rare, common, magical, treasure counters) to him. If players cannot agree on a price, no deal is closed and the visit is wasted."
+    },
+    {
+      "flavour": "",
+      "rulename": "Rarity",
+      "ruleFull": "Any rare item that is reduced to Rare 2 or Rarity: below by the Trade Wagon's Reputation rule, the Streetwise skill, etc., can be bought as Common items."
+    },
+    {
+      "flavour": "",
+      "rulename": "Hired Swords",
+      "ruleFull": "Merchant Caravans may hire every Hired Sword that is available to Mercenary warbands."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "hero-equipment-list",
+      "title": "Hero Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "rapier",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15,
+            "braceCost": 30
+          }
+        },
+        {
+          "name": "duelling pistol",
+          "alias": "",
+          "cost": {
+            "cost": 30,
+            "braceCost": 60
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "cathayan silk cloak",
+          "alias": "",
+          "cost": {
+            "cost": 40
+          }
+        },
+        {
+          "name": "warhorse\\",
+          "alias": "",
+          "cost": {
+            "cost": 40
+          }
+        },
+        {
+          "name": "trade wagon\\*\\",
+          "alias": "",
+          "cost": {
+            "cost": 180
+          }
+        }
+      ]
+    },
+    {
+      "id": "henchman-equipment-list",
+      "title": "Henchman Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "pike\\",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd\\",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "crossbow",
+          "alias": "",
+          "cost": {
+            "cost": 25
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "cathayan-equipment-list",
+      "title": "Cathayan Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "dragon sword",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "merchant",
+      "type": "hero",
+      "name": "Merchant",
+      "plural": "Merchants",
+      "race": "human",
+      "flavour": "Only the bravest – or most greedy fools – among merchants travel north to trade with the barbaric Norse tribes that dwell in the icy wastes. Others risk their lives on the Silk Road before reaching the safe haven of the Sentinels. From this trading post, the road forks. The Spice Route leads south to the Land of a Thousand Gods. The Ivory Road leads on east through uncountable dangerous tribes of warring Marauders and Hobgoblins, not to mention the many terrors encountered in the Ogre kingdoms.",
+      "costGc": 50,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "hero-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Merchant",
+          "ruleFull": "A Merchant is always the warband's leader. Refer to the special rules for when using a Merchant."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 1,
+      "maxQty": 1,
+      "startingXp": 20,
+      "skillAccess": {
+        "combat": false,
+        "shooting": true,
+        "academic": true,
+        "strength": false,
+        "speed": false,
+        "special": true
+      }
+    },
+    {
+      "id": "apprentice",
+      "type": "hero",
+      "name": "Apprentice",
+      "plural": "Apprentices",
+      "race": "human",
+      "flavour": "Less than desirable duties must be diligently fulfilled during an apprenticeship with a merchant – packing mules, carrying crates, or driving the wagon.",
+      "costGc": 15,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "hero-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 1,
+      "startingXp": 0,
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": false
+      }
+    },
+    {
+      "id": "knights-vanguard",
+      "type": "hero",
+      "name": "Knights Vanguard",
+      "plural": "Knights Vanguards",
+      "race": "human",
+      "flavour": "Serving as the vanguard for a merchant's escort are former knights. Imperials, Bretonnians who used to own land and servants of their own, or ronins from the east. Nipponese and Cathayans alike will fight for fair pay in the service of merchants. All are well-traveled enough to be equipped with the finest arms forged by the swordsmiths of Grand Cathay.",
+      "costGc": 45,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "hero-equipment-list",
+        "cathayan-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Lightning Reflexes",
+          "ruleFull": "If the Knights Vanguard is charged, he will ‘strike first’ against those that charged that turn. As the charger(s) will also normally ‘strike first’ (for charging), the order of attack between the charger(s) and the Knights Vanguard will be determined by comparing Initiative values."
+        },
+        {
+          "flavour": "",
+          "rulename": "Ride Warhorse",
+          "ruleFull": "The Knights Vanguard is trained in riding Warhorses."
+        },
+        {
+          "flavour": "",
+          "rulename": "Hirelings",
+          "ruleFull": "The Knights Vanguard is a hireling, paid by the Merchant and therefore can never become the warband's leader."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 2,
+      "startingXp": 8,
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": false
+      }
+    },
+    {
+      "id": "magician",
+      "type": "hero",
+      "name": "Magician",
+      "plural": "Magicians",
+      "race": "human",
+      "flavour": "Often warlocks, alchemists, and sorcerers seek the protection of an influential merchant to escape the stakes of the fanatical Witch Hunters. As part of his escort, they secretly continue their forbidden studies incognito. Opportunities arise to test the results of their ability on the raiding creatures of the Wastes.",
+      "costGc": 40,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "hero-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "A Magician is a wizard and uses <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a>. See the Magic section in the Mordheim rulebook for details."
+        },
+        {
+          "flavour": "",
+          "rulename": "Hireling",
+          "ruleFull": "The Magician is a hireling, paid by the Merchant. He can never become the warband's leader."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 1,
+      "startingXp": 8,
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": false
+      }
+    },
+    {
+      "id": "sell-swords",
+      "type": "henchman",
+      "name": "Sell-sword",
+      "plural": "Sell-swords",
+      "race": "human",
+      "flavour": "Well aware of the attraction his caravan holds for highwaymen and raiding parties, the merchant keeps bodyguards. These roguish adventurers ensure that both the goods and their paymaster survive the journey undamaged. Sell-swords are the unfortunate scoundrels that earn their living as caravan escorts.",
+      "costGc": 25,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "henchman-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    },
+    {
+      "id": "marksmen",
+      "type": "henchman",
+      "name": "Marksmen",
+      "plural": "Marksmens",
+      "race": "human",
+      "flavour": "The marksmen from Tilea are well renowned for their excellent skills in the use of crossbows.",
+      "costGc": 30,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 4,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "henchman-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    },
+    {
+      "id": "blackguards",
+      "type": "henchman",
+      "name": "Blackguard",
+      "plural": "Blackguards",
+      "race": "human",
+      "flavour": "In the outer Cathayan cities, a wealthy foreign trader is showered with offers from fortune-seeking outcasts. These mercenaries who dream of leaving their homes for wealth and fame bring strange weapons and fighting styles with them to join the merchant caravan.",
+      "costGc": 35,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "cathayan-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Strongman",
+          "ruleFull": "Blackguards are capable of great feats of strength. They may use a double-handed weapon without the usual penalty of always striking last. Work out the order of battle as you would with other weapons."
+        },
+        {
+          "flavour": "",
+          "rulename": "Unreliable Hirelings",
+          "ruleFull": "Blackguards are only hired by the Merchant to serve him by protecting his cargo. They are not much trusted or granted with any responsibilities. Therefore they may never become Heroes. Re-roll all results of ‘The lad’s got talent’ for them."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 3,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": false
+    }
+  ]
+}

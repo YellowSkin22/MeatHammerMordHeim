@@ -1,0 +1,503 @@
+{
+  "id": "amazons-lustria",
+  "name": "Amazons (Lustria)",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Town Cryer #15",
+  "sourceLink": "[https://broheim.net/downloads/towncryer/TownCryer15.pdf#page=20](https://broheim.net/downloads/towncryer/TownCryer15.pdf#page=20)",
+  "setting": "Lustria",
+  "author": "",
+  "version": "",
+  "lore": "<em>The Amazons live on an island in the centre of the great river Amazon that penetrates the heart of Lustria. The island is heavily overgrown with vines and brush that make it difficult to view the interior of the island, save for the pyramidal ruins that can be seen over the treetops.</em><br /><br /><em>Most of the brave Elf and Old World warbands that have dared to attempt a landfall at the island have been defeated on the beaches. The Amazons would pour forth from the dense jungle and attack all that tried to disembark. The survivors returned to the Old World recounting exaggerated stories of powerful women warriors.</em><br /><br /><em>The Norse living in the Lustrian colony of Skeggi tell a tale that the Amazons are a group of widows that left Skeggi many years earlier. The Norse knew them as Valkyries, just like the fabled female warriors of the Norse gods who come to collect the souls of the bravest Norse warriors that die in battle. Why have they flourished among the jungle denizens for so long? Some say that the Amazons have discovered the fabled elixir of youth.</em><br /><br /><em>The more common tales suggest the Amazons are master herbalists. That they prepare distilled potions of tropical plants for use in their sacrificial ceremonies. One story from Juan Cornetto suggests the Amazons have discovered a way of brewing this \"elixir of youth\". For any reason, death among the Amazons is uncommon, occurring only from mortal wounds or natural disaster.</em><br /><br /><em>The Amazons are fierce hunters that stalk Skinks and game in the surrounding swamps. They use the hides of Skinks for clothes and it should therefore come as no surprise that the Amazons and the Lizardmen are bitter enemies. In addition they clothe themselves with animal skins of the forest and wear plumes of exotic tropical birds for headdresses.</em><br /><br /><em>The Amazons defend their island vigorously and bravely. They despise men, so often encountering them as would be conquerors or tricksters. Any man they find lost, or wounded in the jungle ends up being sacrificed to their savage gods. From time to time though, they will venture forth into the ruins in search of more ancient Slann artefacts that they know still lie in the long-forgotten tunnels and caves. It is these artefacts that they use as weapons to defend their island. Weapons of such exotic nature that none in the entire world have seen before.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "An Amazon Warband must include a minimum of 3 models. You have 500 gcs to recruit your initial Warband. The maximum number of models in the Warband is 15."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "Isolationists",
+      "ruleFull": "The Amazons are constantly battling against the predations of the Lizardmen and greedy treasure-seeking Norse. Amazon culture reflects their dislike and distrust of outsiders and in battle they are particularly savage. Amazons get to re-roll any attack rolls that miss in the first round of combat against Lizardmen and Norse."
+    },
+    {
+      "flavour": "",
+      "rulename": "Sacrifice",
+      "ruleFull": "The Amazons are quick to sacrifice any captive to their gods. The Amazons follow the rules for Possessed in the Rulebook when it comes to captives. lf an Amazon Warband captures a Lizardman, they may sacrifice him as normal, plus get a free Skins and Charms."
+    },
+    {
+      "flavour": "",
+      "rulename": "Norse Enmity",
+      "ruleFull": "When facing a Norse Warband an Amazon Warband will fight to the death. The Amazons can re-roll their first failed Rout against the Norse. Remember you can't re-roll a failed re-roll. In addition, Amazons can never choose to voluntarily rout when facing a Norse warband unless their Warband Leader has been taken Out of Action."
+    },
+    {
+      "flavour": "",
+      "rulename": "Not one of us",
+      "ruleFull": "Due to the Amazons' isolationism and suspicions about other races they never side with anyone else. For this reason, the Amazons may not have any Hired Swords or Dramatis Personae unless they are Amazons themselves."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "heroines-equipment-list",
+      "title": "Heroines Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "starblade",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "starsword",
+          "alias": "",
+          "cost": {
+            "cost": 30
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "Sunstaff (Lustria)",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "buckler",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "enchanted skins",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "amulet of the moon",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "healing herbs",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        }
+      ]
+    },
+    {
+      "id": "henchwomen-equipment-list",
+      "title": "Henchwomen equipment list",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "Sunstaff (Lustria)",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "buckler",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "enchanted skins",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "jaguar-warrior-equipment-list",
+      "title": "Jaguar Warrior Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "bolas",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "javelins",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sunstaff-lustria",
+          "alias": "Sunstaff (Lustria)",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "enchanted skins",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "serpent-priestess",
+      "type": "hero",
+      "name": "Serpent Priestess",
+      "plural": "Serpent Priestesses",
+      "race": "human",
+      "flavour": "The Serpent Priestesses are part of the religious sisterhood that rules Amazon society. They are powerful sorceresses and their word is law. The younger, more junior members of the Serpent totem often gather war parties and search for Slann artefacts and also conduct the ritual sacrifices of captured enemies.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 70,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 4,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "heroines-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any models in the warband within 6\" of the Priestess may use her Leadership instead of their own."
+        },
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "The Priestess is a Wizard and may use <a href=\"#amazon-rituals\">Amazon Rituals</a>. She starts with one ritual chosen at random from the list."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "eagle-warriors",
+      "type": "hero",
+      "name": "Eagle Warrior",
+      "plural": "Eagle Warriors",
+      "race": "human",
+      "flavour": "The Eagle Warriors are veterans that have participated in dozens of war parties over the years. They have adopted the totem of the great eagle that reflects their great might in combat. Their exotic headdresses are made from these holy birds of the Lizardmen.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 35,
+      "startingXp": 8,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "heroines-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "piranha-warriors",
+      "type": "hero",
+      "name": "Piranha Warrior",
+      "plural": "Piranha Warriors",
+      "race": "human",
+      "flavour": "The Piranha Warriors prefer ranged weapons and are often found ahead of an Amazon Warband. They are the only Amazons to use a great seashell horn to warn the warband of approaching enemies.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 30,
+      "startingXp": 8,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 4,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "heroines-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "amazon-warriors",
+      "type": "henchman",
+      "name": "Amazon Warrior",
+      "plural": "Amazon Warriors",
+      "race": "human",
+      "flavour": "Every Amazon Woman is trained in the ways of warfare and is hardened by a life in the unforgiving nature of their jungle environment. They are skilled in fighting with a variety of different weapons including the legendary claws of the Old Ones.",
+      "minQty": 1,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "henchwomen-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "jaguar-warriors",
+      "type": "henchman",
+      "name": "Jaguar Warrior",
+      "plural": "Jaguar Warriors",
+      "race": "human",
+      "flavour": "The Jaguars are known for their exceptional speed and agility. They are the protectors of the Amazon tribes living far away and keeping any invaders at bay. They are especially adept at hunting Skinks and Sauruses, their most common foe. Jaguars' favoured method of attack is to steal away in the foliage becoming part of the jungle itself and waiting for the perfect moment to strike.",
+      "minQty": 0,
+      "maxQty": 3,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 30,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "jaguar-warrior-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "One with the Jungle",
+          "ruleFull": "A Jaguar has lived her life in the deepest parts and can move through jungle terrain without penalty."
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}

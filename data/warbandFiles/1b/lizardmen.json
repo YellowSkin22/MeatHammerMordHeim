@@ -1,0 +1,517 @@
+{
+  "id": "lizardmen",
+  "name": "Lizardmen",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Town Cryer #11",
+  "sourceLink": "[https://broheim.net/downloads/warbands/unofficial/Lizardmen.pdf](https://broheim.net/downloads/warbands/unofficial/Lizardmen.pdf)",
+  "setting": "Lustria",
+  "author": "",
+  "version": "",
+  "lore": "<em>The Lizardmen and indeed their bloated toadlike masters, the Slann, were once the servants of the divine ‘Old Ones’. Ever since the great catastrophe and the departure of the Old Ones from the world the Lizardmen have been closely observing the rituals and plans laid down by the Old Ones as closely as possible. But the tranquil peace of this once hidden race has been shattered forever since the coming of the dreaded ‘Dry Skins’!</em><br /><br /><em>Many of the Temple cities of the Lizardmen have been raided and plundered by the likes of Human explorers and other more sinister races. But the plunder is not over as more and more adventurers arrive at the shores of Lustria, drawn by the tall tales told in taverns– tales of cities filled with gold!</em><br /><br /><em>The ruined temple cities of Huatl, Tlax and Xahutec are the most frequently raided due to their location near the coast. In recent years, more and more Lizardmen, Elven and Tilean explorers have arrived seeking treasure and arcane knowledge. With the arrival of these intruders the indigenous Lizardmen have been hard-pressed to keep what is rightfully theirs. It is by guerrilla style hit and run attacks by war-parties of Skink and Saurus warriors that somewhat stems the tide of the foreign plunderers. The beaches, the jungle and parts of the ruined cities themselves are home to numerous small bands of these lone defenders against the ravages of the ‘dryskinned ones’.</em><br /><br /><em>Not only do the Lizardmen keep watch over the ruins they are also protected by a fiendish variety of traps and mazes of tunnels that lead would-be-robbers around in circles. The plunderers are thus forced to camp outside the ruins while they explore the depths of the temples and try to overcome the traps.</em><br /><br /><em>A player who chooses The Temple Guard to play will find them to be both rewarding and challenging to play. The Lizardmen are the ‘home team’ as it were and enjoy some unique benefits. But they also will have some weaknesses that astute players will enjoy ‘hiding’ from their opponents.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 20,
+    "choiceFluff": ""
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "Scaly Skin",
+      "ruleFull": "All Lizardmen have a natural save thanks to their thick scales. Saurus have a 5+ save and Skinks have a 6+. This save cannot be modified beyond 6 due to Strength modifiers but any result of ‘no save’ on the injury chart will negate this 6+ save. Light Armour adds +1 to the save, as does the addition of a shield."
+    },
+    {
+      "flavour": "",
+      "rulename": "Armour",
+      "ruleFull": "Armour is rare amongst the Lizardmen and the cost of light armour is always 50 gc, even if you are buying it from Equipment chart."
+    },
+    {
+      "flavour": "",
+      "rulename": "Bite Attack",
+      "ruleFull": "Saurus have a powerful bite attack, this bite attack uses the Saurus’ own Strength to wound and receive no penalty for not using a weapon. The Bite attack always strikes last, regardless of who charged or which weapon is used. The Bite even attacks after Double-Handed Weapons.<sup><Tooltip content=\"faq104\">❓</Tooltip></sup>"
+    },
+    {
+      "flavour": "",
+      "rulename": "Cold Blooded",
+      "ruleFull": "All Lizardmen are slow to react to psychology, they may roll 3D6 and select the lowest two dice when taking a psychology test or Rout test. A Lizardmen Warband may never use the Leadership of Saurus or Kroxigor when taking a rout test."
+    },
+    {
+      "flavour": "",
+      "rulename": "Aquatic",
+      "ruleFull": "Skinks may move through water terrain with no penalty, and count as being in cover whilst they are in the water."
+    },
+    {
+      "flavour": "",
+      "rulename": "Jungle born",
+      "ruleFull": "All Skinks can move through jungle terrain without penalty."
+    },
+    {
+      "flavour": "",
+      "rulename": "Saurus Rarity",
+      "ruleFull": "The Slann Mage-Priests would never include more Saurus braves in a Warband than Skink braves and thus you can never have more Saurus braves than Skink braves in the Warband."
+    }
+  ],
+  "mutations": [
+    {
+      "mutationName": "New Equipment",
+      "mutationflavour": "",
+      "items": [
+        {
+          "heading": "Poisoned Weapons",
+          "cost": "",
+          "flavour": "",
+          "rulename": "",
+          "ruleFull": "Skinks are experts at extracting and refining poisons from poisonous frogs, spiders and snakes. Skink Heroes may buy <Tooltip>Dark Venom</Tooltip> at a cost of 20 pts and <Tooltip>Black Lotus</Tooltip> at a cost of 10 pts, both of these items are treated as a common item however the poison may only be used on missile weapons. Only Saurus warriors may buy _Dark Venom_ or _Black Lotus_ and use it on their close combat weapons, and they have to buy it as normal from the Trading chart.<br /><br />Skink henchmen may buy low-strength <Tooltip>Reptile Venom</Tooltip> for their missile weapons at a cost of 5 pts per weapon. This poison is a common item. This adds +1 to the Strength of the weapon but does not grant the -1 save modifier. The poison only lasts for one battle and remember that all the henchmen in a group must be armed in the same manner."
+        }
+      ]
+    },
+    {
+      "mutationName": "Sacred markings",
+      "mutationflavour": "Many Skink and Saurus warriors are born with distinct markings or mutations. They are regarded as being blessed by the gods and often rise to become leaders. A Hero may only have a single Sacred Marking and these may only be bought when you recruit the Hero, not in the middle of a campaign.",
+      "items": [
+        {
+          "heading": "Oversized Jaws",
+          "cost": "40",
+          "flavour": "The Saurus has been granted the addition of powerful neck muscles and oversized jaws, even greater than those of a normal Saurus.",
+          "ruleFull": "The Hero may make his bite attack with +1 Strength. (Saurus Only)"
+        },
+        {
+          "heading": "Poison Glands",
+          "cost": "40",
+          "flavour": "The Skink has been gifted with glands that produce a deadly poison.",
+          "ruleFull": "He may choose to make any number of attacks with his teeth instead of his weapons; these attacks are treated just like a Saurus bite attack. These attacks at +1 save modifier, regardless of the Strength of the Skinks, in addition add +1 to the roll on the Injury table as well. (Skinks only)"
+        },
+        {
+          "heading": "Mark of the Old Ones",
+          "cost": "50",
+          "flavour": "This is the greatest mark a Lizardman can be born with, for these Albinos are destined for greatness in the eyes of their gods and other Lizardmen.",
+          "ruleFull": "The Hero may change one of his failed dice rolls into a successful one; this mark may only be used once per battle and only on actions that the Hero is making himself. You may use this mark on a failed Rout test if you wish."
+        }
+      ]
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "saurus-equipment-list",
+      "title": "Saurus equipment list",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "Stone Axe",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "Bone Helmet",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        }
+      ]
+    },
+    {
+      "id": "skinks-equipment-list",
+      "title": "Skinks equipment list",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "Stone Axe",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10,
+            "costSuffix": "Heroes only"
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "short bow",
+          "alias": "Shortbow",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "bolas",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "javelins",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "throwing knives",
+          "alias": "Throwing Knives",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "blowpipe",
+          "alias": "",
+          "cost": {
+            "cost": 25
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "buckler",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "Bone Helmet",
+          "cost": {
+            "cost": 10,
+            "costSuffix": "Skink Priest only"
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "skink-priest",
+      "type": "hero",
+      "name": "Skink Priest",
+      "plural": "Skink Priests",
+      "race": "skink",
+      "flavour": "The Warband leader will be one of the handpicked Skink Priests renowned for their reliability. The nature of his mission is to observe the dry skin plunderers and only react if they stray too close to a hidden chamber within the ruined city. The Skink Priest must be able to make the delicate decision of when to attack and when not to. Skink Priests are easily recognisable as they paint their skins with colourful mystic symbols associated with their god. Priests of Chotec for instance have winged serpents drawn upon their bodies, whilst those of Sotek use snake tattoos.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 60,
+      "startingXp": 20,
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 4,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "skinks-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "The Skink Priest is the leader of the Warband and any Lizardmen within 6\" may use his Leadership characteristic for any Leadership tests.<br /><br />If the Skink Priest is killed you may recruit a new Skink Priest but you must play at least one game without the leader to give him time to join up."
+        },
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "The Skink Priest is a Wizard and may use <a href=\"#lizardmen-magic\">Lizardmen magic</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "saurus-totem-warrior",
+      "type": "hero",
+      "name": "Saurus Totem Warrior",
+      "plural": "Saurus Totem Warriors",
+      "race": "saurus",
+      "flavour": "When a Saurus warrior has killed twenty foes he is accepted into one of the three Warrior Totems, Eagle, Jaguar or Alligator. He must then go and kill the animal of his new Totem to prove his worthiness to join. Upon attaining the status of Totem Warrior he is recruited by the Skink Priests to join in forays into the ruined temples.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 60,
+      "startingXp": 11,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 0,
+        "s": 4,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": "1+1",
+        "ld": 8
+      },
+      "equipmentLists": [
+        "saurus-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "skink-great-crests",
+      "type": "hero",
+      "name": "Skink Great Crest",
+      "plural": "Skink Great Crests",
+      "race": "skink",
+      "flavour": "Great Crests, as they are known, are the leaders of many raiding parties and have become skilled at scouting, tracking, ambushing and skirmishing. Their skin is more varied in colour than normal Skinks so they blend in with the jungle more effectively. They also wear leaves or cover themselves in mud to further blend in. They function as leaders and patrol the jungles reporting of the arrival of a new ship laden with plunderers. They lay ambushes or provide a covering hail of arrows and javelins while a hit and run war band retreats back into the jungle.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 30,
+      "startingXp": 8,
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 2,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "skinks-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": true,
+        "academic": false,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "skink-braves",
+      "type": "henchman",
+      "name": "Skink Brave",
+      "plural": "Skink Braves",
+      "race": "skink",
+      "flavour": "Many Skinks dwell in the deepest jungles and trackless swamps of Lustria. These Skink braves are fast, agile and intelligent. Although they lack the brute force and sheer aggression of the Saurus they are good at shooting volleys of arrows or javelins. They lack the staying power of the Saurus, because they switch between reckless audacity and sudden panic, this may be due to their very short memories. As soon as a group of Skinks flee out of immediate danger they are likely to forget the experience and regroup for another reckless attack.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 20,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 6,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 2,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "skinks-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "saurus-braves",
+      "type": "henchman",
+      "name": "Saurus Brave",
+      "plural": "Saurus Braves",
+      "race": "saurus",
+      "minQty": 0,
+      "maxQty": 4,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 40,
+      "gainExp": true,
+      "promotable": true,
+      "flavour": "Saurus have thick, horny, scaly hides which protect them as natural armour. Saurus are sufficiently intelligent to understand clear and simple commands. They make excellent warriors but they are not much good at anything else. They are extremely stubborn and are very hard to shift in battle. They are very ferocious creatures and will rip at an enemy until they are slain.",
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 0,
+        "s": 4,
+        "t": 4,
+        "w": 1,
+        "i": 1,
+        "a": "1+1",
+        "ld": 7
+      },
+      "equipmentLists": [
+        "saurus-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "kroxigor",
+      "type": "henchman",
+      "name": "Kroxigor",
+      "plural": "Kroxigor",
+      "race": "kroxigor",
+      "minQty": 0,
+      "maxQty": 1,
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "costGc": 200,
+      "gainExp": false,
+      "promotable": false,
+      "flavour": "Kroxigor resemble Saurus but are much bigger and are far more powerful creatures. They are not very intelligent and their speech is limited to a blood-curling roar. They are strong and mainly used for construction goaded into working by the nimble Skinks.",
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 0,
+        "s": 5,
+        "t": 4,
+        "w": 3,
+        "i": 1,
+        "a": 3,
+        "ld": 8
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Scaly skin",
+          "ruleFull": "Kroxigor has a natural save of 4+."
+        },
+        {
+          "flavour": "",
+          "rulename": "Aquatic",
+          "ruleFull": "Kroxigor may move through water with no penalty, and count as being in cover whilst in water."
+        },
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "Kroxigor are large and frightening monsters that cause Fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "Large",
+          "ruleFull": "Kroxigor stand out amongst the rest of the Warband and may be picked out by an archer even if he is not the closest model."
+        },
+        {
+          "flavour": "",
+          "rulename": "Animal",
+          "ruleFull": "Kroxigor are slow-witted creatures that never learn from their mistakes. The Kroxigor doesn’t gain experience."
+        }
+      ],
+      "admonitions": "The Kroxigor is equipped with a halberd."
+    }
+  ]
+}

@@ -1,0 +1,459 @@
+{
+  "id": "black-dwarfs",
+  "name": "Black Dwarfs",
+  "grade": "1c",
+  "campaigngrade": "1c",
+  "source": "Border Town Burning",
+  "sourceLink": "[https://broheim.net/downloads/warbands/supplement/btb/Black%20Dwarfs.pdf](https://broheim.net/downloads/warbands/supplement/btb/Black%20Dwarfs.pdf)",
+  "setting": "Border Town Burning",
+  "author": "",
+  "version": "",
+  "lore": "<em>Few scholars know how exactly these Dwarfs came to be the evil and twisted creatures of Chaos they are now. A long and slow warping process has changed them forever. Sundered from others of their kind, trapped in underground holds on the ash-choked Plain of Zharr, darkness swept over them. From a worship born out of desperation, the bull-shaped god Hashut became their saviour and the Dwarfs of Karak Vlag became a perverted mockery of their former selves. Through infernal pacts with their mysterious daemon deity this bitter race has endured and gained an unnatural mastery of foul magic. They practice bloodthirsty rites which involve throwing captives into burning cauldrons of molten metal.</em><br /><br /><em>The Black Dwarfs constantly trade armour, weapons and machines forged out of precious metals with their hammers and vile sorcery, for fresh supplies and victims. Those condemned souls are brought back to the Dark Lands. Deep beneath the the ziggurat shaped obsidian tower they are sentenced to toil in the labour pits of Mingol Zharr-Naggrund, the City of Fire and Desolation.</em><br /><br /><em>Fell Sorcerer Priests mastermind tactical raids harvesting prisoners on the Silver Road to expand their labour force. Scouting for rich mineral veins and metal ores while scouring the land for wyrdstone deposits, has led detachments of the Children of Darkness to Mordheim.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "A Chaos Dwarf warband must include a minimum of three models. You have 500 gold crowns which you can use to recruit and equip your warband. The maximum number of warriors in the warband is 15."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "The following special rules apply to all warriors in the warband excluding Informers:<sup><Tooltip content=\"err113\">✏️</Tooltip></sup>",
+      "rulename": "Hard to Kill",
+      "ruleFull": "Like their uncorrupted brethren, Chaos Dwarfs are tough, resilient individuals who can only be taken out of action on a roll of 6 instead of 5-6 when rolling on the Injury chart. Treat a roll of 1-2 as knocked down, 3-5 as stunned, and 6 as out of action."
+    },
+    {
+      "flavour": "",
+      "rulename": "Hard Head",
+      "ruleFull": "Chaos Dwarfs ignore the special rules for clubs, maces, etc. They too are not easy to knock out!"
+    },
+    {
+      "flavour": "",
+      "rulename": "Armour",
+      "ruleFull": "Chaos Dwarfs never suffer movement penalties for wearing armour."
+    },
+    {
+      "flavour": "",
+      "rulename": "Hired Swords",
+      "ruleFull": "A Chaos Dwarf warband may hire the following Hired Swords: Ogre Bodyguard, Pit Fighter, Warlock, Imperial Assassin, and Hobgoblin Scout. They may hire any Hired Sword described as <em>all may hire</em>, or allowed by Orc warbands and Chaos warbands. They may never hire Elves of any sort!"
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "chaos-dwarf-equipment-list",
+      "title": "Chaos Dwarf Equipment List",
+      "caveat": "Starting warbands receive special prices on the Mechanical suit and the Engine of Chaos. These special prices represent the lower rarity of these items in the Dark Lands. When attempting to manufacture these items in Mordheim or anywhere else outside Zharr-Naggrund, Chaos Dwarfs pay the full prices, and must roll to acquire them as normal.",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "steel whip",
+          "alias": "",
+          "cost": {
+            "cost": 10,
+            "costSuffix": "Gaolers only"
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "man-catcher",
+          "alias": "",
+          "cost": {
+            "cost": 25,
+            "costSuffix": "Gaolers only"
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15,
+            "braceCost": 30
+          }
+        },
+        {
+          "name": "blunderbuss",
+          "alias": "",
+          "cost": {
+            "cost": 30
+          }
+        },
+        {
+          "name": "handgun",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "mechanical suit",
+          "alias": "",
+          "cost": {
+            "cost": 175,
+            "costSuffix": "Sorcerer only"
+          }
+        }
+      ]
+    },
+    {
+      "id": "informer-equipment-list",
+      "title": "Informer Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    }
+  ],
+  "specialEquipment": [
+    {
+      "id": "engine-of-chaos",
+      "title": "Engine of Chaos",
+      "cost": {
+        "cost": 125
+      },
+      "maxQty": 1,
+      "flavour": "",
+      "specialRules": [],
+      "admonitions": ""
+    }
+  ],
+  "fighters": [
+    {
+      "id": "sorcerer",
+      "type": "hero",
+      "name": "Sorcerer",
+      "plural": "Sorcerers",
+      "race": "black dwarf",
+      "flavour": "It is the Priests of Hashut who administrate insidious edicts on behalf of the Chaos Dwarf race. This includes orchestrating trade agreements with the savage Northmen and Ogre tribes. From out of the Dark Lands they frequently lead warbands to plunder the Silk Road.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 85,
+      "startingXp": 20,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "chaos-dwarf-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": true,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any warrior within 6“ of the Sorcerer may use his Leadership when taking Ld tests."
+        },
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "The Sorcerer is a wizard and follows the rules for wizards in the magic section. Sorcerers may cast <a href=\"#rituals-of-hashut\">Rituals of Hashut</a>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Priest",
+          "ruleFull": "The Sorcerer starts with two rituals. One of them is the <a href=\"#sacrificial-ritual\">Sacrificial Ritual</a>. The other spell is determined as usual from the <a href=\"#rituals-of-hashut\">Rituals of Hashut</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "bull-centaur",
+      "type": "hero",
+      "name": "Bull Centaur",
+      "plural": "Bull Centaurs",
+      "race": "bull centaur",
+      "flavour": "Bull Centaurs are keen witted creatures with the upper torso of a Chaos Dwarf and the body of a bull. They are the most favoured disciples to the Father of Darkness. In his divine image these mutated centauroids are fewer in number than Chaos Dwarfs, more powerful and swifter in battle.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 100,
+      "startingXp": 10,
+      "statblock": {
+        "m": 8,
+        "ws": 4,
+        "bs": 3,
+        "s": 4,
+        "t": 4,
+        "w": 1,
+        "i": 3,
+        "a": 2,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "chaos-dwarf-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Large target",
+          "ruleFull": "Bull centaurs are large creatures and therefore make tempting targets for archers. Anyone shooting at the Bull Centaur gains a +1 ‘to hit’ and may shoot at it even if it is not the closest target. As large targets a Bull Centaur adds an extra +20 to the warband’s rating."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "gaolers",
+      "type": "hero",
+      "name": "Gaoler",
+      "plural": "Gaolers",
+      "race": "black dwarf",
+      "flavour": "Of all the Black Dwarfs it is the wicked Gaolers who are the most infamous. The minds of these merciless fiends are bent on inflicting pain and their repulsive methods strike fear into the hearts of men. Gaolers delight in the torture of their prisoners for whom death never comes quick enough.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 50,
+      "startingXp": 8,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "chaos-dwarf-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Nasty Reputation",
+          "ruleFull": "Gaolers are known for their brutality. The dreaded sight of them and the very thought of being captured causes <Tooltip>fear</Tooltip> in Humans."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "informers",
+      "type": "henchman",
+      "name": "Informer",
+      "plural": "Informers",
+      "race": "human",
+      "flavour": "For those imprisoned in the foundries of Zharr-Naggrund, the fires of industry burn night and day. There is little reward for a spy, only deceitful promises of freedom. Lies are enough to motivate these treacherous informants into betraying their own kind for small dispensations.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 15,
+      "gainExp": true,
+      "promotable": false,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "informer-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Drudgery",
+          "ruleFull": "Informers have had their will broken by their masters. Informers may never become Heroes. Re-roll all results of ‘The lad’s got talent’ for them."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "chaos-dwarfs",
+      "type": "henchman",
+      "name": "Chaos Dwarf",
+      "plural": "Chaos Dwarfs",
+      "race": "black dwarf",
+      "flavour": "These resentful creatures toil in the forges of their city stronghold. To boost the production of weapons and Chaos armour in the foundries they set out on expeditions armed with blunderbusses to bolster the labour force kept shackled in pits beneath the earth.",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 40,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "chaos-dwarf-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    }
+  ],
+  "sourceCitation": ""
+}

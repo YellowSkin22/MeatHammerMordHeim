@@ -1,25 +1,66 @@
 {
-  "lastChecked": "2026-04-01T08:36:01.351Z",
+  "lastChecked": "2026-04-03T21:03:00.506Z",
   "files": {
     "data/mergedEquipment.json": {
       "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
       "syncedAt": "2026-04-01T08:36:01.351Z"
     },
-    "data/skills.json": {
-      "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
-      "syncedAt": "2026-04-01T08:36:01.351Z"
-    },
-    "data/magic.json": {
-      "sha": "aca5cc003a135eb5ef03a41f798c0fd9a1ada24b",
-      "syncedAt": "2026-04-01T08:36:01.351Z"
-    },
+    "data/skills.json": "bb8232028a9aa9be2f302a1de918d32437493a7f",
+    "data/magic.json": "b87effcca43fdde4c4353107ed2c72094f67d3ed",
     "data/warbandFiles": {
       "sha": "6f9aa8d8335b09fa27950a002ea0044d06ac0361",
       "syncedAt": "2026-04-01T08:36:01.351Z"
     },
-    "data/hiredSwords.json": {
-      "sha": "5d382bdf33abdad008028f157ec47fed12027f8e",
-      "syncedAt": "2026-04-01T08:36:01.351Z"
-    }
+    "data/hiredSwords.json": "86ea6519245e056ddaccfe823acd7058f62d289e",
+    "data/equipment.json": "77826379be0dcabf1387a9c68afb720265f8c4b2",
+    "data/maxStats.json": "4410007fb9d31c144e5775beef18d81ec9fe8999",
+    "data/warbandFiles/1a/averlander.json": "accfe76b339eec72c1ab1c2f20aeeca9637df1aa",
+    "data/warbandFiles/1a/beastmen-raiders.json": "e40b8bb172dbd823dcdf11446b22738eb825f8fa",
+    "data/warbandFiles/1a/carnival-of-chaos.json": "7b03af9699893715e70fe3f7ce1efb7c513d93be",
+    "data/warbandFiles/1a/cult-of-the-posessed.json": "9693f86638790944948d18c2c0cfa195bd1bedbe",
+    "data/warbandFiles/1a/dwarf-treasure-hunters.json": "6868d4eda5021f38a4b4b1ec559ac32fc79c9324",
+    "data/warbandFiles/1a/kislevites.json": "8e4aeb6706099981111ceb883a4e5c07ed698860",
+    "data/warbandFiles/1a/mercenaries.json": "51567580d6ce681927f007768e0b84f6f7bcae52",
+    "data/warbandFiles/1a/orc-mob.json": "5e3caba8aed48eb97b8e3de1d3ff7adabb6fcc83",
+    "data/warbandFiles/1a/ostlander.json": "3a7d70214b5f6d4287e7b8633b97d4feb6598161",
+    "data/warbandFiles/1a/sisters-of-sigmar.json": "1ee4fd499da8e8f5bf302f2f16307f184d9272fd",
+    "data/warbandFiles/1a/skaven.json": "7c78f45b1a0e69fe905f8838fe78128da19a6af7",
+    "data/warbandFiles/1a/undead.json": "2d4716982c1654d5d44378d87340b211df518b36",
+    "data/warbandFiles/1a/witch-hunters.json": "33bf54dc0882f1c633f0504634ebb72f35301607",
+    "data/warbandFiles/1b/amazons-lustria.json": "05738391469fa46e989284c41dd748822faee428",
+    "data/warbandFiles/1b/amazons.json": "7069c4ddea1c4271e55b3b03aa98308090db9174",
+    "data/warbandFiles/1b/arabian-tomb-raiders.json": "392ec6257ccacc6ed10ef150026a38f46466e25a",
+    "data/warbandFiles/1b/black-orcs.json": "200673237ad2a167d953324380f336a895e787fe",
+    "data/warbandFiles/1b/bretonnian.json": "2e8d3c013b97b75db14cbf48e4e79b909f3eb373",
+    "data/warbandFiles/1b/dark-elves.json": "79d0d438809fc1c6d62e607b518bbbc46114fa69",
+    "data/warbandFiles/1b/dwarf-rangers.json": "b387acc772d9cd1245c9ddf72d1d161e53d36857",
+    "data/warbandFiles/1b/forest-goblins.json": "2336c44383a727a70cbb7039a5c9560984350d71",
+    "data/warbandFiles/1b/gunnery-school-of-nuln.json": "c47791ea55d00aa111e92af5738cfaba178b0d39",
+    "data/warbandFiles/1b/hochland-bandits.json": "3d2da0748c8dbabd6d5bbbaf14dc3931140134db",
+    "data/warbandFiles/1b/horned-hunters.json": "2f84f4728465f54b91a8275614c178d58e5e7576",
+    "data/warbandFiles/1b/imperial-outriders.json": "e537c1d3c3d0e6e745f6d685ab124c4919db2d92",
+    "data/warbandFiles/1b/lizardmen.json": "46947690ec4e62c411a18e16185bea1c34280f07",
+    "data/warbandFiles/1b/mootlanders.json": "c467bd0df78bf23c47c9162973cb74c1153f3305",
+    "data/warbandFiles/1b/norse.json": "eb35c15acaa7a21bd970101ea00076c77a060ce6",
+    "data/warbandFiles/1b/outlaws-of-stirwood-forest.json": "730dbcb87f36d96884640b4db463a0d357f0195c",
+    "data/warbandFiles/1b/pirates.json": "41c5ee73f024a36f2d32c589b6e4a11b3c56df6a",
+    "data/warbandFiles/1b/pit-fighters.json": "9c356ec1ad9879385c0d682e9292fb475bca5122",
+    "data/warbandFiles/1b/shadow-warriors.json": "db2314b54d43bf7f5a161d9f51f2af2594763e19",
+    "data/warbandFiles/1b/skaven-pestilens.json": "5412ccd438030d6adbe4189d3e09de302bd02727",
+    "data/warbandFiles/1b/tileans.json": "fefd654589bba8aee544aae5ff15f25700667c25",
+    "data/warbandFiles/1b/tomb-guardians.json": "12f6bd9fe1ab64c3b837052302c61d3431f71053",
+    "data/warbandFiles/1c/battle-monks-of-cathay.json": "8ce3a7417d80adb764863fcf042af19dd3b82932",
+    "data/warbandFiles/1c/black-dwarfs.json": "d6d4ff5a25f11da7efce3740b56bf513050f84f1",
+    "data/warbandFiles/1c/bretonnian-chapel-guard.json": "360b9a6998cd64936c2a79927efa9256bccd9c17",
+    "data/warbandFiles/1c/court-of-the-profane-pleasures.json": "68df2765746105f2df65f18ffc20e402ecafdcba",
+    "data/warbandFiles/1c/cursed-cavalcade.json": "8749cab200c9bf3a1e91da2b01b6318a349f3e08",
+    "data/warbandFiles/1c/lustrian-reavers.json": "61ebc8f2867616a40460c66f60490e4421a327ad",
+    "data/warbandFiles/1c/maneaters.json": "997de6ab6ec6d627fffda6924eac9a15eb888364",
+    "data/warbandFiles/1c/marauders-of-chaos.json": "c22f18200fd2ae7e404fbd1acf4781585d7ad558",
+    "data/warbandFiles/1c/merchant-caravans.json": "519a63955a07f354b0456fbdeefe13354cf1343e",
+    "data/warbandFiles/1c/night-goblins-web.json": "b25c9fe0f3087fa2412edcbbf4817e4e18eca775",
+    "data/warbandFiles/1c/night-goblins.json": "27a03a8a77cc0a27e9d4e1e9de1683b8aac4dd02",
+    "data/warbandFiles/1c/the-restless-dead.json": "2dea4ea642f18ac0551cb945d0cef00450bf613d",
+    "data/warbandFiles/1c/the-sons-of-hashut.json": "8944ac681b54c9bf5743f96f66a0359db61e0459"
   }
 }

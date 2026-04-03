@@ -1,0 +1,489 @@
+{
+  "id": "skaven-of-clan-eshin",
+  "name": "Skaven",
+  "grade": "1a",
+  "campaigngrade": "1a",
+  "source": "Mordheim Rulebook",
+  "sourceLink": "https://broheim.net/downloads/warbands/official/Skaven.pdf",
+  "setting": "Mordheim",
+  "author": "",
+  "version": "",
+  "lore": "<em>Unbeknownst to man, for thousands of years he has shared his world with another and altogether different race. There have always been signs for those who cared to see them: a scurrying black shadow, an inhuman scream from the sewer, scuttling shapes at the back of the cellar. All these years these creatures have worked away in secret, burrowing beneath the world of man, undermining his great cities, infiltrating his sewers and cellars, and joining all up into a vast worldspanning labyrinth of tunnels and nests. These creatures call themselves Skaven and they are ratmen, the mutant spawn of an older age of chaos and mutation.</em><br /><br /><em>Doubtless one day the Skaven will be ready to emerge from their tunnels and wage open war upon mankind. For centuries they have been content to feed upon his ruins, to seed plague in his cities, and spread contagion amongst his lands. At least they were content to wait and watch, for now everything has suddenly changed. Now the destruction of Mordheim has created new opportunities in the secret war against mankind.</em><br /><br /><em>Since ancient times the Skaven have searched the world for the stones of power that men in their ignorance call wyrdstone but which Skaven have long since known as warpstone, blackstone, or seerstone. It was as a result of gnawing upon this magic stone in ages past that commonplace rats began the slow process of mutation that spawned the Skaven race. Wyrdstone is quite literally in their blood, for they feed upon it and make use of it in their foul sorceries. Until now the ratmen’s search for wyrdstone has been difficult and time-consuming as the stone has grown increasingly rare, but now a new and abundant source has appeared – a dark blessing from the skies!</em><br /><br /><em>For the Skaven of Clan Eshin, this is an especially opportune time for such a thing to happen, for, just as the Empire is divided, so the Skaven race is divided amongst itself. Clan fights clan the world over, each struggling for domination of the Council of Thirteen whose masters rule the Skaven race. Mordheim’s secret is not yet revealed to all the clans, or else the City of the Damned would already be overrun with ratmen. The Nightmaster of Clan Eshin is keen to guard this secret, and for this reason has not sent his multitudinous armies into Mordheim. Instead, he has sent small warbands of Skaven skittering through secret tunnels into the city to gather up the shining stones and bring them back to the clan nests.</em><br /><br /><em>The Skaven of Clan Eshin are supremely adapted to their task. Masters of the art of bringing silent death to their foes, they are skilled in the use of poison and trained in the thousand secrets of the assassin. Since birth Skaven warriors practise martial crafts in the ruinous temples of the Horned Rat, their everhungering and hideous god. There are none better amongst their verminous kind to gather up the treasure of Mordheim, but they must be silent, swift and efficient. Were rival Skaven clans to discover the secret of Mordheim there would come not hundreds, not thousands, but millions upon millions to contend for the wyrdstone in the City of the Damned.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 20,
+    "choiceFluff": "A Skaven warband must include a minimum of three models. You have 500 gold crowns (representing your resources) which you can use to recruit and equip your initial warband. The maximum number of warriors in the warband may never exceed 20."
+  },
+  "specialSkills": true,
+  "specialRules": [],
+  "equipmentLists": [
+    {
+      "id": "skaven-hero-equipment-list",
+      "title": "Skaven Hero Equipment List",
+      "caveat": "The following lists are used by the Skaven to pick their equipment.",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "flail",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "weeping blades",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "fighting claws",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "throwing knives/stars",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "blowpipe",
+          "alias": "",
+          "cost": {
+            "cost": 25,
+            "costSuffix": "<sup><Tooltip content=\"err11\">✏️</Tooltip></sup>"
+          }
+        },
+        {
+          "name": "warplock pistol",
+          "alias": "",
+          "cost": {
+            "cost": 35,
+            "braceCost": 70
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "buckler",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "skaven-henchmen-equipment-list",
+      "title": "Skaven Henchmen Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "assassin-adept",
+      "type": "hero",
+      "name": "Assassin Adept",
+      "plural": "Assassin Adepts",
+      "race": "skaven",
+      "flavour": "The Nightmaster of Clan Eshin has sent the Assassin to collect precious wyrdstone. Success means many breeders, wealth and a better position amongst the clan. Failure, on the other hand, is best not contemplated…",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 60,
+      "startingXp": 20,
+      "statblock": {
+        "m": 6,
+        "ws": 4,
+        "bs": 4,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "skaven-hero-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": true,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any warrior within 6\" of the Assassin Adept may use his Leadership instead of his own."
+        },
+        {
+          "flavour": "",
+          "rulename": "Perfect Killer",
+          "ruleFull": "An Assassin Adept always has an extra -1 modifier to any armour save the enemy has to take against wounds they inflicted (both with shooting and close combat weapons)."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "black-skaven",
+      "type": "hero",
+      "name": "Black Skaven",
+      "plural": "Black Skaven",
+      "race": "skaven",
+      "flavour": "Black Skaven are the most powerful fighters of Clan Eshin: blackfurred killers trained in the martial arts of their clan. In Mordheim they excel at ambushing and assassinating man-things.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 40,
+      "startingXp": 8,
+      "statblock": {
+        "m": 6,
+        "ws": 4,
+        "bs": 3,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "skaven-hero-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "eshin-sorcerer",
+      "type": "hero",
+      "name": "Eshin Sorcerer",
+      "plural": "Eshin Sorcerers",
+      "race": "skaven",
+      "flavour": "The Sorcerers of Clan Eshin are black magicians who manufacture the enchanted weapons of the Assassins. Though their power is slight compared to the Warlocks of Clan Skryre or the mighty Grey Seer, their black sorcery is still potent.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 45,
+      "startingXp": 8,
+      "statblock": {
+        "m": 5,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "skaven-hero-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Magic User",
+          "ruleFull": "The Eshin Sorcerer has the ability to use magic and casts spells like any other magicians, and the Eshin Sorcerer starts with one spells generated at random from the <a href=\"#magic-of-the-horned-rat\">Magic of the Horned Rat</a>. In addition the Eshin Sorcerer may learn a new Spell instead of a new skill."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "night-runners",
+      "type": "hero",
+      "name": "Night Runners",
+      "plural": "Night Runners",
+      "race": "skaven",
+      "flavour": "Night Runners are the young apprentices of Clan Eshin. Recently initiated into the secrets of the clan, they make up for their lack of knowledge with their ambition and energy.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 20,
+      "startingXp": 0,
+      "statblock": {
+        "m": 6,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 4
+      },
+      "equipmentLists": [
+        "skaven-henchmen-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": false,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "verminkin",
+      "type": "henchman",
+      "name": "Verminkin",
+      "plural": "Verminkin",
+      "race": "skaven",
+      "flavour": "Verminkin are the Clanrats of Clan Eshin. The strongest amongst them are initiated into the secrets of the clans and begin their training to become Assassins, the most feared warriors of the Skaven warbands. All the Clanrats of Clan Eshin dream of rising to the status of an Assassin one day.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 20,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 5,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "skaven-henchmen-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "giant-rats",
+      "type": "henchman",
+      "name": "Giant Rats",
+      "plural": "Giant Rats",
+      "race": "giant rat",
+      "flavour": "Giant Rats are the creation of the Clan Moulder trainees. They are mutated monstrosities the size of dogs. They fight alongside the Skaven, overpowering their opponents by sheer weight of numbers.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 15,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 6,
+        "ws": 2,
+        "bs": 0,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 4
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Weapons/Armour",
+          "ruleFull": "None. Giant Rats never use any armour or weapons."
+        },
+        {
+          "flavour": "",
+          "rulename": "Pack Size",
+          "ruleFull": "You can recruit as many Giant Rats as you wish.<sup><Tooltip content=\"faq116\">❓</Tooltip></sup>"
+        },
+        {
+          "flavour": "",
+          "rulename": "Experience",
+          "ruleFull": "Giant Rats are animals and do not gain experience."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "rat-ogre",
+      "type": "henchman",
+      "name": "Rat Ogre",
+      "plural": "Rat Ogres",
+      "race": "rat ogre",
+      "flavour": "These horrible monsters are much in demand as bodyguards to important Skaven.",
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 210,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 3,
+        "s": 5,
+        "t": 5,
+        "w": 3,
+        "i": 4,
+        "a": 3,
+        "ld": 4
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Weapons/Armour",
+          "ruleFull": "Jaws, claws and brute force! Rat Ogres can never use weapons or armour."
+        },
+        {
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "Rat Ogres are so frightening they cause fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "Stupidity",
+          "ruleFull": "A Rat Ogre is subject to stupidity unless a Skaven Hero is within 6\" of it."
+        },
+        {
+          "flavour": "",
+          "rulename": "Experience",
+          "ruleFull": "Rat Ogres do not gain experience."
+        },
+        {
+          "flavour": "",
+          "rulename": "Large Target",
+          "ruleFull": "Rat Ogres are Large Targets as defined in the <a href=\"/docs/rules/shooting#closest-target\">shooting rules</a>.<sup><Tooltip content=\"err52\">✏️</Tooltip></sup>"
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}
