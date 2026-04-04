@@ -835,21 +835,20 @@ const UI = {
   openEquipmentModal(listType, index) {
     const r = this.currentRoster;
     const warrior = r[listType][index];
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const warbandName = subfaction || warbandFile?.name || '';
 
     let warbandAllowedEquipment = null; // null = no Warband Equipment dropdown
-    // Legacy category list used only for hired swords (Phase 4 will replace)
-    let hiredSwordCategories = null;
 
     if (listType === 'hiredSwords') {
-      const template = DataService.getHiredSwordTemplate(warrior.type);
-      hiredSwordCategories = template ? template.equipmentAccess : [];
+      // Hired swords: show all equipment (Uncle-Mel has no category restriction data)
+      warbandAllowedEquipment = null;
     } else if (listType !== 'customWarriors') {
-      // heroes / henchmen: find warband-specific equipment list
-      const fighterList = listType === 'heroes' ? warband?.heroes : warband?.henchmen;
-      const template = fighterList?.find(f => f.type === warrior.type);
-      if (template?.allowedEquipment) {
-        warbandAllowedEquipment = template.allowedEquipment;
+      // Heroes / henchmen: resolve from warband file on-the-fly
+      const fighter = (warbandFile?.fighters || []).find(f => f.id === warrior.type);
+      if (fighter) {
+        warbandAllowedEquipment = DataService.resolveAllowedEquipment(fighter, warbandFile);
       }
     }
 
@@ -885,18 +884,14 @@ const UI = {
 
     // ── All Equipment dropdown ─────────────────────────────────────────────
     // Build item list based on listType:
-    //   customWarriors → all equipment
-    //   hiredSwords    → filtered by legacy equipmentAccess categories
+    //   customWarriors / hiredSwords → all equipment
     //   heroes/henchmen → filtered by permittedWarbands / excludedWarbands
     let allItems;
-    if (listType === 'customWarriors') {
+    if (listType === 'customWarriors' || listType === 'hiredSwords') {
       allItems = DataService.getAllEquipment();
-    } else if (listType === 'hiredSwords') {
-      const cats = [...(hiredSwordCategories || []), 'miscellaneous'];
-      allItems = cats.flatMap(catId => DataService.getEquipmentByCategory(catId));
     } else {
       allItems = DataService.getAllEquipment()
-        .filter(item => DataService.canWarbandAccess(item, warband?.name || ''));
+        .filter(item => DataService.canWarbandAccess(item, warbandName));
     }
 
     // Deduplicate and group by type
