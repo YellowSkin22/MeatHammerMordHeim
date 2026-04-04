@@ -27,6 +27,7 @@ const DataService = {
     academic: 'Academic Skill',
     strength: 'Strength Skill',
     speed:    'Speed Skill',
+    cavalry:  'Cavalry Skill',
   },
 
   slugify(str) {
@@ -37,6 +38,7 @@ const DataService = {
       .replace(/^_|_$/g, '');
   },
 
+  // Used by UI to strip HTML from Uncle-Mel lore, spell descriptions, etc.
   _stripHtml(str) {
     if (!str) return '';
     return str
@@ -103,6 +105,7 @@ const DataService = {
   // subfaction is the display-name string (e.g. "Reikland Mercenaries") or null.
   // The id parameter is a slugified subfaction name or the warband file id.
   getWarband(id) {
+    if (!this.warbandFiles) return null;
     for (const wf of this.warbandFiles) {
       if (wf.id === id) return { warbandFile: wf, subfaction: null };
       const opts = wf.subfactions?.options || [];
