@@ -4,7 +4,14 @@ const Storage = {
 
   getAllRosters() {
     const data = localStorage.getItem(this.ROSTERS_KEY);
-    return data ? JSON.parse(data) : [];
+    if (!data) return [];
+    const rosters = JSON.parse(data);
+    const migrated = rosters.map(r => this._migrateRoster(r));
+    // Re-save only if something actually changed
+    if (JSON.stringify(migrated) !== JSON.stringify(rosters)) {
+      localStorage.setItem(this.ROSTERS_KEY, JSON.stringify(migrated));
+    }
+    return migrated;
   },
 
   saveAllRosters(rosters) {
@@ -57,5 +64,47 @@ const Storage = {
 
   generateId() {
     return 'r_' + Date.now().toString(36) + '_' + Math.random().toString(36).substr(2, 6);
+  },
+
+  _migrateRoster(roster) {
+    const STAT_UP_TO_LOW = { M:'m', WS:'ws', BS:'bs', S:'s', T:'t', W:'w', I:'i', A:'a', Ld:'ld' };
+    const SKILL_ID_TO_SUBTYPE = {
+      combat:   'Combat Skill',
+      shooting: 'Shooting Skill',
+      academic: 'Academic Skill',
+      strength: 'Strength Skill',
+      speed:    'Speed Skill',
+    };
+
+    const migrateStats = (stats) => {
+      if (!stats || typeof stats !== 'object') return stats;
+      // Detect uppercase keys
+      if (!Object.keys(stats).some(k => STAT_UP_TO_LOW[k])) return stats;
+      const result = {};
+      for (const [k, v] of Object.entries(stats)) {
+        result[STAT_UP_TO_LOW[k] || k] = v;
+      }
+      return result;
+    };
+
+    const migrateSkillAccess = (skillAccess) => {
+      if (!Array.isArray(skillAccess)) return skillAccess;
+      return skillAccess.map(s => SKILL_ID_TO_SUBTYPE[s] || s);
+    };
+
+    const migrateWarrior = (w) => ({
+      ...w,
+      stats:       migrateStats(w.stats),
+      baseStats:   migrateStats(w.baseStats),
+      skillAccess: migrateSkillAccess(w.skillAccess),
+    });
+
+    return {
+      ...roster,
+      heroes:         (roster.heroes         || []).map(migrateWarrior),
+      henchmen:       (roster.henchmen       || []).map(migrateWarrior),
+      hiredSwords:    (roster.hiredSwords    || []).map(migrateWarrior),
+      customWarriors: (roster.customWarriors || []).map(migrateWarrior),
+    };
   }
 };
