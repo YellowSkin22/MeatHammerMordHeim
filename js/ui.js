@@ -517,7 +517,7 @@ const UI = {
             <div class="tag-list">
               ${warrior.equipment.map((eq, eqIdx) => {
                 const itemData = DataService.getEquipmentItem(eq.id);
-                const tooltip = itemData ? this.escAttr(itemData.rules) : '';
+                const tooltip = itemData ? this.escAttr(DataService._stripHtml(itemData.specialRules?.[0]?.ruleAbbreviated || '')) : '';
                 return `<span class="tag equipment" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${eq.name} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>`;
               }).join('')}
               <button class="btn btn-sm" onclick="UI.openEquipmentModal('${listType}', ${index})">+ Add</button>
@@ -529,7 +529,7 @@ const UI = {
             <div class="tag-list">
               ${warrior.skills.map((sk, skIdx) => {
                 const skillData = DataService.getSkill(sk.id);
-                const tooltip = skillData ? this.esc(skillData.description) : '';
+                const tooltip = skillData ? this.esc(DataService._stripHtml(skillData.Rules?.[0]?.ruleAbbreviated || '')) : '';
                 return `<span class="tag skill" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${sk.name} <span class="tag-remove" onclick="UI.removeSkill('${listType}', ${index}, ${skIdx})">x</span></span>`;
               }).join('')}
               ${isHero ? `<button class="btn btn-sm" onclick="UI.openSkillModal('${listType}', ${index})">+ Add</button>` : ''}

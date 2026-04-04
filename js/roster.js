@@ -77,7 +77,7 @@ const RosterModel = {
         isHero ? (fighter.startingXp ?? 0) : 0
       ),
       isHero,
-      race: warbandFile.race || 'human',
+      race: fighter.race || warbandFile.race || 'human',
     };
 
     if (!isHero) warrior.groupSize = 1;
