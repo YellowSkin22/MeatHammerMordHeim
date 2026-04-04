@@ -220,13 +220,16 @@ const UI = {
     }
 
     grid.innerHTML = rosters.map(r => {
-      const warband = DataService.getWarband(r.warbandId);
+      const warbandResult = DataService.getWarband(r.warbandId);
+      const warbandName = warbandResult
+        ? (warbandResult.subfaction || warbandResult.warbandFile.name)
+        : r.warbandId;
       const memberCount = RosterModel.getMemberCount(r);
       const rating = RosterModel.calculateWarbandRating(r);
       return `
         <div class="roster-card" onclick="UI.openRoster('${r.id}')">
           <div class="roster-card-name">${this.esc(r.name)}</div>
-          <div class="roster-card-warband">${warband ? warband.name : r.warbandId}</div>
+          <div class="roster-card-warband">${this.esc(warbandName)}</div>
           <div class="roster-card-stats">
             <div class="roster-card-stat">Members: <strong>${memberCount}</strong></div>
             <div class="roster-card-stat">Rating: <strong>${rating}</strong></div>
@@ -255,7 +258,10 @@ const UI = {
     const modal = document.getElementById('create-modal');
     const select = document.getElementById('create-warband-select');
     select.innerHTML = '<option value="">-- Select Warband --</option>' +
-      DataService.warbands.map(w => `<option value="${w.id}">${w.name} (${w.source})</option>`).join('');
+      DataService.getAllWarbands()
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map(w => `<option value="${w.id}">${this.esc(w.name)} (${this.esc(w.source)})</option>`)
+        .join('');
     document.getElementById('create-roster-name').value = '';
     document.getElementById('warband-description').textContent = '';
     modal.classList.add('active');
@@ -268,8 +274,15 @@ const UI = {
   onWarbandSelectChange() {
     const id = document.getElementById('create-warband-select').value;
     const desc = document.getElementById('warband-description');
-    const warband = DataService.getWarband(id);
-    desc.textContent = warband ? `${warband.description} Starting gold: ${warband.startingGold} gc.` : '';
+    const result = DataService.getWarband(id);
+    if (result) {
+      const { warbandFile } = result;
+      const lore = DataService._stripHtml(warbandFile.lore || warbandFile.warbandRules?.choiceFluff || '')
+        .replace(/\s+/g, ' ').trim().slice(0, 300);
+      desc.textContent = `${lore} Starting gold: ${warbandFile.warbandRules?.startingGc ?? 500} gc.`;
+    } else {
+      desc.textContent = '';
+    }
   },
 
   submitCreateRoster() {
@@ -305,14 +318,17 @@ const UI = {
   renderRosterEditor() {
     const r = this.currentRoster;
     if (!r) return;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const warbandDisplayName = warbandResult
+      ? (warbandResult.subfaction || warbandResult.warbandFile.name)
+      : r.warbandId;
     const memberCount = RosterModel.getMemberCount(r);
     const rating = RosterModel.calculateWarbandRating(r);
     const totalSpent = RosterModel.calculateTotalCost(r);
 
     // Header
     document.getElementById('editor-roster-name').value = r.name;
-    document.getElementById('editor-warband-type').textContent = warband ? warband.name : r.warbandId;
+    document.getElementById('editor-warband-type').textContent = warbandDisplayName;
 
     // Summary
     document.getElementById('summary-members').textContent = `${memberCount} / ${this.getMaxMembers(r)}`;
