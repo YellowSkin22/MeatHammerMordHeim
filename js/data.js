@@ -30,6 +30,35 @@ const DataService = {
     cavalry:  'Cavalry Skill',
   },
 
+  // Maps Uncle-Mel permittedWarbands/excludedWarbands names to our warband display names.
+  // Uncle-Mel uses historical/alternate names; our warband files use different display names.
+  HS_NAME_MAP: {
+    'Averlanders':                     ['Averlander Mercenaries'],
+    'Bretonnian Knights':              ['Bretonnians'],
+    'Druchii':                         ['Dark Elves'],
+    'Marauders of Chaos':              ['The Norse', 'The Kurgan', 'The Hung'],
+    'Marienburgers':                   ['Marienburg Mercenaries'],
+    'Mercenaries':                     ['Reikland Mercenaries', 'Middenheim Mercenaries', 'Marienburg Mercenaries'],
+    'Middenheimers':                   ['Middenheim Mercenaries'],
+    'Night Goblins (web)':             ['Night Goblins'],
+    'Night Goblins web':               ['Night Goblins'],
+    'Ostlanders':                      ['Ostlander Mercenaries'],
+    'Outlaws of Stirwood Forest, The': ['Outlaws of Stirwood Forest'],
+    'Reiklanders':                     ['Reikland Mercenaries'],
+    'Sons of Hashut:':                 ['The Sons of Hashut'],
+    'Tileans':                         ['Miragleans', 'Remasens', 'Trantios'],
+  },
+
+  // Returns a set of all Uncle-Mel permittedWarbands names that identify warbandName,
+  // including alternate names from HS_NAME_MAP.
+  _namesForWarband(warbandName) {
+    const names = new Set([warbandName]);
+    for (const [umName, ourNames] of Object.entries(this.HS_NAME_MAP)) {
+      if (ourNames.includes(warbandName)) names.add(umName);
+    }
+    return names;
+  },
+
   slugify(str) {
     return str
       .toLowerCase()
@@ -178,13 +207,15 @@ const DataService = {
   },
 
   // item.permittedWarbands can be an array, a single string, or absent/empty (= all warbands).
+  // Uses _namesForWarband() to resolve Uncle-Mel alternate names (e.g. "Reiklanders" → "Reikland Mercenaries").
   canWarbandAccess(item, warbandName) {
     const permitted = item.permittedWarbands;
     const excluded  = item.excludedWarbands;
-    if (Array.isArray(excluded) && excluded.includes(warbandName)) return false;
+    const names = this._namesForWarband(warbandName);
+    if (Array.isArray(excluded) && excluded.some(e => names.has(e))) return false;
     if (!permitted || (Array.isArray(permitted) && permitted.length === 0) || permitted === 'all') return true;
-    if (Array.isArray(permitted)) return permitted.includes(warbandName);
-    return permitted === warbandName;
+    if (Array.isArray(permitted)) return permitted.some(p => names.has(p));
+    return names.has(permitted);
   },
 
   // Resolves a fighter's equipmentLists references to a flat list of items.
@@ -287,13 +318,14 @@ const DataService = {
     return this.hiredSwords[hyphenated] || null;
   },
 
-  // warbandName is the display name (e.g. "Averlanders"), not an ID.
-  // Uncle-Mel permittedWarbands contains display names.
+  // warbandName is our display name (e.g. "Averlander Mercenaries").
+  // Uses _namesForWarband() to match Uncle-Mel's alternate names (e.g. "Averlanders").
   getAvailableHiredSwords(warbandName) {
+    const names = this._namesForWarband(warbandName);
     return Object.entries(this.hiredSwords)
       .filter(([, hs]) => {
         const permitted = hs.permittedWarbands || [];
-        return permitted.length === 0 || permitted.includes(warbandName);
+        return permitted.length === 0 || permitted.some(p => names.has(p));
       })
       .map(([key, hs]) => ({ key, ...hs }))
       .sort((a, b) => a.name.localeCompare(b.name));

@@ -631,8 +631,8 @@ const UI = {
     }
 
     const fighter = fighters.find(f => f.id === type);
+    if (!fighter) return this.toast('Unknown warrior type.', 'error');
     const warrior = RosterModel.createWarrior(fighter, warbandFile, subfaction);
-    if (!warrior) return this.toast('Unknown warrior type.', 'error');
 
     if (isHero) {
       r.heroes.push(warrior);
@@ -647,6 +647,9 @@ const UI = {
 
   addHiredSword(key) {
     const r = this.currentRoster;
+    if (r.hiredSwords.some(hs => hs.type === key)) {
+      return this.toast('This hired sword is already in your warband.', 'error');
+    }
     const warrior = RosterModel.createHiredSword(key);
     if (!warrior) return this.toast('Unknown hired sword.', 'error');
 

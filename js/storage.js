@@ -5,13 +5,24 @@ const Storage = {
   getAllRosters() {
     const data = localStorage.getItem(this.ROSTERS_KEY);
     if (!data) return [];
-    const rosters = JSON.parse(data);
-    const migrated = rosters.map(r => this._migrateRoster(r));
-    // Re-save only if something actually changed
-    if (JSON.stringify(migrated) !== JSON.stringify(rosters)) {
-      localStorage.setItem(this.ROSTERS_KEY, JSON.stringify(migrated));
+    let rosters;
+    try {
+      rosters = JSON.parse(data);
+    } catch (e) {
+      console.error('Storage.getAllRosters: roster data in localStorage is corrupt', e);
+      throw new Error('Your saved roster data could not be loaded (corrupt JSON). Try importing a backup or clearing app data.');
     }
-    return migrated;
+    try {
+      const migrated = rosters.map(r => this._migrateRoster(r));
+      // Re-save only if something actually changed
+      if (JSON.stringify(migrated) !== JSON.stringify(rosters)) {
+        localStorage.setItem(this.ROSTERS_KEY, JSON.stringify(migrated));
+      }
+      return migrated;
+    } catch (e) {
+      console.error('Storage.getAllRosters: migration failed, returning raw data', e);
+      return rosters;
+    }
   },
 
   saveAllRosters(rosters) {
