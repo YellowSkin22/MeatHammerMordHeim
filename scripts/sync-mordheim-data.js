@@ -18,8 +18,7 @@ const { execSync } = require('child_process');
 
 const SOURCE_REPO     = 'Uncle-Mel/JSON-derulo';
 const ROOT_DIR        = path.resolve(__dirname, '..');
-const DATA_DIR        = path.join(ROOT_DIR, 'data');
-const SYNC_STATE_PATH = path.join(DATA_DIR, '.sync-state.json');
+const SYNC_STATE_PATH = path.join(ROOT_DIR, 'data', '.sync-state.json');
 const WARBAND_FOLDER  = 'data/warbandFiles';
 const NETLIFY_HOOK    = process.env.NETLIFY_DEPLOY_HOOK;
 
@@ -48,10 +47,14 @@ function ghApi(endpoint) {
 function downloadJson(srcPath) {
   const meta = ghApi(`repos/${SOURCE_REPO}/contents/${encodeURIComponent(srcPath)}`);
   if (!meta.content) throw new Error(`No content for ${srcPath}`);
-  return {
-    data: JSON.parse(Buffer.from(meta.content, 'base64').toString('utf8')),
-    sha:  meta.sha,
-  };
+  try {
+    return {
+      data: JSON.parse(Buffer.from(meta.content, 'base64').toString('utf8')),
+      sha:  meta.sha,
+    };
+  } catch (e) {
+    throw new Error(`JSON parse error in ${srcPath}: ${e.message}`);
+  }
 }
 
 // ─── Utilities ────────────────────────────────────────────────────────────
@@ -99,7 +102,13 @@ async function main() {
       console.log(`  Skipping unchanged: ${dest}`);
       continue;
     }
-    const { data } = downloadJson(src);
+    if (!meta.content) throw new Error(`No content for ${src}`);
+    let data;
+    try {
+      data = JSON.parse(Buffer.from(meta.content, 'base64').toString('utf8'));
+    } catch (e) {
+      throw new Error(`JSON parse error in ${src}: ${e.message}`);
+    }
     console.log(`  Downloading: ${dest}`);
     if (!dryRun) {
       writeJson(path.join(ROOT_DIR, dest), data);
@@ -110,11 +119,13 @@ async function main() {
 
   // ── Warband files (dynamic grade discovery) ────────────────────────────
   const gradeItems = ghApi(`repos/${SOURCE_REPO}/contents/${WARBAND_FOLDER}`);
+  if (!Array.isArray(gradeItems)) throw new Error(`Unexpected response for ${WARBAND_FOLDER}: ${JSON.stringify(gradeItems)}`);
   const grades     = gradeItems.filter(i => i.type === 'dir').map(i => i.name);
   const indexEntries = [];
 
   for (const grade of grades) {
     const fileItems = ghApi(`repos/${SOURCE_REPO}/contents/${WARBAND_FOLDER}/${grade}`);
+    if (!Array.isArray(fileItems)) throw new Error(`Unexpected response for ${WARBAND_FOLDER}/${grade}: ${JSON.stringify(fileItems)}`);
     const jsonFiles = fileItems.filter(
       i => i.type === 'file' && i.name.endsWith('.json') &&
            !SKIP_PATTERNS.some(p => p.test(i.name))
@@ -141,8 +152,10 @@ async function main() {
 
   // ── Write index.json ───────────────────────────────────────────────────
   const indexPath = path.join(ROOT_DIR, 'data/warbandFiles/index.json');
-  console.log(`  Writing: data/warbandFiles/index.json (${indexEntries.length} entries)`);
-  if (!dryRun) {
+  const prevIndex = fs.existsSync(indexPath) ? readJson(indexPath) : null;
+  const indexChanged = JSON.stringify(prevIndex) !== JSON.stringify(indexEntries);
+  console.log(`  ${indexChanged ? 'Writing' : 'Skipping unchanged'}: data/warbandFiles/index.json (${indexEntries.length} entries)`);
+  if (!dryRun && indexChanged) {
     writeJson(indexPath, indexEntries);
     changed = true;
   }
@@ -170,7 +183,7 @@ async function main() {
           `git commit -m "chore: sync data from JSON-derulo [${date}]"`,
           { cwd: ROOT_DIR, stdio: 'pipe' }
         );
-        execSync('git push origin feature/raw-uncle-mel-data', { cwd: ROOT_DIR, stdio: 'pipe' });
+        execSync('git push origin HEAD', { cwd: ROOT_DIR, stdio: 'pipe' });
         console.log('    ✓ Committed and pushed');
 
         if (NETLIFY_HOOK) {
