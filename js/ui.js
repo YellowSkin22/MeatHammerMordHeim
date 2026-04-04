@@ -585,7 +585,9 @@ const UI = {
     const spellTags = spells.map((sp, spIdx) => {
       const spellData = DataService.getSpell(sp.id);
       const diff = spellData ? (spellData.difficulty === 'Auto' ? 'Auto' : 'Diff: ' + spellData.difficulty) : '';
-      const desc = spellData ? this.esc(spellData.description) : '';
+      const desc = spellData
+        ? this.esc(DataService._stripHtml(spellData.ruleAbbreviated || spellData.ruleFull || ''))
+        : '';
       const tooltip = diff && desc ? diff + '. ' + desc : desc;
       return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + tooltip + '"' : '') + '>' + sp.name + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
     }).join('');
@@ -951,33 +953,37 @@ const UI = {
   // === SKILL MODAL ===
   openSkillModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    let accessCategories;
+    const warbandResult = DataService.getWarband(this.currentRoster.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const warbandName = subfaction || warbandFile?.name || '';
+
+    let accessSubtypes; // array of Uncle-Mel subtype strings
+
     if (warrior.isPromotedHenchman) {
-      accessCategories = warrior.skillAccess || [];
+      accessSubtypes = warrior.skillAccess || [];
     } else if (listType === 'customWarriors') {
-      accessCategories = Object.keys(DataService.skills);
+      accessSubtypes = Object.values(DataService.SKILL_KEY_TO_SUBTYPE).concat(['Special Skill']);
     } else if (listType === 'hiredSwords') {
-      const template = DataService.getHiredSwordTemplate(warrior.type);
-      accessCategories = template ? template.skillAccess : [];
+      accessSubtypes = warrior.skillAccess || [];
     } else {
-      const warband = DataService.getWarband(this.currentRoster.warbandId);
-      const template = warband.heroes.find(h => h.type === warrior.type);
-      accessCategories = template ? template.skillAccess : [];
+      const fighter = (warbandFile?.fighters || []).find(f => f.id === warrior.type);
+      accessSubtypes = fighter ? DataService.resolveSkillAccess(fighter, subfaction) : [];
     }
 
     const modal = document.getElementById('skill-modal');
-    const body = document.getElementById('skill-modal-body');
-
+    const body  = document.getElementById('skill-modal-body');
     let html = '';
-    for (const catId of accessCategories) {
-      const skills = DataService.getSkillsByCategory(catId);
+
+    for (const subtype of accessSubtypes) {
+      const skills = DataService.getSkillsBySubtype(subtype, warbandName);
       if (skills.length === 0) continue;
-      const catName = DataService.skills[catId]?.name || catId;
-      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${catName}</h4>`;
+      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(subtype)}</h4>`;
       for (const skill of skills) {
-        const alreadyHas = warrior.skills.find(s => s.id === skill.id);
+        const skillId = DataService.slugify(skill.name);
+        const alreadyHas = warrior.skills.find(s => s.id === skillId);
         const disabled = alreadyHas ? 'disabled' : '';
-        html += `<button class="btn btn-sm mb-1" ${disabled} onclick="UI.selectSkill('${listType}', ${index}, '${skill.id}')" title="${this.esc(skill.description)}">${skill.name}</button> `;
+        const desc = DataService._stripHtml(skill.Rules?.[0]?.ruleAbbreviated || skill.Rules?.[0]?.ruleFull || '');
+        html += `<button class="btn btn-sm mb-1" ${disabled} onclick="UI.selectSkill('${listType}', ${index}, '${skillId}')" title="${this.escAttr(desc)}">${this.esc(skill.name)}</button> `;
       }
     }
 
@@ -1007,36 +1013,34 @@ const UI = {
   // === SPELL MODAL ===
   openSpellModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    let spellLists;
+
+    let spellListIds;
     if (warrior.isPromotedHenchman) {
-      spellLists = [];
+      spellListIds = [];
     } else if (listType === 'customWarriors') {
-      spellLists = Object.keys(DataService.spells);
-    } else if (listType === 'hiredSwords') {
-      const template = DataService.getHiredSwordTemplate(warrior.type);
-      spellLists = template && template.spellAccess ? template.spellAccess : [];
+      spellListIds = Object.keys(DataService.magic.spellLists || {});
     } else {
-      const warband = DataService.getWarband(this.currentRoster.warbandId);
-      const template = warband.heroes.find(h => h.type === warrior.type)
-        || warband.henchmen.find(h => h.type === warrior.type);
-      spellLists = template && template.spellAccess ? template.spellAccess : [];
+      spellListIds = warrior.spellAccess || [];
     }
 
     const modal = document.getElementById('spell-modal');
-    const body = document.getElementById('spell-modal-body');
-
+    const body  = document.getElementById('spell-modal-body');
     let html = '';
-    for (const listId of spellLists) {
-      const spells = DataService.getSpellsByList(listId);
+
+    for (const listId of spellListIds) {
+      const list   = DataService.magic.spellLists?.[listId];
+      if (!list) continue;
+      const spells = list.spells || [];
       if (spells.length === 0) continue;
-      const listName = DataService.spells[listId]?.name || listId;
-      html += '<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">' + this.esc(listName) + '</h4>';
+      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(list.name || listId)}</h4>`;
       html += '<div style="display:flex; flex-direction:column; gap:0.3rem;">';
       for (const spell of spells) {
-        const alreadyHas = (warrior.spells || []).find(s => s.id === spell.id);
+        const spellId = spell.id || DataService.slugify(spell.name);
+        const alreadyHas = (warrior.spells || []).find(s => s.id === spellId);
         const disabled = alreadyHas ? 'disabled' : '';
-        const diff = spell.difficulty === 'Auto' ? 'Auto' : 'Difficulty: ' + spell.difficulty;
-        html += '<button class="btn btn-sm" ' + disabled + ' data-tooltip="' + this.escAttr(spell.description) + '" onclick="UI.selectSpell(\'' + listType + '\', ' + index + ', \'' + spell.id + '\')">' + spell.name + ' (' + diff + ')</button>';
+        const diff = spell.difficulty === 'Auto' ? 'Auto' : `Diff: ${spell.difficulty}`;
+        const desc = DataService._stripHtml(spell.ruleAbbreviated || spell.ruleFull || '');
+        html += `<button class="btn btn-sm" ${disabled} data-tooltip="${this.escAttr(diff + '. ' + desc)}" onclick="UI.selectSpell('${listType}', ${index}, '${spellId}')">${this.esc(spell.name)} (${diff})</button>`;
       }
       html += '</div>';
     }
@@ -1168,9 +1172,10 @@ const UI = {
     if (!henchman) return;
     const newSize = (henchman.groupSize || 1) + delta;
     if (newSize < 1) return this.toast('Group must have at least 1 member.', 'error');
-    const warband = DataService.getWarband(this.currentRoster.warbandId);
-    const template = warband.henchmen.find(h => h.type === henchman.type);
-    const maxSize = template?.maxGroupSize || 5;
+    const warbandResult = DataService.getWarband(this.currentRoster.warbandId);
+    const fighter = (warbandResult?.warbandFile?.fighters || [])
+      .find(f => f.type === 'henchman' && f.id === henchman.type);
+    const maxSize = fighter?.groupSize?.max || 5;
     if (newSize > maxSize) return this.toast(`Maximum group size is ${maxSize}.`, 'error');
     henchman.groupSize = newSize;
     this.saveCurrentRoster();
@@ -1308,7 +1313,10 @@ const UI = {
     }
     const r = this.currentRoster;
     if (!r) return this.toast('No roster open.', 'error');
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const warbandDisplayName = warbandResult
+      ? (warbandResult.subfaction || warbandResult.warbandFile.name)
+      : r.warbandId;
     const memberCount = RosterModel.getMemberCount(r);
     const rating = RosterModel.calculateWarbandRating(r);
     const totalSpent = RosterModel.calculateTotalCost(r);
@@ -1451,7 +1459,7 @@ const UI = {
 <body>
   <div class="header">
     <h1>${esc(r.name)}</h1>
-    <div class="warband-type">${warband ? esc(warband.name) : esc(r.warbandId)}</div>
+    <div class="warband-type">${esc(warbandDisplayName)}</div>
   </div>
 
   <div class="summary">
