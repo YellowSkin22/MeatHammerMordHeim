@@ -477,7 +477,7 @@ const UI = {
           </div>
 
           <div class="stat-line">
-            ${['M','WS','BS','S','T','W','I','A','Ld'].map(stat => {
+            ${['m','ws','bs','s','t','w','i','a','ld'].map(stat => {
               const isModified = warrior.stats[stat] !== warrior.baseStats[stat];
               return `
                 <div class="stat-cell">
@@ -675,15 +675,15 @@ const UI = {
     }
     document.getElementById('custom-name').value = '';
     document.getElementById('custom-cost').value = '0';
-    document.getElementById('custom-stat-M').value = '4';
-    document.getElementById('custom-stat-WS').value = '3';
-    document.getElementById('custom-stat-BS').value = '3';
-    document.getElementById('custom-stat-S').value = '3';
-    document.getElementById('custom-stat-T').value = '3';
-    document.getElementById('custom-stat-W').value = '1';
-    document.getElementById('custom-stat-I').value = '3';
-    document.getElementById('custom-stat-A').value = '1';
-    document.getElementById('custom-stat-Ld').value = '7';
+    document.getElementById('custom-stat-m').value = '4';
+    document.getElementById('custom-stat-ws').value = '3';
+    document.getElementById('custom-stat-bs').value = '3';
+    document.getElementById('custom-stat-s').value = '3';
+    document.getElementById('custom-stat-t').value = '3';
+    document.getElementById('custom-stat-w').value = '1';
+    document.getElementById('custom-stat-i').value = '3';
+    document.getElementById('custom-stat-a').value = '1';
+    document.getElementById('custom-stat-ld').value = '7';
     document.getElementById('custom-rules').value = '';
     document.getElementById('custom-warrior-modal').classList.add('active');
   },
@@ -693,7 +693,7 @@ const UI = {
     if (!name) return this.toast('Enter a warrior name.', 'error');
     const cost = parseInt(document.getElementById('custom-cost').value) || 0;
     const stats = {};
-    for (const stat of ['M','WS','BS','S','T','W','I','A','Ld']) {
+    for (const stat of ['m','ws','bs','s','t','w','i','a','ld']) {
       stats[stat] = parseInt(document.getElementById('custom-stat-' + stat).value) || 0;
     }
     const rulesStr = document.getElementById('custom-rules').value.trim();
@@ -1111,7 +1111,7 @@ const UI = {
     const modal = document.getElementById('stat-modal');
     const body = document.getElementById('stat-modal-body');
 
-    const stats = ['M','WS','BS','S','T','W','I','A','Ld'];
+    const stats = ['m','ws','bs','s','t','w','i','a','ld'];
     let html = '<div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.5rem;">';
     for (const stat of stats) {
       html += `
@@ -1317,7 +1317,7 @@ const UI = {
     };
 
     const renderStatLine = (warrior) => {
-      return ['M','WS','BS','S','T','W','I','A','Ld'].map(stat => {
+      return ['m','ws','bs','s','t','w','i','a','ld'].map(stat => {
         const mod = warrior.stats[stat] !== warrior.baseStats[stat];
         return `<td class="${mod ? 'stat-mod' : ''}">${warrior.stats[stat]}</td>`;
       }).join('');
