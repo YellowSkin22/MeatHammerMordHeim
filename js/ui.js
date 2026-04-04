@@ -345,7 +345,11 @@ const UI = {
   // === WARRIORS TAB ===
   renderWarriorsTab() {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const warbandName = subfaction || warbandFile?.name || '';
+    const heroes   = (warbandFile?.fighters || []).filter(f => f.type === 'hero');
+    const henchmen = (warbandFile?.fighters || []).filter(f => f.type === 'henchman');
 
     // Capture collapsed state of warrior cards before re-render
     const collapsedCards = new Set();
@@ -364,15 +368,15 @@ const UI = {
 
     // Hero add dropdown
     const heroAddContainer = document.getElementById('hero-add-buttons');
-    const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+    const maxHeroes = heroes.reduce((sum, h) => sum + (h.maxQty || 0), 0);
     const atTotalCap = r.heroes.length >= maxHeroes;
     heroAddContainer.innerHTML = `
       <select id="hero-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('heroes')">
         <option value="">+ Add Hero</option>
-        ${warband.heroes.map(ht => {
-          const currentCount = r.heroes.filter(h => h.type === ht.type).length;
-          const atMax = atTotalCap || currentCount >= ht.max;
-          return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
+        ${heroes.map(ht => {
+          const count = r.heroes.filter(h => h.type === ht.id).length;
+          const atMax = atTotalCap || count >= (ht.maxQty || 1);
+          return `<option value="${ht.id}" ${atMax ? 'disabled' : ''}>${this.esc(ht.name)} (${ht.costGc ?? 0} gc)${atMax ? ' \u2713' : ''}</option>`;
         }).join('')}
       </select>
     `;
@@ -390,8 +394,8 @@ const UI = {
     henchAddContainer.innerHTML = `
       <select id="henchmen-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('henchmen')">
         <option value="">+ Add Henchman</option>
-        ${warband.henchmen.map(ht => {
-          return `<option value="${ht.type}">${ht.name} (${ht.cost} gc)</option>`;
+        ${henchmen.map(ht => {
+          return `<option value="${ht.id}">${this.esc(ht.name)} (${ht.costGc ?? 0} gc)</option>`;
         }).join('')}
       </select>
     `;
@@ -406,15 +410,11 @@ const UI = {
 
     // Hired Swords add dropdown
     const hiredSwordsAddContainer = document.getElementById('hired-swords-add-buttons');
-    const availableHiredSwords = DataService.getAvailableHiredSwords(r.warbandId).sort((a, b) => a.name.localeCompare(b.name));
+    const availableHiredSwords = DataService.getAvailableHiredSwords(warbandName);
     hiredSwordsAddContainer.innerHTML = `
       <select id="hired-swords-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('hiredSwords')">
         <option value="">+ Hire Sword</option>
-        ${availableHiredSwords.map(ht => {
-          const currentCount = r.hiredSwords.filter(hs => hs.type === ht.type).length;
-          const atMax = currentCount >= (ht.max || 1);
-          return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
-        }).join('')}
+        ${availableHiredSwords.map(hs => `<option value="${hs.key}">${this.esc(hs.name)} (${parseInt(hs.cost) || 0} gc)</option>`).join('')}
       </select>
     `;
 
@@ -572,15 +572,11 @@ const UI = {
   },
 
   hasSpellAccess(warrior) {
-    // Check template spellAccess (computed at load time from magic.json)
-    if (this.currentRoster && !warrior.isHiredSword && !warrior.isCustom && !warrior.isPromotedHenchman) {
-      const warband = DataService.getWarband(this.currentRoster.warbandId);
-      const template = warband?.heroes.find(h => h.type === warrior.type);
-      if (template?.spellAccess?.length > 0) return true;
-    }
-    // Fallback: specialRules keyword check (covers hired swords, custom warriors, old data)
+    // spellAccess is computed at warrior creation and stored on the warrior object
+    if (Array.isArray(warrior.spellAccess) && warrior.spellAccess.length > 0) return true;
+    // Fallback: specialRules keyword check (covers old data, custom warriors, hired swords)
     const wizardRules = ['Wizard', 'Warrior Wizard', 'Prayers of Sigmar', 'Magic User', 'Prayers', 'Spellcaster', 'Prayercaster'];
-    return warrior.specialRules.some(r => wizardRules.includes(r));
+    return (warrior.specialRules || []).some(r => wizardRules.includes(r));
   },
 
   renderSpellSection(warrior, listType, index) {
@@ -608,17 +604,19 @@ const UI = {
   // === ADD WARRIOR ===
   addWarrior(type, isHero) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    if (!warbandResult) return;
+    const { warbandFile, subfaction } = warbandResult;
+    const fighters = warbandFile.fighters || [];
 
-    // Validate limits
     if (isHero) {
-      const template = warband.heroes.find(h => h.type === type);
+      const fighter = fighters.find(f => f.id === type && f.type === 'hero');
       const currentCount = r.heroes.filter(h => h.type === type).length;
-      if (currentCount >= template.max) {
-        return this.toast(`Maximum ${template.name}s reached (${template.max}).`, 'error');
+      if (currentCount >= (fighter?.maxQty ?? 1)) {
+        return this.toast(`Maximum ${fighter?.name ?? type}s reached (${fighter?.maxQty ?? 1}).`, 'error');
       }
-      // Total hero cap (includes promoted henchmen)
-      const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+      // Total hero cap
+      const maxHeroes = fighters.filter(f => f.type === 'hero').reduce((sum, h) => sum + (h.maxQty || 0), 0);
       if (r.heroes.length >= maxHeroes) {
         return this.toast(`Already at max heroes (${maxHeroes}).`, 'error');
       }
@@ -630,7 +628,8 @@ const UI = {
       return this.toast(`Warband is full (${maxMembers} members).`, 'error');
     }
 
-    const warrior = RosterModel.createWarrior(type, isHero, warband);
+    const fighter = fighters.find(f => f.id === type);
+    const warrior = RosterModel.createWarrior(fighter, warbandFile, subfaction);
     if (!warrior) return this.toast('Unknown warrior type.', 'error');
 
     if (isHero) {
@@ -644,17 +643,10 @@ const UI = {
     this.toast(`${warrior.typeName} added.`, 'success');
   },
 
-  addHiredSword(type) {
+  addHiredSword(key) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
-    const template = DataService.getHiredSwordTemplate(type);
-
-    if (!template) return this.toast('Unknown hired sword type.', 'error');
-
-    const currentCount = r.hiredSwords.filter(hs => hs.type === type).length;
-    if (currentCount >= (template.max || 1)) {
-      return this.toast(`Maximum ${template.name}s reached.`, 'error');
-    }
+    const warrior = RosterModel.createHiredSword(key);
+    if (!warrior) return this.toast('Unknown hired sword.', 'error');
 
     const memberCount = RosterModel.getMemberCount(r);
     const maxMembers = this.getMaxMembers(r);
@@ -662,13 +654,10 @@ const UI = {
       return this.toast(`Warband is full (${maxMembers} members).`, 'error');
     }
 
-    const warrior = RosterModel.createHiredSword(type);
-    if (!warrior) return this.toast('Failed to create hired sword.', 'error');
-
     r.hiredSwords.push(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
-    this.toast(`${warrior.typeName} hired!`, 'success');
+    this.toast(`${warrior.name} hired!`, 'success');
   },
 
   addWarriorFromSelect(section) {
@@ -727,16 +716,20 @@ const UI = {
   // === LAD'S GOT TALENT ===
   openLadsGotTalentModal(henchmanIndex) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const heroFighters = (warbandFile?.fighters || []).filter(f => f.type === 'hero');
 
     // Max heroes check
-    const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+    const maxHeroes = heroFighters.reduce((sum, h) => sum + (h.maxQty || 0), 0);
     if (r.heroes.length >= maxHeroes) {
       return this.toast('Already at max heroes (' + maxHeroes + '). Roll again on the advancement table.', 'error');
     }
 
-    // Collect all skill lists available to heroes in this warband (deduplicated)
-    const allSkillLists = [...new Set(warband.heroes.flatMap(h => h.skillAccess || []))];
+    // Collect all skill subtypes available to heroes in this warband (deduplicated)
+    const allSkillSubtypes = [...new Set(
+      heroFighters.flatMap(h => DataService.resolveSkillAccess(h, subfaction))
+    )];
 
     const modal = document.getElementById('lads-got-talent-modal');
     modal.dataset.henchmanIndex = henchmanIndex;
@@ -746,11 +739,10 @@ const UI = {
 
     // Render skill list checkboxes
     const listContainer = document.getElementById('lgt-skill-lists');
-    listContainer.innerHTML = allSkillLists.map(catId => {
-      const catName = DataService.skills[catId]?.name || catId;
+    listContainer.innerHTML = allSkillSubtypes.map(subtype => {
       return '<label style="display:block; margin-bottom:0.4rem;">' +
-        '<input type="checkbox" class="lgt-skill-checkbox" value="' + catId + '"> ' +
-        this.esc(catName) +
+        '<input type="checkbox" class="lgt-skill-checkbox" value="' + this.escAttr(subtype) + '"> ' +
+        this.esc(subtype) +
       '</label>';
     }).join('');
 
@@ -1275,14 +1267,14 @@ const UI = {
 
   getMaxMembers(roster) {
     if (roster.maxMembersOverride != null) return roster.maxMembersOverride;
-    const warband = DataService.getWarband(roster.warbandId);
-    return warband ? warband.maxWarband : 15;
+    const result = DataService.getWarband(roster.warbandId);
+    return result ? (result.warbandFile.warbandRules?.maxModels ?? 15) : 15;
   },
 
   adjustMemberLimit(amount) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
-    const defaultMax = warband ? warband.maxWarband : 15;
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const defaultMax = warbandResult ? (warbandResult.warbandFile.warbandRules?.maxModels ?? 15) : 15;
     const current = this.getMaxMembers(r);
     const newVal = current + amount;
     if (newVal < 1) return;
