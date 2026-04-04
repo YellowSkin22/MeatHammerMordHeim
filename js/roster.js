@@ -108,6 +108,7 @@ const RosterModel = {
       ),
       isHero: true,
       isHiredSword: true,
+      race: hs.race || 'human',
       skillAccess,
       spellAccess: [],  // hired sword spell access handled by specialRules fallback in hasSpellAccess()
     };
