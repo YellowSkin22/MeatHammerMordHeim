@@ -220,13 +220,16 @@ const UI = {
     }
 
     grid.innerHTML = rosters.map(r => {
-      const warband = DataService.getWarband(r.warbandId);
+      const warbandResult = DataService.getWarband(r.warbandId);
+      const warbandName = warbandResult
+        ? (warbandResult.subfaction || warbandResult.warbandFile.name)
+        : r.warbandId;
       const memberCount = RosterModel.getMemberCount(r);
       const rating = RosterModel.calculateWarbandRating(r);
       return `
         <div class="roster-card" onclick="UI.openRoster('${r.id}')">
           <div class="roster-card-name">${this.esc(r.name)}</div>
-          <div class="roster-card-warband">${warband ? warband.name : r.warbandId}</div>
+          <div class="roster-card-warband">${this.esc(warbandName)}</div>
           <div class="roster-card-stats">
             <div class="roster-card-stat">Members: <strong>${memberCount}</strong></div>
             <div class="roster-card-stat">Rating: <strong>${rating}</strong></div>
@@ -255,7 +258,10 @@ const UI = {
     const modal = document.getElementById('create-modal');
     const select = document.getElementById('create-warband-select');
     select.innerHTML = '<option value="">-- Select Warband --</option>' +
-      DataService.warbands.map(w => `<option value="${w.id}">${w.name} (${w.source})</option>`).join('');
+      DataService.getAllWarbands()
+        .sort((a, b) => a.name.localeCompare(b.name))
+        .map(w => `<option value="${w.id}">${this.esc(w.name)} (${this.esc(w.source)})</option>`)
+        .join('');
     document.getElementById('create-roster-name').value = '';
     document.getElementById('warband-description').textContent = '';
     modal.classList.add('active');
@@ -268,8 +274,15 @@ const UI = {
   onWarbandSelectChange() {
     const id = document.getElementById('create-warband-select').value;
     const desc = document.getElementById('warband-description');
-    const warband = DataService.getWarband(id);
-    desc.textContent = warband ? `${warband.description} Starting gold: ${warband.startingGold} gc.` : '';
+    const result = DataService.getWarband(id);
+    if (result) {
+      const { warbandFile } = result;
+      const lore = DataService._stripHtml(warbandFile.lore || warbandFile.warbandRules?.choiceFluff || '')
+        .replace(/\s+/g, ' ').trim().slice(0, 300);
+      desc.textContent = `${lore} Starting gold: ${warbandFile.warbandRules?.startingGc ?? 500} gc.`;
+    } else {
+      desc.textContent = '';
+    }
   },
 
   submitCreateRoster() {
@@ -305,14 +318,17 @@ const UI = {
   renderRosterEditor() {
     const r = this.currentRoster;
     if (!r) return;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const warbandDisplayName = warbandResult
+      ? (warbandResult.subfaction || warbandResult.warbandFile.name)
+      : r.warbandId;
     const memberCount = RosterModel.getMemberCount(r);
     const rating = RosterModel.calculateWarbandRating(r);
     const totalSpent = RosterModel.calculateTotalCost(r);
 
     // Header
     document.getElementById('editor-roster-name').value = r.name;
-    document.getElementById('editor-warband-type').textContent = warband ? warband.name : r.warbandId;
+    document.getElementById('editor-warband-type').textContent = warbandDisplayName;
 
     // Summary
     document.getElementById('summary-members').textContent = `${memberCount} / ${this.getMaxMembers(r)}`;
@@ -329,7 +345,11 @@ const UI = {
   // === WARRIORS TAB ===
   renderWarriorsTab() {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const warbandName = subfaction || warbandFile?.name || '';
+    const heroes   = (warbandFile?.fighters || []).filter(f => f.type === 'hero');
+    const henchmen = (warbandFile?.fighters || []).filter(f => f.type === 'henchman');
 
     // Capture collapsed state of warrior cards before re-render
     const collapsedCards = new Set();
@@ -348,15 +368,15 @@ const UI = {
 
     // Hero add dropdown
     const heroAddContainer = document.getElementById('hero-add-buttons');
-    const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+    const maxHeroes = heroes.reduce((sum, h) => sum + (h.maxQty || 0), 0);
     const atTotalCap = r.heroes.length >= maxHeroes;
     heroAddContainer.innerHTML = `
       <select id="hero-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('heroes')">
         <option value="">+ Add Hero</option>
-        ${warband.heroes.map(ht => {
-          const currentCount = r.heroes.filter(h => h.type === ht.type).length;
-          const atMax = atTotalCap || currentCount >= ht.max;
-          return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
+        ${heroes.map(ht => {
+          const count = r.heroes.filter(h => h.type === ht.id).length;
+          const atMax = atTotalCap || count >= (ht.maxQty || 1);
+          return `<option value="${ht.id}" ${atMax ? 'disabled' : ''}>${this.esc(ht.name)} (${ht.costGc ?? 0} gc)${atMax ? ' \u2713' : ''}</option>`;
         }).join('')}
       </select>
     `;
@@ -374,8 +394,8 @@ const UI = {
     henchAddContainer.innerHTML = `
       <select id="henchmen-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('henchmen')">
         <option value="">+ Add Henchman</option>
-        ${warband.henchmen.map(ht => {
-          return `<option value="${ht.type}">${ht.name} (${ht.cost} gc)</option>`;
+        ${henchmen.map(ht => {
+          return `<option value="${ht.id}">${this.esc(ht.name)} (${ht.costGc ?? 0} gc)</option>`;
         }).join('')}
       </select>
     `;
@@ -390,15 +410,11 @@ const UI = {
 
     // Hired Swords add dropdown
     const hiredSwordsAddContainer = document.getElementById('hired-swords-add-buttons');
-    const availableHiredSwords = DataService.getAvailableHiredSwords(r.warbandId).sort((a, b) => a.name.localeCompare(b.name));
+    const availableHiredSwords = DataService.getAvailableHiredSwords(warbandName);
     hiredSwordsAddContainer.innerHTML = `
       <select id="hired-swords-add-select" class="form-control" style="font-size:0.8rem; padding:0.2rem 2rem 0.2rem 0.4rem;" onclick="event.stopPropagation()" onchange="UI.addWarriorFromSelect('hiredSwords')">
         <option value="">+ Hire Sword</option>
-        ${availableHiredSwords.map(ht => {
-          const currentCount = r.hiredSwords.filter(hs => hs.type === ht.type).length;
-          const atMax = currentCount >= (ht.max || 1);
-          return `<option value="${ht.type}" ${atMax ? 'disabled' : ''}>${ht.name} (${ht.cost} gc)${atMax ? ' \u2713' : ''}</option>`;
-        }).join('')}
+        ${availableHiredSwords.map(hs => `<option value="${hs.key}">${this.esc(hs.name)} (${parseInt(hs.cost) || 0} gc)</option>`).join('')}
       </select>
     `;
 
@@ -477,7 +493,7 @@ const UI = {
           </div>
 
           <div class="stat-line">
-            ${['M','WS','BS','S','T','W','I','A','Ld'].map(stat => {
+            ${['m','ws','bs','s','t','w','i','a','ld'].map(stat => {
               const isModified = warrior.stats[stat] !== warrior.baseStats[stat];
               return `
                 <div class="stat-cell">
@@ -501,7 +517,7 @@ const UI = {
             <div class="tag-list">
               ${warrior.equipment.map((eq, eqIdx) => {
                 const itemData = DataService.getEquipmentItem(eq.id);
-                const tooltip = itemData ? this.escAttr(itemData.rules) : '';
+                const tooltip = itemData ? this.escAttr(DataService._stripHtml(itemData.specialRules?.[0]?.ruleAbbreviated || '')) : '';
                 return `<span class="tag equipment" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${eq.name} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>`;
               }).join('')}
               <button class="btn btn-sm" onclick="UI.openEquipmentModal('${listType}', ${index})">+ Add</button>
@@ -513,7 +529,7 @@ const UI = {
             <div class="tag-list">
               ${warrior.skills.map((sk, skIdx) => {
                 const skillData = DataService.getSkill(sk.id);
-                const tooltip = skillData ? this.esc(skillData.description) : '';
+                const tooltip = skillData ? this.esc(DataService._stripHtml(skillData.Rules?.[0]?.ruleAbbreviated || '')) : '';
                 return `<span class="tag skill" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${sk.name} <span class="tag-remove" onclick="UI.removeSkill('${listType}', ${index}, ${skIdx})">x</span></span>`;
               }).join('')}
               ${isHero ? `<button class="btn btn-sm" onclick="UI.openSkillModal('${listType}', ${index})">+ Add</button>` : ''}
@@ -556,15 +572,11 @@ const UI = {
   },
 
   hasSpellAccess(warrior) {
-    // Check template spellAccess (computed at load time from magic.json)
-    if (this.currentRoster && !warrior.isHiredSword && !warrior.isCustom && !warrior.isPromotedHenchman) {
-      const warband = DataService.getWarband(this.currentRoster.warbandId);
-      const template = warband?.heroes.find(h => h.type === warrior.type);
-      if (template?.spellAccess?.length > 0) return true;
-    }
-    // Fallback: specialRules keyword check (covers hired swords, custom warriors, old data)
+    // spellAccess is computed at warrior creation and stored on the warrior object
+    if (Array.isArray(warrior.spellAccess) && warrior.spellAccess.length > 0) return true;
+    // Fallback: specialRules keyword check (covers old data, custom warriors, hired swords)
     const wizardRules = ['Wizard', 'Warrior Wizard', 'Prayers of Sigmar', 'Magic User', 'Prayers', 'Spellcaster', 'Prayercaster'];
-    return warrior.specialRules.some(r => wizardRules.includes(r));
+    return (warrior.specialRules || []).some(r => wizardRules.includes(r));
   },
 
   renderSpellSection(warrior, listType, index) {
@@ -573,7 +585,9 @@ const UI = {
     const spellTags = spells.map((sp, spIdx) => {
       const spellData = DataService.getSpell(sp.id);
       const diff = spellData ? (spellData.difficulty === 'Auto' ? 'Auto' : 'Diff: ' + spellData.difficulty) : '';
-      const desc = spellData ? this.esc(spellData.description) : '';
+      const desc = spellData
+        ? this.esc(DataService._stripHtml(spellData.ruleAbbreviated || spellData.ruleFull || ''))
+        : '';
       const tooltip = diff && desc ? diff + '. ' + desc : desc;
       return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + tooltip + '"' : '') + '>' + sp.name + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
     }).join('');
@@ -592,17 +606,19 @@ const UI = {
   // === ADD WARRIOR ===
   addWarrior(type, isHero) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    if (!warbandResult) return;
+    const { warbandFile, subfaction } = warbandResult;
+    const fighters = warbandFile.fighters || [];
 
-    // Validate limits
     if (isHero) {
-      const template = warband.heroes.find(h => h.type === type);
+      const fighter = fighters.find(f => f.id === type && f.type === 'hero');
       const currentCount = r.heroes.filter(h => h.type === type).length;
-      if (currentCount >= template.max) {
-        return this.toast(`Maximum ${template.name}s reached (${template.max}).`, 'error');
+      if (currentCount >= (fighter?.maxQty ?? 1)) {
+        return this.toast(`Maximum ${fighter?.name ?? type}s reached (${fighter?.maxQty ?? 1}).`, 'error');
       }
-      // Total hero cap (includes promoted henchmen)
-      const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+      // Total hero cap
+      const maxHeroes = fighters.filter(f => f.type === 'hero').reduce((sum, h) => sum + (h.maxQty || 0), 0);
       if (r.heroes.length >= maxHeroes) {
         return this.toast(`Already at max heroes (${maxHeroes}).`, 'error');
       }
@@ -614,8 +630,9 @@ const UI = {
       return this.toast(`Warband is full (${maxMembers} members).`, 'error');
     }
 
-    const warrior = RosterModel.createWarrior(type, isHero, warband);
-    if (!warrior) return this.toast('Unknown warrior type.', 'error');
+    const fighter = fighters.find(f => f.id === type);
+    if (!fighter) return this.toast('Unknown warrior type.', 'error');
+    const warrior = RosterModel.createWarrior(fighter, warbandFile, subfaction);
 
     if (isHero) {
       r.heroes.push(warrior);
@@ -628,17 +645,13 @@ const UI = {
     this.toast(`${warrior.typeName} added.`, 'success');
   },
 
-  addHiredSword(type) {
+  addHiredSword(key) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
-    const template = DataService.getHiredSwordTemplate(type);
-
-    if (!template) return this.toast('Unknown hired sword type.', 'error');
-
-    const currentCount = r.hiredSwords.filter(hs => hs.type === type).length;
-    if (currentCount >= (template.max || 1)) {
-      return this.toast(`Maximum ${template.name}s reached.`, 'error');
+    if (r.hiredSwords.some(hs => hs.type === key)) {
+      return this.toast('This hired sword is already in your warband.', 'error');
     }
+    const warrior = RosterModel.createHiredSword(key);
+    if (!warrior) return this.toast('Unknown hired sword.', 'error');
 
     const memberCount = RosterModel.getMemberCount(r);
     const maxMembers = this.getMaxMembers(r);
@@ -646,13 +659,10 @@ const UI = {
       return this.toast(`Warband is full (${maxMembers} members).`, 'error');
     }
 
-    const warrior = RosterModel.createHiredSword(type);
-    if (!warrior) return this.toast('Failed to create hired sword.', 'error');
-
     r.hiredSwords.push(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
-    this.toast(`${warrior.typeName} hired!`, 'success');
+    this.toast(`${warrior.name} hired!`, 'success');
   },
 
   addWarriorFromSelect(section) {
@@ -675,15 +685,15 @@ const UI = {
     }
     document.getElementById('custom-name').value = '';
     document.getElementById('custom-cost').value = '0';
-    document.getElementById('custom-stat-M').value = '4';
-    document.getElementById('custom-stat-WS').value = '3';
-    document.getElementById('custom-stat-BS').value = '3';
-    document.getElementById('custom-stat-S').value = '3';
-    document.getElementById('custom-stat-T').value = '3';
-    document.getElementById('custom-stat-W').value = '1';
-    document.getElementById('custom-stat-I').value = '3';
-    document.getElementById('custom-stat-A').value = '1';
-    document.getElementById('custom-stat-Ld').value = '7';
+    document.getElementById('custom-stat-m').value = '4';
+    document.getElementById('custom-stat-ws').value = '3';
+    document.getElementById('custom-stat-bs').value = '3';
+    document.getElementById('custom-stat-s').value = '3';
+    document.getElementById('custom-stat-t').value = '3';
+    document.getElementById('custom-stat-w').value = '1';
+    document.getElementById('custom-stat-i').value = '3';
+    document.getElementById('custom-stat-a').value = '1';
+    document.getElementById('custom-stat-ld').value = '7';
     document.getElementById('custom-rules').value = '';
     document.getElementById('custom-warrior-modal').classList.add('active');
   },
@@ -693,7 +703,7 @@ const UI = {
     if (!name) return this.toast('Enter a warrior name.', 'error');
     const cost = parseInt(document.getElementById('custom-cost').value) || 0;
     const stats = {};
-    for (const stat of ['M','WS','BS','S','T','W','I','A','Ld']) {
+    for (const stat of ['m','ws','bs','s','t','w','i','a','ld']) {
       stats[stat] = parseInt(document.getElementById('custom-stat-' + stat).value) || 0;
     }
     const rulesStr = document.getElementById('custom-rules').value.trim();
@@ -711,16 +721,20 @@ const UI = {
   // === LAD'S GOT TALENT ===
   openLadsGotTalentModal(henchmanIndex) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const heroFighters = (warbandFile?.fighters || []).filter(f => f.type === 'hero');
 
     // Max heroes check
-    const maxHeroes = warband.heroes.reduce((sum, h) => sum + (h.max || 0), 0);
+    const maxHeroes = heroFighters.reduce((sum, h) => sum + (h.maxQty || 0), 0);
     if (r.heroes.length >= maxHeroes) {
       return this.toast('Already at max heroes (' + maxHeroes + '). Roll again on the advancement table.', 'error');
     }
 
-    // Collect all skill lists available to heroes in this warband (deduplicated)
-    const allSkillLists = [...new Set(warband.heroes.flatMap(h => h.skillAccess || []))];
+    // Collect all skill subtypes available to heroes in this warband (deduplicated)
+    const allSkillSubtypes = [...new Set(
+      heroFighters.flatMap(h => DataService.resolveSkillAccess(h, subfaction))
+    )];
 
     const modal = document.getElementById('lads-got-talent-modal');
     modal.dataset.henchmanIndex = henchmanIndex;
@@ -730,11 +744,10 @@ const UI = {
 
     // Render skill list checkboxes
     const listContainer = document.getElementById('lgt-skill-lists');
-    listContainer.innerHTML = allSkillLists.map(catId => {
-      const catName = DataService.skills[catId]?.name || catId;
+    listContainer.innerHTML = allSkillSubtypes.map(subtype => {
       return '<label style="display:block; margin-bottom:0.4rem;">' +
-        '<input type="checkbox" class="lgt-skill-checkbox" value="' + catId + '"> ' +
-        this.esc(catName) +
+        '<input type="checkbox" class="lgt-skill-checkbox" value="' + this.escAttr(subtype) + '"> ' +
+        this.esc(subtype) +
       '</label>';
     }).join('');
 
@@ -827,21 +840,20 @@ const UI = {
   openEquipmentModal(listType, index) {
     const r = this.currentRoster;
     const warrior = r[listType][index];
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const warbandName = subfaction || warbandFile?.name || '';
 
     let warbandAllowedEquipment = null; // null = no Warband Equipment dropdown
-    // Legacy category list used only for hired swords (Phase 4 will replace)
-    let hiredSwordCategories = null;
 
     if (listType === 'hiredSwords') {
-      const template = DataService.getHiredSwordTemplate(warrior.type);
-      hiredSwordCategories = template ? template.equipmentAccess : [];
+      // Hired swords: show all equipment (Uncle-Mel has no category restriction data)
+      warbandAllowedEquipment = null;
     } else if (listType !== 'customWarriors') {
-      // heroes / henchmen: find warband-specific equipment list
-      const fighterList = listType === 'heroes' ? warband?.heroes : warband?.henchmen;
-      const template = fighterList?.find(f => f.type === warrior.type);
-      if (template?.allowedEquipment) {
-        warbandAllowedEquipment = template.allowedEquipment;
+      // Heroes / henchmen: resolve from warband file on-the-fly
+      const fighter = (warbandFile?.fighters || []).find(f => f.id === warrior.type);
+      if (fighter) {
+        warbandAllowedEquipment = DataService.resolveAllowedEquipment(fighter, warbandFile);
       }
     }
 
@@ -877,18 +889,14 @@ const UI = {
 
     // ── All Equipment dropdown ─────────────────────────────────────────────
     // Build item list based on listType:
-    //   customWarriors → all equipment
-    //   hiredSwords    → filtered by legacy equipmentAccess categories
+    //   customWarriors / hiredSwords → all equipment
     //   heroes/henchmen → filtered by permittedWarbands / excludedWarbands
     let allItems;
-    if (listType === 'customWarriors') {
+    if (listType === 'customWarriors' || listType === 'hiredSwords') {
       allItems = DataService.getAllEquipment();
-    } else if (listType === 'hiredSwords') {
-      const cats = [...(hiredSwordCategories || []), 'miscellaneous'];
-      allItems = cats.flatMap(catId => DataService.getEquipmentByCategory(catId));
     } else {
       allItems = DataService.getAllEquipment()
-        .filter(item => DataService.canWarbandAccess(item, warband?.name || ''));
+        .filter(item => DataService.canWarbandAccess(item, warbandName));
     }
 
     // Deduplicate and group by type
@@ -948,33 +956,37 @@ const UI = {
   // === SKILL MODAL ===
   openSkillModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    let accessCategories;
+    const warbandResult = DataService.getWarband(this.currentRoster.warbandId);
+    const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
+    const warbandName = subfaction || warbandFile?.name || '';
+
+    let accessSubtypes; // array of Uncle-Mel subtype strings
+
     if (warrior.isPromotedHenchman) {
-      accessCategories = warrior.skillAccess || [];
+      accessSubtypes = warrior.skillAccess || [];
     } else if (listType === 'customWarriors') {
-      accessCategories = Object.keys(DataService.skills);
+      accessSubtypes = Object.values(DataService.SKILL_KEY_TO_SUBTYPE).concat(['Special Skill']);
     } else if (listType === 'hiredSwords') {
-      const template = DataService.getHiredSwordTemplate(warrior.type);
-      accessCategories = template ? template.skillAccess : [];
+      accessSubtypes = warrior.skillAccess || [];
     } else {
-      const warband = DataService.getWarband(this.currentRoster.warbandId);
-      const template = warband.heroes.find(h => h.type === warrior.type);
-      accessCategories = template ? template.skillAccess : [];
+      const fighter = (warbandFile?.fighters || []).find(f => f.id === warrior.type);
+      accessSubtypes = fighter ? DataService.resolveSkillAccess(fighter, subfaction) : [];
     }
 
     const modal = document.getElementById('skill-modal');
-    const body = document.getElementById('skill-modal-body');
-
+    const body  = document.getElementById('skill-modal-body');
     let html = '';
-    for (const catId of accessCategories) {
-      const skills = DataService.getSkillsByCategory(catId);
+
+    for (const subtype of accessSubtypes) {
+      const skills = DataService.getSkillsBySubtype(subtype, warbandName);
       if (skills.length === 0) continue;
-      const catName = DataService.skills[catId]?.name || catId;
-      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${catName}</h4>`;
+      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(subtype)}</h4>`;
       for (const skill of skills) {
-        const alreadyHas = warrior.skills.find(s => s.id === skill.id);
+        const skillId = DataService.slugify(skill.name);
+        const alreadyHas = warrior.skills.find(s => s.id === skillId);
         const disabled = alreadyHas ? 'disabled' : '';
-        html += `<button class="btn btn-sm mb-1" ${disabled} onclick="UI.selectSkill('${listType}', ${index}, '${skill.id}')" title="${this.esc(skill.description)}">${skill.name}</button> `;
+        const desc = DataService._stripHtml(skill.Rules?.[0]?.ruleAbbreviated || skill.Rules?.[0]?.ruleFull || '');
+        html += `<button class="btn btn-sm mb-1" ${disabled} onclick="UI.selectSkill('${listType}', ${index}, '${skillId}')" title="${this.escAttr(desc)}">${this.esc(skill.name)}</button> `;
       }
     }
 
@@ -1004,36 +1016,34 @@ const UI = {
   // === SPELL MODAL ===
   openSpellModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
-    let spellLists;
+
+    let spellListIds;
     if (warrior.isPromotedHenchman) {
-      spellLists = [];
+      spellListIds = [];
     } else if (listType === 'customWarriors') {
-      spellLists = Object.keys(DataService.spells);
-    } else if (listType === 'hiredSwords') {
-      const template = DataService.getHiredSwordTemplate(warrior.type);
-      spellLists = template && template.spellAccess ? template.spellAccess : [];
+      spellListIds = Object.keys(DataService.magic.spellLists || {});
     } else {
-      const warband = DataService.getWarband(this.currentRoster.warbandId);
-      const template = warband.heroes.find(h => h.type === warrior.type)
-        || warband.henchmen.find(h => h.type === warrior.type);
-      spellLists = template && template.spellAccess ? template.spellAccess : [];
+      spellListIds = warrior.spellAccess || [];
     }
 
     const modal = document.getElementById('spell-modal');
-    const body = document.getElementById('spell-modal-body');
-
+    const body  = document.getElementById('spell-modal-body');
     let html = '';
-    for (const listId of spellLists) {
-      const spells = DataService.getSpellsByList(listId);
+
+    for (const listId of spellListIds) {
+      const list   = DataService.magic.spellLists?.[listId];
+      if (!list) continue;
+      const spells = list.spells || [];
       if (spells.length === 0) continue;
-      const listName = DataService.spells[listId]?.name || listId;
-      html += '<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">' + this.esc(listName) + '</h4>';
+      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(list.name || listId)}</h4>`;
       html += '<div style="display:flex; flex-direction:column; gap:0.3rem;">';
       for (const spell of spells) {
-        const alreadyHas = (warrior.spells || []).find(s => s.id === spell.id);
+        const spellId = spell.id || DataService.slugify(spell.name);
+        const alreadyHas = (warrior.spells || []).find(s => s.id === spellId);
         const disabled = alreadyHas ? 'disabled' : '';
-        const diff = spell.difficulty === 'Auto' ? 'Auto' : 'Difficulty: ' + spell.difficulty;
-        html += '<button class="btn btn-sm" ' + disabled + ' data-tooltip="' + this.escAttr(spell.description) + '" onclick="UI.selectSpell(\'' + listType + '\', ' + index + ', \'' + spell.id + '\')">' + spell.name + ' (' + diff + ')</button>';
+        const diff = spell.difficulty === 'Auto' ? 'Auto' : `Diff: ${spell.difficulty}`;
+        const desc = DataService._stripHtml(spell.ruleAbbreviated || spell.ruleFull || '');
+        html += `<button class="btn btn-sm" ${disabled} data-tooltip="${this.escAttr(diff + '. ' + desc)}" onclick="UI.selectSpell('${listType}', ${index}, '${spellId}')">${this.esc(spell.name)} (${diff})</button>`;
       }
       html += '</div>';
     }
@@ -1111,7 +1121,7 @@ const UI = {
     const modal = document.getElementById('stat-modal');
     const body = document.getElementById('stat-modal-body');
 
-    const stats = ['M','WS','BS','S','T','W','I','A','Ld'];
+    const stats = ['m','ws','bs','s','t','w','i','a','ld'];
     let html = '<div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:0.5rem;">';
     for (const stat of stats) {
       html += `
@@ -1165,9 +1175,10 @@ const UI = {
     if (!henchman) return;
     const newSize = (henchman.groupSize || 1) + delta;
     if (newSize < 1) return this.toast('Group must have at least 1 member.', 'error');
-    const warband = DataService.getWarband(this.currentRoster.warbandId);
-    const template = warband.henchmen.find(h => h.type === henchman.type);
-    const maxSize = template?.maxGroupSize || 5;
+    const warbandResult = DataService.getWarband(this.currentRoster.warbandId);
+    const fighter = (warbandResult?.warbandFile?.fighters || [])
+      .find(f => f.type === 'henchman' && f.id === henchman.type);
+    const maxSize = fighter?.groupSize?.max || 5;
     if (newSize > maxSize) return this.toast(`Maximum group size is ${maxSize}.`, 'error');
     henchman.groupSize = newSize;
     this.saveCurrentRoster();
@@ -1259,14 +1270,14 @@ const UI = {
 
   getMaxMembers(roster) {
     if (roster.maxMembersOverride != null) return roster.maxMembersOverride;
-    const warband = DataService.getWarband(roster.warbandId);
-    return warband ? warband.maxWarband : 15;
+    const result = DataService.getWarband(roster.warbandId);
+    return result ? (result.warbandFile.warbandRules?.maxModels ?? 15) : 15;
   },
 
   adjustMemberLimit(amount) {
     const r = this.currentRoster;
-    const warband = DataService.getWarband(r.warbandId);
-    const defaultMax = warband ? warband.maxWarband : 15;
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const defaultMax = warbandResult ? (warbandResult.warbandFile.warbandRules?.maxModels ?? 15) : 15;
     const current = this.getMaxMembers(r);
     const newVal = current + amount;
     if (newVal < 1) return;
@@ -1305,7 +1316,10 @@ const UI = {
     }
     const r = this.currentRoster;
     if (!r) return this.toast('No roster open.', 'error');
-    const warband = DataService.getWarband(r.warbandId);
+    const warbandResult = DataService.getWarband(r.warbandId);
+    const warbandDisplayName = warbandResult
+      ? (warbandResult.subfaction || warbandResult.warbandFile.name)
+      : r.warbandId;
     const memberCount = RosterModel.getMemberCount(r);
     const rating = RosterModel.calculateWarbandRating(r);
     const totalSpent = RosterModel.calculateTotalCost(r);
@@ -1317,7 +1331,7 @@ const UI = {
     };
 
     const renderStatLine = (warrior) => {
-      return ['M','WS','BS','S','T','W','I','A','Ld'].map(stat => {
+      return ['m','ws','bs','s','t','w','i','a','ld'].map(stat => {
         const mod = warrior.stats[stat] !== warrior.baseStats[stat];
         return `<td class="${mod ? 'stat-mod' : ''}">${warrior.stats[stat]}</td>`;
       }).join('');
@@ -1448,7 +1462,7 @@ const UI = {
 <body>
   <div class="header">
     <h1>${esc(r.name)}</h1>
-    <div class="warband-type">${warband ? esc(warband.name) : esc(r.warbandId)}</div>
+    <div class="warband-type">${esc(warbandDisplayName)}</div>
   </div>
 
   <div class="summary">

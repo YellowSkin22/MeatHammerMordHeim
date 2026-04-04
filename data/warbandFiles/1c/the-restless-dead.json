@@ -1,0 +1,603 @@
+{
+  "id": "the-restless-dead",
+  "name": "The Restless Dead",
+  "grade": "1c",
+  "campaigngrade": "1c",
+  "source": "Border Town Burning",
+  "sourceLink": "https://broheim.net/downloads/warbands/supplement/btb/The%20Restless%20Dead.pdf",
+  "setting": "Border Town Burning",
+  "author": "",
+  "version": "",
+  "lore": "<em>A Liche is a necromancer who was wise enough never to expend his own life energy to fuel his spells during his lifetime. As time eats away at his body, he retains his soul which allows him to manipulate magic, which is what separates them from pitiful wraiths. Unfortunately, the undead bodies of the Liche are not capable of retaining magic forever. They must absorb massive amounts of magic through the use of dark rituals and forbidden spells. The most common ritual involves the devouring of the soul of a human. The soulless human becomes a zombie under the Liche’s control. This continues until he is discovered.</em><br /><br /><em>When a Liche is found, great armies are sent against it. The Liche retaliates by creating armies of undead warriors to defend itself, expending vast amounts of stored magical energy to do so. Win or lose, the Liche is greatly weakened in this process. More often than not, the Liche is crippled such that he is incapable of bringing himself to his former strength. In this event, the Liche has two options. Most of them wander south to the forest of Loren where they seek the wild and infinite magic of the wood. Some wander north towards the Chaos Wastes where they are almost always discovered and destroyed en-route. An even smaller percentage go west in ramshackle boats towards the lands of the High Elves... so far, only a small handful of Liches have ever lived in their undead state for very long; even fewer return to fighting strength after crippling defeat.</em><br /><br /><em>For those who travel north, the journey is long and arduous; dodging road wardens, rogues and thieves all for their goal to reach the Chaos Wastes, where the Liche's power will slowly regenerate from the billowing magical winds spewing from the Realm of Chaos.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 12,
+    "choiceFluff": "A Restless Dead warband must include a minimum of three models. You have 500 gold crowns to recruit your warband. The maximum number of warriors may not exceed 12."
+  },
+  "specialSkills": true,
+  "specialRules": [],
+  "equipmentLists": [
+    {
+      "id": "restless-dead-equipment-list",
+      "title": "Restless Dead Equipment List",
+      "caveat": "The following lists are used by Restless Dead warbands to pick their equipment.",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "short bow",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "buckler",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "liche",
+      "type": "hero",
+      "name": "Liche",
+      "plural": "Liches",
+      "race": "liche",
+      "flavour": "A Liche is a powerful undead sorcerer. They journey north in a desperate bid to regain their power in the Realm of Chaos after a crippling defeat. Liches are fanatical in their struggle to hang on to their pitiful existence, especially when this close to being forever banished from the realm of the living.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 125,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 2,
+        "t": 2,
+        "w": 4,
+        "i": 4,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "restless-dead-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "A Liche is a powerful wizard and so is able to use Necromantic magic and starts with two spells randomly generated from the <a href=\"#necromancy-restless-dead\">Necromantic magic list</a>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "A Liche is a horrible abomination and causes fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Psychology",
+          "ruleFull": "A Liche is not affected by psychology and never leaves combat."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Pain",
+          "ruleFull": "A Liche treats a stunned result on the injury chart as knocked down."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Poison",
+          "ruleFull": "A Liche is not affected by poison."
+        },
+        {
+          "flavour": "",
+          "rulename": "Eternal",
+          "ruleFull": "A Liche can choose to ignore any result on the hero's Serious Injury chart except <em>Killed</em> by taking a permanent -1 on their starting Wound profile. Obviously, a Liche with 1 Wound remaining on their starting profile does not have this option. A Liche that gets a <em>Killed</em> result instead takes a permanent –D3 Wounds on their starting profile. If this takes their starting Wound total to 0 or less, the Liche is <em>Killed</em> as normal."
+        },
+        {
+          "flavour": "",
+          "rulename": "Feed Upon Magic",
+          "ruleFull": "A Liche can perform spells that, with the consumption of D3 Treasures, can give the Liche a permanent +1 Wound on their starting profile. This can <em>only</em> be used in between battles and cannot be used if the Liche searches for rare items or was put <em>out of action</em> in the previous battle. If the warband does not have enough Treasures to complete the spell, then the Treasures are consumed anyway and the Liche does not gain the Wound."
+        },
+        {
+          "flavour": "",
+          "rulename": "Warrior Wizard",
+          "ruleFull": "The Liche may wear armour and cast spells. Indeed, it is often the clothing and armour alone that gives the Liche substance and form!"
+        },
+        {
+          "flavour": "",
+          "rulename": "Advancement",
+          "ruleFull": "If a Liche gets an advance roll of +1 Wound, they may instead pick a new skill from their available lists."
+        }
+      ],
+      "admonitions": "Liches may not carry any non-magical weapons<sup><Tooltip content=\"faq152\">❓</Tooltip></sup> and do not suffer any penalties for this. They may wear any armour from the Restless Dead Equipment list."
+    },
+    {
+      "id": "necromancer",
+      "type": "hero",
+      "name": "Necromancer",
+      "plural": "Necromancers",
+      "race": "human",
+      "flavour": "Necromancers who travel with Liches are apprentices to the dark arts of Necromancy. They are the only living thing that a Liche will tolerate in his proximity!",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 40,
+      "startingXp": 8,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "restless-dead-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "Necromancers are wizards being trained by their Liche masters in the art of Necromancy and so are able to use Necromantic magic. They start out knowing one of the two spells known by their Liche masters.<sup><Tooltip content=\"faq153\">❓</Tooltip></sup>"
+        },
+        {
+          "flavour": "",
+          "rulename": "Apprentices",
+          "ruleFull": "Necromancers may only ever know spells known by their Liche masters. Even if they did know spells the Liche didn’t, they wouldn’t dare use them for fear of their master’s response for their arrogance! If the Liche is ever killed, the Necromancer can continue to learn magic spells as a normal wizard, ignoring the Apprentice rule."
+        },
+        {
+          "flavour": "",
+          "rulename": "Gofer",
+          "ruleFull": "As an Apprentice, the Necromancer spends much of their time running errands for their Liche masters and over the years get exceptionally good at it. When a Necromancer searches for rare items, they roll 3D6 and pick the two highest."
+        }
+      ]
+    },
+    {
+      "id": "grave-guard",
+      "type": "hero",
+      "name": "Grave Guard",
+      "plural": "Grave Guards",
+      "race": "grave guard",
+      "flavour": "Grave Guards were once the finest warriors, hand selected by their masters for their martial skill and bravery, who fell in battle many centuries ago. They are now slaves to their necromantic masters in restless undeath.",
+      "minQty": 0,
+      "maxQty": 3,
+      "costGc": 35,
+      "startingXp": 6,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "restless-dead-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Wight Blades",
+          "ruleFull": "Grave Guards carry weapons laden with evil magic. All close combat ‘to hit’ rolls of a 6 will automatically wound. You may roll ‘to wound’ as normal to determine if it is a ‘critical hit’, but even a failed ‘to wound’ roll will still cause a wound if a 6 was rolled first ‘to hit’."
+        },
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "Grave Guards are terrifying undead creatures and so cause fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Poison",
+          "ruleFull": "Grave Guards are not affected by poison."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Psychology",
+          "ruleFull": "Grave Guards are not affected by psychology and never leave combat."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Pain",
+          "ruleFull": "Grave Guards treat a stunned result on the injury chart as knocked down."
+        },
+        {
+          "flavour": "",
+          "rulename": "May not Run",
+          "ruleFull": "Grave Guards are slow undead creatures and may not run (but can charge normally)."
+        },
+        {
+          "flavour": "",
+          "rulename": "No deal",
+          "ruleFull": "Grave Guards may not search for rare items."
+        }
+      ]
+    },
+    {
+      "id": "zombies",
+      "type": "henchman",
+      "name": "Zombie",
+      "plural": "Zombies",
+      "race": "undead",
+      "flavour": "Zombies are the most common of the undead: creatures animated by the will of their Necromantic masters to be slaves in their undeath.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 15,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 0,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 1,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "Zombies are horrible abominations and so cause fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "May not run",
+          "ruleFull": "Zombies are slow undead creatures and may not run (but may charge normally)."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Psychology",
+          "ruleFull": "A Zombie is not affected by psychology and never leaves combat."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Poison",
+          "ruleFull": "A Zombie is not affected by poison."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Pain",
+          "ruleFull": "Zombies treat stunned results on the injury chart as knocked down."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Brain",
+          "ruleFull": "Zombies never gain experience."
+        }
+      ],
+      "admonitions": "Zombies may not carry any weapons or wear armour and do not suffer any penalties for this."
+    },
+    {
+      "id": "skeletons",
+      "type": "henchman",
+      "name": "Skeleton",
+      "plural": "Skeletons",
+      "race": "undead",
+      "flavour": "The remains of ancient soldiers lie restless in their graves in the Northern Wastes. It only takes a mere whisper from the Necromancer to command them from their slumber and again into loyal service as mindless undead warriors.",
+      "minQty": 0,
+      "maxQty": 8,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 20,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "restless-dead-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "Skeletons are horrible abominations and so cause fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "May not run",
+          "ruleFull": "Skeletons are slow undead creatures and may not run (but may charge normally)."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Psychology",
+          "ruleFull": "Skeletons are not affected by psychology and never leaves combat."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Poison",
+          "ruleFull": "Skeletons are not affected by poison."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Pain",
+          "ruleFull": "Skeletons treat stunned results on the injury chart as knocked down."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Brain",
+          "ruleFull": "Skeletons never gain experience."
+        }
+      ]
+    },
+    {
+      "id": "wights",
+      "type": "henchman",
+      "name": "Wight",
+      "plural": "Wights",
+      "race": "grave guard",
+      "flavour": "Wights were formerly great champions among men, now reduced to shambling bodyguards. They resemble skeletons, but are far better armed and armoured and retain a substantial amount of their old combat prowess.",
+      "minQty": 0,
+      "maxQty": 3,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 30,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "restless-dead-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "Wights are horrible abominations and so cause fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "May not run",
+          "ruleFull": "Wights are slow undead creatures and may not run (but may charge normally)."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Psychology",
+          "ruleFull": "Wights are not affected by psychology and never leaves combat."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Poison",
+          "ruleFull": "Wights are not affected by poison."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Pain",
+          "ruleFull": "Wights treat stunned results on the injury chart as knocked down."
+        },
+        {
+          "flavour": "",
+          "rulename": "Experience",
+          "ruleFull": "Wights may gain experience, however Wights promoted to become Heroes by rolling The lad's got talent will be unable to search for rare items in the same way as Grave Guards. They must choose the Combat and Strength skill lists if promoted. Wights also gain Wight Blades if they become Heroes."
+        }
+      ]
+    },
+    {
+      "id": "scarecrows",
+      "type": "henchman",
+      "name": "Scarecrow",
+      "plural": "Scarecrows",
+      "race": "construct",
+      "flavour": "Some sorcerors have been known to create horrible unliving forms that are impervious to pain and notoriously difficult to stop. In order to maintain secrecy, a cunning wizard disguises their twisted supernatural bodyguard as something more common. With its ordinary appearance the golem is granted enough freedom to move around undetected. These lanky constructs are fashioned from straw to resemble scarecrows used by farmers to frighten birds away from crops. No one gives them so much as a passing glance... that is, until they begin to move!",
+      "minQty": 0,
+      "maxQty": 2,
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "costGc": 65,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 5,
+        "ws": 3,
+        "bs": 0,
+        "s": 3,
+        "t": "3(6)",
+        "w": 1,
+        "i": 3,
+        "a": 2,
+        "ld": 10
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Cause Fear",
+          "ruleFull": "The sight of a tall, lanky and silent scarecrow moving is highly unnatural and so causes fear."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Psychology",
+          "ruleFull": "The scarecrow is immune to all psychology and will never leave combat."
+        },
+        {
+          "flavour": "",
+          "rulename": "Immune to Poison",
+          "ruleFull": "The scarecrow is immune to all poisons."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Pain",
+          "ruleFull": "The scarecrow treats all stunned results on the injury chart as knocked down."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Brain",
+          "ruleFull": "The scarecrow never gain experience."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Substance",
+          "ruleFull": "The scarecrow is incredibly difficult to take down with shooting as there are few vital parts to hit. The scarecrow counts as having a T6 against all shooting and magical missiles, likewise, a scarecrow is immune to critical hits caused by shooting. The exception to this rule is missile weapons or spells that are fire based which deal damage as normal."
+        },
+        {
+          "flavour": "",
+          "rulename": "Flammable",
+          "ruleFull": "The scarecrow is primarily ratty cloth, straw and preserved body parts so as a result they burn very easily. Scarecrows count as being flammable. In addition, a scarecrow will be 'caught fire' on the roll of a 3+ as opposed to the normal 4+."
+        },
+        {
+          "flavour": "",
+          "rulename": "Construct",
+          "ruleFull": "The scarecrow is an undead construct and may re-roll any rolls on the injury table except for wounds caused by fire."
+        },
+        {
+          "flavour": "",
+          "rulename": "Animated Construct",
+          "ruleFull": "Powerful constructs such as scarecrows require much more concentration from their summoners than normal skeletons or zombies to remain animated. The scarecrow is controlled by either the Liche or the Necromancer (note down on the warband roster which), but each may only control one at a time, so only a warband with both a Liche and a Necromancer may ever take two Scarecrows. If the Liche or the Necromancer is for some reason unable to participate in a battle, their Scarecrow will also be unable to participate.<br /><br />Whenever the scarecrow's controller loses a wound he must pass an unmodified Leadership test or the magical bond is broken and the scarecrow is immediately taken out of action."
+        }
+      ],
+      "admonitions": "The scarecrow carries no equipment and suffers no penalties for this."
+    }
+  ]
+}

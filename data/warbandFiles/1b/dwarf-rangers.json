@@ -1,0 +1,517 @@
+{
+  "id": "dwarf-rangers",
+  "name": "Dwarf Rangers",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Nemesis Crown Supplement",
+  "sourceLink": "https://broheim.net/downloads/warbands/supplement/nemesiscrown/Dwarf%20Rangers.pdf",
+  "setting": "Nemesis Crown",
+  "author": "",
+  "version": "",
+  "lore": "<em>There is a traditional school of thought amongst many Dwarfs that ‘the old ways are best’, that new-fangled contraptions dreamt up by younger dwarves, especially those in the Engineering Guild, are weakening them by straying from time-honoured tactics and the ways of the Ancestors.</em><br /><br /><em>These Dwarfs tend to be older and as such travel together to prove this simple fact, appeasing the Ancestors by only using traditional weapons and tactics, retrieving lost treasures and artefacts and making every effort to cleanse fallen and lost Holds of the scum that have ‘temporarily’ taken them.</em><br /><br /><em>The newest Runesmiths, seen as the keepers of tradition, tend to be the leaders of these groups, gathering together a large number of like-minded members to undertake these expeditions. Their remit is simple - show the young whippersnappers that the Old Ways are the best way forward for the survival of the Dwarf race.</em>",
+  "warbandRules": {
+    "startingGc": null,
+    "maxModels": null,
+    "choiceFluff": null
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "Don’t Trust ‘Em:",
+      "ruleFull": "While Ranger Warbands are free to\nally with other Dwarf warbands in multi-player games,\ntheir point of view is so different that they do not trust\nthem fully. Members of a Dwarf Rangers warband are\nnever considered ‘friendly models’ to other dwarfs\nand vice versa.\n\nThis means that members of one warband WILL stop\nmembers of the other from Marching, they won’t keep\neach other from taking <Tooltip>all alone</Tooltip>  tests, etc. They don’t\ncount as enemy models and may split any treasure\nfound at the end of the game as normal, but the two\nbands are not friends, make no mistake!\n\nAll Dwarfs are subject to the following special rules:"
+    },
+    {
+      "flavour": "",
+      "rulename": "Hard to Kill",
+      "ruleFull": "Dwarfs are tough, resilient individuals who can only be taken out of action on a roll of 6 instead of 5-6 when rolling on the Injury chart. Treat a roll of 1-2 as knocked down, 3-5 as stunned, and 6 as out of action."
+    },
+    {
+      "flavour": "",
+      "rulename": "Hard Head",
+      "ruleFull": "Dwarfs ignore the special rules for maces, clubs, etc. They are not easy to knock out!"
+    },
+    {
+      "flavour": "",
+      "rulename": "Armour",
+      "ruleFull": "Dwarfs never suffer movement penalties for wearing armour."
+    },
+    {
+      "flavour": "",
+      "rulename": "Hate Orcs and Goblins",
+      "ruleFull": "All Dwarfs <Tooltip>hate</Tooltip> Orcs and Goblins. See the psychology section of the Mordheim rules for details on the effects of <Tooltip>hatred</Tooltip>."
+    },
+    {
+      "flavour": "",
+      "rulename": "Grudgebearers",
+      "ruleFull": "Dwarfs hold an ancient grudge against Elves from the days when the two races fought for supremacy in the Old World. A Dwarf warband may never include any kind of Elven Hired Sword or Dramatis Personae."
+    },
+    {
+      "flavour": "",
+      "rulename": "Incomparable Miners",
+      "ruleFull": "Dwarfs spend much of their lives\nunderground searching for precious minerals, and they are\nthe best in the world at this kind of work. In the city of\nMordheim they apply similar skills to the search for\nwyrdstone. When checking for wyrdstone at the end of a\ngame, add +1 to the number of pieces found for a\nDwarf warband."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "dwarf-warrior-equipment-list",
+      "title": "Dwarf Warrior Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "dwarf axe",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "gromril weapon\\",
+          "alias": "",
+          "cost": {
+            "cost": 0,
+            "costPrefix": "3 times the cost"
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "gromril armour\\\\",
+          "alias": "",
+          "cost": {
+            "cost": 75
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "crossbowmen-equipment-list",
+      "title": "Crossbowmen Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "crossbow",
+          "alias": "",
+          "cost": {
+            "cost": 25
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "runesmith",
+      "type": "hero",
+      "name": "Runesmith",
+      "plural": "Runesmiths",
+      "race": "dwarf",
+      "flavour": "Dwarf Runesmiths are champions of the old ways. ‘If it was good enough for my ancestors, it’s good enough for me!’ is a popular saying. Fresh out of their decades-long apprenticeships, these Runesmith’s are normally on a quest to prove this saying and so will gather together a party of like-minded individuals to seek out lost treasures of their ancestors to confirm this adherence to the traditional ways.",
+      "costGc": 85,
+      "statblock": {
+        "m": 3,
+        "ws": 5,
+        "bs": 4,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 10
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any models in the warband within 6\" of the Dwarf Runesmith may use his Leadership instead of their own."
+        },
+        {
+          "flavour": "",
+          "rulename": "Inscribe Runes",
+          "ruleFull": "A Runesmith knows one minor rune (see list at the end of this warband list), determined randomly when the warband is first created. He may inscribe the rune on an item carried by one of the warriors of his warband, and (if successful, see below) the item will gain a bonus from the rune for that game. When a Runesmith advances and rolls a skill on the Hero Advance table, he may choose to learn a new rune instead of learning a skill (exactly like a spellcaster advancing and learning a new spell)."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 1,
+      "maxQty": 1,
+      "startingXp": 20,
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": true,
+        "strength": true,
+        "speed": false,
+        "special": true
+      }
+    },
+    {
+      "id": "apprentice-runesmith",
+      "type": "hero",
+      "name": "Apprentice Runesmith",
+      "plural": "Apprentice Runesmiths",
+      "race": "dwarf",
+      "flavour": "An Apprentice Runesmith follows his master wherever he goes and is normally just as anxious to prove that the old ways are best. For if they aren’t, he is wasting a good portion of his life…",
+      "costGc": 40,
+      "statblock": {
+        "m": 3,
+        "ws": 3,
+        "bs": 2,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Extra Set of Hands",
+          "ruleFull": "An Apprentice Runesmith helps his master fashion runic items, doing all the boring grunge-work that makes his master more efficient in his efforts. An Apprentice Runesmith in the warband allows a Master Runesmith to inscribe on two items before each game, instead of only one."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 1,
+      "startingXp": 20,
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": true,
+        "strength": true,
+        "speed": false,
+        "special": true
+      }
+    },
+    {
+      "id": "dwarf-troll-slayers",
+      "type": "hero",
+      "name": "Dwarf Troll Slayers",
+      "plural": "Dwarf Troll Slayers",
+      "race": "dwarf",
+      "flavour": "While it may seem that Troll Slayers shouldn’t fit in with the rest of a Runic Ranger warband, make no mistake – they are strict adherents to tradition and the old ways! Indeed they usually find it easier to get along with the more traditional minded Dwarfs than other dwarfs, who Slayers feel lack determination and the insight to see what the true problems are with their race.",
+      "costGc": 50,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Deathwish:",
+          "ruleFull": "Troll Slayers seek an honourable death in\ncombat. They are completely immune to all psychology and\nnever need to test if fighting alone."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 2,
+      "startingXp": 8,
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      }
+    },
+    {
+      "id": "dwarf-longbeards",
+      "type": "henchman",
+      "name": "Dwarf Longbeard",
+      "plural": "Dwarf Longbeards",
+      "race": "dwarf",
+      "flavour": "Tested Dwarf veterans who’ve fought in hundreds of battle over their long lives, Longbeards are typically more than willing to support an expedition to prove what they’ve said all along – the old ways are best!",
+      "costGc": 50,
+      "statblock": {
+        "m": 3,
+        "ws": 5,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    },
+    {
+      "id": "dwarf-clansmen",
+      "type": "henchman",
+      "name": "Dwarf Clansmen",
+      "plural": "Dwarf Clansmen",
+      "race": "dwarf",
+      "flavour": "There are many Dwarfs who see the ‘wisdom’ in reliance on the old ways. Most of these Dwarf warriors venerate Runesmiths and are honoured to be chosen as part of an expedition including one.",
+      "costGc": 40,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    },
+    {
+      "id": "dwarf-crossbowmen",
+      "type": "henchman",
+      "name": "Dwarf Crossbowmen",
+      "plural": "Dwarf Crossbowmen",
+      "race": "dwarf",
+      "flavour": "More Dwarfs who see the old ways as best use the older crossbow instead of the newer (and very unreliable to their eyes) handguns. If their ancestors had wanted them to use black powder weapons, they would have developed them generations ago.",
+      "costGc": 40,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "crossbowmen-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    },
+    {
+      "id": "beardlings",
+      "type": "henchman",
+      "name": "Beardling",
+      "plural": "Beardlings",
+      "race": "dwarf",
+      "flavour": "Many of the proponents of the old ways are older members of Dwarf community. However there are still youngsters who believe and they often accompany a Runic warband to lend a hand as needed to the respected oldsters. More spry than their fellows, they are often used as scouts, roaming ahead of the rest to spy the land and observe enemy activity.",
+      "costGc": 25,
+      "statblock": {
+        "m": 3,
+        "ws": 3,
+        "bs": 2,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    }
+  ]
+}

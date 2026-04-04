@@ -1,0 +1,510 @@
+{
+  "id": "night-goblins",
+  "name": "Night Goblins",
+  "grade": "1c",
+  "campaigngrade": "1c",
+  "source": "Mordheimer's Information Centre",
+  "sourceLink": "https://broheim.net/downloads/warbands/experimental/Night%20Goblins.pdf",
+  "setting": "Mordheim",
+  "author": "Terry Maltman",
+  "version": "",
+  "lore": "<em>Much of the Old World is infested with tribes of Orcs and Goblins and Mordheim is no\nexception. The Night Goblins especially like the deep dark places and avoid the daylight\nwherever possible.</em><br /><br /><em>Whilst they are quite capable of digging their own tunnels and will do to avoid contact with\nothers, they prefer to occupy the existing chambers. They use the catacombs beneath\nMordheim to grow the strange fungi they use for food and to brew poisons. Elsewhere they\njust spoil and vandalise anything they can find.</em><br /><br /><em>Wanderers and adventurers should not underestimate the Night Goblins. Whilst they are a\nweak and cowardly race they are a pernicious enemy. They bolster their numbers with the\nferocious cave squigs which abound in the caves and if they are lucky they can entice a troll\nto join them.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 20,
+    "choiceFluff": "A Night Goblin warband must include a minimum of 3 models. You have 500 gold crowns, which you can use to recruit and equip your warband. The maximum number of warriors in the warband is 20."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "Animosity",
+      "ruleFull": "Goblins spend much of their lives squabbling and fighting amongst\nthemselves. Sometimes this will happen at the worst of times. At the beginning of\neach Night Goblin turn roll a D6. On a roll of 1 they start to squabble and will do\nnothing else for the rest of the turn. Only Night Goblins are affected. Trolls, Squigs,\nSnotlings and other non-goblins are not affected and will act as normal."
+    },
+    {
+      "flavour": "",
+      "rulename": "Hate Stunties",
+      "ruleFull": "Night Goblins are subject to <Tooltip>hatred</Tooltip> towards Dwarfs. This only affects\nNight Goblins not any other greenskins. Fanatics are so out of their skull that they are\nnot affected."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "night-goblin-equipment-list",
+      "title": "Night Goblin Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "short bow",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "fanatic-equipment-list",
+      "title": "Fanatic Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "ball & chain",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "poison daggers",
+          "alias": "",
+          "cost": {
+            "cost": 25
+          }
+        },
+        {
+          "name": "mad cap mushrooms",
+          "alias": "",
+          "cost": {
+            "cost": 25
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "big-boss",
+      "type": "hero",
+      "name": "Big Boss",
+      "plural": "Big Boss",
+      "race": "goblin",
+      "flavour": "Like all greenskins Night Goblin society is ruled by the biggest and meanest of the tribe. Goblins have one advantage over their larger cousins - they are cunning too. To climb to position of Big Boss the goblin must be sneaky and backstabbing as well as the biggest and best.",
+      "costGc": 45,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any warrior within 6\" of the Orc Boss may use his\nLeadership characteristic when taking Leadership tests."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 1,
+      "maxQty": 1,
+      "startingXp": 17,
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      }
+    },
+    {
+      "id": "shaman",
+      "type": "hero",
+      "name": "Shaman",
+      "plural": "Shamans",
+      "race": "goblin",
+      "flavour": "Despite their smaller size, Night Goblin Shamans are every bit as powerful as their Orc cousins. They can summon the power of the Waaagh generated by their fighting comrades and call on Gork and Mork for their supernatural assistance.",
+      "costGc": 50,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "A Shaman is a wizard and uses <a href=\"#waaaagh\">Waaagh! Magic</a>."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 1,
+      "startingXp": 10,
+      "skillAccess": {
+        "combat": false,
+        "shooting": true,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": false
+      }
+    },
+    {
+      "id": "bosses",
+      "type": "hero",
+      "name": "Bosses",
+      "plural": "Bosses",
+      "race": "goblin",
+      "flavour": "Goblin Bosses like to think that they are the best and toughest fighters in the tribe. Of course the Big Boss knows better but he has to watch his back when the other Bosses are around.",
+      "costGc": 25,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 4,
+      "startingXp": 6,
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": false,
+        "speed": true,
+        "special": true
+      }
+    },
+    {
+      "id": "night-goblins",
+      "type": "henchman",
+      "name": "Night Goblin",
+      "plural": "Night Goblins",
+      "race": "goblin",
+      "flavour": "Individually Night Goblins are weak and cowardly but together they make a force to be reckoned with. Preferring to attack in large numbers they are adept at hit and run tactics and can take down foes much stronger than themselves.",
+      "costGc": 15,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": "",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": true,
+      "promotable": true
+    },
+    {
+      "id": "fanatics",
+      "type": "henchman",
+      "name": "Fanatic",
+      "plural": "Fanatics",
+      "race": "goblin",
+      "flavour": "The caves where Night Goblins live are rich in various forms of fungi. The goblins are able to make use of these and even cultivate some of them. Best known are the Madcap mushrooms. These drive anyone who eats them into a frothing fighting frenzy. Some of the Night Goblins are deliberately fed large quantities of Madcap mushrooms to turn them into crazed killing machines. Often seen on open battlefields wielding a huge ball and chain they adopt slightly safer weapons in the narrow streets of Mordheim.",
+      "costGc": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "fanatic-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Addict",
+          "ruleFull": "The Fanatic is dependent on a regular supply of Madcap Mushrooms which must be bought each game. If he can't get any before a battle he will stay in his cave foaming at the mouth and not take part. If available he will eat his mushrooms before the battle."
+        },
+        {
+          "flavour": "",
+          "rulename": "Mushroom Brain",
+          "ruleFull": "Due to the effect of prolonged use of Madcap Mushrooms the Fanatic's brain is about useless. He cannot gain experience."
+        },
+        {
+          "flavour": "",
+          "rulename": "Looney",
+          "ruleFull": "Due to the effect of the Mushrooms he is subject to <Tooltip>frenzy</Tooltip> . He must also test for permanent damage after the battle as described in the rulebook."
+        },
+        {
+          "flavour": "",
+          "rulename": "Frantic",
+          "ruleFull": "The Fanatic is hyperactive and will strike first in combat ignoring penalties or bonuses for weapons or initiative order."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 2,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": false,
+      "promotable": false
+    },
+    {
+      "id": "cave-squigs",
+      "type": "henchman",
+      "name": "Cave Squig",
+      "plural": "Cave Squigs",
+      "race": "squig",
+      "flavour": "",
+      "costGc": 15,
+      "statblock": {
+        "m": "2D6",
+        "ws": 4,
+        "bs": 0,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Movement",
+          "ruleFull": "Cave Squigs do not have a set Movement\ncharacteristic but move with an ungainly bouncing stride. To\nrepresent this, when moving Squigs, roll 2D6 for the distance\nthey move. Squigs never run and never declare charges.\nInstead, they are allowed to contact enemy models with their\nnormal 2D6\" movement. If this happens, they count as\ncharging for the following round of close combat, just as if\nthey had declared a charge."
+        },
+        {
+          "flavour": "",
+          "rulename": "Minderz",
+          "ruleFull": "Each Cave Squig must always remain within 6\" of a\nGoblin Warrior, who keeps the creature in line. If a Cave\nSquig finds itself without a Goblin within 6\" at the start of its\nMovement phase, it will go wild. From that point on, move\nthe Squig 2D6\" in a random direction during each of its\nMovement phases. If its movement takes it into contact with\nanother model (friend or foe), it will engage the model in\nhand-to-hand combat as normal. The Cave Squig is out of the\nOrc & Goblin player’s control until the end of the game."
+        },
+        {
+          "flavour": "",
+          "rulename": "Animals",
+          "ruleFull": "Cave Squigs are animals of a sort and so do not gain\nexperience."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": false,
+      "promotable": false
+    },
+    {
+      "id": "troll",
+      "type": "henchman",
+      "name": "Troll",
+      "plural": "Trolls",
+      "race": "Troll",
+      "flavour": "",
+      "costGc": 200,
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 1,
+        "s": 5,
+        "t": 4,
+        "w": 3,
+        "i": 1,
+        "a": 3,
+        "ld": 4
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "Trolls are frightening monsters which cause <Tooltip>fear</Tooltip>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Stupidity",
+          "ruleFull": "A Troll is subject to the rules for <Tooltip>stupidity</Tooltip>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Regeneration",
+          "ruleFull": "Trolls have a unique physiology that allow\nthem to regenerate wounds. Whenever an enemy successfully\ninflicts a wound on a Troll roll a D6, on a result of 4 or more\nthe wound is ignored and the Troll is unhurt. Trolls may not\nregenerate wounds caused by fire or fire-based magic. Trolls\nnever roll for Injury after a battle."
+        },
+        {
+          "flavour": "",
+          "rulename": "Dumb Monster",
+          "ruleFull": "A Troll is far too stupid to ever learn any\nnew skills. Trolls do not gain experience."
+        },
+        {
+          "flavour": "",
+          "rulename": "Always Hungry",
+          "ruleFull": "A Troll requires an upkeep cost. This\nupkeep represents the copious amounts of food that must be\nfed to the Troll in order to keep him loyal to the warband.\nThe warband must pay 15 gold crowns after every game in\norder to keep the Troll. If the warband lacks the gold to pay\nthe upkeep, the Boss has the option of sacrificing two Goblin\nWarriors or Cave Squigs to the Troll in lieu of buying food\n(Trolls eat nearly anything). If this fee is not paid (either in\ngold or in warband members) the Troll gets hungry and\nwanders off in search of food."
+        },
+        {
+          "flavour": "",
+          "rulename": "Vomit Attack",
+          "ruleFull": "Instead of his normal attacks, a Troll can\nregurgitate its highly corrosive digestive juices on an\nunfortunate hand-to-hand combat opponent. This is a single\nattack that automatically hits with a Strength of 5 and ignores\narmour saves."
+        },
+        {
+          "flavour": "",
+          "rulename": "Large Target",
+          "ruleFull": "Trolls are Large Targets as defined in the shooting rules."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 1,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": false,
+      "promotable": false
+    },
+    {
+      "id": "snotling-mob-consists-of-5-snotlings",
+      "type": "henchman",
+      "name": "Snotling Mob (consists of 5 Snotlings)",
+      "plural": "Snotling Mob (consists of 5 Snotlings)s",
+      "race": "snotling",
+      "flavour": "Wherever there are greenskins you will find Snotlings. Any Goblin warband will attract a number of them. Snotlings perform the same function for Goblins as Goblins serve for Orcs. They provide someone smaller to slap around.",
+      "costGc": 50,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 2,
+        "t": 2,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 4
+      },
+      "equipmentLists": [
+        "night-goblin-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Mob",
+          "ruleFull": "Snotlings are naturally gregarious creatures. They are initially bought in a mob of 5. You\nmay replace mob members up to the maximum of 5. They will always move and fight as a\nmob. All members must stay within 1\" and all will join in the same combat if\npossible."
+        },
+        {
+          "flavour": "",
+          "rulename": "Weedy",
+          "ruleFull": "Snotlings are not the most robust of creatures. If wounded they will be knocked down\non a 1, stunned on a 2-3 and go out of action on a 4-6."
+        },
+        {
+          "flavour": "",
+          "rulename": "Dodgy",
+          "ruleFull": "The little creatures are constantly ducking and diving in the most infuriating way.\nThey get a 6+ dodge save against shooting."
+        },
+        {
+          "flavour": "",
+          "rulename": "Insignificant",
+          "ruleFull": "Nobody cares about the Snotlings. The whole mob counts as a single model\nfor the purposes of rout tests, maximum warband size and calculating income. An enemy\nhero will only gain experience for taking the last Snotling Out of Action."
+        }
+      ],
+      "admonitions": "",
+      "minQty": 0,
+      "maxQty": 1,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "gainExp": false,
+      "promotable": false
+    }
+  ]
+}

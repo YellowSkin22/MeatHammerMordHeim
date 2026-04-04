@@ -1,0 +1,507 @@
+{
+  "id": "dwarf-treasure-hunters",
+  "name": "Dwarf Treasure Hunters",
+  "grade": "1a",
+  "campaigngrade": "1a",
+  "source": "Town Cryer #4, revised in Mordheim Annual 2002",
+  "sourceLink": "https://broheim.net/downloads/warbands/official/Dwarf%20Treasure%20Hunters.pdf",
+  "setting": "Mordheim",
+  "author": "Mark Havener",
+  "version": "",
+  "lore": "<em>Dwarfs are a grim and exceptionally proud people. They respect three things above all else: age, wealth and skill. It is no surprise then that these grim warriors can be found in Mordheim searching for fame and fortune.</em><br /><br /><em>Occasionally, a Dwarf noble will find himself in desperate times. His family hold may have been overrun by Goblins or Skaven, or he may have somehow disgraced himself and been banished. Other Dwarfs know these warriors as the Dispossessed. Dwarfs are a proud race and it is against a Dwarf’s nature to lose himself in despair. Instead, a noble who finds himself in such dire straits will gather together a group of his closest friends and kin and go treasure hunting, hoping to accumulate a large enough hoard to establish his own holding. At this time, the largest source of wealth in the Known World is rumoured to be a city in the Empire. The city is known as Mordheim…</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 12,
+    "choiceFluff": "A Dwarf warband must include a minimum of 3 models. You have 500 gold crowns which you can use to recruit and equip your warband. The maximum number of warriors in the warband is 12."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Hard to Kill",
+      "ruleFull": "Dwarfs are tough, resilient individuals who can only be taken out of action on a roll of 6 instead of 5-6 when rolling on the Injury chart. Treat a roll of 1-2 as knocked down, 3-5 as stunned, and 6 as out of action."
+    },
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Hard Head",
+      "ruleFull": "Dwarfs ignore the special rules for maces, clubs, etc. They are not easy to knock out!"
+    },
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Armour",
+      "ruleFull": "Dwarfs never suffer movement penalties for wearing armour."
+    },
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Hate Orcs and Goblins",
+      "ruleFull": "All Dwarfs <Tooltip>hate</Tooltip> Orcs and Goblins. See the psychology section of the Mordheim rules for details on the effects of <Tooltip>hatred</Tooltip>."
+    },
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Grudgebearers",
+      "ruleFull": "Dwarfs hold an ancient grudge against Elves from the days when the two races fought for supremacy in the Old World. A Dwarf warband may never include any kind of Elven Hired Sword or Dramatis Personae."
+    },
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Incomparable Miners",
+      "ruleFull": "Dwarfs spend much of their lives underground searching for precious minerals, and they are the best in the world at this kind of work. In the city of Mordheim they apply similar skills to the search for wyrdstone. When checking for wyrdstone at the end of a game, add +1 to the number of pieces found for a Dwarf warband."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "dwarf-warrior-equipment-list",
+      "title": "Dwarf Warrior Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "dwarf axe",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "gromril weapon",
+          "alias": "",
+          "cost": {
+            "cost": "",
+            "costPrefix": "3 x Price",
+            "costSuffix": "<sup><Tooltip content=\"faq60\">❓</Tooltip></sup>"
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15,
+            "braceCost": 30
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "gromril armour",
+          "alias": "",
+          "cost": {
+            "cost": 75
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "dwarf-thunderer-equipment-list",
+      "title": "Thunderer Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15,
+            "braceCost": 30
+          }
+        },
+        {
+          "name": "crossbow",
+          "alias": "",
+          "cost": {
+            "cost": 25
+          }
+        },
+        {
+          "name": "handgun",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "dwarf-noble",
+      "type": "hero",
+      "name": "Dwarf Noble",
+      "plural": "Dwarf Nobles",
+      "race": "dwarf",
+      "flavour": "Dwarf Nobles are fortune seekers who have recruited a band of like-minded Dwarfs and set off from their stronghold in search of riches. A Dwarf Noble is well respected by the members of his warband. Often he is a member of one of the noble families of the lost Dwarf strongholds, dreaming of collecting enough treasure to restore the former glory of the Dwarf Kingdoms.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 85,
+      "startingXp": 20,
+      "statblock": {
+        "m": 3,
+        "ws": 5,
+        "bs": 4,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any models in the warband within 6\" of the Dwarf Noble may use his Leadership instead of their own."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "dwarf-engineer",
+      "type": "hero",
+      "name": "Dwarf Engineer",
+      "plural": "Dwarf Engineers",
+      "race": "dwarf",
+      "flavour": "Dwarf Engineers are respected members of Dwarf society. It is they who design and build the complex war machines and devices which have made the Dwarfs famous.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 50,
+      "startingXp": 10,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-thunderer-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": false,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Expert Weaponsmith",
+          "ruleFull": "A Dwarf Engineer is a master of mechanical devices. By using stronger construction materials and time-tested secrets of Dwarf engineering, a Dwarf Engineer can increase the distance the warband's missile weapons can shoot. Missile weapons bought from the warband's basic equipment lists have their range increased by 3\" for pistols and 6\" for crossbows and handguns. Range increases only apply in battles in which the Engineer takes part (though they do apply even if he is yet to enter the battlefield or has already been taken <em>out of action</em> in this battle). He has no effect on the equipment of Hired Swords.<sup><Tooltip content=\"err79\">✏️</Tooltip></sup>"
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "dwarf-troll-slayer",
+      "type": "hero",
+      "name": "Dwarf Troll Slayer",
+      "plural": "Dwarf Troll Slayers",
+      "race": "dwarf",
+      "flavour": "Troll Slayers are members of the morbid Dwarf cult obsessed with seeking an honourable death in combat. Having committed some unforgivable crime or been dishonoured in some way, a Dwarf will forsake his home and wander off to die fighting the enemies of Dwarfkind. Troll Slayers are insanely dangerous individuals, psychopathic and violent. There are however few better fighters in the Known World, so they are much sought after by Dwarf treasure hunters.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 50,
+      "startingXp": 8,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Deathwish",
+          "ruleFull": "Troll Slayers seek an honourable death in combat. They are completely immune to all psychology and never need to test if fighting alone."
+        },
+        {
+          "flavour": "",
+          "rulename": "Slayer Skills",
+          "ruleFull": "Troll Slayers may choose a skill from the Troll Slayer Skill table instead of the normal Skill tables when they gain a new skill."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Missile Weapons or Armour",
+          "ruleFull": "Slayers may never carry or use missile weapons or any form of armour."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "dwarf-clansmen",
+      "type": "henchman",
+      "name": "Dwarf Clansman",
+      "plural": "Dwarf Clansmen",
+      "race": "dwarf",
+      "flavour": "These are Dwarf warriors in their prime: tough, stubborn and brave warriors who can be relied on to hold their own against any foe.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 40,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "dwarf-thunderers",
+      "type": "henchman",
+      "name": "Dwarf Thunderer",
+      "plural": "Dwarf Thunderers",
+      "race": "dwarf",
+      "flavour": "Dwarf Thunderers are experts at using missile weapons. Many an Orc or Goblin has died by the sting of a crossbow bolt or a roaring handgun bullet shot by a Dwarf Thunderer.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "minQty": 0,
+      "maxQty": 5,
+      "costGc": 40,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 3,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "dwarf-thunderer-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "beardlings",
+      "type": "henchman",
+      "name": "Beardling",
+      "plural": "Beardlings",
+      "race": "dwarf",
+      "flavour": "These are young Dwarfs who have joined the retinue of an experienced Dwarf treasure hunter hoping to make their fortune.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 3,
+        "ws": 3,
+        "bs": 2,
+        "s": 3,
+        "t": 4,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "dwarf-warrior-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    }
+  ]
+}

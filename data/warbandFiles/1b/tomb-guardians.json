@@ -1,0 +1,576 @@
+{
+  "id": "tomb-guardians",
+  "name": "Tomb Guardians",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Town Cryer #18",
+  "sourceLink": "[https://broheim.net/downloads/towncryer/TownCryer18.pdf#page=8](https://broheim.net/downloads/towncryer/TownCryer18.pdf#page=8)",
+  "setting": "Khemri",
+  "author": "",
+  "version": "",
+  "lore": "<em>The hordes of the dead are terrible to behold walking resolutely forward, bones rattling, dry flesh creaking, and clutching ancient and rusty weapons or those torn from the grip of defeated enemies. How can you kill what is already dead?</em><br /><br /><em>The first true human civilisation, Nehekhara arose around the Imperial year -2500, in the area now called the Land of the Dead. This ancient kingdom was built along the river valleys of northern Nehekhara. From the earliest period of their civilisation, the Nehekharans buried their dead in pyramid cities in the desert outside their townships and in the belief that the soul and spirit lived on for as long as the body remained intact. Their priests began to experiment with mummification so that the body would be preserved forever as would the soul giving eternal life. The Mortuary Cult was formed to study the arcs of mummification and perform the rituals of awakening. After many centuries the priests discovered the secret and were able to mummify and preserve the bodies of their kings.</em><br /><br /><em>The king, his family, and trusted advisors were entombed in great sarcophagi, which were laid at the heart of the huge pyramids. As each generation passed, larger and more elaborate tombs were built as each king tried to out-do his predecessor. Eventually, in the deserts beyond each of the great cities, stood a necropolis - a city of the dead. As the years passed, these eerie cities grew even larger than the towns of the people who had built them. The tombs were guarded by titanic statues and fortified like great keeps, built to keep their inhabitants secure through all eternity from those who would disturb their graves. So vast and maze-like were these cities that bridges and walkways were built to span the gaps between the pyramid tops enabling easier access for the priests who maintain these sprawling conurbations.</em><br /><br /><em>The preservation of the body depended on the wealth and status of that person; a farmer would be buried in a small family tomb, while the kings, their family, and trusted advisors were entombed in great sarcophagi and huge pyramids. Every Nehekharan was buried with a number of items that they held dear; a rattle from childhood or perhaps the tools of an artisan. The more wealthy the person, the more precious the items buried with him.</em><br /><br /><em>Not all mummies were once wealthy merchants or mighty warriors; artisans were highly regarded in the old Nehekharan Empire. These people were the builders and architects of the tombs. Indeed many were entombed in the structures they had worked on - a final reward from their patron.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "The Warriors of the Dead must include at least three models. You have 500 Gold Crowns with which to form your warband. The maximum number of models in the warband is 15.",
+    "admonitions": "<div className=\"admonition admonition-caution\"><div className=\"admonition-heading\"><h5>Inconsistencies</h5></div><div className=\"admonition-content\"><p>Sadly the Town Cryer warband documentation had a lot of inconsistencies and issues.</p><ul><li>Mummy vs. Tomb Lord: The skill table still mentions a Mummy, but the warband only includes a Tomb Lord. This is a leftover from the original draft that had a Mummy Prince and Mummy Warriors.</li><li>Chariot Skill Access: The Skeleton Chariot requires a skill classified as Academic, but the Tomb Lord — the most logical rider — cannot access Academic skills.</li><li>No Brain Rule Ambiguity: “Skeletons never gain experience,” but only Tomb Lords, Liches, and Acolytes are listed as exceptions. It’s unclear if Tomb Guardians can gain XP or not.</li><li>Home Ground Scope: The Home Ground exploration bonus is thematically tied to the desert, but unclear if it applies in other campaign settings like Mordheim or Lustria. Without it, the warband is very weak.</li><li>Nehekharan Javelins: Grant +1 to hit but lack the Thrown Weapon rule, making them weaker than standard javelins despite the special name.</li><li>Asp Arrows Classification: Listed as a Missile Weapon instead of a Miscellaneous Item, inconsistent with how arrow upgrades (like Fire or Hunting Arrows) are normally categorized.</li><li>Skeleton Chariot Definition: It’s unclear whether the Skeleton Chariot is a mount, misc item, or separate warband member — its rules don’t specify how to field it.</li><li>Horrebe’s Curse of the Mummy: The spell targets “Mummies,” but no model in the warband is actually called a Mummy, making it unclear what counts.</li></ul><p>The original document can be found <a href=\"/docs/warbands/grade-1b-warbands/tomb-guardians-old\">here</a>.</p></div></div>"
+  },
+  "specialSkills": false,
+  "specialRules": [
+    {
+      "flavour": "The warriors of the Tomb Kings are already dead and are unaffected by wounds that could daze or cripple a living warrior. Their lack of emotion means that they look upon Ogres and Youngbloods with equal ambivalence. These special rules apply to all warriors in the warband that have the special rule Undead.",
+      "rulename": "Cause Fear",
+      "ruleFull": "All Undead warriors cause Fear."
+    },
+    {
+      "flavour": "",
+      "rulename": "Immune to Psychology",
+      "ruleFull": "All Undead warriors are immune to psychology and never leave combat."
+    },
+    {
+      "flavour": "",
+      "rulename": "No pain",
+      "ruleFull": "All Undead warriors treat a <em>Stunned</em> result as <em>Knocked Down</em>."
+    },
+    {
+      "flavour": "",
+      "rulename": "May not run",
+      "ruleFull": "No Undead warrior may run, but may charge as normal."
+    },
+    {
+      "flavour": "",
+      "rulename": "Immune to poison",
+      "ruleFull": "No Undead warrior is affected by poison."
+    },
+    {
+      "flavour": "",
+      "rulename": "No Brain",
+      "ruleFull": "Skeletons are not alive, thus they never gain experience.<br /><br />Note: Tomb Lords don't actually learn new skills, rather they remember the skills they knew when they were alive. Liche Priests and Acolyes are also undead but the have retained a form of living mind and are capable of learning from their experiences."
+    },
+    {
+      "flavour": "",
+      "rulename": "Flammable",
+      "ruleFull": "The Tomb Lord is as dry as tinder and wrapped in bandages soaked in highly flammable resins and preservatives. A hit from a fire-based attack will cause double the normal number of wounds on it."
+    },
+    {
+      "flavour": "",
+      "rulename": "Do not Drink",
+      "ruleFull": "Undead models do not need food and water. However any living animals that accompany the Mummies follow the water rules as normal."
+    },
+    {
+      "flavour": "",
+      "rulename": "Home Ground",
+      "ruleFull": "The Tomb Guardians live in the Necropolises and have no trouble locating the hidden tombs in search of weapons and armour to help them defend their homes. A Tomb Guardian warband always roll one extra dice in the Exploration phase."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "undead-equipment-list",
+      "title": "Undead equipment lists",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "halberd",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "morning star",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "flail",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "asp arrows",
+          "alias": "Asp Arrows",
+          "cost": {
+            "cost": 10,
+            "costSuffix": "Tomb Lords only"
+          }
+        },
+        {
+          "name": "nehekharan javelin",
+          "alias": "Nehekharan Javelin",
+          "cost": {
+            "cost": 10,
+            "costSuffix": "Tomb Lords only"
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "liche-priest-equipment-list",
+      "title": "Liche Priest Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "staff",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "morning star",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "serpent staff",
+          "alias": "Serpent Staff",
+          "cost": {
+            "cost": 30,
+            "costSuffix": "Liche Priests only"
+          }
+        }
+      ]
+    }
+  ],
+  "specialEquipment": [
+    {
+      "id": "skeleton-chariot",
+      "title": "Skeleton Chariot",
+      "cost": {
+        "cost": 200,
+        "numD6": 10
+      },
+      "maxQty": 1,
+      "statblock": [
+        {
+          "title": "Chariot",
+          "m": "-",
+          "ws": "-",
+          "bs": "-",
+          "s": 4,
+          "t": 4,
+          "w": 3,
+          "i": "-",
+          "a": "-",
+          "ld": "-"
+        },
+        {
+          "title": "Steed",
+          "m": 8,
+          "ws": 2,
+          "bs": 2,
+          "s": 3,
+          "t": 3,
+          "w": 1,
+          "i": 2,
+          "a": 1,
+          "ld": 5
+        }
+      ],
+      "flavour": "A Skeleton Chariot is made from the bones of the dead, pulled by two Skeleton Steeds and ridden by a member of the warband.",
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Mounting",
+          "ruleFull": "A charioteer may mount and dismount a chariot in the same way as a ridden steed."
+        },
+        {
+          "flavour": "",
+          "rulename": "Movement",
+          "ruleFull": "A Skeleton Chariot normally moves at 8\" and may not run. However, it may double its normal move when charging."
+        },
+        {
+          "flavour": "",
+          "rulename": "Difficult Ground",
+          "ruleFull": "If a chariot moves over difficult ground it suffers D3 Strength 4 hits. If the chariot is charging over difficult ground, it suffers 2D3 Strength 6 hits."
+        },
+        {
+          "flavour": "",
+          "rulename": "Steeds",
+          "ruleFull": "If one steed dies, the chariot is reduced to half movement but may still charge (also at half normal charge distance). However impact hits will no longer be effective. If both steeds die, the chariot is immobile and the charioteer must fight on foot."
+        },
+        {
+          "flavour": "",
+          "rulename": "Combat",
+          "ruleFull": "Chariots are feared for their devastating charges that make use of their horrible scythed wheels that will cut down any warriors in their path. A charioteer is allowed to charge any enemy warrior that he can see who is in the open, he is not forced to charge the closest warrior. If the chariot moves more than half its normal move, it may make impact bits. Anyone directly in the path of a charging chariot is permitted an Initiative test to dodge out of the way and avoid being hit. The charioteer must roll to hit as normal, a successful hit causing a single wound at Strength 4 with a -2 armour save. At the end of the charge move, the charioteer may fight any enemy models in base contact, as if he had charged normally.<br /><br />In combat, enemy warriors in contact may elect to strike the chariot or its driver. If hitting the chariot, the attacker must still make a to hit roll against the charioteer. If in base contact with only a Skeletal Steed, then only the steed can be hit."
+        },
+        {
+          "flavour": "",
+          "rulename": "Shooting",
+          "ruleFull": "A chariot is a large target and a warrior gains +1 to hit when shooting at a chariot. If the chariot is hit, roll a D6 to see where it is hit: 1-2 steed, 3-4 chariot, 5-6 charioteer."
+        }
+      ],
+      "admonitions": "<div className=\"admonition admonition-note\"><div className=\"admonition-heading\"><h5>Skill Requirement</h5></div><div className=\"admonition-content\"><p>To use the Skeleton Chariot to it's full effect, Tomb Guardian have access to an additional academicskill: <a href=\"#drive-chariot-academic\">Drive Chariot</a>, a charioteer without this skill cannot charge.</p></div></div>"
+    }
+  ],
+  "fighters": [
+    {
+      "id": "tomb-lord",
+      "type": "hero",
+      "name": "Tomb Lord",
+      "plural": "Tomb Lords",
+      "race": "tomb lord",
+      "flavour": "The legions of the dead are led by Tomb Lords, trusted officers and captains in the Nehekharan armies. But not all Tomb Lords were soldiers in life and some were the great engineers and artisans who constructed the Necropolises and were granted mummification for their accomplishments.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 150,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 4,
+        "t": 5,
+        "w": 3,
+        "i": 3,
+        "a": 2,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "undead-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "The Tomb Lord is the warband's Leader and follows all the rules for Leaders."
+        },
+        {
+          "flavour": "",
+          "rulename": "Undead",
+          "ruleFull": "The Tomb Lord is undead and follows all rules for the <a href=\"#special-rules\">Undead</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "liche-priest",
+      "type": "hero",
+      "name": "Liche Priest",
+      "plural": "Liche Priests",
+      "race": "liche priest",
+      "flavour": "The Mortuary Cult perfected their magic over a thousand years until the Cult could cheat death itself. The priests now hold a unique kind of power, standing by the Tomb King's side - they alone are able to invoke the power that allows the Tomb King's armies to march to war.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 55,
+      "startingXp": 8,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "liche-priest-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": false,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Wizard",
+          "ruleFull": "The Liche Priest is a Wizard and uses <a href=\"#mortuary-cult-scrolls\">Mortuary Cult scrolls</a>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Undead",
+          "ruleFull": "The Liche Priest is undead and follows all rules for the <a href=\"#special-rules\">Undead</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "acolytes",
+      "type": "hero",
+      "name": "Acolyte",
+      "plural": "Acolytes",
+      "race": "acolyte",
+      "flavour": "The Mortuary Cult has been a very large influential priesthood in the Land of the Dead for centuries. Acolytes to the Cult have to study long and hard (even beyond death!) before they can assume the mantle of Liche Priest. During their apprenticeship to the Liche Priests, Acolytes have to perorm all of the menial tasks as well as protect their masters from harm.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 20,
+      "startingXp": 0,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "liche-priest-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": false,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Undead",
+          "ruleFull": "Acolytes are undead and follow all rules for the <a href=\"#special-rules\">Undead</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "skeleton-warriors",
+      "type": "henchman",
+      "name": "Skeleton Warrior",
+      "plural": "Skeleton Warriors",
+      "race": "skeleton",
+      "flavour": "With the coming of Nagash and his great ritual, the inhabitants of the Necropolises were brought back to the land of the living. The kings and lords once more command their legions, but this time the legions are made up of skeletons rather than living soldiers.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 20,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "undead-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Undead",
+          "ruleFull": "Skeletons are undead and follow all rules for the <a href=\"#special-rules\">Undead</a>."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "tomb-guardians",
+      "type": "henchman",
+      "name": "Tomb Guardian",
+      "plural": "Tomb Guardians",
+      "race": "tomb guardian",
+      "flavour": "As the kings and lords were awakened, so too were their bodyguards, the Tomb Guards; faithful in death as they were in life. Often armed with the best armour and weapons, they are always at their lord's side.",
+      "minQty": 0,
+      "maxQty": 2,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 30,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 2,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [
+        "undead-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Undead",
+          "ruleFull": "The Tomb Guards are undead and follow all rules for the <a href=\"#special-rules\">Undead</a>."
+        }
+      ],
+      "admonitions": "<div className=\"admonition admonition-note\"><div className=\"admonition-heading\"><h5>Experience</h5></div><div className=\"admonition-content\"><p>In the original source material for Khemri, the Tomb Guardians were called \"Tomb Guards\", it was specifically noted that they <strong>do</strong> gain experience.</p><p>It is recommended that if you play the Tomb Guardians as gaining experience, to use the Tomb Lord maximum characteristics.</p></div></div>"
+    },
+    {
+      "id": "tomb-scorpions",
+      "type": "henchman",
+      "name": "Tomb Scorpion",
+      "plural": "Tomb Scorpions",
+      "race": "tomb scorpion",
+      "flavour": "Vast nests of scorpions infest the ancient Necropolises of Khemri, dwelling in the dark cracks and niches of the tombs, aggressively defending their home. Liche Priests can summon these poisonous creatures and direct them to attack any invaders.",
+      "minQty": 0,
+      "maxQty": 3,
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "costGc": 15,
+      "gainExp": false,
+      "promotable": false,
+      "statblock": {
+        "m": 5,
+        "ws": 2,
+        "bs": "-",
+        "s": "2*",
+        "t": 2,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 4
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Living",
+          "ruleFull": "Scorpions are living beings and are affected by Psychology as normal. However as they are small desert creatures they do not need water."
+        },
+        {
+          "flavour": "",
+          "rulename": "Animals",
+          "ruleFull": "Scorpions are animals and do not gain experience points."
+        },
+        {
+          "flavour": "",
+          "rulename": "Scorpions sting*",
+          "ruleFull": "Scorpions attack using the poisonous sting in their tails. This attack is worked out exactly as if the scorpion was attacking with <Tooltip>Black Lotus</Tooltip>."
+        }
+      ],
+      "admonitions": ""
+    }
+  ],
+  "loreSections": [
+    {
+      "title": "The Mortuary Cult",
+      "content": "The Mortuary Cult was formed long ago to learn the mysterious arts of mummification and perform the hidden rituals of awakening. After many centuries, the priests discovered the secrets they were seeking and were able to mummify and preserve bodies. The Mortuary Cult perfected their magic over a thousand years until the cult could cheat death itself. When Nagash performed his Great Ritual, raising the dead of Nebekhara, the priests rose as Liche Priests, undead beings with a mind of their own. Their experiments had given them eternal unlife. The Liche Priests now hold a position of great power, standing by the Tomb King's side - they alone are now able to invoke the power that allows the Tomb King's armies to march to war.<br /><br />The Mortuary Cult Liche Priests do not use the evil Necromancy spells, instead they use a system of <a href=\"#mortuary-cult-scrolls\">ancient scrolls</a>. In game terns, the scrolls work just like normal spells and the Priest must test to see if he can read the incantation out correctly, as normal, not an easy task in the middle of a fight."
+    },
+    {
+      "title": "Khemrian Names",
+      "content": "The following is a list of names of Egyptian Pharaohs you can use and at the end are a few other names that I have found. these were taken from a Swedish book so the spelling might be different in English. Female names have been marked with (f). In the Egyptian society, females were equal to males in many areas; there were female temple-priests, artisans, merchants and Pharaohs.<br /><br />Nebka, Djoser, Snefru, Khaba, Huni, Cheops, Khufu, Radjedef, Kefren, Menkaure, Shepseskaf, Userkaf, Sahure, Neferirkare, Shepseskare, Neferefe, Niuserre, Menkauhor, Djedkare, Unas, Teti, Pepi, Merene, Nitocris (f), Qakare, Neferkaure, Neferkauhor, Mentuhotep, Inyotef, Amenemhat, Senusret, Sebeknefru (f), Ahmose, Amenhotep, Tuthmosis, Hatshepsut (f), Akhenaton, Smenkbare, Tutankhamen, Ay, Horemhab, Ramses, Seti, Merneptah, Amenmesse, Siptah, Tawosret (f), Sethnakht, Lynaferet (f), Senedjem, Imhotep.<br /><br />If you want to design your own names that will sound Egyptian or tweak the name of a Pharaoh, I found these trends in the names above. Many names start with Men-, Mer-, Mern-, Kef-, Nef- and Tut-. Many names end with -kaure, -kaf, -kare, -khare, -kauhor and -hotep. Some names end with Ptah or start with Set- or Seth- and these are names of Egyptian gods. You can use er, an, tu and e to bind the names together."
+    }
+  ]
+}

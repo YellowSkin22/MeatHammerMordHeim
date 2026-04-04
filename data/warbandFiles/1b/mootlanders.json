@@ -1,0 +1,338 @@
+{
+  "id": "mootlanders",
+  "name": "Mootlanders",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Citadel Journal 36",
+  "sourceLink": "[https://broheim.net/downloads/warbands/experimental/Mootlanders.pdf](https://broheim.net/downloads/warbands/experimental/Mootlanders.pdf)",
+  "setting": "Mordheim",
+  "author": "",
+  "version": "",
+  "lore": "<em>Although it is exceedingly rare, Halflings will form Warbands and go marching off to Mordheim. With dreams of mountains of iced buns and rivers of fizzy drink, they fearlessly enter the gates of Mordheim in search of gold, wyrdstone and abandoned kitchens to plunder.</em><br /><br /><em>Lord Charlie Gutbuckett is famous in the Moot for being extremely rich and spoilt but also for being exceptional with the bow (which is well reputed considering his constant boasting). The only time that he has ever been beaten in an archery contest was by his father, after a dispute over a blueberry muffin. Totally shamed by this event, Charlie formed up his Warband of similarly eccentric Halflings and headed off to Mordheim with his parents last profound words echoing through his head ‘Bring us back some chocolate hob-nobs son’. His warband was named ‘The Knights of the Kitchen Table’ and even his brother Archie joined up for the adventure. This was a terrible shame for the rest of the family as Archie’s recipe for strawberry flapjacks was second to none.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 20,
+    "choiceFluff": "A Halfling Warband must include a minimum of 3 models. You have 500 gold crowns. The maximum number of models in the Warband may never exceed 20."
+  },
+  "specialSkills": false,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "",
+      "ruleFull": "Halflings are very weak and puny and even the lightest of blows tends to knock them senseless. When rolling for a Halfling’s injury, treat a roll of a 2 as ‘stunned’."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "mootlander-equipment-list",
+      "title": "Mootlander Equipment List",
+      "caveat": "The following lists are used by Mootlander warbands to pick their weapons:",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "short bow",
+          "alias": "Short Bow",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sling",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "cooking pot helmet",
+          "alias": "",
+          "cost": {
+            "cost": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "master-chef-list",
+      "title": "Master Chef List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "kitchen knife",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "cleaver",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "ladle",
+          "alias": "",
+          "cost": {
+            "cost": 2
+          }
+        },
+        {
+          "name": "tenderiser",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "moot-elder",
+      "type": "hero",
+      "name": "Moot Elder",
+      "plural": "Moot Elders",
+      "race": "halfling",
+      "flavour": "A Halfling Moot Elder is the bravest, toughest, and obviously fattest Halfling in the Warband. He is as greatly respected by the Halfling people as his skill with the bow, their principle weapon.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 55,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 5,
+        "s": 2,
+        "t": 2,
+        "w": 1,
+        "i": 6,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "mootlander-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any warrior within 6\" of the Moot Elder may use his Leadership characteristic when taking Leadership tests."
+        }
+      ],
+      "admonitions": "The Halfling Moot Elder may buy equipment from the Halfling equipment list. In addition, he may be armed with a pistol for 15 GC, usually an old family heirloom."
+    },
+    {
+      "id": "master-chef",
+      "type": "hero",
+      "name": "Master Chef",
+      "plural": "Master Chefs",
+      "race": "halfling",
+      "flavour": "Any wise Halfling Moot Elder will persuade a Halfling Master Chef into joining his Warband. The better the Halflings fight, the more food the Chef cooks for them!",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 35,
+      "startingXp": 8,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 4,
+        "s": 3,
+        "t": 2,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "master-chef-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Inspired Cooking",
+          "ruleFull": "Any Halfling models within 6\" of a Halfling Master Chef may re-roll any failed hits in combat (once per turn)."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "halfling-thieves",
+      "type": "hero",
+      "name": "Halfling Thief",
+      "plural": "Halfling Thieves",
+      "race": "halfling",
+      "flavour": "Halfling Thieves are often employed by warbands to sneak into enemy camps and steal any stash they can get their sticky little hands on.",
+      "minQty": 0,
+      "maxQty": 3,
+      "costGc": 25,
+      "startingXp": 0,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 4,
+        "s": 2,
+        "t": 2,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 9
+      },
+      "equipmentLists": [
+        "mootlander-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": false,
+        "shooting": true,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Sneaky",
+          "ruleFull": "Halfling Thieves can hide in the slightest shadow or piece of cover. Halfling thieves always have a -1 to hit modifier when being shot at, this adds to any other modifiers."
+        }
+      ],
+      "admonitions": "<div className=\"admonition admonition-note\"><div className=\"admonition-heading\"><h5>Maximum 3 thieves</h5></div><div className=\"admonition-content\"><p>In the original printed version in Citadel Journal 36, Halfling thieves had 0 – <strong>2</strong> Halfling Thieves in their entry but stated \"three\" in <a href=\"#choice-of-warriors\">Choice of warriors</a>. Since the word three was spelled out and it is easier to typo a \"3\" into a \"2\", it is assumed these were meant to be 0 – <strong>3</strong></p></div></div>"
+    },
+    {
+      "id": "warriors",
+      "type": "henchman",
+      "name": "Warrior",
+      "plural": "Warriors",
+      "race": "halfling",
+      "flavour": "Halflings may not be the best warriors around, but they are brave to the point of insanity and masters of the Bow.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 15,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 4,
+        "s": 2,
+        "t": 2,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "mootlander-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "scouts",
+      "type": "henchman",
+      "name": "Scout",
+      "plural": "Scouts",
+      "race": "halfling",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 20,
+      "gainExp": true,
+      "promotable": true,
+      "flavour": "Halflings produce some of the best Scouts in the Old World, almost rivalling the expert Wood Elves in this field.",
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 4,
+        "s": 2,
+        "t": 2,
+        "w": 1,
+        "i": 5,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "mootlander-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Keen Eyesight",
+          "ruleFull": "Halfling Scouts can spot hidden enemies at twice their Initiative value in inches."
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}
