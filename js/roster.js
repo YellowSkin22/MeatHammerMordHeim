@@ -38,14 +38,15 @@ const RosterModel = {
   },
 
   createRoster(name, warbandId) {
-    const warband = DataService.getWarband(warbandId);
-    if (!warband) throw new Error('Unknown warband: ' + warbandId);
+    const result = DataService.getWarband(warbandId);
+    if (!result) throw new Error('Unknown warband: ' + warbandId);
+    const { warbandFile } = result;
 
     return {
       id: Storage.generateId(),
       name,
       warbandId,
-      gold: warband.startingGold,
+      gold: warbandFile.warbandRules?.startingGc ?? 500,
       wyrdstone: 0,
       heroes: [],
       henchmen: [],
@@ -58,37 +59,58 @@ const RosterModel = {
     };
   },
 
-  createWarrior(templateType, isHero, warband) {
-    const templates = isHero ? warband.heroes : warband.henchmen;
-    const template = templates.find(t => t.type === templateType);
-    if (!template) return null;
+  // fighter: raw Uncle-Mel fighter object from warbandFile.fighters[]
+  // warbandFile: raw warband file object
+  // subfaction: display name string or null
+  createWarrior(fighter, warbandFile, subfaction) {
+    const isHero    = fighter.type === 'hero';
+    const stats     = this._mapStats(fighter.statblock);
+    const specialRules = (fighter.specialRules || []).map(r => r.rulename).filter(Boolean);
+    const skillAccess  = DataService.resolveSkillAccess(fighter, subfaction);
+    const warbandName  = subfaction || warbandFile.name;
+    const spellAccess  = isHero ? DataService.getSpellAccess(warbandName, fighter.name) : [];
 
     const warrior = {
       ...this._baseWarrior(
-        Storage.generateId(), template.type, template.name,
-        template.stats, template.cost, template.specialRules || [],
-        isHero ? (template.startingExp || 0) : 0
+        Storage.generateId(), fighter.id, fighter.name,
+        stats, fighter.costGc ?? 0, specialRules,
+        isHero ? (fighter.startingXp ?? 0) : 0
       ),
       isHero,
+      race: fighter.race || warbandFile.race || 'human',
     };
 
     if (!isHero) warrior.groupSize = 1;
+    if (isHero)  {
+      warrior.skillAccess = skillAccess;
+      warrior.spellAccess = spellAccess;
+    }
 
     return warrior;
   },
 
-  createHiredSword(templateType) {
-    const template = DataService.getHiredSwordTemplate(templateType);
-    if (!template) return null;
+  // templateKey: the Uncle-Mel hiredSwords object key (e.g. 'dwarf-troll-slayer')
+  createHiredSword(templateKey) {
+    const hs = DataService.getHiredSwordTemplate(templateKey);
+    if (!hs) return null;
+
+    const stats        = this._mapStats(hs.statblock);
+    const specialRules = (hs.specialRules || []).map(r => r.rulename).filter(Boolean);
+    const skillAccess  = Object.entries(hs.skillAccess || {})
+      .filter(([k, v]) => v && DataService.SKILL_KEY_TO_SUBTYPE[k])
+      .map(([k]) => DataService.SKILL_KEY_TO_SUBTYPE[k]);
+    const parsedCost   = parseInt(hs.cost);
 
     return {
       ...this._baseWarrior(
-        Storage.generateId(), template.type, template.name,
-        template.stats, template.cost, template.specialRules || [],
-        template.startingExp || 0
+        Storage.generateId(), templateKey, hs.name,
+        stats, isNaN(parsedCost) ? 0 : parsedCost, specialRules, 0
       ),
       isHero: true,
       isHiredSword: true,
+      race: hs.race || 'human',
+      skillAccess,
+      spellAccess: [],  // hired sword spell access handled by specialRules fallback in hasSpellAccess()
     };
   },
 
@@ -176,7 +198,7 @@ const RosterModel = {
   },
 
   modifyStat(warrior, stat, delta) {
-    const maxVal = DataService.getMaxStat(stat);
+    const maxVal = DataService.getMaxStat(stat, warrior.race || 'human');
     const newVal = warrior.stats[stat] + delta;
     if (newVal < 0 || newVal > maxVal) return false;
     warrior.stats[stat] = newVal;
@@ -271,5 +293,21 @@ const RosterModel = {
       notes: notes || '',
       date: new Date().toISOString(),
     });
-  }
+  },
+
+  // Converts Uncle-Mel lowercase statblock to warrior stats object.
+  _mapStats(statblock) {
+    if (!statblock) return { m:4, ws:3, bs:3, s:3, t:3, w:1, i:3, a:1, ld:7 };
+    return {
+      m:  statblock.m  ?? 4,
+      ws: statblock.ws ?? 3,
+      bs: statblock.bs ?? 3,
+      s:  statblock.s  ?? 3,
+      t:  statblock.t  ?? 3,
+      w:  statblock.w  ?? 1,
+      i:  statblock.i  ?? 3,
+      a:  statblock.a  ?? 1,
+      ld: statblock.ld ?? 7,
+    };
+  },
 };

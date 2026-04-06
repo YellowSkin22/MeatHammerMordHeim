@@ -1,0 +1,190 @@
+[
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/averlander.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/beastmen-raiders.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/carnival-of-chaos.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/cult-of-the-posessed.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/dwarf-treasure-hunters.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/kislevites.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/mercenaries.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/orc-mob.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/ostlander.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/sisters-of-sigmar.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/skaven.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/undead.json"
+  },
+  {
+    "grade": "1a",
+    "path": "data/warbandFiles/1a/witch-hunters.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/amazons-lustria.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/amazons.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/arabian-tomb-raiders.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/black-orcs.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/bretonnian.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/dark-elves.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/dwarf-rangers.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/forest-goblins.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/gunnery-school-of-nuln.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/hochland-bandits.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/horned-hunters.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/imperial-outriders.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/lizardmen.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/mootlanders.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/norse.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/outlaws-of-stirwood-forest.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/pirates.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/pit-fighters.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/shadow-warriors.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/skaven-pestilens.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/tileans.json"
+  },
+  {
+    "grade": "1b",
+    "path": "data/warbandFiles/1b/tomb-guardians.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/battle-monks-of-cathay.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/black-dwarfs.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/bretonnian-chapel-guard.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/court-of-the-profane-pleasures.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/cursed-cavalcade.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/lustrian-reavers.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/maneaters.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/marauders-of-chaos.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/merchant-caravans.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/night-goblins.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/the-restless-dead.json"
+  },
+  {
+    "grade": "1c",
+    "path": "data/warbandFiles/1c/the-sons-of-hashut.json"
+  }
+]

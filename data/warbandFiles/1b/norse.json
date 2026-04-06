@@ -1,0 +1,534 @@
+{
+  "id": "norse-explorers",
+  "name": "Norse Explorers",
+  "grade": "1b",
+  "campaigngrade": "1b",
+  "source": "Town Cryer #13, Border Town Burning",
+  "sourceLink": "[https://broheim.net/downloads/warbands/unofficial/Norse%20Explorers.pdf](https://broheim.net/downloads/warbands/unofficial/Norse%20Explorers.pdf)",
+  "setting": "Lustria",
+  "author": "Derek Whitman",
+  "version": "",
+  "lore": "<em>The land of Norsca lies to the far north of the Empire across the stormy sea of Claws. This is a harsh land of snow and ice with mountains of Frost and Dusk that reach unto the heavens themselves and march right down to the sea.</em><br /><br /><em>The humans that live here are powerfully built, with large, well muscled frames and long limbs. The Norse are a bloodthirsty people whose society is based entirely around war and fighting. They make or produce very little in their inhospitable homeland and their attitude is to take whatever they need from the lands of others. Many a time their dreaded longships have brought terror and destruction to the lands of men and the other races.</em><br /><br /><em>The Norse people live in marauder tribes or clans much like the Unberogens who were, centuries earlier, the founders of the Empire. It is for these reasons that the Norse are seen as a very primitive and uncivilised race by others and indeed many Norse tribes openly worship the dark gods of Chaos as their own.</em><br /><br /><em>All Norse warriors are trained in the art of war at a very young age and become skilled in the use of sword, axe and shield for their’s is a brutal society where only the strongest survive. Probably because of their well founded fearsome reputation the Norsemen have few allegiances apart from to their clan and their ancestors and so make excellent mercenaries.</em><br /><br /><em>Despite their brutish behaviour the Norse make superb natural sailors rivalling even the High Elves and it was indeed the Norse who were the first humans to discover Lustria and the South Lands. In their longships, the Norse sailed from the Old World to Lustria, establishing the first colony, Skeggi. The Norse plague the coast of Lustria raiding many coastal settlements but it is their desire for riches and saga that have driven them further inland to pillage the temples of the Slann.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "A Norse Warband must include a minimum of three models. You have 500 gold crowns to recruit your initial Warband. The maximum number of warriors in the Warband may never exceed 15."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "flavour": "",
+      "rulename": "Seafaring",
+      "ruleFull": "The Norse are seafaring people and spend much of their time rowing boats. To represent this, all Norse warriors get +2 to Strength when they row a boat."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "hero-equipment-list",
+      "title": "Hero equipment list",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "flail",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "throwing knives",
+          "alias": "Throwing Axes",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "henchmen-equipment-list",
+      "title": "Henchmen equipment list",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "throwing knives",
+          "alias": "Throwing Axes",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "hunters-equipment-list",
+      "title": "Hunters equipment list",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "javelins",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "jarl",
+      "type": "hero",
+      "name": "Jarl",
+      "plural": "Jarls",
+      "race": "human",
+      "flavour": "The Jarl of a Norse warband is the most battle hardened veteran of his group and often a lesser clan chieftain of his tribe. He has seen many battles and is used to the bloodshed. While some Jarls choose to command their forces with strategy, most just run into the fray with the rest of the warriors. However the Jarl decides to run his warband, all of the other warriors respect him and look up to him.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 70,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 2,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "hero-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any Warrior within 6“ of the Jarl may use his Leadership instead of his own when taking Ld tests."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "berserkers",
+      "type": "hero",
+      "name": "Berserker",
+      "plural": "Berserkers",
+      "race": "human",
+      "flavour": "Berserkers are some of the most ferocious warriors in any Norse warband. They have proven their worth over countless battles and have learned that death is nothing to be feared. They charge into battle without any regard for their own safety and are really quite demented.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 50,
+      "startingXp": 11,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "hero-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Berserkers",
+          "ruleFull": "Berserkers are subject to <Tooltip>frenzy</Tooltip> as detailed in the Psychology section of the Mordheim rulebook."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "wulfen",
+      "type": "hero",
+      "name": "Wulfen",
+      "plural": "Wulfen",
+      "race": "wulfen",
+      "flavour": "Wulfen are Berserkers with a very rare mutation. When there is a full moon, or when blood starts flowing on the battlefield, the mysterious and deadly Wulfen turn into blood hungry beasts, part man, and part wolf or bear. These creatures are known and greatly feared as werewolves to most Old Worlders. To the Norse they are Werekin, monstrous beasts which can tear through flesh and armour with their huge claws and massive fangs as they go on the rampage.",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 90,
+      "startingXp": 11,
+      "statblock": {
+        "m": 6,
+        "ws": 4,
+        "bs": 0,
+        "s": 4,
+        "t": 4,
+        "w": 2,
+        "i": 4,
+        "a": 2,
+        "ld": 7
+      },
+      "equipmentLists": [],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "Wulfen are terrifying creatures to behold and cause <Tooltip>fear</Tooltip>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Bestial",
+          "ruleFull": "Wulfen are ravenous beasts and therefore <em>immune to psychology</em>. Also despite being greatly revered by their barbarian kinsmen, Wulfen are too feral and uncontrolled to become the leader of the warband."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "bondsmen",
+      "type": "hero",
+      "name": "Bondsman",
+      "plural": "Bondsmen",
+      "race": "human",
+      "flavour": "These are young fighters who are still inexperienced. They are bonded to their Jarl by the oath of servitude.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 15,
+      "startingXp": 0,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "hero-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "marauders",
+      "type": "henchman",
+      "name": "Marauder",
+      "plural": "Marauders",
+      "race": "human",
+      "flavour": "Marauders are the standard warriors in any Norse warband. They have experienced bloodshed and have been trained to fight since they were children. Marauders are so named as they are pirates and raiders.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "henchmen-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "hunters",
+      "type": "henchman",
+      "name": "Hunter",
+      "plural": "Hunters",
+      "race": "human",
+      "flavour": "Hunters are expertly skilled in stalking the wild game of the Umbra. When warriors are exiled from a tribe they become renegades, following Norse champions on epic voyages to offer ranged attacks as well as their exceptional hunting skills.",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "hunters-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "wolves",
+      "type": "henchman",
+      "name": "Wolf",
+      "plural": "Wolves",
+      "race": "wolf",
+      "minQty": 0,
+      "maxQty": 5,
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "costGc": 15,
+      "gainExp": false,
+      "promotable": false,
+      "flavour": "The harsh lands of Norsca are inhabited by a great many ferocious beasts: massive woolly mammoths, vicious polar bears and wolves far larger than those encountered elsewhere in the world. Norse hunters capture and use these beasts. Properly trained they make formidable foes.",
+      "statblock": {
+        "m": 9,
+        "ws": 3,
+        "bs": 0,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 5
+      },
+      "equipmentLists": [],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Animals",
+          "ruleFull": "Wolves are animals and thus do not gain experience."
+        },
+        {
+          "flavour": "",
+          "rulename": "Pack Leader",
+          "ruleFull": "Wolves are feral animals that only respond to the strongest in their pack – the Wulfen. In the event that no Wulfen is included in the warband due to a death or an injury, the wolves cannot be used until the creature is replaced."
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}

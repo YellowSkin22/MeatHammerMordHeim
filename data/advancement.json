@@ -32,17 +32,5 @@
     "perWound": { "value": 1, "description": "+1 XP per enemy taken out of action." },
     "winning": { "value": 1, "description": "+1 XP for being on the winning warband (heroes only)." },
     "perWyrdstone": { "value": 1, "description": "+1 XP per wyrdstone shard found (heroes only)." }
-  },
-  "maxStats": {
-    "note": "Maximum characteristic values for stat increases",
-    "M": 10,
-    "WS": 10,
-    "BS": 10,
-    "S": 7,
-    "T": 7,
-    "W": 5,
-    "I": 10,
-    "A": 5,
-    "Ld": 10
   }
 }

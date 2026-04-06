@@ -1,0 +1,507 @@
+{
+  "id": "cult-of-the-possessed",
+  "name": "Cult of the Possessed",
+  "grade": "1a",
+  "campaigngrade": "1a",
+  "source": "Mordheim Rulebook",
+  "sourceLink": "https://broheim.net/downloads/warbands/official/Cult%20of%20the%20Possessed.pdf",
+  "setting": "Mordheim",
+  "author": "",
+  "version": "",
+  "lore": "<em>There is never any shortage of men willing to risk their lives for a chance of real power: men whose ambitions lie beyond the scope of their birthright, or whose sorcerous skills or physical deformities place them in constant danger of persecution. What do such men have to lose if they pledge their souls to the dark gods of Chaos! In the aftermath of the destruction of Mordheim all manner of mutants have appeared whilst many hitherto unblemished folk feel the stirring of strange powers, the first awakenings of magical gifts destined to bring them to a fiery death at the hands of the Witch Hunters.</em><br /><br /><em>Now a leader has appeared, a new Dark Emperor, who claims lordship of the City of the Damned. He is called the Shadowlord, Master of the Possessed, and followers of the cults of Chaos gather from all over the Empire to pledge their souls to him. Though none know whether he is man or Daemon all proclaim him their saviour and eagerly seek to do his bidding.</em><br /><br /><em>As all students of the dark arts know, it is by the power of magic that creatures such as Daemons and spirits are able to stalk the mortal world. The wyrdstone that proliferates in Mordheim grants unnatural life to many vile things that by all natural rights should never exist. The Possessed were once men but by surrendering themselves wholly to the dark gods they have allowed Daemons to possess their bodies. Their appearance is horrific – corrupted from within, their flesh is twisted into a new and monstrous form.</em><br /><br /><em>With the power of the Possessed behind them the followers of the Shadowlord have grown powerful in Mordheim. In the Massacre of Silver Street the Cult of the Possessed ambushed and destroyed a large force sent in to hunt them down. Now the streets of Mordheim belong to the Shadowlord and his servants. The contaminated air does not affect them at all or, more likely, it nourishes their inner corruption. Men who venture into Mordheim alone are hunted down and sacrificed to the dark gods. All warbands of the Possessed gather wyrdstone for the Shadowlord who remains hidden in the Pit where he is said to be guarded by titanic Possessed the size of houses. A few shards of the precious stone are kept by the warbands and used to create more of the Possessed.</em><br /><br /><em>The leaders of cult warbands are called Magisters and each leads a group of cultists: minions of the dark gods of Chaos. These are men whose hunger for power knows no bounds, who willingly give their bodies over to possession. All take part in the blood sacrifices, dark rituals, and worship of Daemons – nothing is too base for them! These degenerate humans are joined by other creatures as vile as they – things half-man half-beast that call themselves Gors, and which men refer to as Beastmen.</em><br /><br /><em>There are few sights as horrific as a cult warband. Deranged warriors smeared with blood and dirt wave jagged weapons and chant blasphemous rites as they throw themselves upon their foes. Many are hardly recognisable as human, their bodies are so scarred and disfigured. The stigmata of mutation is borne by most, but the most unsettling of all are the Possessed themselves – melded flesh made of men, beasts, and metal driven by the implacable will of a Daemon.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "A Possessed warband must include a minimum of three models. You have 500 gold crowns to recruit your initial warband. The maximum number of warriors in the warband may never exceed 15."
+  },
+  "specialSkills": false,
+  "specialRules": [],
+  "mutations": [
+    {
+      "mutationName": "Mutations",
+      "mutationflavour": "Those who dwell in Mordheim soon develop horrible mutations, and the Cult of the Possessed seem to be especially susceptible. In addition, Mordheim attracts mutants from all over the Empire, who are always quick to join the Chaos covens. Most mutations are simply inconvenient or hideous, but some make their bearers extremely dangerous in combat.<br /><br />Mutations may be bought for a Mutant or a Possessed warrior only when they are recruited; you may not buy new mutations for a model after recruitment. Any Mutant or Possessed may have one or more mutations. The first mutation is bought at the price indicated, but second<sup><Tooltip content=\"faq122\">❓</Tooltip></sup> and subsequent mutations bought for the same model cost double.",
+      "items": [
+        {
+          "heading": "daemon soul",
+          "cost": "20",
+          "flavour": "",
+          "ruleFull": "A Daemon lives within the mutant’s soul. This gives him a 4+ save against the effects of spells or prayers.<sup><Tooltip content=\"faq129\">❓</Tooltip></sup>"
+        },
+        {
+          "heading": "great claw",
+          "cost": "50",
+          "flavour": "",
+          "ruleFull": "One of the mutant’s arms ends in a great, crab-like claw. He may carry no weapons in this arm, but gains an extra attack in hand-to-hand combat with a +1 Strength bonus.<sup><Tooltip content=\"faq124\">❓</Tooltip></sup>"
+        },
+        {
+          "heading": "cloven hoofs",
+          "cost": "40",
+          "flavour": "",
+          "ruleFull": "The warrior gains +1 Movement.<sup><Tooltip content=\"faq130\">❓</Tooltip></sup>"
+        },
+        {
+          "heading": "tentacle",
+          "cost": "35",
+          "flavour": "",
+          "ruleFull": "One of the mutant’s arms ends in a tentacle.<sup><Tooltip content=\"faq125\">❓</Tooltip></sup> He may grapple his opponent in close combat to reduce his attacks by -1, down to a minimum of 1. The mutant may decide which attack his opponent loses."
+        },
+        {
+          "heading": "blackblood",
+          "cost": "30",
+          "flavour": "",
+          "ruleFull": "If the model loses a wound<sup><Tooltip content=\"faq128\">❓</Tooltip></sup> in close combat, anyone in base contact with the model suffers a Strength 3 hit (no critical hits) from the spurting corrosive blood."
+        },
+        {
+          "heading": "spines",
+          "cost": "35",
+          "flavour": "",
+          "ruleFull": "Any model in base contact with the mutant suffers an automatic Strength 1 hit at the beginning of each close combat phase. Spines will never cause critical hits."
+        },
+        {
+          "heading": "scorpion tail",
+          "cost": "40",
+          "flavour": "",
+          "ruleFull": "The mutant has a long barbed tail with a venomed tip, allowing him to make an extra Strength 5 attack in each hand-to-hand combat phase. If the model hit by the tail is immune to poison, the Strength of the hit is reduced to 2."
+        },
+        {
+          "heading": "extra arm",
+          "cost": "40",
+          "flavour": "",
+          "ruleFull": "The mutant may use any single-handed weapon in the extra arm, giving him +1 attack when fighting in hand-to-hand combat. Alternatively, he may carry a shield or a buckler in the extra arm.<sup><Tooltip content=\"faq123\">❓</Tooltip></sup> If a Possessed chooses to do this, he gains an extra attack but still cannot carry a weapon."
+        },
+        {
+          "heading": "hideous",
+          "cost": "40",
+          "flavour": "",
+          "ruleFull": "The mutant causes <Tooltip>fear</Tooltip>."
+        }
+      ]
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "possessed-equipment",
+      "title": "Possessed Equipment",
+      "hidetitle": true,
+      "caveat": "The following lists are used by Possessed warbands to pick their equipment.",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "short bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "darksouls-equipment",
+      "title": "Darksouls Equipment List",
+      "caveat": "This list is for Darksouls and Beastmen only.",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "flail",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "magister",
+      "type": "hero",
+      "name": "Magister",
+      "plural": "Magisters",
+      "race": "human",
+      "flavour": "Magisters lead the covens of the Possessed. They have been granted magical powers by their patron gods. They are fanatical followers of the Dark gods, utterly dedicated to bringing Chaos to the world.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 70,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 4,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "possessed-equipment"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": true,
+        "strength": false,
+        "speed": true,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any models in the warband within 6\" of the Magister may use his Leadership instead of their own."
+        },
+        {
+          "flavour": "",
+          "rulename": "Magic User",
+          "ruleFull": "The Magister has the ability to use magic and casts spells like any other magicians, and the Magister starts with one spells generated at random from the <a href=\"#chaos-rituals\">Chaos Rituals</a> In addition the Magister may learn a new Spell instead of a new skill."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "the-possessed",
+      "type": "hero",
+      "name": "The Possessed",
+      "plural": "The Possessed",
+      "race": "possessed",
+      "flavour": "The Possessed have committed the greatest of heresies: they have given their bodies to Daemons. As a result, they are nightmarish creatures, a melding of flesh, metal and black magic. Inside them lives a supernatural thing of evil, a Daemon from the dark reaches of the Realm of Chaos.<br /><br />The powerful spirit of a Daemon can meld several creatures together, be they men or animals, into a multi-faceted horror. These monstrous Possessed are perhaps the most dangerous of the creatures of Mordheim, and certainly the most loathsome and dreadful.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 90,
+      "startingXp": 8,
+      "statblock": {
+        "m": 5,
+        "ws": 4,
+        "bs": 0,
+        "s": 4,
+        "t": 4,
+        "w": 2,
+        "i": 4,
+        "a": 2,
+        "ld": 7
+      },
+      "equipmentLists": [],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "The Possessed are terrifying, twisted creatures and therefore cause <Tooltip>fear</Tooltip>.<sup><Tooltip content=\"faq102\">❓</Tooltip></sup>"
+        },
+        {
+          "flavour": "",
+          "rulename": "Mutations",
+          "ruleFull": "Possessed may start the game with one or more mutations each. See the Mutations list for costs."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "mutants",
+      "type": "hero",
+      "name": "Mutants",
+      "plural": "Mutants",
+      "race": "human",
+      "flavour": "Mutants are revered as the favoured ones of the Dark gods, their physical disfigurements marking out the vileness of their soul. They come in many shapes and sizes, each more bizarre than the next.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 25,
+      "startingXp": 0,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "possessed-equipment"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": false,
+        "speed": true,
+        "special": false
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Mutations",
+          "ruleFull": "Mutants must start the game with one or more mutations each. See the Mutations list for the cost."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "darksouls",
+      "type": "henchman",
+      "name": "Darksouls",
+      "plural": "Darksouls",
+      "race": "human",
+      "flavour": "Darksouls are men who have been driven insane by the daemonic possession which became all too common after the destruction of Mordheim. The Daemons have left the bodies of these men, but their minds have been scarred by the horror of the experience.<br /><br />Their insane strength makes Darksouls dangerous fighters. The Cultists regard them as holy men, and let them work out their unreasoning rage in battle. In their tortured minds the Darksouls believe themselves to be Daemons. They wear leering daemonic masks and garb themselves in armour and clothing resembling the scaled skin of Daemons.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "minQty": 0,
+      "maxQty": 5,
+      "costGc": 35,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 4,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 6
+      },
+      "equipmentLists": [
+        "darksouls-equipment"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Crazed",
+          "ruleFull": "Darksouls have been driven insane by daemonic possession and know no fear. They automatically pass any Leadership tests they are required to take."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "beastmen",
+      "type": "henchman",
+      "name": "Beastmen",
+      "plural": "Beastmen",
+      "race": "other beastmen",
+      "flavour": "Beastmen are mutated monstrosities that infest the forests of the Empire: massive horned creatures with an inhuman resistance to pain. The destruction of Mordheim brought many Beastmen into the ruined city to prey upon the survivors. They readily ally with the Magisters of the Possessed warbands.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "minQty": 0,
+      "maxQty": 3,
+      "costGc": 45,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 4,
+        "w": 2,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "darksouls-equipment"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "brethren",
+      "type": "henchman",
+      "name": "Brethren",
+      "plural": "Brethren",
+      "race": "human",
+      "flavour": "Brethren are the crazed human followers of the cults of the dark gods, eager to descend into damnation. Their vile deeds and unspeakable acts have driven them to the brink of insanity.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "possessed-equipment"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    }
+  ]
+}

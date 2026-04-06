@@ -1,0 +1,629 @@
+{
+  "id": "ostlander-mercenaries",
+  "name": "Ostlander Mercenaries",
+  "grade": "1a",
+  "campaigngrade": "1a",
+  "source": "Town Cryer #11, revised in Mordheim Annual 2002",
+  "sourceLink": "https://broheim.net/downloads/warbands/official/Ostlanders.pdf",
+  "setting": "Mordheim",
+  "author": "",
+  "version": "",
+  "lore": "<em>\"My only crime was to get in a brawl with some pig farmer outside of the Donkey's Nut Tavern - the next thing I knew a dozen of his brothers were after my blood!\"</em><br /><br /><strong>Udo Verkonnen, Freesword</strong><br /><br /><em>The principality of Ostland is the most sparsely inhabited of all of the Empire's Electoral provinces. Its people have more ties with the land of Kislev to the north than they do with their countrymen to the south. This is because the Forest of Shadows and the Middle Mountains form two natural barriers between Ostland and the rest of the Empire. Within the Forest of Shadows are vast amounts of wild game but also darker creatures such as Chaos Beastmen and Forest Goblins. The Middle Mountains themselves are the highest point in the Empire and their peaks are inhabited by a large number of Ogres.</em><br /><br /><em>Ostland's isolation has greatly shaped its inhabitants and they are a poor but hardy folk. Each small village lives barely above subsistence levels and is usually composed of one large extended family. The men of Ostand are tall and broad-shouldered while the women tend to either be tall and whippet thin or short and stout. Married men are usually dirt farmers who also gather roots, tubers and nuts in the forests, while unmarried men spend their lives as trappers and hunters. The worship of Taal, the god of Forests and Beasts, is very popular in the region, although there is also some worship of Taal’s wife Ryha, and his brother Ulric in the more westerly villages.</em><br /><br /><em>While not warlike by nature, Ostlanders are never opposed to a good honest drunken brawl and with their love of dark ales these sorts of scraps are not uncommon. During the Great War against Chaos, Ostlanders rallied in great numbers to wield bow and spear in defence of ther Kislevite neighbours. More than any other part of the Empire, Ostland has tasted the lash of Chaos and their hatred of the evil ones knows no bounds.</em>",
+  "warbandRules": {
+    "startingGc": 500,
+    "maxModels": 15,
+    "choiceFluff": "An Ostlander warband is often made up of an extended family of Ostlanders. Fathers, uncles, brothers, cousins and even the occasional tough- as-nails aunt all join together to form the warband. The 'family' must include a minimum of 3 models and a maximum of 15. You have 500 Gold Crowns that you can use to recruit your initial warband."
+  },
+  "specialSkills": true,
+  "specialRules": [
+    {
+      "heading": "",
+      "flavour": "",
+      "rulename": "Self-Sufficient",
+      "ruleFull": "The men of Ostland have no desire to give their hard-earned gold to outsiders. As a result they can never hire any Mercenaries except for Ogres (who are not an uncommon sight in Ostland)."
+    }
+  ],
+  "equipmentLists": [
+    {
+      "id": "ostlander-equipment-list",
+      "title": "Ostlander Equipment List",
+      "caveat": "The following lists are used by Ostlander warbands to pick their weapons:",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15,
+            "braceCost": 30
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "heavy armour",
+          "alias": "",
+          "cost": {
+            "cost": 50
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "ruffian-equipment-list",
+      "title": "Ruffian Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "mace",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "hammer",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 15
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "jaeger-equipment-list",
+      "title": "Jaeger Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "dagger",
+          "alias": "",
+          "cost": {
+            "costPrefix": "1st free/",
+            "cost": 2
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "spear",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "pistol",
+          "alias": "",
+          "cost": {
+            "cost": 15,
+            "braceCost": 30
+          }
+        },
+        {
+          "name": "double-barrelled pistol",
+          "alias": "",
+          "cost": {
+            "cost": 30,
+            "braceCost": 60
+          }
+        },
+        {
+          "name": "bow",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "blunderbuss",
+          "alias": "",
+          "cost": {
+            "cost": 30
+          }
+        },
+        {
+          "name": "handgun",
+          "alias": "",
+          "cost": {
+            "cost": 35
+          }
+        },
+        {
+          "name": "hunting rifle",
+          "alias": "",
+          "cost": {
+            "cost": 200
+          }
+        },
+        {
+          "name": "double-barrelled hunting rifle",
+          "alias": "",
+          "cost": {
+            "cost": 300
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        },
+        {
+          "name": "shield",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "helmet",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        }
+      ]
+    },
+    {
+      "id": "ogre-equipment-list",
+      "title": "Ogre Equipment List",
+      "caveat": "",
+      "items": [
+        {
+          "name": "club",
+          "alias": "",
+          "cost": {
+            "cost": 3
+          }
+        },
+        {
+          "name": "axe",
+          "alias": "",
+          "cost": {
+            "cost": 5
+          }
+        },
+        {
+          "name": "sword",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "double-handed weapon",
+          "alias": "",
+          "cost": {
+            "cost": 10
+          }
+        },
+        {
+          "name": "light armour",
+          "alias": "",
+          "cost": {
+            "cost": 20
+          }
+        }
+      ]
+    }
+  ],
+  "fighters": [
+    {
+      "id": "elder",
+      "type": "hero",
+      "name": "Elder",
+      "plural": "Elders",
+      "race": "human",
+      "flavour": "In Ostland, the oldest (or more often biggest) man in the village is given the title ‘Elder’. His word is greatly respected and only at his urging would the manhood of an entre village pack up and travel to Mordheim to seek their fortune.",
+      "minQty": 1,
+      "maxQty": 1,
+      "costGc": 60,
+      "startingXp": 20,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 4,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 4,
+        "a": 1,
+        "ld": 8
+      },
+      "equipmentLists": [
+        "ostlander-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": true,
+        "academic": false,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Leader",
+          "ruleFull": "Any warrior within 6\" of the Elder may use his Leadership characteristic when taking Leadership tests."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "blood-brothers",
+      "type": "hero",
+      "name": "Blood-Brother",
+      "plural": "Blood-Brothers",
+      "race": "human",
+      "flavour": "Ostland villages are usually composed of a single extended family. Everyone is everyone else's uncle, cousin or brother (and sometimes their own!). Rather than trying to keep all of these relations straight, the most respected men in the village (aside from the Elder) are referred to simply as Blood-brothers.",
+      "minQty": 0,
+      "maxQty": 2,
+      "costGc": 35,
+      "startingXp": 12,
+      "statblock": {
+        "m": 4,
+        "ws": 4,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "ostlander-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": false,
+        "strength": true,
+        "speed": false,
+        "special": true
+      },
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "priest-of-taal",
+      "type": "hero",
+      "name": "Priest of Taal",
+      "plural": "Priests of Taal",
+      "race": "human",
+      "flavour": "It is said that every priest of Taal is born during the darkest phase of the moon. Those who are accepted into the service of Taal are loners by nature and spend their time wandering the untamed forests of the Northern Empire. It is unclear why the priests of the forest have begun to join bands of Ostlanders in their delvings into the ruined city of Mordheim — for the servants of Taal keep their own counsel. Suffice to say that the Forest-God is clearly building a strong presence both in and around the darkened ruins as more animals begin to fill the surrounding forests...",
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 45,
+      "startingXp": 12,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "ostlander-equipment-list"
+      ],
+      "skillAccess": {
+        "combat": true,
+        "shooting": false,
+        "academic": true,
+        "strength": true,
+        "speed": true,
+        "special": true
+      },
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Prayers",
+          "ruleFull": "A Priest of Taal may use the <a href=\"/docs/magic/prayers-of-taal\">Prayers of Taal</a>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Strictures",
+          "ruleFull": "Priests of Taal may never wear heavy armour."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "kin",
+      "type": "henchman",
+      "name": "Kin",
+      "plural": "Kin",
+      "race": "human",
+      "flavour": "Most of the warriors in an Ostlander warband are brothers and cousins of the Elder. Many are marred men with children to support and the ruins of Mordheim are a lure that few poor villagers can resist.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "ostlander-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "jaeger",
+      "type": "henchman",
+      "name": "Jaeger",
+      "plural": "Jaeger",
+      "race": "human",
+      "flavour": "Some Ostlander men choose not to marry but instead spend their time alone in the forests of the Old World. While these rangers do not share the close family bonds of a typical Ostlander blood-kin they are well respected for their knowledge of the woods and their rugged determination. Poor Jaeger usually wield a simple home-made bow but it is every jaeger’s dream to one day own a blackpowder weapon and hunting rifle, especially double-barrelled versions, as these are a sign of great prestige amongst the hunters of the deep woods.",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "minQty": 0,
+      "maxQty": 7,
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 3,
+        "bs": 3,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 3,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "jaeger-equipment-list"
+      ],
+      "specialRules": [],
+      "admonitions": ""
+    },
+    {
+      "id": "ruffians",
+      "type": "henchman",
+      "name": "Ruffian",
+      "plural": "Ruffians",
+      "race": "human",
+      "flavour": "Although every Ostlander loves his ale, a few men in every village take this love to extremes. Never sober and rarely conscious, these buffoons stagger their way through the streets of Mordheim yelling slurred insults at whomever they meet, committing petty acts of vandalism and generally making a mess of things. This comic behaviour is often misconstrued into a false belief that they are harmless, a belief that many live to regret. Fuelled by vast quantities of booze these are very dangerous, unpredictable men indeed who will shove a broken bottle into your face as soon as laugh heartily and burst into song!",
+      "groupSize": {
+        "min": 1,
+        "max": 5
+      },
+      "minQty": 0,
+      "maxQty": 5,
+      "costGc": 25,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 4,
+        "ws": 2,
+        "bs": 2,
+        "s": 3,
+        "t": 3,
+        "w": 1,
+        "i": 2,
+        "a": 1,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "ruffian-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Drunk",
+          "ruleFull": "Ruffians are blasted out of their any minds on rotgut spirits and cheap ale. As such, they automatically pass all Leadership based tests they are required to take."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Respect",
+          "ruleFull": "Ruffians are objects of a strange mix of pity and abject fear for their fellows and may never become a warband leader."
+        },
+        {
+          "flavour": "",
+          "rulename": "No Missile Weapons",
+          "ruleFull": "Ruffians never use missile weapons, as their depth perception leaves a bit to be desired, even if they gain an Advance roll which would otherwise allow them to do so."
+        }
+      ],
+      "admonitions": ""
+    },
+    {
+      "id": "ogre",
+      "type": "henchman",
+      "name": "Ogre",
+      "plural": "Ogres",
+      "race": "ogre",
+      "flavour": "More than anywhere in the Empire, Ogres are most commonplace within the hilly, pine forested landscape of Ostland. These brutish creatures are very much sought after by the rough mountain men of Ostland as muscle in the warband. An Ogre’s strength is near legendary and their ability to sustain an awful lot of punishment during a fight makes these the perfect shock troops of any warband. Of course, an Ogre's appetite is nearly as well-renowned as their fighting abilities and so they are rather expensive to keep.",
+      "groupSize": {
+        "min": 1,
+        "max": 1
+      },
+      "minQty": 0,
+      "maxQty": 1,
+      "costGc": 160,
+      "gainExp": true,
+      "promotable": true,
+      "statblock": {
+        "m": 6,
+        "ws": 3,
+        "bs": 2,
+        "s": 4,
+        "t": 4,
+        "w": 3,
+        "i": 3,
+        "a": 2,
+        "ld": 7
+      },
+      "equipmentLists": [
+        "ogre-equipment-list"
+      ],
+      "specialRules": [
+        {
+          "flavour": "",
+          "rulename": "Fear",
+          "ruleFull": "Ogres are large, threatening creatures that cause <Tooltip>fear</Tooltip>."
+        },
+        {
+          "flavour": "",
+          "rulename": "Large",
+          "ruleFull": "Ogres are huge, lumbering creatures and therefore make tempting targets for archers. Any model may shoot at an Ogre, even if it is not the closest target."
+        },
+        {
+          "flavour": "",
+          "rulename": "Skills",
+          "ruleFull": "An Ogre who becomes a Hero as a result of <em>The Lad’s Got Talent</em> may choose from the Combat and Strength skills."
+        },
+        {
+          "flavour": "",
+          "rulename": "Slow Witted",
+          "ruleFull": "Although Ogres are capable of earning experience and bettering themselves they are not the smartest of creatures. Ogres only gain advances at half the rate of everyone else (ie, they must accrue twice as much experience as normal to get an advance)."
+        }
+      ],
+      "admonitions": ""
+    }
+  ]
+}
