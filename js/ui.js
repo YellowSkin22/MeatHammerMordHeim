@@ -1508,7 +1508,7 @@ const UI = {
     // Reverse the treasury mutation if it was applied
     if (entry.applied) {
       r.gold = Math.max(0, (r.gold || 0) - entry.gold);
-      r.wyrdstone = Math.max(0, (r.wyrdstone || 0) - entry.wyrdstone);
+      r.wyrdstone = Math.max(0, (r.wyrdstone || 0) - (entry.wyrdstone || 0));
     }
 
     r.treasuryLog.splice(index, 1);
