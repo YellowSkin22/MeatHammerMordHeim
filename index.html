@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=12">
+  <link rel="stylesheet" href="css/style.css?v=13">
   <script>
     // Apply theme before paint to prevent flash
     (function() {
@@ -183,6 +183,17 @@
           </div>
         </div>
 
+        <!-- Treasury Ledger -->
+        <div class="section-panel mt-2">
+          <div class="section-header" style="display:flex; justify-content:space-between; align-items:center;">
+            <h3>Treasury Ledger</h3>
+            <button class="btn btn-sm" id="btn-add-treasury-entry" onclick="UI.openTreasuryModal()">+ Add Entry</button>
+          </div>
+          <div class="section-content">
+            <div id="treasury-ledger-entries"></div>
+          </div>
+        </div>
+
         <!-- Battle Log -->
         <div class="section-panel mt-2">
           <div class="section-header">
@@ -217,7 +228,63 @@
       </div>
     </div>
 
-    <!-- ===== FOOTER ===== -->
+    <!-- ===== TREASURY LEDGER MODAL ===== -->
+  <div id="treasury-ledger-modal" class="modal-overlay">
+    <div class="modal">
+      <div class="modal-header">
+        <h3>Add Treasury Entry</h3>
+        <button class="btn btn-icon" onclick="UI.closeTreasuryModal()">&#10005;</button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label>Entry Type</label>
+          <select id="treasury-type-select" class="form-control" onchange="UI.onTreasuryTypeChange()">
+            <option value="income">Income</option>
+            <option value="purchase">Purchase</option>
+            <option value="sell">Sell</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <!-- Equipment picker — shown for Purchase only -->
+        <div class="form-group" id="treasury-equipment-group" style="display:none;">
+          <label>Equipment (pre-fill)</label>
+          <select id="treasury-equipment-select" class="form-control" onchange="UI.onTreasuryEquipmentSelect()">
+            <option value="">— select to pre-fill —</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label id="treasury-description-label">Description</label>
+          <input type="text" id="treasury-description-input" class="form-control" placeholder="e.g. Post-battle loot">
+        </div>
+
+        <div class="form-group">
+          <label id="treasury-gold-label">Gold (gc)</label>
+          <input type="number" id="treasury-gold-input" class="form-control" min="0" value="0">
+        </div>
+
+        <!-- Wyrdstone — shown for Income and Other only -->
+        <div class="form-group" id="treasury-wyrdstone-group">
+          <label>Wyrdstone Shards</label>
+          <input type="number" id="treasury-wyrdstone-input" class="form-control" min="0" value="0">
+        </div>
+
+        <div class="form-group">
+          <label>
+            <input type="checkbox" id="treasury-apply-checkbox" checked>
+            <span id="treasury-apply-label">Add to treasury</span>
+          </label>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn" onclick="UI.closeTreasuryModal()">Cancel</button>
+        <button class="btn btn-primary" onclick="UI.submitTreasuryEntry()">Add Entry</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
     <footer class="app-footer">
       <a href="https://github.com/YellowSkin22/MeatHammerMordHeim/issues"
          target="_blank" rel="noopener noreferrer" class="feedback-link">
@@ -416,8 +483,8 @@
   <script src="js/cloud.js?v=9"></script>
   <script src="js/data.js?v=13"></script>
   <script src="js/storage.js?v=8"></script>
-  <script src="js/roster.js?v=7"></script>
-  <script src="js/ui.js?v=23"></script>
+  <script src="js/roster.js?v=8"></script>
+  <script src="js/ui.js?v=24"></script>
   <script>
     // Boot the app
     (async function() {
