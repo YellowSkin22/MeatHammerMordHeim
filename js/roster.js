@@ -53,6 +53,7 @@ const RosterModel = {
       hiredSwords: [],
       customWarriors: [],
       battleLog: [],
+      treasuryLog: [],
       notes: '',
       createdAt: new Date().toISOString(),
       updatedAt: new Date().toISOString(),
