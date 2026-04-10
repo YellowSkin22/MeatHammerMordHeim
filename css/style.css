@@ -778,6 +778,97 @@ select.form-control {
   transition: width 0.4s ease;
 }
 
+/* ===== TREASURY LEDGER ===== */
+.treasury-ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.treasury-ledger-table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.treasury-ledger-table td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid var(--bg-dark);
+  vertical-align: middle;
+}
+
+.treasury-ledger-table tr:last-child td {
+  border-bottom: none;
+}
+
+.treasury-type-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+
+.treasury-type-badge--income,
+.treasury-type-badge--sell {
+  background: rgba(124, 185, 168, 0.15);
+  color: #7cb9a8;
+}
+
+.treasury-type-badge--purchase {
+  background: rgba(200, 124, 124, 0.15);
+  color: #c87c7c;
+}
+
+.treasury-type-badge--other {
+  background: rgba(180, 180, 180, 0.1);
+  color: var(--text-dim);
+}
+
+.treasury-amount--positive {
+  color: #7cb9a8;
+  font-weight: 600;
+}
+
+.treasury-amount--negative {
+  color: #c87c7c;
+  font-weight: 600;
+}
+
+.treasury-balance {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.treasury-delete-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0 0.2rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.treasury-delete-btn:hover {
+  color: #c87c7c;
+  opacity: 1;
+}
+
+.treasury-ledger-empty {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
+}
+
 /* ===== BATTLE LOG ===== */
 .battle-log {
   margin-top: 1rem;
