@@ -16,10 +16,9 @@
     { "roll": "41-55", "name": "Full Recovery", "description": "The warrior makes a full recovery." },
     { "roll": "56", "name": "Bitter Enmity", "description": "Hates the warband that caused the injury." },
     { "roll": "61", "name": "Captured", "description": "The warrior is captured by the enemy. Roll after game to see fate." },
-    { "roll": "62", "name": "Hardened", "description": "Immune to Fear." },
-    { "roll": "63", "name": "Horrible Scars", "description": "Causes Fear." },
-    { "roll": "64", "name": "Sold to the Pits", "description": "Gains D6 experience." },
-    { "roll": "65", "name": "Survives Against the Odds", "description": "Gains +1 Experience." },
+    { "roll": "62-63", "name": "Hardened", "description": "Immune to Fear." },
+    { "roll": "64", "name": "Horrible Scars", "description": "Causes Fear." },
+    { "roll": "65", "name": "Sold to the Pits", "description": "Gains D6 experience." },
     { "roll": "66", "name": "Survives Against the Odds", "description": "Gains +1 Experience." }
   ],
   "henchmenInjuries": [
