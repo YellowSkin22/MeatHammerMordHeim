@@ -23,7 +23,6 @@
   ],
   "henchmenInjuries": [
     { "roll": "1-2", "name": "Dead", "description": "The henchman is removed from the roster." },
-    { "roll": "3-4", "name": "Multiple Injuries", "description": "The henchman must miss the next game." },
-    { "roll": "5-6", "name": "Full Recovery", "description": "The henchman makes a full recovery." }
+    { "roll": "3-6", "name": "Full Recovery", "description": "The henchman makes a full recovery." }
   ]
 }
