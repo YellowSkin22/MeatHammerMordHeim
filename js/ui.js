@@ -1393,7 +1393,7 @@ const UI = {
           .sort((a, b) => a.name.localeCompare(b.name))
           .map(item => {
             const cost = item.cost?.cost ?? 0;
-            return `<option value="${this.escAttr(item.name)}" data-cost="${cost}">${this.esc(item.name)} (${cost} gc)</option>`;
+            return `<option value="${this.escAttr(item.name)}" data-cost="${cost}" data-name="${this.escAttr(item.name)}">${this.esc(item.name)} (${cost} gc)</option>`;
           }).join('');
         return `<optgroup label="${this.escAttr(label)}">${options}</optgroup>`;
       }).join('');
@@ -1440,7 +1440,7 @@ const UI = {
     const select = document.getElementById('treasury-equipment-select');
     const opt = select.options[select.selectedIndex];
     if (!opt || !opt.value) return;
-    document.getElementById('treasury-description-input').value = opt.value;
+    document.getElementById('treasury-description-input').value = opt.dataset.name || '';
     document.getElementById('treasury-gold-input').value = opt.dataset.cost || '0';
   },
 
