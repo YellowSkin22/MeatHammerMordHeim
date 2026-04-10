@@ -1306,6 +1306,11 @@ const UI = {
         </tbody>
       </table>
     `;
+
+    if (!canPro && log.length > 0) {
+      container.insertAdjacentHTML('beforeend',
+        '<p class="text-dim" style="font-size:0.8rem; margin-top:0.5rem;">Upgrade to <strong>Pro</strong> to add entries. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></p>');
+    }
   },
 
   renderBattleLog() {
