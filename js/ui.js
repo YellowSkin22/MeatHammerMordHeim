@@ -1497,6 +1497,26 @@ const UI = {
     this.toast('Entry added.', 'success');
   },
 
+  deleteTreasuryEntry(index) {
+    const r = this.currentRoster;
+    const log = r.treasuryLog || [];
+    const entry = log[index];
+    if (!entry) return;
+
+    if (!confirm('Remove this treasury entry?')) return;
+
+    // Reverse the treasury mutation if it was applied
+    if (entry.applied) {
+      r.gold = Math.max(0, (r.gold || 0) - entry.gold);
+      r.wyrdstone = Math.max(0, (r.wyrdstone || 0) - entry.wyrdstone);
+    }
+
+    r.treasuryLog.splice(index, 1);
+    this.saveCurrentRoster();
+    this.renderProgressTab();
+    this.toast('Entry removed.', 'success');
+  },
+
   addBattle() {
     if (typeof Cloud !== 'undefined' && !Cloud.canAccess('battle_log')) {
       return this.toast('Adding battles requires Pro tier.', 'error');
