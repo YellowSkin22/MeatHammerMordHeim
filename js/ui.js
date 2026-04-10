@@ -1447,7 +1447,7 @@ const UI = {
   submitTreasuryEntry() {
     const type = document.getElementById('treasury-type-select').value;
     const description = document.getElementById('treasury-description-input').value.trim();
-    const rawGold = parseFloat(document.getElementById('treasury-gold-input').value) || 0;
+    const rawGold = parseInt(document.getElementById('treasury-gold-input').value) || 0;
     const rawWyrdstone = parseInt(document.getElementById('treasury-wyrdstone-input').value) || 0;
     const apply = document.getElementById('treasury-apply-checkbox').checked;
 
@@ -1494,9 +1494,6 @@ const UI = {
     this.saveCurrentRoster();
     this.closeTreasuryModal();
     this.renderProgressTab();
-    // Sync the gold input field to reflect any change
-    document.getElementById('gold-input').value = this.currentRoster.gold;
-    document.getElementById('wyrdstone-input').value = this.currentRoster.wyrdstone;
     this.toast('Entry added.', 'success');
   },
 
