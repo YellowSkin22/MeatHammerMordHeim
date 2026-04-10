@@ -1232,6 +1232,81 @@ const UI = {
       notesArea.placeholder = 'Write campaign notes, strategy, or lore here...';
       notesArea.value = r.notes || '';
     }
+
+    // Treasury Ledger
+    this.renderTreasuryLedger();
+  },
+
+  renderTreasuryLedger() {
+    const r = this.currentRoster;
+    const container = document.getElementById('treasury-ledger-entries');
+    const canPro = (typeof Cloud !== 'undefined') ? Cloud.canAccess('battle_log') : false;
+    const canView = (typeof Cloud !== 'undefined') ? (Cloud.TIER_RANK[Cloud.getTier()] >= Cloud.TIER_RANK['standard']) : false;
+
+    // Gate the Add Entry button
+    const addBtn = document.getElementById('btn-add-treasury-entry');
+    if (addBtn) addBtn.style.display = canPro ? '' : 'none';
+
+    if (!canView) {
+      container.innerHTML = '<div class="locked-message"><span class="lock-icon">&#128274;</span> Treasury Ledger requires <strong>Standard</strong> tier or above. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></div>';
+      return;
+    }
+
+    const log = (r.treasuryLog || []);
+
+    if (log.length === 0) {
+      container.innerHTML = '<p class="treasury-ledger-empty">No entries yet.</p>';
+      return;
+    }
+
+    // Compute running balance newest→oldest from roster.gold
+    const chronological = [...log].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const balanceAfter = {};
+    let running = r.gold;
+    for (let i = chronological.length - 1; i >= 0; i--) {
+      const e = chronological[i];
+      if (e.applied) {
+        balanceAfter[e.id] = running;
+        running -= e.gold;
+      }
+    }
+
+    // Render newest first
+    const reversed = [...log].reverse();
+    container.innerHTML = `
+      <table class="treasury-ledger-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Balance</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${reversed.map((e, displayIdx) => {
+            const realIdx = log.length - 1 - displayIdx;
+            const sign = e.gold >= 0 ? '+' : '';
+            const amountClass = e.gold >= 0 ? 'treasury-amount--positive' : 'treasury-amount--negative';
+            const balance = balanceAfter[e.id] != null ? `<span class="treasury-balance">${balanceAfter[e.id]} gc</span>` : '<span class="text-dim">—</span>';
+            const wyrdstoneStr = (e.wyrdstone && e.wyrdstone !== 0) ? ` / ${e.wyrdstone > 0 ? '+' : ''}${e.wyrdstone} ⬡` : '';
+            const canDelete = canPro;
+            return `
+              <tr>
+                <td><span class="treasury-type-badge treasury-type-badge--${this.escAttr(e.type)}">${this.esc(e.type)}</span></td>
+                <td>${this.esc(e.description)}</td>
+                <td class="${amountClass}">${sign}${e.gold} gc${wyrdstoneStr}</td>
+                <td>${balance}</td>
+                <td class="text-dim" style="font-size:0.7rem;">${new Date(e.date).toLocaleDateString()}</td>
+                <td>${canDelete ? `<button class="treasury-delete-btn" onclick="UI.deleteTreasuryEntry(${realIdx})" title="Remove entry">&#10005;</button>` : ''}</td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+    `;
   },
 
   renderBattleLog() {
