@@ -1444,6 +1444,62 @@ const UI = {
     document.getElementById('treasury-gold-input').value = opt.dataset.cost || '0';
   },
 
+  submitTreasuryEntry() {
+    const type = document.getElementById('treasury-type-select').value;
+    const description = document.getElementById('treasury-description-input').value.trim();
+    const rawGold = parseFloat(document.getElementById('treasury-gold-input').value) || 0;
+    const rawWyrdstone = parseInt(document.getElementById('treasury-wyrdstone-input').value) || 0;
+    const apply = document.getElementById('treasury-apply-checkbox').checked;
+
+    if (!description) return this.toast('Enter a description.', 'error');
+
+    // Sign convention: income/sell = positive, purchase = negative, other = as-entered
+    let gold, wyrdstone;
+    if (type === 'income') {
+      gold = Math.abs(rawGold);
+      wyrdstone = Math.abs(rawWyrdstone);
+    } else if (type === 'purchase') {
+      gold = -Math.abs(rawGold);
+      wyrdstone = 0;
+    } else if (type === 'sell') {
+      gold = Math.abs(rawGold);
+      wyrdstone = 0;
+    } else {
+      // 'other' — signed as entered
+      gold = rawGold;
+      wyrdstone = rawWyrdstone;
+    }
+
+    const entry = {
+      id: Storage.generateId(),
+      type,
+      description,
+      gold,
+      wyrdstone,
+      applied: apply,
+      date: new Date().toISOString(),
+    };
+
+    this.currentRoster.treasuryLog = this.currentRoster.treasuryLog || [];
+    this.currentRoster.treasuryLog.push(entry);
+
+    if (apply) {
+      this.currentRoster.gold = (this.currentRoster.gold || 0) + gold;
+      this.currentRoster.wyrdstone = (this.currentRoster.wyrdstone || 0) + wyrdstone;
+      // Keep gold non-negative (clamp at 0)
+      this.currentRoster.gold = Math.max(0, this.currentRoster.gold);
+      this.currentRoster.wyrdstone = Math.max(0, this.currentRoster.wyrdstone);
+    }
+
+    this.saveCurrentRoster();
+    this.closeTreasuryModal();
+    this.renderProgressTab();
+    // Sync the gold input field to reflect any change
+    document.getElementById('gold-input').value = this.currentRoster.gold;
+    document.getElementById('wyrdstone-input').value = this.currentRoster.wyrdstone;
+    this.toast('Entry added.', 'success');
+  },
+
   addBattle() {
     if (typeof Cloud !== 'undefined' && !Cloud.canAccess('battle_log')) {
       return this.toast('Adding battles requires Pro tier.', 'error');
