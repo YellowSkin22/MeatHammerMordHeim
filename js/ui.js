@@ -1292,7 +1292,6 @@ const UI = {
             const amountClass = e.gold >= 0 ? 'treasury-amount--positive' : 'treasury-amount--negative';
             const balance = balanceAfter[e.id] != null ? `<span class="treasury-balance">${balanceAfter[e.id]} gc</span>` : '<span class="text-dim">—</span>';
             const wyrdstoneStr = (e.wyrdstone && e.wyrdstone !== 0) ? ` / ${e.wyrdstone > 0 ? '+' : ''}${e.wyrdstone} ⬡` : '';
-            const canDelete = canPro;
             return `
               <tr>
                 <td><span class="treasury-type-badge treasury-type-badge--${this.escAttr(e.type)}">${this.esc(e.type)}</span></td>
@@ -1300,7 +1299,7 @@ const UI = {
                 <td class="${amountClass}">${sign}${e.gold} gc${wyrdstoneStr}</td>
                 <td>${balance}</td>
                 <td class="text-dim" style="font-size:0.7rem;">${new Date(e.date).toLocaleDateString()}</td>
-                <td>${canDelete ? `<button class="treasury-delete-btn" onclick="UI.deleteTreasuryEntry(${realIdx})" title="Remove entry">&#10005;</button>` : ''}</td>
+                <td>${canPro ? `<button class="treasury-delete-btn" onclick="UI.deleteTreasuryEntry(${realIdx})" title="Remove entry">&#10005;</button>` : ''}</td>
               </tr>
             `;
           }).join('')}
@@ -1361,6 +1360,88 @@ const UI = {
     document.getElementById('member-limit-display').textContent = newVal;
     const memberCount = RosterModel.getMemberCount(r);
     document.getElementById('summary-members').textContent = `${memberCount} / ${newVal}`;
+  },
+
+  // === TREASURY LEDGER ===
+  openTreasuryModal() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('battle_log')) {
+      return this.toast('Treasury Ledger requires Pro tier.', 'error');
+    }
+
+    // Reset form
+    document.getElementById('treasury-type-select').value = 'income';
+    document.getElementById('treasury-description-input').value = '';
+    document.getElementById('treasury-gold-input').value = '0';
+    document.getElementById('treasury-wyrdstone-input').value = '0';
+    document.getElementById('treasury-apply-checkbox').checked = true;
+
+    // Populate equipment dropdown
+    const equipSelect = document.getElementById('treasury-equipment-select');
+    const allEquip = DataService.getAllEquipment();
+    const grouped = {};
+    allEquip.forEach(item => {
+      const cat = item.type || 'misc';
+      if (!grouped[cat]) grouped[cat] = [];
+      grouped[cat].push(item);
+    });
+    const catOrder = ['melee', 'missile', 'blackpowder', 'armour', 'misc', 'animal'];
+    const cats = [...new Set([...catOrder, ...Object.keys(grouped)])].filter(c => grouped[c]);
+    equipSelect.innerHTML = '<option value="">— select to pre-fill —</option>' +
+      cats.map(cat => {
+        const label = DataService.getEquipmentCategoryName(cat);
+        const options = grouped[cat]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(item => {
+            const cost = item.cost?.cost ?? 0;
+            return `<option value="${this.escAttr(item.name)}" data-cost="${cost}">${this.esc(item.name)} (${cost} gc)</option>`;
+          }).join('');
+        return `<optgroup label="${this.escAttr(label)}">${options}</optgroup>`;
+      }).join('');
+
+    this.onTreasuryTypeChange();
+    document.getElementById('treasury-ledger-modal').classList.add('active');
+  },
+
+  closeTreasuryModal() {
+    this.closeModal('treasury-ledger-modal');
+  },
+
+  onTreasuryTypeChange() {
+    const type = document.getElementById('treasury-type-select').value;
+    const equipGroup = document.getElementById('treasury-equipment-group');
+    const wyrdstoneGroup = document.getElementById('treasury-wyrdstone-group');
+    const applyLabel = document.getElementById('treasury-apply-label');
+    const goldLabel = document.getElementById('treasury-gold-label');
+    const descLabel = document.getElementById('treasury-description-label');
+
+    equipGroup.style.display = type === 'purchase' ? '' : 'none';
+    wyrdstoneGroup.style.display = (type === 'income' || type === 'other') ? '' : 'none';
+
+    if (type === 'income') {
+      goldLabel.textContent = 'Gold Earned (gc)';
+      descLabel.textContent = 'Description';
+      applyLabel.textContent = 'Add to treasury';
+    } else if (type === 'purchase') {
+      goldLabel.textContent = 'Cost (gc)';
+      descLabel.textContent = 'Item Name';
+      applyLabel.textContent = 'Deduct from treasury';
+    } else if (type === 'sell') {
+      goldLabel.textContent = 'Gold Received (gc)';
+      descLabel.textContent = 'Item Sold';
+      applyLabel.textContent = 'Add to treasury';
+    } else {
+      goldLabel.textContent = 'Gold (gc) — use negative for expense';
+      descLabel.textContent = 'Description';
+      applyLabel.textContent = 'Apply to treasury';
+    }
+  },
+
+  onTreasuryEquipmentSelect() {
+    const select = document.getElementById('treasury-equipment-select');
+    const opt = select.options[select.selectedIndex];
+    if (!opt || !opt.value) return;
+    document.getElementById('treasury-description-input').value = opt.value;
+    document.getElementById('treasury-gold-input').value = opt.dataset.cost || '0';
   },
 
   addBattle() {
