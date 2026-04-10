@@ -26,6 +26,8 @@
   --radius-lg: 10px;
   --transition: 0.2s ease;
   --font-display: 'Cinzel', serif;
+  --treasury-positive: #7cb9a8;
+  --treasury-negative: #c87c7c;
 }
 
 /* ===== DARK MODE THEME ===== */
@@ -798,7 +800,7 @@ select.form-control {
 
 .treasury-ledger-table td {
   padding: 0.35rem 0.4rem;
-  border-bottom: 1px solid var(--bg-dark);
+  border-bottom: 1px solid var(--border);
   vertical-align: middle;
 }
 
@@ -819,12 +821,12 @@ select.form-control {
 .treasury-type-badge--income,
 .treasury-type-badge--sell {
   background: rgba(124, 185, 168, 0.15);
-  color: #7cb9a8;
+  color: var(--treasury-positive);
 }
 
 .treasury-type-badge--purchase {
   background: rgba(200, 124, 124, 0.15);
-  color: #c87c7c;
+  color: var(--treasury-negative);
 }
 
 .treasury-type-badge--other {
@@ -833,12 +835,12 @@ select.form-control {
 }
 
 .treasury-amount--positive {
-  color: #7cb9a8;
+  color: var(--treasury-positive);
   font-weight: 600;
 }
 
 .treasury-amount--negative {
-  color: #c87c7c;
+  color: var(--treasury-negative);
   font-weight: 600;
 }
 
@@ -859,7 +861,7 @@ select.form-control {
 }
 
 .treasury-delete-btn:hover {
-  color: #c87c7c;
+  color: var(--treasury-negative);
   opacity: 1;
 }
 
@@ -1833,6 +1835,28 @@ body, .app-header, .modal, .warrior-card, .roster-card,
 
 [data-theme="dark"] .tag.injury {
   color: #e06060;
+}
+
+/* Treasury Ledger dark mode */
+[data-theme="dark"] .treasury-type-badge--income,
+[data-theme="dark"] .treasury-type-badge--sell {
+  color: #9dd4c2;
+}
+
+[data-theme="dark"] .treasury-type-badge--purchase {
+  color: #e09898;
+}
+
+[data-theme="dark"] .treasury-amount--positive {
+  color: #9dd4c2;
+}
+
+[data-theme="dark"] .treasury-amount--negative {
+  color: #e09898;
+}
+
+[data-theme="dark"] .treasury-delete-btn:hover {
+  color: #e09898;
 }
 
 /* Theme toggle button */
