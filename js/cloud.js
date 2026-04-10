@@ -16,6 +16,7 @@ const Cloud = {
     cloud_sync:       'standard',
     import_export:    'standard',
     battle_log:       'pro',
+    treasury_ledger:  'pro',
     warrior_names:    'standard',
     custom_warriors:  'pro',
     pdf_export:       'pro',

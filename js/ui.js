@@ -1240,7 +1240,8 @@ const UI = {
   renderTreasuryLedger() {
     const r = this.currentRoster;
     const container = document.getElementById('treasury-ledger-entries');
-    const canPro = (typeof Cloud !== 'undefined') ? Cloud.canAccess('battle_log') : false;
+    if (!container) return;
+    const canPro = (typeof Cloud !== 'undefined') ? Cloud.canAccess('treasury_ledger') : false;
     const canView = (typeof Cloud !== 'undefined') ? (Cloud.TIER_RANK[Cloud.getTier()] >= Cloud.TIER_RANK['standard']) : false;
 
     // Gate the Add Entry button
@@ -1290,7 +1291,7 @@ const UI = {
             const realIdx = log.length - 1 - displayIdx;
             const sign = e.gold >= 0 ? '+' : '';
             const amountClass = e.gold >= 0 ? 'treasury-amount--positive' : 'treasury-amount--negative';
-            const balance = balanceAfter[e.id] != null ? `<span class="treasury-balance">${balanceAfter[e.id]} gc</span>` : '<span class="text-dim">—</span>';
+            const balance = balanceAfter[e.id] != null ? `<span class="treasury-balance">${balanceAfter[e.id]} gc</span>` : '<span class="text-dim" title="Not applied to treasury">—</span>';
             const wyrdstoneStr = (e.wyrdstone && e.wyrdstone !== 0) ? ` / ${e.wyrdstone > 0 ? '+' : ''}${e.wyrdstone} ⬡` : '';
             return `
               <tr>
@@ -1369,9 +1370,10 @@ const UI = {
 
   // === TREASURY LEDGER ===
   openTreasuryModal() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('battle_log')) {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
       return this.toast('Treasury Ledger requires Pro tier.', 'error');
     }
+    if (!this.currentRoster) return;
 
     // Reset form
     document.getElementById('treasury-type-select').value = 'income';
@@ -1382,7 +1384,8 @@ const UI = {
 
     // Populate equipment dropdown
     const equipSelect = document.getElementById('treasury-equipment-select');
-    const allEquip = DataService.getAllEquipment();
+    if (!equipSelect) return;
+    const allEquip = DataService.getAllEquipment() || [];
     const grouped = {};
     allEquip.forEach(item => {
       const cat = item.type || 'misc';
@@ -1450,6 +1453,10 @@ const UI = {
   },
 
   submitTreasuryEntry() {
+    if (!this.currentRoster) return;
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+      return this.toast('Treasury Ledger requires Pro tier.', 'error');
+    }
     const type = document.getElementById('treasury-type-select').value;
     const description = document.getElementById('treasury-description-input').value.trim();
     const rawGold = parseInt(document.getElementById('treasury-gold-input').value) || 0;
@@ -1503,6 +1510,10 @@ const UI = {
   },
 
   deleteTreasuryEntry(index) {
+    if (!this.currentRoster) return;
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+      return this.toast('Treasury Ledger requires Pro tier.', 'error');
+    }
     const r = this.currentRoster;
     const log = r.treasuryLog || [];
     const entry = log[index];
