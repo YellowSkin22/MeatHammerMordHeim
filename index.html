@@ -493,6 +493,22 @@
     // Boot the app
     (async function() {
       try {
+        // Check for app updates. Fetches version.json bypassing cache so users
+        // always get the latest version without needing a manual hard refresh.
+        // Reloads once if the version changed; localStorage survives the reload.
+        try {
+          const vResp = await fetch('data/version.json', { cache: 'no-store' });
+          if (vResp.ok) {
+            const { version } = await vResp.json();
+            const stored = localStorage.getItem('mordheim_app_version');
+            if (stored !== String(version)) {
+              localStorage.setItem('mordheim_app_version', String(version));
+              location.reload(true);
+              return;
+            }
+          }
+        } catch (_) { /* non-fatal — continue boot without version check */ }
+
         Cloud.init();
         await DataService.loadAll();
         UI.init();
