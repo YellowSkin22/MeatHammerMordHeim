@@ -1289,8 +1289,65 @@ const UI = {
     const maxSize = fighter?.groupSize?.max || 5;
     if (newSize > maxSize) return this.toast(`Maximum group size is ${maxSize}.`, 'error');
     henchman.groupSize = newSize;
+    if (delta > 0) this._logGroupSizeIncrease(henchman, delta);
     this.saveCurrentRoster();
     this.renderRosterEditor();
+  },
+
+  // Logs treasury entries when models are added to a henchman group.
+  // Always charges full price for equipment — "1st free" was already claimed
+  // when the item was first added to the group.
+  _logGroupSizeIncrease(henchman, addedCount) {
+    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    const r = this.currentRoster;
+    if (!r) return;
+    try {
+      const entries = [];
+
+      // Model hire cost
+      const modelCost = (typeof henchman.cost === 'number' ? henchman.cost : 0) * addedCount;
+      const modelDesc = addedCount > 1
+        ? `Hired ${henchman.typeName || henchman.name} ×${addedCount}`
+        : `Hired ${henchman.typeName || henchman.name}`;
+      if (modelCost > 0) {
+        entries.push({ desc: modelDesc, cost: modelCost });
+      }
+
+      // Equipment already carried by the group — new models need the same kit
+      for (const eq of (henchman.equipment || [])) {
+        const itemData = DataService.getEquipmentItem(eq.id);
+        if (!itemData) continue;
+        const rawCost = itemData.cost?.cost;
+        const unitCost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+        if (unitCost <= 0) continue;
+        const desc = addedCount > 1
+          ? `${itemData.name || eq.name} ×${addedCount}`
+          : (itemData.name || eq.name);
+        entries.push({ desc, cost: unitCost * addedCount });
+      }
+
+      // Push entries and update gold sequentially so actualGoldDelta is accurate per entry
+      r.treasuryLog = r.treasuryLog || [];
+      let gold = r.gold || 0;
+      for (const e of entries) {
+        const newGold = Math.max(0, gold + (-e.cost));
+        r.treasuryLog.push({
+          id: Storage.generateId(),
+          type: 'purchase',
+          description: e.desc,
+          gold: -e.cost,
+          wyrdstone: 0,
+          applied: true,
+          date: new Date().toISOString(),
+          actualGoldDelta: newGold - gold,
+          actualWyrdstoneDelta: 0,
+        });
+        gold = newGold;
+      }
+      r.gold = gold;
+    } catch (err) {
+      console.error('Treasury log failed for group size increase:', err);
+    }
   },
 
   // === PROGRESS TAB ===
