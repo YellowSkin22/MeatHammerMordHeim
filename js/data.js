@@ -246,11 +246,13 @@ const DataService = {
   // For 'Special Skill', optionally filters by permittedWarbands.
   getSkillsBySubtype(subtype, warbandName) {
     if (subtype === 'Special Skill' && warbandName) {
-      return this.skills.filter(s =>
-        s.subtype === 'Special Skill' &&
-        Array.isArray(s.permittedWarbands) &&
-        s.permittedWarbands.includes(warbandName)
-      );
+      return this.skills.filter(s => {
+        if (s.subtype !== 'Special Skill') return false;
+        const p = s.permittedWarbands;
+        if (Array.isArray(p)) return p.includes(warbandName);
+        if (typeof p === 'string') return p === warbandName;
+        return false;
+      });
     }
     return this.skills.filter(s => s.subtype === subtype);
   },
