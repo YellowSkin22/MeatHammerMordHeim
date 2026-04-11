@@ -924,7 +924,7 @@ const UI = {
         const catName = DataService.getEquipmentCategoryName(type);
         html += `<optgroup label="${this.escAttr(catName)}">`;
         for (const item of items) {
-          const prefix = item.costPrefix ? `${item.costPrefix}` : '';
+          const prefix = item.costPrefix ? this.esc(item.costPrefix) : '';
           html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${prefix}${item.cost ?? 0} gc)</option>`;
         }
         html += '</optgroup>';
@@ -963,7 +963,9 @@ const UI = {
       const catName = DataService.getEquipmentCategoryName(type);
       html += `<optgroup label="${this.escAttr(catName)}">`;
       for (const item of items) {
-        html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${item.cost?.cost ?? 0} gc)</option>`;
+        const prefix = item.cost?.costPrefix ? this.esc(item.cost.costPrefix) : '';
+        const costLabel = `${prefix}${item.cost?.cost ?? 0} gc`;
+        html += `<option value="${this.escAttr(item.id)}">${this.esc(item.name)} (${costLabel})</option>`;
       }
       html += '</optgroup>';
     }
@@ -982,9 +984,10 @@ const UI = {
   selectEquipment(listType, index, itemId) {
     const warrior = this.currentRoster[listType][index];
     if (!warrior) return;
-    RosterModel.addEquipment(warrior, itemId);
+    const added = RosterModel.addEquipment(warrior, itemId);
+    if (!added) return this.toast('Could not add item: equipment data not found.', 'error');
     const item = DataService.getEquipmentItem(itemId);
-    if (item) this._logEquipmentPurchase(item);
+    if (item) this._logEquipmentPurchase(item, warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     document.getElementById('equipment-modal').classList.remove('active');
@@ -994,13 +997,21 @@ const UI = {
   // Appends a 'purchase' treasury log entry for an equipment buy (Pro tier only).
   // Gold is only updated after the entry is pushed so a throw mid-function
   // cannot leave the roster with decremented gold and no log entry.
-  _logEquipmentPurchase(item) {
+  // warrior is passed so we can detect "1st free" items (e.g. the Dagger).
+  _logEquipmentPurchase(item, warrior) {
     if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
     try {
       const rawCost = item.cost?.cost;
-      const cost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+      let cost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+      // Items with costPrefix '1st free/' are free for the first copy per warrior.
+      // After addEquipment the item is already in warrior.equipment, so a count of
+      // exactly 1 means this is the first copy.
+      if (item.cost?.costPrefix?.includes('1st free') && warrior) {
+        const copies = (warrior.equipment || []).filter(e => e.id === item.id).length;
+        if (copies === 1) cost = 0; // exactly 1 = this is the first copy (added before this call)
+      }
       const gold = -Math.abs(cost);
       const prevGold = r.gold || 0;
       const newGold = Math.max(0, prevGold + gold);
@@ -1020,6 +1031,7 @@ const UI = {
       r.gold = newGold;
     } catch (err) {
       console.error('Treasury log failed for equipment purchase:', err);
+      this.toast('Equipment added, but treasury log failed. Gold balance may be incorrect.', 'error');
     }
   },
 
