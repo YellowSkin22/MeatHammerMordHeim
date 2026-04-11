@@ -2103,6 +2103,20 @@ const UI = {
 
   // === GLOBAL EVENTS ===
   bindGlobalEvents() {
+    // Warm up AudioContext on first user click so it's in 'running' state
+    // before playCoinSound() is ever called. Chrome suspends AudioContext
+    // created outside a direct user gesture; this guarantees it's ready.
+    const initAudio = () => {
+      try {
+        if (!this._audioCtx) {
+          this._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        }
+        if (this._audioCtx.state === 'suspended') this._audioCtx.resume();
+      } catch (_) {}
+      document.removeEventListener('click', initAudio, true);
+    };
+    document.addEventListener('click', initAudio, true);
+
     // Theme toggle
     document.getElementById('btn-theme-toggle').addEventListener('click', () => this.toggleTheme());
 
@@ -2185,16 +2199,16 @@ const UI = {
       }
       const ctx = this._audioCtx;
       const play = () => {
-        const t = ctx.currentTime;
+        const t = ctx.currentTime + 0.05; // small offset — ensures notes are scheduled in the future
         // Two-note coin ring: high attack, slightly lower sustain, both with fast exponential decay
-        [[1400, t, 0.12], [1100, t + 0.09, 0.2]].forEach(([freq, start, dur]) => {
+        [[1400, t, 0.12], [1100, t + 0.09, 0.22]].forEach(([freq, start, dur]) => {
           const osc = ctx.createOscillator();
           const gain = ctx.createGain();
           osc.connect(gain);
           gain.connect(ctx.destination);
           osc.type = 'sine';
           osc.frequency.setValueAtTime(freq, start);
-          gain.gain.setValueAtTime(0.35, start);
+          gain.gain.setValueAtTime(0.5, start);
           gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
           osc.start(start);
           osc.stop(start + dur);
