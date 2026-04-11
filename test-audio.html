@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><title>Audio Test</title></head>
+<body>
+  <button id="btn">Play Coin Sound</button>
+  <p id="status">Click the button</p>
+  <script>
+    let _audioCtx = null;
+
+    document.addEventListener('click', () => {
+      try {
+        if (!_audioCtx) {
+          _audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+          document.getElementById('status').textContent = 'AudioContext created, state: ' + _audioCtx.state;
+        }
+        if (_audioCtx.state === 'suspended') _audioCtx.resume();
+      } catch(e) {
+        document.getElementById('status').textContent = 'Error creating AudioContext: ' + e;
+      }
+    }, true);
+
+    document.getElementById('btn').addEventListener('click', () => {
+      const status = document.getElementById('status');
+      try {
+        if (!_audioCtx) { status.textContent = 'No AudioContext yet'; return; }
+        const ctx = _audioCtx;
+        // Each entry: [delaySeconds, fundamentalHz, partialHz, volume]
+        // Two inharmonic frequencies per coin hit = metallic timbre
+        const coins = [
+          [0.00, 1200, 1890, 0.30],
+          [0.03,  980, 1540, 0.25],
+          [0.06, 1450, 2290, 0.28],
+          [0.09, 1080, 1710, 0.22],
+          [0.13, 1320, 2070, 0.25],
+          [0.17,  860, 1360, 0.18],
+          [0.21, 1150, 1820, 0.20],
+        ];
+        const play = () => {
+          const base = ctx.currentTime + 0.05;
+          coins.forEach(([t, f1, f2, vol]) => {
+            const start = base + t;
+            const dur = 0.1;
+            [f1, f2].forEach((freq, i) => {
+              const osc = ctx.createOscillator();
+              const gain = ctx.createGain();
+              osc.connect(gain);
+              gain.connect(ctx.destination);
+              osc.type = 'sine';
+              osc.frequency.value = freq;
+              gain.gain.setValueAtTime(vol * (i === 0 ? 1 : 0.55), start);
+              gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+              osc.start(start);
+              osc.stop(start + dur);
+            });
+          });
+          status.textContent = 'Playing!';
+        };
+        if (ctx.state === 'suspended') ctx.resume().then(play);
+        else play();
+      } catch(e) {
+        status.textContent = 'Error: ' + e;
+      }
+    });
+  </script>
+</body>
+</html>

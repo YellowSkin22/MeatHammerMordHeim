@@ -2199,19 +2199,34 @@ const UI = {
       }
       const ctx = this._audioCtx;
       const play = () => {
-        const t = ctx.currentTime + 0.05; // small offset — ensures notes are scheduled in the future
-        // Two-note coin ring: high attack, slightly lower sustain, both with fast exponential decay
-        [[1400, t, 0.12], [1100, t + 0.09, 0.22]].forEach(([freq, start, dur]) => {
-          const osc = ctx.createOscillator();
-          const gain = ctx.createGain();
-          osc.connect(gain);
-          gain.connect(ctx.destination);
-          osc.type = 'sine';
-          osc.frequency.setValueAtTime(freq, start);
-          gain.gain.setValueAtTime(0.5, start);
-          gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
-          osc.start(start);
-          osc.stop(start + dur);
+        // Each entry: [delaySeconds, fundamentalHz, partialHz, volume]
+        // Two inharmonic frequencies per coin hit give the metallic "clink" timbre.
+        // Spread over ~220ms to simulate a handful of coins jostling in a bag.
+        const coins = [
+          [0.00, 1200, 1890, 0.30],
+          [0.03,  980, 1540, 0.25],
+          [0.06, 1450, 2290, 0.28],
+          [0.09, 1080, 1710, 0.22],
+          [0.13, 1320, 2070, 0.25],
+          [0.17,  860, 1360, 0.18],
+          [0.21, 1150, 1820, 0.20],
+        ];
+        const base = ctx.currentTime + 0.05;
+        coins.forEach(([t, f1, f2, vol]) => {
+          const start = base + t;
+          const dur = 0.1;
+          [f1, f2].forEach((freq, i) => {
+            const osc = ctx.createOscillator();
+            const gain = ctx.createGain();
+            osc.connect(gain);
+            gain.connect(ctx.destination);
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(vol * (i === 0 ? 1 : 0.55), start);
+            gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+            osc.start(start);
+            osc.stop(start + dur);
+          });
         });
       };
       // resume() is async — only schedule notes after the context is running
