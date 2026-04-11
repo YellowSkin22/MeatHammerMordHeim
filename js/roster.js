@@ -210,6 +210,24 @@ const RosterModel = {
     warrior.experience += amount;
   },
 
+  getHenchmanLevel(experience) {
+    const thresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
+    let level = 0;
+    for (let i = 0; i < thresholds.length; i++) {
+      if (experience >= thresholds[i]) level = i + 1;
+      else break;
+    }
+    return level;
+  },
+
+  getHenchmanNextThreshold(experience) {
+    const thresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
+    for (const t of thresholds) {
+      if (experience < t) return t;
+    }
+    return null; // max level reached
+  },
+
   getHeroLevel(experience) {
     const thresholds = DataService.advancement.heroAdvancement.expThresholds;
     let level = 0;

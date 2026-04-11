@@ -473,9 +473,21 @@ const UI = {
         </div>
       `;
     } else {
+      const hLevel = RosterModel.getHenchmanLevel(warrior.experience);
+      const hNext  = RosterModel.getHenchmanNextThreshold(warrior.experience);
+      const hThresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
+      const hPrev  = hLevel > 0 ? hThresholds[hLevel - 1] : 0;
+      const hProgress = hNext != null
+        ? ((warrior.experience - hPrev) / (hNext - hPrev)) * 100
+        : 100; // max level — full bar
+      const hNextLabel = hNext != null ? `Next: ${hNext}` : 'Max level';
       expBar = `
         <div class="exp-bar-container">
-          <div class="exp-bar-label"><span>EXP: ${warrior.experience}</span><span>Group Size: ${warrior.groupSize || 1}</span></div>
+          <div class="exp-bar-label">
+            <span>EXP: ${warrior.experience} (Level ${hLevel})</span>
+            <span>${hNextLabel} &nbsp;·&nbsp; Group: ${warrior.groupSize || 1}</span>
+          </div>
+          <div class="exp-bar"><div class="exp-bar-fill" style="width:${Math.min(hProgress, 100)}%"></div></div>
         </div>
       `;
     }
