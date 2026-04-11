@@ -716,6 +716,7 @@ const UI = {
       r.treasuryLog = r.treasuryLog || [];
       r.treasuryLog.push(entry); // push before mutating gold — throw here leaves gold intact
       r.gold = newGold;
+      this.playCoinSound();
     } catch (err) {
       console.error('Treasury log failed for warrior hire:', err);
     }
@@ -1047,6 +1048,7 @@ const UI = {
       r.treasuryLog = r.treasuryLog || [];
       r.treasuryLog.push(entry); // push before mutating gold — throw here leaves gold intact
       r.gold = newGold;
+      this.playCoinSound();
     } catch (err) {
       console.error('Treasury log failed for equipment purchase:', err);
       this.toast('Equipment added, but treasury log failed. Gold balance may be incorrect.', 'error');
@@ -1352,6 +1354,7 @@ const UI = {
         gold = newGold;
       }
       r.gold = gold;
+      if (entries.length > 0) this.playCoinSound();
     } catch (err) {
       console.error('Treasury log failed for group size increase:', err);
     }
@@ -2172,6 +2175,33 @@ const UI = {
   },
 
   // === UTILITY ===
+
+  // Plays a short coin sound via Web Audio API whenever a treasury expense is logged.
+  // AudioContext is created once and reused — browsers limit how many can exist per page.
+  playCoinSound() {
+    try {
+      if (!this._audioCtx) {
+        this._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+      const ctx = this._audioCtx;
+      if (ctx.state === 'suspended') ctx.resume();
+      const t = ctx.currentTime;
+      // Two-note coin ring: high attack, slightly lower sustain, both with fast exponential decay
+      [[1400, t, 0.12], [1100, t + 0.09, 0.2]].forEach(([freq, start, dur]) => {
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, start);
+        gain.gain.setValueAtTime(0.35, start);
+        gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+        osc.start(start);
+        osc.stop(start + dur);
+      });
+    } catch (_) { /* audio not supported — silent fallback */ }
+  },
+
   esc(str) {
     const div = document.createElement('div');
     div.textContent = str;
