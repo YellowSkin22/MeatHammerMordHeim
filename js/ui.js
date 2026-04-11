@@ -2108,7 +2108,7 @@ const UI = {
     const unlockAudio = () => {
       try {
         if (!this._coinAudio) {
-          this._coinAudio = new Audio('assets/sounds/coin.wav');
+          this._coinAudio = new Audio('assets/sounds/coin.mp3');
           this._coinAudio.load();
         }
       } catch (_) {}
