@@ -1016,21 +1016,27 @@ const UI = {
     if (!r) return;
     try {
       const rawCost = item.cost?.cost;
-      let cost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+      let unitCost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
       // Items with costPrefix '1st free/' are free for the first copy per warrior.
       // After addEquipment the item is already in warrior.equipment, so a count of
       // exactly 1 means this is the first copy.
       if (item.cost?.costPrefix?.includes('1st free') && warrior) {
         const copies = (warrior.equipment || []).filter(e => e.id === item.id).length;
-        if (copies === 1) cost = 0; // exactly 1 = this is the first copy (added before this call)
+        if (copies === 1) unitCost = 0; // exactly 1 = this is the first copy (added before this call)
       }
+      // Henchman groups: multiply by group size — all models in the group are equipped.
+      const groupSize = (!warrior.isHero && warrior.groupSize > 1) ? warrior.groupSize : 1;
+      const cost = unitCost * groupSize;
+      const description = groupSize > 1
+        ? `${item.name || '(unknown)'} ×${groupSize}`
+        : (item.name || '(unknown)');
       const gold = -Math.abs(cost);
       const prevGold = r.gold || 0;
       const newGold = Math.max(0, prevGold + gold);
       const entry = {
         id: Storage.generateId(),
         type: 'purchase',
-        description: item.name || '(unknown)',
+        description,
         gold,
         wyrdstone: 0,
         applied: true,
