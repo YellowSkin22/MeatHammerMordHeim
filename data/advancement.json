@@ -1,4 +1,7 @@
 {
+  "henchmanAdvancement": {
+    "expThresholds": [2, 5, 9, 15]
+  },
   "heroAdvancement": {
     "expThresholds": [2, 4, 6, 8, 11, 14, 17, 20, 24, 28, 32, 36, 41, 46, 51, 57, 63, 69, 76, 83, 90],
     "advanceRoll": {
