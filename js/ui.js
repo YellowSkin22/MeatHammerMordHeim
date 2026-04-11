@@ -971,11 +971,36 @@ const UI = {
     const warrior = this.currentRoster[listType][index];
     if (!warrior) return;
     RosterModel.addEquipment(warrior, itemId);
+    const item = DataService.getEquipmentItem(itemId);
+    if (item) this._logEquipmentPurchase(item);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     document.getElementById('equipment-modal').classList.remove('active');
-    const item = DataService.getEquipmentItem(itemId);
-    this.toast(`${item.name} added to ${warrior.name}.`, 'success');
+    this.toast(`${item ? item.name : 'Item'} added to ${warrior.name}.`, 'success');
+  },
+
+  // Appends a 'purchase' treasury log entry for an equipment buy (Pro tier only).
+  _logEquipmentPurchase(item) {
+    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    const r = this.currentRoster;
+    if (!r) return;
+    const cost = item.cost?.cost ?? 0;
+    const gold = -Math.abs(cost);
+    const entry = {
+      id: Storage.generateId(),
+      type: 'purchase',
+      description: item.name,
+      gold,
+      wyrdstone: 0,
+      applied: true,
+      date: new Date().toISOString(),
+    };
+    const prevGold = r.gold || 0;
+    r.gold = Math.max(0, prevGold + gold);
+    entry.actualGoldDelta = r.gold - prevGold;
+    entry.actualWyrdstoneDelta = 0;
+    r.treasuryLog = r.treasuryLog || [];
+    r.treasuryLog.push(entry);
   },
 
   removeEquipment(listType, index, eqIndex) {
