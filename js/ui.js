@@ -716,10 +716,10 @@ const UI = {
       r.treasuryLog = r.treasuryLog || [];
       r.treasuryLog.push(entry); // push before mutating gold — throw here leaves gold intact
       r.gold = newGold;
-      this.playCoinSound();
     } catch (err) {
       console.error('Treasury log failed for warrior hire:', err);
     }
+    this.playCoinSound();
   },
 
   addWarriorFromSelect(section) {
@@ -1048,11 +1048,11 @@ const UI = {
       r.treasuryLog = r.treasuryLog || [];
       r.treasuryLog.push(entry); // push before mutating gold — throw here leaves gold intact
       r.gold = newGold;
-      this.playCoinSound();
     } catch (err) {
       console.error('Treasury log failed for equipment purchase:', err);
       this.toast('Equipment added, but treasury log failed. Gold balance may be incorrect.', 'error');
     }
+    this.playCoinSound();
   },
 
   removeEquipment(listType, index, eqIndex) {
@@ -1303,8 +1303,8 @@ const UI = {
     if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
+    const entries = [];
     try {
-      const entries = [];
 
       // Model hire cost
       const modelCost = (typeof henchman.cost === 'number' ? henchman.cost : 0) * addedCount;
@@ -1354,10 +1354,10 @@ const UI = {
         gold = newGold;
       }
       r.gold = gold;
-      if (entries.length > 0) this.playCoinSound();
     } catch (err) {
       console.error('Treasury log failed for group size increase:', err);
     }
+    if (entries.length > 0) this.playCoinSound();
   },
 
   // === PROGRESS TAB ===
@@ -2111,7 +2111,9 @@ const UI = {
           this._coinAudio = new Audio('assets/sounds/coin.mp3');
           this._coinAudio.load();
         }
-      } catch (_) {}
+      } catch (err) {
+        console.warn('unlockAudio: failed to pre-load coin sound:', err.message);
+      }
       document.removeEventListener('click', unlockAudio, true);
     };
     document.addEventListener('click', unlockAudio, true);
@@ -2189,15 +2191,17 @@ const UI = {
 
   // === UTILITY ===
 
-  // Plays a short coin sound via Web Audio API whenever a treasury expense is logged.
-  // AudioContext is created once and reused — browsers limit how many can exist per page.
+  // Plays a short coin sound whenever a treasury expense is logged.
   playCoinSound() {
     try {
       if (!this._coinAudio) {
-        this._coinAudio = new Audio('assets/sounds/coin.wav');
+        this._coinAudio = new Audio('assets/sounds/coin.mp3');
       }
+      if (this._coinAudio.error) return;
       this._coinAudio.currentTime = 0;
-      this._coinAudio.play().catch(() => {});
+      this._coinAudio.play().catch((err) => {
+        if (err.name !== 'NotAllowedError') console.warn('playCoinSound: playback rejected:', err.name, err.message);
+      });
     } catch (_) { /* audio not supported — silent fallback */ }
   },
 
