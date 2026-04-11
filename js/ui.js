@@ -541,7 +541,7 @@ const UI = {
               ${warrior.equipment.map((eq, eqIdx) => {
                 const itemData = DataService.getEquipmentItem(eq.id);
                 const tooltip = itemData ? this.escAttr(DataService._stripHtml(itemData.specialRules?.[0]?.ruleAbbreviated || '')) : '';
-                return `<span class="tag equipment" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${eq.name} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>`;
+                return `<span class="tag equipment" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${this.esc(eq.name)} <span class="tag-remove" onclick="UI.removeEquipment('${listType}', ${index}, ${eqIdx})">x</span></span>`;
               }).join('')}
               <button class="btn btn-sm" onclick="UI.openEquipmentModal('${listType}', ${index})">+ Add</button>
             </div>
@@ -552,8 +552,8 @@ const UI = {
             <div class="tag-list">
               ${warrior.skills.map((sk, skIdx) => {
                 const skillData = DataService.getSkill(sk.id);
-                const tooltip = skillData ? this.esc(DataService._stripHtml(skillData.Rules?.[0]?.ruleAbbreviated || '')) : '';
-                return `<span class="tag skill" ${tooltip ? `data-tooltip="${tooltip}"` : ''}>${sk.name} <span class="tag-remove" onclick="UI.removeSkill('${listType}', ${index}, ${skIdx})">x</span></span>`;
+                const tooltip = skillData ? DataService._stripHtml(skillData.Rules?.[0]?.ruleAbbreviated || '') : '';
+                return `<span class="tag skill" ${tooltip ? `data-tooltip="${this.escAttr(tooltip)}"` : ''}>${this.esc(sk.name)} <span class="tag-remove" onclick="UI.removeSkill('${listType}', ${index}, ${skIdx})">x</span></span>`;
               }).join('')}
               ${isHero ? `<button class="btn btn-sm" onclick="UI.openSkillModal('${listType}', ${index})">+ Add</button>` : ''}
             </div>
@@ -609,10 +609,10 @@ const UI = {
       const spellData = DataService.getSpell(sp.id);
       const diff = spellData ? (spellData.difficulty === 'Auto' ? 'Auto' : 'Diff: ' + spellData.difficulty) : '';
       const desc = spellData
-        ? this.esc(DataService._stripHtml(spellData.ruleAbbreviated || spellData.ruleFull || ''))
+        ? DataService._stripHtml(spellData.ruleAbbreviated || spellData.ruleFull || '')
         : '';
       const tooltip = diff && desc ? diff + '. ' + desc : desc;
-      return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + tooltip + '"' : '') + '>' + sp.name + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
+      return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + this.escAttr(tooltip) + '"' : '') + '>' + this.esc(sp.name) + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
     }).join('');
     return '<div class="tag-section mt-1">' +
       '<div class="tag-section-label">Spells</div>' +
@@ -2078,10 +2078,16 @@ const UI = {
       }
       if (left < 8) left = 8;
 
-      // If no room above, show below
+      // Prefer above the tag; fall back to below if not enough room
       if (top < 8) {
         top = rect.bottom + 8;
       }
+
+      // Clamp bottom — handles both above and below placements
+      if (top + ttRect.height > window.innerHeight - 8) {
+        top = window.innerHeight - ttRect.height - 8;
+      }
+      if (top < 8) top = 8; // taller than viewport: pin to top
 
       tooltipEl.style.left = left + 'px';
       tooltipEl.style.top = top + 'px';
