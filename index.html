@@ -502,12 +502,21 @@
             const { version } = await vResp.json();
             const stored = localStorage.getItem('mordheim_app_version');
             if (stored !== String(version)) {
-              localStorage.setItem('mordheim_app_version', String(version));
-              location.reload(true);
-              return;
+              let persisted = false;
+              try {
+                localStorage.setItem('mordheim_app_version', String(version));
+                persisted = true;
+              } catch (storageErr) {
+                console.warn('[version-check] localStorage unavailable — skipping reload to prevent loop:', storageErr);
+              }
+              if (persisted) { location.reload(true); return; }
             }
+          } else {
+            console.warn('[version-check] Skipping — server returned', vResp.status, 'for data/version.json');
           }
-        } catch (_) { /* non-fatal — continue boot without version check */ }
+        } catch (err) {
+          console.warn('[version-check] Non-fatal — continuing boot without version check:', err);
+        }
 
         Cloud.init();
         await DataService.loadAll();
