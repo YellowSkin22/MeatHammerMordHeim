@@ -719,6 +719,7 @@ const UI = {
     } catch (err) {
       console.error('Treasury log failed for warrior hire:', err);
     }
+    this.playCoinSound();
   },
 
   addWarriorFromSelect(section) {
@@ -1051,6 +1052,7 @@ const UI = {
       console.error('Treasury log failed for equipment purchase:', err);
       this.toast('Equipment added, but treasury log failed. Gold balance may be incorrect.', 'error');
     }
+    this.playCoinSound();
   },
 
   removeEquipment(listType, index, eqIndex) {
@@ -1301,8 +1303,8 @@ const UI = {
     if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
+    const entries = [];
     try {
-      const entries = [];
 
       // Model hire cost
       const modelCost = (typeof henchman.cost === 'number' ? henchman.cost : 0) * addedCount;
@@ -1355,6 +1357,7 @@ const UI = {
     } catch (err) {
       console.error('Treasury log failed for group size increase:', err);
     }
+    if (entries.length > 0) this.playCoinSound();
   },
 
   // === PROGRESS TAB ===
@@ -2100,6 +2103,21 @@ const UI = {
 
   // === GLOBAL EVENTS ===
   bindGlobalEvents() {
+    // Pre-load coin sound on first interaction so Chrome's autoplay policy
+    // doesn't block playCoinSound() — a user gesture must precede .play().
+    const unlockAudio = () => {
+      try {
+        if (!this._coinAudio) {
+          this._coinAudio = new Audio('assets/sounds/coin.mp3');
+          this._coinAudio.load();
+        }
+      } catch (err) {
+        console.warn('unlockAudio: failed to pre-load coin sound:', err.message);
+      }
+      document.removeEventListener('click', unlockAudio, true);
+    };
+    document.addEventListener('click', unlockAudio, true);
+
     // Theme toggle
     document.getElementById('btn-theme-toggle').addEventListener('click', () => this.toggleTheme());
 
@@ -2172,6 +2190,21 @@ const UI = {
   },
 
   // === UTILITY ===
+
+  // Plays a short coin sound whenever a treasury expense is logged.
+  playCoinSound() {
+    try {
+      if (!this._coinAudio) {
+        this._coinAudio = new Audio('assets/sounds/coin.mp3');
+      }
+      if (this._coinAudio.error) return;
+      this._coinAudio.currentTime = 0;
+      this._coinAudio.play().catch((err) => {
+        if (err.name !== 'NotAllowedError') console.warn('playCoinSound: playback rejected:', err.name, err.message);
+      });
+    } catch (_) { /* audio not supported — silent fallback */ }
+  },
+
   esc(str) {
     const div = document.createElement('div');
     div.textContent = str;
