@@ -640,6 +640,7 @@ const UI = {
       r.henchmen.push(warrior);
     }
 
+    this._logWarriorHire(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     this.toast(`${warrior.typeName} added.`, 'success');
@@ -660,9 +661,34 @@ const UI = {
     }
 
     r.hiredSwords.push(warrior);
+    this._logWarriorHire(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     this.toast(`${warrior.name} hired!`, 'success');
+  },
+
+  // Appends a 'purchase' treasury log entry for a hired warrior (Pro tier only).
+  _logWarriorHire(warrior) {
+    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    const r = this.currentRoster;
+    if (!r) return;
+    const cost = warrior.cost || 0;
+    const gold = -Math.abs(cost); // purchase = negative
+    const entry = {
+      id: Storage.generateId(),
+      type: 'purchase',
+      description: `Hired ${warrior.typeName || warrior.name}`,
+      gold,
+      wyrdstone: 0,
+      applied: true,
+      date: new Date().toISOString(),
+    };
+    const prevGold = r.gold || 0;
+    r.gold = Math.max(0, prevGold + gold);
+    entry.actualGoldDelta = r.gold - prevGold;
+    entry.actualWyrdstoneDelta = 0;
+    r.treasuryLog = r.treasuryLog || [];
+    r.treasuryLog.push(entry);
   },
 
   addWarriorFromSelect(section) {
@@ -712,6 +738,7 @@ const UI = {
     const warrior = RosterModel.createCustomWarrior(name, cost, stats, specialRules);
     const r = this.currentRoster;
     r.customWarriors.push(warrior);
+    this._logWarriorHire(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     document.getElementById('custom-warrior-modal').classList.remove('active');
@@ -1232,6 +1259,89 @@ const UI = {
       notesArea.placeholder = 'Write campaign notes, strategy, or lore here...';
       notesArea.value = r.notes || '';
     }
+
+    // Treasury Ledger
+    this.renderTreasuryLedger();
+  },
+
+  renderTreasuryLedger() {
+    const r = this.currentRoster;
+    const container = document.getElementById('treasury-ledger-entries');
+    if (!container) return;
+    const canPro = (typeof Cloud !== 'undefined') ? Cloud.canAccess('treasury_ledger') : false;
+    const canView = (typeof Cloud !== 'undefined') ? (Cloud.TIER_RANK[Cloud.getTier()] >= Cloud.TIER_RANK['standard']) : false;
+
+    // Gate the Add Entry button
+    const addBtn = document.getElementById('btn-add-treasury-entry');
+    if (addBtn) addBtn.style.display = canPro ? '' : 'none';
+
+    if (!canView) {
+      container.innerHTML = '<div class="locked-message"><span class="lock-icon">&#128274;</span> Treasury Ledger requires <strong>Standard</strong> tier or above. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></div>';
+      return;
+    }
+
+    const log = (r.treasuryLog || []);
+
+    if (log.length === 0) {
+      container.innerHTML = '<p class="treasury-ledger-empty">No entries yet.</p>';
+      return;
+    }
+
+    // Compute running balance newest→oldest from roster.gold.
+    // Use actualGoldDelta (exact amount applied) when available so clamped entries
+    // don't corrupt earlier balance values.
+    const chronological = [...log].sort((a, b) => new Date(a.date) - new Date(b.date));
+    const balanceAfter = {};
+    let running = r.gold;
+    for (let i = chronological.length - 1; i >= 0; i--) {
+      const e = chronological[i];
+      if (e.applied) {
+        balanceAfter[e.id] = running;
+        const delta = e.actualGoldDelta !== undefined ? e.actualGoldDelta : e.gold;
+        running -= delta;
+      }
+    }
+
+    // Render newest first
+    const reversed = [...log].reverse();
+    container.innerHTML = `
+      <table class="treasury-ledger-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Amount</th>
+            <th>Balance</th>
+            <th>Date</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          ${reversed.map((e, displayIdx) => {
+            const realIdx = log.length - 1 - displayIdx;
+            const sign = e.gold >= 0 ? '+' : '';
+            const amountClass = e.gold >= 0 ? 'treasury-amount--positive' : 'treasury-amount--negative';
+            const balance = balanceAfter[e.id] != null ? `<span class="treasury-balance">${balanceAfter[e.id]} gc</span>` : '<span class="text-dim" title="Not applied to treasury">—</span>';
+            const wyrdstoneStr = (e.wyrdstone && e.wyrdstone !== 0) ? ` / ${e.wyrdstone > 0 ? '+' : ''}${e.wyrdstone} ⬡` : '';
+            return `
+              <tr>
+                <td><span class="treasury-type-badge treasury-type-badge--${this.escAttr(e.type)}">${this.esc(e.type)}</span></td>
+                <td>${this.esc(e.description)}</td>
+                <td class="${amountClass}">${sign}${e.gold} gc${wyrdstoneStr}</td>
+                <td>${balance}</td>
+                <td class="text-dim" style="font-size:0.7rem;">${new Date(e.date).toLocaleDateString()}</td>
+                <td>${canPro ? `<button class="treasury-delete-btn" onclick="UI.deleteTreasuryEntry(${realIdx})" title="Remove entry">&#10005;</button>` : ''}</td>
+              </tr>
+            `;
+          }).join('')}
+        </tbody>
+      </table>
+    `;
+
+    if (!canPro && log.length > 0) {
+      container.insertAdjacentHTML('beforeend',
+        '<p class="text-dim" style="font-size:0.8rem; margin-top:0.5rem;">Upgrade to <strong>Pro</strong> to add entries. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></p>');
+    }
   },
 
   renderBattleLog() {
@@ -1286,6 +1396,178 @@ const UI = {
     document.getElementById('member-limit-display').textContent = newVal;
     const memberCount = RosterModel.getMemberCount(r);
     document.getElementById('summary-members').textContent = `${memberCount} / ${newVal}`;
+  },
+
+  // === TREASURY LEDGER ===
+  openTreasuryModal() {
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+      return this.toast('Treasury Ledger requires Pro tier.', 'error');
+    }
+    if (!this.currentRoster) return;
+
+    // Reset form
+    document.getElementById('treasury-type-select').value = 'income';
+    document.getElementById('treasury-description-input').value = '';
+    document.getElementById('treasury-gold-input').value = '0';
+    document.getElementById('treasury-wyrdstone-input').value = '0';
+    document.getElementById('treasury-apply-checkbox').checked = true;
+
+    // Populate equipment dropdown
+    const equipSelect = document.getElementById('treasury-equipment-select');
+    if (!equipSelect) return;
+    const allEquip = DataService.getAllEquipment() || [];
+    const grouped = {};
+    allEquip.forEach(item => {
+      const cat = item.type || 'misc';
+      if (!grouped[cat]) grouped[cat] = [];
+      grouped[cat].push(item);
+    });
+    const catOrder = ['melee', 'missile', 'blackpowder', 'armour', 'misc', 'animal'];
+    const cats = [...new Set([...catOrder, ...Object.keys(grouped)])].filter(c => grouped[c]);
+    equipSelect.innerHTML = '<option value="">— select to pre-fill —</option>' +
+      cats.map(cat => {
+        const label = DataService.getEquipmentCategoryName(cat);
+        const options = grouped[cat]
+          .sort((a, b) => a.name.localeCompare(b.name))
+          .map(item => {
+            const cost = item.cost?.cost ?? 0;
+            return `<option value="${this.escAttr(item.name)}" data-cost="${cost}" data-name="${this.escAttr(item.name)}">${this.esc(item.name)} (${cost} gc)</option>`;
+          }).join('');
+        return `<optgroup label="${this.escAttr(label)}">${options}</optgroup>`;
+      }).join('');
+
+    this.onTreasuryTypeChange();
+    document.getElementById('treasury-ledger-modal').classList.add('active');
+  },
+
+  closeTreasuryModal() {
+    this.closeModal('treasury-ledger-modal');
+  },
+
+  onTreasuryTypeChange() {
+    const type = document.getElementById('treasury-type-select').value;
+    const equipGroup = document.getElementById('treasury-equipment-group');
+    const wyrdstoneGroup = document.getElementById('treasury-wyrdstone-group');
+    const applyLabel = document.getElementById('treasury-apply-label');
+    const goldLabel = document.getElementById('treasury-gold-label');
+    const descLabel = document.getElementById('treasury-description-label');
+
+    equipGroup.style.display = type === 'purchase' ? '' : 'none';
+    wyrdstoneGroup.style.display = (type === 'income' || type === 'other') ? '' : 'none';
+
+    if (type === 'income') {
+      goldLabel.textContent = 'Gold Earned (gc)';
+      descLabel.textContent = 'Description';
+      applyLabel.textContent = 'Add to treasury';
+    } else if (type === 'purchase') {
+      goldLabel.textContent = 'Cost (gc)';
+      descLabel.textContent = 'Item Name';
+      applyLabel.textContent = 'Deduct from treasury';
+    } else if (type === 'sell') {
+      goldLabel.textContent = 'Gold Received (gc)';
+      descLabel.textContent = 'Item Sold';
+      applyLabel.textContent = 'Add to treasury';
+    } else {
+      goldLabel.textContent = 'Gold (gc) — use negative for expense';
+      descLabel.textContent = 'Description';
+      applyLabel.textContent = 'Apply to treasury';
+    }
+  },
+
+  onTreasuryEquipmentSelect() {
+    const select = document.getElementById('treasury-equipment-select');
+    const opt = select.options[select.selectedIndex];
+    if (!opt || !opt.value) return;
+    document.getElementById('treasury-description-input').value = opt.dataset.name || '';
+    document.getElementById('treasury-gold-input').value = opt.dataset.cost || '0';
+  },
+
+  submitTreasuryEntry() {
+    if (!this.currentRoster) return;
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+      return this.toast('Treasury Ledger requires Pro tier.', 'error');
+    }
+    const type = document.getElementById('treasury-type-select').value;
+    const description = document.getElementById('treasury-description-input').value.trim();
+    const rawGold = parseInt(document.getElementById('treasury-gold-input').value) || 0;
+    const rawWyrdstone = parseInt(document.getElementById('treasury-wyrdstone-input').value) || 0;
+    const apply = document.getElementById('treasury-apply-checkbox').checked;
+
+    if (!description) return this.toast('Enter a description.', 'error');
+
+    // Sign convention: income/sell = positive, purchase = negative, other = as-entered
+    let gold, wyrdstone;
+    if (type === 'income') {
+      gold = Math.abs(rawGold);
+      wyrdstone = Math.abs(rawWyrdstone);
+    } else if (type === 'purchase') {
+      gold = -Math.abs(rawGold);
+      wyrdstone = 0;
+    } else if (type === 'sell') {
+      gold = Math.abs(rawGold);
+      wyrdstone = 0;
+    } else {
+      // 'other' — signed as entered
+      gold = rawGold;
+      wyrdstone = rawWyrdstone;
+    }
+
+    const entry = {
+      id: Storage.generateId(),
+      type,
+      description,
+      gold,
+      wyrdstone,
+      applied: apply,
+      date: new Date().toISOString(),
+    };
+
+    this.currentRoster.treasuryLog = this.currentRoster.treasuryLog || [];
+
+    if (apply) {
+      const prevGold = this.currentRoster.gold || 0;
+      const prevWyrd = this.currentRoster.wyrdstone || 0;
+      this.currentRoster.gold = Math.max(0, prevGold + gold);
+      this.currentRoster.wyrdstone = Math.max(0, prevWyrd + wyrdstone);
+      // Store the actual delta applied (may differ from gold/wyrdstone if clamped at 0)
+      entry.actualGoldDelta = this.currentRoster.gold - prevGold;
+      entry.actualWyrdstoneDelta = this.currentRoster.wyrdstone - prevWyrd;
+    }
+
+    this.currentRoster.treasuryLog.push(entry);
+
+    this.saveCurrentRoster();
+    this.closeTreasuryModal();
+    this.renderProgressTab();
+    this.toast('Entry added.', 'success');
+  },
+
+  deleteTreasuryEntry(index) {
+    if (!this.currentRoster) return;
+    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+      return this.toast('Treasury Ledger requires Pro tier.', 'error');
+    }
+    const r = this.currentRoster;
+    const log = r.treasuryLog || [];
+    const entry = log[index];
+    if (!entry) return;
+
+    if (!confirm('Remove this treasury entry?')) return;
+
+    // Reverse the treasury mutation if it was applied.
+    // Use actualGoldDelta (what was really applied, respecting zero-clamping) when available;
+    // fall back to entry.gold for entries created before this field existed.
+    if (entry.applied) {
+      const goldDelta = entry.actualGoldDelta !== undefined ? entry.actualGoldDelta : entry.gold;
+      const wyrdDelta = entry.actualWyrdstoneDelta !== undefined ? entry.actualWyrdstoneDelta : (entry.wyrdstone || 0);
+      r.gold = Math.max(0, (r.gold || 0) - goldDelta);
+      r.wyrdstone = Math.max(0, (r.wyrdstone || 0) - wyrdDelta);
+    }
+
+    r.treasuryLog.splice(index, 1);
+    this.saveCurrentRoster();
+    this.renderProgressTab();
+    this.toast('Entry removed.', 'success');
   },
 
   addBattle() {

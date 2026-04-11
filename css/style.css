@@ -26,6 +26,8 @@
   --radius-lg: 10px;
   --transition: 0.2s ease;
   --font-display: 'Cinzel', serif;
+  --treasury-positive: #7cb9a8;
+  --treasury-negative: #c87c7c;
 }
 
 /* ===== DARK MODE THEME ===== */
@@ -776,6 +778,97 @@ select.form-control {
   background: linear-gradient(90deg, var(--accent-dim), var(--accent));
   border-radius: 3px;
   transition: width 0.4s ease;
+}
+
+/* ===== TREASURY LEDGER ===== */
+.treasury-ledger-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.treasury-ledger-table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-weight: 500;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.3rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.treasury-ledger-table td {
+  padding: 0.35rem 0.4rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.treasury-ledger-table tr:last-child td {
+  border-bottom: none;
+}
+
+.treasury-type-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.1rem 0.4rem;
+  border-radius: 3px;
+}
+
+.treasury-type-badge--income,
+.treasury-type-badge--sell {
+  background: rgba(124, 185, 168, 0.15);
+  color: var(--treasury-positive);
+}
+
+.treasury-type-badge--purchase {
+  background: rgba(200, 124, 124, 0.15);
+  color: var(--treasury-negative);
+}
+
+.treasury-type-badge--other {
+  background: rgba(180, 180, 180, 0.1);
+  color: var(--text-dim);
+}
+
+.treasury-amount--positive {
+  color: var(--treasury-positive);
+  font-weight: 600;
+}
+
+.treasury-amount--negative {
+  color: var(--treasury-negative);
+  font-weight: 600;
+}
+
+.treasury-balance {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.treasury-delete-btn {
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  cursor: pointer;
+  font-size: 0.85rem;
+  padding: 0 0.2rem;
+  line-height: 1;
+  opacity: 0.5;
+}
+
+.treasury-delete-btn:hover {
+  color: var(--treasury-negative);
+  opacity: 1;
+}
+
+.treasury-ledger-empty {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  padding: 0.5rem 0;
 }
 
 /* ===== BATTLE LOG ===== */
@@ -1742,6 +1835,28 @@ body, .app-header, .modal, .warrior-card, .roster-card,
 
 [data-theme="dark"] .tag.injury {
   color: #e06060;
+}
+
+/* Treasury Ledger dark mode */
+[data-theme="dark"] .treasury-type-badge--income,
+[data-theme="dark"] .treasury-type-badge--sell {
+  color: #9dd4c2;
+}
+
+[data-theme="dark"] .treasury-type-badge--purchase {
+  color: #e09898;
+}
+
+[data-theme="dark"] .treasury-amount--positive {
+  color: #9dd4c2;
+}
+
+[data-theme="dark"] .treasury-amount--negative {
+  color: #e09898;
+}
+
+[data-theme="dark"] .treasury-delete-btn:hover {
+  color: #e09898;
 }
 
 /* Theme toggle button */
