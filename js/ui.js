@@ -1016,21 +1016,27 @@ const UI = {
     if (!r) return;
     try {
       const rawCost = item.cost?.cost;
-      let cost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+      let unitCost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
       // Items with costPrefix '1st free/' are free for the first copy per warrior.
       // After addEquipment the item is already in warrior.equipment, so a count of
       // exactly 1 means this is the first copy.
       if (item.cost?.costPrefix?.includes('1st free') && warrior) {
         const copies = (warrior.equipment || []).filter(e => e.id === item.id).length;
-        if (copies === 1) cost = 0; // exactly 1 = this is the first copy (added before this call)
+        if (copies === 1) unitCost = 0; // exactly 1 = this is the first copy (added before this call)
       }
+      // Henchman groups: multiply by group size — all models in the group are equipped.
+      const groupSize = (!warrior.isHero && warrior.groupSize > 1) ? warrior.groupSize : 1;
+      const cost = unitCost * groupSize;
+      const description = groupSize > 1
+        ? `${item.name || '(unknown)'} ×${groupSize}`
+        : (item.name || '(unknown)');
       const gold = -Math.abs(cost);
       const prevGold = r.gold || 0;
       const newGold = Math.max(0, prevGold + gold);
       const entry = {
         id: Storage.generateId(),
         type: 'purchase',
-        description: item.name || '(unknown)',
+        description,
         gold,
         wyrdstone: 0,
         applied: true,
@@ -1283,8 +1289,72 @@ const UI = {
     const maxSize = fighter?.groupSize?.max || 5;
     if (newSize > maxSize) return this.toast(`Maximum group size is ${maxSize}.`, 'error');
     henchman.groupSize = newSize;
+    if (delta > 0) this._logGroupSizeIncrease(henchman, delta);
     this.saveCurrentRoster();
     this.renderRosterEditor();
+  },
+
+  // Logs treasury entries when models are added to a henchman group.
+  // Always charges full price for equipment — "1st free" was already claimed
+  // when the item was first added to the group.
+  _logGroupSizeIncrease(henchman, addedCount) {
+    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    const r = this.currentRoster;
+    if (!r) return;
+    try {
+      const entries = [];
+
+      // Model hire cost
+      const modelCost = (typeof henchman.cost === 'number' ? henchman.cost : 0) * addedCount;
+      const modelDesc = addedCount > 1
+        ? `Hired ${henchman.typeName || henchman.name} ×${addedCount}`
+        : `Hired ${henchman.typeName || henchman.name}`;
+      if (modelCost > 0) {
+        entries.push({ desc: modelDesc, cost: modelCost });
+      }
+
+      // Equipment already carried by the group — new models need the same kit
+      // Track how many times each item id appears so we can apply "1st free"
+      // to the first copy — each new model gets their own first dagger free.
+      const copyCount = new Map();
+      for (const eq of (henchman.equipment || [])) {
+        const itemData = DataService.getEquipmentItem(eq.id);
+        if (!itemData) continue;
+        const rawCost = itemData.cost?.cost;
+        let unitCost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+        const copyNum = (copyCount.get(eq.id) || 0) + 1;
+        copyCount.set(eq.id, copyNum);
+        // 1st free per model: the first copy of a "1st free" item is free for each new model
+        if (itemData.cost?.costPrefix?.includes('1st free') && copyNum === 1) unitCost = 0;
+        if (unitCost <= 0) continue;
+        const desc = addedCount > 1
+          ? `${itemData.name || eq.name} ×${addedCount}`
+          : (itemData.name || eq.name);
+        entries.push({ desc, cost: unitCost * addedCount });
+      }
+
+      // Push entries and update gold sequentially so actualGoldDelta is accurate per entry
+      r.treasuryLog = r.treasuryLog || [];
+      let gold = r.gold || 0;
+      for (const e of entries) {
+        const newGold = Math.max(0, gold + (-e.cost));
+        r.treasuryLog.push({
+          id: Storage.generateId(),
+          type: 'purchase',
+          description: e.desc,
+          gold: -e.cost,
+          wyrdstone: 0,
+          applied: true,
+          date: new Date().toISOString(),
+          actualGoldDelta: newGold - gold,
+          actualWyrdstoneDelta: 0,
+        });
+        gold = newGold;
+      }
+      r.gold = gold;
+    } catch (err) {
+      console.error('Treasury log failed for group size increase:', err);
+    }
   },
 
   // === PROGRESS TAB ===
