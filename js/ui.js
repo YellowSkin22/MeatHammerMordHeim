@@ -2103,20 +2103,6 @@ const UI = {
 
   // === GLOBAL EVENTS ===
   bindGlobalEvents() {
-    // Warm up AudioContext on first user click so it's in 'running' state
-    // before playCoinSound() is ever called. Chrome suspends AudioContext
-    // created outside a direct user gesture; this guarantees it's ready.
-    const initAudio = () => {
-      try {
-        if (!this._audioCtx) {
-          this._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-        }
-        if (this._audioCtx.state === 'suspended') this._audioCtx.resume();
-      } catch (_) {}
-      document.removeEventListener('click', initAudio, true);
-    };
-    document.addEventListener('click', initAudio, true);
-
     // Theme toggle
     document.getElementById('btn-theme-toggle').addEventListener('click', () => this.toggleTheme());
 
@@ -2194,44 +2180,11 @@ const UI = {
   // AudioContext is created once and reused — browsers limit how many can exist per page.
   playCoinSound() {
     try {
-      if (!this._audioCtx) {
-        this._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      if (!this._coinAudio) {
+        this._coinAudio = new Audio('assets/sounds/coin.wav');
       }
-      const ctx = this._audioCtx;
-      const play = () => {
-        // Each entry: [delaySeconds, fundamentalHz, partialHz, volume]
-        // Two inharmonic frequencies per coin hit give the metallic "clink" timbre.
-        // Spread over ~220ms to simulate a handful of coins jostling in a bag.
-        const coins = [
-          [0.00, 1200, 1890, 0.30],
-          [0.03,  980, 1540, 0.25],
-          [0.06, 1450, 2290, 0.28],
-          [0.09, 1080, 1710, 0.22],
-          [0.13, 1320, 2070, 0.25],
-          [0.17,  860, 1360, 0.18],
-          [0.21, 1150, 1820, 0.20],
-        ];
-        const base = ctx.currentTime + 0.05;
-        coins.forEach(([t, f1, f2, vol]) => {
-          const start = base + t;
-          const dur = 0.1;
-          [f1, f2].forEach((freq, i) => {
-            const osc = ctx.createOscillator();
-            const gain = ctx.createGain();
-            osc.connect(gain);
-            gain.connect(ctx.destination);
-            osc.type = 'sine';
-            osc.frequency.value = freq;
-            gain.gain.setValueAtTime(vol * (i === 0 ? 1 : 0.55), start);
-            gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
-            osc.start(start);
-            osc.stop(start + dur);
-          });
-        });
-      };
-      // resume() is async — only schedule notes after the context is running
-      if (ctx.state === 'suspended') ctx.resume().then(play);
-      else play();
+      this._coinAudio.currentTime = 0;
+      this._coinAudio.play().catch(() => {});
     } catch (_) { /* audio not supported — silent fallback */ }
   },
 
