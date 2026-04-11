@@ -499,17 +499,22 @@
         try {
           const vResp = await fetch('data/version.json', { cache: 'no-store' });
           if (vResp.ok) {
-            const { version } = await vResp.json();
-            const stored = localStorage.getItem('mordheim_app_version');
-            if (stored !== String(version)) {
-              let persisted = false;
-              try {
-                localStorage.setItem('mordheim_app_version', String(version));
-                persisted = true;
-              } catch (storageErr) {
-                console.warn('[version-check] localStorage unavailable — skipping reload to prevent loop:', storageErr);
+            const data = await vResp.json();
+            const version = data?.version;
+            if (version == null) {
+              console.warn('[version-check] Skipping — version.json missing "version" field:', data);
+            } else {
+              const stored = localStorage.getItem('mordheim_app_version');
+              if (stored !== String(version)) {
+                let persisted = false;
+                try {
+                  localStorage.setItem('mordheim_app_version', String(version));
+                  persisted = true;
+                } catch (storageErr) {
+                  console.warn('[version-check] localStorage unavailable — skipping reload to prevent loop:', storageErr);
+                }
+                if (persisted) { location.reload(); return; }
               }
-              if (persisted) { location.reload(true); return; }
             }
           } else {
             console.warn('[version-check] Skipping — server returned', vResp.status, 'for data/version.json');
