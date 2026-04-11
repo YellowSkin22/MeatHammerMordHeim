@@ -609,10 +609,10 @@ const UI = {
       const spellData = DataService.getSpell(sp.id);
       const diff = spellData ? (spellData.difficulty === 'Auto' ? 'Auto' : 'Diff: ' + spellData.difficulty) : '';
       const desc = spellData
-        ? this.esc(DataService._stripHtml(spellData.ruleAbbreviated || spellData.ruleFull || ''))
+        ? DataService._stripHtml(spellData.ruleAbbreviated || spellData.ruleFull || '')
         : '';
       const tooltip = diff && desc ? diff + '. ' + desc : desc;
-      return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + tooltip + '"' : '') + '>' + sp.name + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
+      return '<span class="tag spell-tag"' + (tooltip ? ' data-tooltip="' + this.escAttr(tooltip) + '"' : '') + '>' + this.esc(sp.name) + ' <span class="tag-remove" onclick="UI.removeSpell(\'' + listType + '\', ' + index + ', ' + spIdx + ')">x</span></span>';
     }).join('');
     return '<div class="tag-section mt-1">' +
       '<div class="tag-section-label">Spells</div>' +
