@@ -668,27 +668,34 @@ const UI = {
   },
 
   // Appends a 'purchase' treasury log entry for a hired warrior (Pro tier only).
+  // Gold is only updated after the entry is pushed so a throw mid-function
+  // cannot leave the roster with decremented gold and no log entry.
   _logWarriorHire(warrior) {
     if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
-    const cost = warrior.cost || 0;
-    const gold = -Math.abs(cost); // purchase = negative
-    const entry = {
-      id: Storage.generateId(),
-      type: 'purchase',
-      description: `Hired ${warrior.typeName || warrior.name}`,
-      gold,
-      wyrdstone: 0,
-      applied: true,
-      date: new Date().toISOString(),
-    };
-    const prevGold = r.gold || 0;
-    r.gold = Math.max(0, prevGold + gold);
-    entry.actualGoldDelta = r.gold - prevGold;
-    entry.actualWyrdstoneDelta = 0;
-    r.treasuryLog = r.treasuryLog || [];
-    r.treasuryLog.push(entry);
+    try {
+      const cost = typeof warrior.cost === 'number' ? warrior.cost : 0;
+      const gold = -Math.abs(cost);
+      const prevGold = r.gold || 0;
+      const newGold = Math.max(0, prevGold + gold);
+      const entry = {
+        id: Storage.generateId(),
+        type: 'purchase',
+        description: `Hired ${warrior.typeName || warrior.name || '(unknown)'}`,
+        gold,
+        wyrdstone: 0,
+        applied: true,
+        date: new Date().toISOString(),
+        actualGoldDelta: newGold - prevGold,
+        actualWyrdstoneDelta: 0,
+      };
+      r.treasuryLog = r.treasuryLog || [];
+      r.treasuryLog.push(entry); // push before mutating gold — throw here leaves gold intact
+      r.gold = newGold;
+    } catch (err) {
+      console.error('Treasury log failed for warrior hire:', err);
+    }
   },
 
   addWarriorFromSelect(section) {
@@ -965,11 +972,44 @@ const UI = {
     const warrior = this.currentRoster[listType][index];
     if (!warrior) return;
     RosterModel.addEquipment(warrior, itemId);
+    const item = DataService.getEquipmentItem(itemId);
+    if (item) this._logEquipmentPurchase(item);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     document.getElementById('equipment-modal').classList.remove('active');
-    const item = DataService.getEquipmentItem(itemId);
-    this.toast(`${item.name} added to ${warrior.name}.`, 'success');
+    this.toast(`${item ? item.name : 'Item'} added to ${warrior.name}.`, 'success');
+  },
+
+  // Appends a 'purchase' treasury log entry for an equipment buy (Pro tier only).
+  // Gold is only updated after the entry is pushed so a throw mid-function
+  // cannot leave the roster with decremented gold and no log entry.
+  _logEquipmentPurchase(item) {
+    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    const r = this.currentRoster;
+    if (!r) return;
+    try {
+      const rawCost = item.cost?.cost;
+      const cost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+      const gold = -Math.abs(cost);
+      const prevGold = r.gold || 0;
+      const newGold = Math.max(0, prevGold + gold);
+      const entry = {
+        id: Storage.generateId(),
+        type: 'purchase',
+        description: item.name || '(unknown)',
+        gold,
+        wyrdstone: 0,
+        applied: true,
+        date: new Date().toISOString(),
+        actualGoldDelta: newGold - prevGold,
+        actualWyrdstoneDelta: 0,
+      };
+      r.treasuryLog = r.treasuryLog || [];
+      r.treasuryLog.push(entry); // push before mutating gold — throw here leaves gold intact
+      r.gold = newGold;
+    } catch (err) {
+      console.error('Treasury log failed for equipment purchase:', err);
+    }
   },
 
   removeEquipment(listType, index, eqIndex) {
