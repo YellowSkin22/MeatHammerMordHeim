@@ -1314,11 +1314,18 @@ const UI = {
       }
 
       // Equipment already carried by the group — new models need the same kit
+      // Track how many times each item id appears so we can apply "1st free"
+      // to the first copy — each new model gets their own first dagger free.
+      const copyCount = new Map();
       for (const eq of (henchman.equipment || [])) {
         const itemData = DataService.getEquipmentItem(eq.id);
         if (!itemData) continue;
         const rawCost = itemData.cost?.cost;
-        const unitCost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+        let unitCost = (typeof rawCost === 'number' && isFinite(rawCost)) ? rawCost : 0;
+        const copyNum = (copyCount.get(eq.id) || 0) + 1;
+        copyCount.set(eq.id, copyNum);
+        // 1st free per model: the first copy of a "1st free" item is free for each new model
+        if (itemData.cost?.costPrefix?.includes('1st free') && copyNum === 1) unitCost = 0;
         if (unitCost <= 0) continue;
         const desc = addedCount > 1
           ? `${itemData.name || eq.name} ×${addedCount}`
