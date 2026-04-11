@@ -82,7 +82,7 @@ const DataService = {
   },
 
   async loadAll() {
-    const v = 'v=12';
+    const v = 'v=13';
 
     // Fetch warband index first, then all warband files in parallel
     const indexData = await this.fetchJSON('data/warbandFiles/index.json?' + v);

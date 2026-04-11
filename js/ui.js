@@ -475,7 +475,7 @@ const UI = {
     } else {
       const hLevel = RosterModel.getHenchmanLevel(warrior.experience);
       const hNext  = RosterModel.getHenchmanNextThreshold(warrior.experience);
-      const hThresholds = DataService.advancement.henchmanAdvancement.expThresholds;
+      const hThresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
       const hPrev  = hLevel > 0 ? hThresholds[hLevel - 1] : 0;
       const hProgress = hNext != null
         ? ((warrior.experience - hPrev) / (hNext - hPrev)) * 100

@@ -211,7 +211,7 @@ const RosterModel = {
   },
 
   getHenchmanLevel(experience) {
-    const thresholds = DataService.advancement.henchmanAdvancement.expThresholds;
+    const thresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
     let level = 0;
     for (let i = 0; i < thresholds.length; i++) {
       if (experience >= thresholds[i]) level = i + 1;
@@ -221,7 +221,7 @@ const RosterModel = {
   },
 
   getHenchmanNextThreshold(experience) {
-    const thresholds = DataService.advancement.henchmanAdvancement.expThresholds;
+    const thresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
     for (const t of thresholds) {
       if (experience < t) return t;
     }
