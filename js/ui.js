@@ -640,6 +640,7 @@ const UI = {
       r.henchmen.push(warrior);
     }
 
+    this._logWarriorHire(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     this.toast(`${warrior.typeName} added.`, 'success');
@@ -660,9 +661,34 @@ const UI = {
     }
 
     r.hiredSwords.push(warrior);
+    this._logWarriorHire(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     this.toast(`${warrior.name} hired!`, 'success');
+  },
+
+  // Appends a 'purchase' treasury log entry for a hired warrior (Pro tier only).
+  _logWarriorHire(warrior) {
+    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    const r = this.currentRoster;
+    if (!r) return;
+    const cost = warrior.cost || 0;
+    const gold = -Math.abs(cost); // purchase = negative
+    const entry = {
+      id: Storage.generateId(),
+      type: 'purchase',
+      description: `Hired ${warrior.typeName || warrior.name}`,
+      gold,
+      wyrdstone: 0,
+      applied: true,
+      date: new Date().toISOString(),
+    };
+    const prevGold = r.gold || 0;
+    r.gold = Math.max(0, prevGold + gold);
+    entry.actualGoldDelta = r.gold - prevGold;
+    entry.actualWyrdstoneDelta = 0;
+    r.treasuryLog = r.treasuryLog || [];
+    r.treasuryLog.push(entry);
   },
 
   addWarriorFromSelect(section) {
@@ -712,6 +738,7 @@ const UI = {
     const warrior = RosterModel.createCustomWarrior(name, cost, stats, specialRules);
     const r = this.currentRoster;
     r.customWarriors.push(warrior);
+    this._logWarriorHire(warrior);
     this.saveCurrentRoster();
     this.renderRosterEditor();
     document.getElementById('custom-warrior-modal').classList.remove('active');
