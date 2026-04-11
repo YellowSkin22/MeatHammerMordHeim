@@ -1260,7 +1260,9 @@ const UI = {
       return;
     }
 
-    // Compute running balance newest→oldest from roster.gold
+    // Compute running balance newest→oldest from roster.gold.
+    // Use actualGoldDelta (exact amount applied) when available so clamped entries
+    // don't corrupt earlier balance values.
     const chronological = [...log].sort((a, b) => new Date(a.date) - new Date(b.date));
     const balanceAfter = {};
     let running = r.gold;
@@ -1268,7 +1270,8 @@ const UI = {
       const e = chronological[i];
       if (e.applied) {
         balanceAfter[e.id] = running;
-        running -= e.gold;
+        const delta = e.actualGoldDelta !== undefined ? e.actualGoldDelta : e.gold;
+        running -= delta;
       }
     }
 
@@ -1493,15 +1496,18 @@ const UI = {
     };
 
     this.currentRoster.treasuryLog = this.currentRoster.treasuryLog || [];
-    this.currentRoster.treasuryLog.push(entry);
 
     if (apply) {
-      this.currentRoster.gold = (this.currentRoster.gold || 0) + gold;
-      this.currentRoster.wyrdstone = (this.currentRoster.wyrdstone || 0) + wyrdstone;
-      // Keep gold non-negative (clamp at 0)
-      this.currentRoster.gold = Math.max(0, this.currentRoster.gold);
-      this.currentRoster.wyrdstone = Math.max(0, this.currentRoster.wyrdstone);
+      const prevGold = this.currentRoster.gold || 0;
+      const prevWyrd = this.currentRoster.wyrdstone || 0;
+      this.currentRoster.gold = Math.max(0, prevGold + gold);
+      this.currentRoster.wyrdstone = Math.max(0, prevWyrd + wyrdstone);
+      // Store the actual delta applied (may differ from gold/wyrdstone if clamped at 0)
+      entry.actualGoldDelta = this.currentRoster.gold - prevGold;
+      entry.actualWyrdstoneDelta = this.currentRoster.wyrdstone - prevWyrd;
     }
+
+    this.currentRoster.treasuryLog.push(entry);
 
     this.saveCurrentRoster();
     this.closeTreasuryModal();
@@ -1521,10 +1527,14 @@ const UI = {
 
     if (!confirm('Remove this treasury entry?')) return;
 
-    // Reverse the treasury mutation if it was applied
+    // Reverse the treasury mutation if it was applied.
+    // Use actualGoldDelta (what was really applied, respecting zero-clamping) when available;
+    // fall back to entry.gold for entries created before this field existed.
     if (entry.applied) {
-      r.gold = Math.max(0, (r.gold || 0) - entry.gold);
-      r.wyrdstone = Math.max(0, (r.wyrdstone || 0) - (entry.wyrdstone || 0));
+      const goldDelta = entry.actualGoldDelta !== undefined ? entry.actualGoldDelta : entry.gold;
+      const wyrdDelta = entry.actualWyrdstoneDelta !== undefined ? entry.actualWyrdstoneDelta : (entry.wyrdstone || 0);
+      r.gold = Math.max(0, (r.gold || 0) - goldDelta);
+      r.wyrdstone = Math.max(0, (r.wyrdstone || 0) - wyrdDelta);
     }
 
     r.treasuryLog.splice(index, 1);

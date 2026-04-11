@@ -187,7 +187,7 @@
         <div class="section-panel mt-2">
           <div class="section-header" style="display:flex; justify-content:space-between; align-items:center;">
             <h3>Treasury Ledger</h3>
-            <button class="btn btn-sm" id="btn-add-treasury-entry" onclick="UI.openTreasuryModal()">+ Add Entry</button>
+            <button class="btn btn-sm" id="btn-add-treasury-entry" onclick="event.stopPropagation(); UI.openTreasuryModal()">+ Add Entry</button>
           </div>
           <div class="section-content">
             <div id="treasury-ledger-entries"></div>
@@ -484,7 +484,7 @@
   <script src="js/data.js?v=13"></script>
   <script src="js/storage.js?v=8"></script>
   <script src="js/roster.js?v=8"></script>
-  <script src="js/ui.js?v=25"></script>
+  <script src="js/ui.js?v=26"></script>
   <script>
     // Boot the app
     (async function() {
