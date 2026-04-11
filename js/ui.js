@@ -263,6 +263,7 @@ const UI = {
         .map(w => `<option value="${w.id}">${this.esc(w.name)} (${this.esc(w.source)})</option>`)
         .join('');
     document.getElementById('create-roster-name').value = '';
+    document.getElementById('create-starting-gold').value = '500';
     document.getElementById('warband-description').textContent = '';
     modal.classList.add('active');
   },
@@ -277,10 +278,13 @@ const UI = {
     const result = DataService.getWarband(id);
     if (result) {
       const { warbandFile } = result;
+      const startingGc = warbandFile.warbandRules?.startingGc ?? 500;
       const lore = DataService._stripHtml(warbandFile.lore || warbandFile.warbandRules?.choiceFluff || '')
         .replace(/\s+/g, ' ').trim().slice(0, 300);
-      desc.textContent = `${lore} Starting gold: ${warbandFile.warbandRules?.startingGc ?? 500} gc.`;
+      document.getElementById('create-starting-gold').value = startingGc;
+      desc.textContent = lore;
     } else {
+      document.getElementById('create-starting-gold').value = '500';
       desc.textContent = '';
     }
   },
@@ -292,6 +296,8 @@ const UI = {
     if (!warbandId) return this.toast('Select a warband type.', 'error');
 
     const roster = RosterModel.createRoster(name, warbandId);
+    const startingGold = parseInt(document.getElementById('create-starting-gold').value);
+    if (!isNaN(startingGold) && startingGold >= 0) roster.gold = startingGold;
     Storage.saveRoster(roster);
     this.closeCreateModal();
     this.renderRosterList();
