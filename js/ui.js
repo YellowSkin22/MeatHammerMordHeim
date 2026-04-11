@@ -2078,10 +2078,16 @@ const UI = {
       }
       if (left < 8) left = 8;
 
-      // If no room above, show below
+      // Prefer above the tag; fall back to below if not enough room
       if (top < 8) {
         top = rect.bottom + 8;
       }
+
+      // Clamp bottom — handles both above and below placements
+      if (top + ttRect.height > window.innerHeight - 8) {
+        top = window.innerHeight - ttRect.height - 8;
+      }
+      if (top < 8) top = 8; // taller than viewport: pin to top
 
       tooltipEl.style.left = left + 'px';
       tooltipEl.style.top = top + 'px';
