@@ -2103,6 +2103,19 @@ const UI = {
 
   // === GLOBAL EVENTS ===
   bindGlobalEvents() {
+    // Pre-load coin sound on first interaction so Chrome's autoplay policy
+    // doesn't block playCoinSound() — a user gesture must precede .play().
+    const unlockAudio = () => {
+      try {
+        if (!this._coinAudio) {
+          this._coinAudio = new Audio('assets/sounds/coin.wav');
+          this._coinAudio.load();
+        }
+      } catch (_) {}
+      document.removeEventListener('click', unlockAudio, true);
+    };
+    document.addEventListener('click', unlockAudio, true);
+
     // Theme toggle
     document.getElementById('btn-theme-toggle').addEventListener('click', () => this.toggleTheme());
 
