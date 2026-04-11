@@ -2184,21 +2184,25 @@ const UI = {
         this._audioCtx = new (window.AudioContext || window.webkitAudioContext)();
       }
       const ctx = this._audioCtx;
-      if (ctx.state === 'suspended') ctx.resume();
-      const t = ctx.currentTime;
-      // Two-note coin ring: high attack, slightly lower sustain, both with fast exponential decay
-      [[1400, t, 0.12], [1100, t + 0.09, 0.2]].forEach(([freq, start, dur]) => {
-        const osc = ctx.createOscillator();
-        const gain = ctx.createGain();
-        osc.connect(gain);
-        gain.connect(ctx.destination);
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(freq, start);
-        gain.gain.setValueAtTime(0.35, start);
-        gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
-        osc.start(start);
-        osc.stop(start + dur);
-      });
+      const play = () => {
+        const t = ctx.currentTime;
+        // Two-note coin ring: high attack, slightly lower sustain, both with fast exponential decay
+        [[1400, t, 0.12], [1100, t + 0.09, 0.2]].forEach(([freq, start, dur]) => {
+          const osc = ctx.createOscillator();
+          const gain = ctx.createGain();
+          osc.connect(gain);
+          gain.connect(ctx.destination);
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(freq, start);
+          gain.gain.setValueAtTime(0.35, start);
+          gain.gain.exponentialRampToValueAtTime(0.001, start + dur);
+          osc.start(start);
+          osc.stop(start + dur);
+        });
+      };
+      // resume() is async — only schedule notes after the context is running
+      if (ctx.state === 'suspended') ctx.resume().then(play);
+      else play();
     } catch (_) { /* audio not supported — silent fallback */ }
   },
 
