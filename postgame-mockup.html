@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Post-Game Sequence — UI Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-darkest: #f5f0e8;
+  --bg-dark: #ece5d8;
+  --bg-card: #ffffff;
+  --bg-card-hover: #faf7f2;
+  --bg-input: #f8f5ef;
+  --border: #d4cabb;
+  --border-hover: #b8a98e;
+  --accent: #7f6110;
+  --accent-hover: #8f6c14;
+  --danger: #b33a3a;
+  --success: #2d7a2d;
+  --text: #3d3529;
+  --text-dim: #6b6052;
+  --text-bright: #2a231a;
+  --radius: 6px;
+  --font-display: 'Cinzel', serif;
+}
+[data-theme="dark"] {
+  --bg-darkest: #1a1816;
+  --bg-dark: #242220;
+  --bg-card: #2e2b28;
+  --bg-card-hover: #36332f;
+  --bg-input: #242220;
+  --border: #3d3a36;
+  --border-hover: #5a5550;
+  --accent: #c9a033;
+  --accent-hover: #d4ab3d;
+  --danger: #d04444;
+  --success: #3da63d;
+  --text: #e0dbd3;
+  --text-dim: #a39a8e;
+  --text-bright: #f0ebe5;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  background: var(--bg-darkest);
+  color: var(--text);
+  font-size: 15px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+}
+
+/* ── Controls bar ── */
+.controls {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.6rem 1rem;
+}
+.controls label { font-size: 0.8rem; color: var(--text-dim); }
+.controls select, .controls button {
+  font-size: 0.8rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-input);
+  color: var(--text);
+  cursor: pointer;
+}
+
+/* ── Buttons ── */
+.btn {
+  display: inline-flex; align-items: center; gap: 0.4rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-family: inherit;
+  white-space: nowrap;
+}
+.btn:hover { background: var(--bg-card-hover); border-color: var(--border-hover); }
+.btn-primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+.btn-secondary { background: var(--bg-card); border-color: var(--border); color: var(--text); }
+.btn-danger { border-color: var(--danger); color: var(--danger); background: transparent; }
+.btn-danger:hover { background: var(--danger); color: #fff; }
+.btn-sm { padding: 0.3rem 0.6rem; font-size: 0.78rem; }
+
+/* ── Modal shell ── */
+.modal-backdrop {
+  position: relative;
+  width: min(96vw, 660px);
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ── Header ── */
+.pgw-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem 0.8rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-card);
+}
+.pgw-title {
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  color: var(--text-bright);
+  letter-spacing: 0.02em;
+}
+.close-btn {
+  width: 28px; height: 28px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: transparent;
+  color: var(--text-dim);
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.close-btn:hover { background: var(--danger); border-color: var(--danger); color: #fff; }
+
+/* ── Progress bar ── */
+.pgw-progress {
+  display: flex;
+  background: var(--bg-dark);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  overflow-x: auto;
+}
+.pgw-step {
+  flex: 1;
+  min-width: 70px;
+  text-align: center;
+  font-size: 0.62rem;
+  color: var(--text-dim);
+  padding: 0.45rem 0.25rem 0.55rem;
+  position: relative;
+  letter-spacing: 0.01em;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  cursor: pointer;
+  user-select: none;
+}
+.pgw-step:hover { color: var(--accent); }
+.pgw-step.done { color: var(--accent); border-bottom-color: var(--accent); opacity: 0.6; }
+.pgw-step.active {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Body ── */
+.pgw-body {
+  padding: 1.25rem;
+  min-height: 260px;
+  overflow-y: auto;
+}
+.pgw-body p { line-height: 1.55; margin-bottom: 0.6rem; }
+.pgw-body h3 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.5rem; color: var(--text-bright); }
+
+/* ── Footer ── */
+.pgw-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg-dark);
+}
+
+/* ── Warrior checklist ── */
+.warrior-list { list-style: none; padding: 0; margin: 0.5rem 0; }
+.warrior-item {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  transition: background 0.1s;
+}
+.warrior-item:last-child { border-bottom: none; }
+.warrior-item:hover { background: var(--bg-card-hover); }
+.warrior-item input[type=checkbox] { width: 16px; height: 16px; cursor: pointer; accent-color: var(--accent); }
+.warrior-item label { flex: 1; cursor: pointer; font-size: 0.9rem; }
+.warrior-section-header {
+  padding: 0.35rem 0.25rem 0.2rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-dim);
+  border-bottom: 1px solid var(--border);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+.warrior-item--indent {
+  padding-left: 1.5rem;
+  background: var(--bg-dark);
+}
+.warrior-item--indent:last-of-type { border-bottom: 1px solid var(--border); }
+.warrior-item .xp-badge {
+  font-size: 0.7rem;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  padding: 0.1rem 0.4rem;
+  border-radius: 999px;
+  color: var(--text-dim);
+}
+
+/* ── Dice tray ── */
+.dice-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  justify-content: center;
+  margin: 1rem 0 0.5rem;
+}
+.die {
+  width: 62px; height: 62px;
+  border: 2px solid var(--accent);
+  border-radius: 12px;
+  display: grid;
+  grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+  padding: 9px;
+  gap: 3px;
+  background: var(--bg-card);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12), inset 0 1px 0 rgba(255,255,255,0.08);
+  cursor: default;
+  user-select: none;
+  transition: transform 0.15s, box-shadow 0.15s;
+  position: relative;
+}
+.die.lockable:hover { transform: scale(1.08); box-shadow: 0 4px 14px rgba(0,0,0,0.2); cursor: pointer; }
+.die.rolling { animation: diceRoll 0.45s ease-out; }
+.die.locked { border-color: var(--success); }
+.die.blank {
+  border-style: dashed;
+  border-color: var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem;
+  color: var(--text-dim);
+  font-style: italic;
+  font-family: Georgia, serif;
+}
+.pip {
+  border-radius: 50%;
+  background: var(--accent);
+  width: 100%;
+  height: 100%;
+  grid-column: var(--col);
+  grid-row: var(--row);
+  box-shadow: 0 1px 2px rgba(0,0,0,0.25);
+}
+[data-theme="dark"] .pip { background: var(--accent); }
+
+/* ── Injury step two-column layout ── */
+.injury-layout {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 1rem;
+  align-items: start;
+}
+.injury-main {}
+.injury-sidebar {
+  border-left: 1px solid var(--border);
+  padding-left: 0.9rem;
+}
+.injury-sidebar-title {
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-dim);
+  margin-bottom: 0.5rem;
+}
+.injury-warrior-row {
+  display: flex;
+  flex-direction: column;
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--radius);
+  margin-bottom: 0.2rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.3;
+}
+.injury-warrior-row.active {
+  background: var(--accent);
+  color: #fff;
+}
+.injury-warrior-row .warrior-subtype {
+  font-size: 0.7rem;
+  opacity: 0.75;
+}
+.injury-warrior-row.done {
+  opacity: 0.45;
+}
+.injury-warrior-row.dead {
+  text-decoration: line-through;
+  opacity: 0.35;
+  color: var(--danger);
+}
+
+/* ── Cursive subtitle ── */
+.injury-subtitle {
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--text-dim);
+  font-size: 0.88rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ── Injury result name + description ── */
+.injury-result-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-bright);
+}
+.injury-result-name.danger { color: var(--danger); }
+.injury-result-name.success { color: var(--success); }
+.injury-result-desc {
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-top: 0.2rem;
+}
+@keyframes diceRoll {
+  0%   { transform: rotate(0deg) scale(1); }
+  25%  { transform: rotate(-18deg) scale(1.12); }
+  50%  { transform: rotate(14deg) scale(0.94); }
+  75%  { transform: rotate(-9deg) scale(1.06); }
+  100% { transform: rotate(0deg) scale(1); }
+}
+.die-hint { text-align: center; font-size: 0.75rem; color: var(--text-dim); margin-top: 0.25rem; }
+
+/* ── Result box ── */
+.result-box {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  padding: 0.75rem 1rem;
+  margin: 0.75rem 0;
+}
+.result-box.danger { border-left-color: var(--danger); }
+.result-box.success { border-left-color: var(--success); }
+.result-box strong { display: block; margin-bottom: 0.2rem; font-size: 0.95rem; }
+.result-box p { font-size: 0.82rem; color: var(--text-dim); margin: 0; }
+
+/* ── Skill picker ── */
+.skill-picker { margin-top: 0.75rem; }
+.skill-picker label { font-size: 0.82rem; color: var(--text-dim); display: block; margin-bottom: 0.3rem; }
+.skill-picker select {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-input);
+  color: var(--text);
+  font-size: 0.85rem;
+}
+
+/* ── Exploration ── */
+.explore-controls {
+  display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 0.65rem 0.9rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+}
+.explore-controls label { display: flex; align-items: center; gap: 0.35rem; cursor: pointer; }
+.explore-controls input[type=checkbox] { accent-color: var(--accent); }
+.explore-controls input[type=number] {
+  width: 52px; padding: 0.2rem 0.4rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg-input); color: var(--text); font-size: 0.85rem;
+}
+.doubles-badge {
+  display: inline-flex; align-items: center; gap: 0.3rem;
+  background: var(--accent); color: #fff;
+  font-size: 0.75rem; font-weight: 600;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  margin-left: 0.4rem;
+}
+
+/* ── HS Upkeep ── */
+.hs-row {
+  display: flex; align-items: center; gap: 0.75rem;
+  padding: 0.55rem 0.25rem;
+  border-bottom: 1px solid var(--border);
+  font-size: 0.88rem;
+}
+.hs-row:last-child { border-bottom: none; }
+.hs-row .hs-name { flex: 1; font-weight: 600; }
+.hs-row .hs-cost { color: var(--text-dim); }
+.hs-row select {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg-input); color: var(--text); font-size: 0.82rem;
+}
+
+/* ── Text utility ── */
+.text-dim { color: var(--text-dim); }
+.text-sm { font-size: 0.82rem; }
+hr { border: none; border-top: 1px solid var(--border); margin: 0.75rem 0; }
+.form-row { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; font-size: 0.88rem; }
+.form-row input[type=number] {
+  width: 64px; padding: 0.3rem 0.5rem;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  background: var(--bg-input); color: var(--text); font-size: 0.88rem;
+}
+.step-label { display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.75rem; }
+.step-num {
+  width: 24px; height: 24px;
+  border-radius: 50%; background: var(--accent); color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 0.75rem; font-weight: 700; flex-shrink: 0;
+}
+</style>
+</head>
+<body>
+
+<!-- Controls -->
+<div class="controls">
+  <label>Theme:</label>
+  <select onchange="document.documentElement.dataset.theme = this.value">
+    <option value="light">Light (Parchment)</option>
+    <option value="dark">Dark</option>
+  </select>
+  <label>Step:</label>
+  <select onchange="showStep(this.value)">
+    <option value="1">Step 1 — Out of Action</option>
+    <option value="2">Step 2 — Injuries</option>
+    <option value="2b">Step 2b — Injury Result (Dead)</option>
+    <option value="2c">Step 2c — Injury Result (Full Recovery)</option>
+    <option value="3">Step 3 — Advancements</option>
+    <option value="3b">Step 3b — New Skill Result</option>
+    <option value="4">Step 4 — Exploration</option>
+    <option value="4b">Step 4b — Sell Wyrdstone</option>
+    <option value="5">Step 5 — Hired Swords</option>
+    <option value="6">Step 6 — Henchmen Availability</option>
+    <option value="7">Step 7 — Trading Post</option>
+  </select>
+  <button onclick="rollAllDice()">🎲 Roll demo dice</button>
+</div>
+
+<!-- Modal -->
+<div class="modal-backdrop" id="modal">
+
+  <!-- Header -->
+  <div class="pgw-header">
+    <span class="pgw-title">Post-Game Sequence</span>
+    <button class="close-btn">&times;</button>
+  </div>
+
+  <!-- Progress bar -->
+  <div class="pgw-progress" id="progress-bar">
+    <div class="pgw-step done"  onclick="showStep('1')">1. Out of Action</div>
+    <div class="pgw-step active" onclick="showStep('2')">2. Injuries</div>
+    <div class="pgw-step"        onclick="showStep('3')">3. Advancements</div>
+    <div class="pgw-step"        onclick="showStep('4')">4. Exploration</div>
+    <div class="pgw-step"        onclick="showStep('5')">5. Hired Swords</div>
+    <div class="pgw-step"        onclick="showStep('6')">6. Henchmen</div>
+    <div class="pgw-step"        onclick="showStep('7')">7. Trading Post</div>
+  </div>
+
+  <!-- Body -->
+  <div class="pgw-body" id="body"></div>
+
+  <!-- Footer -->
+  <div class="pgw-footer" id="footer"></div>
+
+</div>
+
+<script>
+// ── Dice pip helpers (must be defined before STEPS) ──────────────────────
+const PIP_POSITIONS_EARLY = {
+  1:[[2,2]], 2:[[3,1],[1,3]], 3:[[3,1],[2,2],[1,3]],
+  4:[[1,1],[3,1],[1,3],[3,3]], 5:[[1,1],[3,1],[2,2],[1,3],[3,3]],
+  6:[[1,1],[1,2],[1,3],[3,1],[3,2],[3,3]],
+};
+function _pips(val) {
+  return (PIP_POSITIONS_EARLY[val]||[]).map(([c,r])=>`<span class="pip" style="--col:${c};--row:${r}"></span>`).join('');
+}
+
+const STEPS = {
+  1: {
+    label: 'Out of Action',
+    body: `
+      <div class="step-label"><div class="step-num">1</div><h3>Who was taken out of action?</h3></div>
+      <p class="text-dim text-sm">Check any warrior who was taken out of action this battle. Henchmen groups are listed per model.</p>
+      <ul class="warrior-list">
+        <li class="warrior-item"><input type="checkbox" id="ooa0" checked><label for="ooa0">Karl Hammerfist <span class="text-dim">(Captain)</span></label><span class="xp-badge">23 XP</span></li>
+        <li class="warrior-item"><input type="checkbox" id="ooa1"><label for="ooa1">Greta the Bold <span class="text-dim">(Champion)</span></label><span class="xp-badge">11 XP</span></li>
+        <li class="warrior-item"><input type="checkbox" id="ooa2" checked><label for="ooa2">Brother Alric <span class="text-dim">(Priest of Sigmar)</span></label><span class="xp-badge">6 XP</span></li>
+        <li class="warrior-section-header">Swordsmen <span class="text-dim">(Henchmen group · 5 XP)</span></li>
+        <li class="warrior-item warrior-item--indent"><input type="checkbox" id="ooa3a" checked><label for="ooa3a">Swordsman #1</label></li>
+        <li class="warrior-item warrior-item--indent"><input type="checkbox" id="ooa3b"><label for="ooa3b">Swordsman #2</label></li>
+        <li class="warrior-item warrior-item--indent"><input type="checkbox" id="ooa3c"><label for="ooa3c">Swordsman #3</label></li>
+        <li class="warrior-item"><input type="checkbox" id="ooa4"><label for="ooa4">Tilean Marksman <span class="text-dim">(Hired Sword)</span></label><span class="xp-badge">0 XP</span></li>
+      </ul>
+    `,
+    footer: `
+      <button class="btn btn-secondary">Cancel</button>
+      <button class="btn btn-primary" onclick="showStep(2)">Next ›</button>
+    `,
+    active: 1,
+  },
+
+  2: 'dynamic',  // rendered by renderInjuryStep()
+
+  3: {
+    label: 'Advancements',
+    body: `
+      <div class="step-label"><div class="step-num">3</div><h3>Advancement Roll — Greta the Bold</h3></div>
+      <p class="text-dim text-sm">Greta has reached a new experience threshold (11 XP → Level 3). Roll 2D6 on the hero advancement table.</p>
+      <div class="dice-tray">
+        <div class="die blank" id="d1">?</div>
+        <div class="die blank" id="d2">?</div>
+      </div>
+      <p class="die-hint">Click a die to reroll it individually.</p>
+      <p class="text-dim text-sm" style="text-align:center; margin-top:0.5rem;">1 of 1 warrior eligible</p>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(2)">‹ Back</button>
+      <button class="btn btn-secondary" onclick="rollAllDice()">🎲 Roll All</button>
+    `,
+    active: 3,
+  },
+
+  '3b': {
+    label: 'Advancements',
+    body: `
+      <div class="step-label"><div class="step-num">3</div><h3>Advancement Roll — Greta the Bold</h3></div>
+      <p class="text-dim text-sm">Greta has reached a new experience threshold (11 XP → Level 3). Roll 2D6 on the hero advancement table.</p>
+      <div class="dice-tray">
+        <div class="die" id="d1">1</div>
+        <div class="die" id="d2">2</div>
+      </div>
+      <p class="die-hint">Click a die to reroll it individually.</p>
+      <div class="result-box">
+        <strong>🏅 New Skill (roll: 2–4)</strong>
+        <p>Choose a new skill from Greta's available skill categories.</p>
+        <div class="skill-picker">
+          <label>Select skill to learn:</label>
+          <select>
+            <optgroup label="Combat Skills">
+              <option>Dodge</option>
+              <option>Step Aside</option>
+              <option>Counter Attack</option>
+            </optgroup>
+            <optgroup label="Strength Skills">
+              <option>Mighty Blow</option>
+              <option>Pit Fighter</option>
+              <option>Resilient</option>
+            </optgroup>
+          </select>
+        </div>
+      </div>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(2)">‹ Back</button>
+      <button class="btn btn-secondary" onclick="showStep(3)">🎲 Reroll</button>
+      <button class="btn btn-primary" onclick="showStep(4)">Apply & Next ›</button>
+    `,
+    active: 3,
+  },
+
+  4: {
+    label: 'Exploration',
+    body: `
+      <div class="step-label"><div class="step-num">4</div><h3>Exploration Dice</h3></div>
+      <p class="text-dim text-sm">Active heroes (not OOA) each contribute 1 exploration die. You have <strong>2 active heroes</strong>.</p>
+      <div class="explore-controls">
+        <label><input type="checkbox" id="won"> Won the scenario (+1 die)</label>
+        <label>Extra dice: <input type="number" value="0" min="0" max="10" id="extra-dice" oninput="updateDiceCount()"></label>
+        <span class="text-dim text-sm">Total: <strong id="dice-total">2</strong> dice</span>
+      </div>
+      <div class="dice-tray" id="explore-tray">
+        <div class="die blank lockable">?</div>
+        <div class="die blank lockable">?</div>
+      </div>
+      <p class="die-hint">After rolling — click a die to <strong>lock</strong> it (green border = locked). Locked dice won't be rerolled.</p>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(3)">‹ Back</button>
+      <button class="btn btn-secondary" onclick="rollExploreDice()">🎲 Roll Unlocked</button>
+    `,
+    active: 4,
+  },
+
+  '4b': {
+    label: 'Exploration',
+    body: `
+      <div class="step-label"><div class="step-num">4</div><h3>Exploration Result</h3></div>
+      <div class="dice-tray">
+        <div class="die">4</div>
+        <div class="die">4</div>
+        <div class="die locked">2</div>
+        <div class="die">4</div>
+      </div>
+      <div class="result-box success">
+        <strong>Found 14 wyrdstone shards · <span class="doubles-badge">Doubles: 4</span></strong>
+        <p>Resolve doubles on the Exploration chart. Wyrdstone added to your stockpile.</p>
+      </div>
+      <hr>
+      <h3>Sell Wyrdstone</h3>
+      <p class="text-dim text-sm">Your warband has 8 members (excl. hired swords). Income rate: <strong>10 gc per shard</strong>.</p>
+      <div class="form-row">
+        <label>Shards to sell:</label>
+        <input type="number" value="14" min="0" max="14"> of 14 held
+        <span class="text-dim text-sm">= 140 gc</span>
+      </div>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(4)">‹ Back</button>
+      <button class="btn btn-secondary" onclick="showStep(5)">Skip selling ›</button>
+      <button class="btn btn-primary" onclick="showStep(5)">Sell & Next ›</button>
+    `,
+    active: 4,
+  },
+
+  5: {
+    label: 'Hired Swords',
+    body: `
+      <div class="step-label"><div class="step-num">5</div><h3>Hired Sword Upkeep</h3></div>
+      <p class="text-dim text-sm">Pay upkeep for your hired swords or dismiss them from service.</p>
+      <div style="margin-top:0.5rem;">
+        <div class="hs-row">
+          <span class="hs-name">Tilean Marksman</span>
+          <span class="hs-cost">15 gc</span>
+          <select><option selected>Pay upkeep</option><option>Dismiss</option></select>
+        </div>
+        <div class="hs-row">
+          <span class="hs-name">Dwarf Troll Slayer</span>
+          <span class="hs-cost">25 gc</span>
+          <select><option>Pay upkeep</option><option selected>Dismiss</option></select>
+        </div>
+      </div>
+      <p class="text-dim text-sm" style="margin-top:0.75rem;">Dismissed hired swords are removed from your roster. This action can be undone with the undo button.</p>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(4)">‹ Back</button>
+      <button class="btn btn-secondary" style="margin-right:auto;" onclick="alert('Undo last action')">↩ Undo</button>
+      <button class="btn btn-primary" onclick="showStep(6)">Apply & Next ›</button>
+    `,
+    active: 5,
+  },
+
+  6: {
+    label: 'Henchmen',
+    body: `
+      <div class="step-label"><div class="step-num">6</div><h3>Henchmen Availability</h3></div>
+      <p class="text-dim text-sm">Roll 2D6 to see what henchmen are available in the market this week.</p>
+      <div class="dice-tray">
+        <div class="die" id="hd1">${_pips(5)}</div>
+        <div class="die" id="hd2">${_pips(3)}</div>
+      </div>
+      <div class="result-box">
+        <strong>Result (8): D3 henchmen of any type in the warband list</strong>
+        <p>You may recruit up to D3 henchmen of any type available to your warband. Apply manually via the Warriors tab.</p>
+      </div>
+      <p class="text-dim text-sm" style="margin-top:0.5rem;">This step is informational — add henchmen manually via the Warriors tab.</p>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(5)">‹ Back</button>
+      <button class="btn btn-secondary" onclick="rollHenchDice()">🎲 Roll Again</button>
+      <button class="btn btn-primary" onclick="showStep(7)">Next ›</button>
+    `,
+    active: 6,
+  },
+
+  7: {
+    label: 'Trading Post',
+    body: `
+      <div class="step-label"><div class="step-num">7</div><h3>Trading Post</h3></div>
+      <p class="text-dim text-sm">Roll 2D6 to see what rare item is available at the Trading Post.</p>
+      <div class="dice-tray">
+        <div class="die" id="td1">${_pips(4)}</div>
+        <div class="die" id="td2">${_pips(6)}</div>
+      </div>
+      <div class="result-box">
+        <strong>Result (10): Shield — 5 gc</strong>
+        <p>A Shield is available for purchase. Buy it manually via the Equipment modal if desired.</p>
+      </div>
+      <p class="text-dim text-sm" style="margin-top:0.5rem;">This step is informational — purchase items manually via the Warriors tab.</p>
+    `,
+    footer: `
+      <button class="btn btn-secondary" onclick="showStep(6)">‹ Back</button>
+      <button class="btn btn-secondary" onclick="rollTradeDice()">🎲 Roll Again</button>
+      <button class="btn btn-primary" onclick="alert('Post-game complete! ✔')">Finish ✔</button>
+    `,
+    active: 7,
+  },
+};
+
+// col/row positions (1-3) for each die face value
+const PIP_POSITIONS = {
+  1: [[2,2]],
+  2: [[3,1],[1,3]],
+  3: [[3,1],[2,2],[1,3]],
+  4: [[1,1],[3,1],[1,3],[3,3]],
+  5: [[1,1],[3,1],[2,2],[1,3],[3,3]],
+  6: [[1,1],[1,2],[1,3],[3,1],[3,2],[3,3]],
+};
+
+function dieFaceHTML(val) {
+  const pips = PIP_POSITIONS[val] || [];
+  return pips.map(([col, row]) =>
+    `<span class="pip" style="--col:${col};--row:${row}"></span>`
+  ).join('');
+}
+
+function blankDieHTML(id) {
+  return `<div class="die blank" id="${id}" data-val="">roll</div>`;
+}
+
+function valuedDieHTML(id, val) {
+  return `<div class="die" id="${id}" data-val="${val}">${dieFaceHTML(val)}</div>`;
+}
+
+const HERO_INJURIES = [
+  { range:[11,15], name:'Dead',                    desc:'The warrior is dead. Remove them from the roster and lose all their equipment.',       severity:'danger'  },
+  { range:[16,21], name:'Multiple Injuries',        desc:'Roll D6 more times on this table, applying each result (ignoring further multiples).', severity:'danger'  },
+  { range:[22,22], name:'Leg Wound',                desc:'The warrior suffers a permanent leg injury. Their Movement characteristic is reduced by 1.', severity:'warning' },
+  { range:[23,23], name:'Arm Wound',                desc:'The warrior\'s arm is badly wounded. Their Weapon Skill is permanently reduced by 1.', severity:'warning' },
+  { range:[24,24], name:'Madness',                  desc:'Roll a D6: 1–3 the warrior gains the Stupidity rule; 4–6 the warrior gains the Frenzy rule.',  severity:'warning' },
+  { range:[25,25], name:'Smashed Leg',              desc:'The warrior\'s leg is crushed. They may no longer run, though they may still charge. Movement –1 permanently.', severity:'warning' },
+  { range:[26,26], name:'Chest Wound',              desc:'A grievous wound to the torso leaves the warrior weakened. Toughness is permanently reduced by 1.', severity:'warning' },
+  { range:[31,31], name:'Blinded in One Eye',       desc:'The warrior loses the sight in one eye. Ballistic Skill is permanently reduced by 1.', severity:'warning' },
+  { range:[32,32], name:'Old Battle Wound',         desc:'The wound never fully heals. Before each battle roll a D6: on a 1 the warrior misses that battle.', severity:'warning' },
+  { range:[33,33], name:'Nervous Condition',        desc:'The warrior\'s nerves are shattered. Initiative is permanently reduced by 1.',          severity:'warning' },
+  { range:[34,34], name:'Hand Injury',              desc:'The warrior\'s sword hand is injured. Weapon Skill is permanently reduced by 1.',        severity:'warning' },
+  { range:[35,35], name:'Deep Wound',               desc:'The warrior\'s injuries are serious. They must miss the next battle while recovering.',   severity:'warning' },
+  { range:[36,36], name:'Robbed',                   desc:'While helpless the warrior is stripped of their gear. All equipment is lost.',           severity:'warning' },
+  { range:[41,55], name:'Full Recovery',            desc:'The warrior shakes off their wounds and returns to full fighting strength with no lasting effects.', severity:'success' },
+  { range:[56,56], name:'Bitter Enmity',            desc:'The warrior harbours a deep grudge. They gain the Hatred special rule against the warband that caused the injury.', severity:'warning' },
+  { range:[61,61], name:'Captured',                 desc:'The warrior is taken prisoner. Roll after the game to determine their fate — ransom, rescue, or execution.', severity:'danger'  },
+  { range:[62,63], name:'Hardened',                 desc:'Facing death has steeled the warrior\'s resolve. They become immune to Fear.',            severity:'success' },
+  { range:[64,64], name:'Horrible Scars',           desc:'The warrior\'s wounds leave terrible scarring. They now cause Fear in enemy models.',     severity:'success' },
+  { range:[65,65], name:'Sold to the Pits',         desc:'The warrior is sold to fight in the pit arenas. They return with D6 extra Experience points.', severity:'success' },
+  { range:[66,66], name:'Survives Against the Odds',desc:'Against all expectation the warrior pulls through. Gain +1 Experience.',                  severity:'success' },
+];
+
+// Left die is tens, right die is units: left=3, right=1 → 31
+function toInjuryRoll(d1, d2) {
+  return d1 * 10 + d2;
+}
+
+function resolveHeroInjury(d1, d2) {
+  const roll = toInjuryRoll(d1, d2);
+  return HERO_INJURIES.find(r => roll >= r.range[0] && roll <= r.range[1]) || null;
+}
+
+function updateInjuryResult() {
+  const d1 = document.getElementById('d1');
+  const d2 = document.getElementById('d2');
+  if (!d1 || d1.classList.contains('blank')) return;
+  const v1 = parseInt(d1.dataset.val);
+  const v2 = d2 ? parseInt(d2.dataset.val) : null;
+  if (isNaN(v1) || (d2 && isNaN(v2))) return;
+  const roll = toInjuryRoll(v1, v2);
+  const result = resolveHeroInjury(v1, v2);
+  if (result) showInjuryResult(result.name, result.desc, result.severity, roll);
+}
+
+function rerollDie(id, isHero) {
+  const el = document.getElementById(id);
+  if (!el) return;
+  const val = Math.floor(Math.random() * 6) + 1;
+  el.classList.remove('blank');
+  el.classList.add('rolling');
+  setTimeout(() => {
+    el.textContent = val;
+    el.classList.remove('rolling');
+    updateInjuryResult();
+    // Show Apply button once both dice have values
+    const d1 = document.getElementById('d1');
+    const d2 = document.getElementById('d2');
+    const bothRolled = d1 && !d1.classList.contains('blank') && (!d2 || !d2.classList.contains('blank'));
+    if (bothRolled) {
+      const footer = document.getElementById('footer');
+      if (footer && !footer.innerHTML.includes('Apply')) {
+        footer.innerHTML += `<button class="btn btn-primary" onclick="showStep(3)">Apply & Next ›</button>`;
+      }
+    }
+  }, 500);
+}
+
+// OOA warriors for the mockup (name, type, isHero)
+const OOA_WARRIORS = [
+  { name: 'Karl Hammerfist', type: 'Captain',          isHero: true  },
+  { name: 'Swordsman #1',    type: 'Swordsmen',        isHero: false },
+  { name: 'Brother Alric',   type: 'Priest of Sigmar', isHero: true  },
+  { name: 'Swordsman #2',    type: 'Swordsmen',        isHero: false },
+];
+let injuryIdx = 0;
+const deadWarriorIndices = new Set();
+let lastInjuryResult = null;
+
+function renderInjuryStep() {
+  if (injuryIdx >= OOA_WARRIORS.length) { showStep(3); return; }
+
+  const w = OOA_WARRIORS[injuryIdx];
+  const table = w.isHero ? 'hero injury table (2D6)' : 'henchman injury table (1D6)';
+
+  const sidebar = OOA_WARRIORS.map((warrior, i) => {
+    let cls = 'injury-warrior-row';
+    if (deadWarriorIndices.has(i))  cls += ' dead';
+    else if (i < injuryIdx)         cls += ' done';
+    else if (i === injuryIdx)       cls += ' active';
+    return `<div class="${cls}">
+      <span>${warrior.name}</span>
+      <span class="warrior-subtype">${warrior.type}</span>
+    </div>`;
+  }).join('');
+
+  document.getElementById('body').innerHTML = `
+    <div class="injury-layout">
+      <div class="injury-main">
+        <div class="step-label"><div class="step-num">2</div>
+          <h3>Injury Roll — ${w.name} <span style="font-weight:400;color:var(--text-dim);">(${w.type})</span></h3>
+        </div>
+        <p class="injury-subtitle">${w.name} was taken out of action. Roll on the ${table}.</p>
+        <div class="dice-tray">
+          ${w.isHero ? `
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              ${blankDieHTML('d1')}
+              <span class="text-dim" style="font-size:0.7rem;">tens</span>
+            </div>
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              ${blankDieHTML('d2')}
+              <span class="text-dim" style="font-size:0.7rem;">units</span>
+            </div>
+          ` : `
+            <div style="display:flex;flex-direction:column;align-items:center;gap:0.3rem;">
+              ${blankDieHTML('d1')}
+            </div>
+          `}
+        </div>
+        <div id="injury-result" style="margin-top:0.75rem;min-height:1.8rem;"></div>
+      </div>
+      <div class="injury-sidebar">
+        <div class="injury-sidebar-title">Injury rolls</div>
+        ${sidebar}
+      </div>
+    </div>
+  `;
+
+  document.getElementById('footer').innerHTML = `
+    <button class="btn btn-secondary" onclick="showStep(1)">‹ Back</button>
+    <button class="btn btn-secondary" id="btn-roll-injury" onclick="rollInjuryDice()">🎲 Roll</button>
+  `;
+
+  updateProgressBar(2);
+}
+
+function rollInjuryDice() {
+  const w = OOA_WARRIORS[injuryIdx];
+  const d1 = document.getElementById('d1');
+  const d2 = document.getElementById('d2');
+  const v1 = Math.floor(Math.random() * 6) + 1;
+  const v2 = w.isHero ? Math.floor(Math.random() * 6) + 1 : null;
+
+  [[d1, v1], [d2, v2]].filter(([el]) => el).forEach(([el, val]) => {
+    el.classList.remove('blank');
+    el.innerHTML = '';
+    el.classList.add('rolling');
+    el.dataset.val = val;
+    setTimeout(() => {
+      el.classList.remove('rolling');
+      el.innerHTML = dieFaceHTML(val);
+    }, 450);
+  });
+
+  setTimeout(() => {
+    if (w.isHero) {
+      updateInjuryResult();
+    } else {
+      const res = v1 <= 2 ? 'Dead' : 'Full Recovery';
+      const henchDesc = v1 <= 2
+        ? 'The henchman is slain outright. Remove them from the roster.'
+        : 'The henchman makes a full recovery with no lasting effects.';
+      const severity = v1 <= 2 ? 'danger' : 'success';
+      showInjuryResult(res, henchDesc, severity, v1);
+    }
+
+    const footer = document.getElementById('footer');
+    if (!footer.innerHTML.includes('Apply')) {
+      const nextLabel = injuryIdx + 1 < OOA_WARRIORS.length ? 'Apply & Next ›' : 'Apply & Continue ›';
+      footer.innerHTML += `<button class="btn btn-primary" onclick="applyInjuryAndNext()">${nextLabel}</button>`;
+    }
+  }, 600);
+}
+
+function showInjuryResult(name, desc, severity, roll) {
+  lastInjuryResult = name;
+  const el = document.getElementById('injury-result');
+  if (!el) return;
+  el.innerHTML = `
+    <div class="result-box ${severity === 'danger' ? 'danger' : severity === 'success' ? 'success' : ''}">
+      <div style="display:flex;align-items:baseline;gap:0.5rem;">
+        <span class="injury-result-name ${severity}">${name}</span>
+        <span class="text-dim" style="font-size:0.75rem;">roll: ${roll}</span>
+      </div>
+      <div class="injury-result-desc">${desc}</div>
+    </div>`;
+}
+
+function applyInjuryAndNext() {
+  if (lastInjuryResult === 'Dead') deadWarriorIndices.add(injuryIdx);
+  lastInjuryResult = null;
+  injuryIdx++;
+  renderInjuryStep();
+}
+
+function updateProgressBar(active) {
+  document.querySelectorAll('.pgw-step').forEach((el, i) => {
+    el.className = 'pgw-step';
+    const n = i + 1;
+    if (n < active) el.classList.add('done');
+    if (n === active) el.classList.add('active');
+  });
+}
+
+function showStep(key) {
+  if (key == 2) { renderInjuryStep(); return; }
+
+  // Accept both numeric and string keys (e.g. 2, '2b')
+  const s = STEPS[key] || STEPS[String(key)];
+  if (!s) return;
+  document.getElementById('body').innerHTML = s.body;
+  document.getElementById('footer').innerHTML = s.footer;
+
+  if (key == 1) { injuryIdx = 0; deadWarriorIndices.clear(); lastInjuryResult = null; }
+  updateProgressBar(s.active);
+
+  // Attach lock-toggle for exploration dice only
+  document.querySelectorAll('.die.lockable').forEach(die => {
+    die.style.cursor = 'pointer';
+    die.onclick = () => die.classList.toggle('locked');
+  });
+
+  // Re-sync controls
+  const select = document.querySelector('.controls select:nth-child(4)');
+  if (select) {
+    const opt = [...select.options].find(o => o.value == key);
+    if (opt) select.value = key;
+  }
+}
+
+function rollAllDice() {
+  document.querySelectorAll('.die').forEach(die => {
+    const val = Math.floor(Math.random() * 6) + 1;
+    die.classList.remove('blank');
+    die.innerHTML = '';
+    die.dataset.val = val;
+    die.classList.add('rolling');
+    setTimeout(() => {
+      die.classList.remove('rolling');
+      die.innerHTML = dieFaceHTML(val);
+    }, 500);
+  });
+
+  setTimeout(() => {
+    updateInjuryResult();
+    const footer = document.getElementById('footer');
+    if (footer && !footer.innerHTML.includes('Apply')) {
+      const nextLabel = injuryIdx + 1 < OOA_WARRIORS.length ? 'Apply & Next ›' : 'Apply & Continue ›';
+      footer.innerHTML += `<button class="btn btn-primary" onclick="applyInjuryAndNext()">${nextLabel}</button>`;
+    }
+  }, 600);
+}
+
+function rollExploreDice() {
+  const tray = document.getElementById('explore-tray');
+  if (!tray) return;
+  tray.querySelectorAll('.die').forEach(die => {
+    if (die.classList.contains('locked')) return;
+    const val = Math.floor(Math.random() * 6) + 1;
+    die.classList.remove('blank');
+    die.innerHTML = '';
+    die.classList.add('rolling');
+    die.dataset.val = val;
+    die.onclick = () => die.classList.toggle('locked');
+    setTimeout(() => {
+      die.classList.remove('rolling');
+      die.innerHTML = dieFaceHTML(val);
+    }, 450);
+  });
+  setTimeout(() => {
+    const footer = document.getElementById('footer');
+    if (!footer.innerHTML.includes('Confirm')) {
+      footer.innerHTML += `<button class="btn btn-primary" onclick="showStep('4b')">Confirm Exploration ›</button>`;
+    }
+  }, 600);
+}
+
+function rollTwoDice(id1, id2, onResult) {
+  const v1 = Math.floor(Math.random() * 6) + 1;
+  const v2 = Math.floor(Math.random() * 6) + 1;
+  [id1, id2].forEach(id => {
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('blank');
+    el.innerHTML = '';
+    el.classList.add('rolling');
+  });
+  setTimeout(() => {
+    [id1, id2].forEach((id, i) => {
+      const el = document.getElementById(id);
+      if (!el) return;
+      el.classList.remove('rolling', 'blank');
+      el.innerHTML = dieFaceHTML(i === 0 ? v1 : v2);
+    });
+    onResult(v1, v2);
+  }, 450);
+}
+
+function rollHenchDice() {
+  const results = ['D3 of the cheapest henchman type available','1 henchman of any type in the warband list','D3 henchmen of any type in the warband list','D6 henchmen of any type in the warband list'];
+  rollTwoDice('hd1', 'hd2', (v1, v2) => {
+    const r = results[Math.floor(Math.random() * results.length)];
+    document.querySelector('.result-box strong').textContent = `Result (${v1+v2}): ${r}`;
+  });
+}
+
+function rollTradeDice() {
+  const items = [['Wyrdstone Pendulum','30'],['Lucky Charm','10'],['Sword','10'],['Mace','3'],['Shield','5'],['Helmet','10'],['Light Armour','20']];
+  rollTwoDice('td1', 'td2', (v1, v2) => {
+    const item = items[Math.floor(Math.random() * items.length)];
+    document.querySelector('.result-box strong').textContent = `Result (${v1+v2}): ${item[0]} — ${item[1]} gc`;
+  });
+}
+
+function updateDiceCount() {
+  const extra = parseInt(document.getElementById('extra-dice')?.value) || 0;
+  const won = document.getElementById('won')?.checked ? 1 : 0;
+  const total = 2 + won + extra;
+  const el = document.getElementById('dice-total');
+  if (el) el.textContent = total;
+  const tray = document.getElementById('explore-tray');
+  if (tray) {
+    tray.innerHTML = Array(total).fill(0).map(() => `<div class="die blank lockable">?</div>`).join('');
+  }
+}
+
+// Init
+showStep(1);
+</script>
+
+<!-- Dead warrior card demo (shows how dead heroes appear in the roster after the wizard) -->
+<div class="modal-backdrop" style="max-width:440px;">
+  <div class="pgw-header">
+    <span class="pgw-title" style="font-size:0.82rem;color:var(--text-dim);font-family:inherit;font-weight:400;">Demo: dead hero card in roster</span>
+  </div>
+  <div class="pgw-body" style="padding:0.9rem;min-height:unset;">
+    <!-- Normal hero card for comparison -->
+    <p class="text-sm text-dim" style="margin-bottom:0.6rem;">Normal card (active hero):</p>
+    <div style="border:1px solid var(--border);border-radius:var(--radius);padding:0.75rem;margin-bottom:1rem;background:var(--bg-card);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.25rem;">
+        <span style="font-weight:700;color:var(--text-bright);">Greta the Bold</span>
+        <span style="font-size:0.72rem;background:var(--bg-dark);border:1px solid var(--border);padding:0.1rem 0.45rem;border-radius:999px;color:var(--text-dim);">Champion</span>
+      </div>
+      <div style="font-size:0.78rem;color:var(--text-dim);">11 XP · 2 equipment · 1 skill</div>
+    </div>
+    <!-- Dead hero card -->
+    <p class="text-sm text-dim" style="margin-bottom:0.6rem;">Dead hero — greyed out, excluded from cap &amp; counts:</p>
+    <div style="border:1px solid var(--danger);border-radius:var(--radius);padding:0.75rem;opacity:0.5;background:var(--bg-dark);">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:0.25rem;">
+        <span style="font-weight:700;text-decoration:line-through;color:var(--danger);">Karl Hammerfist</span>
+        <span style="font-size:0.72rem;color:var(--danger);font-weight:600;">☠ Dead</span>
+      </div>
+      <div style="font-size:0.78rem;color:var(--text-dim);margin-bottom:0.5rem;">Captain · 23 XP · Not counted in hero cap or warband rating</div>
+      <button class="btn btn-danger btn-sm" onclick="this.closest('div[style]').remove()">Remove from Roster</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
