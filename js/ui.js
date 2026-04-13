@@ -316,8 +316,10 @@ const UI = {
     this.currentRoster = roster;
     if (!roster.hiredSwords) roster.hiredSwords = [];
     if (!roster.customWarriors) roster.customWarriors = [];
+    this._collapseAllOnNextRender = true;
     this.showView('roster-editor');
     this.renderRosterEditor();
+    window.scrollTo({ top: 0, behavior: 'instant' });
   },
 
   saveCurrentRoster() {
@@ -363,11 +365,15 @@ const UI = {
     const henchmen = (warbandFile?.fighters || []).filter(f => f.type === 'henchman');
 
     // Capture collapsed state of warrior cards before re-render
+    const collapseAll = this._collapseAllOnNextRender;
+    this._collapseAllOnNextRender = false;
     const collapsedCards = new Set();
-    document.querySelectorAll('.warrior-card-body.collapsed').forEach(el => {
-      const id = el.id.replace('warrior-body-', '');
-      if (id) collapsedCards.add(id);
-    });
+    if (!collapseAll) {
+      document.querySelectorAll('.warrior-card-body.collapsed').forEach(el => {
+        const id = el.id.replace('warrior-body-', '');
+        if (id) collapsedCards.add(id);
+      });
+    }
 
     // Heroes section
     const heroesContent = document.getElementById('heroes-content');
@@ -443,12 +449,21 @@ const UI = {
     }
 
     // Restore collapsed state of warrior cards after re-render
-    collapsedCards.forEach(id => {
-      const body = document.getElementById('warrior-body-' + id);
-      if (body) body.classList.add('collapsed');
-      const card = document.getElementById('warrior-' + id);
-      if (card) card.classList.add('card-collapsed');
-    });
+    if (collapseAll) {
+      document.querySelectorAll('.warrior-card-body').forEach(body => {
+        body.classList.add('collapsed');
+        const id = body.id.replace('warrior-body-', '');
+        const card = document.getElementById('warrior-' + id);
+        if (card) card.classList.add('card-collapsed');
+      });
+    } else {
+      collapsedCards.forEach(id => {
+        const body = document.getElementById('warrior-body-' + id);
+        if (body) body.classList.add('collapsed');
+        const card = document.getElementById('warrior-' + id);
+        if (card) card.classList.add('card-collapsed');
+      });
+    }
   },
 
   renderWarriorCard(warrior, index, isHero, listTypeOverride) {
