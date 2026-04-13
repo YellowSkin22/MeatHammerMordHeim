@@ -1,58 +1,65 @@
 /* ===== MORDHEIM ROSTER APP - LIGHT PARCHMENT THEME ===== */
 
 :root {
-  --bg-darkest: #f5f0e8;
-  --bg-dark: #ece5d8;
-  --bg-card: #ffffff;
-  --bg-card-hover: #faf7f2;
-  --bg-input: #f8f5ef;
-  --border: #d4cabb;
-  --border-hover: #b8a98e;
-  --accent: #7f6110;
-  --accent-hover: #8f6c14;
-  --accent-dim: #a07e18;
-  --accent-glow: rgba(139, 105, 20, 0.12);
-  --danger: #b33a3a;
-  --danger-hover: #d04444;
-  --success: #2d7a2d;
-  --success-hover: #359435;
-  --text: #3d3529;
-  --text-dim: #6b6052;
-  --text-muted: #6f6250;
-  --text-bright: #2a231a;
-  --skull: #7f6110;
-  --shadow: rgba(100, 80, 40, 0.12);
-  --radius: 6px;
-  --radius-lg: 10px;
+  --bg-darkest: oklch(94% 0.016 78);
+  --bg-dark: oklch(90% 0.022 76);
+  --bg-card: oklch(99% 0.003 80);
+  --bg-card-hover: oklch(96% 0.010 79);
+  --bg-input: oklch(96% 0.010 80);
+  --border: oklch(81% 0.024 74);
+  --border-hover: oklch(70% 0.032 70);
+  --accent: oklch(45% 0.13 63);
+  --accent-hover: oklch(49% 0.14 64);
+  --accent-dim: oklch(53% 0.13 66);
+  --accent-glow: oklch(45% 0.13 63 / 0.12);
+  --danger: oklch(46% 0.155 18);
+  --danger-hover: oklch(52% 0.175 20);
+  --success: oklch(40% 0.14 148);
+  --success-hover: oklch(45% 0.15 148);
+  --text: oklch(24% 0.022 56);
+  --text-dim: oklch(41% 0.020 60);
+  --text-muted: oklch(42% 0.018 62);
+  --text-bright: oklch(16% 0.020 52);
+  --skill-color: oklch(38% 0.12 245);
+  --spell-color: oklch(38% 0.13 305);
+  --skull: oklch(45% 0.13 63);
+  --shadow: oklch(38% 0.020 60 / 0.12);
+  --radius: 4px;
+  --radius-lg: 8px;
   --transition: 0.2s ease;
-  --font-display: 'Cinzel', serif;
-  --treasury-positive: #7cb9a8;
-  --treasury-negative: #c87c7c;
+  --font-display: 'Pirata One', serif;
+  --font-body: 'Alegreya', Georgia, serif;
+  --treasury-positive: oklch(68% 0.08 183);
+  --treasury-negative: oklch(58% 0.12 22);
 }
 
 /* ===== DARK MODE THEME ===== */
 [data-theme="dark"] {
-  --bg-darkest: #1a1816;
-  --bg-dark: #242220;
-  --bg-card: #2e2b28;
-  --bg-card-hover: #36332f;
-  --bg-input: #242220;
-  --border: #3d3a36;
-  --border-hover: #5a5550;
-  --accent: #c9a033;
-  --accent-hover: #d4ab3d;
-  --accent-dim: #b89428;
-  --accent-glow: rgba(201, 160, 51, 0.15);
-  --danger: #d04444;
-  --danger-hover: #e05555;
-  --success: #3da63d;
-  --success-hover: #4ab84a;
-  --text: #e0dbd3;
-  --text-dim: #a39a8e;
-  --text-muted: #8a8078;
-  --text-bright: #f0ebe5;
-  --skull: #c9a033;
-  --shadow: rgba(0, 0, 0, 0.3);
+  --bg-darkest: oklch(11% 0.010 58);
+  --bg-dark: oklch(15% 0.011 60);
+  --bg-card: oklch(19% 0.012 61);
+  --bg-card-hover: oklch(23% 0.012 61);
+  --bg-input: oklch(13% 0.009 59);
+  --border: oklch(27% 0.013 62);
+  --border-hover: oklch(37% 0.017 64);
+  --accent: oklch(69% 0.115 72);
+  --accent-hover: oklch(73% 0.120 73);
+  --accent-dim: oklch(63% 0.105 70);
+  --accent-glow: oklch(69% 0.115 72 / 0.15);
+  --danger: oklch(52% 0.175 20);
+  --danger-hover: oklch(58% 0.185 21);
+  --success: oklch(58% 0.15 148);
+  --success-hover: oklch(63% 0.16 148);
+  --text: oklch(86% 0.010 76);
+  --text-dim: oklch(62% 0.013 73);
+  --text-muted: oklch(54% 0.011 70);
+  --text-bright: oklch(93% 0.007 80);
+  --skill-color: oklch(65% 0.12 240);
+  --spell-color: oklch(63% 0.13 300);
+  --skull: oklch(69% 0.115 72);
+  --shadow: oklch(5% 0.008 58 / 0.45);
+  --treasury-positive: oklch(71% 0.09 180);
+  --treasury-negative: oklch(67% 0.14 22);
 }
 
 *, *::before, *::after {
@@ -67,7 +74,7 @@ html {
 }
 
 body {
-  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-family: var(--font-body);
   background: var(--bg-darkest);
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
   color: var(--text);
@@ -98,9 +105,9 @@ body {
 .app-title {
   font-family: var(--font-display);
   font-size: 1.5rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--accent);
-  letter-spacing: 2px;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
   display: flex;
   align-items: center;
@@ -282,26 +289,10 @@ body {
   overflow: hidden;
 }
 
-.roster-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-  background: linear-gradient(90deg, var(--accent-dim), var(--accent), var(--accent-dim));
-  opacity: 0;
-  transition: opacity var(--transition);
-}
-
 .roster-card:hover {
   border-color: var(--accent-dim);
-  transform: translateY(-2px) scale(1.005);
-  box-shadow: 0 4px 20px var(--shadow);
-}
-
-.roster-card:hover::before {
-  opacity: 1;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px var(--shadow);
 }
 
 .roster-card-name {
@@ -588,13 +579,22 @@ select.form-control {
   margin-bottom: 0.8rem;
   overflow: hidden;
   transition: border-color var(--transition);
-  border-left: 3px solid var(--border);
 }
 
-.warrior-card--hero { border-left-color: var(--accent); }
-.warrior-card--henchman { border-left-color: var(--border-hover); }
-.warrior-card--hired { border-left-color: #3a6a9e; }
-.warrior-card--custom { border-left-color: #7a3e98; }
+.warrior-card--hero .warrior-card-header {
+  background: color-mix(in oklch, var(--accent) 7%, var(--bg-card));
+}
+.warrior-card--hired .warrior-card-header {
+  background: color-mix(in oklch, var(--skill-color) 7%, var(--bg-card));
+}
+.warrior-card--custom .warrior-card-header {
+  background: color-mix(in oklch, var(--spell-color) 7%, var(--bg-card));
+}
+
+.warrior-card--hero .warrior-name { font-family: var(--font-display); letter-spacing: 0.3px; }
+.warrior-card--hero .warrior-type { color: var(--accent-dim); }
+.warrior-card--hired .warrior-type { color: var(--skill-color); }
+.warrior-card--custom .warrior-type { color: var(--spell-color); }
 
 .warrior-card:hover {
   border-color: var(--border-hover);
@@ -606,7 +606,7 @@ select.form-control {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
-  background: rgba(139, 105, 20, 0.04);
+  background: var(--bg-card);
 }
 
 .warrior-card-header .warrior-name {
@@ -706,18 +706,18 @@ select.form-control {
 }
 
 .tag.skill {
-  border-color: #3a6a9e;
-  color: #2a5580;
+  border-color: var(--skill-color);
+  color: var(--skill-color);
 }
 
 .tag.spell-tag {
-  border-color: #7a3e98;
-  color: #6a2d88;
+  border-color: var(--spell-color);
+  color: var(--spell-color);
 }
 
 .tag.injury {
   border-color: var(--danger);
-  color: #a03030;
+  color: var(--danger);
 }
 
 .tag .tag-remove {
@@ -820,17 +820,17 @@ select.form-control {
 
 .treasury-type-badge--income,
 .treasury-type-badge--sell {
-  background: rgba(124, 185, 168, 0.15);
+  background: color-mix(in oklch, var(--treasury-positive) 15%, transparent);
   color: var(--treasury-positive);
 }
 
 .treasury-type-badge--purchase {
-  background: rgba(200, 124, 124, 0.15);
+  background: color-mix(in oklch, var(--treasury-negative) 15%, transparent);
   color: var(--treasury-negative);
 }
 
 .treasury-type-badge--other {
-  background: rgba(180, 180, 180, 0.1);
+  background: color-mix(in oklch, var(--text-dim) 10%, transparent);
   color: var(--text-dim);
 }
 
@@ -1635,7 +1635,7 @@ select.form-control {
 }
 
 .sync-synced {
-  background: #4a8;
+  background: var(--success);
 }
 
 .sync-error {
@@ -1665,15 +1665,15 @@ select.form-control {
 }
 
 .tier-standard {
-  background: #e8f0fe;
-  color: #1a5fb4;
-  border: 1px solid #a0c4ff;
+  background: color-mix(in oklch, oklch(52% 0.14 248) 12%, var(--bg-input));
+  color: oklch(52% 0.14 248);
+  border: 1px solid color-mix(in oklch, oklch(52% 0.14 248) 35%, transparent);
 }
 
 .tier-pro {
-  background: #fef3e0;
-  color: #b8600a;
-  border: 1px solid #f0c060;
+  background: color-mix(in oklch, var(--accent) 12%, var(--bg-input));
+  color: var(--accent);
+  border: 1px solid color-mix(in oklch, var(--accent-dim) 40%, transparent);
 }
 
 .tier-link {
@@ -1772,7 +1772,7 @@ select.form-control {
 }
 
 .tier-cell.tier-current {
-  background: rgba(139, 105, 20, 0.04);
+  background: color-mix(in oklch, var(--accent) 5%, transparent);
 }
 
 .tier-cell.tier-yes {
@@ -1822,42 +1822,7 @@ body, .app-header, .modal, .warrior-card, .roster-card,
   background: rgba(0, 0, 0, 0.65);
 }
 
-/* Tag colors — skill and spell need explicit dark overrides for contrast */
-[data-theme="dark"] .tag.skill {
-  border-color: #5a9ad4;
-  color: #7ab8e8;
-}
-
-[data-theme="dark"] .tag.spell-tag {
-  border-color: #a86cc4;
-  color: #c490de;
-}
-
-[data-theme="dark"] .tag.injury {
-  color: #e06060;
-}
-
-/* Treasury Ledger dark mode */
-[data-theme="dark"] .treasury-type-badge--income,
-[data-theme="dark"] .treasury-type-badge--sell {
-  color: #9dd4c2;
-}
-
-[data-theme="dark"] .treasury-type-badge--purchase {
-  color: #e09898;
-}
-
-[data-theme="dark"] .treasury-amount--positive {
-  color: #9dd4c2;
-}
-
-[data-theme="dark"] .treasury-amount--negative {
-  color: #e09898;
-}
-
-[data-theme="dark"] .treasury-delete-btn:hover {
-  color: #e09898;
-}
+/* Tag and treasury colors adapt automatically via CSS variables per theme */
 
 /* Theme toggle button */
 .btn-theme-toggle {
