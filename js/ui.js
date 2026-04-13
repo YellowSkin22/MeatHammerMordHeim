@@ -446,6 +446,8 @@ const UI = {
     collapsedCards.forEach(id => {
       const body = document.getElementById('warrior-body-' + id);
       if (body) body.classList.add('collapsed');
+      const card = document.getElementById('warrior-' + id);
+      if (card) card.classList.add('card-collapsed');
     });
   },
 
@@ -506,6 +508,12 @@ const UI = {
             ${showTypeName ? `<span class="warrior-type">${warrior.typeName}</span>` : ''}
           </div>
           <span class="warrior-cost">${totalCost} gc</span>
+          <div class="stat-quickview">
+            ${['m','ws','bs','s','t','w','i','a','ld'].map(stat => {
+              const isModified = warrior.stats[stat] !== warrior.baseStats[stat];
+              return `<span class="qs-stat"><span class="qs-lbl">${stat.toUpperCase()}</span><span class="qs-val${isModified ? ' modified' : ''}">${warrior.stats[stat]}</span></span>`;
+            }).join('')}
+          </div>
         </div>
         <div class="warrior-card-body" id="warrior-body-${warrior.id}">
           <div class="form-group">
@@ -624,6 +632,8 @@ const UI = {
   toggleWarriorCard(id) {
     const body = document.getElementById('warrior-body-' + id);
     if (body) body.classList.toggle('collapsed');
+    const card = document.getElementById('warrior-' + id);
+    if (card) card.classList.toggle('card-collapsed');
   },
 
   // === ADD WARRIOR ===

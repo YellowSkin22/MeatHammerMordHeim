@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Issue #94 — Stat Quick View Mockup</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Pirata+One&display=swap" rel="stylesheet">
+<style>
+
+/* ── Design system ── */
+:root {
+  --bg-darkest: oklch(94% 0.016 78);
+  --bg-dark:    oklch(90% 0.022 76);
+  --bg-card:    oklch(99% 0.003 80);
+  --bg-input:   oklch(96% 0.010 80);
+  --border:     oklch(81% 0.024 74);
+  --border-hover: oklch(70% 0.032 70);
+  --accent:     oklch(45% 0.13 63);
+  --accent-dim: oklch(53% 0.13 66);
+  --skill-color: oklch(38% 0.12 245);
+  --spell-color: oklch(38% 0.13 305);
+  --text:       oklch(24% 0.022 56);
+  --text-dim:   oklch(41% 0.020 60);
+  --text-muted: oklch(42% 0.018 62);
+  --text-bright: oklch(16% 0.020 52);
+  --shadow:     oklch(38% 0.020 60 / 0.12);
+  --font-display: 'Pirata One', serif;
+  --font-body:   'Alegreya', Georgia, serif;
+  --radius: 4px;
+  --radius-lg: 8px;
+  --transition: 0.18s ease;
+}
+[data-theme="dark"] {
+  --bg-darkest: oklch(11% 0.010 58);
+  --bg-dark:    oklch(15% 0.011 60);
+  --bg-card:    oklch(19% 0.012 61);
+  --bg-input:   oklch(13% 0.009 59);
+  --border:     oklch(27% 0.013 62);
+  --border-hover: oklch(37% 0.017 64);
+  --accent:     oklch(69% 0.115 72);
+  --accent-dim: oklch(63% 0.105 70);
+  --skill-color: oklch(65% 0.12 240);
+  --spell-color: oklch(63% 0.13 300);
+  --text:       oklch(86% 0.010 76);
+  --text-dim:   oklch(62% 0.013 73);
+  --text-muted: oklch(54% 0.011 70);
+  --text-bright: oklch(93% 0.007 80);
+  --shadow:     oklch(5% 0.008 58 / 0.45);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--bg-darkest);
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+  padding: 2rem 1rem 4rem;
+}
+
+/* ── Page layout ── */
+.page-header {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.issue-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.page-title {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+  color: var(--text-dim);
+  font-size: 0.9rem;
+  max-width: 56ch;
+  line-height: 1.6;
+}
+
+/* ── Controls ── */
+.controls {
+  max-width: 720px;
+  margin: 0 auto 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-card);
+  color: var(--text);
+  font-size: 0.82rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+.btn:hover { border-color: var(--border-hover); background: var(--bg-input); }
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: oklch(11% 0.010 58);
+}
+.btn-primary:hover { opacity: 0.88; }
+
+/* ── Sections ── */
+.section {
+  max-width: 720px;
+  margin: 0 auto 2.5rem;
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.2rem;
+}
+
+.section-heading h2 {
+  font-family: var(--font-display);
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.section-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  padding: 0.15rem 0.5rem;
+  border-radius: 99px;
+  background: color-mix(in oklch, var(--text-muted) 12%, transparent);
+  color: var(--text-muted);
+}
+.section-badge.new {
+  background: color-mix(in oklch, var(--accent) 15%, transparent);
+  color: var(--accent);
+}
+
+.section-rule {
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+/* ── Warrior card ── */
+.warrior-card {
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: 0.6rem;
+  overflow: hidden;
+  transition: border-color var(--transition);
+}
+
+/* Type-specific header tints */
+.warrior-card--hero .warrior-card-header {
+  background: color-mix(in oklch, var(--accent) 7%, var(--bg-card));
+}
+.warrior-card--hired .warrior-card-header {
+  background: color-mix(in oklch, var(--skill-color) 7%, var(--bg-card));
+}
+
+/* Hero names in display font */
+.warrior-card--hero .warrior-name {
+  font-family: var(--font-display);
+  letter-spacing: 0.3px;
+}
+.warrior-card--hero .warrior-type  { color: var(--accent-dim); }
+.warrior-card--hired .warrior-type { color: var(--skill-color); }
+
+.warrior-card-header {
+  padding: 0.65rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  background: var(--bg-card);
+  user-select: none;
+  transition: background var(--transition);
+  gap: 0.75rem;
+}
+
+.warrior-card-header:hover { background: color-mix(in oklch, var(--border) 20%, var(--bg-card)); }
+.warrior-card--hero .warrior-card-header:hover {
+  background: color-mix(in oklch, var(--accent) 11%, var(--bg-card));
+}
+
+.header-left {
+  display: flex;
+  align-items: baseline;
+  gap: 0.45rem;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.warrior-name {
+  font-weight: 700;
+  color: var(--text-bright);
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.warrior-type {
+  color: var(--text-dim);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}
+
+/* ── Cost (shown when expanded) ── */
+.warrior-cost {
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* ── Stat quickview (shown when collapsed) ── */
+.stat-quickview {
+  display: none; /* hidden by default (card is expanded) */
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.qs-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+/* Mid-dot separator between stats */
+.qs-stat:not(:last-child)::after {
+  content: '·';
+  color: var(--border-hover);
+  font-size: 0.8rem;
+  align-self: center;
+  margin-left: 6px;
+  line-height: 1;
+}
+
+.qs-lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.qs-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1;
+}
+
+.qs-val.modified {
+  color: var(--accent);
+}
+
+/* ── Collapsed state ── */
+.warrior-card.collapsed .warrior-card-body { display: none; }
+.warrior-card.collapsed .warrior-cost      { display: none; }
+.warrior-card.collapsed .stat-quickview    { display: flex; }
+
+/* ── Card body ── */
+.warrior-card-body {
+  padding: 0.8rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+/* ── Stat line (full, in expanded body) ── */
+.stat-line {
+  display: flex;
+  gap: 2px;
+}
+
+.stat-cell { text-align: center; flex: 1; }
+
+.stat-label {
+  font-size: 0.63rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  padding: 0.2rem;
+  background: color-mix(in oklch, var(--accent) 8%, transparent);
+  border-radius: 3px 3px 0 0;
+}
+
+.stat-value {
+  font-size: 0.88rem;
+  font-weight: 700;
+  padding: 0.3rem;
+  background: var(--bg-input);
+  border-radius: 0 0 3px 3px;
+  color: var(--text-bright);
+}
+.stat-value.modified { color: var(--accent); }
+
+/* ── Stubs for expanded body ── */
+.body-stub {
+  margin-top: 0.7rem;
+  padding-top: 0.7rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.2rem 0.5rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  font-size: 0.72rem;
+  color: var(--text-dim);
+}
+.tag.equipment { border-color: var(--accent-dim); color: var(--accent); }
+.tag.skill     { border-color: var(--skill-color); color: var(--skill-color); }
+
+/* ── Toggle icon ── */
+.toggle-icon {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+  margin-left: auto; /* push to far right within header */
+}
+.warrior-card.collapsed .toggle-icon { transform: rotate(-90deg); }
+
+/* ── Annotation ── */
+.annotation {
+  margin: 1rem 0 0.5rem;
+  padding: 0.75rem 1rem;
+  background: color-mix(in oklch, var(--accent) 6%, var(--bg-dark));
+  border: 1px solid color-mix(in oklch, var(--accent) 20%, transparent);
+  border-radius: var(--radius);
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+.annotation strong { color: var(--accent); font-weight: 700; }
+
+/* ── Mobile ── */
+@media (max-width: 480px) {
+  .qs-lbl { font-size: 0.56rem; }
+  .qs-val { font-size: 0.74rem; }
+  .stat-quickview { gap: 5px; }
+  .qs-stat:not(:last-child)::after { margin-left: 3px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── Page header ── -->
+<div class="page-header">
+  <div class="issue-label">Issue #94 · Mockup</div>
+  <h1 class="page-title">Stat Quick View</h1>
+  <p class="page-subtitle">
+    When a warrior card is collapsed, the cost is replaced inline by the full 9-stat line.
+    Modified stats are highlighted in gold. Click any card header to toggle.
+  </p>
+</div>
+
+<!-- ── Controls ── -->
+<div class="controls">
+  <button class="btn btn-primary" onclick="toggleTheme()">Toggle Light / Dark</button>
+  <button class="btn" onclick="expandAll()">Expand All</button>
+  <button class="btn" onclick="collapseAll()">Collapse All</button>
+</div>
+
+<!-- ── CURRENT BEHAVIOUR ── -->
+<div class="section">
+  <div class="section-heading">
+    <h2>Current</h2>
+    <span class="section-badge">Before</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <!-- Hero card — current (expanded) -->
+  <div class="warrior-card warrior-card--hero" id="current-hero">
+    <div class="warrior-card-header" onclick="toggleCard('current-hero')">
+      <div class="header-left">
+        <span class="warrior-name">Reinhardt Schulze</span>
+        <span class="warrior-type">Captain</span>
+      </div>
+      <span class="warrior-cost">215 gc</span>
+      <!-- No stat quickview in current behaviour -->
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="warrior-card-body">
+      <div class="stat-line">
+        <div class="stat-cell"><div class="stat-label">M</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">WS</div><div class="stat-value modified">5</div></div>
+        <div class="stat-cell"><div class="stat-label">BS</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">S</div><div class="stat-value modified">4</div></div>
+        <div class="stat-cell"><div class="stat-label">T</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">W</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">I</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">A</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">Ld</div><div class="stat-value">8</div></div>
+      </div>
+      <div class="body-stub">
+        <span class="tag equipment">Sword</span>
+        <span class="tag equipment">Pistol</span>
+        <span class="tag equipment">Light Armour</span>
+        <span class="tag skill">Step Aside</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Henchman card — current (collapsed, showing only cost) -->
+  <div class="warrior-card collapsed" id="current-hench">
+    <div class="warrior-card-header" onclick="toggleCard('current-hench')">
+      <div class="header-left">
+        <span class="warrior-name">Swordsmen</span>
+        <span class="warrior-type">Henchman</span>
+      </div>
+      <span class="warrior-cost">90 gc</span>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="warrior-card-body">
+      <div class="stat-line">
+        <div class="stat-cell"><div class="stat-label">M</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">WS</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">BS</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">S</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">T</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">W</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">I</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">A</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">Ld</div><div class="stat-value">7</div></div>
+      </div>
+      <div class="body-stub">
+        <span class="tag equipment">Sword</span>
+        <span class="tag equipment">Shield</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>Problem:</strong> Collapsed cards show only the cost — no way to check stats without expanding each card individually, causing unnecessary scrolling during play.
+  </div>
+</div>
+
+
+<!-- ── PROPOSED BEHAVIOUR ── -->
+<div class="section">
+  <div class="section-heading">
+    <h2>Proposed</h2>
+    <span class="section-badge new">After</span>
+    <div class="section-rule"></div>
+  </div>
+
+  <!-- Hero — expanded (cost visible, no stat quickview yet) -->
+  <div class="warrior-card warrior-card--hero" id="proposed-hero">
+    <div class="warrior-card-header" onclick="toggleCard('proposed-hero')">
+      <div class="header-left">
+        <span class="warrior-name">Reinhardt Schulze</span>
+        <span class="warrior-type">Captain</span>
+      </div>
+      <span class="warrior-cost">215 gc</span>
+      <div class="stat-quickview" aria-hidden="true">
+        <span class="qs-stat"><span class="qs-lbl">M</span><span class="qs-val">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">WS</span><span class="qs-val modified">5</span></span>
+        <span class="qs-stat"><span class="qs-lbl">BS</span><span class="qs-val">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">S</span><span class="qs-val modified">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">T</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">W</span><span class="qs-val">1</span></span>
+        <span class="qs-stat"><span class="qs-lbl">I</span><span class="qs-val">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">A</span><span class="qs-val">1</span></span>
+        <span class="qs-stat"><span class="qs-lbl">Ld</span><span class="qs-val">8</span></span>
+      </div>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="warrior-card-body">
+      <div class="stat-line">
+        <div class="stat-cell"><div class="stat-label">M</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">WS</div><div class="stat-value modified">5</div></div>
+        <div class="stat-cell"><div class="stat-label">BS</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">S</div><div class="stat-value modified">4</div></div>
+        <div class="stat-cell"><div class="stat-label">T</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">W</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">I</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">A</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">Ld</div><div class="stat-value">8</div></div>
+      </div>
+      <div class="body-stub">
+        <span class="tag equipment">Sword</span>
+        <span class="tag equipment">Pistol</span>
+        <span class="tag equipment">Light Armour</span>
+        <span class="tag skill">Step Aside</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Henchman — collapsed (stat quickview visible) -->
+  <div class="warrior-card collapsed" id="proposed-hench">
+    <div class="warrior-card-header" onclick="toggleCard('proposed-hench')">
+      <div class="header-left">
+        <span class="warrior-name">Swordsmen</span>
+        <span class="warrior-type">Henchman</span>
+      </div>
+      <span class="warrior-cost">90 gc</span>
+      <div class="stat-quickview">
+        <span class="qs-stat"><span class="qs-lbl">M</span><span class="qs-val">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">WS</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">BS</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">S</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">T</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">W</span><span class="qs-val">1</span></span>
+        <span class="qs-stat"><span class="qs-lbl">I</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">A</span><span class="qs-val">1</span></span>
+        <span class="qs-stat"><span class="qs-lbl">Ld</span><span class="qs-val">7</span></span>
+      </div>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="warrior-card-body">
+      <div class="stat-line">
+        <div class="stat-cell"><div class="stat-label">M</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">WS</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">BS</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">S</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">T</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">W</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">I</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">A</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">Ld</div><div class="stat-value">7</div></div>
+      </div>
+      <div class="body-stub">
+        <span class="tag equipment">Sword</span>
+        <span class="tag equipment">Shield</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Hired Sword — collapsed, with modified stat -->
+  <div class="warrior-card warrior-card--hired collapsed" id="proposed-hired">
+    <div class="warrior-card-header" onclick="toggleCard('proposed-hired')">
+      <div class="header-left">
+        <span class="warrior-name">Eldred the Swift</span>
+        <span class="warrior-type">Hired Sword</span>
+      </div>
+      <span class="warrior-cost">50 gc</span>
+      <div class="stat-quickview">
+        <span class="qs-stat"><span class="qs-lbl">M</span><span class="qs-val modified">5</span></span>
+        <span class="qs-stat"><span class="qs-lbl">WS</span><span class="qs-val">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">BS</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">S</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">T</span><span class="qs-val">3</span></span>
+        <span class="qs-stat"><span class="qs-lbl">W</span><span class="qs-val">1</span></span>
+        <span class="qs-stat"><span class="qs-lbl">I</span><span class="qs-val">4</span></span>
+        <span class="qs-stat"><span class="qs-lbl">A</span><span class="qs-val">1</span></span>
+        <span class="qs-stat"><span class="qs-lbl">Ld</span><span class="qs-val">7</span></span>
+      </div>
+      <span class="toggle-icon">▼</span>
+    </div>
+    <div class="warrior-card-body">
+      <div class="stat-line">
+        <div class="stat-cell"><div class="stat-label">M</div><div class="stat-value modified">5</div></div>
+        <div class="stat-cell"><div class="stat-label">WS</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">BS</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">S</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">T</div><div class="stat-value">3</div></div>
+        <div class="stat-cell"><div class="stat-label">W</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">I</div><div class="stat-value">4</div></div>
+        <div class="stat-cell"><div class="stat-label">A</div><div class="stat-value">1</div></div>
+        <div class="stat-cell"><div class="stat-label">Ld</div><div class="stat-value">7</div></div>
+      </div>
+      <div class="body-stub">
+        <span class="tag equipment">Sword</span>
+        <span class="tag equipment">Buckler</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="annotation">
+    <strong>Collapsed:</strong> Stats appear inline, replacing the cost. Gold values indicate a characteristic advance.
+    <strong>Expanded:</strong> Cost returns, stat quickview hides — the full stat line in the body takes over.
+  </div>
+</div>
+
+<script>
+function toggleCard(id) {
+  document.getElementById(id).classList.toggle('collapsed');
+}
+
+function collapseAll() {
+  document.querySelectorAll('.warrior-card').forEach(c => c.classList.add('collapsed'));
+}
+
+function expandAll() {
+  document.querySelectorAll('.warrior-card').forEach(c => c.classList.remove('collapsed'));
+}
+
+function toggleTheme() {
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+}
+</script>
+</body>
+</html>
