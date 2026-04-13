@@ -680,6 +680,49 @@ select.form-control {
   color: var(--accent);
 }
 
+/* ===== STAT QUICK VIEW ===== */
+.stat-quickview {
+  display: none;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+.qs-stat {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.qs-stat:not(:last-child)::after {
+  content: '·';
+  color: var(--border-hover);
+  font-size: 0.8rem;
+  align-self: center;
+  margin-left: 6px;
+  line-height: 1;
+}
+
+.qs-lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.2px;
+  line-height: 1;
+}
+
+.qs-val {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--text-bright);
+  line-height: 1;
+}
+
+.qs-val.modified { color: var(--accent); }
+
+.warrior-card.card-collapsed .warrior-cost   { display: none; }
+.warrior-card.card-collapsed .stat-quickview { display: flex; }
+
 /* ===== EQUIPMENT / SKILLS TAGS ===== */
 .tag-list {
   display: flex;
@@ -1267,6 +1310,12 @@ select.form-control {
     font-size: 0.78rem;
     white-space: nowrap;
   }
+
+  /* Stat quick view: compact on mobile */
+  .qs-lbl { font-size: 0.56rem; }
+  .qs-val { font-size: 0.74rem; }
+  .stat-quickview { gap: 5px; }
+  .qs-stat:not(:last-child)::after { margin-left: 3px; }
 
   /* Stat line: compact */
   .stat-cell {
