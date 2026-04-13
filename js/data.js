@@ -87,7 +87,7 @@ const DataService = {
     // Fetch warband index first, then all warband files in parallel
     const indexData = await this.fetchJSON('data/warbandFiles/index.json?' + v);
 
-    const [equipment, skills, magic, hiredSwords, maxStats, injuries, advancement, specialRules, ...rawWarbandFiles] =
+    const [equipment, skills, magic, hiredSwords, maxStats, injuries, advancement, ...rawWarbandFiles] =
       await Promise.all([
         this.fetchJSON('data/equipment.json?' + v),
         this.fetchJSON('data/skills.json?' + v),
@@ -96,7 +96,6 @@ const DataService = {
         this.fetchJSON('data/maxStats.json?' + v),
         this.fetchJSON('data/injuries.json?' + v),
         this.fetchJSON('data/advancement.json?' + v),
-        this.fetchJSON('data/special_rules.json?' + v),
         ...indexData.map(entry =>
           this.fetchJSON(entry.path + '?' + v).catch(err => {
             console.warn(`Warning: failed to load ${entry.path}: ${err.message}`);
@@ -119,7 +118,27 @@ const DataService = {
     this.maxStats    = maxStats;     // raw array
     this.injuries    = injuries;
     this.advancement = advancement;
-    this.specialRules = specialRules.specialRules;
+
+    // Build special rule descriptions from warband files and hired swords.
+    // First occurrence wins — warband files are iterated in load order.
+    const specialRulesMap = {};
+    this.warbandFiles.forEach(wf => {
+      (wf.fighters || []).forEach(fighter => {
+        (fighter.specialRules || []).forEach(r => {
+          if (r.rulename && r.ruleFull && !(r.rulename in specialRulesMap)) {
+            specialRulesMap[r.rulename] = this._stripHtml(r.ruleFull);
+          }
+        });
+      });
+    });
+    Object.values(hiredSwords).forEach(hs => {
+      (hs.specialRules || []).forEach(r => {
+        if (r.rulename && r.ruleFull && !(r.rulename in specialRulesMap)) {
+          specialRulesMap[r.rulename] = this._stripHtml(r.ruleFull);
+        }
+      });
+    });
+    this.specialRules = specialRulesMap;
   },
 
   async fetchJSON(path) {

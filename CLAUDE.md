@@ -45,7 +45,7 @@ Bootstrap sequence: `Cloud.init()` → `DataService.loadAll()` → `UI.init()` �
 ## Key Design Decisions
 
 - **Warrior cost is baked in at creation time** — `createWarrior()` copies `template.cost` into the warrior object. Changing costs in `warbands.json` only affects newly created warriors.
-- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from Uncle-Mel/JSON-derulo; only hand-maintained files (`injuries.json`, `advancement.json`, `special_rules.json`) should be edited directly.
+- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from Uncle-Mel/JSON-derulo; only hand-maintained files (`injuries.json`, `advancement.json`) should be edited directly.
 - **Spell access** — `UI.hasSpellAccess()` first checks `template.spellAccess.length > 0` (computed at load time from `magic.json` by `DataService._buildSpellAccess()`). Falls back to checking `warrior.specialRules` for `'Wizard'`, `'Warrior Wizard'`, `'Prayers of Sigmar'`, `'Magic User'`, `'Prayers'`, `'Spellcaster'`, or `'Prayercaster'`. The fallback covers hired swords, custom warriors, and old data.
 - **Equipment access** — Heroes and henchmen see items filtered by `DataService.canWarbandAccess(item, warbandName)` against `mergedEquipment.json`'s `permittedWarbands` / `excludedWarbands` fields. Hired swords use the `equipmentAccess` category array from `hired_swords.json` (all entries default to `['hand_to_hand', 'missiles', 'armour']` — mapped to Uncle-Mel types via `DataService.LEGACY_CATEGORY_MAP`).
 - **Lad's Got Talent (promoted henchmen)** — `RosterModel.promoteHenchmanToHero()` creates a hero from a henchman, copying stats/equipment/injuries/experience. The promoted warrior goes into `roster.heroes[]` (not a separate array) with `isPromotedHenchman: true` and a user-chosen `skillAccess: [catId1, catId2]`. `baseStats` is set to match `stats` at promotion time so existing characteristic gains don't show as "modified". Max heroes is validated before promotion using `warband.heroes.reduce((sum, h) => sum + h.max, 0)`.
@@ -169,7 +169,7 @@ node scripts/sync-mordheim-data.js --force   # re-process all files even if SHA 
 | `data/injuries.json` | Hero and henchman injury tables — **hand-maintained** (no Uncle-Mel equivalent) |
 | `data/advancement.json` | Experience thresholds, max stat values, advancement rules — **hand-maintained** |
 | `data/hired_swords.json` | Hired Sword templates with stats and warband allow-lists — **synced** from Uncle-Mel's `hiredSwords.json`. `spellAccess` is derived from `HIRED_SWORD_SPELL_ACCESS_MAP` in the sync script; `equipmentAccess` defaults to all three categories (Uncle-Mel carries no category data). Uses `warbandAllowList` (allow-list), not `warbandRestrictions` (deny-list). |
-| `data/special_rules.json` | 135 special rule descriptions keyed by rule name, used for tooltips — **hand-maintained** |
+| ~~`data/special_rules.json`~~ | Deleted — special rule descriptions are now mined at load time from `ruleFull` fields in warband files and `hiredSwords.json`. `DataService.specialRules` is built in `loadAll()` with first-occurrence-wins semantics. |
 
 ### Validating JSON
 
@@ -184,7 +184,7 @@ Warbands are synced from Uncle-Mel/JSON-derulo — do not hand-edit `data/warban
 
 1. Contribute the warband JSON to Uncle-Mel's repo and run `scripts/sync-mordheim-data.js` — the sync script handles transformation and subfaction expansion.
 2. If the warband needs a new **warband-specific skill category**, add it to `data/skills.json` manually and add an entry to `SPECIAL_SKILL_CATEGORY_MAP` in `sync-mordheim-data.js` so Special Skills route into it.
-3. If the warband introduces new **special rules**, add them to `data/special_rules.json` for tooltip descriptions.
+3. If the warband introduces new **special rules**, ensure the warband's fighter templates include `ruleFull` on each special rule entry — `DataService.loadAll()` mines these automatically for tooltips. No separate file to maintain.
 4. Spell-casting heroes are detected at load time via `DataService._buildSpellAccess()` — no manual `spellAccess` entries needed if the spell list is in `magic.json`.
 
 ## Warbands (53 total)
