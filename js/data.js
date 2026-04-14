@@ -164,17 +164,17 @@ const DataService = {
   },
 
   // Returns flat list of picker entries — one per subfaction (or one for non-subfaction warbands).
-  // Each entry: { id, name, source }
+  // Each entry: { id, name, source, grade }
   getAllWarbands() {
     const result = [];
     for (const wf of this.warbandFiles) {
       const opts = wf.subfactions?.options;
       if (opts && opts.length > 0) {
         for (const sub of opts) {
-          result.push({ id: this.slugify(sub), name: sub, source: wf.source || '' });
+          result.push({ id: this.slugify(sub), name: sub, source: wf.source || '', grade: wf._grade || '' });
         }
       } else {
-        result.push({ id: wf.id, name: wf.name, source: wf.source || '' });
+        result.push({ id: wf.id, name: wf.name, source: wf.source || '', grade: wf._grade || '' });
       }
     }
     return result;

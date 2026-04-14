@@ -7,7 +7,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400;0,700;1,400&family=Pirata+One&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=15">
+  <link rel="stylesheet" href="css/style.css?v=16">
   <script>
     // Apply theme before paint to prevent flash
     (function() {
@@ -308,9 +308,24 @@
         </div>
         <div class="form-group">
           <label>Warband Type</label>
-          <select id="create-warband-select" class="form-control" onchange="UI.onWarbandSelectChange()">
-            <option value="">-- Select Warband --</option>
-          </select>
+          <input type="hidden" id="create-warband-select">
+          <div class="warband-picker" id="warband-picker">
+            <button type="button" class="picker-trigger" id="picker-trigger"
+                    onclick="UI.toggleWarbandPicker()">
+              <span class="picker-trigger-text" id="picker-trigger-text">— Select Warband —</span>
+              <span class="picker-chevron">&#9660;</span>
+            </button>
+            <div class="picker-panel" id="picker-panel">
+              <div class="picker-search-wrap">
+                <span class="picker-search-icon">&#128269;</span>
+                <input type="text" class="picker-search" id="picker-search"
+                       placeholder="Search warbands…"
+                       oninput="UI.filterWarbandPicker(this.value)"
+                       autocomplete="off">
+              </div>
+              <div class="picker-list" id="picker-list"></div>
+            </div>
+          </div>
         </div>
         <div class="form-group">
           <label for="create-starting-gold">Starting Gold (gc)</label>
@@ -485,10 +500,10 @@
   <!-- ===== SCRIPTS ===== -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="js/cloud.js?v=10"></script>
-  <script src="js/data.js?v=15"></script>
+  <script src="js/data.js?v=16"></script>
   <script src="js/storage.js?v=8"></script>
   <script src="js/roster.js?v=10"></script>
-  <script src="js/ui.js?v=41"></script>
+  <script src="js/ui.js?v=42"></script>
   <script>
     // Boot the app
     (async function() {

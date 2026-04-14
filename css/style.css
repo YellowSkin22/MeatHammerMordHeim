@@ -1841,6 +1841,184 @@ select.form-control {
   .tier-table th, .tier-table td { padding: 0.4rem 0.5rem; font-size: 0.78rem; }
 }
 
+/* ===== WARBAND PICKER ===== */
+
+.warband-picker {
+  position: relative;
+}
+
+.picker-trigger {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.9rem;
+  font-family: inherit;
+  cursor: pointer;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  transition: border-color var(--transition), box-shadow var(--transition), border-radius var(--transition);
+}
+
+.picker-trigger:hover {
+  border-color: var(--border-hover);
+}
+
+.picker-trigger.open {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent-glow);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.picker-trigger-text {
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.picker-trigger-text.picker-placeholder {
+  color: var(--text-muted);
+}
+
+.picker-chevron {
+  flex-shrink: 0;
+  font-size: 0.6rem;
+  color: var(--text-dim);
+  transition: transform var(--transition);
+}
+
+.picker-trigger.open .picker-chevron {
+  transform: rotate(180deg);
+}
+
+.picker-panel {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--bg-dark);
+  border: 1px solid var(--accent);
+  border-top: none;
+  border-radius: 0 0 var(--radius) var(--radius);
+  box-shadow: 0 8px 24px var(--shadow);
+  z-index: 300;
+  overflow: hidden;
+}
+
+.picker-panel.open {
+  display: block;
+}
+
+.picker-search-wrap {
+  position: relative;
+  padding: 0.4rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-darkest);
+}
+
+.picker-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.picker-search {
+  width: 100%;
+  padding: 0.4rem 0.6rem 0.4rem 2rem;
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-size: 0.875rem;
+  font-family: inherit;
+  transition: border-color var(--transition);
+}
+
+.picker-search:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+.picker-list {
+  max-height: 220px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.picker-list::-webkit-scrollbar { width: 4px; }
+.picker-list::-webkit-scrollbar-track { background: transparent; }
+.picker-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+.picker-group-header {
+  padding: 0.3rem 0.8rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  background: var(--bg-darkest);
+  border-top: 1px solid var(--border);
+  position: sticky;
+  top: 0;
+}
+
+.picker-group-header:first-child {
+  border-top: none;
+}
+
+.picker-item {
+  padding: 0.4rem 0.8rem;
+  cursor: pointer;
+  font-size: 0.875rem;
+  color: var(--text);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  transition: background var(--transition), color var(--transition);
+}
+
+.picker-item:hover {
+  background: var(--bg-card-hover);
+  color: var(--accent);
+}
+
+.picker-item.selected {
+  background: var(--accent-glow);
+  color: var(--accent);
+}
+
+.picker-item-source {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+
+.picker-item:hover .picker-item-source,
+.picker-item.selected .picker-item-source {
+  color: var(--accent-dim);
+}
+
+.picker-empty {
+  padding: 0.8rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
 /* ===== DARK MODE OVERRIDES ===== */
 
 /* Smooth theme transition */

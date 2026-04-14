@@ -262,17 +262,95 @@ const UI = {
         return;
       }
     }
-    const modal = document.getElementById('create-modal');
-    const select = document.getElementById('create-warband-select');
-    select.innerHTML = '<option value="">-- Select Warband --</option>' +
-      DataService.getAllWarbands()
-        .sort((a, b) => a.name.localeCompare(b.name))
-        .map(w => `<option value="${w.id}">${this.esc(w.name)} (${this.esc(w.source)})</option>`)
-        .join('');
     document.getElementById('create-roster-name').value = '';
     document.getElementById('create-starting-gold').value = '500';
     document.getElementById('warband-description').textContent = '';
-    modal.classList.add('active');
+    document.getElementById('create-warband-select').value = '';
+    document.getElementById('picker-trigger-text').textContent = '— Select Warband —';
+    document.getElementById('picker-trigger-text').classList.add('picker-placeholder');
+    this._renderWarbandPickerList('');
+    this._closeWarbandPicker();
+    document.getElementById('create-modal').classList.add('active');
+  },
+
+  toggleWarbandPicker() {
+    const panel = document.getElementById('picker-panel');
+    if (panel.classList.contains('open')) {
+      this._closeWarbandPicker();
+    } else {
+      this._openWarbandPicker();
+    }
+  },
+
+  _openWarbandPicker() {
+    const trigger = document.getElementById('picker-trigger');
+    const panel = document.getElementById('picker-panel');
+    const search = document.getElementById('picker-search');
+    trigger.classList.add('open');
+    panel.classList.add('open');
+    search.value = '';
+    this._renderWarbandPickerList('');
+    setTimeout(() => {
+      search.focus();
+      const sel = panel.querySelector('.picker-item.selected');
+      if (sel) sel.scrollIntoView({ block: 'nearest' });
+    }, 20);
+  },
+
+  _closeWarbandPicker() {
+    document.getElementById('picker-trigger').classList.remove('open');
+    document.getElementById('picker-panel').classList.remove('open');
+  },
+
+  _renderWarbandPickerList(query) {
+    const list = document.getElementById('picker-list');
+    const q = query.trim().toLowerCase();
+    const currentId = document.getElementById('create-warband-select').value;
+    const gradeLabel = { '1a': 'Grade 1a', '1b': 'Grade 1b', '1c': 'Grade 1c' };
+    const gradeOrder = ['1a', '1b', '1c'];
+
+    const groups = {};
+    for (const w of DataService.getAllWarbands()) {
+      if (q && !w.name.toLowerCase().includes(q)) continue;
+      const g = w.grade || 'other';
+      if (!groups[g]) groups[g] = [];
+      groups[g].push(w);
+    }
+
+    let html = '';
+    let total = 0;
+    for (const g of gradeOrder) {
+      const items = groups[g];
+      if (!items) continue;
+      const sorted = items.slice().sort((a, b) => a.name.localeCompare(b.name));
+      html += `<div class="picker-group-header">${this.esc(gradeLabel[g] || g)}</div>`;
+      for (const w of sorted) {
+        total++;
+        const sel = w.id === currentId ? ' selected' : '';
+        html += `<div class="picker-item${sel}" data-id="${this.escAttr(w.id)}"
+                      onclick="UI.selectWarbandItem('${this.escAttr(w.id)}')">${
+          this.esc(w.name)}<span class="picker-item-source">${this.esc(w.source)}</span></div>`;
+      }
+    }
+    if (total === 0) {
+      html = `<div class="picker-empty">No warbands match &ldquo;${this.esc(query)}&rdquo;</div>`;
+    }
+    list.innerHTML = html;
+  },
+
+  filterWarbandPicker(query) {
+    this._renderWarbandPickerList(query);
+  },
+
+  selectWarbandItem(id) {
+    const w = DataService.getAllWarbands().find(x => x.id === id);
+    if (!w) return;
+    document.getElementById('create-warband-select').value = id;
+    const triggerText = document.getElementById('picker-trigger-text');
+    triggerText.textContent = w.name;
+    triggerText.classList.remove('picker-placeholder');
+    this._closeWarbandPicker();
+    this.onWarbandSelectChange();
   },
 
   closeCreateModal() {
@@ -2158,6 +2236,15 @@ const UI = {
       overlay.addEventListener('click', (e) => {
         if (e.target === overlay) overlay.classList.remove('active');
       });
+    });
+
+    // Close warband picker on outside click or Escape
+    document.addEventListener('click', (e) => {
+      const picker = document.getElementById('warband-picker');
+      if (picker && !picker.contains(e.target)) this._closeWarbandPicker();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') this._closeWarbandPicker();
     });
 
     // Close confirm overlay
