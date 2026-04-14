@@ -275,6 +275,7 @@ const UI = {
 
   toggleWarbandPicker() {
     const panel = document.getElementById('picker-panel');
+    if (!panel) return;
     if (panel.classList.contains('open')) {
       this._closeWarbandPicker();
     } else {
@@ -286,6 +287,7 @@ const UI = {
     const trigger = document.getElementById('picker-trigger');
     const panel = document.getElementById('picker-panel');
     const search = document.getElementById('picker-search');
+    if (!trigger || !panel || !search) return;
     trigger.classList.add('open');
     panel.classList.add('open');
     search.value = '';
@@ -298,14 +300,18 @@ const UI = {
   },
 
   _closeWarbandPicker() {
-    document.getElementById('picker-trigger').classList.remove('open');
-    document.getElementById('picker-panel').classList.remove('open');
+    const trigger = document.getElementById('picker-trigger');
+    const panel = document.getElementById('picker-panel');
+    if (!trigger || !panel) return;
+    trigger.classList.remove('open');
+    panel.classList.remove('open');
   },
 
   _renderWarbandPickerList(query) {
     const list = document.getElementById('picker-list');
+    if (!list) return;
     const q = query.trim().toLowerCase();
-    const currentId = document.getElementById('create-warband-select').value;
+    const currentId = document.getElementById('create-warband-select')?.value || '';
     const gradeLabel = { '1a': 'Grade 1a', '1b': 'Grade 1b', '1c': 'Grade 1c' };
     const gradeOrder = ['1a', '1b', '1c'];
 
@@ -327,13 +333,15 @@ const UI = {
       for (const w of sorted) {
         total++;
         const sel = w.id === currentId ? ' selected' : '';
-        html += `<div class="picker-item${sel}" data-id="${this.escAttr(w.id)}"
-                      onclick="UI.selectWarbandItem('${this.escAttr(w.id)}')">${
+        html += `<div class="picker-item${sel}" data-id="${this.escAttr(w.id)}">${
           this.esc(w.name)}<span class="picker-item-source">${this.esc(w.source)}</span></div>`;
       }
     }
     if (total === 0) {
-      html = `<div class="picker-empty">No warbands match &ldquo;${this.esc(query)}&rdquo;</div>`;
+      const trimmedQuery = query.trim();
+      html = trimmedQuery
+        ? `<div class="picker-empty">No warbands match &ldquo;${this.esc(trimmedQuery)}&rdquo;</div>`
+        : `<div class="picker-empty">No warbands available.</div>`;
     }
     list.innerHTML = html;
   },
@@ -344,11 +352,17 @@ const UI = {
 
   selectWarbandItem(id) {
     const w = DataService.getAllWarbands().find(x => x.id === id);
-    if (!w) return;
+    if (!w) {
+      this._closeWarbandPicker();
+      this.toast('Could not select warband — please refresh and try again.', 'error');
+      return;
+    }
     document.getElementById('create-warband-select').value = id;
     const triggerText = document.getElementById('picker-trigger-text');
-    triggerText.textContent = w.name;
-    triggerText.classList.remove('picker-placeholder');
+    if (triggerText) {
+      triggerText.textContent = w.name;
+      triggerText.classList.remove('picker-placeholder');
+    }
     this._closeWarbandPicker();
     this.onWarbandSelectChange();
   },
@@ -368,10 +382,10 @@ const UI = {
       if (goldInput) goldInput.value = startingGc;
       const lore = DataService._stripHtml(warbandFile.lore || warbandFile.warbandRules?.choiceFluff || '')
         .replace(/\s+/g, ' ').trim().slice(0, 300);
-      desc.textContent = lore;
+      if (desc) desc.textContent = lore;
     } else {
       if (goldInput) goldInput.value = '500';
-      desc.textContent = '';
+      if (desc) desc.textContent = '';
     }
   },
 
@@ -2238,13 +2252,23 @@ const UI = {
       });
     });
 
-    // Close warband picker on outside click or Escape
+    // Warband picker: delegated item selection (avoids inline onclick XSS risk)
+    document.getElementById('picker-list').addEventListener('click', (e) => {
+      const item = e.target.closest('.picker-item');
+      if (item) this.selectWarbandItem(item.dataset.id);
+    });
+
+    // Warband picker: close on outside click or Escape
     document.addEventListener('click', (e) => {
+      const panel = document.getElementById('picker-panel');
+      if (!panel?.classList.contains('open')) return;
       const picker = document.getElementById('warband-picker');
       if (picker && !picker.contains(e.target)) this._closeWarbandPicker();
     });
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') this._closeWarbandPicker();
+      if (e.key === 'Escape' && document.getElementById('picker-panel')?.classList.contains('open')) {
+        this._closeWarbandPicker();
+      }
     });
 
     // Close confirm overlay

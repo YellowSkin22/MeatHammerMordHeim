@@ -166,6 +166,7 @@ const DataService = {
   // Returns flat list of picker entries — one per subfaction (or one for non-subfaction warbands).
   // Each entry: { id, name, source, grade }
   getAllWarbands() {
+    if (!this.warbandFiles) return [];
     const result = [];
     for (const wf of this.warbandFiles) {
       const opts = wf.subfactions?.options;
