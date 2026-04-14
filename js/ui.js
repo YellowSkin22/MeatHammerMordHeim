@@ -1212,7 +1212,7 @@ const UI = {
       accessSubtypes = fighter ? DataService.resolveSkillAccess(fighter, subfaction) : [];
     }
 
-    this._skillTarget = { listType, index };
+    this._skillTarget = { listType, index, warriorId: warrior.id };
     const modal = document.getElementById('skill-modal');
     const body  = document.getElementById('skill-modal-body');
     let html = '';
@@ -1266,7 +1266,7 @@ const UI = {
       spellListIds = warrior.spellAccess || [];
     }
 
-    this._spellTarget = { listType, index };
+    this._spellTarget = { listType, index, warriorId: warrior.id };
     const modal = document.getElementById('spell-modal');
     const body  = document.getElementById('spell-modal-body');
     let html = '';
@@ -2269,8 +2269,16 @@ const UI = {
     document.getElementById('skill-modal-body').addEventListener('click', (e) => {
       const btn = e.target.closest('button[data-skill-id]');
       if (!btn || btn.disabled) return;
-      const { listType, index } = this._skillTarget || {};
-      if (listType == null) return;
+      const { listType, index, warriorId } = this._skillTarget || {};
+      if (listType == null || index == null) {
+        console.warn('skill-modal click: no valid target stored', this._skillTarget);
+        return;
+      }
+      if (this.currentRoster?.[listType]?.[index]?.id !== warriorId) {
+        console.warn('skill-modal click: stale target — warrior mismatch, ignoring');
+        document.getElementById('skill-modal')?.classList.remove('active');
+        return;
+      }
       this.selectSkill(listType, index, btn.dataset.skillId);
     });
 
@@ -2278,8 +2286,16 @@ const UI = {
     document.getElementById('spell-modal-body').addEventListener('click', (e) => {
       const btn = e.target.closest('button[data-spell-id]');
       if (!btn || btn.disabled) return;
-      const { listType, index } = this._spellTarget || {};
-      if (listType == null) return;
+      const { listType, index, warriorId } = this._spellTarget || {};
+      if (listType == null || index == null) {
+        console.warn('spell-modal click: no valid target stored', this._spellTarget);
+        return;
+      }
+      if (this.currentRoster?.[listType]?.[index]?.id !== warriorId) {
+        console.warn('spell-modal click: stale target — warrior mismatch, ignoring');
+        document.getElementById('spell-modal')?.classList.remove('active');
+        return;
+      }
       this.selectSpell(listType, index, btn.dataset.spellId);
     });
 
