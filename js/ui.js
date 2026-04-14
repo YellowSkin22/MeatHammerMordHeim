@@ -2,6 +2,13 @@
 const UI = {
   currentRoster: null,
 
+  _canAccess(feature) {
+    return typeof Cloud !== 'undefined' && Cloud.canAccess(feature);
+  },
+  _getMaxRosters() {
+    return typeof Cloud !== 'undefined' ? Cloud.getMaxRosters() : 3;
+  },
+
   init() {
     this.initTheme();
     this.bindGlobalEvents();
@@ -190,7 +197,7 @@ const UI = {
   renderRosterList() {
     const rosters = Storage.getAllRosters();
     const grid = document.getElementById('roster-grid');
-    const maxRosters = (typeof Cloud !== 'undefined') ? Cloud.getMaxRosters() : 3;
+    const maxRosters = this._getMaxRosters();
     const atLimit = rosters.length >= maxRosters;
 
     // Update header buttons visibility
@@ -202,7 +209,7 @@ const UI = {
     }
     const headerImport = document.querySelector('.header-actions .btn:not(.btn-primary)');
     if (headerImport) {
-      const canImport = (typeof Cloud !== 'undefined') ? Cloud.canAccess('import_export') : false;
+      const canImport = this._canAccess('import_export');
       headerImport.disabled = !canImport;
       if (!canImport) headerImport.title = 'Import requires Standard tier or above';
       else headerImport.title = '';
@@ -237,7 +244,7 @@ const UI = {
             <div class="roster-card-stat">Battles: <strong>${r.battleLog.length}</strong></div>
           </div>
           <div class="roster-card-actions" onclick="event.stopPropagation()">
-            <button class="btn btn-sm" onclick="UI.exportRoster('${r.id}')" ${(typeof Cloud !== 'undefined' && !Cloud.canAccess('import_export')) ? 'disabled title="Requires Standard tier"' : ''}>Export</button>
+            <button class="btn btn-sm" onclick="UI.exportRoster('${r.id}')" ${!this._canAccess('import_export') ? 'disabled title="Requires Standard tier"' : ''}>Export</button>
             <button class="btn btn-sm btn-danger" onclick="UI.confirmDeleteRoster('${r.id}')">Delete</button>
           </div>
         </div>
@@ -437,7 +444,7 @@ const UI = {
 
     // Custom section
     const customContent = document.getElementById('custom-content');
-    const canCustom = (typeof Cloud !== 'undefined') ? Cloud.canAccess('custom_warriors') : false;
+    const canCustom = this._canAccess('custom_warriors');
     const customAddBtns = document.getElementById('custom-add-buttons');
     if (!canCustom) {
       customContent.innerHTML = '<div class="locked-message"><span class="lock-icon">&#128274;</span> Custom warriors require <strong>Pro</strong> tier. <a class="tier-link" onclick="UI.showTierOverview()">View Plans</a></div>';
@@ -532,7 +539,7 @@ const UI = {
         </div>
         <div class="warrior-card-body" id="warrior-body-${warrior.id}">
           <div class="form-group">
-            ${(typeof Cloud !== 'undefined' && Cloud.canAccess('warrior_names'))
+            ${this._canAccess('warrior_names')
               ? `<input type="text" class="inline-edit" value="${this.esc(warrior.name)}"
                   onchange="UI.renameWarrior('${listType}', ${index}, this.value)" style="font-weight:600; font-size: 0.95rem; width: 100%;">`
               : `<span style="font-weight:600; font-size: 0.95rem;">${this.esc(warrior.name)}</span>`}
@@ -719,7 +726,7 @@ const UI = {
   // Gold is only updated after the entry is pushed so a throw mid-function
   // cannot leave the roster with decremented gold and no log entry.
   _logWarriorHire(warrior) {
-    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    if (!this._canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
     try {
@@ -762,7 +769,7 @@ const UI = {
   },
 
   openCustomWarriorModal() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('custom_warriors')) {
+    if (!this._canAccess('custom_warriors')) {
       return this.toast('Custom warriors require Pro tier.', 'error');
     }
     document.getElementById('custom-name').value = '';
@@ -1037,7 +1044,7 @@ const UI = {
   // cannot leave the roster with decremented gold and no log entry.
   // warrior is passed so we can detect "1st free" items (e.g. the Dagger).
   _logEquipmentPurchase(item, warrior) {
-    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    if (!this._canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
     try {
@@ -1325,7 +1332,7 @@ const UI = {
   // Always charges full price for equipment — "1st free" was already claimed
   // when the item was first added to the group.
   _logGroupSizeIncrease(henchman, addedCount) {
-    if (typeof Cloud === 'undefined' || !Cloud.canAccess('treasury_ledger')) return;
+    if (!this._canAccess('treasury_ledger')) return;
     const r = this.currentRoster;
     if (!r) return;
     const entries = [];
@@ -1389,9 +1396,9 @@ const UI = {
   renderProgressTab() {
     const r = this.currentRoster;
     const rating = RosterModel.calculateWarbandRating(r);
-    const canBattleLog = (typeof Cloud !== 'undefined') ? Cloud.canAccess('battle_log') : false;
+    const canBattleLog = this._canAccess('battle_log');
     const canViewBattleLog = (typeof Cloud !== 'undefined') ? (Cloud.TIER_RANK[Cloud.getTier()] >= Cloud.TIER_RANK['standard']) : false;
-    const canNotes = (typeof Cloud !== 'undefined') ? Cloud.canAccess('campaign_notes') : false;
+    const canNotes = this._canAccess('campaign_notes');
 
     // Rating
     document.getElementById('progress-rating').textContent = rating;
@@ -1441,7 +1448,7 @@ const UI = {
     const r = this.currentRoster;
     const container = document.getElementById('treasury-ledger-entries');
     if (!container) return;
-    const canPro = (typeof Cloud !== 'undefined') ? Cloud.canAccess('treasury_ledger') : false;
+    const canPro = this._canAccess('treasury_ledger');
     const canView = (typeof Cloud !== 'undefined') ? (Cloud.TIER_RANK[Cloud.getTier()] >= Cloud.TIER_RANK['standard']) : false;
 
     // Gate the Add Entry button
@@ -1573,7 +1580,7 @@ const UI = {
 
   // === TREASURY LEDGER ===
   openTreasuryModal() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+    if (!this._canAccess('treasury_ledger')) {
       return this.toast('Treasury Ledger requires Pro tier.', 'error');
     }
     if (!this.currentRoster) return;
@@ -1657,7 +1664,7 @@ const UI = {
 
   submitTreasuryEntry() {
     if (!this.currentRoster) return;
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+    if (!this._canAccess('treasury_ledger')) {
       return this.toast('Treasury Ledger requires Pro tier.', 'error');
     }
     const type = document.getElementById('treasury-type-select').value;
@@ -1717,7 +1724,7 @@ const UI = {
 
   deleteTreasuryEntry(index) {
     if (!this.currentRoster) return;
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('treasury_ledger')) {
+    if (!this._canAccess('treasury_ledger')) {
       return this.toast('Treasury Ledger requires Pro tier.', 'error');
     }
     const r = this.currentRoster;
@@ -1744,7 +1751,7 @@ const UI = {
   },
 
   addBattle() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('battle_log')) {
+    if (!this._canAccess('battle_log')) {
       return this.toast('Adding battles requires Pro tier.', 'error');
     }
     const result = document.getElementById('battle-result-input').value.trim();
@@ -1759,14 +1766,14 @@ const UI = {
   },
 
   updateNotes() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('campaign_notes')) return;
+    if (!this._canAccess('campaign_notes')) return;
     this.currentRoster.notes = document.getElementById('roster-notes').value;
     this.saveCurrentRoster();
   },
 
   // === EXPORT PDF ===
   exportPDF() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('pdf_export')) {
+    if (!this._canAccess('pdf_export')) {
       return this.toast('PDF export requires Pro tier.', 'error');
     }
     const r = this.currentRoster;
@@ -1961,7 +1968,7 @@ const UI = {
 
   // === EXPORT / IMPORT ===
   exportRoster(id) {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('import_export')) {
+    if (!this._canAccess('import_export')) {
       return this.toast('Export requires Standard tier or above.', 'error');
     }
     const json = Storage.exportRoster(id);
@@ -1978,7 +1985,7 @@ const UI = {
   },
 
   importRoster() {
-    if (typeof Cloud !== 'undefined' && !Cloud.canAccess('import_export')) {
+    if (!this._canAccess('import_export')) {
       return this.toast('Import requires Standard tier or above.', 'error');
     }
     const input = document.createElement('input');
