@@ -215,7 +215,7 @@
         "ld": 5
       }
     ],
-    "equipment": "<Tooltip>Heavy Armour</Tooltip>, <Tooltip>Shield</Tooltip>, <Tooltip>Lance</Tooltip> and <Tooltip>Sword</Tooltip>. If you are using the optional rules for mounted models, a Freelancer rides a <Tooltip>Warhorse</Tooltip> (and has the <Tooltip>Ride</Tooltip> Warhorse skill from the [Blazing Saddles article](/docs/optional-rules/mounted-combat/blazing-saddles)).<sup><Tooltip content=\"err72\">✏️</Tooltip></sup> When mounted, the Freelancer has an armour saving throw of 3+. On foot his save is 4+.",
+    "equipment": "<Tooltip>Heavy Armour</Tooltip>, <Tooltip>Shield</Tooltip>, <Tooltip>Lance</Tooltip> and <Tooltip>Sword</Tooltip>. If you are using the optional rules for mounted models, a Freelancer rides a <Tooltip>Warhorse</Tooltip> (and has the <Tooltip>Ride</Tooltip> Warhorse skill from the <a href=\"/docs/optional-rules/mounted-combat/blazing-saddles\">Blazing Saddles article</a>).<sup><Tooltip content=\"err72\">✏️</Tooltip></sup> When mounted, the Freelancer has an armour saving throw of 3+. On foot his save is 4+.",
     "skillText": "A Freelancer may choose from <Tooltip>Combat</Tooltip> and <Tooltip>Strength</Tooltip> skills when he gains a new skill.",
     "skillAccess": {
       "combat": true,
@@ -263,7 +263,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -350,7 +350,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -449,7 +449,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -533,7 +533,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -569,7 +569,7 @@
       "ld": 8
     },
     "equipment": "A Warlock carries a <Tooltip>Staff</Tooltip>.",
-    "skillText": "Warlocks may choose skills from the Academic skills list, or they may randomly determine a new spell from the [Lesser Magic](/docs/magic/lesser-magic) spell list",
+    "skillText": "Warlocks may choose skills from the Academic skills list, or they may randomly determine a new spell from the <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a> spell list",
     "skillAccess": {
       "combat": false,
       "shooting": false,
@@ -583,7 +583,7 @@
       {
         "flavour": "",
         "rulename": "Wizard",
-        "ruleFull": "Warlocks are magicians and have two spells generated at random from the [Lesser Magic](/docs/magic/lesser-magic) list. See the Magic section for details."
+        "ruleFull": "Warlocks are magicians and have two spells generated at random from the <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a> list. See the Magic section for details."
       }
     ],
     "admonitions": ""
@@ -619,7 +619,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -663,7 +663,7 @@
       {
         "flavour": "",
         "rulename": "Guardian",
-        "ruleFull": "The Merchant has ‘acquired’ a bodyguard to protecting from harm in the coming battles. The bodyguard will only protect the Merchant and cannot fulfil warband objectives or search, loot or any function other than protecting the Merchant and as such will remain within 1\" of the Merchant at all times. The bodyguard doesn’t gain experience and isn’t paid (it is assumed he has been ‘gifted’ to the Merchant as a favour from one of his contacts).<sup><Tooltip content=\"faq134\">❓</Tooltip></sup><br /><br /><table><thead><tr><th>Profile</th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr></thead><tbody><tr><td>Bodyguard</td><td>4</td><td>4</td><td>2</td><td>4</td><td>3</td><td>1</td><td>3</td><td>1</td><td>8</td></tr></tbody></table><br /><br /><strong>Equipment:</strong> <Tooltip>Sword</Tooltip>, <Tooltip>Light Armour</Tooltip>, <Tooltip>Shield</Tooltip> and <Tooltip>Helmet</Tooltip>.<br /><br /><strong>Intercept:</strong> the bodyguard will intercept any model shooting at or charging the Merchant. Any attacks will be directed at him and if charged place the bodyguard in front of the Merchant to protect him. The bodyguard will not charge unless the Merchant also charges and cannot intercept an attack if already engaged in combat."
+        "ruleFull": "The Merchant has ‘acquired’ a bodyguard to protecting from harm in the coming battles. The bodyguard will only protect the Merchant and cannot fulfil warband objectives or search, loot or any function other than protecting the Merchant and as such will remain within 1\" of the Merchant at all times. The bodyguard doesn’t gain experience and isn’t paid (it is assumed he has been ‘gifted’ to the Merchant as a favour from one of his contacts).<sup><Tooltip content=\"faq134\">❓</Tooltip></sup><br /><br /><table><thead><tr><th>Profile</th><th>M</th><th>WS</th><th>BS</th><th>S</th><th>T</th><th>W</th><th>I</th><th>A</th><th>Ld</th></tr></thead><tbody><tr><td>Bodyguard</td><td>4</td><td>4</td><td>2</td><td>4</td><td>3</td><td>1</td><td>3</td><td>1</td><td>8</td></tr></tbody></table><strong>Equipment:</strong> <Tooltip>Sword</Tooltip>, <Tooltip>Light Armour</Tooltip>, <Tooltip>Shield</Tooltip> and <Tooltip>Helmet</Tooltip>.<br /><br /><h5>SPECIAL RULES</h5><strong>Intercept:</strong> the bodyguard will intercept any model shooting at or charging the Merchant. Any attacks will be directed at him and if charged place the bodyguard in front of the Merchant to protect him. The bodyguard will not charge unless the Merchant also charges and cannot intercept an attack if already engaged in combat."
       }
     ],
     "specialRules": [
@@ -680,22 +680,22 @@
       {
         "flavour": "",
         "rulename": "Marketeer",
-        "ruleFull": "The Merchant has many useful contacts in the black market underworld and foreign traders to locate many special items. After each battle (if he wasn’t taken out of action) the Merchant can visit one of three markets: the [Black Market](/docs/campaigns/hired-swords/grade-1a#black-market), [Foreign Wares](/docs/campaigns/hired-swords/grade-1a#foreign-wares) and the [Fencer](/docs/campaigns/hired-swords/grade-1a#fencer), in search of items for the warband. Roll a D6 on the relevant table to see what items are on offer."
+        "ruleFull": "The Merchant has many useful contacts in the black market underworld and foreign traders to locate many special items. After each battle (if he wasn’t taken out of action) the Merchant can visit one of three markets: the Black Market, Foreign Wares and the Fencer, in search of items for the warband. Roll a D6 on the relevant table to see what items are on offer."
       },
       {
-        "flavour": "A den of thieves and underworld brigands the black markets of Mordheim sell and procure all manner of illicit substances and are regularly frequented by the infamous members of the Assassins guild…",
+        "flavour": "",
         "rulename": "Black Market",
-        "ruleFull": "<table><thead><tr><th>D6</th><th>Items</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td>Nothing available.</td><td>-</td></tr><tr><td>2</td><td><Tooltip>Dark Venom</Tooltip> or <Tooltip>Black Lotus</Tooltip> (D3 doses)</td><td>30 gc / 10 gc</td></tr><tr><td>3</td><td><Tooltip>Crimson Shade</Tooltip> (D3 doses)</td><td>35 gc</td></tr><tr><td>4</td><td><Tooltip>Mandrake Root</Tooltip> or <Tooltip>Madcap Mushrooms</Tooltip> (D3 doses)</td><td>25 gc / 30 gc</td></tr><tr><td>5</td><td>Stiletto Blade (need <Tooltip>Weapons Training</Tooltip> to use) +1 attack per turn at -1 strength.</td><td>20 gc<sup><Tooltip customText=\"The original rules never printed a gold-crown price for the Stiletto Blade. The Arabian Merchant’s article in Town Cryer #22 only says that items he finds are bought at their base price (no \"+D6 gc\" add-on), and its Black Market table lists \"Stiletto Blade, +1 Attack per turn at –1 Strength,\" but gives no price. The hired sword compilation \"Swords of the Empire\" lists it as 20 +3D6 gold crowns, Rare 8. Rather than having no value, this was adopted here as well.\">✏️</Tooltip></sup></td></tr><tr><td>6</td><td><Tooltip>Blowpipe</Tooltip> (need <Tooltip>Weapons Training</Tooltip> to use)</td><td>25 gc</td></tr></tbody></table>"
+        "ruleFull": "A den of thieves and underworld brigands the black markets of Mordheim sell and procure all manner of illicit substances and are regularly frequented by the infamous members of the Assassins guild…<br /><br /><table><thead><tr><th>D6</th><th>Items</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td>Nothing available.</td><td>-</td></tr><tr><td>2</td><td><Tooltip>Dark Venom</Tooltip> or <Tooltip>Black Lotus</Tooltip> (D3 doses)</td><td>30 gc / 10 gc</td></tr><tr><td>3</td><td><Tooltip>Crimson Shade</Tooltip> (D3 doses)</td><td>35 gc</td></tr><tr><td>4</td><td><Tooltip>Mandrake Root</Tooltip> or <Tooltip>Madcap Mushrooms</Tooltip> (D3 doses)</td><td>25 gc / 30 gc</td></tr><tr><td>5</td><td>Stiletto Blade (need <Tooltip>Weapons Training</Tooltip> to use) +1 attack per turn at -1 strength.</td><td>20 gc<sup><Tooltip customText=\"The original rules never printed a gold-crown price for the Stiletto Blade. The Arabian Merchant’s article in Town Cryer #22 only says that items he finds are bought at their base price (no \"+D6 gc\" add-on), and its Black Market table lists \"Stiletto Blade, +1 Attack per turn at –1 Strength,\" but gives no price. The hired sword compilation \"Swords of the Empire\" lists it as 20 +3D6 gold crowns, Rare 8. Rather than having no value, this was adopted here as well.\">✏️</Tooltip></sup></td></tr><tr><td>6</td><td><Tooltip>Blowpipe</Tooltip> (need <Tooltip>Weapons Training</Tooltip> to use)</td><td>25 gc</td></tr></tbody></table>"
       },
       {
-        "flavour": "Traders from across the seas can be found in the shady taverns and street corners on the outskirts of Mordheim. They have many exotic and wondrous items for sale, but at a hefty price…",
+        "flavour": "",
         "rulename": "Foreign Wares",
-        "ruleFull": "<table><thead><tr><th>D6</th><th>Items</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td>Nothing available.</td><td>-</td></tr><tr><td>2</td><td><Tooltip>Venom Ring</Tooltip></td><td>20 gc</td></tr><tr><td>3</td><td><Tooltip>Lamp of the Djinn</Tooltip> or <Tooltip>Monkey’s Paw</Tooltip></td><td>50 gc / 50 gc</td></tr><tr><td>4</td><td><Tooltip>Magic Carpet</Tooltip> or <Tooltip>Tufenk</Tooltip></td><td>50 gc / 15 gc</td></tr><tr><td>5</td><td><Tooltip>Elven Cloak</Tooltip></td><td>100 gc</td></tr><tr><td>6</td><td><Tooltip>Cathayan Silks</Tooltip></td><td>50 gc</td></tr></tbody></table>"
+        "ruleFull": "Traders from across the seas can be found in the shady taverns and street corners on the outskirts of Mordheim. They have many exotic and wondrous items for sale, but at a hefty price…<br /><br /><table><thead><tr><th>D6</th><th>Items</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td>Nothing available.</td><td>-</td></tr><tr><td>2</td><td><Tooltip>Venom Ring</Tooltip></td><td>20 gc</td></tr><tr><td>3</td><td><Tooltip>Lamp of the Djinn</Tooltip> or <Tooltip>Monkey’s Paw</Tooltip></td><td>50 gc / 50 gc</td></tr><tr><td>4</td><td><Tooltip>Magic Carpet</Tooltip> or <Tooltip>Tufenk</Tooltip></td><td>50 gc / 15 gc</td></tr><tr><td>5</td><td><Tooltip>Elven Cloak</Tooltip></td><td>100 gc</td></tr><tr><td>6</td><td><Tooltip>Cathayan Silks</Tooltip></td><td>50 gc</td></tr></tbody></table>"
       },
       {
-        "flavour": "Fencers have an eclectic range of items ‘procured’ from sources best left unspoken. Offered at incredible prices, traders should be wary for their word is not their bond and such items are often ‘flawed’…",
+        "flavour": "",
         "rulename": "Fencer",
-        "ruleFull": "<table><thead><tr><th>D6</th><th>Items</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td><Tooltip>Halfling Cook Book</Tooltip></td><td><del>30 gc</del> 15 gc</td></tr><tr><td>2</td><td><Tooltip>Ithilmar Weapon</Tooltip></td><td><del>3 x Price</del> 1.5 x Price</td></tr><tr><td>3</td><td><Tooltip>Gromril Weapon</Tooltip></td><td><del>4 x Price</del> 2 x Price</td></tr><tr><td>4</td><td><Tooltip>Tome of Magic</Tooltip></td><td><del>200 gc</del> 100 gc</td></tr><tr><td>5</td><td><Tooltip>Hunting Rifle</Tooltip> or <Tooltip>Elven Bow</Tooltip></td><td><del>200 gc</del> 100 gc / <del>35 gc</del> 18 gc</td></tr><tr><td>6</td><td>Brace of <Tooltip>Duelling Pistols</Tooltip></td><td><del>60 gc</del> 30 gc</td></tr></tbody></table><br /><br />All the items purchased through the Merchant’s market contacts are at their base price (i.e., do not add the random gold modifier for items). All items bought from the Fencer are also at half price but after the item is used once roll a D6. On a roll of 1, the item breaks and is useless – an elaborate fake!"
+        "ruleFull": "Fencers have an eclectic range of items ‘procured’ from sources best left unspoken. Offered at incredible prices, traders should be wary for their word is not their bond and such items are often ‘flawed’…<br /><br /><table><thead><tr><th>D6</th><th>Items</th><th>Cost</th></tr></thead><tbody><tr><td>1</td><td><Tooltip>Halfling Cook Book</Tooltip></td><td><del>30 gc</del> 15 gc</td></tr><tr><td>2</td><td><Tooltip>Ithilmar Weapon</Tooltip></td><td><del>3 x Price</del> 1.5 x Price</td></tr><tr><td>3</td><td><Tooltip>Gromril Weapon</Tooltip></td><td><del>4 x Price</del> 2 x Price</td></tr><tr><td>4</td><td><Tooltip>Tome of Magic</Tooltip></td><td><del>200 gc</del> 100 gc</td></tr><tr><td>5</td><td><Tooltip>Hunting Rifle</Tooltip> or <Tooltip>Elven Bow</Tooltip></td><td><del>200 gc</del> 100 gc / <del>35 gc</del> 18 gc</td></tr><tr><td>6</td><td>Brace of <Tooltip>Duelling Pistols</Tooltip></td><td><del>60 gc</del> 30 gc</td></tr></tbody></table><br />All the items purchased through the Merchant’s market contacts are at their base price (i.e., do not add the random gold modifier for items). All items bought from the Fencer are also at half price but after the item is used once roll a D6. On a roll of 1, the item breaks and is useless – an elaborate fake!"
       }
     ],
     "admonitions": ""
@@ -733,7 +733,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -825,7 +825,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -933,7 +933,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -1033,7 +1033,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -1137,7 +1137,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -1279,7 +1279,7 @@
       "Horned Hunters",
       "Miragleans",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -1488,7 +1488,7 @@
       "ld": 7
     },
     "equipment": "The Chameleon Skink comes equipped with a <Tooltip>Dagger</Tooltip>, <Tooltip>Blowpipe with poison darts</Tooltip> and a <Tooltip>Buckler</Tooltip>.",
-    "skillText": "The Chameleon Skink may choose from <Tooltip>Shooting</Tooltip>, <Tooltip>Speed</Tooltip> and [Lizardmen special](/docs/warbands/grade-1b-warbands/lizardmen#skinks-only) skills.",
+    "skillText": "The Chameleon Skink may choose from <Tooltip>Shooting</Tooltip>, <Tooltip>Speed</Tooltip> and <a href=\"/docs/warbands/grade-1b-warbands/lizardmen#skinks-only\">Lizardmen special</a> skills.",
     "skillAccess": {
       "combat": false,
       "shooting": true,
@@ -1502,7 +1502,7 @@
       {
         "flavour": "",
         "rulename": "Lizardmen Special Skills",
-        "ruleFull": "All of the Lizardmen [Special](/docs/warbands/grade-1b-warbands/lizardmen#special-rules) skills for Skinks: Scaly Skin, Cold Blooded, Aquatic and jungle born."
+        "ruleFull": "All of the Lizardmen <a href=\"/docs/warbands/grade-1b-warbands/lizardmen#special-rules\">Special</a> skills for Skinks: Scaly Skin, Cold Blooded, Aquatic and jungle born."
       },
       {
         "flavour": "",
@@ -1649,7 +1649,7 @@
       "ld": 8
     },
     "equipment": "<Tooltip>Dark Elf Blade</Tooltip>, <Tooltip>Dagger</Tooltip>, <Tooltip content=\"repeater crossbow\">Repeating Crossbow</Tooltip>, <Tooltip>Dark Venom</Tooltip>, <Tooltip>Light Armour</Tooltip> and Dark Cloak (counts as <Tooltip>Elven Cloak</Tooltip>).",
-    "skillText": "An Assassin may choose from <Tooltip>Combat</Tooltip>, <Tooltip>Shooting</Tooltip>, and <Tooltip>Speed</Tooltip> skills when he gains a new skill. In addition, the Assassin may use any unique [Dark Elf](/docs/warbands/grade-1b-warbands/dark-elves#dark-elf-special-skills) skills.",
+    "skillText": "An Assassin may choose from <Tooltip>Combat</Tooltip>, <Tooltip>Shooting</Tooltip>, and <Tooltip>Speed</Tooltip> skills when he gains a new skill. In addition, the Assassin may use any unique <a href=\"/docs/warbands/grade-1b-warbands/dark-elves#dark-elf-special-skills\">Dark Elf</a> skills.",
     "skillAccess": {
       "combat": true,
       "shooting": true,
@@ -1708,7 +1708,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -1786,7 +1786,7 @@
       "Horned Hunters",
       "Miragleans",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -1813,7 +1813,7 @@
       "ld": 9
     },
     "equipment": "The Dwarf Pathfinder carries an <Tooltip>Axe</Tooltip>, <Tooltip>Dagger</Tooltip>, and <Tooltip>Crossbow</Tooltip>. He wears <Tooltip>Light Armour</Tooltip>.",
-    "skillText": "A Dwarf Pathfinder may choose from <Tooltip>Combat</Tooltip>, <Tooltip>Shooting</Tooltip>, or [Dwarf](/docs/warbands/grade-1b-warbands/dwarf-rangers#dwarf-special-skills) skill lists when he gains a new skill. Alternatively, he may choose the new Dwarf Pathfinder skill, below.",
+    "skillText": "A Dwarf Pathfinder may choose from <Tooltip>Combat</Tooltip>, <Tooltip>Shooting</Tooltip>, or <a href=\"/docs/warbands/grade-1b-warbands/dwarf-rangers#dwarf-special-skills\">Dwarf</a> skill lists when he gains a new skill. Alternatively, he may choose the new Dwarf Pathfinder skill, below.",
     "skillAccess": {
       "combat": true,
       "shooting": true,
@@ -2015,7 +2015,7 @@
       {
         "flavour": "",
         "rulename": "Wizard",
-        "ruleFull": "Elf Mages are magicians and have three spells generated at random from the [Spells of the Djed’hi](/docs/magic/spells-of-the-djedhi) list."
+        "ruleFull": "Elf Mages are magicians and have three spells generated at random from the <a href=\"/docs/magic/spells-of-the-djedhi\">Spells of the Djed’hi</a> list."
       }
     ],
     "admonitions": ""
@@ -2205,7 +2205,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -2389,7 +2389,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -2494,7 +2494,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -2616,7 +2616,7 @@
       {
         "flavour": "",
         "rulename": "Runes",
-        "ruleFull": "The Norse Shaman starts with two 'Runes' from the [Norse Runes chart](/docs/magic/norse-runes). These are treated in the same way as Sigmarite Prayers and can be cast whilst wearing armour. Abilities that give saves against spells, give saves against runes."
+        "ruleFull": "The Norse Shaman starts with two 'Runes' from the <a href=\"/docs/magic/norse-runes\">Norse Runes chart</a>. These are treated in the same way as Sigmarite Prayers and can be cast whilst wearing armour. Abilities that give saves against spells, give saves against runes."
       }
     ],
     "admonitions": ""
@@ -2656,7 +2656,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -2753,7 +2753,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -2880,7 +2880,7 @@
       {
         "flavour": "",
         "rulename": "Funerary Rites",
-        "ruleFull": "Priests of Morr are not wizards by any means, however, they do have numerous [Funerary Rites](/docs/magic/funerary-rites), which they may perform. As such, priests of Morr may choose a Funerary Rite, using the [rules for Magic](/docs/magic/)."
+        "ruleFull": "Priests of Morr are not wizards by any means, however, they do have numerous <a href=\"/docs/magic/funerary-rites), which they may perform. As such, priests of Morr may choose a Funerary Rite, using the [rules for Magic](/docs/magic/\">Funerary Rites</a>."
       },
       {
         "flavour": "",
@@ -3012,7 +3012,7 @@
       "Horned Hunters",
       "Miragleans",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3037,7 +3037,7 @@
       "ld": 8
     },
     "equipment": "A Shadow Warrior carries a <Tooltip>Sword</Tooltip>, <Tooltip>Longbow</Tooltip>, <Tooltip>Dagger</Tooltip>, <Tooltip>Shield</Tooltip> and wears <Tooltip>Light Armour</Tooltip>.",
-    "skillText": "A Shadow Warrior may choose from <Tooltip>Combat</Tooltip> or <Tooltip>Shooting</Tooltip> skills when he gains a new skill, In addition he may choose his skill from the [Shadow Warriors](/docs/warbands/grade-1b-warbands/shadow-warriors#shadow-warrior-special-skills) Special Skill list in Town Cryer 10.",
+    "skillText": "A Shadow Warrior may choose from <Tooltip>Combat</Tooltip> or <Tooltip>Shooting</Tooltip> skills when he gains a new skill, In addition he may choose his skill from the <a href=\"/docs/warbands/grade-1b-warbands/shadow-warriors#shadow-warrior-special-skills\">Shadow Warriors</a> Special Skill list in Town Cryer 10.",
     "skillAccess": {
       "combat": true,
       "shooting": true,
@@ -3101,7 +3101,7 @@
       "Horned Hunters",
       "Miragleans",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3217,7 +3217,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3304,7 +3304,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3388,7 +3388,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3414,7 +3414,7 @@
       "ld": 8
     },
     "equipment": "<Tooltip>Hammer of Sigmar</Tooltip>, <Tooltip>Light Armour</Tooltip> and <Tooltip>Shield</Tooltip>.",
-    "skillText": "Warrior-Priests may choose skills from the <Tooltip>Academic</Tooltip> skills list, or they may randomly determine a new Prayer from the [Prayers of Sigmar](/docs/magic/prayers-of-sigmar) list.",
+    "skillText": "Warrior-Priests may choose skills from the <Tooltip>Academic</Tooltip> skills list, or they may randomly determine a new Prayer from the <a href=\"/docs/magic/prayers-of-sigmar\">Prayers of Sigmar</a> list.",
     "skillAccess": {
       "combat": false,
       "shooting": false,
@@ -3428,7 +3428,7 @@
       {
         "flavour": "",
         "rulename": "Prayers",
-        "ruleFull": "A Warrior-Priest is a servant of Sigmar and may use the [Prayers of Sigmar](/docs/magic/prayers-of-sigmar) as detailed in the Magic section."
+        "ruleFull": "A Warrior-Priest is a servant of Sigmar and may use the <a href=\"/docs/magic/prayers-of-sigmar\">Prayers of Sigmar</a> as detailed in the Magic section."
       }
     ],
     "admonitions": ""
@@ -3468,7 +3468,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3518,7 +3518,7 @@
       {
         "flavour": "",
         "rulename": "Wizard",
-        "ruleFull": "The Witch has the ability to use magic and casts spells like any other wizard. She has two spells generated at random from the [Charms & Hexes list](/docs/magic/charms-and-hexes)."
+        "ruleFull": "The Witch has the ability to use magic and casts spells like any other wizard. She has two spells generated at random from the <a href=\"/docs/magic/charms-and-hexes\">Charms & Hexes list</a>."
       },
       {
         "flavour": "",
@@ -3565,7 +3565,7 @@
       "Horned Hunters",
       "Miragleans",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3659,7 +3659,7 @@
       }
     ],
     "equipment": "Wolf Priests may not use any armour, trusting only in Ulric's protection. The only exception is that every Wolf Priest is garbed in a cloak made from the pelt of a white wolf: 6+ save. The cost of the cloak is included in the cost of the priest.<br /><br />Wolf Priests prefer the use of blunt weapons to those with edges, and thus may only use <Tooltip>Hammers, Maces, Clubs</Tooltip>, <Tooltip>Flails</Tooltip>, <Tooltip>Morning Stars</Tooltip>, and the <Tooltip>Two-Handed</Tooltip> version of any of these. The exception to this is the ubiquitous <Tooltip>Dagger</Tooltip> that most models carry.<br /><br />The wolf uses its fangs to attack its prey and cannot use any other weapon. Their thick coat of fur counts as a wolf cloak for protection: 6+ save.",
-    "skillText": "Wolf Priests may chose from the <Tooltip>Combat</Tooltip>, <Tooltip>Academic</Tooltip>, <Tooltip>Strength</Tooltip> and <Tooltip>Speed</Tooltip> lists. A Wolf Priest is a servant of Ulric and may use the [Prayers of Ulric](/docs/magic/prayers-of-ulric) as detailed in the Magic section.",
+    "skillText": "Wolf Priests may chose from the <Tooltip>Combat</Tooltip>, <Tooltip>Academic</Tooltip>, <Tooltip>Strength</Tooltip> and <Tooltip>Speed</Tooltip> lists. A Wolf Priest is a servant of Ulric and may use the <a href=\"/docs/magic/prayers-of-ulric\">Prayers of Ulric</a> as detailed in the Magic section.",
     "skillAccess": {
       "combat": true,
       "shooting": false,
@@ -3806,7 +3806,7 @@
       "Horned Hunters",
       "Miragleans",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -3876,7 +3876,7 @@
       {
         "flavour": "",
         "rulename": "Black Market",
-        "ruleFull": "*Crooks and brigands supply the black market, where denizens of the Cathayan underworld sell and procure all manner of illicit substances. They are regularly frequented by assassins, merchants, and less professional scumbags.*<br /><br /><table><thead><tr><th>D6</th><th>Items</th><th>Price</th></tr></thead><tbody><tr><td>1</td><td>Nothing available</td><td>-</td></tr><tr><td>2</td><td><Tooltip>Spider spittle</Tooltip> (D3 doses)</td><td>30 gc</td></tr><tr><td>3</td><td><Tooltip>Fire bomb</Tooltip></td><td>35 gc</td></tr><tr><td>4</td><td><Tooltip>Fighting claws</Tooltip></td><td>35 gc per pair</td></tr><tr><td>5</td><td><Tooltip>Cathayan longsword</Tooltip></td><td>75 gc</td></tr><tr><td>6</td><td>[Lesser artefact](/docs/campaigns/campaign-settings/border-town-burning/lesser-artefacts): For 75 + D6 x 10 gold crowns the warband may purchase an artefact, determined at random from the Lesser Artefacts table.</td><td>75 + D6 x 10 gc</td></tr></tbody></table>"
+        "ruleFull": "*Crooks and brigands supply the black market, where denizens of the Cathayan underworld sell and procure all manner of illicit substances. They are regularly frequented by assassins, merchants, and less professional scumbags.*<br /><br /><table><thead><tr><th>D6</th><th>Items</th><th>Price</th></tr></thead><tbody><tr><td>1</td><td>Nothing available</td><td>-</td></tr><tr><td>2</td><td><Tooltip>Spider spittle</Tooltip> (D3 doses)</td><td>30 gc</td></tr><tr><td>3</td><td><Tooltip>Fire bomb</Tooltip></td><td>35 gc</td></tr><tr><td>4</td><td><Tooltip>Fighting claws</Tooltip></td><td>35 gc per pair</td></tr><tr><td>5</td><td><Tooltip>Cathayan longsword</Tooltip></td><td>75 gc</td></tr><tr><td>6</td><td><a href=\"/docs/campaigns/campaign-settings/border-town-burning/lesser-artefacts\">Lesser artefact</a>: For 75 + D6 x 10 gold crowns the warband may purchase an artefact, determined at random from the Lesser Artefacts table.</td><td>75 + D6 x 10 gc</td></tr></tbody></table>"
       },
       {
         "flavour": "",
@@ -3919,7 +3919,7 @@
       "ld": 7
     },
     "equipment": "<Tooltip>Throwing Axes</Tooltip> (counts as throwing knives), <Tooltip>Shield</Tooltip>, plus a <Tooltip>Sword</Tooltip> or <Tooltip>Spear</Tooltip>. Treat the spear as you would for the use of a Cavalry bonus (+1 Strength when charging).",
-    "skillText": "A Chaos Centaur may choose from <Tooltip>Combat</Tooltip> and <Tooltip>strength</Tooltip> skills when he gains new skills, or may buy one new [mutation](/docs/warbands/grade-1a-warbands/cult-of-the-possessed#mutations).",
+    "skillText": "A Chaos Centaur may choose from <Tooltip>Combat</Tooltip> and <Tooltip>strength</Tooltip> skills when he gains new skills, or may buy one new <a href=\"/docs/warbands/grade-1a-warbands/cult-of-the-possessed#mutations\">mutation</a>.",
     "skillAccess": {
       "combat": true,
       "shooting": false,
@@ -3983,7 +3983,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -4086,7 +4086,7 @@
       {
         "flavour": "",
         "rulename": "Grave Robbing",
-        "ruleFull": "During the exploration phase, a Grave Robber can loot a local cemetery if he wasn’t taken out of action. Roll 2D6 and consult the following chart:<br /><br /><table><thead><tr><th>2D6</th><th>Result</th></tr></thead><tbody><tr><td>2</td><td><strong>Discovered!</strong> The Grave Robber is discovered and is driven from the cemetery by angry villagers or ghouls or any number of nasty things. Remove the Grave Robber from your warband roster.</td></tr><tr><td>3-4</td><td><strong>Nothing:</strong> Pauper's graves. No significant finds.</td></tr><tr><td>5-7</td><td><strong>Trinket:</strong> A corpse is found wearing a trinket of moderate value. You get D6+3 gold crowns.</td></tr><tr><td>8-9</td><td><strong>Treasure:</strong> A corpse has a copious amount of treasure within its grave. You get D6+8 gold crowns.</td></tr><tr><td>10-11</td><td><strong>Corpse:</strong> No treasure, but you may add a Zombie to your roster provided you have room in your warband. This Zombie is free. The corpse can be sold for D6+2 gold crowns if the player does not wish to keep it as a Zombie.</td></tr><tr><td>12</td><td><strong>Artefact:</strong> A Hero’s tomb. Contains a magical artefact, immediately roll on the [Lesser artefact](/docs/campaigns/campaign-settings/border-town-burning/lesser-artefacts) chart.</td></tr></tbody></table>"
+        "ruleFull": "During the exploration phase, a Grave Robber can loot a local cemetery if he wasn’t taken out of action. Roll 2D6 and consult the following chart:<br /><br /><table><thead><tr><th>2D6</th><th>Result</th></tr></thead><tbody><tr><td>2</td><td><strong>Discovered!</strong> The Grave Robber is discovered and is driven from the cemetery by angry villagers or ghouls or any number of nasty things. Remove the Grave Robber from your warband roster.</td></tr><tr><td>3-4</td><td><strong>Nothing:</strong> Pauper's graves. No significant finds.</td></tr><tr><td>5-7</td><td><strong>Trinket:</strong> A corpse is found wearing a trinket of moderate value. You get D6+3 gold crowns.</td></tr><tr><td>8-9</td><td><strong>Treasure:</strong> A corpse has a copious amount of treasure within its grave. You get D6+8 gold crowns.</td></tr><tr><td>10-11</td><td><strong>Corpse:</strong> No treasure, but you may add a Zombie to your roster provided you have room in your warband. This Zombie is free. The corpse can be sold for D6+2 gold crowns if the player does not wish to keep it as a Zombie.</td></tr><tr><td>12</td><td><strong>Artefact:</strong> A Hero’s tomb. Contains a magical artefact, immediately roll on the <a href=\"/docs/campaigns/campaign-settings/border-town-burning/lesser-artefacts\">Lesser artefact</a> chart.</td></tr></tbody></table>"
       }
     ],
     "admonitions": ""
@@ -4211,7 +4211,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -4241,7 +4241,7 @@
       "ld": 8
     },
     "equipment": "Pair of <Tooltip>Swords</Tooltip>, <Tooltip>Throwing Stars</Tooltip>, <Tooltip>Rope & Hook</Tooltip> and one <Tooltip>Smoke Bomb</Tooltip>.",
-    "skillText": "<Tooltip>Expert Swordsman</Tooltip>, <Tooltip>Knife-Fighter</Tooltip>, <Tooltip>Scale Sheer Surfaces</Tooltip> and [Art of Silent Death](/docs/warbands/grade-1c-warbands/battle-monks-of-cathay#special-rules-2). He also has the [Lighning Speed](/docs/warbands/grade-1c-warbands/battle-monks-of-cathay#lightning-speed) and [Leap of Faith](/docs/warbands/grade-1c-warbands/battle-monks-of-cathay#leap-of-faith) skills from the Battle Monks special skills.",
+    "skillText": "<Tooltip>Expert Swordsman</Tooltip>, <Tooltip>Knife-Fighter</Tooltip>, <Tooltip>Scale Sheer Surfaces</Tooltip> and <a href=\"/docs/warbands/grade-1c-warbands/battle-monks-of-cathay#special-rules-2). He also has the [Lighning Speed](/docs/warbands/grade-1c-warbands/battle-monks-of-cathay#lightning-speed\">Art of Silent Death</a> and <a href=\"/docs/warbands/grade-1c-warbands/battle-monks-of-cathay#leap-of-faith\">Leap of Faith</a> skills from the Battle Monks special skills.",
     "skillAccess": {
       "combat": false,
       "shooting": false,
@@ -4448,7 +4448,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -4698,7 +4698,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -4737,7 +4737,7 @@
       {
         "flavour": "",
         "rulename": "Wizard",
-        "ruleFull": "The Dark Mage is a wizard, and may randomly generate a spell from the Dark Magic list, and may gain more spells from that or from the [Lesser Magic](/docs/magic/lesser-magic) list found in the Core Rulebook."
+        "ruleFull": "The Dark Mage is a wizard, and may randomly generate a spell from the Dark Magic list, and may gain more spells from that or from the <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a> list found in the Core Rulebook."
       },
       {
         "flavour": "",
@@ -4926,7 +4926,7 @@
       "Lizardmen",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Shadow Warriors",
@@ -5005,7 +5005,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5032,7 +5032,7 @@
       "ld": 8
     },
     "equipment": "<Tooltip>Steel Whip</Tooltip>, <Tooltip>Sigmarite Warhammer</Tooltip>, <Tooltip>Dagger</Tooltip>, <Tooltip>Sling</Tooltip>, <Tooltip>Light Armour</Tooltip>.",
-    "skillText": "A Fallen Sister may choose from <Tooltip>Combat</Tooltip>, <Tooltip>Strength</Tooltip> and <Tooltip>Speed</Tooltip> skill lists when she gains a new level, or she may randomly choose a new spell from the [Lesser Magic](/docs/magic/lesser-magic) list.",
+    "skillText": "A Fallen Sister may choose from <Tooltip>Combat</Tooltip>, <Tooltip>Strength</Tooltip> and <Tooltip>Speed</Tooltip> skill lists when she gains a new level, or she may randomly choose a new spell from the <a href=\"/docs/magic/lesser-magic\">Lesser Magic</a> list.",
     "skillAccess": {
       "combat": true,
       "shooting": false,
@@ -5099,7 +5099,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5194,7 +5194,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5221,7 +5221,7 @@
       "a": 1,
       "ld": 8
     },
-    "equipment": "Shovel (<Tooltip>Halberd</Tooltip>), [Pry bar](/docs/warbands/grade-2a-warbands/grave-robbers#pry-bar) & <Tooltip>dagger</Tooltip>.",
+    "equipment": "Shovel (<Tooltip>Halberd</Tooltip>), <a href=\"/docs/warbands/grade-2a-warbands/grave-robbers#pry-bar\">Pry bar</a> & <Tooltip>dagger</Tooltip>.",
     "skillText": "A Gravesman may choose from the <Tooltip>Combat</Tooltip> or <Tooltip>Strength</Tooltip> skill lists.",
     "skillAccess": {
       "combat": true,
@@ -5273,7 +5273,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5359,7 +5359,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5508,7 +5508,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5713,7 +5713,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5880,7 +5880,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5956,7 +5956,7 @@
       "Miragleans",
       "Mootlanders",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",

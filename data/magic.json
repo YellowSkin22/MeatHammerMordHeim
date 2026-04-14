@@ -1635,8 +1635,8 @@
         {
           "name": "Shadowbind",
           "difficulty": 9,
-          "ruleAbbreviated": "The Shadow Weaver may cast this spell at any enemy model within 24\" and within 2\" of a wall. The target may not move unless it first passes a Strength test on 2D6 at the start of its turn before the Recovery phase. The spell lasts until the Shadow Weaver suffers a wound or attempts to cast another spell. If the affected model is attacked, treat it exactly as if it were Stunned.",
-          "ruleFull": "The Shadow Weaver may cast this spell at any enemy model within 24\" and within 2\" of a wall.<br /><br />The target may not move unless it first passes a Strength test on 2D6 at the start of its turn before the Recovery phase.<br /><br />The spell lasts until the Shadow Weaver suffers a wound or attempts to cast another spell. If the affected model is attacked, treat it exactly as if it were Stunned."
+          "ruleAbbreviated": "The Shadow Weaver may cast this spell at any enemy model within 24\" and within 2\" of a wall. The target may not move unless it first passes a Strength test on 1D6+1<sup><Tooltip content=\"err133\">✏️</Tooltip></sup> at the start of its turn before the Recovery phase. The spell lasts until the Shadow Weaver suffers a wound or attempts to cast another spell. If the affected model is attacked, treat it exactly as if it were Stunned.",
+          "ruleFull": "The Shadow Weaver may cast this spell at any enemy model within 24\" and within 2\" of a wall.<br /><br />The target may not move unless it first passes a Strength test on 1D6+1<sup><Tooltip content=\"err133\">✏️</Tooltip></sup> at the start of its turn before the Recovery phase.<br /><br />The spell lasts until the Shadow Weaver suffers a wound or attempts to cast another spell. If the affected model is attacked, treat it exactly as if it were Stunned."
         },
         {
           "name": "Shield of Shadow",

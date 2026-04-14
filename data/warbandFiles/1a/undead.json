@@ -133,7 +133,7 @@
       "name": "Vampire",
       "plural": "Vampires",
       "race": "undead",
-      "flavour": "Vampires lead the Undead in their search for the magical stones that will give their master the power to conquer the Empire.",
+      "flavour": "Vampires lead the Undead in their search for the magical stones that will give their master the power to conquer the Empire.<br /><br >Although but pale shadows when compared to the dread Vampire Lords, the immortal servants of Vlad are still some of the most powerful creatures who fight in Mordheim. Most of them serve the undying count of Sylvania, but some have found the city to their liking, and have become independent.",
       "minQty": 1,
       "maxQty": 1,
       "costGc": 110,
@@ -237,7 +237,7 @@
       "name": "Dregs",
       "plural": "Dregs",
       "race": "human",
-      "flavour": "Dregs are the most miserable human survivors of the demise of Mordheim. They are deformed and rejected individuals, shunned even by the other men and women who still live in the ruins and catacombs of the city.",
+      "flavour": "Dregs are the most miserable human survivors of the demise of Mordheim. They are deformed and rejected individuals, shunned even by the other men and women who still live in the ruins and catacombs of the city.<br /><br />Vampires often recruit Dregs as their servants and treat them with surprising kindness. As a result, Dregs are often fanatically loyal to their Undead overlords and will do anything to protect and serve them.<br /><br />Dregs are very useful to their masters as they can be sent to buy equipment, weapons and supplies from the settlements around Mordheim which would often not welcome Necromancers or where Vampires would fall under the suspicion of the Witch Hunters. They can also do the bidding of their vampiric master during daylight, when the Vampires must rest in their coffins.",
       "minQty": 0,
       "maxQty": 3,
       "costGc": 20,
@@ -273,7 +273,7 @@
       "name": "Ghouls",
       "race": "ghoul",
       "plural": "Ghouls",
-      "flavour": "Ghouls are the descendants of evil and insane men who ate the flesh of the dead. When the lean and hungry times of famine come upon the Old World, the most depraved and destitute took to feasting on corpses to survive.",
+      "flavour": "Ghouls are the descendants of evil and insane men who ate the flesh of the dead. When the lean and hungry times of famine come upon the Old World, the most depraved and destitute took to feasting on corpses to survive.<br /><br />Driven by their unspeakable craving for the meat of their fellow men, these creatures have given up their human life and dwell near graveyards, crypts and tombs, digging up the rotting corpses of the recently buried and consuming the cold flesh with their bare teeth and claws.<br /><br />The destruction of Mordheim attracted many Ghoul clans from the north, and now they have taken up permanent residence in the crypts and cemeteries of the ruined city.",
       "groupSize": {
         "min": 1,
         "max": 5
@@ -293,6 +293,7 @@
         "ld": 5
       },
       "equipmentLists": [],
+      "equipment": "Ghouls never carry any equipment, apart from a few bones which they use as primitive weapons.<sup><Tooltip content=\"faq101\">❓</Tooltip></sup>",
       "specialRules": [
         {
           "flavour": "",
@@ -329,6 +330,7 @@
         "ld": 4
       },
       "equipmentLists": [],
+      "equipment": "None.",
       "specialRules": [
         {
           "flavour": "",
@@ -393,6 +395,7 @@
         "ld": 5
       },
       "equipmentLists": [],
+      "equipment": "Zombies may not have any weapons or armour and suffer no penalties for this.",
       "specialRules": [
         {
           "flavour": "",

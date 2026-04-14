@@ -389,12 +389,8 @@
         "ld": 4
       },
       "equipmentLists": [],
+      "equipment": "one. Giant Rats never use any armour or weapons.",
       "specialRules": [
-        {
-          "flavour": "",
-          "rulename": "Weapons/Armour",
-          "ruleFull": "None. Giant Rats never use any armour or weapons."
-        },
         {
           "flavour": "",
           "rulename": "Experience",
@@ -431,12 +427,8 @@
         "ld": 4
       },
       "equipmentLists": [],
+      "equipment": "Jaws, claws and brute force! Rat Ogres can never use weapons or armour.",
       "specialRules": [
-        {
-          "flavour": "",
-          "rulename": "Weapons/Armour",
-          "ruleFull": "Jaws, claws and brute force! Rat Ogres can never use weapons or armour."
-        },
         {
           "flavour": "",
           "rulename": "Fear",

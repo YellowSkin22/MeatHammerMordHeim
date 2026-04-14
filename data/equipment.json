@@ -497,7 +497,7 @@
       "Miragleans",
       "Norse Explorers",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -761,7 +761,7 @@
       "Miragleans",
       "Norse Explorers",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",
@@ -5280,7 +5280,7 @@
     "availability": 10,
     "grade": "1b",
     "permittedWarbands": [
-      "Outlaws of Stirwood Forest, The"
+      "Outlaws of Stirwood Forest"
     ],
     "tags": [
       "forest cloak",
@@ -6480,7 +6480,7 @@
       "Miragleans",
       "Norse Explorers",
       "Ostermarkers",
-      "Outlaws of Stirwood Forest, The",
+      "Outlaws of Stirwood Forest",
       "Pirates",
       "Pit Fighters",
       "Remasens",

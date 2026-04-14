@@ -141,8 +141,8 @@
           }
         },
         {
-          "name": "duelling pistol",
-          "alias": "Duelling Pistol",
+          "name": "Duelling Pistol",
+          "alias": "",
           "cost": {
             "cost": 25,
             "braceCost": 50
@@ -242,16 +242,16 @@
           }
         },
         {
-          "name": "duelling pistol",
-          "alias": "Duelling Pistol",
+          "name": "Duelling Pistol",
+          "alias": "",
           "cost": {
             "cost": 25,
             "braceCost": 50
           }
         },
         {
-          "name": "long bow",
-          "alias": "Long Bow",
+          "name": "Long Bow",
+          "alias": "",
           "cost": {
             "cost": 15
           }
@@ -264,8 +264,8 @@
           }
         },
         {
-          "name": "hunting rifle",
-          "alias": "Hunting Rifle",
+          "name": "Hunting Rifle",
+          "alias": "",
           "cost": {
             "cost": 200
           }
@@ -581,7 +581,7 @@
         {
           "flavour": "",
           "rulename": "Cloak & Dagger",
-          "ruleFull": "Duellists are adept at fighting using their billowing cloaks to swirl at an enemy distracting him and warding off blows. The Duellist counts as using a buckler in close combat."
+          "ruleFull": "Duellists are adept at fighting using their billowing cloaks to swirl at an enemy distracting him and warding off blows. The Duellist counts as using a buckler<sup><Tooltip customText=\"The Town Cryer 14 Tilean rules stated 'shield', but the original <a href='https://www.reddit.com/r/mordheim/comments/bdy14n/comment/el479by/?utm_source=share&utm_medium=web2x&context=3'>submission</a> for the warband informed the player: 'All duelists are subject to the special rules and items that appear in issue 13 of the Town Cryer...' where the duellist cloak counts as a buckler.\">✏️</Tooltip></sup> in close combat."
         }
       ],
       "admonitions": ""

@@ -163,6 +163,7 @@
       "equipmentLists": [
         "mootlander-equipment-list"
       ],
+      "equipmentCaveat": "In addition, he may be armed with a pistol for 15 GC, usually an old family heirloom.",
       "skillAccess": {
         "combat": true,
         "shooting": true,
@@ -178,7 +179,7 @@
           "ruleFull": "Any warrior within 6\" of the Moot Elder may use his Leadership characteristic when taking Leadership tests."
         }
       ],
-      "admonitions": "The Halfling Moot Elder may buy equipment from the Halfling equipment list. In addition, he may be armed with a pistol for 15 GC, usually an old family heirloom."
+      "admonitions": ""
     },
     {
       "id": "master-chef",

@@ -12,7 +12,7 @@
   "warbandRules": {
     "startingGc": 500,
     "maxModels": 15,
-    "choiceFluff": "A Pirate warband must include a minimum of three models. You have 500 Gold Crowns which you can use to recruit and equip your Warband. The maximum number of warriors in the Warband is 15 (this represents the landing party; the rest of the crew are aboard the ship in case some other scurvy sea dogs dare to attack!)."
+    "choiceFluff": "(this represents the landing party; the rest of the crew are aboard the ship in case some other scurvy sea dogs dare to attack!)."
   },
   "specialSkills": true,
   "specialRules": [
@@ -582,9 +582,7 @@
         "a": 1,
         "ld": 7
       },
-      "equipmentLists": [
-        "pirate-equipment-list"
-      ],
+      "equipment": "Boatswains start with a Rope & Hook, and may be equipped with weapons and armour chosen from the Pirate Equipment list. Note that they can never sell off or give away their Rope & Hook – a Boatswain would never be without his ropes!",
       "specialRules": [
         {
           "flavour": "",
@@ -592,7 +590,7 @@
           "ruleFull": "Boatswains are highly trained in using their ropes, as they are the ones who maintain the complex network of rigging throughout the ship. They may re-roll failed Initiative tests Leaping over Gaps, Jumping Down, and performing a Diving Charge, as well as the normal test for Climbing Up or Down that a Rope allows."
         }
       ],
-      "admonitions": "Boatswains start with a Rope & Hook, and may be equipped with weapons and armour chosen from the Pirate Equipment list. Note that they can never sell off or give away their Rope & Hook – a Boatswain would never be without his ropes!"
+      "admonitions": ""
     },
     {
       "id": "swabbies",
@@ -651,7 +649,7 @@
           "ruleFull": "The rest of the crew barely notice if any Swabbies run away or go Out of Action – they know they’ll find them later on and give them 30 lashes if they’re lucky! Any Swabbies who are running away or have been taken out of action do not count towards the need to take a Rout test for the warband."
         }
       ],
-      "admonitions": "Special Recruitment rules (see above)"
+      "admonitions": ""
     }
   ]
 }
