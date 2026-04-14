@@ -1188,6 +1188,11 @@ const UI = {
   },
 
   // === SKILL MODAL ===
+  // Shared section header used by skill and spell modals.
+  _renderModalSectionHeader(title) {
+    return `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(title)}</h4>`;
+  },
+
   openSkillModal(listType, index) {
     const warrior = this.currentRoster[listType][index];
     const warbandResult = DataService.getWarband(this.currentRoster.warbandId);
@@ -1207,6 +1212,7 @@ const UI = {
       accessSubtypes = fighter ? DataService.resolveSkillAccess(fighter, subfaction) : [];
     }
 
+    this._skillTarget = { listType, index, warriorId: warrior.id };
     const modal = document.getElementById('skill-modal');
     const body  = document.getElementById('skill-modal-body');
     let html = '';
@@ -1214,13 +1220,13 @@ const UI = {
     for (const subtype of accessSubtypes) {
       const skills = DataService.getSkillsBySubtype(subtype, warbandName);
       if (skills.length === 0) continue;
-      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(subtype)}</h4>`;
+      html += this._renderModalSectionHeader(subtype);
       for (const skill of skills) {
         const skillId = DataService.slugify(skill.name);
         const alreadyHas = warrior.skills.find(s => s.id === skillId);
         const disabled = alreadyHas ? 'disabled' : '';
         const desc = DataService._stripHtml(skill.Rules?.[0]?.ruleAbbreviated || skill.Rules?.[0]?.ruleFull || '');
-        html += `<button class="btn btn-sm mb-1" ${disabled} onclick="UI.selectSkill('${listType}', ${index}, '${skillId}')" title="${this.escAttr(desc)}">${this.esc(skill.name)}</button> `;
+        html += `<button class="btn btn-sm mb-1" ${disabled} data-skill-id="${this.escAttr(skillId)}" title="${this.escAttr(desc)}">${this.esc(skill.name)}</button> `;
       }
     }
 
@@ -1260,6 +1266,7 @@ const UI = {
       spellListIds = warrior.spellAccess || [];
     }
 
+    this._spellTarget = { listType, index, warriorId: warrior.id };
     const modal = document.getElementById('spell-modal');
     const body  = document.getElementById('spell-modal-body');
     let html = '';
@@ -1269,7 +1276,7 @@ const UI = {
       if (!list) continue;
       const spells = list.spells || [];
       if (spells.length === 0) continue;
-      html += `<h4 class="text-accent mb-1 mt-2" style="font-size:0.85rem; text-transform:uppercase;">${this.esc(list.name || listId)}</h4>`;
+      html += this._renderModalSectionHeader(list.name || listId);
       html += '<div style="display:flex; flex-direction:column; gap:0.3rem;">';
       for (const spell of spells) {
         const spellId = spell.id || DataService.slugify(spell.name);
@@ -1277,7 +1284,7 @@ const UI = {
         const disabled = alreadyHas ? 'disabled' : '';
         const diff = spell.difficulty === 'Auto' ? 'Auto' : `Diff: ${spell.difficulty}`;
         const desc = DataService._stripHtml(spell.ruleAbbreviated || spell.ruleFull || '');
-        html += `<button class="btn btn-sm" ${disabled} data-tooltip="${this.escAttr(diff + '. ' + desc)}" onclick="UI.selectSpell('${listType}', ${index}, '${spellId}')">${this.esc(spell.name)} (${diff})</button>`;
+        html += `<button class="btn btn-sm" ${disabled} data-spell-id="${this.escAttr(spellId)}" data-tooltip="${this.escAttr(diff + '. ' + desc)}">${this.esc(spell.name)} (${diff})</button>`;
       }
       html += '</div>';
     }
@@ -2256,6 +2263,40 @@ const UI = {
     document.getElementById('picker-list').addEventListener('click', (e) => {
       const item = e.target.closest('.picker-item');
       if (item) this.selectWarbandItem(item.dataset.id);
+    });
+
+    // Skill modal: delegated button selection
+    document.getElementById('skill-modal-body').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-skill-id]');
+      if (!btn || btn.disabled) return;
+      const { listType, index, warriorId } = this._skillTarget || {};
+      if (listType == null || index == null) {
+        console.warn('skill-modal click: no valid target stored', this._skillTarget);
+        return;
+      }
+      if (this.currentRoster?.[listType]?.[index]?.id !== warriorId) {
+        console.warn('skill-modal click: stale target — warrior mismatch, ignoring');
+        document.getElementById('skill-modal')?.classList.remove('active');
+        return;
+      }
+      this.selectSkill(listType, index, btn.dataset.skillId);
+    });
+
+    // Spell modal: delegated button selection
+    document.getElementById('spell-modal-body').addEventListener('click', (e) => {
+      const btn = e.target.closest('button[data-spell-id]');
+      if (!btn || btn.disabled) return;
+      const { listType, index, warriorId } = this._spellTarget || {};
+      if (listType == null || index == null) {
+        console.warn('spell-modal click: no valid target stored', this._spellTarget);
+        return;
+      }
+      if (this.currentRoster?.[listType]?.[index]?.id !== warriorId) {
+        console.warn('spell-modal click: stale target — warrior mismatch, ignoring');
+        document.getElementById('spell-modal')?.classList.remove('active');
+        return;
+      }
+      this.selectSpell(listType, index, btn.dataset.spellId);
     });
 
     // Warband picker: close on outside click or Escape

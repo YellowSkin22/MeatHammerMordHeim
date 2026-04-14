@@ -10,7 +10,16 @@ python3 -m http.server 8000
 # Open http://localhost:8000
 ```
 
-Must use a server (not `file://`) because DataService uses `fetch()` for JSON. No test suite; testing is manual in the browser. A dev server config exists at `.claude/launch.json` for the Claude Preview tool.
+Must use a server (not `file://`) because DataService uses `fetch()` for JSON. A dev server config exists at `.claude/launch.json` for the Claude Preview tool.
+
+## Running Tests
+
+Unit tests for pure JS logic (no DOM, no fetch) live in `tests/`:
+```bash
+node --test tests/*.test.js
+```
+
+Requires Node 22+. No npm install needed. Tests cover `DataService` utility functions, `Storage._migrateRoster`, and `RosterModel` business logic. UI/rendering is still verified manually in the browser.
 
 Script and CSS tags in `index.html` use `?v=N` query params for cache busting — increment after changes. Also bump `data/version.json` (`{ "version": N }`) when deploying; the app checks this on load and forces a reload if the version changed, busting stale caches for existing users.
 
@@ -45,9 +54,9 @@ Bootstrap sequence: `Cloud.init()` → `DataService.loadAll()` → `UI.init()` �
 ## Key Design Decisions
 
 - **Warrior cost is baked in at creation time** — `createWarrior()` copies `template.cost` into the warrior object. Changing costs in warband files only affects newly created warriors.
-- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from Uncle-Mel/JSON-derulo; only hand-maintained files (`injuries.json`, `advancement.json`) should be edited directly.
+- **Data-driven game rules** — All warband definitions, equipment, skills, spells, injuries, and advancement tables live in `data/*.json`. Most content is synced from MordheimerData/Sourcedata; only hand-maintained files (`injuries.json`, `advancement.json`) should be edited directly.
 - **Spell access** — `UI.hasSpellAccess()` first checks `template.spellAccess.length > 0` (computed at load time from `magic.json` by `DataService._buildSpellAccess()`). Falls back to checking `warrior.specialRules` for `'Wizard'`, `'Warrior Wizard'`, `'Prayers of Sigmar'`, `'Magic User'`, `'Prayers'`, `'Spellcaster'`, or `'Prayercaster'`. The fallback covers hired swords, custom warriors, and old data.
-- **Equipment access** — Heroes and henchmen see items filtered by `DataService.canWarbandAccess(item, warbandName)` against `equipment.json`'s `permittedWarbands` / `excludedWarbands` fields. Hired swords use the `equipmentAccess` category array from `hiredSwords.json` (all entries default to `['hand_to_hand', 'missiles', 'armour']` — mapped to Uncle-Mel types via `DataService.LEGACY_CATEGORY_MAP`).
+- **Equipment access** — Heroes and henchmen see items filtered by `DataService.canWarbandAccess(item, warbandName)` against `equipment.json`'s `permittedWarbands` / `excludedWarbands` fields. Hired swords use the `equipmentAccess` category array from `hiredSwords.json` (all entries default to `['hand_to_hand', 'missiles', 'armour']` — mapped to MordheimerData types via `DataService.LEGACY_CATEGORY_MAP`).
 - **Lad's Got Talent (promoted henchmen)** — `RosterModel.promoteHenchmanToHero()` creates a hero from a henchman, copying stats/equipment/injuries/experience. The promoted warrior goes into `roster.heroes[]` (not a separate array) with `isPromotedHenchman: true` and a user-chosen `skillAccess: [catId1, catId2]`. `baseStats` is set to match `stats` at promotion time so existing characteristic gains don't show as "modified". Max heroes is validated before promotion using `warband.heroes.reduce((sum, h) => sum + h.max, 0)`.
 - **Event propagation** — Warrior add `<select>` dropdowns inside `.section-header` elements carry `onclick="event.stopPropagation()"` to prevent triggering the parent's collapse toggle. The `onchange` handler fires `UI.addWarriorFromSelect()` immediately on selection — there is no separate "Hire" button.
 
@@ -151,7 +160,7 @@ Tooltips on special rules and equipment tags use a JS-based approach (not CSS ps
 
 ## Data Files
 
-Synced nightly from Uncle-Mel/JSON-derulo via `scripts/sync-mordheim-data.js`. Hand-maintained files are noted.
+Synced nightly from MordheimerData/Sourcedata via `scripts/sync-mordheim-data.js`. Hand-maintained files are noted.
 
 Run the sync manually:
 ```bash
@@ -167,7 +176,7 @@ node scripts/sync-mordheim-data.js --force   # re-process all files even if SHA 
 | `data/equipment.json` | Flat array of equipment items; `type` field as category, `permittedWarbands`/`excludedWarbands` for access control |
 | `data/skills.json` | Skill categories: 5 standard (combat, shooting, academic, strength, speed) + warband-specific |
 | `data/magic.json` | Spell lists; `spellLists[id].permittedWarbands[]` used to build `spellAccess` per fighter at load time |
-| `data/hiredSwords.json` | Hired Sword templates — **synced** from Uncle-Mel. `spellAccess` derived from `HIRED_SWORD_SPELL_ACCESS_MAP` in the sync script; `equipmentAccess` defaults to all three categories. |
+| `data/hiredSwords.json` | Hired Sword templates — **synced** from MordheimerData/Sourcedata. `spellAccess` derived from `HIRED_SWORD_SPELL_ACCESS_MAP` in the sync script; `equipmentAccess` defaults to all three categories. |
 | `data/maxStats.json` | Per-race maximum stat values; warband-specific overrides nested under `warband[]`; `null` warband entry = default |
 | `data/injuries.json` | Hero and henchman injury tables — **hand-maintained** |
 | `data/advancement.json` | Experience thresholds and advancement rules — **hand-maintained** |
@@ -183,9 +192,9 @@ node -e "JSON.parse(require('fs').readFileSync('data/FILENAME.json','utf8')); co
 
 ## Adding a New Warband
 
-Warbands are synced from Uncle-Mel/JSON-derulo — do not hand-edit files under `data/warbandFiles/`. To add content:
+Warbands are synced from MordheimerData/Sourcedata — do not hand-edit files under `data/warbandFiles/`. To add content:
 
-1. Contribute the warband JSON to Uncle-Mel's repo and run `scripts/sync-mordheim-data.js` — the sync script handles transformation and writes individual files under `data/warbandFiles/{grade}/`, updating `index.json`.
+1. Contribute the warband JSON to MordheimerData/Sourcedata and run `scripts/sync-mordheim-data.js` — the sync script handles transformation and writes individual files under `data/warbandFiles/{grade}/`, updating `index.json`.
 2. If the warband needs a new **warband-specific skill category**, add it to `data/skills.json` manually and add an entry to `SPECIAL_SKILL_CATEGORY_MAP` in `sync-mordheim-data.js` so Special Skills route into it.
 3. If the warband introduces new **special rules**, ensure the warband's fighter templates include `ruleFull` on each special rule entry — `DataService.loadAll()` mines these automatically for tooltips. No separate file to maintain.
 4. Spell-casting heroes are detected at load time via `DataService._buildSpellAccess()` — no manual `spellAccess` entries needed if the spell list is in `magic.json`.
@@ -198,7 +207,7 @@ Warbands are synced from Uncle-Mel/JSON-derulo — do not hand-edit files under 
 
 **Grade 1b (20):** Amazons (Lustria), Amazons (Mordheim), Arabian Tomb Raiders, Black Orcs, Bretonnians, Dwarf Rangers, Forest Goblins, Gunnery School of Nuln, Hochland Bandits, Horned Hunters, Imperial Outriders, Lizardmen, Mootlanders, Norse Explorers, Outlaws of Stirwood Forest, Pirates, Pit Fighters, Skaven Pestilens, Tileans, Tomb Guardians.
 
-**Grade 1c (15):** Synced from Uncle-Mel's `warbandFiles/1c/` folder. Subfactions (e.g. Mercenaries → Reikland/Middenheim/Marienburg) are expanded into separate selectable entries at load time.
+**Grade 1c (15):** Synced from MordheimerData/Sourcedata's `warbandFiles/1c/` folder. Subfactions (e.g. Mercenaries → Reikland/Middenheim/Marienburg) are expanded into separate selectable entries at load time.
 
 ## Scraping mordheimer.net
 
