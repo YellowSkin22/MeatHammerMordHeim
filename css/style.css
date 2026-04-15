@@ -808,30 +808,60 @@ select.form-control {
 }
 
 /* ===== EXPERIENCE BAR ===== */
-.exp-bar-container {
+.xp-seg-container {
   margin-top: 0.6rem;
 }
 
-.exp-bar-label {
+.xp-seg-row {
   display: flex;
-  justify-content: space-between;
-  font-size: 0.72rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.xp-seg-level {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--accent);
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: #fff;
+}
+
+.xp-seg-bars {
+  display: flex;
+  flex: 1;
+  gap: 3px;
+}
+
+.xp-seg-bar {
+  height: 10px;
+  flex: 1;
+  border-radius: 3px;
+  border: 1.5px solid var(--accent);
+  background: transparent;
+  opacity: 0.45;
+}
+
+.xp-seg-bar.filled {
+  background: var(--accent);
+  opacity: 1;
+}
+
+.xp-seg-bar.partial {
+  background: linear-gradient(90deg, var(--accent) var(--fill), transparent var(--fill));
+  opacity: 1;
+}
+
+.xp-seg-label {
+  font-size: 0.7rem;
   color: var(--text-dim);
-  margin-bottom: 0.2rem;
-}
-
-.exp-bar {
-  height: 6px;
-  background: var(--bg-input);
-  border-radius: 3px;
-  overflow: hidden;
-}
-
-.exp-bar-fill {
-  height: 100%;
-  background: linear-gradient(90deg, var(--accent-dim), var(--accent));
-  border-radius: 3px;
-  transition: width 0.4s ease;
+  margin-top: 0.25rem;
+  padding-left: calc(26px + 0.4rem);
 }
 
 /* ===== TREASURY LEDGER ===== */
@@ -1356,7 +1386,7 @@ select.form-control {
   }
 
   /* Experience bar labels */
-  .exp-bar-label {
+  .xp-seg-label {
     font-size: 0.65rem;
   }
 
