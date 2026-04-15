@@ -574,38 +574,47 @@ const UI = {
     }, 0);
     const totalCost = warrior.cost + eqCost;
 
-    // Experience bar for heroes
+    // Experience bar
+    const _xpSegBar = (i, level, prevThreshold, nextThreshold, xp) => {
+      if (i < level) return `<div class="xp-seg-bar filled"></div>`;
+      if (i === level && nextThreshold != null) {
+        const pct = Math.min(((xp - prevThreshold) / (nextThreshold - prevThreshold)) * 100, 100);
+        return `<div class="xp-seg-bar" style="background:linear-gradient(90deg,var(--accent) ${pct}%,transparent ${pct}%);opacity:1"></div>`;
+      }
+      return `<div class="xp-seg-bar"></div>`;
+    };
+
     let expBar = '';
     if (isHero) {
       const level = RosterModel.getHeroLevel(warrior.experience);
+      const thresholds = DataService.advancement.heroAdvancement.expThresholds;
       const nextThreshold = RosterModel.getNextThreshold(warrior.experience);
-      const prevThreshold = level > 0 ? DataService.advancement.heroAdvancement.expThresholds[level - 1] : 0;
-      const progress = nextThreshold > prevThreshold ? ((warrior.experience - prevThreshold) / (nextThreshold - prevThreshold)) * 100 : 100;
+      const prevThreshold = level > 0 ? thresholds[level - 1] : 0;
+      const nextLabel = nextThreshold != null ? `Next level at ${nextThreshold} XP` : 'Max level';
+      const segments = thresholds.map((_, i) => _xpSegBar(i, level, prevThreshold, nextThreshold, warrior.experience)).join('');
       expBar = `
-        <div class="exp-bar-container">
-          <div class="exp-bar-label">
-            <span>EXP: ${warrior.experience} (Level ${level})</span>
-            <span>Next: ${nextThreshold}</span>
+        <div class="xp-seg-container">
+          <div class="xp-seg-row">
+            <div class="xp-seg-level">${level}</div>
+            <div class="xp-seg-bars">${segments}</div>
           </div>
-          <div class="exp-bar"><div class="exp-bar-fill" style="width:${Math.min(progress, 100)}%"></div></div>
+          <div class="xp-seg-label">${warrior.experience} XP &nbsp;·&nbsp; ${nextLabel}</div>
         </div>
       `;
     } else {
       const hLevel = RosterModel.getHenchmanLevel(warrior.experience);
-      const hNext  = RosterModel.getHenchmanNextThreshold(warrior.experience);
       const hThresholds = DataService.advancement?.henchmanAdvancement?.expThresholds || [2, 5, 9, 15];
-      const hPrev  = hLevel > 0 ? hThresholds[hLevel - 1] : 0;
-      const hProgress = hNext != null
-        ? ((warrior.experience - hPrev) / (hNext - hPrev)) * 100
-        : 100; // max level — full bar
-      const hNextLabel = hNext != null ? `Next: ${hNext}` : 'Max level';
+      const hNext = RosterModel.getHenchmanNextThreshold(warrior.experience);
+      const hPrev = hLevel > 0 ? hThresholds[hLevel - 1] : 0;
+      const hNextLabel = hNext != null ? `Next level at ${hNext} XP` : 'Max level';
+      const segments = hThresholds.map((_, i) => _xpSegBar(i, hLevel, hPrev, hNext, warrior.experience)).join('');
       expBar = `
-        <div class="exp-bar-container">
-          <div class="exp-bar-label">
-            <span>EXP: ${warrior.experience} (Level ${hLevel})</span>
-            <span>${hNextLabel} &nbsp;·&nbsp; Group: ${warrior.groupSize || 1}</span>
+        <div class="xp-seg-container">
+          <div class="xp-seg-row">
+            <div class="xp-seg-level">${hLevel}</div>
+            <div class="xp-seg-bars">${segments}</div>
           </div>
-          <div class="exp-bar"><div class="exp-bar-fill" style="width:${Math.min(hProgress, 100)}%"></div></div>
+          <div class="xp-seg-label">${warrior.experience} XP &nbsp;·&nbsp; ${hNextLabel} &nbsp;·&nbsp; Group: ${warrior.groupSize || 1}</div>
         </div>
       `;
     }
