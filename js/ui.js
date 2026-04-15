@@ -435,6 +435,7 @@ const UI = {
       ? (warbandResult.subfaction || warbandResult.warbandFile.name)
       : r.warbandId;
     const memberCount = RosterModel.getMemberCount(r);
+    const hiredSwordCount = RosterModel.getHiredSwordCount(r);
     const rating = RosterModel.calculateWarbandRating(r);
     const totalSpent = RosterModel.calculateTotalCost(r);
 
@@ -444,6 +445,7 @@ const UI = {
 
     // Summary
     document.getElementById('summary-members').textContent = `${memberCount} / ${this.getMaxMembers(r)}`;
+    document.getElementById('summary-hired-swords').textContent = hiredSwordCount;
     document.getElementById('summary-rating').textContent = rating;
     document.getElementById('summary-gold').textContent = r.gold + ' gc';
     document.getElementById('summary-spent').textContent = totalSpent + ' gc';
@@ -709,6 +711,13 @@ const UI = {
               <button class="btn btn-sm" onclick="UI.adjustGroupSize(${index}, -1)">-1 Member</button>
               <button class="btn btn-sm" onclick="UI.openLadsGotTalentModal(${index})">Lad's Got Talent</button>
             ` : ''}
+            ${listType === 'customWarriors' ? `
+              <label class="custom-member-toggle">
+                <input type="checkbox" ${warrior.countAsMember !== false ? 'checked' : ''}
+                  onchange="UI.toggleCustomMemberCount(${index}, this.checked)">
+                Count as Member
+              </label>
+            ` : ''}
             <button class="btn btn-sm btn-danger" onclick="UI.removeWarrior('${listType}', ${index})">Remove</button>
           </div>
         </div>
@@ -801,12 +810,6 @@ const UI = {
     const warrior = RosterModel.createHiredSword(key);
     if (!warrior) return this.toast('Unknown hired sword.', 'error');
 
-    const memberCount = RosterModel.getMemberCount(r);
-    const maxMembers = this.getMaxMembers(r);
-    if (memberCount >= maxMembers) {
-      return this.toast(`Warband is full (${maxMembers} members).`, 'error');
-    }
-
     r.hiredSwords.push(warrior);
     this._logWarriorHire(warrior);
     this.saveCurrentRoster();
@@ -898,6 +901,14 @@ const UI = {
     this.renderRosterEditor();
     document.getElementById('custom-warrior-modal').classList.remove('active');
     this.toast(`${name} created!`, 'success');
+  },
+
+  toggleCustomMemberCount(index, checked) {
+    const warrior = this.currentRoster.customWarriors[index];
+    if (!warrior) return;
+    warrior.countAsMember = checked;
+    this.saveCurrentRoster();
+    this.renderRosterEditor();
   },
 
   // === LAD'S GOT TALENT ===
@@ -2028,6 +2039,7 @@ const UI = {
 
   <div class="summary">
     <div class="summary-item"><div class="label">Members</div><div class="value">${memberCount} / ${this.getMaxMembers(r)}</div></div>
+    <div class="summary-item"><div class="label">Hired Swords</div><div class="value">${RosterModel.getHiredSwordCount(r)}</div></div>
     <div class="summary-item"><div class="label">Rating</div><div class="value">${rating}</div></div>
     <div class="summary-item"><div class="label">Treasury</div><div class="value gold">${r.gold} gc</div></div>
     <div class="summary-item"><div class="label">Wyrdstone</div><div class="value">${r.wyrdstone}</div></div>

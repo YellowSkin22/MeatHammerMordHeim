@@ -796,6 +796,17 @@ select.form-control {
   flex-wrap: wrap;
 }
 
+.custom-member-toggle {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0.25rem 0.45rem;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
 /* ===== EXPERIENCE BAR ===== */
 .exp-bar-container {
   margin-top: 0.6rem;
