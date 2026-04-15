@@ -123,6 +123,7 @@ const RosterModel = {
       ),
       isHero: true,
       isCustom: true,
+      countAsMember: true,
     };
   },
 
@@ -300,9 +301,14 @@ const RosterModel = {
   },
 
   getMemberCount(roster) {
-    let count = this._heroLike(roster).length;
+    const countedCustom = (roster.customWarriors || []).filter(w => w.countAsMember !== false);
+    let count = (roster.heroes || []).length + countedCustom.length;
     for (const hg of roster.henchmen) count += hg.groupSize || 1;
     return count;
+  },
+
+  getHiredSwordCount(roster) {
+    return (roster.hiredSwords || []).length;
   },
 
   addBattle(roster, result, notes) {
