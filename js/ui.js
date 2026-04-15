@@ -915,8 +915,10 @@ const UI = {
     const { warbandFile, subfaction } = warbandResult || { warbandFile: null, subfaction: null };
     const heroFighters = (warbandFile?.fighters || []).filter(f => f.type === 'hero');
 
-    // Max heroes check
-    const maxHeroes = heroFighters.reduce((sum, h) => sum + (h.maxQty || 0), 0);
+    // Max heroes check — universal cap is 6 (1 leader + 5 others per the rules).
+    // Some warbands list fewer hero types, but any warband can reach 6 via LGT.
+    const warbandMax = heroFighters.reduce((sum, h) => sum + (h.maxQty || 0), 0);
+    const maxHeroes = Math.max(warbandMax, 6);
     if (r.heroes.length >= maxHeroes) {
       return this.toast('Already at max heroes (' + maxHeroes + '). Roll again on the advancement table.', 'error');
     }
