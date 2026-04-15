@@ -822,7 +822,7 @@ select.form-control {
   flex-shrink: 0;
   width: 26px;
   height: 26px;
-  background: #2d2550;
+  background: var(--accent);
   border-radius: 5px;
   display: flex;
   align-items: center;
@@ -852,11 +852,16 @@ select.form-control {
   opacity: 1;
 }
 
+.xp-seg-bar.partial {
+  background: linear-gradient(90deg, var(--accent) var(--fill), transparent var(--fill));
+  opacity: 1;
+}
+
 .xp-seg-label {
   font-size: 0.7rem;
   color: var(--text-dim);
   margin-top: 0.25rem;
-  padding-left: 34px;
+  padding-left: calc(26px + 0.4rem);
 }
 
 /* ===== TREASURY LEDGER ===== */
